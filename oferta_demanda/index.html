@@ -1,1 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley de la oferta y la demanda — Interactivo</title>
+<style>
+  :root {
+    --c-ss: #8a5a00;
+    --c-ss-claro: #c9a878;
+    --c-demanda: #c0392b;
+    --c-oferta: #2980b9;
+    --c-equilibrio: #1e8449;
+    --c-original: #b0b0b0;
+    --bg: #fdfaf3;
+    --bg-card: #ffffff;
+    --text: #2c2c2c;
+    --border: #d4c5a8;
+    --bg-soft: #f7f0e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 1.5rem;
+    line-height: 1.55;
+  }
+  .contenedor { max-width: 1100px; margin: 0 auto; }
+  h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--c-ss);
+    margin-top: 0;
+  }
+  h1 {
+    text-align: center;
+    border-bottom: 3px solid var(--c-ss);
+    padding-bottom: 0.5rem;
+    font-size: 1.7rem;
+  }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+  .intro {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--c-ss);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .escenarios { margin-bottom: 1.5rem; }
+  .botones-escenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  .btn-escenario {
+    background: var(--bg-card);
+    border: 2px solid var(--c-ss);
+    color: var(--c-ss);
+    padding: 0.75rem 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-escenario:hover { background: var(--bg-soft); }
+  .btn-escenario.activo {
+    background: var(--c-ss);
+    color: #fff;
+  }
+  .explicacion {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--c-equilibrio);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .explicacion p { margin: 0.4rem 0; }
+  .leyenda {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .leyenda-item { display: flex; align-items: center; gap: 0.4rem; }
+  .linea-color { width: 26px; height: 4px; }
+  .linea-discontinua {
+    width: 26px; height: 0;
+    border-top: 3px dashed var(--c-original);
+  }
+  .punto-color {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--c-equilibrio);
+  }
+  .grafico-wrapper {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 800px) {
+    .grafico-wrapper { grid-template-columns: 1fr; }
+  }
+  .grafico-svg {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid var(--border);
+  }
+  .controles { background: var(--bg-soft); border: 1px solid var(--border); padding: 1rem; }
+  .control-grupo { margin-bottom: 1rem; }
+  .control-grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+  .control-grupo .descripcion-control {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.2rem;
+  }
+  input[type=range] { width: 100%; }
+  .stats {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  .stats div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted var(--border);
+  }
+  .stats div:last-child { border-bottom: none; }
+  .stats .label-stat { font-weight: bold; }
+  .stats .valor-stat {
+    font-family: "Courier New", monospace;
+    color: var(--c-equilibrio);
+    font-weight: bold;
+  }
+  .delta-up { color: var(--c-demanda); font-weight: bold; }
+  .delta-down { color: var(--c-oferta); font-weight: bold; }
+  .delta-eq { color: #888; font-weight: bold; }
+  .resumen {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.92rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.6rem;
+    text-align: center;
+  }
+  th { background: var(--bg-soft); color: var(--c-ss); }
+  td.cambio { font-weight: bold; }
+  .cuestionario {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .pregunta { margin-bottom: 1rem; padding: 0.8rem; background: var(--bg-soft); border: 1px solid var(--border); }
+  .pregunta-texto { font-weight: bold; margin-bottom: 0.6rem; }
+  .opciones { display: flex; flex-direction: column; gap: 0.3rem; }
+  .opciones button {
+    background: #fff;
+    border: 1px solid var(--c-ss);
+    color: var(--text);
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  .opciones button:hover { background: var(--bg-soft); }
+  .opciones button.correcta {
+    background: #d4edda;
+    border-color: var(--c-equilibrio);
+    color: var(--c-equilibrio);
+    font-weight: bold;
+  }
+  .opciones button.incorrecta {
+    background: #f8d7da;
+    border-color: var(--c-demanda);
+    color: var(--c-demanda);
+  }
+  .feedback { margin-top: 0.5rem; font-size: 0.9rem; font-style: italic; }
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: #666;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+<div class="contenedor">
+  <h1>⚖️ Ley de la oferta y la demanda</h1>
 
+  <div class="intro">
+    <p><strong>¿Cómo se determinan los precios en una economía de mercado?</strong> Cuando los <span style="color: var(--c-demanda); font-weight: bold;">consumidores (demanda)</span> y los <span style="color: var(--c-oferta); font-weight: bold;">productores (oferta)</span> se ponen de acuerdo, surge un <span style="color: var(--c-equilibrio); font-weight: bold;">punto de equilibrio</span>: el precio y la cantidad donde lo que se quiere comprar es exactamente lo que se quiere vender.</p>
+    <p>Elige una <strong>situación</strong> o mueve los <strong>deslizadores</strong> y observa cómo cambia el equilibrio.</p>
+  </div>
+
+  <div class="escenarios">
+    <h2>📌 Elige una situación</h2>
+    <div class="botones-escenarios">
+      <button class="btn-escenario activo" data-esc="0">☕ Equilibrio inicial</button>
+      <button class="btn-escenario" data-esc="1">📈 Sube la demanda</button>
+      <button class="btn-escenario" data-esc="2">💸 Baja la demanda</button>
+      <button class="btn-escenario" data-esc="3">⚙️ Sube la oferta</button>
+      <button class="btn-escenario" data-esc="4">🌨️ Baja la oferta</button>
+    </div>
+  </div>
+
+  <div class="explicacion" id="explicacion">
+    <h3 id="esc-titulo">Mercado en equilibrio: el café</h3>
+    <p id="esc-descripcion">Mercado normal de café. A un precio justo, los productores ofrecen exactamente la misma cantidad que los consumidores quieren comprar. El mercado está en equilibrio.</p>
+    <p id="esc-resultado"><strong>Resultado:</strong> Precio y cantidad estables.</p>
+  </div>
+
+  <div class="leyenda">
+    <div class="leyenda-item"><div class="linea-color" style="background: var(--c-demanda);"></div>Demanda (D)</div>
+    <div class="leyenda-item"><div class="linea-color" style="background: var(--c-oferta);"></div>Oferta (O)</div>
+    <div class="leyenda-item"><div class="punto-color"></div>Punto de equilibrio (E)</div>
+    <div class="leyenda-item"><div class="linea-discontinua"></div>Curva original (referencia)</div>
+  </div>
+
+  <div class="grafico-wrapper">
+    <svg class="grafico-svg" id="grafico" viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de oferta y demanda"></svg>
+
+    <div class="controles">
+      <h3>Controles manuales</h3>
+      <div class="control-grupo">
+        <label for="shift-demanda">🔴 Demanda: <span id="val-demanda">0</span></label>
+        <input type="range" id="shift-demanda" min="-40" max="40" value="0" step="1">
+        <div class="descripcion-control">← Baja la demanda &nbsp; | &nbsp; Sube la demanda →</div>
+      </div>
+      <div class="control-grupo">
+        <label for="shift-oferta">🔵 Oferta: <span id="val-oferta">0</span></label>
+        <input type="range" id="shift-oferta" min="-40" max="40" value="0" step="1">
+        <div class="descripcion-control">← Baja la oferta &nbsp; | &nbsp; Sube la oferta →</div>
+      </div>
+
+      <div class="stats">
+        <div>
+          <span class="label-stat">Precio de equilibrio:</span>
+          <span class="valor-stat" id="precio-eq">$5.00</span>
+        </div>
+        <div>
+          <span class="label-stat">Cantidad de equilibrio:</span>
+          <span class="valor-stat" id="cantidad-eq">50 u</span>
+        </div>
+        <div>
+          <span class="label-stat">Cambio en precio:</span>
+          <span id="delta-precio" class="delta-eq">sin cambio</span>
+        </div>
+        <div>
+          <span class="label-stat">Cambio en cantidad:</span>
+          <span id="delta-cantidad" class="delta-eq">sin cambio</span>
+        </div>
+      </div>
+
+      <button id="btn-reset" style="margin-top: 0.8rem; width: 100%; padding: 0.5rem; background: var(--c-ss); color: #fff; border: none; font-family: inherit; font-weight: bold; cursor: pointer;">↺ Volver al equilibrio inicial</button>
+    </div>
+  </div>
+
+  <div class="resumen">
+    <h2>📋 Resumen de los cuatro desplazamientos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Situación</th>
+          <th>Curva que se mueve</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sube la demanda</td>
+          <td>Demanda → derecha</td>
+          <td class="cambio" style="color: var(--c-demanda);">↑ Sube</td>
+          <td class="cambio" style="color: var(--c-demanda);">↑ Sube</td>
+        </tr>
+        <tr>
+          <td>Baja la demanda</td>
+          <td>Demanda → izquierda</td>
+          <td class="cambio" style="color: var(--c-oferta);">↓ Baja</td>
+          <td class="cambio" style="color: var(--c-oferta);">↓ Baja</td>
+        </tr>
+        <tr>
+          <td>Sube la oferta</td>
+          <td>Oferta → derecha</td>
+          <td class="cambio" style="color: var(--c-oferta);">↓ Baja</td>
+          <td class="cambio" style="color: var(--c-demanda);">↑ Sube</td>
+        </tr>
+        <tr>
+          <td>Baja la oferta</td>
+          <td>Oferta → izquierda</td>
+          <td class="cambio" style="color: var(--c-demanda);">↑ Sube</td>
+          <td class="cambio" style="color: var(--c-oferta);">↓ Baja</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem;"><strong>Truco para recordar:</strong> Cuando se mueve la <strong>demanda</strong>, precio y cantidad cambian <em>en la misma dirección</em>. Cuando se mueve la <strong>oferta</strong>, precio y cantidad cambian <em>en direcciones opuestas</em>.</p>
+  </div>
+
+  <div class="cuestionario">
+    <h2>✅ Comprueba lo que aprendiste</h2>
+
+    <div class="pregunta" data-correcta="b">
+      <div class="pregunta-texto">1. Si una nueva moda hace que más personas quieran comprar zapatillas deportivas, ¿qué pasa con el precio y la cantidad de equilibrio?</div>
+      <div class="opciones">
+        <button data-op="a">a) El precio baja y la cantidad sube</button>
+        <button data-op="b">b) El precio sube y la cantidad sube</button>
+        <button data-op="c">c) El precio sube y la cantidad baja</button>
+        <button data-op="d">d) Ni el precio ni la cantidad cambian</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="c">
+      <div class="pregunta-texto">2. Una sequía destruye gran parte de la cosecha de trigo. ¿Qué se espera que ocurra en el mercado del pan?</div>
+      <div class="opciones">
+        <button data-op="a">a) Más pan a menor precio</button>
+        <button data-op="b">b) Más pan a mayor precio</button>
+        <button data-op="c">c) Menos pan a mayor precio</button>
+        <button data-op="d">d) Menos pan a menor precio</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="a">
+      <div class="pregunta-texto">3. Una empresa inventa una máquina que produce televisores el doble de rápido y más barato. ¿Qué efecto tendrá en el mercado de televisores?</div>
+      <div class="opciones">
+        <button data-op="a">a) El precio baja y la cantidad vendida sube</button>
+        <button data-op="b">b) El precio sube y la cantidad vendida baja</button>
+        <button data-op="c">c) Ambos suben</button>
+        <button data-op="d">d) Ambos bajan</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="d">
+      <div class="pregunta-texto">4. En una recesión económica, las familias tienen menos dinero y compran menos restaurantes. ¿Qué ocurre con el precio de una cena promedio?</div>
+      <div class="opciones">
+        <button data-op="a">a) Sube, porque los restaurantes necesitan ganar más</button>
+        <button data-op="b">b) No cambia, porque los costos del restaurante son fijos</button>
+        <button data-op="c">c) Sube, porque hay menos competencia</button>
+        <button data-op="d">d) Baja, porque los restaurantes deben atraer a los pocos clientes que quedan</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <footer>
+    Diseñado por Prof. José M. Fernández con Claude · GEDparaHispanos · Estudios Sociales: Economía
+  </footer>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const svg = document.getElementById('grafico');
+  const shiftDemandaInput = document.getElementById('shift-demanda');
+  const shiftOfertaInput = document.getElementById('shift-oferta');
+  const valDemandaEl = document.getElementById('val-demanda');
+  const valOfertaEl = document.getElementById('val-oferta');
+  const precioEqEl = document.getElementById('precio-eq');
+  const cantidadEqEl = document.getElementById('cantidad-eq');
+  const deltaPrecioEl = document.getElementById('delta-precio');
+  const deltaCantidadEl = document.getElementById('delta-cantidad');
+  const btnReset = document.getElementById('btn-reset');
+
+  const escenarios = [
+    {
+      titulo: '☕ Equilibrio inicial: mercado del café',
+      descripcion: 'Mercado normal de café. A un precio justo, los productores ofrecen exactamente la misma cantidad que los consumidores quieren comprar. El mercado está en equilibrio.',
+      resultado: 'Precio y cantidad estables. No hay escasez ni excedente.',
+      shiftD: 0,
+      shiftO: 0
+    },
+    {
+      titulo: '📈 Sube la demanda: el café se pone de moda',
+      descripcion: 'Un estudio dice que el café tiene beneficios para la salud. Más personas quieren tomarlo. La curva de demanda se desplaza hacia la derecha (a cada precio, los consumidores quieren más café).',
+      resultado: 'El precio <strong>sube ↑</strong> y la cantidad también <strong>sube ↑</strong>. Más compradores compitiendo por café hacen subir el precio, y los productores responden vendiendo más.',
+      shiftD: 30,
+      shiftO: 0
+    },
+    {
+      titulo: '💸 Baja la demanda: recesión económica',
+      descripcion: 'Hay una crisis económica. Las familias tienen menos dinero y reducen sus gastos en café. La curva de demanda se desplaza hacia la izquierda (a cada precio, los consumidores compran menos).',
+      resultado: 'El precio <strong>baja ↓</strong> y la cantidad <strong>baja ↓</strong>. Los vendedores deben reducir precios para colocar el café que producen.',
+      shiftD: -30,
+      shiftO: 0
+    },
+    {
+      titulo: '⚙️ Sube la oferta: nueva tecnología',
+      descripcion: 'Se inventa una máquina que cosecha café más rápido y más barato. Los productores pueden ofrecer más café al mismo precio. La curva de oferta se desplaza hacia la derecha.',
+      resultado: 'El precio <strong>baja ↓</strong> y la cantidad <strong>sube ↑</strong>. Más café disponible significa precios más bajos, lo que estimula a más consumidores a comprar.',
+      shiftD: 0,
+      shiftO: 30
+    },
+    {
+      titulo: '🌨️ Baja la oferta: helada en Brasil',
+      descripcion: 'Una helada destruye gran parte de las cosechas de café en Brasil. Hay menos café disponible en el mercado mundial. La curva de oferta se desplaza hacia la izquierda.',
+      resultado: 'El precio <strong>sube ↑</strong> pero la cantidad <strong>baja ↓</strong>. Hay escasez: el poco café disponible se vende mucho más caro.',
+      shiftD: 0,
+      shiftO: -30
+    }
+  ];
+
+  const baseA = 10;
+  const baseB = 0.1;
+  const baseC = 0;
+  const baseD = 0.1;
+  const xMax = 100;
+  const yMax = 10;
+
+  function calcularEquilibrio(shiftD, shiftO) {
+    const qEq = (baseA + shiftD * baseB - baseC + baseD * shiftO) / (baseB + baseD);
+    const pEq = baseA + shiftD * baseB - baseB * qEq;
+    return { qEq, pEq };
+  }
+
+  const equilibrioBase = calcularEquilibrio(0, 0);
+
+  function dibujarCurva(shiftD, shiftO, color, ancho, dashArr) {
+    let svgParts = '';
+    const W = 520, H = 400;
+    const ml = 60, mr = 30, mt = 30, mb = 60;
+    const plotW = W - ml - mr;
+    const plotH = H - mt - mb;
+    const xScale = q => ml + (q / xMax) * plotW;
+    const yScale = p => mt + plotH - (p / yMax) * plotH;
+
+    const dashAttr = dashArr ? `stroke-dasharray="${dashArr}"` : '';
+
+    const dInter = baseA + shiftD * baseB;
+    const qD_max_at_P0 = dInter / baseB;
+    let qD_start = 0;
+    let pD_start = dInter;
+    let qD_end = qD_max_at_P0;
+    let pD_end = 0;
+
+    if (pD_start > yMax) {
+      qD_start = (dInter - yMax) / baseB;
+      pD_start = yMax;
+    }
+    if (qD_end > xMax) {
+      qD_end = xMax;
+      pD_end = dInter - baseB * xMax;
+    }
+    if (qD_start < 0) qD_start = 0;
+
+    svgParts += `<line x1="${xScale(qD_start)}" y1="${yScale(pD_start)}" x2="${xScale(qD_end)}" y2="${yScale(pD_end)}" stroke="${color.demanda}" stroke-width="${ancho}" ${dashAttr}/>`;
+
+    let qO_start = Math.max(0, shiftO);
+    let pO_start = baseC + baseD * (qO_start - shiftO);
+    let qO_end = xMax;
+    let pO_end = baseC + baseD * (qO_end - shiftO);
+
+    if (shiftO < 0) {
+      qO_start = 0;
+      pO_start = baseC + baseD * (0 - shiftO);
+    }
+    if (pO_end > yMax) {
+      qO_end = shiftO + yMax / baseD;
+      pO_end = yMax;
+    }
+
+    svgParts += `<line x1="${xScale(qO_start)}" y1="${yScale(pO_start)}" x2="${xScale(qO_end)}" y2="${yScale(pO_end)}" stroke="${color.oferta}" stroke-width="${ancho}" ${dashAttr}/>`;
+
+    return svgParts;
+  }
+
+  function dibujar() {
+    const shiftD = parseInt(shiftDemandaInput.value);
+    const shiftO = parseInt(shiftOfertaInput.value);
+    valDemandaEl.textContent = shiftD > 0 ? '+' + shiftD : shiftD;
+    valOfertaEl.textContent = shiftO > 0 ? '+' + shiftO : shiftO;
+
+    const W = 520, H = 400;
+    const ml = 60, mr = 30, mt = 30, mb = 60;
+    const plotW = W - ml - mr;
+    const plotH = H - mt - mb;
+    const xScale = q => ml + (q / xMax) * plotW;
+    const yScale = p => mt + plotH - (p / yMax) * plotH;
+
+    let svgContent = '';
+
+    svgContent += `<rect x="${ml}" y="${mt}" width="${plotW}" height="${plotH}" fill="#ffffff"/>`;
+
+    for (let i = 0; i <= 10; i++) {
+      const x = xScale(i * 10);
+      svgContent += `<line x1="${x}" y1="${mt}" x2="${x}" y2="${mt+plotH}" stroke="#eeeeee" stroke-width="1"/>`;
+    }
+    for (let i = 0; i <= 10; i++) {
+      const y = yScale(i);
+      svgContent += `<line x1="${ml}" y1="${y}" x2="${ml+plotW}" y2="${y}" stroke="#eeeeee" stroke-width="1"/>`;
+    }
+
+    svgContent += `<line x1="${ml}" y1="${mt}" x2="${ml}" y2="${mt+plotH}" stroke="#333333" stroke-width="2"/>`;
+    svgContent += `<line x1="${ml}" y1="${mt+plotH}" x2="${ml+plotW}" y2="${mt+plotH}" stroke="#333333" stroke-width="2"/>`;
+
+    for (let i = 0; i <= 10; i += 2) {
+      const x = xScale(i * 10);
+      svgContent += `<text x="${x}" y="${mt+plotH+18}" text-anchor="middle" font-size="11" fill="#555555">${i*10}</text>`;
+    }
+    for (let i = 0; i <= 10; i += 2) {
+      const y = yScale(i);
+      svgContent += `<text x="${ml-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#555555">$${i}</text>`;
+    }
+
+    svgContent += `<text x="${ml+plotW/2}" y="${H-15}" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">Cantidad (unidades)</text>`;
+    svgContent += `<text x="20" y="${mt+plotH/2}" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333" transform="rotate(-90 20 ${mt+plotH/2})">Precio ($)</text>`;
+
+    if (shiftD !== 0 || shiftO !== 0) {
+      svgContent += dibujarCurva(0, 0, { demanda: '#b0b0b0', oferta: '#b0b0b0' }, 1.5, '5,4');
+    }
+
+    svgContent += dibujarCurva(shiftD, shiftO, { demanda: '#c0392b', oferta: '#2980b9' }, 3, null);
+
+    const dInter = baseA + shiftD * baseB;
+    let qD_end_lbl = dInter / baseB;
+    let pD_end_lbl = 0;
+    if (qD_end_lbl > xMax) {
+      qD_end_lbl = xMax;
+      pD_end_lbl = dInter - baseB * xMax;
+    }
+    svgContent += `<text x="${xScale(qD_end_lbl) - 12}" y="${yScale(pD_end_lbl) - 6}" font-size="14" font-weight="bold" fill="#c0392b">D</text>`;
+
+    let qO_end_lbl = xMax;
+    let pO_end_lbl = baseC + baseD * (qO_end_lbl - shiftO);
+    if (pO_end_lbl > yMax) {
+      qO_end_lbl = shiftO + yMax / baseD;
+      pO_end_lbl = yMax;
+    }
+    svgContent += `<text x="${xScale(qO_end_lbl) - 16}" y="${yScale(pO_end_lbl) - 6}" font-size="14" font-weight="bold" fill="#2980b9">O</text>`;
+
+    const { qEq, pEq } = calcularEquilibrio(shiftD, shiftO);
+
+    if (qEq > 0 && qEq < xMax && pEq > 0 && pEq < yMax) {
+      const xEq = xScale(qEq);
+      const yEq = yScale(pEq);
+      svgContent += `<line x1="${ml}" y1="${yEq}" x2="${xEq}" y2="${yEq}" stroke="#1e8449" stroke-width="1.5" stroke-dasharray="4,4"/>`;
+      svgContent += `<line x1="${xEq}" y1="${mt+plotH}" x2="${xEq}" y2="${yEq}" stroke="#1e8449" stroke-width="1.5" stroke-dasharray="4,4"/>`;
+      svgContent += `<circle cx="${xEq}" cy="${yEq}" r="8" fill="#1e8449" stroke="#ffffff" stroke-width="2"/>`;
+      svgContent += `<text x="${xEq+12}" y="${yEq-10}" font-size="15" font-weight="bold" fill="#1e8449">E</text>`;
+      svgContent += `<text x="${ml-8}" y="${yEq+4}" text-anchor="end" font-size="11" font-weight="bold" fill="#1e8449">$${pEq.toFixed(1)}</text>`;
+      svgContent += `<text x="${xEq}" y="${mt+plotH+30}" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e8449">${qEq.toFixed(0)}</text>`;
+    }
+
+    if (shiftD !== 0 || shiftO !== 0) {
+      const ePrev = equilibrioBase;
+      if (ePrev.qEq > 0 && ePrev.qEq < xMax && ePrev.pEq > 0 && ePrev.pEq < yMax) {
+        const xPrev = xScale(ePrev.qEq);
+        const yPrev = yScale(ePrev.pEq);
+        svgContent += `<circle cx="${xPrev}" cy="${yPrev}" r="5" fill="#ffffff" stroke="#b0b0b0" stroke-width="2"/>`;
+      }
+    }
+
+    svg.innerHTML = svgContent;
+
+    precioEqEl.textContent = `$${pEq.toFixed(2)}`;
+    cantidadEqEl.textContent = `${qEq.toFixed(0)} u`;
+
+    const dP = pEq - equilibrioBase.pEq;
+    const dQ = qEq - equilibrioBase.qEq;
+
+    if (Math.abs(dP) < 0.01) {
+      deltaPrecioEl.textContent = 'sin cambio';
+      deltaPrecioEl.className = 'delta-eq';
+    } else if (dP > 0) {
+      deltaPrecioEl.textContent = `↑ +$${dP.toFixed(2)}`;
+      deltaPrecioEl.className = 'delta-up';
+    } else {
+      deltaPrecioEl.textContent = `↓ -$${Math.abs(dP).toFixed(2)}`;
+      deltaPrecioEl.className = 'delta-down';
+    }
+
+    if (Math.abs(dQ) < 0.5) {
+      deltaCantidadEl.textContent = 'sin cambio';
+      deltaCantidadEl.className = 'delta-eq';
+    } else if (dQ > 0) {
+      deltaCantidadEl.textContent = `↑ +${dQ.toFixed(0)} u`;
+      deltaCantidadEl.className = 'delta-up';
+    } else {
+      deltaCantidadEl.textContent = `↓ ${dQ.toFixed(0)} u`;
+      deltaCantidadEl.className = 'delta-down';
+    }
+  }
+
+  function aplicarEscenario(idx) {
+    const esc = escenarios[idx];
+    shiftDemandaInput.value = esc.shiftD;
+    shiftOfertaInput.value = esc.shiftO;
+    document.getElementById('esc-titulo').textContent = esc.titulo;
+    document.getElementById('esc-descripcion').textContent = esc.descripcion;
+    document.getElementById('esc-resultado').innerHTML = `<strong>Resultado:</strong> ${esc.resultado}`;
+    document.querySelectorAll('.btn-escenario').forEach((btn, i) => {
+      btn.classList.toggle('activo', i === idx);
+    });
+    dibujar();
+  }
+
+  function modoLibre() {
+    document.querySelectorAll('.btn-escenario').forEach(btn => btn.classList.remove('activo'));
+    document.getElementById('esc-titulo').textContent = '🎛️ Modo libre';
+    document.getElementById('esc-descripcion').textContent = 'Estás experimentando con los controles manuales. Mueve los deslizadores y observa cómo cambian las curvas y el punto de equilibrio.';
+    document.getElementById('esc-resultado').innerHTML = '<strong>Pista:</strong> compara la curva de color con la curva gris discontinua (la original) para ver cuánto se ha desplazado.';
+  }
+
+  shiftDemandaInput.addEventListener('input', () => { modoLibre(); dibujar(); });
+  shiftOfertaInput.addEventListener('input', () => { modoLibre(); dibujar(); });
+
+  document.querySelectorAll('.btn-escenario').forEach(btn => {
+    btn.addEventListener('click', () => aplicarEscenario(parseInt(btn.dataset.esc)));
+  });
+
+  btnReset.addEventListener('click', () => aplicarEscenario(0));
+
+  document.querySelectorAll('.pregunta').forEach(preg => {
+    const correcta = preg.dataset.correcta;
+    const feedback = preg.querySelector('.feedback');
+    const explicaciones = {
+      'a': 'Si baja el precio pero sube la cantidad, eso pasa cuando aumenta la oferta, no la demanda.',
+      'b': 'Cuando aumenta la demanda, los consumidores compiten por el producto: el precio sube y los productores responden vendiendo más.',
+      'c': 'Si baja la oferta (menos producto disponible), el precio sube y la cantidad baja.',
+      'd': 'Cuando baja la demanda, los vendedores tienen exceso de producto y bajan los precios para atraer compradores.'
+    };
+    preg.querySelectorAll('.opciones button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        preg.querySelectorAll('.opciones button').forEach(b => {
+          b.disabled = true;
+          b.classList.remove('correcta', 'incorrecta');
+        });
+        const seleccion = btn.dataset.op;
+        if (seleccion === correcta) {
+          btn.classList.add('correcta');
+          feedback.textContent = '✅ ¡Correcto! ' + explicaciones[correcta];
+          feedback.style.color = '#1e8449';
+        } else {
+          btn.classList.add('incorrecta');
+          preg.querySelector(`[data-op="${correcta}"]`).classList.add('correcta');
+          feedback.textContent = '❌ La respuesta correcta es (' + correcta + '). ' + explicaciones[correcta];
+          feedback.style.color = '#c0392b';
+        }
+      });
+    });
+  });
+
+  aplicarEscenario(0);
+})();
+</script>
+</body>
+</html>
