@@ -1,1 +1,1594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorando el mercado de valores | GED Estudios Sociales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-ss:#8a5a00;
+  --c-ss-dark:#5c3d00;
+  --c-ss-light:#fef9e7;
+  --c-ss-soft:#fdf4d3;
+  --c-bg:#faf7f0;
+  --c-card:#ffffff;
+  --c-text:#1f2937;
+  --c-muted:#6b7280;
+  --c-border:#e5e7eb;
+  --c-up:#16a34a;
+  --c-up-soft:#dcfce7;
+  --c-down:#dc2626;
+  --c-down-soft:#fee2e2;
+  --c-neutral:#3b82f6;
+  --c-neutral-soft:#dbeafe;
+  --c-warning:#d97706;
+  --c-shadow:0 4px 12px #00000014;
+  --c-shadow-lg:0 8px 24px #0000001f;
+}
 
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  background:var(--c-bg);
+  color:var(--c-text);
+  line-height:1.6;
+  min-height:100vh;
+  padding:20px 12px 60px;
+}
+
+.wrap{max-width:960px;margin:0 auto}
+
+/* HEADER */
+header{
+  background:var(--c-card);
+  border-radius:16px;
+  padding:24px 28px;
+  margin-bottom:20px;
+  box-shadow:var(--c-shadow);
+  border-top:6px solid var(--c-ss);
+}
+header h1{
+  font-family:'Merriweather',Georgia,serif;
+  font-size:26px;
+  color:var(--c-ss-dark);
+  margin-bottom:6px;
+  line-height:1.25;
+}
+header .subtitle{
+  color:var(--c-muted);
+  font-size:14px;
+  font-weight:500;
+}
+header .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+header .badge{
+  background:var(--c-ss-soft);
+  color:var(--c-ss-dark);
+  padding:4px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* PROGRESS */
+.progress-bar{
+  display:flex;
+  gap:6px;
+  margin-bottom:20px;
+  padding:0 4px;
+}
+.progress-step{
+  flex:1;
+  height:6px;
+  background:var(--c-border);
+  border-radius:3px;
+  transition:background .3s;
+}
+.progress-step.done{background:var(--c-up)}
+.progress-step.active{background:var(--c-ss)}
+
+/* CARD */
+.card{
+  background:var(--c-card);
+  border-radius:16px;
+  padding:28px;
+  box-shadow:var(--c-shadow);
+  margin-bottom:16px;
+}
+.card h2{
+  font-family:'Merriweather',Georgia,serif;
+  font-size:22px;
+  color:var(--c-ss-dark);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.card h3{
+  font-size:17px;
+  color:var(--c-text);
+  margin:20px 0 10px;
+  font-weight:600;
+}
+.card p{margin-bottom:12px;color:#374151}
+.card strong{color:var(--c-ss-dark)}
+
+/* CONCEPT BOX */
+.concept{
+  background:var(--c-ss-soft);
+  border-left:4px solid var(--c-ss);
+  padding:14px 18px;
+  border-radius:8px;
+  margin:16px 0;
+}
+.concept p{margin:0;color:var(--c-ss-dark);font-weight:500}
+
+/* PIZZA SVG container */
+.pizza-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  margin:24px 0;
+  padding:20px;
+  background:var(--c-ss-light);
+  border-radius:12px;
+}
+.pizza-legend{
+  font-size:14px;
+}
+.pizza-legend p{margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pizza-legend .dot{
+  width:14px;height:14px;border-radius:3px;display:inline-block;
+}
+
+/* QUESTION */
+.question-box{
+  background:#f9fafb;
+  border:2px solid var(--c-border);
+  border-radius:12px;
+  padding:18px;
+  margin-top:18px;
+}
+.question-box .q-label{
+  font-weight:700;
+  color:var(--c-ss-dark);
+  margin-bottom:12px;
+  font-size:15px;
+}
+.options{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.opt{
+  background:#fff;
+  border:2px solid var(--c-border);
+  padding:12px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  text-align:left;
+  font-size:15px;
+  font-family:inherit;
+  color:var(--c-text);
+  transition:all .15s;
+}
+.opt:hover{border-color:var(--c-ss);background:var(--c-ss-light)}
+.opt.correct{
+  background:var(--c-up-soft);
+  border-color:var(--c-up);
+  color:#14532d;
+  font-weight:600;
+}
+.opt.wrong{
+  background:var(--c-down-soft);
+  border-color:var(--c-down);
+  color:#7f1d1d;
+}
+.opt:disabled{cursor:not-allowed;opacity:.85}
+
+.feedback{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+  display:none;
+}
+.feedback.show{display:block}
+.feedback.ok{background:var(--c-up-soft);color:#14532d;border-left:4px solid var(--c-up)}
+.feedback.bad{background:var(--c-down-soft);color:#7f1d1d;border-left:4px solid var(--c-down)}
+.feedback.info{background:var(--c-neutral-soft);color:#1e3a8a;border-left:4px solid var(--c-neutral)}
+
+/* CALC INPUT */
+.calc{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+.calc input{
+  width:90px;
+  padding:8px 12px;
+  border:2px solid var(--c-border);
+  border-radius:8px;
+  font-size:16px;
+  font-family:inherit;
+  text-align:center;
+}
+.calc input:focus{outline:none;border-color:var(--c-ss)}
+.calc-line{
+  background:#f9fafb;
+  padding:12px 16px;
+  border-radius:10px;
+  font-family:'Courier New',monospace;
+  font-size:16px;
+  font-weight:600;
+}
+
+/* CHART */
+.chart-wrap{
+  background:#fafafa;
+  border:1px solid var(--c-border);
+  border-radius:12px;
+  padding:18px;
+  margin:16px 0;
+}
+.chart-title{
+  font-size:14px;
+  color:var(--c-muted);
+  text-align:center;
+  margin-bottom:8px;
+}
+.chart-title strong{color:var(--c-ss-dark)}
+
+/* COMPANIES */
+.companies{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+  margin:18px 0;
+}
+.company{
+  background:#fff;
+  border:2px solid var(--c-border);
+  border-radius:12px;
+  padding:18px;
+  transition:all .2s;
+}
+.company:hover{box-shadow:var(--c-shadow)}
+.company .c-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:8px;
+}
+.company .c-name{
+  font-weight:700;
+  font-size:17px;
+  color:var(--c-ss-dark);
+}
+.company .c-emoji{font-size:24px}
+.company .c-desc{font-size:13px;color:var(--c-muted);margin-bottom:10px}
+.company .c-risk{
+  display:inline-block;
+  padding:3px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:10px;
+}
+.risk-low{background:var(--c-up-soft);color:#14532d}
+.risk-med{background:#fef3c7;color:#78350f}
+.risk-high{background:var(--c-down-soft);color:#7f1d1d}
+.company .c-price{
+  font-size:22px;
+  font-weight:700;
+  color:var(--c-text);
+  margin-bottom:8px;
+}
+.company .c-input-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:10px;
+}
+.company .c-input-row label{
+  font-size:13px;
+  color:var(--c-muted);
+  flex:1;
+}
+.company input[type="number"]{
+  width:80px;
+  padding:6px 8px;
+  border:2px solid var(--c-border);
+  border-radius:8px;
+  font-size:15px;
+  font-family:inherit;
+  text-align:center;
+}
+.company input[type="number"]:focus{outline:none;border-color:var(--c-ss)}
+.company .c-cost{
+  margin-top:8px;
+  font-size:13px;
+  color:var(--c-muted);
+  text-align:right;
+}
+.company .c-cost strong{color:var(--c-ss-dark)}
+
+/* BALANCE */
+.balance-card{
+  background:linear-gradient(135deg,#8a5a00,#a16b00);
+  color:#fff;
+  padding:18px 22px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:18px 0;
+}
+.balance-card .b-label{font-size:13px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
+.balance-card .b-value{font-size:30px;font-weight:800;font-family:'Merriweather',serif}
+.balance-card .b-right{text-align:right}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--c-ss);
+  color:#fff;
+  border:none;
+  padding:12px 28px;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:inherit;
+  transition:all .15s;
+  box-shadow:0 2px 6px #8a5a0033;
+}
+.btn:hover:not(:disabled){background:var(--c-ss-dark);transform:translateY(-1px);box-shadow:0 4px 12px #8a5a0044}
+.btn:disabled{background:#9ca3af;cursor:not-allowed;box-shadow:none;opacity:.7}
+.btn-secondary{background:#fff;color:var(--c-ss);border:2px solid var(--c-ss)}
+.btn-secondary:hover:not(:disabled){background:var(--c-ss-light);color:var(--c-ss-dark)}
+.btn-success{background:var(--c-up);box-shadow:0 2px 6px #16a34a33}
+.btn-success:hover:not(:disabled){background:#15803d}
+.nav-buttons{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:24px;
+}
+
+/* DAY SIMULATOR */
+.market-header{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+.metric{
+  background:#fff;
+  border:2px solid var(--c-border);
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+}
+.metric .m-label{
+  font-size:11px;
+  color:var(--c-muted);
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  font-weight:600;
+}
+.metric .m-value{
+  font-size:22px;
+  font-weight:700;
+  margin-top:4px;
+  font-family:'Merriweather',serif;
+}
+.metric.day{border-color:var(--c-ss)}
+.metric.day .m-value{color:var(--c-ss-dark)}
+.metric.portfolio{border-color:var(--c-neutral)}
+.metric.portfolio .m-value{color:var(--c-neutral)}
+.metric.mood .m-value{font-size:32px}
+
+.news-card{
+  background:#fffbeb;
+  border:2px solid #fbbf24;
+  border-radius:12px;
+  padding:16px 18px;
+  margin:16px 0;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.news-card .news-icon{font-size:32px;flex-shrink:0}
+.news-card .news-body{flex:1}
+.news-card .news-title{
+  font-weight:700;
+  color:#78350f;
+  margin-bottom:4px;
+  font-size:15px;
+}
+.news-card .news-text{
+  color:#92400e;
+  font-size:14px;
+  margin:0;
+}
+
+.predict-box{
+  background:#eff6ff;
+  border:2px solid #93c5fd;
+  border-radius:12px;
+  padding:14px 18px;
+  margin-top:12px;
+}
+.predict-box .p-label{
+  font-weight:700;
+  color:#1e3a8a;
+  margin-bottom:10px;
+  font-size:14px;
+}
+.predict-options{
+  display:flex;
+  gap:10px;
+}
+.predict-options button{
+  flex:1;
+  padding:10px;
+  border:2px solid #93c5fd;
+  background:#fff;
+  border-radius:8px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  color:#1e3a8a;
+  transition:all .15s;
+}
+.predict-options button:hover{background:#dbeafe}
+.predict-options button.selected{background:#1e40af;color:#fff;border-color:#1e40af}
+
+/* PRICE LIST during simulation */
+.price-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin:16px 0;
+}
+.price-row{
+  background:#fff;
+  border:2px solid var(--c-border);
+  border-radius:10px;
+  padding:12px 14px;
+}
+.price-row .p-name{
+  font-weight:600;
+  font-size:14px;
+  color:var(--c-text);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.price-row .p-shares{
+  font-size:12px;
+  color:var(--c-muted);
+  margin-top:2px;
+}
+.price-row .p-prices{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:8px;
+}
+.price-row .p-price{
+  font-size:18px;
+  font-weight:700;
+}
+.price-row .p-change{
+  font-size:13px;
+  font-weight:600;
+  padding:2px 8px;
+  border-radius:6px;
+}
+.price-row .p-change.up{background:var(--c-up-soft);color:#14532d}
+.price-row .p-change.down{background:var(--c-down-soft);color:#7f1d1d}
+.price-row .p-change.flat{background:#f3f4f6;color:var(--c-muted)}
+
+/* RESULTS */
+.result-hero{
+  text-align:center;
+  padding:30px 20px;
+  border-radius:16px;
+  margin:20px 0;
+}
+.result-hero.win{background:linear-gradient(135deg,#dcfce7,#86efac);color:#14532d}
+.result-hero.lose{background:linear-gradient(135deg,#fee2e2,#fca5a5);color:#7f1d1d}
+.result-hero.flat{background:linear-gradient(135deg,#f3f4f6,#d1d5db);color:#374151}
+.result-hero .r-emoji{font-size:64px;margin-bottom:8px}
+.result-hero .r-msg{font-size:18px;font-weight:600;margin-bottom:6px;font-family:'Merriweather',serif}
+.result-hero .r-amount{font-size:42px;font-weight:800;font-family:'Merriweather',serif;margin:8px 0}
+.result-hero .r-pct{font-size:18px;font-weight:600;opacity:.85}
+
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin:18px 0;
+}
+.result-stat{
+  background:#fff;
+  border:2px solid var(--c-border);
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+}
+.result-stat .rs-label{
+  font-size:12px;
+  color:var(--c-muted);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  font-weight:600;
+}
+.result-stat .rs-value{
+  font-size:22px;
+  font-weight:700;
+  margin-top:4px;
+  font-family:'Merriweather',serif;
+  color:var(--c-text);
+}
+
+.formula-box{
+  background:var(--c-ss-light);
+  border:1px solid var(--c-ss);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:16px 0;
+  font-family:'Courier New',monospace;
+  font-size:14px;
+  text-align:center;
+  color:var(--c-ss-dark);
+}
+.formula-box strong{font-size:16px}
+
+/* CLOSING */
+.lesson-list{
+  list-style:none;
+  margin:16px 0;
+}
+.lesson-list li{
+  padding:12px 14px;
+  margin-bottom:8px;
+  border-radius:10px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:15px;
+}
+.lesson-list li.ok{background:var(--c-up-soft);color:#14532d}
+.lesson-list li.warn{background:#fef3c7;color:#78350f}
+.lesson-list li.info{background:var(--c-neutral-soft);color:#1e3a8a}
+.lesson-list .l-emoji{font-size:22px;flex-shrink:0}
+
+/* HIDDEN */
+.hidden{display:none}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+  body{padding:12px 8px 40px}
+  header{padding:18px 20px}
+  header h1{font-size:21px}
+  .card{padding:20px 18px}
+  .card h2{font-size:19px}
+  .result-hero .r-amount{font-size:32px}
+  .market-header{grid-template-columns:1fr 1fr}
+  .metric.mood{grid-column:1/-1}
+}
+
+/* PIZZA animation */
+@keyframes pulse-slice {
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+}
+.pizza-mine{
+  transform-origin:300px 200px;
+  animation:pulse-slice 2s ease-in-out infinite;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  margin-top:30px;
+  color:var(--c-muted);
+  font-size:12px;
+  padding:0 20px;
+}
+footer strong{color:var(--c-ss-dark)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <h1>📈 Explorando el mercado de valores</h1>
+  <div class="subtitle">Una introducción interactiva para estudiantes de GED — Estudios Sociales · Economía</div>
+  <div class="meta">
+    <span class="badge">Nivel GED</span>
+    <span class="badge">Educación financiera</span>
+    <span class="badge">~15 minutos</span>
+  </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- DYNAMIC CONTENT -->
+<div id="screen"></div>
+
+<footer>
+  <p>Material educativo para <strong>GEDparaHispanos.com</strong> · Prof. José M. Fernández con Claude · 2026</p>
+</footer>
+
+</div>
+
+<script>
+'use strict';
+
+/* ================ STATE ================ */
+const TOTAL_STEPS = 7;
+const STARTING_CASH = 1000;
+
+const state = {
+  step: 0,
+  cash: STARTING_CASH,
+  q1Answered: false,
+  q2Answered: false,
+  calcDone: false,
+  invested: false,
+  shares: { GreenEnergy: 0, FastTech: 0, SafeBank: 0 },
+  prices: { GreenEnergy: 20, FastTech: 50, SafeBank: 30 },
+  priceHistory: {
+    GreenEnergy: [20],
+    FastTech: [50],
+    SafeBank: [30]
+  },
+  day: 0,
+  totalDays: 5,
+  currentPrediction: null,
+  newsLog: [],
+  techNova: null,
+  newsOrder: []
+};
+
+/* Company metadata */
+const COMPANIES = {
+  GreenEnergy: {
+    emoji:'🌱',
+    desc:'Energía renovable. Tendencia: sube lentamente.',
+    risk:'low',
+    riskLabel:'Riesgo bajo',
+    color:'#16a34a'
+  },
+  FastTech: {
+    emoji:'🚀',
+    desc:'Tecnología. Tendencia: muy volátil, sube y baja.',
+    risk:'high',
+    riskLabel:'Riesgo alto',
+    color:'#dc2626'
+  },
+  SafeBank: {
+    emoji:'🏦',
+    desc:'Banco tradicional. Tendencia: muy estable.',
+    risk:'low',
+    riskLabel:'Riesgo muy bajo',
+    color:'#3b82f6'
+  }
+};
+
+/* News events for each day */
+const NEWS = [
+  {
+    day:1,
+    icon:'✅',
+    title:'GreenEnergy lanza panel solar revolucionario',
+    text:'La empresa anuncia una nueva tecnología más eficiente. Los inversionistas reaccionan positivamente.',
+    affects:'GreenEnergy',
+    direction:'up',
+    impact:0.15
+  },
+  {
+    day:2,
+    icon:'⚠️',
+    title:'FastTech pierde una demanda millonaria',
+    text:'Un tribunal ordena a FastTech pagar una indemnización importante. Los inversionistas se preocupan.',
+    affects:'FastTech',
+    direction:'down',
+    impact:0.20
+  },
+  {
+    day:3,
+    icon:'📰',
+    title:'El banco central baja las tasas de interés',
+    text:'Buena noticia para los bancos. SafeBank podría beneficiarse.',
+    affects:'SafeBank',
+    direction:'up',
+    impact:0.08
+  },
+  {
+    day:4,
+    icon:'🎉',
+    title:'FastTech presenta nuevo producto exitoso',
+    text:'Las ventas superan las expectativas. La empresa recupera la confianza del mercado.',
+    affects:'FastTech',
+    direction:'up',
+    impact:0.18
+  },
+  {
+    day:5,
+    icon:'🌍',
+    title:'Día tranquilo en el mercado',
+    text:'No hay grandes noticias hoy. Los precios se mueven solo un poquito según la oferta y demanda diaria.',
+    affects:null,
+    direction:'flat',
+    impact:0.03
+  }
+];
+
+/* ================ HELPERS ================ */
+
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function generateTechNova(){
+  // Generate 5 days of TechNova prices with at least one clear UP movement of $3–$9
+  let attempts = 0;
+  while(attempts++ < 100){
+    const data = [];
+    const start = 45 + Math.floor(Math.random() * 11); // $45-55
+    data.push(start);
+    for(let i = 1; i < 5; i++){
+      const change = Math.floor(Math.random() * 11) - 5; // -5 to +5
+      const next = Math.max(40, Math.min(70, data[i-1] + change));
+      data.push(next);
+    }
+    // Find biggest UP move between consecutive days
+    let bestIdx = -1, bestDiff = 0;
+    for(let i = 1; i < 5; i++){
+      const diff = data[i] - data[i-1];
+      if(diff > bestDiff){ bestDiff = diff; bestIdx = i; }
+    }
+    if(bestDiff >= 3 && bestDiff <= 9){
+      return {
+        data: data,
+        fromPrice: data[bestIdx - 1],
+        toPrice: data[bestIdx],
+        diff: bestDiff,
+        fromUserDay: bestIdx,       // 1-indexed
+        toUserDay: bestIdx + 1
+      };
+    }
+  }
+  // Fallback (very unlikely)
+  return {
+    data: [50, 52, 49, 55, 53],
+    fromPrice: 49, toPrice: 55, diff: 6,
+    fromUserDay: 3, toUserDay: 4
+  };
+}
+
+/* ================ RENDER ================ */
+
+const screen = document.getElementById('screen');
+const progressBar = document.getElementById('progressBar');
+
+function renderProgress(){
+  let html = '';
+  for(let i = 0; i < TOTAL_STEPS; i++){
+    let cls = 'progress-step';
+    if(i < state.step) cls += ' done';
+    else if(i === state.step) cls += ' active';
+    html += `<div class="${cls}"></div>`;
+  }
+  progressBar.innerHTML = html;
+}
+
+function go(step){
+  state.step = step;
+  renderProgress();
+  render();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function render(){
+  switch(state.step){
+    case 0: renderWelcome(); break;
+    case 1: renderConcept(); break;
+    case 2: renderMovement(); break;
+    case 3: renderInvest(); break;
+    case 4: renderSimulation(); break;
+    case 5: renderResults(); break;
+    case 6: renderClosing(); break;
+  }
+}
+
+/* ---------- STEP 0: WELCOME ---------- */
+function renderWelcome(){
+  screen.innerHTML = `
+    <div class="card">
+      <h2>👋 ¡Bienvenido al mercado de valores!</h2>
+      <p>En esta actividad vas a aprender, paso a paso, cómo funciona algo que aparece en las noticias todos los días: <strong>el mercado de valores</strong>.</p>
+
+      <h3>📚 Lo que vas a aprender</h3>
+      <ul class="lesson-list">
+        <li class="info"><span class="l-emoji">1️⃣</span> Qué es el mercado de valores y qué es una acción.</li>
+        <li class="info"><span class="l-emoji">2️⃣</span> Cómo suben y bajan los precios.</li>
+        <li class="info"><span class="l-emoji">3️⃣</span> Cómo calcular ganancias y pérdidas.</li>
+        <li class="info"><span class="l-emoji">4️⃣</span> Qué significa el riesgo al invertir.</li>
+      </ul>
+
+      <div class="concept">
+        <p>💡 Al final, vas a tener <strong>$1,000 virtuales</strong> para invertir en empresas ficticias y ver qué pasa con tu dinero.</p>
+      </div>
+
+      <div class="nav-buttons">
+        <span></span>
+        <button class="btn" onclick="go(1)">Comenzar →</button>
+      </div>
+    </div>
+  `;
+}
+
+/* ---------- STEP 1: CONCEPT ---------- */
+function renderConcept(){
+  screen.innerHTML = `
+    <div class="card">
+      <h2>🏪 ¿Qué es el mercado de valores?</h2>
+      <p>El <strong>mercado de valores</strong> es un lugar (hoy día, más bien una red electrónica) donde las personas <strong>compran y venden pequeñas partes de empresas</strong>.</p>
+      <p>Esas pequeñas partes se llaman <strong>acciones</strong>. Si compras una acción de una empresa, eres <strong>dueño de un pedacito</strong> de esa empresa.</p>
+
+      <h3>🍕 Piensa en una pizza</h3>
+      <p>Imagina una pizza dividida en 4 partes iguales. La pizza completa es la empresa. Cada rebanada es una acción.</p>
+
+      <div class="pizza-wrap">
+        <svg width="280" height="280" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="Pizza dividida en 4 rebanadas">
+          <!-- pizza base -->
+          <circle cx="300" cy="200" r="170" fill="#fcd34d" stroke="#92400e" stroke-width="3"/>
+          <!-- 4 slices dividers -->
+          <line x1="300" y1="30" x2="300" y2="370" stroke="#92400e" stroke-width="3"/>
+          <line x1="130" y1="200" x2="470" y2="200" stroke="#92400e" stroke-width="3"/>
+          <!-- highlighted slice (top-right): your slice -->
+          <path d="M 300 200 L 300 30 A 170 170 0 0 1 470 200 Z" fill="#dc2626" opacity="0.85" class="pizza-mine"/>
+          <!-- pepperoni dots -->
+          <circle cx="230" cy="140" r="14" fill="#7c2d12"/>
+          <circle cx="370" cy="140" r="14" fill="#7c2d12"/>
+          <circle cx="230" cy="260" r="14" fill="#7c2d12"/>
+          <circle cx="370" cy="260" r="14" fill="#7c2d12"/>
+          <circle cx="270" cy="100" r="9" fill="#7c2d12"/>
+          <circle cx="330" cy="300" r="9" fill="#7c2d12"/>
+          <!-- labels -->
+          <text x="380" y="115" font-size="18" font-weight="700" fill="#fff" font-family="Poppins,sans-serif">¡TUYA!</text>
+        </svg>
+
+        <div class="pizza-legend">
+          <p><span class="dot" style="background:#fcd34d"></span> Pizza = Empresa completa</p>
+          <p><span class="dot" style="background:#dc2626"></span> Tu rebanada = Tu acción</p>
+          <p style="margin-top:10px;font-style:italic;color:var(--c-muted);max-width:200px;font-size:13px">Si la pizza tiene 4 rebanadas y tú tienes 1, eres dueño del 25% de la empresa.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <p>💡 Las empresas grandes tienen <strong>millones de acciones</strong>. Por eso una persona común puede comprar unas pocas sin gastar una fortuna.</p>
+      </div>
+
+      <div class="question-box">
+        <div class="q-label">❓ Pregunta:</div>
+        <p style="margin-bottom:0">Si compras una acción de una empresa, ¿qué significa?</p>
+        <div class="options" id="q1Options">
+          <button class="opt" onclick="answerQ1(this,'A')">A) Le prestaste dinero a la empresa.</button>
+          <button class="opt" onclick="answerQ1(this,'B')">B) Eres dueño de una parte de la empresa.</button>
+          <button class="opt" onclick="answerQ1(this,'C')">C) Compraste un producto de la empresa.</button>
+        </div>
+        <div id="q1Feedback" class="feedback"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" onclick="go(0)">← Atrás</button>
+        <button class="btn" id="btnNext1" onclick="go(2)" disabled>Siguiente →</button>
+      </div>
+    </div>
+  `;
+  if(state.q1Answered){
+    document.getElementById('btnNext1').disabled = false;
+  }
+}
+
+function answerQ1(btn, letter){
+  // disable all
+  const opts = document.querySelectorAll('#q1Options .opt');
+  opts.forEach(o => o.disabled = true);
+  const fb = document.getElementById('q1Feedback');
+  if(letter === 'B'){
+    btn.classList.add('correct');
+    fb.className = 'feedback ok show';
+    fb.innerHTML = '✅ <strong>¡Correcto!</strong> Una acción te convierte en dueño de una parte (pequeña) de la empresa. Si la empresa gana dinero, tu pedacito también puede valer más.';
+    state.q1Answered = true;
+    document.getElementById('btnNext1').disabled = false;
+  } else {
+    btn.classList.add('wrong');
+    // also highlight correct one
+    opts.forEach(o => { if(o.textContent.startsWith('B)')) o.classList.add('correct') });
+    fb.className = 'feedback bad show';
+    if(letter === 'A'){
+      fb.innerHTML = '❌ Esa es la definición de un <strong>préstamo</strong> o un bono, no de una acción. La respuesta correcta es <strong>B</strong>: eres dueño de una parte de la empresa.';
+    } else {
+      fb.innerHTML = '❌ Comprar un producto es cuando vas a la tienda. Una acción es algo distinto. La respuesta correcta es <strong>B</strong>: eres dueño de una parte de la empresa.';
+    }
+    state.q1Answered = true;
+    document.getElementById('btnNext1').disabled = false;
+  }
+}
+
+/* ---------- STEP 2: MOVEMENT ---------- */
+function renderMovement(){
+  // Generate TechNova data once per session (or after full reset)
+  if(!state.techNova){ state.techNova = generateTechNova(); }
+  const tn = state.techNova;
+  const techNova = tn.data;
+
+  screen.innerHTML = `
+    <div class="card">
+      <h2>📊 ¿Cómo se mueve el mercado?</h2>
+      <p>Los precios de las acciones <strong>suben y bajan</strong> todos los días. ¿Por qué?</p>
+
+      <ul class="lesson-list">
+        <li class="info"><span class="l-emoji">📈</span> <strong>Oferta y demanda:</strong> si mucha gente quiere comprar, el precio sube. Si todos quieren vender, baja.</li>
+        <li class="info"><span class="l-emoji">📰</span> <strong>Noticias:</strong> una buena noticia hace subir el precio; una mala lo hace bajar.</li>
+        <li class="info"><span class="l-emoji">💼</span> <strong>Resultados de la empresa:</strong> si gana mucho dinero, sube; si pierde, baja.</li>
+      </ul>
+
+      <h3>🔍 Veamos un ejemplo: la empresa <em>TechNova</em></h3>
+      <div class="chart-wrap">
+        <div class="chart-title">Precio de la acción de <strong>TechNova</strong> durante 5 días</div>
+        ${drawLineChart(techNova, ['Día 1','Día 2','Día 3','Día 4','Día 5'])}
+      </div>
+
+      <div class="question-box">
+        <div class="q-label">❓ Pregunta 1:</div>
+        <p style="margin-bottom:6px">¿Qué pasó con el precio entre el <strong>Día ${tn.fromUserDay}</strong> ($${tn.fromPrice}) y el <strong>Día ${tn.toUserDay}</strong> ($${tn.toPrice})?</p>
+        <div class="options" id="q2Options">
+          <button class="opt" onclick="answerQ2(this,'A')">A) El precio bajó.</button>
+          <button class="opt" onclick="answerQ2(this,'B')">B) El precio subió.</button>
+          <button class="opt" onclick="answerQ2(this,'C')">C) Se mantuvo igual.</button>
+        </div>
+        <div id="q2Feedback" class="feedback"></div>
+      </div>
+
+      <div class="question-box" style="margin-top:14px">
+        <div class="q-label">🧮 Pregunta 2 — Calcula la ganancia:</div>
+        <p style="margin-bottom:6px">Si compraste una acción en $${tn.fromPrice} y la vendiste en $${tn.toPrice}, ¿cuánto ganaste?</p>
+        <div class="calc">
+          <span class="calc-line">$${tn.toPrice} − $${tn.fromPrice} = $</span>
+          <input type="number" id="gainInput" placeholder="?" min="0">
+          <button class="btn btn-success" onclick="checkGain()" style="padding:8px 16px;font-size:14px">Verificar</button>
+        </div>
+        <div id="gainFeedback" class="feedback"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" onclick="go(1)">← Atrás</button>
+        <button class="btn" id="btnNext2" onclick="go(3)" ${(state.q2Answered && state.calcDone) ? '' : 'disabled'}>Siguiente →</button>
+      </div>
+    </div>
+  `;
+}
+
+function answerQ2(btn, letter){
+  const opts = document.querySelectorAll('#q2Options .opt');
+  opts.forEach(o => o.disabled = true);
+  const fb = document.getElementById('q2Feedback');
+  if(letter === 'B'){
+    btn.classList.add('correct');
+    fb.className = 'feedback ok show';
+    fb.innerHTML = '✅ <strong>¡Correcto!</strong> El precio subió de $49 a $55. La acción ganó valor.';
+    state.q2Answered = true;
+  } else {
+    btn.classList.add('wrong');
+    opts.forEach(o => { if(o.textContent.startsWith('B)')) o.classList.add('correct') });
+    fb.className = 'feedback bad show';
+    fb.innerHTML = `❌ Mira los números: $${state.techNova.fromPrice} → $${state.techNova.toPrice}. El precio <strong>subió</strong> $${state.techNova.diff}.`;
+    state.q2Answered = true;
+  }
+  checkStep2Complete();
+}
+
+function checkGain(){
+  const v = parseInt(document.getElementById('gainInput').value);
+  const fb = document.getElementById('gainFeedback');
+  const tn = state.techNova;
+  if(v === tn.diff){
+    fb.className = 'feedback ok show';
+    fb.innerHTML = `✅ <strong>¡Exacto!</strong> Ganaste $${tn.diff} por cada acción. Si tenías 10 acciones, hubieras ganado $${tn.diff * 10}. ¡Así funciona el mercado!`;
+    state.calcDone = true;
+  } else if(isNaN(v)){
+    fb.className = 'feedback info show';
+    fb.innerHTML = '✏️ Escribe un número en la casilla.';
+  } else {
+    fb.className = 'feedback bad show';
+    fb.innerHTML = `❌ No es ${v}. Recuerda: $${tn.toPrice} − $${tn.fromPrice}. Inténtalo otra vez.`;
+  }
+  checkStep2Complete();
+}
+
+function checkStep2Complete(){
+  if(state.q2Answered && state.calcDone){
+    document.getElementById('btnNext2').disabled = false;
+  }
+}
+
+/* SVG line chart helper */
+function drawLineChart(data, labels){
+  const W = 600, H = 280, padL = 50, padR = 20, padT = 30, padB = 40;
+  const innerW = W - padL - padR;
+  const innerH = H - padT - padB;
+  const min = Math.min(...data) - 2;
+  const max = Math.max(...data) + 2;
+  const range = max - min;
+  const step = innerW / (data.length - 1);
+
+  const points = data.map((v, i) => {
+    const x = padL + i * step;
+    const y = padT + innerH - ((v - min) / range) * innerH;
+    return {x, y, v};
+  });
+
+  // y-axis gridlines
+  let grid = '';
+  for(let i = 0; i <= 4; i++){
+    const y = padT + (innerH * i) / 4;
+    const val = (max - (range * i / 4)).toFixed(0);
+    grid += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#e5e7eb" stroke-width="1"/>`;
+    grid += `<text x="${padL-8}" y="${y+4}" font-size="11" fill="#6b7280" text-anchor="end" font-family="Poppins,sans-serif">$${val}</text>`;
+  }
+
+  // x-axis labels
+  let xLabels = '';
+  points.forEach((p, i) => {
+    xLabels += `<text x="${p.x}" y="${H-padB+18}" font-size="11" fill="#6b7280" text-anchor="middle" font-family="Poppins,sans-serif">${labels[i]}</text>`;
+  });
+
+  // line path
+  const pathD = points.map((p, i) => (i === 0 ? 'M' : 'L') + p.x + ',' + p.y).join(' ');
+
+  // value labels and points
+  let dots = '';
+  points.forEach((p, i) => {
+    // Color point based on change vs previous
+    let color = '#8a5a00';
+    if(i > 0){
+      color = data[i] > data[i-1] ? '#16a34a' : (data[i] < data[i-1] ? '#dc2626' : '#6b7280');
+    }
+    dots += `<circle cx="${p.x}" cy="${p.y}" r="6" fill="${color}" stroke="#fff" stroke-width="2"/>`;
+    dots += `<text x="${p.x}" y="${p.y-14}" font-size="13" font-weight="700" fill="${color}" text-anchor="middle" font-family="Poppins,sans-serif">$${p.v}</text>`;
+  });
+
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-height:300px">
+    ${grid}
+    <path d="${pathD}" fill="none" stroke="#8a5a00" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    ${dots}
+    ${xLabels}
+  </svg>`;
+}
+
+/* ---------- STEP 3: INVEST ---------- */
+function renderInvest(){
+  let companyCards = '';
+  for(const name in COMPANIES){
+    const c = COMPANIES[name];
+    const price = state.prices[name];
+    const qty = state.shares[name];
+    companyCards += `
+      <div class="company">
+        <div class="c-head">
+          <div>
+            <div class="c-name">${name}</div>
+            <span class="c-risk risk-${c.risk === 'high' ? 'high' : (name === 'SafeBank' ? 'low' : 'low')}">${c.riskLabel}</span>
+          </div>
+          <div class="c-emoji">${c.emoji}</div>
+        </div>
+        <div class="c-desc">${c.desc}</div>
+        <div class="c-price">$${price}<span style="font-size:12px;color:var(--c-muted);font-weight:400"> / acción</span></div>
+        <div class="c-input-row">
+          <label for="qty_${name}">Acciones a comprar:</label>
+          <input type="number" id="qty_${name}" min="0" value="${qty}" data-company="${name}" oninput="updateCost()">
+        </div>
+        <div class="c-cost">Costo: <strong id="cost_${name}">$${(qty * price).toFixed(0)}</strong></div>
+      </div>
+    `;
+  }
+
+  screen.innerHTML = `
+    <div class="card">
+      <h2>💼 ¡Tú eres el inversionista!</h2>
+      <p>Te entregamos <strong>$1,000 virtuales</strong>. Decide cuántas acciones comprar de cada empresa.</p>
+
+      <div class="balance-card">
+        <div>
+          <div class="b-label">Dinero disponible</div>
+          <div class="b-value" id="balanceDisplay">$1,000</div>
+        </div>
+        <div class="b-right">
+          <div class="b-label">Costo total</div>
+          <div class="b-value" id="totalCostDisplay">$0</div>
+        </div>
+      </div>
+
+      <h3>📋 Empresas disponibles</h3>
+      <div class="companies">
+        ${companyCards}
+      </div>
+
+      <div class="concept">
+        <p>💡 <strong>Diversificar</strong> significa repartir tu dinero entre varias empresas. Así, si una baja, las otras pueden compensar. <em>No pongas todos los huevos en la misma canasta.</em></p>
+      </div>
+
+      <div id="investFeedback" class="feedback"></div>
+
+      <div class="nav-buttons" style="flex-wrap:wrap">
+        <button class="btn btn-secondary" onclick="go(2)">← Atrás</button>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+          <button class="btn btn-secondary" onclick="clearInvestments()">🧹 Limpiar</button>
+          <button class="btn btn-success" id="btnInvest" onclick="confirmInvest()">✓ Confirmar y comenzar →</button>
+        </div>
+      </div>
+    </div>
+  `;
+  updateCost();
+}
+
+function clearInvestments(){
+  for(const name in COMPANIES){
+    const input = document.getElementById('qty_' + name);
+    if(input) input.value = 0;
+  }
+  updateCost();
+  const fb = document.getElementById('investFeedback');
+  if(fb){ fb.className = 'feedback'; fb.innerHTML = ''; }
+}
+
+function updateCost(){
+  let total = 0;
+  for(const name in COMPANIES){
+    const input = document.getElementById('qty_' + name);
+    const qty = Math.max(0, parseInt(input.value) || 0);
+    input.value = qty; // sanitize negative
+    const cost = qty * state.prices[name];
+    total += cost;
+    document.getElementById('cost_' + name).textContent = '$' + cost.toFixed(0);
+  }
+  const remaining = STARTING_CASH - total;
+  document.getElementById('totalCostDisplay').textContent = '$' + total.toFixed(0);
+  document.getElementById('balanceDisplay').textContent = '$' + remaining.toFixed(0);
+
+  const balDisplay = document.getElementById('balanceDisplay');
+  const balCard = balDisplay.closest('.balance-card');
+  if(remaining < 0){
+    balCard.style.background = 'linear-gradient(135deg,#dc2626,#991b1b)';
+  } else {
+    balCard.style.background = 'linear-gradient(135deg,#8a5a00,#a16b00)';
+  }
+}
+
+function confirmInvest(){
+  let total = 0;
+  const tempShares = {};
+  for(const name in COMPANIES){
+    const qty = Math.max(0, parseInt(document.getElementById('qty_' + name).value) || 0);
+    tempShares[name] = qty;
+    total += qty * state.prices[name];
+  }
+
+  const fb = document.getElementById('investFeedback');
+
+  if(total === 0){
+    fb.className = 'feedback info show';
+    fb.innerHTML = '⚠️ Compra al menos una acción para poder simular el mercado.';
+    return;
+  }
+  if(total > STARTING_CASH){
+    fb.className = 'feedback bad show';
+    fb.innerHTML = `❌ Te pasaste por <strong>$${(total - STARTING_CASH).toFixed(0)}</strong>. Reduce alguna cantidad.`;
+    return;
+  }
+
+  // confirm
+  state.shares = tempShares;
+  state.cash = STARTING_CASH - total;
+  state.invested = true;
+  state.day = 0;
+
+  // reset price history
+  state.priceHistory = {
+    GreenEnergy: [state.prices.GreenEnergy],
+    FastTech: [state.prices.FastTech],
+    SafeBank: [state.prices.SafeBank]
+  };
+  state.newsLog = [];
+
+  // Shuffle news order for variety each session
+  state.newsOrder = shuffleArray(NEWS);
+
+  go(4);
+}
+
+/* ---------- STEP 4: SIMULATION ---------- */
+function renderSimulation(){
+  // Show current day's news, allow prediction, then advance
+  if(state.day >= state.totalDays){
+    go(5);
+    return;
+  }
+
+  const news = state.newsOrder[state.day];
+  const portfolioValue = computePortfolioValue();
+  const totalValue = state.cash + portfolioValue;
+
+  const mood = totalValue > STARTING_CASH ? '😃' : (totalValue < STARTING_CASH ? '😟' : '😐');
+
+  // Price list
+  let priceListHTML = '';
+  for(const name in COMPANIES){
+    const c = COMPANIES[name];
+    const price = state.prices[name];
+    const history = state.priceHistory[name];
+    const prev = history.length > 1 ? history[history.length - 2] : price;
+    const change = price - prev;
+    const changeCls = change > 0 ? 'up' : (change < 0 ? 'down' : 'flat');
+    const changeStr = change > 0 ? '+$' + change.toFixed(2) : (change < 0 ? '-$' + Math.abs(change).toFixed(2) : '$0.00');
+    const qty = state.shares[name];
+    priceListHTML += `
+      <div class="price-row">
+        <div class="p-name"><span>${c.emoji} ${name}</span></div>
+        <div class="p-shares">Tienes ${qty} acción${qty === 1 ? '' : 'es'} · valor: $${(qty * price).toFixed(2)}</div>
+        <div class="p-prices">
+          <span class="p-price">$${price.toFixed(2)}</span>
+          <span class="p-change ${changeCls}">${changeStr}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  screen.innerHTML = `
+    <div class="card">
+      <h2>⏰ Día ${state.day + 1} en el mercado</h2>
+
+      <div class="market-header">
+        <div class="metric day">
+          <div class="m-label">Día</div>
+          <div class="m-value">${state.day + 1} / ${state.totalDays}</div>
+        </div>
+        <div class="metric portfolio">
+          <div class="m-label">Valor total</div>
+          <div class="m-value">$${totalValue.toFixed(0)}</div>
+        </div>
+        <div class="metric mood">
+          <div class="m-label">Tu estado</div>
+          <div class="m-value">${mood}</div>
+        </div>
+      </div>
+
+      <h3>📰 Noticia del día</h3>
+      <div class="news-card">
+        <div class="news-icon">${news.icon}</div>
+        <div class="news-body">
+          <div class="news-title">${news.title}</div>
+          <p class="news-text">${news.text}</p>
+        </div>
+      </div>
+
+      ${news.affects ? `
+        <div class="predict-box">
+          <div class="p-label">🤔 ¿Qué le pasará al precio de <strong>${news.affects}</strong>?</div>
+          <div class="predict-options" id="predictOpts">
+            <button onclick="predict('up', this)">📈 Subirá</button>
+            <button onclick="predict('down', this)">📉 Bajará</button>
+            <button onclick="predict('flat', this)">➡️ Igual</button>
+          </div>
+          <div id="predictFeedback" class="feedback" style="margin-top:10px"></div>
+        </div>
+      ` : `
+        <div class="predict-box">
+          <p style="margin:0;color:#1e3a8a"><strong>Día tranquilo.</strong> Los precios se moverán solo un poquito. Avanza para ver el resultado.</p>
+        </div>
+      `}
+
+      <h3 style="margin-top:24px">📊 Tus inversiones ahora</h3>
+      <div class="price-list">
+        ${priceListHTML}
+      </div>
+
+      <div class="nav-buttons">
+        <span></span>
+        <button class="btn" id="btnAdvance" onclick="advanceDay()" ${news.affects ? 'disabled' : ''}>${state.day + 1 === state.totalDays ? '🏁 Ver resultado final' : 'Siguiente día →'}</button>
+      </div>
+    </div>
+  `;
+  state.currentPrediction = null;
+}
+
+function predict(direction, btn){
+  // mark selected
+  document.querySelectorAll('#predictOpts button').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  state.currentPrediction = direction;
+
+  const news = state.newsOrder[state.day];
+  const fb = document.getElementById('predictFeedback');
+
+  if(direction === news.direction){
+    fb.className = 'feedback ok show';
+    fb.innerHTML = '✅ <strong>¡Buena predicción!</strong> Una noticia ' + (news.direction === 'up' ? 'positiva' : 'negativa') + ' como esta normalmente hace que el precio ' + (news.direction === 'up' ? 'suba' : 'baje') + '.';
+  } else {
+    fb.className = 'feedback info show';
+    fb.innerHTML = '🤔 Veamos qué pasa al avanzar el día. Una noticia así suele empujar el precio hacia ' + (news.direction === 'up' ? 'arriba' : 'abajo') + '.';
+  }
+
+  document.getElementById('btnAdvance').disabled = false;
+}
+
+function advanceDay(){
+  const news = state.newsOrder[state.day];
+
+  // Apply news effect + small random movement
+  for(const name in COMPANIES){
+    const oldPrice = state.prices[name];
+    let newPrice = oldPrice;
+
+    // News impact on affected company
+    if(news.affects === name){
+      if(news.direction === 'up') newPrice *= (1 + news.impact);
+      else if(news.direction === 'down') newPrice *= (1 - news.impact);
+    }
+
+    // Add small random volatility based on company type
+    let volatility;
+    if(name === 'FastTech') volatility = 0.06; // ±6%
+    else if(name === 'GreenEnergy') volatility = 0.03; // ±3%, slight upward drift
+    else volatility = 0.015; // SafeBank: very stable
+
+    const randomChange = (Math.random() * 2 - 1) * volatility;
+    newPrice *= (1 + randomChange);
+
+    // GreenEnergy slight upward drift
+    if(name === 'GreenEnergy') newPrice *= 1.01;
+
+    // Floor at $1
+    newPrice = Math.max(1, newPrice);
+
+    state.prices[name] = parseFloat(newPrice.toFixed(2));
+    state.priceHistory[name].push(state.prices[name]);
+  }
+
+  state.newsLog.push({day: state.day + 1, news, prediction: state.currentPrediction});
+  state.day++;
+
+  if(state.day >= state.totalDays){
+    go(5);
+  } else {
+    render();
+  }
+}
+
+function computePortfolioValue(){
+  let v = 0;
+  for(const name in COMPANIES){
+    v += state.shares[name] * state.prices[name];
+  }
+  return v;
+}
+
+/* ---------- STEP 5: RESULTS ---------- */
+function renderResults(){
+  const portfolioValue = computePortfolioValue();
+  const finalValue = state.cash + portfolioValue;
+  const gainLoss = finalValue - STARTING_CASH;
+  const pct = (gainLoss / STARTING_CASH) * 100;
+
+  const isWin = gainLoss > 0;
+  const isLose = gainLoss < 0;
+  const heroCls = isWin ? 'win' : (isLose ? 'lose' : 'flat');
+  const heroEmoji = isWin ? '🎉' : (isLose ? '😟' : '😐');
+  const heroMsg = isWin ? '¡Ganaste dinero!' : (isLose ? 'Tuviste una pérdida' : 'Quedaste igual');
+  const signStr = gainLoss >= 0 ? '+' : '−';
+  const pctSignStr = pct >= 0 ? '+' : '';
+
+  // Per-company results
+  let companyResults = '';
+  for(const name in COMPANIES){
+    const c = COMPANIES[name];
+    const start = state.priceHistory[name][0];
+    const end = state.prices[name];
+    const qty = state.shares[name];
+    const change = end - start;
+    const pctChange = ((change / start) * 100).toFixed(1);
+    const upClass = change > 0 ? 'up' : (change < 0 ? 'down' : 'flat');
+    companyResults += `
+      <div class="price-row">
+        <div class="p-name"><span>${c.emoji} ${name}</span></div>
+        <div class="p-shares">${qty} acción${qty === 1 ? '' : 'es'} · de $${start.toFixed(2)} a $${end.toFixed(2)}</div>
+        <div class="p-prices">
+          <span class="p-price">$${(qty * end).toFixed(2)}</span>
+          <span class="p-change ${upClass}">${change >= 0 ? '+' : ''}${pctChange}%</span>
+        </div>
+      </div>
+    `;
+  }
+
+  screen.innerHTML = `
+    <div class="card">
+      <h2>🏁 Resultado final de tu inversión</h2>
+
+      <div class="result-hero ${heroCls}">
+        <div class="r-emoji">${heroEmoji}</div>
+        <div class="r-msg">${heroMsg}</div>
+        <div class="r-amount">${signStr}$${Math.abs(gainLoss).toFixed(2)}</div>
+        <div class="r-pct">${pctSignStr}${pct.toFixed(2)}% de rendimiento</div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-stat">
+          <div class="rs-label">Valor inicial</div>
+          <div class="rs-value">$${STARTING_CASH.toFixed(2)}</div>
+        </div>
+        <div class="result-stat">
+          <div class="rs-label">Efectivo no invertido</div>
+          <div class="rs-value">$${state.cash.toFixed(2)}</div>
+        </div>
+        <div class="result-stat">
+          <div class="rs-label">Valor de acciones</div>
+          <div class="rs-value">$${portfolioValue.toFixed(2)}</div>
+        </div>
+        <div class="result-stat">
+          <div class="rs-label">Valor final total</div>
+          <div class="rs-value" style="color:${isWin ? 'var(--c-up)' : (isLose ? 'var(--c-down)' : 'var(--c-text)')}">$${finalValue.toFixed(2)}</div>
+        </div>
+      </div>
+
+      <h3>🧮 ¿Cómo se calcula el rendimiento?</h3>
+      <div class="formula-box">
+        Rendimiento (%) = [(Valor Final − Valor Inicial) ÷ Valor Inicial] × 100<br><br>
+        <strong>= [($${finalValue.toFixed(2)} − $${STARTING_CASH.toFixed(2)}) ÷ $${STARTING_CASH.toFixed(2)}] × 100 = ${pctSignStr}${pct.toFixed(2)}%</strong>
+      </div>
+
+      <h3>📊 Tus acciones, una por una</h3>
+      <div class="price-list">
+        ${companyResults}
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" onclick="resetSimulation()">🔄 Volver a invertir</button>
+        <button class="btn" onclick="go(6)">Conclusiones →</button>
+      </div>
+    </div>
+  `;
+}
+
+function resetSimulation(){
+  // Reset everything to defaults but keep questions answered
+  state.cash = STARTING_CASH;
+  state.shares = { GreenEnergy: 0, FastTech: 0, SafeBank: 0 };
+  state.prices = { GreenEnergy: 20, FastTech: 50, SafeBank: 30 };
+  state.priceHistory = {
+    GreenEnergy: [20],
+    FastTech: [50],
+    SafeBank: [30]
+  };
+  state.day = 0;
+  state.invested = false;
+  state.newsLog = [];
+  go(3);
+}
+
+/* ---------- STEP 6: CLOSING ---------- */
+function renderClosing(){
+  screen.innerHTML = `
+    <div class="card">
+      <h2>🎓 Conclusiones</h2>
+      <p>¡Felicitaciones! Acabas de pasar por una experiencia básica de educación financiera. Veamos las ideas más importantes:</p>
+
+      <ul class="lesson-list">
+        <li class="ok"><span class="l-emoji">✅</span><div><strong>El mercado puede generar ganancias.</strong> Si compras barato y vendes caro, ganas dinero.</div></li>
+        <li class="warn"><span class="l-emoji">⚠️</span><div><strong>También puede generar pérdidas.</strong> Si los precios bajan después de comprar, pierdes parte de tu dinero.</div></li>
+        <li class="warn"><span class="l-emoji">🎲</span><div><strong>Invertir implica riesgo.</strong> Nadie sabe exactamente qué va a pasar mañana en el mercado.</div></li>
+        <li class="info"><span class="l-emoji">🧺</span><div><strong>Diversificar reduce el riesgo.</strong> Repartir tu dinero entre varias empresas protege mejor.</div></li>
+        <li class="info"><span class="l-emoji">📰</span><div><strong>Las noticias mueven el mercado.</strong> Mantenerse informado ayuda a decidir mejor.</div></li>
+        <li class="ok"><span class="l-emoji">📚</span><div><strong>La educación financiera</strong> te ayuda a tomar decisiones inteligentes con tu dinero.</div></li>
+      </ul>
+
+      <div class="concept">
+        <p>💡 <strong>Recuerda:</strong> en la vida real, solo se debe invertir dinero que <em>no necesitas a corto plazo</em>, y siempre conviene aprender más antes de poner dinero real en juego.</p>
+      </div>
+
+      <h3>📖 Vocabulario clave del GED</h3>
+      <div class="price-list">
+        <div class="price-row">
+          <div class="p-name"><span><strong>Acción</strong></span></div>
+          <div class="p-shares">Pequeña parte de la propiedad de una empresa.</div>
+        </div>
+        <div class="price-row">
+          <div class="p-name"><span><strong>Inversionista</strong></span></div>
+          <div class="p-shares">Persona que pone su dinero esperando obtener una ganancia.</div>
+        </div>
+        <div class="price-row">
+          <div class="p-name"><span><strong>Rendimiento</strong></span></div>
+          <div class="p-shares">Porcentaje que ganaste (o perdiste) sobre tu inversión.</div>
+        </div>
+        <div class="price-row">
+          <div class="p-name"><span><strong>Riesgo</strong></span></div>
+          <div class="p-shares">Posibilidad de perder dinero al invertir.</div>
+        </div>
+        <div class="price-row">
+          <div class="p-name"><span><strong>Volatilidad</strong></span></div>
+          <div class="p-shares">Cuánto suben y bajan los precios de una acción.</div>
+        </div>
+        <div class="price-row">
+          <div class="p-name"><span><strong>Diversificación</strong></span></div>
+          <div class="p-shares">Repartir el dinero entre varias inversiones diferentes.</div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" onclick="resetAll()">🔄 Comenzar de nuevo</button>
+        <button class="btn" onclick="go(5)">← Ver resultados otra vez</button>
+      </div>
+    </div>
+  `;
+}
+
+function resetAll(){
+  state.step = 0;
+  state.cash = STARTING_CASH;
+  state.q1Answered = false;
+  state.q2Answered = false;
+  state.calcDone = false;
+  state.invested = false;
+  state.shares = { GreenEnergy: 0, FastTech: 0, SafeBank: 0 };
+  state.prices = { GreenEnergy: 20, FastTech: 50, SafeBank: 30 };
+  state.priceHistory = {
+    GreenEnergy: [20],
+    FastTech: [50],
+    SafeBank: [30]
+  };
+  state.day = 0;
+  state.newsLog = [];
+  state.techNova = null;
+  state.newsOrder = [];
+  go(0);
+}
+
+/* ================ INIT ================ */
+renderProgress();
+render();
+</script>
+
+</body>
+</html>
