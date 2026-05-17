@@ -1,1 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El ciclo económico — La "onda" de la economía</title>
+<style>
+  :root {
+    --c-recuperacion: #16a34a;
+    --c-expansion: #22c55e;
+    --c-auge: #06b6d4;
+    --c-recesion: #f97316;
+    --c-depresion: #dc2626;
+    --c-text: #1f2937;
+    --c-text-soft: #4b5563;
+    --c-bg-soft: #f9fafb;
+    --c-border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--c-text);
+    background: #ffffff;
+    margin: 0;
+    padding: 2rem 1rem;
+    line-height: 1.5;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 {
+    text-align: center;
+    font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+    margin: 0 0 0.6rem 0;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--c-text-soft);
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    max-width: 760px;
+    margin: 0 auto 2rem auto;
+  }
+  .ciclo-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  .tabla-fases {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--c-bg-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    margin-top: 1rem;
+  }
+  .tabla-fases th,
+  .tabla-fases td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+    font-size: 0.98rem;
+  }
+  .tabla-fases th {
+    background: #f3f4f6;
+    font-weight: 600;
+    color: var(--c-text);
+  }
+  .tabla-fases tr:last-child td { border-bottom: none; }
+  .fase-nombre { font-weight: 600; font-size: 1.02rem; }
+  .col-exp { color: var(--c-expansion); }
+  .col-rec { color: var(--c-recesion); }
+  .col-dep { color: var(--c-depresion); }
+  .nota {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    background: #eff6ff;
+    border-left: 4px solid #0089cd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--c-text-soft);
+  }
+  .nota strong { color: var(--c-text); }
+</style>
+</head>
+<body>
+<div class="container">
 
+  <h1>El ciclo económico: la "onda" de la economía</h1>
+  <p class="subtitle">
+    La economía no crece de forma lineal, sino que se mueve en ciclos similares a una onda,
+    determinando periodos de empleo y consumo, o crisis financiera.
+  </p>
+
+  <!-- ============================================================
+       SVG DEL CICLO ECONÓMICO
+       Esta sección se puede extraer y embeber directamente en tu
+       guía económica de GEDparaHispanos o en Brightspace.
+       ============================================================ -->
+  <svg class="ciclo-svg"
+       viewBox="0 0 1200 720"
+       xmlns="http://www.w3.org/2000/svg"
+       role="img"
+       aria-labelledby="cicloTitulo cicloDesc">
+    <title id="cicloTitulo">Diagrama del ciclo económico</title>
+    <desc id="cicloDesc">Una onda muestra las cinco fases del ciclo económico: recuperación, expansión, auge, recesión y depresión.</desc>
+
+    <defs>
+      <!-- Degradado de la onda: verde → cyan → naranja → rojo -->
+      <linearGradient id="ondaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"  stop-color="#16a34a"/>
+        <stop offset="22%" stop-color="#22c55e"/>
+        <stop offset="48%" stop-color="#06b6d4"/>
+        <stop offset="68%" stop-color="#f97316"/>
+        <stop offset="100%" stop-color="#dc2626"/>
+      </linearGradient>
+
+      <!-- Onda secundaria (sombra de profundidad) -->
+      <linearGradient id="ondaSombra" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"  stop-color="#16a34a" stop-opacity="0.25"/>
+        <stop offset="48%" stop-color="#06b6d4" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#dc2626" stop-opacity="0.25"/>
+      </linearGradient>
+    </defs>
+
+    <!-- ====== LA ONDA ====== -->
+    <!-- Sombra inferior -->
+    <path d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
+          fill="none"
+          stroke="url(#ondaSombra)"
+          stroke-width="38"
+          stroke-linecap="round"
+          transform="translate(0, 8)"/>
+    <!-- Onda principal -->
+    <path d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
+          fill="none"
+          stroke="url(#ondaGrad)"
+          stroke-width="26"
+          stroke-linecap="round"
+          opacity="0.92"/>
+
+    <!-- ====== NODO 1: RECUPERACIÓN ====== -->
+    <g transform="translate(120, 510)">
+      <circle r="52" fill="#dcfce7" opacity="0.55"/>
+      <circle r="42" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
+      <!-- Ícono planta brotando -->
+      <g transform="translate(0, 6)">
+        <!-- Tierra/maceta -->
+        <path d="M -16 16 L 16 16 L 12 24 L -12 24 Z" fill="#92400e"/>
+        <ellipse cx="0" cy="16" rx="16" ry="2.5" fill="#a16207"/>
+        <!-- Tallo -->
+        <path d="M 0 16 Q -1 0 0 -14" stroke="#16a34a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        <!-- Hoja izquierda -->
+        <path d="M -1 -1 Q -16 -4 -14 -18 Q -4 -14 -1 -4 Z" fill="#22c55e"/>
+        <!-- Hoja derecha -->
+        <path d="M 0 -7 Q 15 -12 17 -26 Q 5 -20 0 -10 Z" fill="#16a34a"/>
+      </g>
+    </g>
+    <!-- Etiqueta 1 -->
+    <text x="120" y="615" text-anchor="middle"
+          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
+          fill="#16a34a">1. Recuperación</text>
+    <text text-anchor="middle"
+          font-family="Poppins, sans-serif" font-size="13"
+          fill="#4b5563">
+      <tspan x="120" y="640">La economía comienza a levantarse</tspan>
+      <tspan x="120" y="658">tras una crisis con señales positivas.</tspan>
+    </text>
+
+    <!-- ====== NODO 2: EXPANSIÓN ====== -->
+    <g transform="translate(360, 350)">
+      <circle r="52" fill="#dcfce7" opacity="0.55"/>
+      <circle r="42" fill="#ffffff" stroke="#22c55e" stroke-width="3"/>
+      <!-- Ícono barras subiendo + flecha -->
+      <g transform="translate(0, 4)">
+        <!-- Barras -->
+        <rect x="-18" y="6" width="7" height="14" fill="#86efac" stroke="#16a34a" stroke-width="0.8"/>
+        <rect x="-8"  y="-2" width="7" height="22" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <rect x="2"   y="-12" width="7" height="32" fill="#22c55e" stroke="#16a34a" stroke-width="0.8"/>
+        <!-- Flecha hacia arriba -->
+        <path d="M -22 -8 L 16 -22" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M 9 -22 L 16 -22 L 16 -15" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <!-- Etiqueta 2 -->
+    <text x="360" y="450" text-anchor="middle"
+          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
+          fill="#16a34a">2. Expansión</text>
+    <text text-anchor="middle"
+          font-family="Poppins, sans-serif" font-size="13"
+          fill="#4b5563">
+      <tspan x="360" y="475">Mayor crecimiento, empleo y</tspan>
+      <tspan x="360" y="493">consumo para la población.</tspan>
+    </text>
+
+    <!-- ====== NODO 3: AUGE ====== -->
+    <g transform="translate(600, 190)">
+      <circle r="52" fill="#cffafe" opacity="0.55"/>
+      <circle r="42" fill="#ffffff" stroke="#06b6d4" stroke-width="3"/>
+      <!-- Ícono indicador (gauge) al máximo -->
+      <g transform="translate(0, 6)">
+        <!-- Arco verde (izq) -->
+        <path d="M -22 6 A 22 22 0 0 1 -8 -14" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+        <!-- Arco amarillo (centro) -->
+        <path d="M -8 -14 A 22 22 0 0 1 8 -14" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+        <!-- Arco rojo (der) -->
+        <path d="M 8 -14 A 22 22 0 0 1 22 6" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+        <!-- Aguja apuntando a la zona alta (cerca del rojo) -->
+        <line x1="0" y1="6" x2="15" y2="-11" stroke="#1f2937" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="0" cy="6" r="2.8" fill="#1f2937"/>
+        <!-- Marcas E y F estilizadas -->
+        <text x="-22" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">E</text>
+        <text x="18" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">F</text>
+      </g>
+    </g>
+    <!-- Etiqueta 3 -->
+    <text x="600" y="290" text-anchor="middle"
+          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
+          fill="#06b6d4">3. Auge</text>
+    <text text-anchor="middle"
+          font-family="Poppins, sans-serif" font-size="13"
+          fill="#4b5563">
+      <tspan x="600" y="315">Punto más alto de la onda</tspan>
+      <tspan x="600" y="333">donde el crecimiento se agota.</tspan>
+    </text>
+
+    <!-- ====== NODO 4: RECESIÓN ====== -->
+    <g transform="translate(840, 350)">
+      <circle r="52" fill="#ffedd5" opacity="0.65"/>
+      <circle r="42" fill="#ffffff" stroke="#f97316" stroke-width="3"/>
+      <!-- Ícono barras bajando + flecha descendente -->
+      <g transform="translate(0, 4)">
+        <!-- Barras -->
+        <rect x="-18" y="-12" width="7" height="32" fill="#fdba74" stroke="#c2410c" stroke-width="0.8"/>
+        <rect x="-8"  y="-2" width="7" height="22" fill="#fb923c" stroke="#c2410c" stroke-width="0.8"/>
+        <rect x="2"   y="6" width="7" height="14" fill="#f97316" stroke="#c2410c" stroke-width="0.8"/>
+        <!-- Flecha hacia abajo -->
+        <path d="M -22 -16 L 16 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M 16 -9 L 16 -2 L 9 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <!-- Etiqueta 4 -->
+    <text x="840" y="450" text-anchor="middle"
+          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
+          fill="#f97316">4. Recesión</text>
+    <text text-anchor="middle"
+          font-family="Poppins, sans-serif" font-size="13"
+          fill="#4b5563">
+      <tspan x="840" y="475">La actividad cae durante al menos</tspan>
+      <tspan x="840" y="493">seis meses y aumenta el desempleo.</tspan>
+    </text>
+
+    <!-- ====== NODO 5: DEPRESIÓN ====== -->
+    <g transform="translate(1080, 510)">
+      <circle r="52" fill="#fee2e2" opacity="0.65"/>
+      <circle r="42" fill="#ffffff" stroke="#dc2626" stroke-width="3"/>
+      <!-- Ícono fábrica con cadena rota -->
+      <g transform="translate(0, 4)">
+        <!-- Cuerpo principal de la fábrica -->
+        <rect x="-18" y="0" width="22" height="20" fill="#9ca3af" stroke="#4b5563" stroke-width="0.8"/>
+        <rect x="4" y="-8" width="14" height="28" fill="#6b7280" stroke="#4b5563" stroke-width="0.8"/>
+        <!-- Techo dentado -->
+        <path d="M -18 0 L -13 -6 L -8 0 L -3 -6 L 2 0 L 4 0" fill="#6b7280" stroke="#4b5563" stroke-width="0.8"/>
+        <!-- Chimenea -->
+        <rect x="8" y="-16" width="6" height="10" fill="#4b5563"/>
+        <!-- Ventanitas -->
+        <rect x="-14" y="6" width="3" height="3" fill="#fef3c7"/>
+        <rect x="-8" y="6" width="3" height="3" fill="#fef3c7"/>
+        <rect x="8" y="6" width="3" height="3" fill="#fef3c7"/>
+        <!-- Cadena rota (eslabones) -->
+        <g stroke="#dc2626" stroke-width="2.2" fill="none" stroke-linecap="round">
+          <ellipse cx="-15" cy="-12" rx="3.5" ry="2.5" transform="rotate(-30 -15 -12)"/>
+          <ellipse cx="-9" cy="-16" rx="3.5" ry="2.5" transform="rotate(-30 -9 -16)"/>
+          <!-- Línea de quiebre -->
+          <line x1="-6" y1="-20" x2="-1" y2="-24"/>
+          <line x1="-3" y1="-22" x2="-7" y2="-19"/>
+        </g>
+      </g>
+    </g>
+    <!-- Etiqueta 5 -->
+    <text x="1080" y="615" text-anchor="middle"
+          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
+          fill="#dc2626">5. Depresión</text>
+    <text text-anchor="middle"
+          font-family="Poppins, sans-serif" font-size="13"
+          fill="#4b5563">
+      <tspan x="1080" y="640">Punto más bajo del ciclo,</tspan>
+      <tspan x="1080" y="658">con desempleo masivo.</tspan>
+    </text>
+
+  </svg>
+
+  <!-- ====== TABLA COMPARATIVA ====== -->
+  <table class="tabla-fases">
+    <thead>
+      <tr>
+        <th style="width: 22%;">Fase</th>
+        <th style="width: 39%;">📈 Producción y consumo</th>
+        <th style="width: 39%;">👥 Empleo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fase-nombre col-exp">Expansión</td>
+        <td>En aumento constante</td>
+        <td>Alta demanda de trabajadores</td>
+      </tr>
+      <tr>
+        <td class="fase-nombre col-rec">Recesión</td>
+        <td>En caída libre</td>
+        <td>Aumento del desempleo</td>
+      </tr>
+      <tr>
+        <td class="fase-nombre col-dep">Depresión</td>
+        <td>Mínimos históricos</td>
+        <td>Desempleo masivo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="nota">
+    <strong>💡 Para recordar:</strong> el ciclo se repite. Después de una depresión, comienza nuevamente
+    la recuperación, y el patrón se reinicia. No hay crecimiento eterno ni crisis eterna —
+    la economía siempre se mueve en ondas.
+  </div>
+
+</div>
+</body>
+</html>
