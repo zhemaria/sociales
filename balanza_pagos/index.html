@@ -1,1 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanza de Pagos - Interactivo de Economía para GED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Animación para la balanza */
+        .scale-beam {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center center;
+        }
+        .scale-pan {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top center;
+        }
+        /* Animación de pulso suave */
+        @keyframes custom-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-active {
+            animation: custom-pulse 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col justify-between">
 
+    <!-- Encabezado / Navbar -->
+    <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-amber-500 rounded-lg shadow-inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">La Balanza de Pagos</h1>
+                    <p class="text-xs text-indigo-200 uppercase font-semibold tracking-wider">Módulo de Preparación GED • Estudios Sociales</p>
+                </div>
+            </div>
+            <nav class="flex gap-2 bg-slate-800/50 p-1.5 rounded-xl border border-slate-700/50">
+                <button onclick="switchTab('aprende')" id="btn-aprende" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 bg-indigo-600 text-white shadow-sm">
+                    💡 Aprende
+                </button>
+                <button onclick="switchTab('balanza')" id="btn-balanza" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-300 hover:text-white">
+                    ⚖️ Balanza Activa
+                </button>
+                <button onclick="switchTab('desafio')" id="btn-desafio" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-300 hover:text-white">
+                    🎯 Desafío Ministro
+                </button>
+                <button onclick="switchTab('quiz')" id="btn-quiz" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-300 hover:text-white">
+                    📝 Pon a Prueba
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 flex-grow w-full">
+        
+        <!-- SECCIÓN 1: APRENDE -->
+        <section id="sec-aprende" class="tab-content block">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Columna Izquierda: ¿Qué es? -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-bold">Concepto Clave</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4 text-slate-900">¿Qué es la Balanza de Pagos (BP)?</h2>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Imagina que registras cada dólar que entra y sale de tu casa en un mes. Sabrás si gastaste de más (déficit) o si te sobró dinero (superávit). 
+                            <strong>La Balanza de Pagos hace exactamente lo mismo, ¡pero para un país entero!</strong>
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Es un registro contable de <strong>todas las transacciones económicas</strong> entre los residentes de un país y el resto del mundo durante un período (generalmente un año).
+                        </p>
+                        
+                        <!-- Tarjetas de Dirección del Dinero -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2 text-emerald-800">
+                                    <div class="bg-emerald-100 p-2 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                                    </div>
+                                    <h3 class="font-bold text-lg">Créditos (Ingresos)</h3>
+                                </div>
+                                <p class="text-sm text-emerald-700">Cualquier transacción que traiga dinero extranjero al país. <strong>Ejemplo:</strong> Exportar frutas, turismo extranjero o remesas.</p>
+                            </div>
+                            <div class="bg-rose-50 border border-rose-100 p-4 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2 text-rose-800">
+                                    <div class="bg-rose-100 p-2 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" /></svg>
+                                    </div>
+                                    <h3 class="font-bold text-lg">Débitos (Pagos)</h3>
+                                </div>
+                                <p class="text-sm text-rose-700">Cualquier transacción que envíe dinero local al exterior. <strong>Ejemplo:</strong> Comprar autos importados o viajar a otro país.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Las Tres Grandes Cuentas -->
+                    <h3 class="text-xl font-bold text-slate-900 mt-6 mb-4">Las Tres Cuentas Principales de la BP</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Cuenta Corriente -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                                <span class="text-blue-600 text-lg font-bold">1</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 mb-2">1. Cuenta Corriente</h4>
+                            <p class="text-xs text-slate-500 mb-3">La más importante para el GED.</p>
+                            <p class="text-sm text-slate-600">Registra el comercio de mercancías (bienes), servicios (turismo, fletes), rentas del trabajo y transferencias (remesas).</p>
+                        </div>
+
+                        <!-- Cuenta de Capital -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center mb-4">
+                                <span class="text-amber-600 text-lg font-bold">2</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 mb-2">2. Cuenta de Capital</h4>
+                            <p class="text-xs text-slate-500 mb-3">Transferencias no comerciales.</p>
+                            <p class="text-sm text-slate-600">Registra transferencias de capital (ej. perdón de deudas) y compras de activos no financieros (derechos, patentes, marcas).</p>
+                        </div>
+
+                        <!-- Cuenta Financiera -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition duration-300">
+                            <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
+                                <span class="text-purple-600 text-lg font-bold">3</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 mb-2">3. Cuenta Financiera</h4>
+                            <p class="text-xs text-slate-500 mb-3">Movimientos de inversión.</p>
+                            <p class="text-sm text-slate-600">Registra inversiones extranjeras, préstamos y compras de activos financieros (acciones, bonos del gobierno) y reservas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tips GED y Resumen -->
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-indigo-900 to-slate-950 text-white p-6 rounded-2xl shadow-md">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400">⚡</span>
+                            <h3 class="font-bold text-lg text-amber-400">Tip para el Examen GED</h3>
+                        </div>
+                        <p class="text-sm text-slate-200 leading-relaxed mb-4">
+                            En el examen de Estudios Sociales, suelen preguntar sobre el impacto de la <strong>Balanza Comercial</strong> (que forma parte de la Cuenta Corriente).
+                        </p>
+                        <div class="bg-slate-800/60 p-4 rounded-xl space-y-2 border border-slate-700/50">
+                            <p class="text-xs text-slate-300"><strong class="text-emerald-400">Exportaciones > Importaciones:</strong> Superávit Comercial (Entra dinero).</p>
+                            <p class="text-xs text-slate-300"><strong class="text-rose-400">Importaciones > Exportaciones:</strong> Déficit Comercial (Sale dinero).</p>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-4 leading-relaxed">
+                            <strong>Recuerda:</strong> Un déficit sistemático no siempre es malo si se financia con inversión extranjera productiva (Cuenta Financiera).
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-100 p-5 rounded-2xl border border-slate-200">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span>📂</span> Glosario rápido
+                        </h4>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><strong>Divisas:</strong> Monedas extranjeras que se usan para el comercio internacional (como el Dólar o el Euro).</li>
+                            <li><strong>Aranceles:</strong> Impuestos a los productos extranjeros (importados) para proteger el comercio nacional.</li>
+                            <li><strong>Remesas:</strong> Dinero enviado por migrantes a sus familias en sus países de origen.</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="switchTab('balanza')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 rounded-xl font-bold shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                        <span>Ir al Simulador de Balanza</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: BALANZA ACTIVA (SIMULADOR DE TRANSACCIONES) -->
+        <section id="sec-balanza" class="tab-content hidden">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 mb-8">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-bold">Laboratorio Interactivo</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Simulador Digital: Controla el Flujo de Dinero</h2>
+                    <p class="text-slate-600 mt-2">
+                        Agrega o quita transacciones utilizando los interruptores a continuación. Mira cómo la balanza física se ajusta y cómo responde el termómetro del país.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Columna Izquierda: Listado de Transacciones (6 de 12 col) -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                <span>📋</span> Transacciones Internacionales
+                            </h3>
+                            <button onclick="resetBalanza()" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 bg-indigo-50 px-2.5 py-1.5 rounded-lg transition">
+                                🔄 Reiniciar Todo
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-3 max-h-[500px] overflow-y-auto pr-2" id="transactions-list">
+                            <!-- Los elementos se generan por JS para mantener limpieza y facilitar control -->
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: La Balanza Física Dinámica (7 de 12 col) -->
+                    <div class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-between min-h-[520px]">
+                        
+                        <!-- Panel de Indicador Superior -->
+                        <div class="w-full text-center space-y-2 mb-6">
+                            <div class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full uppercase" id="balanza-status-badge">
+                                Balance equilibrado
+                            </div>
+                            <div class="text-4xl font-extrabold tracking-tight" id="balanza-net-value">$0M USD</div>
+                            <div class="grid grid-cols-2 gap-4 max-w-xs mx-auto mt-2 text-xs">
+                                <div class="bg-emerald-100/50 p-2 rounded-lg text-emerald-800">
+                                    <div class="font-semibold">Ingresos Total</div>
+                                    <div class="font-bold text-sm" id="balanza-total-credits">+$0M</div>
+                                </div>
+                                <div class="bg-rose-100/50 p-2 rounded-lg text-rose-800">
+                                    <div class="font-semibold">Pagos Total</div>
+                                    <div class="font-bold text-sm" id="balanza-total-debits">-$0M</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dibujo Vectorial de la Balanza -->
+                        <div class="relative w-full max-w-md h-64 flex justify-center items-end overflow-hidden mb-6">
+                            <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Base Fija -->
+                                <rect x="190" y="240" width="20" height="40" fill="#475569" />
+                                <path d="M150 280 L250 280 L230 240 L170 240 Z" fill="#334155" />
+                                <circle cx="200" cy="110" r="10" fill="#1e293b" />
+                                
+                                <!-- Brazo Móvil (Inclinado por JS) -->
+                                <g id="scale-beam" class="scale-beam">
+                                    <line x1="50" y1="110" x2="350" y2="110" stroke="#475569" stroke-width="10" stroke-linecap="round" />
+                                    <circle cx="200" cy="110" r="5" fill="#e2e8f0" />
+                                    
+                                    <!-- Platillo Izquierdo (Ingresos) -->
+                                    <g id="scale-pan-left" class="scale-pan">
+                                        <!-- Hilos de soporte -->
+                                        <line x1="50" y1="110" x2="20" y2="190" stroke="#94a3b8" stroke-width="2" />
+                                        <line x1="50" y1="110" x2="80" y2="190" stroke="#94a3b8" stroke-width="2" />
+                                        <!-- Platillo -->
+                                        <path d="M15 190 L85 190 Q50 215 15 190 Z" fill="#10b981" />
+                                        <text x="50" y="215" fill="#047857" font-weight="bold" font-size="12" text-anchor="middle">INGRESOS</text>
+                                    </g>
+
+                                    <!-- Platillo Derecho (Egresos) -->
+                                    <g id="scale-pan-right" class="scale-pan">
+                                        <!-- Hilos de soporte -->
+                                        <line x1="350" y1="110" x2="320" y2="190" stroke="#94a3b8" stroke-width="2" />
+                                        <line x1="350" y1="110" x2="380" y2="190" stroke="#94a3b8" stroke-width="2" />
+                                        <!-- Platillo -->
+                                        <path d="M315 190 L385 190 Q350 215 315 190 Z" fill="#f43f5e" />
+                                        <text x="350" y="215" fill="#be123c" font-weight="bold" font-size="12" text-anchor="middle">PAGOS</text>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Diagnóstico Clínico de la Balanza -->
+                        <div class="w-full bg-white border border-slate-200 p-4 rounded-xl text-sm text-slate-600" id="balanza-analysis">
+                            Utiliza los interruptores de la izquierda para observar la dinámica económica.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: DESAFÍO DE DECISIONES (MINISTRO) -->
+        <section id="sec-desafio" class="tab-content hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Panel de Selección de Escenario (4 col) -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="bg-indigo-950 text-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-indigo-300">
+                            <span>👑</span> Rol: Ministro de Economía
+                        </h3>
+                        <p class="text-xs text-indigo-200 mt-2 leading-relaxed">
+                            El país enfrenta diferentes situaciones. Tu deber es analizar el evento macroeconómico y proponer una solución. Cada opción cambiará drásticamente tu balanza de pagos.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide text-slate-400 mb-3">Elige un Escenario:</h4>
+                        
+                        <button onclick="loadScenario(0)" id="scen-0" class="scen-btn w-full text-left p-3 rounded-xl border-2 border-indigo-500 bg-indigo-50/50 hover:bg-indigo-50 transition duration-300 flex items-start gap-3">
+                            <span class="text-xl">☀️</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">El Boom del Turismo</h5>
+                                <p class="text-xs text-slate-500">Un flujo masivo de turistas ingresa al país.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="loadScenario(1)" id="scen-1" class="scen-btn w-full text-left p-3 rounded-xl border-2 border-transparent hover:bg-slate-50 transition duration-300 flex items-start gap-3">
+                            <span class="text-xl">⚠️</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Fuga de Capitales</h5>
+                                <p class="text-xs text-slate-500">Inversionistas extranjeros retiran sus dólares por desconfianza.</p>
+                            </div>
+                        </button>
+
+                        <button onclick="loadScenario(2)" id="scen-2" class="scen-btn w-full text-left p-3 rounded-xl border-2 border-transparent hover:bg-slate-50 transition duration-300 flex items-start gap-3">
+                            <span class="text-xl">🚜</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Industrialización Tecnológica</h5>
+                                <p class="text-xs text-slate-500">El país necesita importar maquinaria de última tecnología.</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel de Simulación Activa (8 col) -->
+                <div class="lg:col-span-8 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between min-h-[500px]" id="scenarios-display">
+                    <!-- Dinamizado mediante Javascript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: PON A PRUEBA TU MENTE (QUIZ) -->
+        <section id="sec-quiz" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100" id="quiz-container">
+                    
+                    <!-- Pantalla Inicial del Quiz -->
+                    <div id="quiz-start" class="text-center space-y-6 py-6">
+                        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl">
+                            📚
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900">¿Listo para el examen GED?</h2>
+                            <p class="text-slate-600 mt-2 max-w-lg mx-auto">
+                                Pon a prueba tus conocimientos sobre la Balanza de Pagos con preguntas similares a las que enfrentarás en los Estudios Sociales del GED.
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-xl max-w-md mx-auto text-sm text-indigo-900 flex items-center gap-3 text-left">
+                            <span>🎓</span>
+                            <span>Aprenderás del error. Cada pregunta tiene explicaciones detalladas para ayudarte a estudiar de forma efectiva.</span>
+                        </div>
+                        <button onclick="startQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition duration-300">
+                            Iniciar Cuestionario
+                        </button>
+                    </div>
+
+                    <!-- Pantalla de Preguntas (Oculta por defecto) -->
+                    <div id="quiz-play" class="hidden space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <span class="text-xs font-bold bg-indigo-100 text-indigo-800 px-3 py-1.5 rounded-full" id="quiz-progress-badge">
+                                Pregunta 1 de 5
+                            </span>
+                            <span class="text-sm font-semibold text-slate-500" id="quiz-score-badge">
+                                Correctas: 0
+                            </span>
+                        </div>
+
+                        <!-- Pregunta principal -->
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-bold text-slate-900" id="quiz-question-text">
+                                Cuestionando...
+                            </h3>
+                            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 italic hidden" id="quiz-context-box">
+                                Contexto adicional para simular el estilo del GED...
+                            </div>
+                        </div>
+
+                        <!-- Lista de Opciones -->
+                        <div class="grid grid-cols-1 gap-3" id="quiz-options-list">
+                            <!-- Inyectadas por JS -->
+                        </div>
+
+                        <!-- Caja de Explicación (Aparece tras responder) -->
+                        <div class="hidden p-5 rounded-xl text-sm" id="quiz-explanation-box">
+                            <!-- Inyectada por JS -->
+                        </div>
+
+                        <!-- Botón Siguiente -->
+                        <div class="flex justify-end pt-4">
+                            <button id="quiz-next-btn" disabled onclick="nextQuestion()" class="bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl shadow transition duration-300">
+                                Siguiente Pregunta
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pantalla de Resultados Finales -->
+                    <div id="quiz-results" class="hidden text-center space-y-6 py-6">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-4xl" id="results-icon">
+                            🎉
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900" id="results-title">¡Gran Trabajo!</h2>
+                            <p class="text-slate-600 mt-2" id="results-desc">
+                                Has completado el test sobre Balanza de Pagos.
+                            </p>
+                        </div>
+                        <div class="text-6xl font-black text-indigo-600" id="results-score">
+                            5 / 5
+                        </div>
+                        <div class="bg-slate-50 border border-slate-100 p-4 rounded-xl max-w-md mx-auto text-sm text-slate-600 leading-relaxed" id="results-summary">
+                            Estás demostrando un gran dominio de los conceptos clave de macroeconomía requeridos para el GED de Estudios Sociales.
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button onclick="restartQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition shadow">
+                                Reintentar Quiz
+                            </button>
+                            <button onclick="switchTab('aprende')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-6 py-3 rounded-xl transition">
+                                Repasar Teoría
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página informativo -->
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-xs mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 Preparación GED - Estudios Sociales de Macroeconomía.</p>
+            <p class="text-center md:text-right">Diseñado para ayudar a estudiantes en la asimilación de conceptos de la Balanza de Pagos.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. DATOS DE TRANSACCIONES PARA LA BALANZA ---
+        const transacciones = [
+            {
+                id: 'exp-bienes',
+                nombre: 'Exportación de Frutas y Café',
+                categoria: 'Cuenta Corriente',
+                subcat: 'Balanza de Bienes',
+                valor: 350,
+                esIngreso: true,
+                descripcion: 'El país vende sus recursos agrícolas al exterior. Ingresa dinero localmente.',
+                activo: false
+            },
+            {
+                id: 'imp-autos',
+                nombre: 'Importación de Automóviles',
+                categoria: 'Cuenta Corriente',
+                subcat: 'Balanza de Bienes',
+                valor: 400,
+                esIngreso: false,
+                descripcion: 'Se compran vehículos diseñados y producidos en el extranjero. El dinero sale del país.',
+                activo: false
+            },
+            {
+                id: 'tur-extranjero',
+                nombre: 'Turismo Extranjero Recibido',
+                categoria: 'Cuenta Corriente',
+                subcat: 'Balanza de Servicios',
+                valor: 200,
+                esIngreso: true,
+                descripcion: 'Viajeros internacionales visitan el país, consumiendo comida, hospedaje y transporte nacional.',
+                activo: false
+            },
+            {
+                id: 'remesas-familia',
+                nombre: 'Remesas enviadas por Residentes en el Exterior',
+                categoria: 'Cuenta Corriente',
+                subcat: 'Transferencias Secundarias',
+                valor: 180,
+                esIngreso: true,
+                descripcion: 'Ciudadanos trabajando en otros países envían dólares a sus familias.',
+                activo: false
+            },
+            {
+                id: 'pago-intereses',
+                nombre: 'Pago de Intereses de la Deuda Externa',
+                categoria: 'Cuenta Corriente',
+                subcat: 'Renta Primaria',
+                valor: 150,
+                esIngreso: false,
+                descripcion: 'El gobierno y los bancos nacionales envían dinero para cubrir intereses de créditos externos.',
+                activo: false
+            },
+            {
+                id: 'ied-empresas',
+                nombre: 'Inversión Extranjera (Nueva Fábrica)',
+                categoria: 'Cuenta Financiera',
+                subcat: 'Inversión Directa',
+                valor: 500,
+                esIngreso: true,
+                descripcion: 'Una multinacional construye infraestructura física en el país, trayendo capital y empleo.',
+                activo: false
+            },
+            {
+                id: 'inversion-bolsa',
+                nombre: 'Inversión en Bolsa de Valores Extranjera',
+                categoria: 'Cuenta Financiera',
+                subcat: 'Inversión de Cartera',
+                valor: 250,
+                esIngreso: false,
+                descripcion: 'Ahorradores del país compran acciones en el mercado internacional, exportando divisas.',
+                activo: false
+            }
+        ];
+
+        // --- 2. DATOS DE ESCENARIOS DE MINISTRO ---
+        const escenarios = [
+            {
+                titulo: "El Increíble Boom del Turismo",
+                descripcion: "¡Un fenómeno de marketing internacional ha disparado la llegada de turistas extranjeros al país! Las playas y ciudades históricas están repletas de viajeros que gastan millones en hoteles y restaurantes.",
+                contexto_bp: "Esta actividad genera un enorme superávit de servicios en la Cuenta Corriente.",
+                estado_inicial: "Tu Cuenta Corriente mejora significativamente con un ingreso de +$300M de divisas.",
+                opciones: [
+                    {
+                        texto: "Opción A: Invertir el excedente en modernizar la infraestructura vial y aeroportuaria.",
+                        explicacion: "¡Excelente decisión de largo plazo! La compra de maquinaria y tecnología importada incrementa temporalmente el egreso de dinero (Cuenta Corriente) pero asienta la base de un turismo sostenible que aumentará los ingresos permanentemente.",
+                        impacto: "Superávit saludable y sostenible.",
+                        exito: true
+                    },
+                    {
+                        texto: "Opción B: Utilizar el dinero para subsidiar productos importados de lujo.",
+                        explicacion: "Opción riesgosa. Estimula un consumo improductivo que drena rápidamente el dinero que ingresó, desestabilizando a largo plazo la balanza comercial y desatando futuros déficits si el turismo baja.",
+                        impacto: "Alivio temporal seguido de déficit crónico.",
+                        exito: false
+                    }
+                ]
+            },
+            {
+                titulo: "Pánico Financiero: Fuga de Capitales",
+                descripcion: "Incertidumbres políticas provocan temor en los inversionistas extranjeros. En pocas semanas, grandes fondos de inversión retiran de forma masiva miles de millones de dólares depositados en la bolsa y bancos nacionales.",
+                contexto_bp: "Este retiro masivo asesta un golpe demoledor a la Cuenta Financiera, vaciando las reservas del Banco Central.",
+                estado_inicial: "La salida veloz de fondos financieros está devaluando gravemente tu moneda local.",
+                opciones: [
+                    {
+                        texto: "Opción A: Elevar las tasas de interés para incentivar a los inversionistas a conservar su dinero en el país.",
+                        explicacion: "Medida clásica de emergencia económica. Ofrecer mayores rendimientos convence a muchos inversionistas financieros de no retirar el capital. Sin embargo, encarece el crédito local para las familias nacionales.",
+                        impacto: "Estabiliza el saldo financiero pero frena el crecimiento local momentáneamente.",
+                        exito: true
+                    },
+                    {
+                        texto: "Opción B: Imponer bloqueos absolutos y prohibir de inmediato la salida de cualquier moneda extranjera.",
+                        explicacion: "Un control de pánico tan drástico suele asustar aún más. Los inversionistas interpretan que no podrán rescatar sus capitales nunca, congelando la llegada de cualquier Inversión Extranjera Directa futura y aislando al país.",
+                        impacto: "Pérdida absoluta de confianza económica a largo plazo.",
+                        exito: false
+                    }
+                ]
+            },
+            {
+                titulo: "La Apuesta por la Industrialización",
+                descripcion: "Tu gobierno quiere dejar de depender únicamente de la exportación de productos agrícolas y aspira a fabricar componentes tecnológicos de alta gama. Para lograrlo, debes importar de forma masiva robótica de precisión y maquinaria avanzada de Alemania.",
+                contexto_bp: "La adquisición masiva de bienes industriales provocará de inmediato un profundo déficit en tu balanza comercial.",
+                estado_inicial: "Pérdida neta de reservas de divisas en el corto plazo por adquisición de bienes de capital.",
+                opciones: [
+                    {
+                        texto: "Opción A: Financiar el déficit comercial a mediano plazo mediante préstamos e Inversión Extranjera Directa (IED).",
+                        explicacion: "Estrategia de desarrollo exitosa. Aunque se incurra temporalmente en un déficit en Cuenta Corriente, este se cubre con un superávit en la Cuenta Financiera (IED). En el futuro, el país exportará tecnología de alto valor, corrigiendo de raíz la balanza comercial.",
+                        impacto: "Déficit temporal planificado con alto retorno a largo plazo.",
+                        exito: true
+                    },
+                    {
+                        texto: "Opción B: Detener de inmediato el proyecto tecnológico para evitar el déficit en Cuenta Corriente.",
+                        explicacion: "Una postura ultraconservadora. Mantienes la balanza de pagos perfectamente equilibrada a corto plazo, pero condenas al país a depender eternamente de la exportación de recursos primarios de bajo valor comercial, estancando el desarrollo económico futuro.",
+                        impacto: "Equilibrio a corto plazo pero rezago industrial definitivo.",
+                        exito: false
+                    }
+                ]
+            }
+        ];
+
+        // --- 3. BANCO DE PREGUNTAS DEL QUIZ (ESTILO GED) ---
+        const preguntasQuiz = [
+            {
+                pregunta: "¿Cuál de las siguientes situaciones generará un Superávit de transacciones en la Cuenta Corriente de la Balanza de Pagos de un país?",
+                contexto: "Pregunta enfocada en las fuerzas del comercio internacional.",
+                opciones: [
+                    "Aumento masivo del turismo de ciudadanos locales viajando hacia el extranjero.",
+                    "Un incremento considerable en las exportaciones de mercancías nacionales hacia el extranjero.",
+                    "El retiro masivo de inversiones financieras por parte de bancos globales.",
+                    "La adquisición de patentes y derechos de marca de marcas alemanas."
+                ],
+                respuestaCorrecta: 1,
+                explicacion: "Las exportaciones implican vender bienes nacionales a compradores de otros países. Esto genera un flujo de dinero internacional (divisas) hacia el país exportador, sumando al superávit comercial en la Cuenta Corriente."
+            },
+            {
+                pregunta: "Si un país compra constantemente más bienes y servicios del extranjero de los que vende, ¿cuál es el estado de su Balanza Comercial?",
+                contexto: "Análisis básico de balanza comercial (Importaciones vs Exportaciones).",
+                opciones: [
+                    "Presenta un superávit comercial.",
+                    "La balanza está perfectamente equilibrada.",
+                    "Presenta un déficit comercial.",
+                    "Genera inflación de manera instantánea y exclusiva."
+                ],
+                respuestaCorrecta: 2,
+                explicacion: "Un déficit comercial se produce cuando el valor total de las importaciones de bienes y servicios supera el valor de las exportaciones. El país está gastando más de lo que está ingresando comercialmente."
+            },
+            {
+                pregunta: "Las remesas son los flujos de dinero que envían los trabajadores migrantes en el extranjero a sus familias. ¿En qué cuenta de la Balanza de Pagos se registra esta transacción?",
+                contexto: "Identificación de flujos en las categorías de la BP.",
+                opciones: [
+                    "Cuenta de Capital, por tratarse de dinero de personas trabajadoras.",
+                    "Cuenta Financiera, ya que representa inversión bursátil.",
+                    "Cuenta Corriente, en la subcategoría de transferencias corrientes (ingreso secundario).",
+                    "Reservas de Oro del Banco Central."
+                ],
+                respuestaCorrecta: 2,
+                explicacion: "Las remesas familiares no corresponden a un intercambio comercial directo de bienes ni a inversiones financieras formales. Se clasifican bajo la Cuenta Corriente como transferencias corrientes de ingresos secundarios, al no existir contrapartida."
+            },
+            {
+                pregunta: "Una empresa multinacional japonesa construye una planta automotriz en territorio mexicano, contratando personal local. ¿En qué cuenta del receptor se registra este flujo de capital?",
+                contexto: "Categorización de inversión directa.",
+                opciones: [
+                    "En la Cuenta Corriente como una exportación tradicional de vehículos.",
+                    "En la Cuenta de Capital como una donación internacional no reembolsable.",
+                    "En la Cuenta Financiera bajo el rubro de Inversión Extranjera Directa (IED).",
+                    "No se registra en la Balanza de Pagos al realizarse dentro del territorio nacional."
+                ],
+                respuestaCorrecta: 2,
+                explicacion: "La llegada de fondos para establecer activos físicos (fábricas, oficinas) por parte de compañías extranjeras se considera Inversión Extranjera Directa (IED) y se contabiliza en la Cuenta Financiera, aumentando los ingresos de capital."
+            },
+            {
+                pregunta: "En teoría económica, si sumamos todos los saldos de las cuentas (Corriente, Capital y Financiera), el total consolidado de la Balanza de Pagos debería ser:",
+                contexto: "El principio contable de la Balanza de Pagos.",
+                opciones: [
+                    "Siempre positivo para evitar la quiebra del gobierno.",
+                    "Igual a cero, ya que los déficits se compensan con financiamiento de capital.",
+                    "Siempre negativo debido al crecimiento poblacional continuo.",
+                    "Variable e impredecible según el precio del petróleo."
+                ],
+                respuestaCorrecta: 1,
+                explicacion: "Contablemente, la Balanza de Pagos se rige por el principio de partida doble. Cualquier déficit en la Cuenta Corriente (gastar más de lo ingresado) debe ser financiado con deuda o venta de activos en la Cuenta Financiera, por lo que la suma global teórica es cero."
+            }
+        ];
+
+        // --- 4. VARIABLES DE ESTADO GLOBAL ---
+        let totalCredits = 0;
+        let totalDebits = 0;
+        let currentScenarioIdx = 0;
+        
+        let quizCurrentIndex = 0;
+        let quizScore = 0;
+        let quizAnswered = false;
+
+        // --- STREAMING_CHUNK: Inicialización de la interfaz en carga de página... ---
+        window.onload = function() {
+            // Generar tarjetas de transacciones dinámicas
+            renderTransactions();
+            // Calcular balances
+            recalcBalanza();
+            // Cargar escenario por defecto
+            loadScenario(0);
+        }
+
+        // Navegación de pestañas
+        function switchTab(tabId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.tab-content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('block');
+            });
+            // Remover estilos activos de todos los botones
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-sm');
+                btn.classList.add('text-slate-300', 'hover:text-white');
+            });
+
+            // Mostrar la pestaña seleccionada
+            const targetSec = document.getElementById(`sec-${tabId}`);
+            targetSec.classList.remove('hidden');
+            targetSec.classList.add('block');
+
+            // Dar estilo activo al botón actual
+            const targetBtn = document.getElementById(`btn-${tabId}`);
+            targetBtn.classList.remove('text-slate-300', 'hover:text-white');
+            targetBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
+        }
+
+        // --- STREAMING_CHUNK: Lógica del Simulador de la Balanza... ---
+        // Renderizar transacciones en el panel lateral
+        function renderTransactions() {
+            const container = document.getElementById('transactions-list');
+            container.innerHTML = '';
+
+            transacciones.forEach((item, index) => {
+                const badgeColor = item.esIngreso ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+                const sign = item.esIngreso ? '+' : '-';
+                const borderClass = item.activo ? (item.esIngreso ? 'border-emerald-500 bg-emerald-50/50' : 'border-rose-500 bg-rose-50/50') : 'border-slate-100 hover:border-slate-300';
+
+                const cardHTML = `
+                    <div class="p-4 rounded-xl border-2 ${borderClass} transition-all duration-300 bg-white flex flex-col justify-between gap-3 shadow-sm">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded ${badgeColor}">${item.categoria}</span>
+                                    <span class="text-[10px] text-slate-500 font-semibold">${item.subcat}</span>
+                                </div>
+                                <h4 class="font-bold text-slate-800 text-sm leading-tight">${item.nombre}</h4>
+                            </div>
+                            <div class="text-right flex-shrink-0">
+                                <span class="text-sm font-black ${item.esIngreso ? 'text-emerald-600' : 'text-rose-600'}">${sign}$${item.valor}M</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500">${item.descripcion}</p>
+                        <div class="flex justify-end pt-1">
+                            <button onclick="toggleTransaction(${index})" class="text-xs font-bold px-4 py-2 rounded-lg transition-all duration-200 ${item.activo ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">
+                                ${item.activo ? '✅ Activado' : '➕ Incluir'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        // Alternar el estado activo de una transacción
+        function toggleTransaction(index) {
+            transacciones[index].activo = !transacciones[index].activo;
+            renderTransactions();
+            recalcBalanza();
+        }
+
+        // Reiniciar la simulación de la balanza
+        function resetBalanza() {
+            transacciones.forEach(item => item.activo = false);
+            renderTransactions();
+            recalcBalanza();
+        }
+
+        // Calcular los valores de la balanza e inclinar la imagen SVG
+        function recalcBalanza() {
+            totalCredits = 0;
+            totalDebits = 0;
+
+            transacciones.forEach(item => {
+                if (item.activo) {
+                    if (item.esIngreso) {
+                        totalCredits += item.valor;
+                    } else {
+                        totalDebits += item.valor;
+                    }
+                }
+            });
+
+            const netValue = totalCredits - totalDebits;
+
+            // Actualizar interfaz textual
+            document.getElementById('balanza-total-credits').innerText = `+$${totalCredits}M`;
+            document.getElementById('balanza-total-debits').innerText = `-$${totalDebits}M`;
+            
+            const netValText = document.getElementById('balanza-net-value');
+            if (netValue > 0) {
+                netValText.innerText = `+$${netValue}M USD`;
+                netValText.className = "text-4xl font-extrabold tracking-tight text-emerald-600";
+            } else if (netValue < 0) {
+                netValText.innerText = `-$${Math.abs(netValue)}M USD`;
+                netValText.className = "text-4xl font-extrabold tracking-tight text-rose-600";
+            } else {
+                netValText.innerText = `$0M USD`;
+                netValText.className = "text-4xl font-extrabold tracking-tight text-slate-800";
+            }
+
+            // Actualizar etiqueta del estado
+            const badge = document.getElementById('balanza-status-badge');
+            const analysisText = document.getElementById('balanza-analysis');
+
+            if (netValue > 0) {
+                badge.innerText = "Superávit Comercial";
+                badge.className = "inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full uppercase bg-emerald-100 text-emerald-800 pulse-active";
+                analysisText.innerHTML = `💸 <strong>Superávit Económico:</strong> Entra más dinero al país del que sale. Las exportaciones o inversiones están fuertes. Esto fortalece el valor de la divisa local frente al exterior.`;
+            } else if (netValue < 0) {
+                badge.innerText = "Déficit Comercial";
+                badge.className = "inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full uppercase bg-rose-100 text-rose-800 pulse-active";
+                analysisText.innerHTML = `⚠️ <strong>Déficit Económico:</strong> El país está gastando más dinero en el extranjero del que ingresa. Requiere recurrir a reservas extranjeras o adquirir nueva deuda internacional para equilibrar la balanza.`;
+            } else {
+                badge.innerText = "Balanza en Equilibrio";
+                badge.className = "inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full uppercase bg-slate-100 text-slate-600";
+                analysisText.innerHTML = `⚖️ <strong>Estado Equilibrado:</strong> Los egresos de divisas y los ingresos internacionales se compensan perfectamente. Activa transacciones para observar los cambios en tiempo real.`;
+            }
+
+            // --- STREAMING_CHUNK: Calculando ángulo físico de inclinación... ---
+            // Calcular ángulo para el SVG de la balanza
+            // Limitar rotación máxima a 15 grados para que no se desarme visualmente la escala
+            let angle = 0;
+            if (totalCredits > 0 || totalDebits > 0) {
+                const totalMasa = totalCredits + totalDebits;
+                const diferenciaRelativa = (totalCredits - totalDebits) / totalMasa; // Rango -1 a +1
+                angle = diferenciaRelativa * -15; // Invertir signo para que el lado con más masa baje
+            }
+
+            const scaleBeam = document.getElementById('scale-beam');
+            const scalePanLeft = document.getElementById('scale-pan-left');
+            const scalePanRight = document.getElementById('scale-pan-right');
+
+            if (scaleBeam && scalePanLeft && scalePanRight) {
+                // Rotar el brazo
+                scaleBeam.style.transform = `rotate(${angle}deg)`;
+                // Rotar los platillos en dirección contraria para que sigan colgando rectos
+                scalePanLeft.style.transform = `rotate(${-angle}deg)`;
+                scalePanRight.style.transform = `rotate(${-angle}deg)`;
+            }
+        }
+
+        // --- STREAMING_CHUNK: Lógica de Simulación de Escenarios (Ministro) ---
+        function loadScenario(index) {
+            currentScenarioIdx = index;
+            const sc = escenarios[index];
+
+            // Quitar clase activa previa en la barra de selección
+            document.querySelectorAll('.scen-btn').forEach(btn => {
+                btn.classList.remove('border-indigo-500', 'bg-indigo-50/50');
+                btn.classList.add('border-transparent');
+            });
+            
+            // Marcar botón activo actual
+            const currentBtn = document.getElementById(`scen-${index}`);
+            if (currentBtn) {
+                currentBtn.classList.remove('border-transparent');
+                currentBtn.classList.add('border-indigo-500', 'bg-indigo-50/50');
+            }
+
+            const container = document.getElementById('scenarios-display');
+            container.innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-indigo-600">
+                            <span class="text-xs font-bold tracking-wider uppercase bg-indigo-100 px-3 py-1 rounded-full">Caso de Estudio</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900">${sc.titulo}</h3>
+                    </div>
+
+                    <div class="bg-indigo-50/40 p-5 rounded-xl border border-indigo-100 text-slate-600 text-sm leading-relaxed space-y-3">
+                        <p>${sc.descripcion}</p>
+                        <p class="font-semibold text-indigo-900 flex items-center gap-1">
+                            <span>💡 Contexto contable:</span> ${sc.contexto_bp}
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-100 text-amber-900 text-xs">
+                        <strong>Impacto inmediato:</strong> ${sc.estado_inicial}
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider text-slate-400">¿Qué política decides implementar?</h4>
+                        <div class="grid grid-cols-1 gap-3">
+                            ${sc.opciones.map((op, optIdx) => `
+                                <button onclick="solveScenario(${optIdx})" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-indigo-500 hover:bg-indigo-50/30 transition duration-300 text-sm font-semibold text-slate-800">
+                                    ${op.texto}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function solveScenario(optIdx) {
+            const sc = escenarios[currentScenarioIdx];
+            const op = sc.opciones[optIdx];
+            const container = document.getElementById('scenarios-display');
+
+            const statusClass = op.exito ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900';
+            const icon = op.exito ? '✅ EXCELENTE POLÍTICA' : '⚠️ DECISIÓN DE ALTO RIESGO';
+
+            container.innerHTML = `
+                <div class="space-y-6 flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold tracking-wider uppercase bg-slate-100 px-3 py-1 rounded-full">Resultado de la Decisión</span>
+                            <span class="text-xs font-semibold text-slate-500">${sc.titulo}</span>
+                        </div>
+
+                        <div class="p-6 rounded-2xl border-2 ${statusClass} space-y-4">
+                            <h4 class="text-lg font-extrabold flex items-center gap-2">
+                                <span>${op.exito ? '⭐' : '❗️'}</span> ${icon}
+                            </h4>
+                            <p class="text-sm leading-relaxed">${op.explicacion}</p>
+                            <div class="border-t border-current/20 pt-3 text-xs flex justify-between">
+                                <span>Diagnóstico:</span>
+                                <strong class="uppercase">${op.impacto}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-6 border-t border-slate-100">
+                        <button onclick="loadScenario(${currentScenarioIdx})" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3.5 rounded-xl text-center text-sm transition">
+                            🔄 Intentar otra opción
+                        </button>
+                        <button onclick="switchTab('quiz')" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl text-center text-sm shadow transition">
+                            📝 Siguiente: Pon a prueba tu mente
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- STREAMING_CHUNK: Diseñando lógica interactiva del QUIZ ---
+        // Iniciar Quiz
+        function startQuiz() {
+            quizCurrentIndex = 0;
+            quizScore = 0;
+            quizAnswered = false;
+
+            document.getElementById('quiz-start').classList.add('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-play').classList.remove('hidden');
+
+            loadQuizQuestion();
+        }
+
+        // Cargar pregunta actual
+        function loadQuizQuestion() {
+            quizAnswered = false;
+            const q = preguntasQuiz[quizCurrentIndex];
+
+            document.getElementById('quiz-progress-badge').innerText = `Pregunta ${quizCurrentIndex + 1} de ${preguntasQuiz.length}`;
+            document.getElementById('quiz-score-badge').innerText = `Correctas: ${quizScore}`;
+            document.getElementById('quiz-question-text').innerText = q.pregunta;
+
+            // Rellenar caja de contexto
+            const contextBox = document.getElementById('quiz-context-box');
+            if (q.contexto) {
+                contextBox.innerText = `💡 Tip: ${q.contexto}`;
+                contextBox.classList.remove('hidden');
+            } else {
+                contextBox.classList.add('hidden');
+            }
+
+            // Generar opciones de respuesta
+            const optionsContainer = document.getElementById('quiz-options-list');
+            optionsContainer.innerHTML = '';
+
+            q.opciones.forEach((opt, optIdx) => {
+                const btnHTML = `
+                    <button onclick="selectQuizOption(${optIdx})" id="quiz-opt-${optIdx}" class="quiz-opt-btn w-full text-left p-4 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/20 transition duration-300 font-medium text-slate-700 text-sm">
+                        ${opt}
+                    </button>
+                `;
+                optionsContainer.innerHTML += btnHTML;
+            });
+
+            // Ocultar caja de explicaciones y deshabilitar botón "Siguiente"
+            document.getElementById('quiz-explanation-box').classList.add('hidden');
+            const nextBtn = document.getElementById('quiz-next-btn');
+            nextBtn.disabled = true;
+            nextBtn.innerText = "Selecciona una opción";
+        }
+
+        // Seleccionar una opción de respuesta
+        function selectQuizOption(selectedIdx) {
+            if (quizAnswered) return; // Impedir volver a votar
+            quizAnswered = true;
+
+            const q = preguntasQuiz[quizCurrentIndex];
+            const isCorrect = (selectedIdx === q.respuestaCorrecta);
+
+            if (isCorrect) quizScore++;
+
+            // Estilizar respuestas
+            q.opciones.forEach((_, optIdx) => {
+                const optBtn = document.getElementById(`quiz-opt-${optIdx}`);
+                optBtn.classList.remove('hover:border-indigo-400', 'hover:bg-indigo-50/20', 'border-slate-200');
+                
+                if (optIdx === q.respuestaCorrecta) {
+                    optBtn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                } else if (optIdx === selectedIdx) {
+                    optBtn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                } else {
+                    optBtn.classList.add('bg-slate-50', 'text-slate-400', 'opacity-60');
+                }
+            });
+
+            // Mostrar caja de explicación
+            const expBox = document.getElementById('quiz-explanation-box');
+            expBox.classList.remove('hidden');
+            if (isCorrect) {
+                expBox.className = "p-5 rounded-xl text-sm bg-emerald-50 text-emerald-800 border border-emerald-100";
+                expBox.innerHTML = `<strong>🎉 ¡Correcto!</strong> ${q.explicacion}`;
+            } else {
+                expBox.className = "p-5 rounded-xl text-sm bg-rose-50 text-rose-800 border border-rose-100";
+                expBox.innerHTML = `<strong>❌ Incorrecto.</strong> ${q.explicacion}`;
+            }
+
+            // Habilitar botón de continuar
+            const nextBtn = document.getElementById('quiz-next-btn');
+            nextBtn.disabled = false;
+            nextBtn.innerText = quizCurrentIndex === (preguntasQuiz.length - 1) ? "Ver Resultados" : "Siguiente Pregunta";
+        }
+
+        // Pasar a la siguiente pregunta o terminar quiz
+        function nextQuestion() {
+            if (quizCurrentIndex < preguntasQuiz.length - 1) {
+                quizCurrentIndex++;
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        // Mostrar pantalla de resultados
+        function showQuizResults() {
+            document.getElementById('quiz-play').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+
+            document.getElementById('results-score').innerText = `${quizScore} / ${preguntasQuiz.length}`;
+
+            const resTitle = document.getElementById('results-title');
+            const resDesc = document.getElementById('results-desc');
+            const resSummary = document.getElementById('results-summary');
+            const resIcon = document.getElementById('results-icon');
+
+            if (quizScore === preguntasQuiz.length) {
+                resTitle.innerText = "¡Excelente, Nivel Experto!";
+                resDesc.innerText = "Has dominado el tema de la Balanza de Pagos por completo.";
+                resSummary.innerText = "Estás más que listo para cualquier pregunta sobre balanza de pagos y comercio internacional en tu examen oficial del GED de Estudios Sociales.";
+                resIcon.innerText = "🏆";
+                resIcon.className = "w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-4xl";
+            } else if (quizScore >= 3) {
+                resTitle.innerText = "¡Buen Trabajo!";
+                resDesc.innerText = "Tienes bases sólidas sobre macroeconomía.";
+                resSummary.innerText = "Comprendes los conceptos de importaciones, exportaciones y las tres cuentas de la balanza de pagos. Un repaso rápido de los errores te garantizará el puntaje perfecto.";
+                resIcon.innerText = "👍";
+                resIcon.className = "w-20 h-20 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto text-4xl";
+            } else {
+                resTitle.innerText = "Sigue Practicando";
+                resDesc.innerText = "Te recomendamos revisar la sección teórica del módulo.";
+                resSummary.innerText = "La Balanza de Pagos puede ser confusa al principio, recuerda estudiar la diferencia entre Cuenta Corriente (comercio diario) y Cuenta Financiera (inversiones). ¡Inténtalo de nuevo!";
+                resIcon.innerText = "📚";
+                resIcon.className = "w-20 h-20 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mx-auto text-4xl";
+            }
+        }
+
+        // Reiniciar Cuestionario
+        function restartQuiz() {
+            startQuiz();
+        }
+    </script>
+</body>
+</html>
