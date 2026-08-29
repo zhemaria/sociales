@@ -167,6 +167,50 @@
   }
   footer p { margin: 4px 0; }
   footer a { color: var(--tema-d); }
+
+  /* ── TIRA DE TEMAS: navegación inmediata bajo la cabecera ───────── */
+  .tira-temas {
+    background: #ffffff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 14px 18px; margin: 0 0 18px;
+  }
+  .tira-temas h2 { margin: 0 0 10px; font-size: 15px; color: #37474f; }
+  .tira-temas ol {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .tira-temas li { margin: 0; }
+  .tira-temas a {
+    display: inline-flex; align-items: baseline; gap: 7px;
+    border: 1px solid #cfd8dc; border-radius: 8px;
+    padding: 7px 12px; text-decoration: none;
+    color: #263238; font-size: 14px; line-height: 1.3;
+  }
+  .tira-temas a:hover, .tira-temas a:focus {
+    border-color: #37474f; background: #eceff1; text-decoration: underline;
+  }
+  .tira-temas .tn {
+    font-weight: 700; color: #37474f;
+    background: #eceff1; border-radius: 5px; padding: 1px 7px; font-size: 13px;
+  }
+  .tira-temas .estado {
+    font-size: 12px; color: #555; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  .tira-temas .estado.abierto { color: #2e5c36; }
+  .tira-temas .nota-tira { margin: 10px 0 0; font-size: 13px; color: #555; }
+
+  details.bloque > summary {
+    cursor: pointer; list-style: none; padding: 0; margin: 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  details.bloque > summary::-webkit-details-marker { display: none; }
+  details.bloque > summary h2 { margin: 0; }
+  details.bloque > summary::after {
+    content: "▸"; margin-left: auto; color: #37474f;
+    font-size: 18px; transition: transform .15s ease;
+  }
+  details.bloque[open] > summary::after { transform: rotate(90deg); }
+  details.bloque > summary:focus-visible { outline: 3px solid #37474f; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -183,22 +227,37 @@
     <span class="nav-sep" aria-hidden="true">·</span>
     <a href="fuentes/index.html">Archivo de fuentes</a>
     <span class="nav-sep" aria-hidden="true">·</span>
-    <a href="#tema-1">Empezar por la Lección 1.1</a>
+    <a href="soc-1-1.html">Empezar por la Lección 1.1</a>
   </nav>
 
-  <div class="bloque">
-    <h2>De qué trata este curso</h2>
+  <nav class="tira-temas" aria-label="Los ocho temas del curso">
+    <h2>Ir directamente a un tema</h2>
+    <ol>
+      <li><a href="#tema-1"><span class="tn">1</span> <span>Indagación, fuentes y alfabetización analítica</span> <span class="estado abierto">2 de 3 lecciones</span></a></li>
+      <li><a href="#tema-2"><span class="tn">2</span> <span>Razonamiento cuantitativo</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-3"><span class="tn">3</span> <span>Cívica I: documentos fundacionales</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-4"><span class="tn">4</span> <span>Cívica II: las tres ramas</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-5"><span class="tn">5</span> <span>Ciudadanía en acción</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-6"><span class="tn">6</span> <span>Historia de los Estados Unidos</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-7"><span class="tn">7</span> <span>Economía y geografía</span> <span class="estado">En preparación</span></a></li>
+      <li><a href="#tema-8"><span class="tn">8</span> <span>Integración y preparación final</span> <span class="estado">En preparación</span></a></li>
+    </ol>
+    <p class="nota-tira">El curso se publica por orden. Los temas en preparación ya tienen su plan y sus lecciones listadas, pero todavía no sus páginas.</p>
+  </nav>
+
+  <details class="bloque" open>
+    <summary><h2>De qué trata este curso</h2></summary>
     <p>El examen de Estudios sociales del GED<sup>®</sup> casi nunca pregunta una fecha. Pone delante un documento —un fragmento de la Constitución, un mapa, una gráfica, un discurso, una caricatura política— y pregunta qué se puede sostener con él y qué no. Este curso enseña a hacer exactamente eso, en español, con documentos reales.</p>
     <p>Son ocho temas de doce horas, con tres lecciones de cuatro horas cada uno. Las cuatro primeras semanas construyen las herramientas: interrogar fuentes y leer datos. Las diez siguientes recorren cívica, historia, economía y geografía en una proporción muy cercana a la del examen. Las dos últimas integran todo y preparan el día de la prueba.</p>
     <p>Cada lección está pensada para estudiarse por cuenta propia. Trae sus objetivos, sus explicaciones con ejemplos, sus prácticas con respuesta comentada, un documento para analizar, sugerencias de práctica con la manera de comprobar uno mismo si salieron bien, un quiz y una rúbrica de autoevaluación.</p>
-  </div>
+  </details>
 
   <div class="caja-tip">
     <strong>Por dónde empezar.</strong> Por la Lección 1.1, aunque el Tema 3 o el 6 parezcan más interesantes. Los temas 1 y 2 no son introducción de relleno: son las destrezas que después se aplican en los otros seis, y el examen las evalúa en cada pregunta. Un estudiante que se salta el Tema 1 memoriza contenido y falla los documentos.
   </div>
 
-  <div class="bloque">
-    <h2>Antes de empezar: qué conviene traer</h2>
+  <details class="bloque">
+    <summary><h2>Antes de empezar: qué conviene traer</h2></summary>
     <p>Este curso se apoya con fuerza en la lectura y la argumentación, y mucho menos en las matemáticas. Lo ideal es llegar con el Nivel 4 de Artes del Lenguaje concluido y el Nivel 3 de Matemáticas aprobado. Con esa entrada, Estudios sociales funciona como el curso que cierra todo el recorrido, el último antes de presentar los cuatro módulos del examen.</p>
     <table>
       <caption>Preparación recomendada antes de comenzar Estudios sociales, con lo que aporta cada nivel previo.</caption>
@@ -227,7 +286,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </details>
 
   <a class="archivo" href="fuentes/index.html">
     <span class="ei-icono" aria-hidden="true">🗂️</span>
@@ -254,10 +313,11 @@
             <span class="lec-tit">Preguntas convincentes y de apoyo: el arco de indagación</span>
           </a>
         </li>
-        <li class="lec pendiente">
-          <span class="lec-num">1.2</span>
-          <span class="lec-tit">Fuentes primarias y secundarias: origen, propósito y contexto</span>
-          <span class="etiqueta">En preparación</span>
+        <li class="lec lista">
+          <a href="soc-1-2.html">
+            <span class="lec-num">1.2</span>
+            <span class="lec-tit">Fuentes primarias y secundarias: origen, propósito y contexto</span>
+          </a>
         </li>
         <li class="lec pendiente">
           <span class="lec-num">1.3</span>
