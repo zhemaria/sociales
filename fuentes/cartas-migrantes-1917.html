@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!--
+  Archivo de fuentes · Cartas de migrantes, 1917
+  Spanish ASE Social Studies · GEDparaHispanos
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+  El documento original es de dominio público en Estados Unidos por su fecha
+  de publicación (1919). La traducción al español es obra propia de este curso.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cartas de migrantes, 1917 · Archivo de fuentes</title>
+<meta name="description" content="Once cartas escritas en 1917 por personas que pensaban dejar el sur de Estados Unidos, traducidas al español, con el original en inglés y la ficha completa del documento." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: linear-gradient(135deg, #1c2b33 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 30px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(28,43,51,.28);
+  }
+  header.principal .ruta { font-size: 13px; color: #cfd8dc; letter-spacing: .4px; }
+  header.principal h1 { margin: 8px 0 10px; font-size: 26px; line-height: 1.25; }
+  header.principal .meta { font-size: 14px; color: #eceff1; }
+
+  /* ── NAVEGACIÓN ─────────────────────────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px; font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones.pie { margin: 22px 0 0; }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px;
+    border-bottom: 3px solid var(--tema-bg2);
+    padding-bottom: 6px; margin: 30px 0 14px;
+  }
+  h3.grupo {
+    color: var(--tema-d); font-size: 17px; margin: 24px 0 4px;
+  }
+  p.grupo-nota { margin: 0 0 10px; font-size: 14px; color: #555; font-style: italic; }
+
+  .bloque {
+    background: #ffffff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 18px 22px; margin: 18px 0;
+  }
+  .bloque h2 { margin-top: 0; color: var(--tema-d); font-size: 20px; }
+  .bloque p { margin: 0 0 10px; }
+  .bloque p:last-child { margin-bottom: 0; }
+
+  .caja-tip {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-tip strong { color: #5C3900; }
+
+  /* ── FICHA BIBLIOGRÁFICA ────────────────────────────────────── */
+  .ficha {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    border-radius: 0 10px 10px 0; padding: 16px 22px; margin: 18px 0;
+  }
+  .ficha h2 { margin: 0 0 12px; color: var(--tema-d); font-size: 19px; }
+  .ficha dl {
+    display: grid; grid-template-columns: max-content 1fr;
+    gap: 6px 18px; margin: 0; font-size: 15px;
+  }
+  .ficha dt { font-weight: 700; color: var(--tema-d); }
+  .ficha dd { margin: 0; }
+  .ficha a { color: var(--tema-d); }
+  @media (max-width: 620px) {
+    .ficha dl { grid-template-columns: 1fr; gap: 0; }
+    .ficha dd { margin: 0 0 10px; }
+  }
+
+  /* ── CARTAS ─────────────────────────────────────────────────── */
+  .carta {
+    background: #ffffff; border: 1px solid #e0e0e0;
+    border-radius: 10px; padding: 14px 20px; margin: 14px 0;
+  }
+  .carta h4 {
+    margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+  }
+  .carta blockquote {
+    margin: 0; background: #fafbfc; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 10px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f7f9fa;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+  details.original .cuerpo-original p:last-child { margin-bottom: 0; }
+
+  .controles { margin: 10px 0 0; }
+  .btn {
+    background: var(--tema); color: #ffffff; border: 0; border-radius: 8px;
+    padding: 8px 16px; font-size: 14px; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover { background: var(--tema-d); }
+
+  /* ── USO EN LAS LECCIONES ───────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  caption { text-align: left; font-size: 13px; color: #555; padding-bottom: 6px; font-style: italic; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--tema-bg); color: var(--tema-d); }
+  td a { color: var(--tema-d); }
+
+  footer {
+    margin-top: 34px; padding-top: 16px; border-top: 2px solid var(--tema-bg2);
+    font-size: 13px; color: #555; text-align: center;
+  }
+  footer p { margin: 4px 0; }
+  footer a { color: var(--tema-d); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">GEDparaHispanos · Archivo de fuentes · Documento 1</div>
+    <h1>Cartas de migrantes, 1917</h1>
+    <div class="meta">Fuente primaria · Correspondencia personal · Dominio público</div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Cartas de migrantes, 1917</span>
+  </nav>
+
+  <div class="ficha">
+    <h2>Ficha del documento</h2>
+    <dl>
+      <dt>Documento</dt>
+      <dd>Once cartas escritas entre abril y mayo de 1917</dd>
+
+      <dt>Autores</dt>
+      <dd>Personas anónimas de Florida, Alabama, Misisipi, Luisiana, Texas y Georgia. La mayoría pidió que no se publicara su nombre.</dd>
+
+      <dt>Destinatarios</dt>
+      <dd>El periódico <em>Chicago Defender</em>, la Liga Urbana de Chicago y <em>The New York Age</em></dd>
+
+      <dt>Tipo de fuente</dt>
+      <dd>Primaria · correspondencia personal</dd>
+
+      <dt>Recopilador</dt>
+      <dd>Emmett J. Scott</dd>
+
+      <dt>Publicación</dt>
+      <dd><em>Letters of Negro Migrants of 1916–1918</em>, <em>The Journal of Negro History</em>, vol. 4, n.º 3, julio de 1919, pp. 290–340</dd>
+
+      <dt>Facsímil original</dt>
+      <dd><a href="https://archive.org/details/jstor-2713780" rel="noopener">Internet Archive · jstor-2713780</a>. La segunda entrega, <em>More Letters of Negro Migrants</em> (vol. 4, n.º 4, octubre de 1919), está en <a href="https://archive.org/details/jstor-2713449" rel="noopener">jstor-2713449</a>.</dd>
+
+      <dt>Situación legal</dt>
+      <dd>Dominio público en Estados Unidos por su fecha de publicación. Digitalizado por JSTOR dentro de su colección <em>Early Journal Content</em>, de libre lectura y redistribución sin fines comerciales.</dd>
+
+      <dt>Traducción</dt>
+      <dd>Traducción al español propia de este curso. El original en inglés se conserva plegado bajo cada carta.</dd>
+
+      <dt>Verificado</dt>
+      <dd>Agosto de 2026</dd>
+    </dl>
+  </div>
+
+  <div class="bloque">
+    <h2>Qué es este documento</h2>
+    <p>Entre 1916 y 1970, cerca de seis millones de personas afroamericanas dejaron el sur rural de Estados Unidos y se establecieron en las ciudades del norte y el oeste. A ese desplazamiento se le llama la Gran Migración. Chicago fue uno de los destinos principales.</p>
+    <p>El <em>Chicago Defender</em>, periódico afroamericano de esa ciudad, circulaba clandestinamente por el sur y publicaba anuncios de trabajo en el norte. Miles de personas le escribieron. Emmett J. Scott reunió centenares de esas cartas y las publicó en 1919, agrupadas por el asunto que trataban. Estas once proceden de esa recopilación y se presentan aquí en sus grupos originales.</p>
+    <p>No son un texto redactado para enseñar. Son cartas de trabajo, escritas por personas que estaban decidiendo si irse, dirigidas a desconocidos de los que esperaban una respuesta concreta.</p>
+  </div>
+
+  <div class="caja-tip">
+    <strong>Sobre la lengua de estas cartas.</strong> Quienes las escribieron habían tenido poca escuela, y en el original la ortografía es irregular: faltan mayúsculas, sobran o faltan letras, la puntuación va donde cae. La traducción conserva esa irregularidad en lugar de corregirla, porque es evidencia: dice algo sobre quién escribió, cuánta escuela pudo tener y en qué condiciones. Estas cartas emplean además el vocabulario racial de 1917, que se reproduce tal cual en el facsímil y se traduce sin suavizarlo. Alterarlo borraría una prueba.
+  </div>
+
+  <h2 class="seccion">Las cartas</h2>
+
+  <div class="controles">
+    <button type="button" class="btn" id="btn-originales">Abrir todos los originales en inglés</button>
+  </div>
+
+  <h3 class="grupo">Grupo 1 · Cartas que piden información sobre el norte</h3>
+  <p class="grupo-nota">El grupo más numeroso de la recopilación. Quien escribe todavía no ha decidido nada: quiere saber.</p>
+
+  <div class="carta">
+    <h4>Carta 1 · Sanford, Florida, 27 de abril de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: He visto por el <em>Chicago Defender</em> que usted y la gente de Chicago están ayudando a los recién llegados. Le pido información sobre las condiciones en algún pueblo pequeño cerca de Chicago.</p>
+      <p>Aquí hay algunas familias que están pensando en mudarse, y desean saber qué esperar antes de salir. Sírvase informar sobre el trato, el trabajo, el alquiler y las escuelas. Conteste cuando tenga un rato libre.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear Sir: I have seen through the Chicago Defender that you and the people of Chicago are helping newcomers. I am asking you for some information about conditions in some small town near Chicago.</p>
+        <p>There are some families here thinking of moving up, and are desirous of knowing what to expect before leaving. Please state about treatment, work, rent and schools. Please answer at some spare time.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 2 · Dallas, Texas, 23 de abril de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: Habiendo sido informado por el periódico <em>Chicago Defender</em> de que puedo obtener información de usted, le escribo. Soy lector constante del <em>Defender</em> y estoy pensando en irme de aquí hacia algún punto del norte. Teniendo su ciudad en vista, se me ocurrió preguntarle por las condiciones de trabajo, la vivienda, los salarios y todo lo necesario.</p>
+      <p>Estoy empleado ahora como obrero en un taller de estructuras; llevo cinco años con la firma. Estuve tres años almacenando carros para la empacadora Armour. También digo saber algo de hacer dulces, y soy hábil para casi cualquier cosa que dé de vivir honradamente. Tengo 31 años, tengo una esposa muy trabajadora y no tengo hijos. Si hay posibilidades de trabajo de cualquier clase, hágamelo saber.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear Sir: Having been informed through the Chicago Defender paper that I can secure information from you. I am a constant reader of the Defender and am contemplating on leaving here for some point north. Having your city in view I thought to inquire of you about conditions for work, housing, wages and everything necessary.</p>
+        <p>I am now employed as a laborer in a structural shop, have worked for the firm five years. I stored ears for Armour packing co. 3 years, I also claims to know something about candy making, am handy at most anything for an honest living. I am 31 yrs. old have a very industrious wife, no children. If chances are available for work of any kind let me know.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 3 · Mobile, Alabama, 27 de abril de 1917</h4>
+    <blockquote>
+      <p>Señor: Su anuncio aparecido en el <em>Chicago Defender</em> me ha movido a escribirle sin demora. Durante siete años tuve fama de lavandera de primera clase en Selma. Tengo mucha experiencia con todas las máquinas de esta lavandería. Esta lavandería es conocida por su trabajo esmerado y pulcro. Hacemos trabajo de muestra para distintas lavanderías de ciudades vecinas, es decir, Montgomery, Birmingham y Mobile, una o dos veces al año.</p>
+      <p>Ahora hago trabajo doméstico, pero quisiera ponerme en contacto con Chicago. Tengo un ansia grande de información clara sobre cómo conseguir un buen puesto. Tengo una recomendación escrita del capataz, en la que confío como respaldo. Me hará usted un noble favor con una respuesta en el momento más temprano posible, con una descripción completa del trabajo.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Sir: Your advertisement appearing in the Chicago Defender have influenced me to write to you with no delay. For seven previous years I bore the reputation of a first class laundress in Selma. I have much experience with all of the machines in this laundry. This laundry is noted for its skillful work of neatness and ect. We do sample work for different laundries of neighboring cities, viz. Montgomery, Birmingham and Mobile once or twice a year.</p>
+        <p>At preseant I do house work but would like to get in touch with the Chicago. I have an eager desire of a clear information how to get a good position. I have a written recommendation from the foreman of which I largely depend upon as a relief. You will do me a noble favor with an answer in the earliest possible moment with a description all about the work.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 4 · Houston, Texas, 20 de abril de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: quería irme del sur e ir a un lugar donde un hombre pueda ser algo. Pensé escribirle para pedir consejo sobre cuál sería un buen lugar para un hombre relativamente joven que quiere mejorar su posición y que tiene una familia muy prometedora.</p>
+      <p>Tengo 30 años y buena experiencia en manejo de carga, y puedo ocupar cualquier puesto, desde carretillero hasta agente. Me gustaría Chicago o Filadelfia, pero no me importa dónde, con tal de ir donde un hombre es un hombre.</p>
+      <p>Espero saber de usted pronto, porque quiero salir hacia el 15 de mayo.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear Sir: wanted to leave the South and Go and Place where a man will Be any thing Except A Ker I thought would write you for Advise As where would be a Good Place for a Comporedly young man That want to Better his Standing who has a very Promising young Family.</p>
+        <p>I am 30 years old and have Good Experence in Freight Handler and Can fill Position from Truck to Agt. would like Chicago or Philadelphia But I dont Care where so long as I Go where a man is a man</p>
+        <p>Hopeing hear of you soon as I want to leave on or about 15 day of May I am yours as Ever.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 5 · Lexington, Misisipi, 12 de mayo de 1917</h4>
+    <blockquote>
+      <p>Mi estimado señor: Le escribo pidiendo información y ayuda, si puede dármela.</p>
+      <p>Soy un hombre joven y estoy imposibilitado, en muy alto grado, para el trabajo manual duro. Me eduqué en el Alcorn College y llevo unos años enseñando; pero, ay de mí, el superintendente bajo el cual tenemos que enseñar los pobres maestros de color se preocupa menos por un hombre de color que por la bestia más vil. Estoy obligado a enseñar a 150 niños sin ninguna ayuda y recibo solo 27 dólares al mes; el blanco, con 30 niños, recibe 100.</p>
+      <p>Estoy tan enfermo, tan cansado de semejantes condiciones, que a veces pienso que la vida para mí no vale la pena, y creo con toda firmeza, como Patrick Henry, «dadme la libertad o dadme la muerte». Si fuera un hombre fuerte y sano, me habría ido de aquí hace mucho, pero esto me limita y debo informarme antes de dar el salto.</p>
+      <p>Señor, ¿cree usted que puede ayudarme a conseguir un puesto? Soy bueno en taquigrafía, mecanografía y contabilidad, o en cualquier trabajo que no sea demasiado rudo o pesado.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>My dear Mr. H—: I am writing to you for some information and assistance if you can give it.</p>
+        <p>I am a young man and am disable, in a very great degree, to do hard manual labor. I was educated at Alcorn College and have been teaching a few years: but ah: me the Superintendent under whom we poor colored teachers have to teach cares less for a colored man than he does for the vilest beast. I am compelled to teach 150 children without any assistance and receives only $27.00 a month, the white with 30 get $100.</p>
+        <p>I am so sick I am so tired of such conditions that I sometime think that life for me is not worth while and most eminently believe with Patrick Henry "Give me liberty or give me death." If I was a strong able bodied man I would have gone from here long ago, but this handicaps me and, I must make inquiries before I leap.</p>
+        <p>Mr. H—, do you think you can assist me to a position I am good at stenography typewriting and bookkeeping or any kind of work not to rough or heavy.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3 class="grupo">Grupo 2 · Cartas sobre la Gran Marcha del Norte de 1917</h3>
+  <p class="grupo-nota">Corrió el rumor de que el 15 de mayo de 1917 saldrían vagones hacia el norte. Estas cartas piden confirmarlo.</p>
+
+  <div class="carta">
+    <h4>Carta 6 · Mobile, Alabama, 25 de abril de 1917</h4>
+    <blockquote>
+      <p>Señor: Estaba leyendo en ese periódico sobre la raza de color y mientras leía vi que habría vagones aquí para el 15 de mayo, que es dentro de un mes contando de hoy. ¿Tendría usted la bondad de decirme adónde llegan? Me alegraría saberlo, porque soy una mujer pobre y tengo un marido y cinco hijos vivos y tres muertos.</p>
+      <p>Este es mi lugar natal, pero no es apto para vivir, tal como dice el <em>Chicago Defender</em>: dice la verdad. Mi marido gana solo 1.50 al día y paga 7.50 al mes de alquiler y apenas puede darnos de comer a mí, a él y a los niños. Soy madre de 8 hijos, tengo 25 años, y quiero salir de este agujero de perros porque no sé para qué los estoy criando en este lugar, y quiero llegar a Chicago, donde sé que se criarán bien.</p>
+      <p>Él va primero un tiempo y después manda a buscarme.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Sir: I was reading in theat paper about the Colored race and while reading it I seen in it where cars would be here for the 15 of May which is one month from to day. Will you be so kind as to let me know where they are coming to and I will be glad to know because I am a poor woman and have a husband and five children living and three dead.</p>
+        <p>This is my native home but it is not fit to live in just as the Chicago Defender say it says the truth and my husband only get $1.50 a day and pays $7.50 a month for house rent and can hardly feed me and his self and children. I am the mother of 8 children 25 years old and I want to get out of this dog hold because I dont know what I am raising them up for in this place and I want to get to Chicago where I know they will be raised.</p>
+        <p>He get there a while and then he can send for me.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 7 · Nueva Orleans, Luisiana, 2 de mayo de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: Por favor, señor, ¿tendría la bondad de decirme qué se entiende por la gran Marcha del Norte que ha de ocurrir el martes 15 de mayo? Es un rumor por toda la ciudad, que hay que estar listos para el 15 de mayo para ir en la marcha; el <em>Defender</em> habló de ella por primera vez el 10 de febrero.</p>
+      <p>Mi marido ya está en el norte preparando para nuestra familia, pero al oír que la excursión costará 6.00 desde aquí hacia el norte el día 15, y teniendo familia grande, me convendría si de verdad es cierto. Por favor, escríbame enseguida y dígame si hay una excursión que salga del sur. Casi todo el sur se está preparando para la marcha, o excursión, como la llaman. Escriba enseguida. Estamos enfermos por salir del sur macizo.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear Sir: Please Sir will you kindly tell me what is meant by the great Northern Drive to take place May the 15th on tuesday. It is a rumor all over town to be ready for the 15th of May to go in the drive, the Defender first spoke of the drive the 10th of February.</p>
+        <p>My husband is in the north already preparing for our family but hearing that the excursion will be $6.00 from here north on the 15 and having a large family, I could profit by it if it is really true. Do please write me at once and say is there an excursion to leave the south. Nearly the whole of the south is getting ready for the drive or excursion as it is termed. Please write at once. We are sick to get out of the solid south.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3 class="grupo">Grupo 3 · Cartas sobre los agentes de trabajo</h3>
+  <p class="grupo-nota">No todos los intermediarios eran honrados. Este grupo recoge las quejas.</p>
+
+  <div class="carta">
+    <h4>Carta 8 · DeRidder, Luisiana, 18 de abril de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: Le escribo hoy unas pocas líneas pidiendo información. Diré mi queja, que es esta.</p>
+      <p>Aquí hay mil ochocientas personas de la raza de color que le han pagado 2.00 a un hombre para ser trasladadas a Chicago a trabajar. Él nos dice que hay gran demanda de mano de obra en el norte, y nosotros sabemos que es verdad, porque hay miles que se van de Alabama y Florida y Georgia y de otros estados. Y este hombre blanco iba a mandarnos a Chicago el 15 de marzo, y cada vez que le preguntamos nos dice que las compañías no están listas para nosotros, y todos queremos salir del sur.</p>
+      <p>Oímos decir que este hombre nos ha estafado el dinero. Tenemos un duplicado que muestra que le pagamos ese dinero, y si hay alguna compañía que quiera a estos hombres y les dé transporte, ¿me lo notificaría enseguida? Porque estoy cansado de que me traten como si fuera una bestia, y vendremos de una vez.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear Sir: in regards of helth and all so in need that I am riting you these fue lines to day to you. Now what I want you to doe for me is this will you please give this letter to the Chicago Defender printers and I will bee oblige to you.</p>
+        <p>I am to day riting you jus a fue lines for infermasion I wil state my complant is this, now her is 18 hundred of the colored race have paid to a man $2.00 to be transfered to Chicago to work, he tel us that thire is great demand in the north for labor and wee no it is true bee cors ther is thousands of them going from Alabama and fla. and Gergia and all so other states and this white man was to send us to Chicago on the 15 of march and eavery time we ask him about it he tell us that the companys is not redy for us and we all wants to get out of the south.</p>
+        <p>wee herd that this man have fould wee people out of this money, wee has a duplicate shorn that wee have paid him this money and if ther is iny compnys that wants these men and will furnis transpertashion for us wil you please notifie me at once bee cors I am tired of bene dog as I was a beast and wee will come at wonce.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3 class="grupo">Grupo 4 · Cartas en las que se pidió reserva</h3>
+  <p class="grupo-nota">Scott agrupó aparte las cartas cuyos autores pidieron expresamente que no se publicara su nombre.</p>
+
+  <div class="carta">
+    <h4>Carta 9 · Ellisville, Misisipi, 1.º de mayo de 1917</h4>
+    <blockquote>
+      <p>Amable señor: Llevo cuatro meses recibiendo el <em>Defender</em> y disfruto mucho leyéndolo. No creo que pueda imprimirse un periódico más grande para nuestra raza que el <em>Defender</em>.</p>
+      <p>Estimado editor: estoy pensando en salir hacia algún buen lugar del norte o del oeste, no sé bien cuál. Me entero de que Nebraska tiene muy buen clima para la gente del sur. Quiero que me dé algunas ideas sobre eso, o sobre algún buen país de labranza. Llevo diez años haciendo trabajo público. Estoy cansado de eso y quiero salir a una buena granja. Tengo esposa y cinco hijos y todos queremos salir del pueblo y tratar de comprar un buen hogar cerca de buenas escuelas y buenas iglesias.</p>
+      <p>Los salarios aquí son tan bajos que apenas se puede vivir. Compramos lo suficiente para comer, solo compramos lo suficiente para seguir vivos, y hablo de la mayor parte de la raza. Los salarios de las mujeres van de 1.25 a veces hasta 2.50, y eso a veces por una semana entera.</p>
+      <p><em>Posdata:</em> Puede poner mi carta en alguna de las columnas del <em>Defender</em>, pero no use mi nombre impreso, porque podría llegar de vuelta aquí abajo.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Kind Sir: I have been takeing the Defender 4 months I injoy reading it very much I dont think that there could be a grander paper printed for the race, then the defender.</p>
+        <p>Dear Editor I am thinking of leaving for Some good place in the North or West one I dont Know just which I learn that Nebraska was a very good climate for the people of the South. I wont you to give me some ideas on it, Or Some good farming country. I have been public working for 10 year. I am tired of that, And want to get out on a good farm. I have a wife and 5 children and we all wont to get our from town a place an try to buy a good home near good Schools good Churchs.</p>
+        <p>Wages here are so low can scarcely live We can buy enough to eat we only buy enough to Keep up alive I mean the greater part of the Race. Women wages are from $1.25 Some time as high, as $2.50. just some time for a whole week.</p>
+        <p>P. S. You can place my letter in Some of the Defender Colums but done use my name in print, for it might get back down here.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h4>Carta 10 · Fullerton, Luisiana, 7 de mayo de 1917</h4>
+    <blockquote>
+      <p>Estimado señor: Esta va para informarle de que me gustaría mucho subir y establecerme en su ciudad, pero quisiera recibir algún consejo antes de dejar el soleado sur.</p>
+      <p>Soy ferroviario de oficio. Por supuesto, soy un hombre de color, pero he sido conductor para el ferrocarril G. &amp; S. R. estos ocho años pasados. He hecho de jefe de patio y de encargado de la locomotora de maniobras, y he tenido a mi cargo el departamento local de carga. Sírvase decirme si cree que puedo conseguir allí un puesto razonablemente bien pagado, y estoy listo para subir y ponerme a ello. Puedo dar buenas referencias, y tengo mi propia máquina de escribir y mi equipo.</p>
+      <p>No me importa especialmente trabajar para el ferrocarril, pero quisiera conseguir algo respetable si es posible. Sírvase avisarme en privado y no publique.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>Dear sir: This comes to inform you that I would like very much to come up and locate in your town, but would like to have a little advise before I leave the sunny south.</p>
+        <p>I am a railroad man by trade. Of course I am a Colored man but I have been Conductor for the G. &amp; S. R. Ry. of the past eight years. I have acted as yard master, and manager of the switch engine and had charge of the local freight department. Please advise if you think I can secure a fairly good paying position up there and I am ready to come up and take hold. I can furnish good reference, and have my own typewriter and equipment.</p>
+        <p>I am not particular about working for the rail-road, but I would like to get something respectable if possible. Kindly advise privately and do not publish.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3 class="grupo">Grupo 5 · La carta que matiza</h3>
+  <p class="grupo-nota">En medio de los planes de salida, esta reconoce que algunos ya habían vuelto.</p>
+
+  <div class="carta">
+    <h4>Carta 11 · Nueva Orleans, Luisiana, 22 de abril de 1917</h4>
+    <blockquote>
+      <p>Bajo los titulares del <em>Chicago Defender</em> del sábado 22 de abril de 1917 leí cómo están tratando a algunos de los nuestros que suben al norte. Han ido unos pocos de esta ciudad al norte y volvieron a las pocas semanas. Algunos dicen que volvieron por el frío; los otros dicen que tuvieron que pagar mucho para conseguir trabajo, etcétera.</p>
+      <p>Yo quisiera ir al norte, y preferiría estar en algún lugar que no fuera Chicago, o cerca de Chicago. Soy hombre de sindicato, pero no espero trabajar solo de sindicato. Somos unos cuantos hombres de sindicato los que estamos planeando ir al norte. Le mando una de mis tarjetas sindicales.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>under the head lines in the Chicage Defender of Saturday April 22-17 I red how some of us that goes up north are being treated, there is a few that have gone from this city north, and came back a few weeks, some say they came back on account of being to cold "The others Say they ware to pay so much to get work etc"</p>
+        <p>I would like to go north, and would rather be in some place, other then Chicago, or near Chicago. I am a union man" but dont exspect to work at union only" there is a few of us union men that are planing to go north and Kindly please write me" all so I mail you one of my union cards.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 class="seccion">Qué sostiene y qué no sostiene este documento</h2>
+
+  <div class="bloque">
+    <p><strong>Lo que sostiene.</strong> Que en la primavera de 1917 miles de personas del sur estaban decidiendo irse, y por qué. Los motivos aparecen con cifras concretas: un jornal de 1.50 al día, un alquiler de 7.50 al mes, un salario de maestro de 27 dólares frente a los 100 del maestro blanco, salarios de mujeres de 1.25 a 2.50 por semana. Sostiene también que el <em>Chicago Defender</em> circulaba por el sur y era el canal de esa información, y que escribir estas cartas se percibía como arriesgado: varios autores piden que no se publique su nombre.</p>
+    <p><strong>Lo que no sostiene.</strong> Nada de lo que pasó después. Las once cartas fueron escritas <em>antes</em> de salir. No dicen quién llegó, quién consiguió trabajo, quién se quedó ni a quién le fue mejor. La carta 11 avisa incluso de que algunos regresaron. Para responder si la migración mejoró la vida de estas familias haría falta otro tipo de fuente: censos, registros de empleo, prensa de Chicago, cartas escritas desde el norte.</p>
+    <p><strong>Lo que hay que tener presente sobre la selección.</strong> Estas cartas llegaron a nosotros porque alguien decidió conservarlas y publicarlas. Scott era un funcionario y educador afroamericano que quería documentar la migración, no un archivero neutral. Las cartas de quienes no escribieron, de quienes escribieron y no fueron recopilados, y de quienes decidieron quedarse, no están aquí.</p>
+  </div>
+
+  <h2 class="seccion">Lecciones que usan este documento</h2>
+
+  <table>
+    <caption>Lecciones del curso que trabajan con las cartas de migrantes de 1917, y qué parte del documento usa cada una.</caption>
+    <thead>
+      <tr>
+        <th scope="col">Lección</th>
+        <th scope="col">Qué usa</th>
+        <th scope="col">Para qué</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="../soc-1-1.html">1.1 · Preguntas convincentes y de apoyo</a></td>
+        <td>Cartas 1, 6, 9 y 11</td>
+        <td>Reconocer preguntas de apoyo escritas por los propios protagonistas, y distinguir lo que una fuente prueba de lo que solo sugiere.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:15px; color:#555;">Esta lista crece a medida que se publican las lecciones.</p>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="../soc-1-1.html">Lección 1.1</a>
+  </nav>
+
+  <footer>
+    <p>Archivo de fuentes · Documento 1 · GEDparaHispanos</p>
+    <p>Traducción al español: José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>El documento original es de dominio público en Estados Unidos. Facsímil cortesía de Internet Archive y de la colección <em>Early Journal Content</em> de JSTOR.</p>
+    <p>© 2026 la traducción. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('btn-originales');
+  if (!btn) return;
+  var abiertos = false;
+  btn.addEventListener('click', function () {
+    abiertos = !abiertos;
+    document.querySelectorAll('details.original').forEach(function (d) { d.open = abiertos; });
+    btn.textContent = abiertos
+      ? 'Cerrar todos los originales en inglés'
+      : 'Abrir todos los originales en inglés';
+  });
+})();
+</script>
+</body>
+</html>
