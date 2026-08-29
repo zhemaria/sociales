@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<!--
+  Lección 1.2 · Fuentes primarias y secundarias: origen, propósito y contexto
+  Spanish ASE Social Studies · Tema 1 · Indagación, fuentes y alfabetización analítica
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 1.2 · Fuentes primarias y secundarias: origen, propósito y contexto</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 1 — paleta marrón heredada del plan curricular (--t1) */
+    --tema:    #4e342e;
+    --tema-d:  #3e2a25;
+    --tema-bg: #efebe9;
+    --tema-bg2:#d7ccc8;
+    --acento:  #5d4037;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #2e1f1b 0%, #3e2a25 55%, #4e342e 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(46,31,27,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #3e2a25;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fffdf7; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #4a3a34; font-weight: 600; }
+  .navlecciones .nav-sep { color: #6d5b54; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fffdf7;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #4e342e; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 1 · Indagación, fuentes y alfabetización analítica</div>
+    <h1>Lección 1.2 · Fuentes primarias y secundarias: origen, propósito y contexto</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">Enlace · Artes del Lenguaje Nivel 4 (5–6.R.CI.4–8)</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 1.2</span>
+    <a class="nav-sig" href="soc-1-3.html">Siguiente: Lección 1.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Distinguir una fuente primaria de una secundaria por su relación con los hechos, y no por su antigüedad ni por su formato.</li>
+      <li>Interrogar un documento antes de leerlo a fondo: quién lo produjo, cuándo, para quién y con qué intención.</li>
+      <li>Determinar qué afirmaciones sostiene un documento y cuáles no, y decir en qué se apoya esa determinación.</li>
+      <li>Comparar dos fuentes sobre el mismo asunto y explicar en qué se contradicen, en qué se completan y por qué difieren.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior terminó con una indagación escrita: una pregunta convincente y las preguntas de apoyo que la sostienen. Ahí se prometió que aquí se le buscarían las fuentes. Pero antes de buscar hace falta saber leer lo que se encuentre, y leer un documento no es entenderlo.</p>
+    <p>Un documento se entiende cuando se sabe de dónde viene. Quién lo escribió, cuándo, para quién y buscando qué. Sin eso, un texto de 1910 y otro de 1895 sobre el mismo barrio parecen decir lo mismo, y no lo dicen: uno defiende una obra y el otro cuenta un censo. La diferencia no está en las palabras, está en el origen.</p>
+    <p>Esta lección trabaja con dos documentos reales sobre el mismo lugar: el barrio de la calle Halsted, en Chicago, a finales del siglo XIX. Los dos están completos en el Archivo de fuentes de este curso. Aquí verá los fragmentos de trabajo.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Primaria y secundaria: la distinción que casi todos entienden al revés</h2>
+
+  <div class="bloque">
+    <p>La confusión más común es creer que primaria significa <em>antigua</em>. No es eso. Una fuente es <strong>primaria</strong> cuando la produjo alguien que participó en los hechos o los presenció, dentro del mundo que describe. Es <strong>secundaria</strong> cuando alguien la escribió después, desde fuera, estudiando las fuentes primarias de otros.</p>
+    <p>Un manual de historia publicado el año pasado sobre la Guerra Civil es secundario. Una carta escrita por un soldado en 1863 es primaria. Hasta ahí es fácil. Ahora lo difícil: un artículo de periódico de 1863 sobre esa misma guerra también es primario, aunque el periodista no estuviera en la batalla, porque el documento pertenece al momento y nos dice cómo se contaba la guerra entonces. Y un video de YouTube grabado ayer por un testigo de un suceso de ayer es primario, aunque sea de esta semana.</p>
+    <p>La pregunta que resuelve casi todos los casos es esta: <strong>¿el documento pertenece al mundo que describe, o lo mira desde fuera y desde después?</strong></p>
+  </div>
+
+  <div class="caja-tip">
+    <p><strong>La misma fuente cambia de categoría según lo que le pregunte.</strong> Un manual de historia de 1950 es secundario si usted pregunta por la Guerra Civil. Pero es primario si pregunta cómo se enseñaba la Guerra Civil en 1950. La categoría no vive en el documento: vive en la relación entre el documento y su pregunta.</p>
+  </div>
+
+  <div class="practica">
+    <h3>Práctica interactiva 1 · Primaria o secundaria</h3>
+    <p>Seleccione la respuesta correcta en cada caso. Después de responder aparecerá la explicación.</p>
+
+    <div class="pregunta" data-correcta="a" data-explica="La escribió una persona que estaba viviendo lo que cuenta, en el momento en que lo vivía. Pertenece al mundo que describe, y por eso es primaria, aunque quien la escribió no fuera nadie famoso.">
+      <div class="enun">1. Una carta de 1917 en la que una mujer de Alabama pide informes para mudarse a Chicago.</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Fuente primaria</div>
+        <div class="opcion" data-op="b">Fuente secundaria</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="b" data-explica="El autor no vivió los hechos: los estudió después, leyendo las fuentes primarias de otros. Que el libro sea viejo no lo convierte en primario.">
+      <div class="enun">2. Un libro publicado en 1965 que analiza la migración de afroamericanos al norte entre 1916 y 1930.</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Fuente primaria</div>
+        <div class="opcion" data-op="b">Fuente secundaria</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="a" data-explica="Es primaria. La autora estuvo allí y escribe sobre lo que hizo. Que hayan pasado veintiún años entre los hechos y la escritura no la vuelve secundaria: la vuelve una fuente primaria con problemas de memoria, que es otra cosa y se trata más adelante en esta lección.">
+      <div class="enun">3. Un libro de memorias publicado en 1910 por la fundadora de una institución, sobre los primeros meses de esa institución en 1889.</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Fuente primaria</div>
+        <div class="opcion" data-op="b">Fuente secundaria</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="b" data-explica="Una enciclopedia reúne y resume lo que otros investigaron. Es secundaria, y muy útil: sirve para orientarse antes de ir a las fuentes primarias, no para sustituirlas.">
+      <div class="enun">4. La entrada «Ordenanzas de tracción» de una enciclopedia de historia de Chicago publicada en 2004.</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Fuente primaria</div>
+        <div class="opcion" data-op="b">Fuente secundaria</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="a" data-explica="Depende de la pregunta, y aquí la pregunta lo decide: si usted investiga cómo se enseñaba historia en las escuelas de los años cincuenta, ese manual pertenece al mundo que usted estudia. Es primario para esa pregunta.">
+      <div class="enun">5. Un manual escolar de 1955, si la pregunta es: ¿qué se les enseñaba a los niños estadounidenses sobre los pueblos indígenas en los años cincuenta?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Fuente primaria</div>
+        <div class="opcion" data-op="b">Fuente secundaria</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Las tres preguntas: origen, propósito y contexto</h2>
+
+  <div class="bloque">
+    <p>Clasificar una fuente es el primer paso, no el último. Saber que un documento es primario no dice todavía si es fiable, ni para qué sirve. Para eso hacen falta tres preguntas, que se hacen <em>antes</em> de leer el documento a fondo.</p>
+  </div>
+
+  <div class="bloque">
+    <h2>Origen: ¿quién lo hizo y cuándo?</h2>
+    <p>Nombre del autor, fecha de producción, fecha de los hechos, y la distancia entre las dos. Un informe escrito el mismo día no tiene los mismos problemas que unas memorias escritas veintiún años después. También cuenta la posición del autor: no es lo mismo que hable el dueño de la fábrica, el inspector del Estado o la obrera.</p>
+  </div>
+
+  <div class="bloque">
+    <h2>Propósito: ¿para qué se escribió y para quién?</h2>
+    <p>Ningún documento se escribe solo. Alguien quería algo: convencer, informar, pedir dinero, defenderse, dejar constancia, vender. Y lo escribió pensando en un lector concreto. Un folleto para donantes y un informe interno sobre el mismo asunto no dirán lo mismo, aunque los firme la misma persona.</p>
+  </div>
+
+  <div class="bloque">
+    <h2>Contexto: ¿qué estaba pasando alrededor?</h2>
+    <p>Qué se discutía en ese momento, qué era decible y qué no, qué palabras eran normales entonces y hoy son ofensivas. El contexto no disculpa lo que dice un documento, pero explica por qué lo dice así, y evita leer un texto de 1895 como si lo hubieran escrito ayer.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <p><strong>Lo que estas preguntas no son.</strong> No sirven para decidir si un documento es «bueno» o «malo», ni para descartarlo. Una fuente interesada no es una fuente inútil: es una fuente que hay que leer sabiendo qué defiende. De hecho, las fuentes más reveladoras suelen ser las más interesadas, porque enseñan qué quería alguien que se creyera.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📜</span> Documento A para analizar</h2>
+    <p class="fuente">Jane Addams cuenta cómo era la calle Halsted. Léalo aplicando las tres preguntas antes de juzgar lo que dice.</p>
+
+    <div class="ficha-fuente">
+      <dl>
+        <dt>Documento</dt><dd>Capítulo V, «Los primeros días en la Casa Hull»</dd>
+        <dt>Autora</dt><dd>Jane Addams (1860–1935), cofundadora de la Casa Hull</dd>
+        <dt>Hechos que narra</dt><dd>Chicago, 1889 y 1890</dd>
+        <dt>Fecha de escritura</dt><dd>1910, veintiún años después</dd>
+        <dt>Publicación</dt><dd><em>Twenty Years at Hull-House</em>, Nueva York, The Macmillan Company, 1910</dd>
+        <dt>Tipo de fuente</dt><dd>Primaria · memoria personal publicada</dd>
+        <dt>Documento completo</dt><dd><a href="fuentes/addams-primeros-dias-1889.html">Ficha en el Archivo de fuentes</a>, con el capítulo íntegro y el original en inglés</dd>
+      </dl>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 1 · La descripción del barrio, páginas 98 y 99</h3>
+      <blockquote>
+        <p>La política de las autoridades públicas de no tomar nunca la iniciativa, y de esperar siempre a que se las inste a cumplir con su deber, es obviamente fatal en un barrio donde hay poca iniciativa entre los ciudadanos. La idea que sostiene nuestro autogobierno se viene abajo en un distrito así. Las calles están indeciblemente sucias, el número de escuelas es insuficiente, la legislación sanitaria no se aplica, el alumbrado es malo, el pavimento es pésimo y falta por completo en los callejones y en las calles menores, y los establos son inmundos más allá de toda descripción. Centenares de casas no están conectadas al alcantarillado de la calle.</p>
+        <p>Los habitantes más antiguos y más ricos parecen ansiosos por mudarse tan pronto como puedan permitírselo. Dejan sitio a inmigrantes recién llegados que son densamente ignorantes de sus deberes cívicos.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 2 · Cómo presenta la autora ese texto, página 97</h3>
+      <blockquote>
+        <p>La calle Halsted se me ha hecho tan familiar en veinte años de residencia que cuesta recordar sus cambios graduales: la retirada de los irlandeses y los alemanes más prósperos, y la lenta sustitución por judíos rusos, italianos y griegos. Una descripción de la calle como la que yo daba en aquellos primeros discursos sigue pareciéndome comprensiva y correcta.</p>
+      </blockquote>
+    </div>
+
+    <div class="caja-tip">
+      <p><strong>Fíjese en el segundo fragmento antes de seguir.</strong> La descripción del barrio no es lo que Addams escribió en 1910: es lo que ella decía en sus discursos de 1889, citado por ella misma veintiún años después y declarado todavía correcto. Son dos documentos dentro de uno, y no tienen la misma fecha.</p>
+    </div>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📜</span> Documento B para analizar</h2>
+    <p class="fuente">El mismo barrio, seis años antes, contado por quien lo midió. Compárelo con el documento A.</p>
+
+    <div class="ficha-fuente">
+      <dl>
+        <dt>Documento</dt><dd>«Notas y comentarios a los mapas», capítulo primero</dd>
+        <dt>Autora</dt><dd>Agnes Sinclair Holbrook, residente de la Casa Hull, que trazó los mapas</dd>
+        <dt>Datos</dt><dd>Levantados del 6 de abril al 15 de julio de 1893 por cuatro funcionarios del Departamento de Trabajo de Estados Unidos</dd>
+        <dt>Fecha de escritura</dt><dd>Enero de 1895, menos de dos años después</dd>
+        <dt>Publicación</dt><dd><em>Hull-House Maps and Papers</em>, Nueva York, Thomas Y. Crowell &amp; Co., 1895</dd>
+        <dt>Tipo de fuente</dt><dd>Primaria · estudio social basado en un censo casa por casa</dd>
+        <dt>Documento completo</dt><dd><a href="fuentes/holbrook-mapas-1895.html">Ficha en el Archivo de fuentes</a>, con el capítulo íntegro y el original en inglés</dd>
+      </dl>
+      <p class="nota-lengua"><strong>Sobre la lengua de este documento.</strong> El capítulo completo del Archivo contiene dos insultos raciales de 1895 contra italianos y contra judíos, conservados sin traducir por respeto al original. No aparecen en los fragmentos de esta lección, pero sí en la ficha, y la ficha explica por qué se mantienen.</p>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 1 · De dónde salen los datos, páginas 7 y 8</h3>
+      <blockquote>
+        <p>Todo el tiempo de cuatro funcionarios censales, desde el 6 de abril hasta el 15 de julio de 1893, se dedicó a examinar cada casa, cada vivienda y cada cuarto del distrito y a rellenar las cédulas de vivienda y de familia. Estas cédulas se devolvían a diario a la señora Kelley; y antes de que se remitieran al Comisionado de Trabajo en Washington, uno de los residentes de la Casa Hull sacaba copia de la nacionalidad de cada individuo, de su jornal cuando estaba empleado y del número de semanas que había estado parado.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 2 · Lo que la autora reconoce, páginas 12 y 13</h3>
+      <blockquote>
+        <p>Es inevitable que se hayan deslizado errores. El descuido y la indiferencia de los interrogados son sin duda frecuentes, y tanto el cambio de ocupación como la irregularidad del empleo acarrean cierta confusión e incertidumbre. Además, el tiempo que abarca la investigación es tan largo, un año, que ni los edificios ni los inquilinos siguen siendo los mismos de principio a fin.</p>
+        <p>Los inquilinos desahuciados por impago del alquiler forman una población flotante de cierta magnitud, y una instantánea de escena tan movediza ha de salir por fuerza borrosa e imperfecta aquí y allá.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 3 · Para qué dice que sirve, página 13</h3>
+      <blockquote>
+        <p>Estas notas y comentarios están pensados más para hacer inteligibles los mapas que para aportar datos independientes; y el propósito tanto de los mapas como de las notas es presentar condiciones antes que sostener teorías, poner al alcance del público información exacta sobre este barrio de Chicago antes que aconsejar métodos para mejorarlo.</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="practica">
+    <h3>Práctica interactiva 2 · Interrogar los dos documentos</h3>
+    <p>Con los documentos A y B delante, elija la respuesta correcta. Después de responder aparecerá la explicación.</p>
+
+    <div class="pregunta" data-correcta="c" data-explica="Las cifras y la descripción proceden de los discursos que ella daba en 1889 y 1890, citados por ella misma en 1910. El documento lo dice en el segundo fragmento. Quien tome esa descripción como observación de 1910 se equivoca de veinte años.">
+      <div class="enun">1. ¿De cuándo es realmente la descripción del barrio que aparece en el documento A?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">De 1910, porque es la fecha del libro</div>
+        <div class="opcion" data-op="b">De 1895, porque coincide con el documento B</div>
+        <div class="opcion" data-op="c">De los discursos que la autora daba hacia 1889 y 1890, citados por ella en 1910</div>
+        <div class="opcion" data-op="d">No se puede saber</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="b" data-explica="Holbrook enumera sus errores probables: descuido de los interrogados, cambios de oficio y de domicilio, y un año entero de trabajo durante el cual ni los edificios ni los inquilinos siguen siendo los mismos. Addams no somete su descripción a ninguna advertencia parecida: la declara comprensiva y correcta.">
+      <div class="enun">2. ¿Cuál de las dos autoras advierte al lector sobre los límites de su propia información?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Addams, en el documento A</div>
+        <div class="opcion" data-op="b">Holbrook, en el documento B</div>
+        <div class="opcion" data-op="c">Las dos por igual</div>
+        <div class="opcion" data-op="d">Ninguna de las dos</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="d" data-explica="Es un juicio de valor sobre personas, no un hecho observable, y además dice más sobre quien lo escribe que sobre los inmigrantes. Un dato verificable sería el número de casas sin conexión al alcantarillado; «densamente ignorantes de sus deberes cívicos» no se mide.">
+      <div class="enun">3. En el documento A se lee que los inmigrantes recién llegados eran «densamente ignorantes de sus deberes cívicos». ¿Qué es esa frase?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Un dato del censo federal</div>
+        <div class="opcion" data-op="b">Una cita de otro autor</div>
+        <div class="opcion" data-op="c">Un error de traducción</div>
+        <div class="opcion" data-op="d">Un juicio de la autora, no un hecho verificable</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="a" data-explica="Los datos son de un censo federal levantado casa por casa. Eso no los vuelve infalibles —la propia autora lo advierte—, pero les da una base que una descripción de memoria no tiene.">
+      <div class="enun">4. Si quiere saber cuántas nacionalidades vivían en el distrito, ¿qué documento le sirve y por qué?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">El B, porque sus cifras vienen de un recuento casa por casa</div>
+        <div class="opcion" data-op="b">El A, porque la autora vivió allí veinte años</div>
+        <div class="opcion" data-op="c">Cualquiera de los dos, porque hablan del mismo barrio</div>
+        <div class="opcion" data-op="d">Ninguno, porque los dos son fuentes primarias</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="c" data-explica="Ese es el propósito declarado por la propia Holbrook en el tercer fragmento. Declarar el propósito no garantiza que se cumpla, pero permite juzgar el documento por lo que dice querer ser.">
+      <div class="enun">5. Según el documento B, ¿para qué dice servir ese texto?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Para recomendar cómo mejorar el barrio</div>
+        <div class="opcion" data-op="b">Para defender el trabajo de la Casa Hull</div>
+        <div class="opcion" data-op="c">Para hacer inteligibles los mapas y presentar condiciones, no teorías</div>
+        <div class="opcion" data-op="d">Para sustituir al informe del Departamento de Trabajo</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Qué sostiene un documento y qué no</h2>
+
+  <div class="bloque">
+    <p>Esta es la operación que el examen premia, y la que da sentido a todo lo anterior. No se trata de creer o no creer un documento, sino de decidir <strong>qué afirmaciones se pueden apoyar en él</strong> y cuáles habría que apoyar en otra cosa.</p>
+    <p>Los dos documentos de esta lección son primarios y los dos son honestos a su manera. Pero no sostienen lo mismo.</p>
+  </div>
+
+  <div class="ejemplo">
+    <p><strong>El documento A sostiene</strong> cómo veía el barrio una reformadora que vivía en él, qué le parecía urgente y qué palabras usaba para describir a sus vecinos. Sostiene también, sin proponérselo, los supuestos de su clase: que los recién llegados eran ignorantes de sus deberes cívicos es una opinión suya, y como opinión suya es evidencia de primera.</p>
+    <p><strong>El documento A no sostiene</strong> cuántas personas vivían allí ni de qué nacionalidad, porque sus cifras salen de discursos propios y no de un recuento. Tampoco sostiene qué pensaban los vecinos, porque en todo el capítulo no habla ninguno por su cuenta: todos están contados por ella.</p>
+  </div>
+
+  <div class="ejemplo">
+    <p><strong>El documento B sostiene</strong> la composición del barrio solar por solar, el método con que se levantaron los datos y los tramos de salario de las familias. Sostiene además, y esto es raro en una fuente, sus propios márgenes de error, porque la autora los enumera.</p>
+    <p><strong>El documento B no sostiene</strong> la densidad de población: la propia Holbrook advierte que cada solar se pinta entero, lo habite una persona o cien. Tampoco sostiene las causas de nada, ni la voz de los censados, que aparecen como datos y no como personas que hablan.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <p><strong>Que una fuente declare sus límites no la hace verdadera, y que no los declare no la hace falsa.</strong> Addams no miente cuando describe calles sucias y casas sin alcantarillado: eso lo confirma el documento B. Lo que hace falta es no pedirle a cada documento más de lo que puede dar.</p>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+  <div class="bloque">
+    <p><span aria-hidden="true">💬</span> Las tres actividades siguientes se hacen por cuenta propia, con papel o con un documento en blanco. No hay nada que entregar: cada una incluye la manera de comprobar uno mismo si salió bien. Conviene hacerlas en el orden en que aparecen.</p>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · La ficha de las tres preguntas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Elija un documento cualquiera que tenga a mano y que no sea un libro de texto: una carta vieja de familia, un recibo, un folleto de una campaña, una publicación de una institución, una fotografía con fecha. Escriba su ficha con las tres preguntas: origen (quién, cuándo, a qué distancia de los hechos), propósito (para qué y para quién) y contexto (qué pasaba alrededor). Después haga lo mismo con un segundo documento del mismo asunto pero de origen distinto.</p>
+        <div class="autocheck">
+          <strong>Cómo saber si le salió bien:</strong> lea su apartado de propósito. Si dice «informar» y nada más, todavía no ha terminado; casi ningún documento se escribe solo para informar. Pregúntese qué quería conseguir quien lo escribió y qué habría pasado si no lo hubiera escrito.
+        </div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Sostiene y no sostiene</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Vuelva al documento que trabajó en la práctica anterior y haga dos columnas. En la primera escriba cinco afirmaciones que ese documento sí sostiene. En la segunda, cinco afirmaciones que alguien podría creer que sostiene, pero que en realidad no. Junto a cada una de la segunda columna, anote qué otra fuente haría falta.</p>
+        <div class="autocheck">
+          <strong>Cómo saber si le salió bien:</strong> tome cada afirmación de la primera columna y señale con el dedo la línea exacta del documento en que se apoya. Si para alguna tiene que apoyarse en lo que usted ya sabía, esa afirmación pertenece a la segunda columna.
+        </div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Buscar las fuentes de su indagación</div>
+      <div class="cuerpo-act">
+        <span class="duracion">35 minutos</span>
+        <p>Recupere la indagación que escribió en la Lección 1.1: la pregunta convincente y sus preguntas de apoyo. Para cada pregunta de apoyo, nombre dos fuentes que la responderían, una primaria y una secundaria, y escriba de cada una su origen previsible y su propósito previsible. Marque después cuál de las dos le daría evidencia y cuál solo le daría contexto.</p>
+        <div class="autocheck">
+          <strong>Cómo saber si le salió bien:</strong> si para alguna pregunta de apoyo no consigue nombrar ninguna fuente primaria imaginable, el problema no es de búsqueda: la pregunta está formulada de manera que ningún documento puede responderla. Reformúlela antes de seguir.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <h2>Una nota sobre una imagen que el documento A da por sabida</h2>
+    <p>Al contar dónde estaba la casa, Addams escribe que se alzaba entre una funeraria y una taberna, y que un ingenioso de Chicago llamó a los tres «el caballero, la Muerte y el Diablo».</p>
+    <p>La broma alude a un grabado de Alberto Durero de 1513, <em>El caballero, la Muerte y el Diablo</em>, muy conocido por el público culto de 1910. En la estampa, un caballero armado cabalga por un desfiladero mientras la Muerte, montada en un jamelgo y con un reloj de arena en la mano, le recuerda el tiempo que le queda, y el Diablo lo sigue por detrás. El caballero no los mira: sigue adelante.</p>
+    <p>El chiste, entonces, es que el <em>settlement</em> hacía de caballero entre la muerte y el vicio. Addams lo recoge y acto seguido lo desactiva, diciendo que cualquier heroísmo de burlas se desvanecía ante la bondad de las familias de la calle.</p>
+    <p>Esta nota no forma parte del documento y no aparece en la ficha del Archivo, donde el capítulo se publica sin añadidos. Se incluye aquí porque una alusión que el lector de 1910 entendía al vuelo hoy pasa desapercibida, y con ella se pierde el párrafo entero.</p>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 1.2</h2>
+    <p>Diez preguntas: cuatro de clasificar fuentes, tres de aplicar las preguntas de origen, propósito y contexto, y tres de decidir qué sostiene un documento. Tiempo sugerido: 20 minutos. Para aprobar se requieren al menos 7 respuestas correctas. Puede intentarlo cuantas veces quiera.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su propio trabajo de la Práctica 3 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación del análisis de fuentes, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Distingue fuentes primarias de secundarias</td>
+          <td>Clasifica por antigüedad: lo viejo es primario.</td>
+          <td>Acierta en los casos claros, pero duda con la prensa de época y las memorias tardías.</td>
+          <td>Clasifica por la relación entre el documento y los hechos, no por la fecha.</td>
+          <td>Reconoce que la categoría depende de la pregunta que se le haga al documento.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Establece el origen del documento</td>
+          <td>Anota solo el autor y el año de publicación.</td>
+          <td>Anota autor y fechas, pero no distingue la fecha de los hechos de la de escritura.</td>
+          <td>Separa ambas fechas y calcula la distancia entre ellas.</td>
+          <td>Detecta además documentos dentro del documento, como una cita que el autor se hace a sí mismo años después.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Identifica el propósito y el destinatario</td>
+          <td>Escribe «informar» y se detiene ahí.</td>
+          <td>Nombra un propósito plausible, pero no dice para quién se escribió.</td>
+          <td>Nombra propósito y destinatario, y los apoya en algo que el documento dice o hace.</td>
+          <td>Explica además cómo el propósito moldea lo que el documento incluye y lo que calla.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Decide qué sostiene el documento</td>
+          <td>Trata todo lo que dice el documento como hecho comprobado.</td>
+          <td>Separa hechos de opiniones, pero no dice qué otra fuente haría falta.</td>
+          <td>Distingue lo que el documento sostiene de lo que no, y nombra la fuente que cubriría el hueco.</td>
+          <td>Reconoce además lo que el documento sostiene sin proponérselo, como los supuestos de quien lo escribe.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 1.2 y enlace con la 1.3</h2>
+    <p>Queda instalada la segunda herramienta del curso: <strong>interrogar un documento antes de creerlo</strong>. Origen, propósito y contexto, y después la decisión que el examen premia, que es separar lo que un documento sostiene de lo que solo parece sostener.</p>
+    <p>Los dos documentos de esta lección hablaban del mismo barrio y no se contradecían: se completaban. Uno lo recordaba y el otro lo había medido. Pero muchas veces dos fuentes sobre el mismo hecho dicen cosas incompatibles, y entonces no basta con interrogarlas por separado: hay que ponerlas una frente a otra y decidir. La <strong><a href="soc-1-3.html">Lección 1.3</a></strong> trabaja con dos voces enfrentadas sobre la misma semana de Chicago: la pelea de 1905 por si los tranvías debían pasar a manos de la ciudad.</p>
+    <p>Los fragmentos que leyó aquí son recortes. Los dos capítulos están completos en el <strong><a href="fuentes/index.html">Archivo de fuentes</a></strong>, con su ficha, el original en inglés plegado y el apartado de qué sostiene y qué no sostiene cada uno. Merece la pena leerlos enteros: el de Addams tiene una anciana de noventa años haciendo cadenetas de papel y una mujer italiana que no sabía que en América hubiera rosas.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-1-3.html">Siguiente: Lección 1.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 1 · Lección 1.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Un periódico de 1863 que informa sobre una batalla de ese mismo año es…',
+      ops: ['Secundario, porque el periodista no estuvo en la batalla', 'Primario, porque el documento pertenece al momento que describe', 'Secundario, porque resume información de otros', 'Depende de quién firme la noticia'],
+      correcta: 1,
+      expl: 'Pertenece al mundo que describe. Nos dice cómo se contaba la guerra entonces, y eso es evidencia de primera mano sobre 1863.' },
+
+    { enun: '2. Unas memorias publicadas en 1910 sobre hechos de 1889, escritas por quien los vivió, son…',
+      ops: ['Secundarias, por la distancia de veintiún años', 'Primarias, aunque con problemas de memoria que hay que declarar', 'Secundarias, porque son un libro', 'Ni primarias ni secundarias'],
+      correcta: 1,
+      expl: 'La distancia temporal no cambia la categoría: la autora participó en los hechos. Lo que sí obliga es a advertir que los diálogos y las cifras están reconstruidos.' },
+
+    { enun: '3. ¿Qué pregunta resuelve mejor la duda entre primaria y secundaria?',
+      ops: ['¿Cuántos años tiene el documento?', '¿Está escrito por alguien famoso?', '¿Pertenece al mundo que describe, o lo mira desde fuera y desde después?', '¿Está publicado o es inédito?'],
+      correcta: 2,
+      expl: 'Es la única pregunta que funciona con la prensa de época, con las memorias tardías y con un manual escolar leído como evidencia de su tiempo.' },
+
+    { enun: '4. Un manual de historia de 1950 usado para estudiar cómo se enseñaba historia en 1950 es…',
+      ops: ['Secundario siempre, porque es un manual', 'Primario, porque la pregunta lo sitúa dentro del mundo que se estudia', 'Primario solo si lo escribió un testigo de los hechos que narra', 'Inservible como fuente'],
+      correcta: 1,
+      expl: 'La categoría no vive en el documento: vive en la relación entre el documento y la pregunta que se le hace.' },
+
+    { enun: '5. Establecer el origen de un documento significa, como mínimo…',
+      ops: ['Saber si es verdadero o falso', 'Saber quién lo produjo, cuándo, y a qué distancia de los hechos', 'Saber cuántas veces se ha citado', 'Saber si está en dominio público'],
+      correcta: 1,
+      expl: 'Autor, fecha de escritura, fecha de los hechos y la distancia entre ambas. La situación legal importa para publicarlo, no para interpretarlo.' },
+
+    { enun: '6. Ante la pregunta por el propósito de un documento, responder «informar» y detenerse ahí es…',
+      ops: ['Suficiente, porque muchos documentos solo informan', 'Insuficiente, porque casi nadie escribe sin querer conseguir algo', 'Un error solo en fuentes publicitarias', 'Correcto si el autor es una institución'],
+      correcta: 1,
+      expl: 'Conviene preguntarse qué quería conseguir quien escribió y para qué lector. Un folleto para donantes y un informe interno sobre lo mismo no dicen lo mismo.' },
+
+    { enun: '7. Que un documento de 1895 use palabras hoy ofensivas obliga al lector a…',
+      ops: ['Descartarlo como fuente poco fiable', 'Corregirlo antes de citarlo', 'Leerlo en su contexto sin disculparlo, y tratar ese lenguaje como evidencia sobre quien escribe', 'Ignorar esos pasajes'],
+      correcta: 2,
+      expl: 'El contexto explica por qué se dice así; no lo justifica. Y el lenguaje del autor es prueba sobre el autor, que es información valiosa.' },
+
+    { enun: '8. Una autora describe un barrio y sus cifras proceden de discursos que ella misma daba veinte años antes. Ese documento sostiene bien…',
+      ops: ['La población exacta del barrio', 'Cómo veía el barrio esa autora y qué le parecía urgente', 'El número de casas sin alcantarillado, con precisión', 'Lo que pensaban los vecinos del barrio'],
+      correcta: 1,
+      expl: 'Sostiene la mirada de quien escribe, que es evidencia de primera. Para las cifras hace falta un recuento, y para lo que pensaban los vecinos, fuentes de los vecinos.' },
+
+    { enun: '9. Un estudio basado en un censo casa por casa advierte que cada solar se pinta entero, lo habite una persona o cien. Eso significa que…',
+      ops: ['Los datos son falsos', 'El estudio no sostiene afirmaciones sobre densidad de población', 'El censo se hizo mal', 'Solo sirve para el año en que se hizo'],
+      correcta: 1,
+      expl: 'Es un límite del método, declarado por la propia autora. Los datos sirven para saber quién vive dónde, no cuántos viven en cada sitio.' },
+
+    { enun: '10. Cuando se dice que un documento sostiene algo «sin proponérselo», se quiere decir que…',
+      ops: ['El autor mintió sin querer', 'El documento revela los supuestos de quien lo escribe, aunque no fuera su tema', 'La traducción añadió información', 'Hay una errata en el original'],
+      correcta: 1,
+      expl: 'Un texto que defiende a un barrio y a la vez llama ignorantes a sus vecinos prueba algo sobre su autora que ella no pretendía probar. Suele ser lo más revelador de una fuente.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 7) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 10 correctas. Aprobado. Puede continuar a la Lección 1.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 10 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 7).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
