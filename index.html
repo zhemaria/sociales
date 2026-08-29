@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--
+  Estudios sociales · Índice del curso
+  Spanish ASE Social Studies · GEDparaHispanos
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Estudios sociales · Índice del curso</title>
+<meta name="description" content="Curso completo de Estudios sociales en español para la preparación del examen GED: 8 temas, 24 lecciones, con documentos de dominio público traducidos." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: linear-gradient(135deg, #1c2b33 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(28,43,51,.28);
+  }
+  header.principal .ruta { font-size: 13px; color: #cfd8dc; letter-spacing: .4px; }
+  header.principal h1 { margin: 8px 0 10px; font-size: 27px; line-height: 1.25; }
+  header.principal .meta { font-size: 14px; color: #eceff1; }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones.pie { margin: 22px 0 0; }
+
+  /* ── BLOQUES DE TEXTO ───────────────────────────────────────── */
+  .bloque {
+    background: #ffffff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 18px 22px; margin: 18px 0;
+  }
+  .bloque h2 { margin-top: 0; color: var(--tema-d); font-size: 20px; }
+  .bloque p { margin: 0 0 10px; }
+  .bloque p:last-child { margin-bottom: 0; }
+
+  .caja-tip {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-tip strong { color: #5C3900; }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px;
+    border-bottom: 3px solid var(--tema-bg2);
+    padding-bottom: 6px; margin: 30px 0 14px;
+  }
+
+  /* ── TARJETA DE TEMA ────────────────────────────────────────── */
+  .tema {
+    background: #ffffff; border: 1px solid #e0e0e0;
+    border-left: 7px solid var(--tc); border-radius: 10px;
+    padding: 16px 22px 12px; margin: 14px 0;
+  }
+  .tema h3 {
+    display: flex; align-items: center; gap: 12px;
+    margin: 0 0 6px; font-size: 18px; color: var(--tc); line-height: 1.3;
+  }
+  .tema .tema-num {
+    flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--tc); color: #ffffff; font-size: 15px; font-weight: 700;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .tema .tema-meta { margin: 0 0 6px; font-size: 13px; color: #555; }
+  .tema .tema-foco { margin: 0 0 10px; font-size: 15px; }
+
+  .lecciones { list-style: none; margin: 0; padding: 0; }
+  .lecciones .lec {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    padding: 8px 0; border-top: 1px solid #eeeeee; font-size: 15px;
+  }
+  .lecciones .lec a {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    color: var(--tc); text-decoration: none; font-weight: 600;
+  }
+  .lecciones .lec a:hover, .lecciones .lec a:focus { text-decoration: underline; }
+  .lec-num {
+    flex: 0 0 auto; background: var(--tcbg); color: var(--tc);
+    border-radius: 5px; padding: 1px 8px; font-size: 13px; font-weight: 700;
+  }
+  .lecciones .pendiente { color: #555; }
+  .lecciones .pendiente .lec-num { background: #eeeeee; color: #555; }
+  .etiqueta {
+    font-size: 12px; color: #555; background: #f0f0f0;
+    border-radius: 4px; padding: 1px 7px; letter-spacing: .3px;
+  }
+
+  /* ── TARJETA DEL ARCHIVO DE FUENTES ─────────────────────────── */
+  .archivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d);
+  }
+  .archivo:hover { background: var(--tema-bg2); }
+  .archivo .ei-icono { font-size: 26px; line-height: 1; }
+  .archivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; margin-bottom: 3px; }
+  .archivo .ei-sub { display: block; font-size: 14px; }
+  .archivo .ei-cta { display: block; margin-top: 7px; font-size: 14px; font-weight: 700; }
+
+  /* ── TABLA ──────────────────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14.5px; }
+  caption { text-align: left; font-size: 13px; color: #555; padding-bottom: 6px; font-style: italic; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--tema-bg); color: var(--tema-d); }
+
+  footer {
+    margin-top: 34px; padding-top: 16px; border-top: 2px solid var(--tema-bg2);
+    font-size: 13px; color: #555; text-align: center;
+  }
+  footer p { margin: 4px 0; }
+  footer a { color: var(--tema-d); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">GEDparaHispanos · Spanish ASE Social Studies</div>
+    <h1>Estudios sociales · Índice del curso</h1>
+    <div class="meta">8 temas · 24 lecciones · 96 horas · NRS 5–6</div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <span class="nav-actual" aria-current="page">Índice del curso</span>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="#tema-1">Empezar por la Lección 1.1</a>
+  </nav>
+
+  <div class="bloque">
+    <h2>De qué trata este curso</h2>
+    <p>El examen de Estudios sociales del GED<sup>®</sup> casi nunca pregunta una fecha. Pone delante un documento —un fragmento de la Constitución, un mapa, una gráfica, un discurso, una caricatura política— y pregunta qué se puede sostener con él y qué no. Este curso enseña a hacer exactamente eso, en español, con documentos reales.</p>
+    <p>Son ocho temas de doce horas, con tres lecciones de cuatro horas cada uno. Las cuatro primeras semanas construyen las herramientas: interrogar fuentes y leer datos. Las diez siguientes recorren cívica, historia, economía y geografía en una proporción muy cercana a la del examen. Las dos últimas integran todo y preparan el día de la prueba.</p>
+    <p>Cada lección está pensada para estudiarse por cuenta propia. Trae sus objetivos, sus explicaciones con ejemplos, sus prácticas con respuesta comentada, un documento para analizar, sugerencias de práctica con la manera de comprobar uno mismo si salieron bien, un quiz y una rúbrica de autoevaluación.</p>
+  </div>
+
+  <div class="caja-tip">
+    <strong>Por dónde empezar.</strong> Por la Lección 1.1, aunque el Tema 3 o el 6 parezcan más interesantes. Los temas 1 y 2 no son introducción de relleno: son las destrezas que después se aplican en los otros seis, y el examen las evalúa en cada pregunta. Un estudiante que se salta el Tema 1 memoriza contenido y falla los documentos.
+  </div>
+
+  <div class="bloque">
+    <h2>Antes de empezar: qué conviene traer</h2>
+    <p>Este curso se apoya con fuerza en la lectura y la argumentación, y mucho menos en las matemáticas. Lo ideal es llegar con el Nivel 4 de Artes del Lenguaje concluido y el Nivel 3 de Matemáticas aprobado. Con esa entrada, Estudios sociales funciona como el curso que cierra todo el recorrido, el último antes de presentar los cuatro módulos del examen.</p>
+    <table>
+      <caption>Preparación recomendada antes de comenzar Estudios sociales, con lo que aporta cada nivel previo.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Situación</th>
+          <th scope="col">Qué esperar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nivel 4 de Artes del Lenguaje concluido y Nivel 3 de Matemáticas aprobado</td>
+          <td>La entrada recomendada. Las destrezas de evaluación de argumentos y análisis de punto de vista ya están instaladas y aquí solo se aplican.</td>
+        </tr>
+        <tr>
+          <td>Cursando el Nivel 4 de Artes del Lenguaje al mismo tiempo</td>
+          <td>Funciona bien, y es lo más eficiente en calendario. Los temas 1 y 2 trabajan justamente lo que el Nivel 4 desarrolla en paralelo.</td>
+        </tr>
+        <tr>
+          <td>Nivel 3 concluido en ambas materias</td>
+          <td>Viable, pero el Tema 1 exigirá más tiempo del previsto, porque la evaluación de argumentos se estará aprendiendo desde cero.</td>
+        </tr>
+        <tr>
+          <td>Sin el Nivel 3 concluido</td>
+          <td>Conviene esperar. Sin porcentajes, escalas de mapas ni la distinción entre fuente primaria y secundaria, el curso se reduce a memorizar, que es lo que el examen no evalúa.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="archivo" href="fuentes/index.html">
+    <span class="ei-icono" aria-hidden="true">🗂️</span>
+    <span>
+      <span class="ei-titulo">Archivo de fuentes</span>
+      <span class="ei-sub">Todos los documentos que aparecen en las lecciones son fuentes reales de dominio público, traducidas al español para este curso y conservadas aquí con su ficha, el facsímil original en inglés y la lista de lecciones que las usan.</span>
+      <span class="ei-cta">Abrir el Archivo de fuentes →</span>
+    </span>
+  </a>
+
+  <h2 class="seccion">Los ocho temas</h2>
+
+    <section class="tema" id="tema-1" style="--tc: #4e342e; --tcbg: #efebe9;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">1</span>
+        <span class="tema-tit">Tema 1 · Indagación, fuentes y alfabetización analítica</span>
+      </h3>
+      <p class="tema-meta">Semanas 1–2 · 12 horas · Prácticas SSP.1 · SSP.2 · SSP.6 · SSP.7</p>
+      <p class="tema-foco">Arco de indagación del Marco C3, fuentes primarias y secundarias, sesgo y lenguaje persuasivo.</p>
+      <ul class="lecciones">
+        <li class="lec lista">
+          <a href="soc-1-1.html">
+            <span class="lec-num">1.1</span>
+            <span class="lec-tit">Preguntas convincentes y de apoyo: el arco de indagación</span>
+          </a>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">1.2</span>
+          <span class="lec-tit">Fuentes primarias y secundarias: origen, propósito y contexto</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">1.3</span>
+          <span class="lec-tit">Sesgo, punto de vista y lenguaje persuasivo</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-2" style="--tc: #37474f; --tcbg: #eceff1;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">2</span>
+        <span class="tema-tit">Tema 2 · Razonamiento cuantitativo en estudios sociales</span>
+      </h3>
+      <p class="tema-meta">Semanas 3–4 · 12 horas · Prácticas SSP.10 · SSP.11</p>
+      <p class="tema-foco">Gráficas y tablas, medidas de tendencia central, porcentajes, escalas de mapas y densidad de población.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">2.1</span>
+          <span class="lec-tit">Gráficas, tablas y la clínica de la TI-30XS</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">2.2</span>
+          <span class="lec-tit">Medidas de tendencia central en datos demográficos y económicos</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">2.3</span>
+          <span class="lec-tit">Porcentajes, tasas, escalas de mapas y densidad de población</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-3" style="--tc: #0d47a1; --tcbg: #e3f2fd;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">3</span>
+        <span class="tema-tit">Tema 3 · Cívica I: documentos fundacionales y principios constitucionales</span>
+      </h3>
+      <p class="tema-meta">Semanas 5–6 · 12 horas · Prácticas SSP.1 · SSP.6</p>
+      <p class="tema-foco">Del contrato social a la Declaración de Independencia, la estructura de la Constitución y el federalismo.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">3.1</span>
+          <span class="lec-tit">Del contrato social a la Declaración de Independencia</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">3.2</span>
+          <span class="lec-tit">La Constitución: estructura y principios</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">3.3</span>
+          <span class="lec-tit">El federalismo en la práctica</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-4" style="--tc: #283593; --tcbg: #e8eaf6;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">4</span>
+        <span class="tema-tit">Tema 4 · Cívica II: las tres ramas y la formación de políticas</span>
+      </h3>
+      <p class="tema-meta">Semanas 7–8 · 12 horas · Prácticas SSP.1 · SSP.3</p>
+      <p class="tema-foco">El camino de un proyecto de ley, la presidencia y la burocracia, la revisión judicial y el precedente.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">4.1</span>
+          <span class="lec-tit">El poder legislativo: del proyecto a la ley</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">4.2</span>
+          <span class="lec-tit">El poder ejecutivo: presidencia, gabinete y burocracia</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">4.3</span>
+          <span class="lec-tit">El poder judicial: revisión judicial y precedente</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-5" style="--tc: #00695c; --tcbg: #e0f2f1;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">5</span>
+        <span class="tema-tit">Tema 5 · Ciudadanía en acción: derechos, elecciones y finanzas públicas</span>
+      </h3>
+      <p class="tema-meta">Semanas 9–10 · 12 horas · Prácticas SSP.2 · SSP.11</p>
+      <p class="tema-foco">La Carta de Derechos y la expansión de la ciudadanía, el proceso electoral y la política fiscal.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">5.1</span>
+          <span class="lec-tit">La Carta de Derechos y la expansión de la ciudadanía</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">5.2</span>
+          <span class="lec-tit">El proceso electoral: partidos, campañas y colegio electoral</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">5.3</span>
+          <span class="lec-tit">Impuestos, presupuesto y política fiscal</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-6" style="--tc: #b71c1c; --tcbg: #ffebee;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">6</span>
+        <span class="tema-tit">Tema 6 · Historia de los Estados Unidos: causalidad y cambio</span>
+      </h3>
+      <p class="tema-meta">Semanas 11–12 · 12 horas · Prácticas SSP.3 · SSP.5</p>
+      <p class="tema-foco">De la colonia a la Reconstrucción y del siglo XX a hoy, leídos como cadenas de causa y efecto.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">6.1</span>
+          <span class="lec-tit">Colonia, Revolución y la construcción de la nación</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">6.2</span>
+          <span class="lec-tit">Expansión, esclavitud, Guerra Civil y Reconstrucción</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">6.3</span>
+          <span class="lec-tit">Del siglo XX a hoy: industrialización, guerras y derechos civiles</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-7" style="--tc: #1b5e20; --tcbg: #e8f5e9;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">7</span>
+        <span class="tema-tit">Tema 7 · Economía y geografía del mundo conectado</span>
+      </h3>
+      <p class="tema-meta">Semanas 13–14 · 12 horas · Prácticas SSP.9 · SSP.10</p>
+      <p class="tema-foco">Oferta y demanda, población y migración, recursos y sostenibilidad.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">7.1</span>
+          <span class="lec-tit">Oferta, demanda, mercados y el consumidor</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">7.2</span>
+          <span class="lec-tit">Población, migración y geografía humana</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">7.3</span>
+          <span class="lec-tit">Recursos, medio ambiente y sostenibilidad</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tema" id="tema-8" style="--tc: #4a148c; --tcbg: #f3e5f5;">
+      <h3>
+        <span class="tema-num" aria-hidden="true">8</span>
+        <span class="tema-tit">Tema 8 · Integración, escenarios de estímulo múltiple y preparación GED®</span>
+      </h3>
+      <p class="tema-meta">Semanas 15–16 · 12 horas · Prácticas SSP.4 · SSP.7 · SSP.10</p>
+      <p class="tema-foco">Reconciliar texto, gráfica y mapa en un mismo escenario, proyecto final y simulacro cronometrado.</p>
+      <ul class="lecciones">
+        <li class="lec pendiente">
+          <span class="lec-num">8.1</span>
+          <span class="lec-tit">Escenarios de estímulo múltiple: texto, gráfica y mapa</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">8.2</span>
+          <span class="lec-tit">Proyecto final: indagación cívica y acción informada</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+        <li class="lec pendiente">
+          <span class="lec-num">8.3</span>
+          <span class="lec-tit">Simulacro cronometrado, tipos de ítem y Constitución de Illinois</span>
+          <span class="etiqueta">En preparación</span>
+        </li>
+      </ul>
+    </section>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <span class="nav-actual" aria-current="page">Índice del curso</span>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="soc-1-1.html">Lección 1.1 · Preguntas convincentes y de apoyo</a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Índice del curso · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
