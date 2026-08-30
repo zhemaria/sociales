@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<!--
+  Lección 2.2 · Medidas de tendencia central en datos demográficos y económicos
+  Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 2.2 · Medidas de tendencia central en datos demográficos y económicos</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 2 — paleta pizarra heredada del plan curricular (--t2) */
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --acento:  #455a64;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #16212a 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(22,33,42,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #263238;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbfc; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbfc;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #263238; }
+
+  /* ══ COMPONENTES DEL TEMA 2 ═══════════════════════════════════
+     Graficas en SVG escrito a mano. Nunca <canvas>: el lector de
+     pantalla no puede entrar en un canvas. Cada figura lleva
+     role="img" + <title> + <desc>, y ademas la tabla de datos
+     desplegable, que sirve al lector de pantalla y a quien
+     prefiera leer las cifras. Los colores salen de las variables
+     del tema, asi que la misma grafica se repinta sola en otro tema.
+     ───────────────────────────────────────────────────────────── */
+  figure.grafica {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.grafica h3 { margin: 0 0 4px; font-size: 16px; }
+  figure.grafica .g-fuente { margin: 0 0 10px; font-size: 12.5px; color: #555; font-style: italic; }
+  figure.grafica svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.grafica figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+
+  .g-eje       { stroke: #90a4ae; stroke-width: 1.5; }
+  .g-reja      { stroke: #eceff1; stroke-width: 1; }
+  .g-barra     { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-linea     { fill: none; stroke: var(--tema); stroke-width: 2.5; }
+  .g-escalon   { fill: none; stroke: var(--acento); stroke-width: 2.5; }
+  .g-punto     { fill: var(--tema); }
+  .g-rot       { font-size: 11px; fill: #37474f; }
+  .g-rot-eje   { font-size: 12px; fill: #263238; font-weight: 700; }
+  .g-valor     { font-size: 10.5px; fill: #263238; font-weight: 700; }
+  .g-sector-1  { fill: #263238; }
+  .g-sector-2  { fill: #455a64; }
+  .g-sector-3  { fill: #78909c; }
+  .g-sector-4  { fill: #b0bec5; }
+  .g-sector-5  { fill: #cfd8dc; }
+  .g-sep       { stroke: #ffffff; stroke-width: 2; }
+
+  details.datos {
+    margin: 10px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: var(--tema-bg);
+  }
+  details.datos > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.datos > summary:hover { background: var(--tema-bg2); }
+  details.datos .cuerpo-datos { padding: 4px 14px 12px; }
+  table.tabla-datos { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+  table.tabla-datos caption {
+    caption-side: top; text-align: left; font-size: 13px;
+    color: #444; padding: 6px 0; font-style: italic;
+  }
+  table.tabla-datos th, table.tabla-datos td {
+    border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left;
+  }
+  table.tabla-datos th { background: var(--tema); color: #ffffff; font-size: 13px; }
+
+  .mini-graficas { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 0; }
+  .mini-graficas .mini {
+    flex: 1 1 280px; background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .mini-graficas .mini h3,
+  .mini-graficas .mini h4 {
+    margin: 0 0 8px; font-size: 14px; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  .mini-graficas .mini p { margin: 8px 0 0; font-size: 13.5px; color: #333; }
+
+  /* Diagrama de caja */
+  .g-caja    { fill: var(--tema-bg); stroke: var(--tema); stroke-width: 2; }
+  .g-bigote  { stroke: var(--tema); stroke-width: 2; }
+  .g-mediana { stroke: var(--tema-d); stroke-width: 4; }
+
+  /* Clinica de la calculadora */
+  .teclado { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .tecla {
+    display: inline-block; background: #263238; color: #ffffff;
+    border-radius: 6px; padding: 5px 12px; font-size: 14px;
+    font-weight: 700; font-family: 'Consolas', 'Courier New', monospace;
+    box-shadow: 0 2px 0 #0f171c;
+  }
+  .tecla.sec { background: #546e7a; box-shadow: 0 2px 0 #33454d; }
+  .secuencia {
+    background: #263238; color: #eceff1; border-radius: 8px;
+    padding: 10px 14px; margin: 10px 0; font-size: 14.5px;
+    font-family: 'Consolas', 'Courier New', monospace; overflow-x: auto;
+  }
+  .secuencia .res { color: #9BFF8F; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales</div>
+    <h1>Lección 2.2 · Medidas de tendencia central en datos demográficos y económicos</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.10 · Representación de datos</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">Puente · Matemáticas Niveles 2 y 3</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 2.2</span>
+    <a class="nav-sig" href="soc-2-3.html">Siguiente: Lección 2.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Calcular la media, la mediana, la moda y el rango de un conjunto de datos sociales, a mano en conjuntos pequeños y con la calculadora en conjuntos grandes.</li>
+      <li>Decidir cuál de las tres medidas describe mejor un conjunto, según la forma que tenga la distribución.</li>
+      <li>Construir el resumen de cinco números y leer un diagrama de caja.</li>
+      <li>Comparar la distribución de dos poblaciones e interpretar qué significa que una caja sea más ancha que otra.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior enseñó a leer una gráfica antes de creerla, y terminó con una idea incómoda: una correlación admite cuatro explicaciones y el dibujo no permite elegir.</p>
+    <p>Aquí bajamos un nivel más. Antes que la gráfica está el número que la resume, y esos números también se eligen. Cuando alguien dice «el ingreso típico del barrio es de noventa mil dólares», ha tomado una decisión antes de abrir la boca: decidió qué significa <em>típico</em>.</p>
+    <p>Esta lección enseña a calcular esos números y, sobre todo, a saber cuál pide cada situación.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Las cuatro medidas</h2>
+
+  <div class="bloque">
+    <p>Tres describen el centro de un conjunto. La cuarta describe cuánto se separa.</p>
+
+    <table class="reglas">
+      <caption>Las cuatro medidas y cómo se obtienen</caption>
+      <thead>
+        <tr><th scope="col">Medida</th><th scope="col">Qué es</th><th scope="col">Cómo se obtiene</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Media</td><td>El reparto por igual</td><td>Se suman todos los valores y se divide entre cuántos son</td></tr>
+        <tr><td>Mediana</td><td>El valor de en medio</td><td>Se ordenan de menor a mayor y se toma el del centro. Si son pares, la media de los dos centrales</td></tr>
+        <tr><td>Moda</td><td>El valor que más se repite</td><td>Se cuenta cuál aparece más veces. Puede no haber ninguna, o haber varias</td></tr>
+        <tr><td>Rango</td><td>Cuánto se separan</td><td>El valor mayor menos el menor</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Ordenar primero, siempre.</strong> La mediana no existe hasta que los datos están ordenados. Es el error más común y el más fácil de evitar: si no ordenó, el número del centro no es la mediana, es el número del centro de una lista desordenada, que no significa nada.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Cuando la media engaña</h2>
+
+  <div class="bloque">
+    <p>Aquí están los ingresos anuales por hogar de once hogares de dos barrios, en miles de dólares. Datos ilustrativos, ordenados ya.</p>
+
+    <div class="ejemplo">
+      <span class="et">Barrio A</span>
+      <div class="secuencia">28  31  33  35  38  40  40  45  48  52  600</div>
+      <span class="et">Barrio B</span>
+      <div class="secuencia">34  36  38  39  40  41  42  43  44  46  48</div>
+    </div>
+
+    <table class="reglas">
+      <caption>Las cuatro medidas en los dos barrios, en miles de dólares</caption>
+      <thead>
+        <tr><th scope="col">Medida</th><th scope="col">Barrio A</th><th scope="col">Barrio B</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Media</td><td>90</td><td>41</td></tr>
+        <tr><td>Mediana</td><td>40</td><td>41</td></tr>
+        <tr><td>Moda</td><td>40</td><td>no hay</td></tr>
+        <tr><td>Rango</td><td>572</td><td>14</td></tr>
+      </tbody>
+    </table>
+
+    <p>Mire la fila de la media. El Barrio A sale con noventa mil y el B con cuarenta y uno: parece que en el A se gana más del doble. Ahora mire la mediana: cuarenta y cuarenta y uno. Casi idénticos.</p>
+    <p>Las dos filas son correctas. La diferencia la produce un solo hogar, el de seiscientos mil, que <strong>arrastra la media y no mueve la mediana</strong>. Diez de los once hogares del Barrio A ganan cincuenta y dos mil o menos. Ninguno gana noventa.</p>
+
+    <div class="caja-tip">
+      <strong>Por qué ocurre.</strong> La media reparte por igual: si sumásemos todo el dinero del barrio y lo dividiésemos entre los once hogares, tocarían noventa mil. Pero nadie reparte nada. La mediana solo cuenta posiciones, así que un valor enorme ocupa una posición, no más. Un <strong>valor atípico</strong> mueve la media y deja quieta la mediana.
+    </div>
+
+    <p>Y ahí está el rango, que es el aviso. Un rango de 572 frente a uno de 14 significa que en el Barrio A hay algo muy separado del resto. Cuando el rango es enorme comparado con los valores del centro, desconfíe de la media.</p>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Media, mediana y valores atípicos</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Diez de los once hogares ganan 52 mil o menos. La media de 90 no describe a ninguno de ellos: la levanta un solo hogar.">
+        <div class="enun">¿Cuántos hogares del Barrio A ganan realmente noventa mil o más?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Cinco o seis, la mitad</div>
+          <div class="opcion" data-op="b">Uno solo</div>
+          <div class="opcion" data-op="c">Todos, por eso es la media</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La mediana solo cuenta posiciones. Da igual que el valor más alto sea 600 o 6.000: sigue ocupando la última posición y el centro no se mueve.">
+        <div class="enun">Si el hogar de 600 pasara a ganar 6.000, ¿qué le ocurriría a la mediana del Barrio A?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Subiría mucho</div>
+          <div class="opcion" data-op="b">Subiría un poco</div>
+          <div class="opcion" data-op="c">No cambiaría: seguiría siendo 40</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Un rango enorme junto a valores centrales pequeños delata que hay algo muy separado del resto, y eso es justo lo que descoloca a la media.">
+        <div class="enun">¿Qué medida avisa de que puede haber un valor atípico?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El rango, si es enorme comparado con los valores del centro</div>
+          <div class="opcion" data-op="b">La moda</div>
+          <div class="opcion" data-op="c">Ninguna: hay que mirar los datos uno a uno</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. La forma decide la medida</h2>
+
+  <div class="bloque">
+    <p>No hay una medida mejor que otra. Hay una que encaja con la forma que tienen los datos, y para verla se dibuja un <strong>histograma</strong>: se reparten los valores en tramos y se cuenta cuántos caen en cada uno.</p>
+
+    <div class="mini-graficas">
+      <div class="mini">
+        <h3>Distribución simétrica</h3>
+        <svg viewBox="0 0 340 250" role="img" aria-labelledby="h1t h1d" xmlns="http://www.w3.org/2000/svg">
+        <title id="h1t">Histograma de forma simétrica: la mayoría de los hogares se concentra en el centro</title>
+        <desc id="h1d">Cinco barras. La central, de 40 a 50 mil dólares, es la más alta con 12 hogares. A cada lado bajan de forma pareja: 6 y 6, y luego 2 y 2. La figura es simétrica, así que la media y la mediana caen casi en el mismo sitio.</desc>
+        <line class="g-reja" x1="42" y1="200.0" x2="328" y2="200.0"/>
+        <text class="g-rot" x="36" y="204.0" text-anchor="end">0</text>
+        <line class="g-reja" x1="42" y1="153.5" x2="328" y2="153.5"/>
+        <text class="g-rot" x="36" y="157.5" text-anchor="end">3</text>
+        <line class="g-reja" x1="42" y1="107.0" x2="328" y2="107.0"/>
+        <text class="g-rot" x="36" y="111.0" text-anchor="end">6</text>
+        <line class="g-reja" x1="42" y1="60.5" x2="328" y2="60.5"/>
+        <text class="g-rot" x="36" y="64.5" text-anchor="end">9</text>
+        <line class="g-reja" x1="42" y1="14.0" x2="328" y2="14.0"/>
+        <text class="g-rot" x="36" y="18.0" text-anchor="end">12</text>
+        <rect class="g-barra" x="42.0" y="169.0" width="56.2" height="31.0"/>
+        <text class="g-valor" x="70.6" y="165.0" text-anchor="middle">2</text>
+        <text class="g-rot" x="70.6" y="216" text-anchor="middle">20-30</text>
+        <rect class="g-barra" x="99.2" y="107.0" width="56.2" height="93.0"/>
+        <text class="g-valor" x="127.8" y="103.0" text-anchor="middle">6</text>
+        <text class="g-rot" x="127.8" y="216" text-anchor="middle">30-40</text>
+        <rect class="g-barra" x="156.4" y="14.0" width="56.2" height="186.0"/>
+        <text class="g-valor" x="185.0" y="10.0" text-anchor="middle">12</text>
+        <text class="g-rot" x="185.0" y="216" text-anchor="middle">40-50</text>
+        <rect class="g-barra" x="213.6" y="107.0" width="56.2" height="93.0"/>
+        <text class="g-valor" x="242.2" y="103.0" text-anchor="middle">6</text>
+        <text class="g-rot" x="242.2" y="216" text-anchor="middle">50-60</text>
+        <rect class="g-barra" x="270.8" y="169.0" width="56.2" height="31.0"/>
+        <text class="g-valor" x="299.4" y="165.0" text-anchor="middle">2</text>
+        <text class="g-rot" x="299.4" y="216" text-anchor="middle">60-70</text>
+        <line class="g-eje" x1="42" y1="14" x2="42" y2="200"/>
+        <line class="g-eje" x1="42" y1="200" x2="328" y2="200"/>
+        <text class="g-rot-eje" x="185.0" y="244" text-anchor="middle">Ingreso por hogar (miles $)</text>
+      </svg>
+        <p>La mayoría se agrupa en el centro y baja de forma pareja a los dos lados. Aquí <strong>media y mediana casi coinciden</strong>, y cualquiera de las dos describe bien el conjunto. Datos ilustrativos.</p>
+      </div>
+      <div class="mini">
+        <h3>Sesgada a la derecha</h3>
+        <svg viewBox="0 0 340 250" role="img" aria-labelledby="h2t h2d" xmlns="http://www.w3.org/2000/svg">
+        <title id="h2t">Histograma sesgado a la derecha: la mayoría se concentra a la izquierda y la cola se estira hacia los valores altos</title>
+        <desc id="h2d">Cinco barras que bajan de izquierda a derecha: 12 hogares entre 20 y 30 mil, 9 entre 30 y 40, 4 entre 40 y 50, 2 entre 50 y 60 y 1 entre 60 y 70. La cola larga de la derecha arrastra la media hacia arriba, de modo que la media queda por encima de la mediana.</desc>
+        <line class="g-reja" x1="42" y1="200.0" x2="328" y2="200.0"/>
+        <text class="g-rot" x="36" y="204.0" text-anchor="end">0</text>
+        <line class="g-reja" x1="42" y1="153.5" x2="328" y2="153.5"/>
+        <text class="g-rot" x="36" y="157.5" text-anchor="end">3</text>
+        <line class="g-reja" x1="42" y1="107.0" x2="328" y2="107.0"/>
+        <text class="g-rot" x="36" y="111.0" text-anchor="end">6</text>
+        <line class="g-reja" x1="42" y1="60.5" x2="328" y2="60.5"/>
+        <text class="g-rot" x="36" y="64.5" text-anchor="end">9</text>
+        <line class="g-reja" x1="42" y1="14.0" x2="328" y2="14.0"/>
+        <text class="g-rot" x="36" y="18.0" text-anchor="end">12</text>
+        <rect class="g-barra" x="42.0" y="14.0" width="56.2" height="186.0"/>
+        <text class="g-valor" x="70.6" y="10.0" text-anchor="middle">12</text>
+        <text class="g-rot" x="70.6" y="216" text-anchor="middle">20-30</text>
+        <rect class="g-barra" x="99.2" y="60.5" width="56.2" height="139.5"/>
+        <text class="g-valor" x="127.8" y="56.5" text-anchor="middle">9</text>
+        <text class="g-rot" x="127.8" y="216" text-anchor="middle">30-40</text>
+        <rect class="g-barra" x="156.4" y="138.0" width="56.2" height="62.0"/>
+        <text class="g-valor" x="185.0" y="134.0" text-anchor="middle">4</text>
+        <text class="g-rot" x="185.0" y="216" text-anchor="middle">40-50</text>
+        <rect class="g-barra" x="213.6" y="169.0" width="56.2" height="31.0"/>
+        <text class="g-valor" x="242.2" y="165.0" text-anchor="middle">2</text>
+        <text class="g-rot" x="242.2" y="216" text-anchor="middle">50-60</text>
+        <rect class="g-barra" x="270.8" y="184.5" width="56.2" height="15.5"/>
+        <text class="g-valor" x="299.4" y="180.5" text-anchor="middle">1</text>
+        <text class="g-rot" x="299.4" y="216" text-anchor="middle">60-70</text>
+        <line class="g-eje" x1="42" y1="14" x2="42" y2="200"/>
+        <line class="g-eje" x1="42" y1="200" x2="328" y2="200"/>
+        <text class="g-rot-eje" x="185.0" y="244" text-anchor="middle">Ingreso por hogar (miles $)</text>
+      </svg>
+        <p>La mayoría se agrupa a la izquierda y una cola larga se estira hacia los valores altos. Esa cola <strong>arrastra la media por encima de la mediana</strong>. Datos ilustrativos.</p>
+      </div>
+    </div>
+
+    <p>Los ingresos, en casi cualquier lugar del mundo, tienen la segunda forma. Por eso los organismos oficiales publican casi siempre la <strong>mediana</strong> del ingreso por hogar y no la media: describe mejor a la familia corriente.</p>
+
+    <table class="reglas">
+      <caption>Qué medida usar según la situación</caption>
+      <thead>
+        <tr><th scope="col">Si los datos…</th><th scope="col">Use</th><th scope="col">Porque</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Son simétricos, sin valores extremos</td><td>La media</td><td>Usa toda la información y coincide con la mediana</td></tr>
+        <tr><td>Tienen valores atípicos o cola larga</td><td>La mediana</td><td>No se deja arrastrar por unos pocos valores extremos</td></tr>
+        <tr><td>No son números, sino categorías</td><td>La moda</td><td>Es la única que funciona: no se puede promediar un color ni un idioma</td></tr>
+      </tbody>
+    </table>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Elegir la medida</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Los ingresos casi siempre tienen cola larga hacia arriba, y la mediana no se deja arrastrar por unos pocos hogares muy ricos.">
+        <div class="enun">Quiere describir el ingreso de una familia corriente de un barrio. ¿Qué medida publica?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La media</div>
+          <div class="opcion" data-op="b">La mediana</div>
+          <div class="opcion" data-op="c">El rango</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="No se puede sumar ni ordenar un idioma. Con categorías, la única medida de centro que tiene sentido es la que más se repite.">
+        <div class="enun">Ha preguntado a doscientas personas cuál es su idioma materno. ¿Qué medida de centro tiene sentido?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La media</div>
+          <div class="opcion" data-op="b">La mediana</div>
+          <div class="opcion" data-op="c">La moda</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="La cola de la derecha tira de la media hacia arriba. En una distribución sesgada a la derecha, la media queda siempre por encima de la mediana.">
+        <div class="enun">En una distribución sesgada a la derecha, ¿qué relación hay entre media y mediana?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La media es mayor que la mediana</div>
+          <div class="opcion" data-op="b">La media es menor que la mediana</div>
+          <div class="opcion" data-op="c">Son iguales</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. El resumen de cinco números y el diagrama de caja</h2>
+
+  <div class="bloque">
+    <p>Un solo número nunca describe un conjunto. Cinco sí, casi siempre.</p>
+
+    <div class="ejemplo">
+      <span class="et">El resumen de cinco números</span>
+      <div class="paso"><span class="n" aria-hidden="true">1</span><strong>Mínimo.</strong> El valor más bajo.</div>
+      <div class="paso"><span class="n" aria-hidden="true">2</span><strong>Primer cuartil (Q1).</strong> La mediana de la mitad de abajo. Por debajo queda la cuarta parte de los datos.</div>
+      <div class="paso"><span class="n" aria-hidden="true">3</span><strong>Mediana.</strong> El centro.</div>
+      <div class="paso"><span class="n" aria-hidden="true">4</span><strong>Tercer cuartil (Q3).</strong> La mediana de la mitad de arriba. Por debajo queda la tercera cuarta parte.</div>
+      <div class="paso"><span class="n" aria-hidden="true">5</span><strong>Máximo.</strong> El valor más alto.</div>
+    </div>
+
+    <p>El <strong>diagrama de caja</strong> dibuja esos cinco números. La caja va de Q1 a Q3 y contiene la mitad central de los datos; la raya de dentro es la mediana; los bigotes llegan al mínimo y al máximo.</p>
+
+    <figure class="grafica">
+      <h3>Dos sectores comparados</h3>
+      <p class="g-fuente">Salarios anuales en miles de dólares, once trabajadores de cada sector. <strong>Datos ilustrativos.</strong></p>
+      <svg viewBox="0 0 700 250" role="img" aria-labelledby="bpt bpd" xmlns="http://www.w3.org/2000/svg">
+      <title id="bpt">Dos diagramas de caja comparativos: salarios anuales en comercio minorista y en tecnología</title>
+      <desc id="bpd">El comercio minorista va de 22 a 37 mil dólares, con la caja entre 26 y 35 y la mediana en 30: una caja estrecha, salarios muy parecidos entre sí. Tecnología va de 38 a 88 mil, con la caja entre 45 y 70 y la mediana en 55: una caja mucho más ancha, salarios muy desiguales dentro del mismo sector. Los dos rangos no se solapan en ningún punto.</desc>
+      <line class="g-reja" x1="132.0" y1="20" x2="132.0" y2="202"/>
+      <text class="g-rot" x="132.0" y="220" text-anchor="middle">20</text>
+      <line class="g-reja" x1="210.3" y1="20" x2="210.3" y2="202"/>
+      <text class="g-rot" x="210.3" y="220" text-anchor="middle">30</text>
+      <line class="g-reja" x1="288.6" y1="20" x2="288.6" y2="202"/>
+      <text class="g-rot" x="288.6" y="220" text-anchor="middle">40</text>
+      <line class="g-reja" x1="366.9" y1="20" x2="366.9" y2="202"/>
+      <text class="g-rot" x="366.9" y="220" text-anchor="middle">50</text>
+      <line class="g-reja" x1="445.1" y1="20" x2="445.1" y2="202"/>
+      <text class="g-rot" x="445.1" y="220" text-anchor="middle">60</text>
+      <line class="g-reja" x1="523.4" y1="20" x2="523.4" y2="202"/>
+      <text class="g-rot" x="523.4" y="220" text-anchor="middle">70</text>
+      <line class="g-reja" x1="601.7" y1="20" x2="601.7" y2="202"/>
+      <text class="g-rot" x="601.7" y="220" text-anchor="middle">80</text>
+      <line class="g-reja" x1="680.0" y1="20" x2="680.0" y2="202"/>
+      <text class="g-rot" x="680.0" y="220" text-anchor="middle">90</text>
+      <line class="g-bigote" x1="147.7" y1="65.5" x2="179.0" y2="65.5"/>
+      <line class="g-bigote" x1="249.4" y1="65.5" x2="265.1" y2="65.5"/>
+      <line class="g-bigote" x1="147.7" y1="52.5" x2="147.7" y2="78.5"/>
+      <line class="g-bigote" x1="265.1" y1="52.5" x2="265.1" y2="78.5"/>
+      <rect class="g-caja" x="179.0" y="42.5" width="70.5" height="46" rx="3"/>
+      <line class="g-mediana" x1="210.3" y1="42.5" x2="210.3" y2="88.5"/>
+      <text class="g-rot-eje" x="120" y="69.5" text-anchor="end">Comercio minorista</text>
+      <line class="g-bigote" x1="272.9" y1="156.5" x2="327.7" y2="156.5"/>
+      <line class="g-bigote" x1="523.4" y1="156.5" x2="664.3" y2="156.5"/>
+      <line class="g-bigote" x1="272.9" y1="143.5" x2="272.9" y2="169.5"/>
+      <line class="g-bigote" x1="664.3" y1="143.5" x2="664.3" y2="169.5"/>
+      <rect class="g-caja" x="327.7" y="133.5" width="195.7" height="46" rx="3"/>
+      <line class="g-mediana" x1="406.0" y1="133.5" x2="406.0" y2="179.5"/>
+      <text class="g-rot-eje" x="120" y="160.5" text-anchor="end">Tecnología</text>
+      <line class="g-eje" x1="132" y1="202" x2="680" y2="202"/>
+      <text class="g-rot-eje" x="406.0" y="244" text-anchor="middle">Salario anual (miles $)</text>
+    </svg>
+      <figcaption>Lo que hay que ver no es solo que tecnología pague más. Es que <strong>su caja es mucho más ancha</strong>: dentro del mismo sector, los salarios son muy desiguales. En comercio minorista casi todos cobran parecido.</figcaption>
+      <details class="datos">
+        <summary>Ver el resumen de cinco números</summary>
+        <div class="cuerpo-datos">
+          <table class="tabla-datos">
+            <caption>Resumen de cinco números de los dos sectores, en miles de dólares. Datos ilustrativos.</caption>
+            <thead>
+              <tr><th scope="col">Sector</th><th scope="col">Mínimo</th><th scope="col">Q1</th><th scope="col">Mediana</th><th scope="col">Q3</th><th scope="col">Máximo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Comercio minorista</td><td>22</td><td>26</td><td>30</td><td>35</td><td>37</td></tr>
+              <tr><td>Tecnología</td><td>38</td><td>45</td><td>55</td><td>70</td><td>88</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </figure>
+
+    <div class="caja-tip">
+      <strong>Lo que enseña una caja ancha.</strong> La anchura de la caja es la distancia entre Q1 y Q3, y ahí vive la mitad central de la gente. Estrecha significa que casi todos están cerca unos de otros. Ancha significa que dentro del mismo grupo hay diferencias grandes. Dos sectores pueden tener la misma mediana y vidas completamente distintas.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 3 · Leer una caja</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="La caja va de Q1 a Q3, y entre esos dos cuartiles está siempre la mitad central de los datos, sea el conjunto que sea.">
+        <div class="enun">¿Qué parte de los datos hay dentro de la caja?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Todos</div>
+          <div class="opcion" data-op="b">La mitad central</div>
+          <div class="opcion" data-op="c">La cuarta parte</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="En comercio minorista la caja va de 26 a 35, nueve mil de ancho. En tecnología va de 45 a 70, veinticinco mil. La desigualdad interna es casi el triple.">
+        <div class="enun">¿En cuál de los dos sectores hay más desigualdad interna de salarios?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En comercio minorista, porque paga menos</div>
+          <div class="opcion" data-op="b">En los dos igual</div>
+          <div class="opcion" data-op="c">En tecnología, porque su caja es mucho más ancha</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="El máximo del minorista es 37 y el mínimo de tecnología es 38. No se solapan: el mejor pagado de un sector cobra menos que el peor pagado del otro.">
+        <div class="enun">El trabajador mejor pagado del comercio minorista, ¿cobra más o menos que el peor pagado de tecnología?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Menos: 37 frente a 38, los rangos no se solapan</div>
+          <div class="opcion" data-op="b">Más</div>
+          <div class="opcion" data-op="c">Lo mismo</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Media o mediana: la elección interesada</h2>
+
+  <div class="bloque">
+    <p>Vuelva al Barrio A. Media noventa, mediana cuarenta. Las dos cifras son correctas y las dos describen el mismo barrio.</p>
+    <p>Ahora imagine dos personas que tienen que hablar de ese barrio en público.</p>
+
+    <div class="ejemplo">
+      <span class="et">El funcionario que quiere atraer inversión</span>
+      <p>Dirá que <strong>el ingreso medio del barrio es de noventa mil dólares</strong>. No miente. Ha calculado bien. Y ha elegido la medida que hace que el barrio parezca próspero.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Quien pide una ayuda pública para el barrio</span>
+      <p>Dirá que <strong>el ingreso mediano del barrio es de cuarenta mil dólares</strong>. Tampoco miente. También ha calculado bien. Y ha elegido la medida que hace visible la necesidad.</p>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Esto es exactamente lo mismo que hicieron los dos semanarios de 1905.</strong> En la Lección 1.3, dos periódicos contaron la misma reunión sin contradecirse: uno eligió contar las negativas y el otro los ofrecimientos. Aquí dos personas describen el mismo barrio sin equivocarse en una cuenta: una elige la media y la otra la mediana. El sesgo no necesita mentiras. Le basta con elegir.
+    </div>
+
+    <p>La defensa es siempre la misma pregunta: <strong>¿por qué esta medida y no la otra?</strong> Cuando alguien publica una media sin publicar la mediana, o al revés, conviene preguntarse qué se ve mejor con la que eligió, y qué queda tapado.</p>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · A mano y con la calculadora</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Calcule a mano las cuatro medidas del Barrio B, con la lista ya ordenada de la sección 2. Después repita las mismas cuentas con la TI-30XS y compruebe que coinciden. Termine con el conjunto 12, 15, 15, 18, 22, 25, 25, 25, 31, 40.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> el Barrio B da media 41, mediana 41, sin moda y rango 14. El segundo conjunto suma 228 entre 10 valores, así que la media es 22.8; la mediana es 23.5, la moda es 25 y el rango es 28.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Media o mediana</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Con los datos del Barrio A, escriba dos párrafos cortos sobre el mismo barrio: uno para atraer inversión y otro para pedir una ayuda pública. No puede inventar ni cambiar ningún dato. Solo puede elegir qué medida usa y qué cifras menciona.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si tuvo que inventar un dato para que le saliera el segundo párrafo, vuelva atrás. Todo lo que necesita está en las cuatro medidas y en la lista de los once hogares.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Su propio resumen de cinco números</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Reúna once datos reales de su entorno: el precio de once artículos del supermercado, las edades de once personas conocidas, los minutos que tardó en llegar al trabajo once días. Ordénelos, saque el resumen de cinco números y dibuje la caja a mano en papel cuadriculado.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> con once datos, Q1 es el tercero y Q3 el noveno de la lista ordenada. Si su caja sale muy estrecha, sus once datos se parecen mucho entre sí; si sale ancha, hay bastante variedad. Las dos cosas son resultados, no errores.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 2.2</h2>
+    <p>Doce preguntas: cuatro de cálculo, cuatro de elegir la medida adecuada y cuatro de leer diagramas de caja. Tiempo sugerido: 30 minutos. Para aprobar se requieren al menos 8 respuestas correctas. Puede intentarlo cuantas veces quiera.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación sobre medidas de tendencia central, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Calcula las cuatro medidas</td>
+          <td>Confunde media con mediana, o busca la mediana sin ordenar.</td>
+          <td>Calcula bien la media, pero falla en la mediana de conjuntos pares o en el rango.</td>
+          <td>Obtiene las cuatro sin errores, a mano y con la calculadora.</td>
+          <td>Estima el resultado antes de calcular y detecta cuándo una cifra no puede ser correcta.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Reconoce el efecto de un valor atípico</td>
+          <td>Toma la media como el valor típico en cualquier caso.</td>
+          <td>Sabe que los atípicos afectan, pero no dice a cuál de las medidas.</td>
+          <td>Explica que el atípico mueve la media y deja quieta la mediana, y lo demuestra con los datos.</td>
+          <td>Usa el rango como aviso anticipado de que puede haber un atípico.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Elige la medida según la forma</td>
+          <td>Usa siempre la media.</td>
+          <td>Elige bien entre media y mediana, pero olvida la moda con categorías.</td>
+          <td>Justifica su elección apoyándose en la forma de la distribución.</td>
+          <td>Explica además qué queda tapado por la medida que no eligió.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Interpreta un diagrama de caja</td>
+          <td>Solo mira dónde está la mediana.</td>
+          <td>Lee los cinco números, pero no interpreta la anchura de la caja.</td>
+          <td>Compara dos cajas y explica qué significa que una sea más ancha.</td>
+          <td>Detecta que dos grupos con la misma mediana pueden tener realidades muy distintas.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 2.2 y enlace con la 2.3</h2>
+    <p>Queda instalada la herramienta: <strong>un solo número nunca describe un conjunto</strong>. Media, mediana, moda y rango dicen cosas distintas del mismo grupo de datos, y el resumen de cinco números dice más que los cuatro juntos.</p>
+    <p>Y queda instalada la sospecha, que es la misma del Tema 1 con otro disfraz. Cuando alguien publica una media sin la mediana, o al revés, la pregunta no es si calculó bien. Es por qué eligió esa.</p>
+    <p>La <strong><a href="soc-2-3.html">Lección 2.3</a></strong> cierra el tema con los porcentajes, las tasas, las escalas de mapa y la densidad de población. Ahí volverá a aparecer un documento del <a href="fuentes/index.html">Archivo de fuentes</a> que ya conoce: el censo casa por casa del barrio de la calle Halsted, de 1895, cuya autora declara que cada solar de su mapa se pinta entero lo habite una persona o cien. Es decir, un documento que mide densidad y advierte por escrito de que sus datos no sostienen afirmaciones sobre densidad.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-2-3.html">Siguiente: Lección 2.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 2 · Lección 2.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Para hallar la mediana, lo primero que hay que hacer es…',
+      ops: ['Sumar todos los valores', 'Ordenar los datos de menor a mayor', 'Buscar el que más se repite', 'Restar el menor del mayor'],
+      correcta: 1, expl: 'La mediana no existe hasta que los datos están ordenados. Es el error más común de esta lección y el más fácil de evitar.' },
+
+    { enun: '2. El conjunto 12, 15, 15, 18, 22, 25, 25, 25, 31, 40 suma 228. Su media es…',
+      ops: ['23.5', '22.8', '25', '28'],
+      correcta: 1, expl: '228 dividido entre 10 valores da 22.8. Cuidado: 23.5 es la mediana y 25 es la moda, así que las tres cifras conviven en el mismo conjunto.' },
+
+    { enun: '3. En ese mismo conjunto de diez valores, la mediana es…',
+      ops: ['22', '25', '23.5', '22.8'],
+      correcta: 2, expl: 'Con un número par de datos, la mediana es la media de los dos centrales: 22 y 25 dan 23.5.' },
+
+    { enun: '4. El rango de un conjunto se obtiene…',
+      ops: ['Sumando el mayor y el menor', 'Restando el menor del mayor', 'Dividiendo el mayor entre el menor', 'Contando cuántos valores hay'],
+      correcta: 1, expl: 'Mide cuánto se separan los extremos. Un rango enorme junto a valores centrales pequeños avisa de que hay un valor atípico.' },
+
+    { enun: '5. En el Barrio A, la media es 90 y la mediana 40. La diferencia se debe a…',
+      ops: ['Un error de cálculo', 'Un hogar con ingreso muy alto que arrastra la media', 'Que hay pocos hogares', 'Que la mediana está mal ordenada'],
+      correcta: 1, expl: 'Un solo hogar de 600 mil levanta la media. Diez de los once hogares ganan 52 mil o menos: la media de 90 no describe a ninguno de ellos.' },
+
+    { enun: '6. Un valor atípico muy alto afecta…',
+      ops: ['A la media, no a la mediana', 'A la mediana, no a la media', 'A las dos por igual', 'A ninguna de las dos'],
+      correcta: 0, expl: 'La media reparte cantidades y por eso se deja arrastrar. La mediana solo cuenta posiciones, y un valor enorme ocupa una posición, no más.' },
+
+    { enun: '7. Los organismos oficiales publican la mediana del ingreso por hogar y no la media porque…',
+      ops: ['Es más fácil de calcular', 'Los ingresos tienen cola larga hacia arriba y la mediana describe mejor a la familia corriente', 'La media es incorrecta', 'La mediana siempre es mayor'],
+      correcta: 1, expl: 'Casi en cualquier lugar del mundo la distribución del ingreso está sesgada a la derecha, y la mediana no se deja arrastrar por unos pocos hogares muy ricos.' },
+
+    { enun: '8. Ha preguntado el idioma materno a doscientas personas. La medida de centro que tiene sentido es…',
+      ops: ['La media', 'La mediana', 'La moda', 'El rango'],
+      correcta: 2, expl: 'Con categorías no se puede sumar ni ordenar. La moda es la única medida de centro que funciona.' },
+
+    { enun: '9. En una distribución sesgada a la derecha, la media queda…',
+      ops: ['Por encima de la mediana', 'Por debajo de la mediana', 'Exactamente igual', 'Fuera del conjunto'],
+      correcta: 0, expl: 'La cola larga de la derecha tira de la media hacia arriba, mientras la mediana se queda donde está la mayoría.' },
+
+    { enun: '10. La caja de un diagrama de caja contiene…',
+      ops: ['Todos los datos', 'La mitad central de los datos', 'La cuarta parte', 'Solo la mediana'],
+      correcta: 1, expl: 'Va de Q1 a Q3, y entre esos dos cuartiles está siempre la mitad central del conjunto.' },
+
+    { enun: '11. La caja de tecnología va de 45 a 70 y la de comercio minorista de 26 a 35. Eso significa que…',
+      ops: ['Tecnología tiene más trabajadores', 'En tecnología los salarios son más desiguales entre sí', 'En comercio minorista hay más valores atípicos', 'Las dos tienen la misma mediana'],
+      correcta: 1, expl: 'La anchura de la caja mide la distancia entre Q1 y Q3. Veinticinco mil frente a nueve mil: casi el triple de desigualdad interna.' },
+
+    { enun: '12. Un funcionario dice que el ingreso medio del Barrio A es de 90 mil dólares. Lo correcto es afirmar que…',
+      ops: ['Está mintiendo', 'Ha calculado mal', 'Ha calculado bien y ha elegido la medida que favorece su mensaje', 'La media no se puede usar nunca'],
+      correcta: 2, expl: 'La cifra es exacta. Lo que hizo fue elegir, igual que los dos semanarios de 1905 en la Lección 1.3: el sesgo no necesita mentiras, le basta con elegir.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 2.3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
