@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<!--
+  Lección 1.3 · Sesgo, punto de vista y lenguaje persuasivo
+  Spanish ASE Social Studies · Tema 1 · Indagación, fuentes y alfabetización analítica
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 1.3 · Sesgo, punto de vista y lenguaje persuasivo</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 1 — paleta marrón heredada del plan curricular (--t1) */
+    --tema:    #4e342e;
+    --tema-d:  #3e2a25;
+    --tema-bg: #efebe9;
+    --tema-bg2:#d7ccc8;
+    --acento:  #5d4037;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #2e1f1b 0%, #3e2a25 55%, #4e342e 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(46,31,27,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #3e2a25;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fffdf7; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #4a3a34; font-weight: 600; }
+  .navlecciones .nav-sep { color: #6d5b54; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fffdf7;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #4e342e; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 1 · Indagación, fuentes y alfabetización analítica</div>
+    <h1>Lección 1.3 · Sesgo, punto de vista y lenguaje persuasivo</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.5 · Evaluar razonamientos y evidencia</span>
+      <span class="sp">SSP.6 · Analizar el propósito y el punto de vista</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 1.3</span>
+    <a class="nav-sig" href="index.html#tema-2">Siguiente: Tema 2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Distinguir el sesgo de la falsedad, y reconocer que una fuente puede ser parcial sin decir una sola mentira.</li>
+      <li>Detectar el punto de vista de un documento por sus verbos, por a quién nombra y por a quién atribuye lo que afirma.</li>
+      <li>Descubrir lo que un documento calla, comparándolo con otro sobre los mismos hechos.</li>
+      <li>Usar dos fuentes parciales para reconstruir lo ocurrido, en lugar de descartar ambas por parciales.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior enseñó a interrogar un documento a solas: origen, propósito y contexto, y después la decisión de qué sostiene y qué no. Los dos documentos de allí no se contradecían. Se completaban.</p>
+    <p>Aquí ocurre otra cosa. Dos semanarios salieron el mismo día, el sábado 23 de septiembre de 1905. Los dos cuentan la misma reunión, celebrada el viernes 15 en el Concejo Municipal de Chicago. Los dos son fuentes primarias. Ninguno de los dos miente.</p>
+    <p>Y sin embargo, al leerlos seguidos, parecen dos reuniones distintas. Averiguar cómo puede pasar eso es toda la lección.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Sesgo no es mentira</h2>
+
+  <div class="bloque">
+    <p>La palabra <em>sesgo</em> se usa casi siempre como acusación. Decir que un periódico tiene sesgo suena a decir que engaña. Conviene separar las dos cosas desde el principio, porque el examen de Estudios sociales no pregunta si una fuente miente: pregunta desde dónde mira.</p>
+    <p>Una fuente <strong>falsa</strong> afirma hechos que no ocurrieron. Se refuta comprobando los hechos.</p>
+    <p>Una fuente <strong>sesgada</strong> afirma hechos que sí ocurrieron, pero no todos, y los presenta con palabras que empujan hacia una conclusión. No se refuta comprobando: se completa leyendo otra.</p>
+    <div class="caja-tip">
+      <strong>La idea de la que cuelga esta lección.</strong> El sesgo no suele estar en lo que un documento dice. Está en lo que decide contar, en el orden en que lo pone y en los verbos que elige. Por eso una fuente sesgada sigue siendo útil: sus hechos valen, y su selección revela a quién sirve.
+    </div>
+    <p>Esto tiene una consecuencia práctica. Ante una fuente parcial, el lector novato la descarta. El lector competente la usa dos veces: una para los hechos que aporta, y otra como prueba de lo que le importaba a quien la escribió.</p>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Falso o parcial</h3>
+      <p>En cada caso, decida si el problema es de falsedad o de sesgo.</p>
+
+      <div class="pregunta" data-correcta="b" data-explica="La cifra o es correcta o no lo es, y se comprueba con las actas. Eso es una cuestión de hechos, no de punto de vista.">
+        <div class="enun">Un periódico escribe que a la reunión asistieron veinte concejales, cuando las actas registran doce.</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sesgo</div>
+          <div class="opcion" data-op="b">Falsedad</div>
+          <div class="opcion" data-op="c">Ninguna de las dos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Las dos frases pueden describir la misma reunión sin que ninguna sea falsa. Lo que cambia es qué se cuenta y con qué palabras.">
+        <div class="enun">Un periódico escribe que en la reunión «no se produjo avance alguno». Otro escribe que «los resultados tangibles fueron dos ofrecimientos».</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sesgo</div>
+          <div class="opcion" data-op="b">Falsedad</div>
+          <div class="opcion" data-op="c">Uno de los dos miente por fuerza</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Una fuente parcial sigue aportando hechos comprobables, y además prueba algo sobre quién la escribió. Descartarla es perder las dos cosas.">
+        <div class="enun">Usted descubre que un semanario defendía abiertamente una de las dos posturas en litigio. ¿Qué hace con él?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Lo descarta: no es fiable</div>
+          <div class="opcion" data-op="b">Lo usa como si fuera neutral</div>
+          <div class="opcion" data-op="c">Lo usa por sus hechos y anota su postura como dato</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Dos semanarios, un viernes</h2>
+
+  <div class="bloque">
+    <p>En 1905 Chicago llevaba cuarenta años discutiendo quién debía ser dueño de sus tranvías. Las líneas eran de compañías privadas que operaban con concesiones municipales. El alcalde Edward F. Dunne había ganado las elecciones de abril prometiendo que la ciudad las comprara.</p>
+    <p>El viernes 15 de septiembre, el comité de transporte del Concejo se reunió para recibir propuestas de las compañías. Los concejales preguntaron. El coronel E. R. Bliss respondió en nombre de las compañías. Ocho días después, dos publicaciones contaron esa reunión.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📜</span> Documento A · The Public</h2>
+    <p class="fuente">Semanario de Louis F. Post, partidario declarado de que la ciudad comprara las líneas. Chicago, 23 de septiembre de 1905, páginas 391 y 392.</p>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 1 · El titular y la primera frase</h3>
+      <blockquote>
+        <p><strong>Avances del movimiento tranviario de Chicago.</strong></p>
+        <p>En la sesión aplazada del comité de transporte local del Concejo Municipal de Chicago, celebrada el día 15 con el propósito de recibir propuestas de las compañías existentes, no se produjo avance alguno. Todos los intereses tranviarios estaban representados, y el coronel E. R. Bliss actuó como portavoz suyo. El coronel Bliss declaró que tenía una propuesta que hacer, pero se negó a presentarla.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 2 · La ronda de preguntas del concejal Finn</h3>
+      <blockquote>
+        <p>El concejal Finn le preguntó: «¿Accederán ustedes a vender en cualquier momento en que la ciudad se lo pida, por el costo de construcción, con independencia de los derechos de concesión?»</p>
+        <p>El coronel Bliss respondió: «No accederemos.»</p>
+        <p>El concejal Finn preguntó de nuevo: «¿Cuál es la fecha más temprana en que venderán ustedes a la ciudad, con independencia de los derechos de concesión?»</p>
+        <p>A esto respondió el coronel Bliss: «No podemos responder ahora, y no diremos que vayamos a vender en ningún momento.»</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 3 · El cierre de la sesión</h3>
+      <blockquote>
+        <p>Preguntado si tenía un plan que ofrecer, el coronel Bliss respondió que sí lo tenía, pero que no lo ofrecería entonces. Los concejales Finn y Dever intentaron llevar el plan ante el comité, pero fueron derrotados en votación, siete contra cinco. El comité se aplazó hasta el día 26.</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📜</span> Documento B · Street Railway Journal</h2>
+    <p class="fuente">Revista profesional del sector de los ferrocarriles urbanos. Sus lectores y sus anunciantes eran las compañías de tranvías. Nueva York, 23 de septiembre de 1905, página 467.</p>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 1 · El titular y la primera frase</h3>
+      <blockquote>
+        <p><strong>La compañía de Chicago responderá a las preguntas planteadas por el Concejo Municipal.</strong></p>
+        <p>La reunión del comité de transporte local del Concejo Municipal de Chicago, celebrada el viernes 15 de septiembre, terminó con el acuerdo de las compañías tranviarias de responder el 26 de septiembre a varias preguntas presentadas por los concejales. Los resultados tangibles de la reunión fueron dos ofrecimientos, hechos por la Chicago City Company como parte de lo que aceptaría hacer a cambio de obtener una prórroga de la concesión.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 2 · La otra compañía</h3>
+      <blockquote>
+        <p>Aunque los representantes de la Union Traction no se sumaron a esos ofrecimientos, guardaron silencio cuando se formuló el que les afectaba. Se entiende que quedan obligados por él.</p>
+      </blockquote>
+    </div>
+
+    <div class="carta">
+      <h3 class="encab-carta">Fragmento 3 · Lo que queda pendiente</h3>
+      <blockquote>
+        <p>Las preguntas importantes que la compañía ha aceptado responder en la próxima reunión del comité son: «En cualquier acuerdo de arreglo que llegue a hacerse, ¿se dispondrá que en un período o unos períodos determinados, durante la vigencia del acuerdo, la ciudad pueda hacerse cargo de sus líneas?» y «¿Aceptarán ustedes que la ciudad se haga cargo de las líneas en cualquier momento durante la vigencia de la concesión, si se otorga una?»</p>
+      </blockquote>
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Primera lectura de los dos</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Los dos hablan del mismo viernes 15 en el mismo comité. Ese es el dato que convierte la comparación en algo revelador: si fueran reuniones distintas, la diferencia no probaría nada.">
+        <div class="enun">¿Qué relación hay entre los hechos que narran los dos documentos?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Narran reuniones distintas de semanas distintas</div>
+          <div class="opcion" data-op="b">Uno narra la reunión y el otro la comenta desde lejos</div>
+          <div class="opcion" data-op="c">Narran la misma reunión del mismo día</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Ninguno de los dos afirma un hecho que el otro niegue. Lo que hace cada uno es elegir qué hechos de esa reunión merecen contarse.">
+        <div class="enun">¿En qué hecho concreto se contradicen los dos documentos?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En la fecha de la reunión</div>
+          <div class="opcion" data-op="b">En ninguno: no se contradicen en ningún hecho comprobable</div>
+          <div class="opcion" data-op="c">En quién presidía el comité</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="El documento A dice que Bliss se negó a presentar su propuesta; el B dice que hubo dos ofrecimientos concretos. Los dos pueden ser ciertos a la vez: una cosa es el plan que no enseñó y otra los ofrecimientos que sí hizo.">
+        <div class="enun">El documento A dice que Bliss se negó a presentar su propuesta. El B dice que la compañía hizo dos ofrecimientos. ¿Cómo se explica?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Son cosas distintas: un plan no presentado y unos ofrecimientos sí hechos</div>
+          <div class="opcion" data-op="b">Uno de los dos inventa</div>
+          <div class="opcion" data-op="c">El B se refiere a otra reunión</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. El inventario de lo que falta</h2>
+
+  <div class="bloque">
+    <p>Aquí está la herramienta central de la lección. Poner los dos documentos en columnas y anotar, hecho por hecho, cuál de los dos lo cuenta. Lo que aparece en una columna y no en la otra es una decisión de quien escribió.</p>
+
+    <table class="reglas">
+      <caption>Qué cuenta cada documento sobre la misma reunión</caption>
+      <thead>
+        <tr>
+          <th scope="col">Hecho de la reunión</th>
+          <th scope="col">The Public</th>
+          <th scope="col">Street Railway Journal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>La fecha y el comité</td><td>Sí</td><td>Sí</td></tr>
+        <tr><td>Que Bliss se negó a presentar su plan</td><td>Sí</td><td>No lo menciona</td></tr>
+        <tr><td>Las respuestas negativas de Bliss a Finn</td><td>Sí, citadas</td><td>No las menciona</td></tr>
+        <tr><td>Los dos ofrecimientos de la compañía</td><td>No los menciona</td><td>Sí, son el centro</td></tr>
+        <tr><td>La votación de siete contra cinco</td><td>Sí</td><td>No la menciona</td></tr>
+        <tr><td>El aplazamiento al día 26</td><td>Sí</td><td>Sí</td></tr>
+        <tr><td>El silencio de la Union Traction</td><td>No lo menciona</td><td>Sí, y lo interpreta</td></tr>
+        <tr><td>La promesa de plebiscito del alcalde Dunne</td><td>Sí, la cierra</td><td>No la menciona</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Fíjese en la forma del hueco.</strong> No es aleatorio. Todo lo que <em>The Public</em> calla favorece a las compañías, y todo lo que calla el <em>Street Railway Journal</em> las perjudica. Cuando las omisiones de una fuente apuntan todas en la misma dirección, esa dirección es su punto de vista.
+    </div>
+
+    <p>Y hay un caso que merece detenerse. Los dos documentos mencionan que el comité se aplazó al día 26, y ese detalle sirvió para algo concreto en este curso: el escaneo de <em>The Public</em> estaba borroso en esa cifra y no se sabía si era 20 o 26. La segunda fuente lo resolvió. Dos fuentes parciales juntas dieron una certeza que ninguna daba por separado.</p>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Cuatro señales de lenguaje persuasivo</h2>
+
+  <div class="bloque">
+    <p>El punto de vista no se anuncia. Se filtra por decisiones pequeñas de redacción. Estas cuatro aparecen en casi cualquier texto y las dos de este expediente las traen todas.</p>
+
+    <div class="ejemplo">
+      <span class="et">Señal 1</span>
+      <p><strong>El verbo que califica el resultado.</strong> Un documento escribe que «no se produjo avance alguno». El otro, que «los resultados tangibles fueron dos ofrecimientos». Ni «avance» ni «tangible» son hechos: son juicios sobre los hechos, colocados donde el lector espera información.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Señal 2</span>
+      <p><strong>A quién se nombra y a quién no.</strong> <em>The Public</em> nombra al coronel E. R. Bliss una y otra vez, con grado militar y apellido, y le atribuye cada negativa. El <em>Street Railway Journal</em> no lo nombra jamás: habla de «la compañía». Poner un nombre a las negativas las hace personales; quitarlo las disuelve en una institución.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Señal 3</span>
+      <p><strong>La atribución sin fuente.</strong> El <em>Street Railway Journal</em> escribe que la Union Traction guardó silencio y añade: «se entiende que quedan obligados». ¿Quién lo entiende así? No lo dice. <em>The Public</em> hace lo mismo cuando llama a un concejal «un republicano a quien los periódicos tranviarios tenían por hostil». Las dos fórmulas presentan una interpretación como si fuera un hecho conocido.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Señal 4</span>
+      <p><strong>El titular como marco.</strong> «Avances del movimiento tranviario» encabeza una crónica que cuenta que no hubo ninguno: el titular pertenece a la campaña, no a la noticia. «La compañía responderá a las preguntas» convierte en promesa cumplida algo que aún no ha ocurrido cuando se publica.</p>
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 3 · Identificar la señal</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Es una interpretación presentada sin decir quién la sostiene. El silencio es el hecho; que obligue a alguien es la lectura que hace la revista.">
+        <div class="enun">«Se entiende que quedan obligados por él.» ¿Qué señal es?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El verbo que califica el resultado</div>
+          <div class="opcion" data-op="b">El titular como marco</div>
+          <div class="opcion" data-op="c">La atribución sin fuente</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="«Tangible» no describe los ofrecimientos: los valora. Un lector contrario habría escrito «dos ofrecimientos parciales» sin faltar a la verdad.">
+        <div class="enun">«Los resultados tangibles de la reunión fueron dos ofrecimientos.» ¿Qué señal es?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La atribución sin fuente</div>
+          <div class="opcion" data-op="b">El verbo o adjetivo que califica el resultado</div>
+          <div class="opcion" data-op="c">A quién se nombra y a quién no</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Repetir el nombre y el grado concentra la responsabilidad en una persona. La revista del sector consigue el efecto contrario sin nombrar a nadie.">
+        <div class="enun">Un documento escribe «el coronel Bliss» seis veces; el otro, «la compañía». ¿Qué señal es?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">A quién se nombra y a quién no</div>
+          <div class="opcion" data-op="b">El titular como marco</div>
+          <div class="opcion" data-op="c">El verbo que califica el resultado</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · El inventario de omisiones</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque dos noticias de hoy sobre el mismo suceso, en dos medios distintos. Haga una tabla de tres columnas como la de la sección 3: el hecho, y una casilla por medio. Anote diez hechos.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si sus omisiones no apuntan todas en la misma dirección, es probable que los dos medios coincidan en el punto de vista y necesite buscar otro par.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Reescribir sin cambiar los hechos</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Tome el fragmento 1 del documento B y reescríbalo desde el punto de vista contrario, sin añadir, quitar ni alterar un solo hecho. Solo puede cambiar los verbos, los adjetivos y el orden.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si para conseguir el efecto tuvo que introducir un dato nuevo, es que pasó de sesgar a falsear. Vuelva atrás y hágalo solo con las palabras.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · El párrafo de las dos fuentes</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Escriba un párrafo de ocho a diez líneas que responda a esta pregunta: <strong>¿qué ocurrió en la reunión del 15 de septiembre de 1905?</strong> Use los dos documentos. Cite al menos un hecho que solo aparezca en cada uno, y señale un punto en el que el lenguaje de una de las fuentes le pareció interesado.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> el párrafo debe poder leerlo sin protestar tanto un partidario de la ciudad como uno de las compañías. Si uno de los dos protestaría, revise sus verbos.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 1.3</h2>
+    <p>Diez preguntas: tres sobre sesgo y falsedad, cuatro sobre el expediente de los tranvías y tres sobre lenguaje persuasivo. Tiempo sugerido: 20 minutos. Para aprobar se requieren al menos 7 respuestas correctas. Puede intentarlo cuantas veces quiera.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su párrafo de la Práctica 3 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación sobre sesgo y punto de vista, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Distingue el sesgo de la falsedad</td>
+          <td>Trata toda fuente parcial como fuente que miente.</td>
+          <td>Sabe que no es lo mismo, pero acaba descartando la fuente parcial.</td>
+          <td>Separa ambas cosas y sigue usando la fuente parcial por sus hechos.</td>
+          <td>Explica además qué haría falta para refutar cada una: comprobar, o completar.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Detecta lo que un documento calla</td>
+          <td>Solo comenta lo que el documento dice.</td>
+          <td>Nota que falta algo, pero no puede decir qué.</td>
+          <td>Nombra omisiones concretas comparando con la otra fuente.</td>
+          <td>Muestra que las omisiones apuntan todas en la misma dirección y deduce de ahí el punto de vista.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Identifica lenguaje persuasivo</td>
+          <td>Señala palabras que le suenan fuertes, sin explicar por qué.</td>
+          <td>Reconoce adjetivos valorativos, pero no la atribución vaga ni el efecto del titular.</td>
+          <td>Nombra la señal y cita la palabra exacta que la produce.</td>
+          <td>Reescribe el pasaje en registro neutro para demostrar dónde estaba el empuje.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Reconstruye los hechos con dos fuentes</td>
+          <td>Elige una de las dos y desecha la otra.</td>
+          <td>Usa las dos, pero repite el lenguaje valorativo de una de ellas.</td>
+          <td>Toma hechos de ambas y los cuenta en palabras propias y neutras.</td>
+          <td>Declara además qué sigue sin saberse porque ninguna de las dos lo cuenta.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 1.3 y cierre del Tema 1</h2>
+    <p>Queda instalada la tercera herramienta, y con ella se cierra el tema. La primera lección enseñó a <strong>preguntar</strong>; la segunda, a <strong>interrogar un documento</strong>; esta, a <strong>leer dos a la vez</strong>.</p>
+    <p>Lo que había que llevarse es esto: los dos semanarios de 1905 no se contradijeron ni una sola vez. Cada uno contó hechos verdaderos. La diferencia entera estuvo en cuáles contar y con qué verbos. Por eso el sesgo no se combate descartando fuentes, sino sumándolas: dos parcialidades opuestas, leídas juntas, dan una imagen que ninguna neutralidad aparente habría dado.</p>
+    <p>Los dos documentos están completos en el <strong><a href="fuentes/index.html">Archivo de fuentes</a></strong>, con su ficha, el original en inglés plegado y el apartado de qué sostiene y qué no sostiene cada uno. Vale la pena verlos enteros: el número del <em>Street Railway Journal</em> trae en la página anterior las cotizaciones de las acciones tranviarias, que explican mejor que cualquier análisis para quién estaba escrita esa nota.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-2">Siguiente: Tema 2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 1 · Lección 1.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Una fuente sesgada se distingue de una fuente falsa en que…',
+      ops: ['La sesgada afirma hechos que no ocurrieron', 'La sesgada afirma hechos ciertos, pero no todos, y los presenta con palabras que empujan', 'No hay diferencia real entre ambas', 'La sesgada siempre es más antigua'],
+      correcta: 1,
+      expl: 'La falsedad se refuta comprobando los hechos. El sesgo no se refuta: se completa leyendo otra fuente.' },
+
+    { enun: '2. Ante una fuente que defiende abiertamente una postura, lo correcto es…',
+      ops: ['Descartarla por poco fiable', 'Usarla por sus hechos y anotar su postura como dato sobre ella', 'Usarla como si fuera neutral', 'Usarla solo si no hay otra'],
+      correcta: 1,
+      expl: 'Sirve dos veces: sus hechos valen, y su selección revela a quién servía quien la escribió.' },
+
+    { enun: '3. Cuando las omisiones de un documento apuntan todas en la misma dirección, eso indica…',
+      ops: ['Que el autor tenía prisa', 'Que el documento está incompleto por accidente', 'Su punto de vista', 'Que la fuente es falsa'],
+      correcta: 2,
+      expl: 'Una omisión suelta puede ser casual. Ocho omisiones que favorecen siempre al mismo lado son una decisión.' },
+
+    { enun: '4. Los dos documentos de esta lección se publicaron…',
+      ops: ['Con un año de diferencia', 'El mismo día, sobre la misma reunión', 'En la misma ciudad y el mismo periódico', 'Antes de que ocurriera la reunión'],
+      correcta: 1,
+      expl: 'Los dos son del 23 de septiembre de 1905 y narran la sesión del viernes 15. Esa coincidencia es lo que hace concluyente la comparación.' },
+
+    { enun: '5. ¿En qué hecho comprobable se contradicen The Public y el Street Railway Journal?',
+      ops: ['En la fecha de la reunión', 'En el número de concejales presentes', 'En ninguno', 'En el nombre del alcalde'],
+      correcta: 2,
+      expl: 'No hay contradicción de hechos. Toda la diferencia está en la selección y en el lenguaje.' },
+
+    { enun: '6. El Street Railway Journal no menciona la votación de siete contra cinco ni las negativas de Bliss. ¿Qué se deduce?',
+      ops: ['Que su redactor no asistió a la reunión', 'Que esos hechos no ocurrieron', 'Que omite lo que perjudica a las compañías, que eran sus lectores', 'Que la revista no cubría Chicago'],
+      correcta: 2,
+      expl: 'Era la revista profesional del sector, financiada por sus anunciantes. La omisión es coherente con el lector al que servía.' },
+
+    { enun: '7. La cifra borrosa del aplazamiento del comité se resolvió…',
+      ops: ['Ampliando el escaneo', 'Consultando la segunda fuente, que da la misma fecha', 'Eligiendo la más probable', 'Dejándola sin resolver'],
+      correcta: 1,
+      expl: 'Es el ejemplo práctico de la lección: dos fuentes parciales juntas dieron una certeza que ninguna daba por separado.' },
+
+    { enun: '8. «Los resultados tangibles de la reunión fueron dos ofrecimientos.» La palabra «tangibles»…',
+      ops: ['Es un hecho verificable', 'Es un juicio colocado donde el lector espera información', 'Es un error de traducción', 'No afecta al sentido'],
+      correcta: 1,
+      expl: 'Un lector contrario habría escrito «dos ofrecimientos parciales» sin faltar a la verdad. El adjetivo hace el trabajo de persuasión.' },
+
+    { enun: '9. Un documento nombra al coronel Bliss en cada negativa; el otro habla solo de «la compañía». Ese contraste…',
+      ops: ['Es indiferente para el lector', 'Personaliza la responsabilidad en un caso y la disuelve en el otro', 'Indica que uno de los dos no sabía el nombre', 'Es una convención de la época'],
+      correcta: 1,
+      expl: 'Poner nombre y grado a las negativas las hace de alguien. Quitarlos las convierte en una postura institucional sin rostro.' },
+
+    { enun: '10. «Se entiende que quedan obligados por él.» El problema de esta frase es que…',
+      ops: ['Contiene un dato falso', 'Presenta una interpretación como hecho conocido, sin decir quién la sostiene', 'Usa un tiempo verbal incorrecto', 'Repite información anterior'],
+      correcta: 1,
+      expl: 'El silencio es el hecho. Que ese silencio obligue a alguien es una lectura, y la fórmula impersonal la disfraza de consenso.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 7) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 10 correctas. Aprobado. Con esto queda cerrado el Tema 1.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 10 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 7).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
