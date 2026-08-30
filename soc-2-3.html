@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<!--
+  Lección 2.3 · Porcentajes, tasas, escalas de mapas y densidad de población
+  Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 2.3 · Porcentajes, tasas, escalas de mapas y densidad de población</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 2 — paleta pizarra heredada del plan curricular (--t2) */
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --acento:  #455a64;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #16212a 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(22,33,42,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #263238;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbfc; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbfc;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #263238; }
+
+  /* ══ COMPONENTES DEL TEMA 2 ═══════════════════════════════════
+     Graficas en SVG escrito a mano. Nunca <canvas>: el lector de
+     pantalla no puede entrar en un canvas. Cada figura lleva
+     role="img" + <title> + <desc>, y ademas la tabla de datos
+     desplegable, que sirve al lector de pantalla y a quien
+     prefiera leer las cifras. Los colores salen de las variables
+     del tema, asi que la misma grafica se repinta sola en otro tema.
+     ───────────────────────────────────────────────────────────── */
+  figure.grafica {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.grafica h3 { margin: 0 0 4px; font-size: 16px; }
+  figure.grafica .g-fuente { margin: 0 0 10px; font-size: 12.5px; color: #555; font-style: italic; }
+  figure.grafica svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.grafica figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+
+  .g-eje       { stroke: #90a4ae; stroke-width: 1.5; }
+  .g-reja      { stroke: #eceff1; stroke-width: 1; }
+  .g-barra     { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-linea     { fill: none; stroke: var(--tema); stroke-width: 2.5; }
+  .g-escalon   { fill: none; stroke: var(--acento); stroke-width: 2.5; }
+  .g-punto     { fill: var(--tema); }
+  .g-rot       { font-size: 11px; fill: #37474f; }
+  .g-rot-eje   { font-size: 12px; fill: #263238; font-weight: 700; }
+  .g-valor     { font-size: 10.5px; fill: #263238; font-weight: 700; }
+  .g-sector-1  { fill: #263238; }
+  .g-sector-2  { fill: #455a64; }
+  .g-sector-3  { fill: #78909c; }
+  .g-sector-4  { fill: #b0bec5; }
+  .g-sector-5  { fill: #cfd8dc; }
+  .g-sep       { stroke: #ffffff; stroke-width: 2; }
+
+  details.datos {
+    margin: 10px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: var(--tema-bg);
+  }
+  details.datos > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.datos > summary:hover { background: var(--tema-bg2); }
+  details.datos .cuerpo-datos { padding: 4px 14px 12px; }
+  table.tabla-datos { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+  table.tabla-datos caption {
+    caption-side: top; text-align: left; font-size: 13px;
+    color: #444; padding: 6px 0; font-style: italic;
+  }
+  table.tabla-datos th, table.tabla-datos td {
+    border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left;
+  }
+  table.tabla-datos th { background: var(--tema); color: #ffffff; font-size: 13px; }
+
+  .mini-graficas { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 0; }
+  .mini-graficas .mini {
+    flex: 1 1 280px; background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .mini-graficas .mini h3,
+  .mini-graficas .mini h4 {
+    margin: 0 0 8px; font-size: 14px; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  .mini-graficas .mini p { margin: 8px 0 0; font-size: 13.5px; color: #333; }
+
+  /* Diagrama de caja */
+  .g-caja    { fill: var(--tema-bg); stroke: var(--tema); stroke-width: 2; }
+  .g-bigote  { stroke: var(--tema); stroke-width: 2; }
+  .g-mediana { stroke: var(--tema-d); stroke-width: 4; }
+
+  /* Clinica de la calculadora */
+  .teclado { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .tecla {
+    display: inline-block; background: #263238; color: #ffffff;
+    border-radius: 6px; padding: 5px 12px; font-size: 14px;
+    font-weight: 700; font-family: 'Consolas', 'Courier New', monospace;
+    box-shadow: 0 2px 0 #0f171c;
+  }
+  .tecla.sec { background: #546e7a; box-shadow: 0 2px 0 #33454d; }
+  .secuencia {
+    background: #263238; color: #eceff1; border-radius: 8px;
+    padding: 10px 14px; margin: 10px 0; font-size: 14.5px;
+    font-family: 'Consolas', 'Courier New', monospace; overflow-x: auto;
+  }
+  .secuencia .res { color: #9BFF8F; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales</div>
+    <h1>Lección 2.3 · Porcentajes, tasas, escalas de mapas y densidad de población</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.10 · Representación de datos</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">Puente · Matemáticas Nivel 3, semejanza y dibujos a escala</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 2.3</span>
+    <a class="nav-sig" href="index.html#tema-3">Siguiente: Tema 3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Calcular e interpretar cambios porcentuales en contextos económicos, tomando siempre la base correcta.</li>
+      <li>Distinguir un cambio en puntos porcentuales de un cambio porcentual, que casi nunca coinciden.</li>
+      <li>Aplicar el factor de escala de un mapa para obtener distancias reales, sin equivocarse de unidad.</li>
+      <li>Calcular la densidad de población y comparar territorios, sabiendo qué afirma y qué no afirma esa cifra.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior enseñó que un solo número nunca describe un conjunto, y que elegir entre la media y la mediana es ya una decisión interesada.</p>
+    <p>Esta cierra el tema con las tres cuentas que más aparecen en el examen de Estudios sociales: el porcentaje, la escala y la densidad. Las tres son divisiones sencillas. Y las tres se fallan por lo mismo: por dividir entre el número equivocado.</p>
+    <div class="caja-tip">
+      <strong>Un aviso sobre la escala.</strong> El trabajo con mapas de esta lección es el mismo de la semejanza y los dibujos a escala del Nivel 3 de Matemáticas. Si ya cursó aquello, no está aprendiendo nada nuevo: lo está aplicando a un mapa.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. El cambio porcentual y la base</h2>
+
+  <div class="bloque">
+    <p>La fórmula es una sola y conviene escribirla siempre igual:</p>
+    <div class="secuencia">cambio porcentual = ( valor nuevo − valor viejo ) ÷ <span class="res">valor viejo</span> × 100</div>
+    <p>Lo que está resaltado es lo único que se falla. Se divide entre el valor <strong>del que se parte</strong>, no entre el de llegada, no entre la diferencia y no entre la suma de los dos.</p>
+
+    <div class="ejemplo">
+      <span class="et">Por qué la base lo cambia todo</span>
+      <p>Un artículo cuesta 80. Sube un 25 % y pasa a costar 100. Al mes siguiente baja un 25 %.</p>
+      <div class="secuencia">80 × 1.25 = <span class="res">100</span>      después      100 × 0.75 = <span class="res">75</span></div>
+      <p>No vuelve a 80. Vuelve a 75, y ha perdido cinco. La subida se calculó sobre 80 y la bajada sobre 100: <strong>el mismo porcentaje sobre bases distintas da cantidades distintas</strong>. Para volver de 100 a 80 haría falta bajar un 20 %, no un 25 %.</p>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>La pregunta que evita el error.</strong> Antes de dividir, pregúntese en voz alta: ¿un tanto por ciento <em>de qué</em>? La respuesta a esa pregunta es el denominador.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · La base correcta</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Se parte de 40, así que la base es 40. La diferencia es 12, y 12 dividido entre 40 da 0.3, es decir, un 30 por ciento.">
+        <div class="enun">Un alquiler sube de 40 a 52. ¿Cuál es el cambio porcentual?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">12 %, porque subió 12</div>
+          <div class="opcion" data-op="b">30 %</div>
+          <div class="opcion" data-op="c">23 %</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La subida se calcula sobre 80 y la bajada sobre 100. El mismo porcentaje sobre bases distintas da cantidades distintas.">
+        <div class="enun">Un precio de 80 sube un 25 % y después baja un 25 %. ¿En cuánto queda?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En 80, vuelve al principio</div>
+          <div class="opcion" data-op="b">En 85</div>
+          <div class="opcion" data-op="c">En 75</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="La base es siempre el valor del que se parte. Todo lo demás produce cifras que parecen razonables y no lo son.">
+        <div class="enun">En la fórmula del cambio porcentual, ¿entre qué se divide la diferencia?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Entre el valor del que se parte</div>
+          <div class="opcion" data-op="b">Entre el valor de llegada</div>
+          <div class="opcion" data-op="c">Entre la suma de los dos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Puntos porcentuales no son por ciento</h2>
+
+  <div class="bloque">
+    <p>Esta distinción aparece en el examen y en cualquier noticia económica, y confundirla cambia la magnitud del titular.</p>
+    <p>Si el desempleo pasa del 4 % al 6 %:</p>
+
+    <table class="reglas">
+      <caption>Dos maneras correctas de decir el mismo cambio</caption>
+      <thead>
+        <tr><th scope="col">Se dice</th><th scope="col">Cuenta</th><th scope="col">Resultado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Subió 2 <strong>puntos porcentuales</strong></td><td>6 − 4</td><td>2 puntos</td></tr>
+        <tr><td>Subió un <strong>50 %</strong></td><td>(6 − 4) ÷ 4 × 100</td><td>50 %</td></tr>
+      </tbody>
+    </table>
+
+    <p>Las dos frases describen exactamente el mismo hecho y las dos son correctas. Pero «subió 2 puntos» suena a poco y «subió un 50 %» suena a mucho.</p>
+
+    <div class="caja-atencion">
+      <strong>Y aquí vuelve la Lección 1.3.</strong> Quien quiera minimizar el problema dirá dos puntos. Quien quiera alarmar dirá cincuenta por ciento. Ninguno miente. Han elegido, igual que quien elige entre la media y la mediana. La defensa es la misma: preguntar por qué esa forma y no la otra.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. ¿Cuánto subió de verdad?</h2>
+
+  <div class="bloque">
+    <p>Este es el cálculo económico que el examen plantea con más frecuencia, y el que más se falla, porque la respuesta intuitiva es incorrecta.</p>
+    <p>Durante una década, un salario pasa de 32.000 a 41.600 dólares al año. En el mismo periodo, el índice de precios pasa de 100 a 128.</p>
+
+    <div class="ejemplo">
+      <span class="et">Paso 1 · ¿Cuánto subió el salario?</span>
+      <div class="secuencia">( 41600 − 32000 ) ÷ 32000 × 100 = <span class="res">30 %</span></div>
+      <span class="et">Paso 2 · ¿Cuánto subieron los precios?</span>
+      <div class="secuencia">( 128 − 100 ) ÷ 100 × 100 = <span class="res">28 %</span></div>
+      <span class="et">Paso 3 · La tentación</span>
+      <p>Restar: 30 − 28 = 2 %. <strong>Es incorrecto</strong>, aunque quede cerca.</p>
+      <span class="et">Paso 3 correcto · Llevar el salario final a dólares del principio</span>
+      <div class="secuencia">41600 ÷ 1.28 = <span class="res">32500</span>       ( 32500 − 32000 ) ÷ 32000 × 100 = <span class="res">1.56 %</span></div>
+    </div>
+
+    <p>El poder adquisitivo subió un 1,56 %, no un 2 %. Con un salario de 32.000 dólares esa diferencia son unos 140 dólares al año, y la brecha se agranda cuanto mayores sean las cifras.</p>
+
+    <div class="caja-tip">
+      <strong>Por qué no se pueden restar.</strong> Los dos porcentajes están calculados sobre bases distintas: el 30 % es de un salario y el 28 % es de un índice de precios. Restar porcentajes de bases distintas es como restar metros y kilos. Hay que llevar las dos cantidades a la misma unidad, y aquí esa unidad son los dólares del año de partida.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Poder adquisitivo y puntos</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Se divide el salario final entre 1.28 para expresarlo en dólares del principio: 41600 entre 1.28 da 32500, que sobre 32000 es un 1,56 por ciento.">
+        <div class="enun">Salario de 32.000 a 41.600 y precios de 100 a 128. ¿Cuánto subió el poder adquisitivo?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Un 2 %, restando 30 menos 28</div>
+          <div class="opcion" data-op="b">Un 1,56 %</div>
+          <div class="opcion" data-op="c">Un 30 %</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Uno está calculado sobre un salario y el otro sobre un índice de precios. Restar porcentajes de bases distintas no da un porcentaje con sentido.">
+        <div class="enun">¿Por qué no se pueden restar el 30 % y el 28 % del ejemplo?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Porque están calculados sobre bases distintas</div>
+          <div class="opcion" data-op="b">Porque uno es positivo y el otro negativo</div>
+          <div class="opcion" data-op="c">Sí se pueden restar, da 2 % exacto</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La resta 6 menos 4 da 2 puntos porcentuales. Como porcentaje del valor de partida, 2 entre 4 es un 50 por ciento. Las dos cifras describen el mismo hecho.">
+        <div class="enun">El desempleo pasa del 4 % al 6 %. ¿Cuál de estas frases es correcta?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Solo «subió 2 puntos porcentuales»</div>
+          <div class="opcion" data-op="b">Solo «subió un 50 %»</div>
+          <div class="opcion" data-op="c">Las dos, porque describen el mismo hecho de dos maneras</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. La escala de un mapa</h2>
+
+  <div class="bloque">
+    <p>Una escala de <strong>1 : 50 000</strong> significa que una unidad de mapa equivale a cincuenta mil unidades reales. Un centímetro en el papel son cincuenta mil centímetros en el terreno. La escala no lleva unidades porque funciona con cualquiera, siempre que sean la misma arriba y abajo.</p>
+
+    <figure class="grafica">
+      <h3>Mapa con escala gráfica y numérica</h3>
+      <p class="g-fuente">Mapa esquemático inventado para la práctica. No corresponde a ningún lugar real.</p>
+      <svg viewBox="0 0 700 340" role="img" aria-labelledby="mpt mpd" xmlns="http://www.w3.org/2000/svg">
+      <title id="mpt">Mapa esquemático de un territorio con dos poblaciones marcadas y una escala gráfica</title>
+      <desc id="mpd">Mapa inventado, no corresponde a ningún lugar real. Muestra un río que lo cruza en diagonal, dos carreteras y dos poblaciones marcadas con un punto: Villalta arriba a la izquierda y Puerto Bajo abajo a la derecha. Debajo hay una escala gráfica en la que un segmento equivale a dos kilómetros, y junto a ella la escala numérica uno a cincuenta mil. En línea recta las dos poblaciones están separadas por ocho centímetros de mapa, que son cuatro kilómetros reales.</desc>
+      <rect x="20" y="14" width="660" height="250" fill="#f7f9fa" stroke="#b0bec5" stroke-width="1.5" rx="6"/>
+      <path d="M 20 96 Q 150 128 250 108 T 470 152 T 680 138" fill="none" stroke="#90a4ae" stroke-width="9" opacity="0.55"/>
+      <path d="M 118 74 L 300 132 L 470 122 L 596 206" fill="none" stroke="#cfd8dc" stroke-width="5"/>
+      <path d="M 118 74 L 180 210 L 380 240 L 596 206" fill="none" stroke="#cfd8dc" stroke-width="5" stroke-dasharray="9 6"/>
+      <circle cx="118" cy="74" r="9" class="g-punto"/>
+      <text class="g-rot-eje" x="134" y="70">Villalta</text>
+      <circle cx="596" cy="206" r="9" class="g-punto"/>
+      <text class="g-rot-eje" x="586" y="230" text-anchor="end">Puerto Bajo</text>
+      <line x1="118" y1="74" x2="596" y2="206" stroke="#37474f" stroke-width="2" stroke-dasharray="4 4"/>
+      <text class="g-rot" x="350" y="132" text-anchor="middle">8 cm en el mapa</text>
+      <g transform="translate(30 292)">
+        <rect x="0" y="0" width="60" height="13" fill="#263238"/>
+        <rect x="60" y="0" width="60" height="13" fill="#ffffff" stroke="#263238" stroke-width="1.5"/>
+        <rect x="120" y="0" width="60" height="13" fill="#263238"/>
+        <text class="g-rot" x="0" y="30" text-anchor="middle">0</text>
+        <text class="g-rot" x="60" y="30" text-anchor="middle">1</text>
+        <text class="g-rot" x="120" y="30" text-anchor="middle">2</text>
+        <text class="g-rot" x="180" y="30" text-anchor="middle">3 km</text>
+        <text class="g-rot-eje" x="235" y="11">Escala numérica  1 : 50 000</text>
+      </g>
+    </svg>
+      <figcaption>Dos maneras de dar la misma escala. La <strong>numérica</strong> (1 : 50 000) es una razón. La <strong>gráfica</strong> es la barra de abajo, y tiene una ventaja: si el mapa se amplía o se reduce al imprimirlo, la barra se estira con él y sigue siendo válida, mientras que la razón numérica deja de serlo.</figcaption>
+    </figure>
+
+    <div class="ejemplo">
+      <span class="et">De centímetros de mapa a kilómetros reales</span>
+      <div class="paso"><span class="n" aria-hidden="true">1</span>Mida con la regla la distancia en el mapa: <strong>8 cm</strong>.</div>
+      <div class="paso"><span class="n" aria-hidden="true">2</span>Multiplique por el factor de escala: 8 × 50 000 = <strong>400 000 cm</strong> reales.</div>
+      <div class="paso"><span class="n" aria-hidden="true">3</span>Convierta a la unidad que pide la pregunta. Un kilómetro son 100 000 cm, así que 400 000 ÷ 100 000 = <strong>4 km</strong>.</div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>El error de esta sección es siempre de unidades, nunca de multiplicación.</strong> Multiplicar por la escala es fácil; lo que se falla es quedarse en centímetros y responder «400.000» cuando la pregunta pedía kilómetros. Conviene memorizar una sola equivalencia: <strong>1 km = 100 000 cm</strong>.
+    </div>
+
+    <table class="reglas">
+      <caption>Tres medidas resueltas, con escalas distintas</caption>
+      <thead>
+        <tr><th scope="col">En el mapa</th><th scope="col">Escala</th><th scope="col">Distancia real</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>4 cm</td><td>1 : 50 000</td><td>200 000 cm = 2 km</td></tr>
+        <tr><td>7,5 cm</td><td>1 : 25 000</td><td>187 500 cm = 1,875 km</td></tr>
+        <tr><td>12 cm</td><td>1 : 100 000</td><td>1 200 000 cm = 12 km</td></tr>
+      </tbody>
+    </table>
+
+    <p>Fíjese en la segunda fila. Con una escala de 1 : 25 000 el mapa está <strong>más ampliado</strong>: se ve menos territorio con más detalle, y por eso 7,5 cm son menos de dos kilómetros. Cuanto más grande es el número de la derecha, más terreno cabe en el papel y menos detalle hay.</p>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Densidad de población</h2>
+
+  <div class="bloque">
+    <p>La densidad es una división y nada más:</p>
+    <div class="secuencia">densidad = habitantes ÷ superficie      →  se expresa en hab/km²</div>
+    <p>Lo interesante no es la cuenta. Es que <strong>el territorio más poblado casi nunca es el más denso</strong>.</p>
+
+    <figure class="grafica">
+      <h3>Población frente a densidad en tres territorios</h3>
+      <p class="g-fuente">Datos ilustrativos, elegidos para que el orden se invierta.</p>
+      <svg viewBox="0 0 700 300" role="img" aria-labelledby="dnt dnd" xmlns="http://www.w3.org/2000/svg">
+      <title id="dnt">Población y densidad de tres territorios, comparadas lado a lado</title>
+      <desc id="dnd">Para cada territorio hay dos barras. El territorio C es el más poblado con 250 mil habitantes, pero el menos denso con 200 habitantes por kilómetro cuadrado. El territorio B es el menos poblado con 90 mil habitantes y a la vez el más denso con 600 por kilómetro cuadrado. El territorio A queda en medio en las dos cosas, con 120 mil habitantes y 300 por kilómetro cuadrado. El orden por población y el orden por densidad son opuestos.</desc>
+      <line class="g-reja" x1="64" y1="242.0" x2="636" y2="242.0"/>
+      <text class="g-rot" x="56" y="246.0" text-anchor="end">0k</text>
+      <text class="g-rot" x="644" y="246.0">0</text>
+      <line class="g-reja" x1="64" y1="191.5" x2="636" y2="191.5"/>
+      <text class="g-rot" x="56" y="195.5" text-anchor="end">62k</text>
+      <text class="g-rot" x="644" y="195.5">150</text>
+      <line class="g-reja" x1="64" y1="141.0" x2="636" y2="141.0"/>
+      <text class="g-rot" x="56" y="145.0" text-anchor="end">125k</text>
+      <text class="g-rot" x="644" y="145.0">300</text>
+      <line class="g-reja" x1="64" y1="90.5" x2="636" y2="90.5"/>
+      <text class="g-rot" x="56" y="94.5" text-anchor="end">188k</text>
+      <text class="g-rot" x="644" y="94.5">450</text>
+      <line class="g-reja" x1="64" y1="40.0" x2="636" y2="40.0"/>
+      <text class="g-rot" x="56" y="44.0" text-anchor="end">250k</text>
+      <text class="g-rot" x="644" y="44.0">600</text>
+      <rect class="g-barra" x="106.8" y="145.0" width="49.6" height="97.0"/>
+      <rect class="g-barra-alt" x="162.3" y="141.0" width="49.6" height="101.0"/>
+      <text class="g-valor" x="131.5" y="140.0" text-anchor="middle">120k</text>
+      <text class="g-valor" x="187.1" y="136.0" text-anchor="middle">300</text>
+      <text class="g-rot" x="159.3" y="260" text-anchor="middle">Territorio A</text>
+      <rect class="g-barra" x="297.4" y="169.3" width="49.6" height="72.7"/>
+      <rect class="g-barra-alt" x="353.0" y="40.0" width="49.6" height="202.0"/>
+      <text class="g-valor" x="322.2" y="164.3" text-anchor="middle">90k</text>
+      <text class="g-valor" x="377.8" y="35.0" text-anchor="middle">600</text>
+      <text class="g-rot" x="350.0" y="260" text-anchor="middle">Territorio B</text>
+      <rect class="g-barra" x="488.1" y="40.0" width="49.6" height="202.0"/>
+      <rect class="g-barra-alt" x="543.7" y="174.7" width="49.6" height="67.3"/>
+      <text class="g-valor" x="512.9" y="35.0" text-anchor="middle">250k</text>
+      <text class="g-valor" x="568.5" y="169.7" text-anchor="middle">200</text>
+      <text class="g-rot" x="540.7" y="260" text-anchor="middle">Territorio C</text>
+      <line class="g-eje" x1="64" y1="40" x2="64" y2="242"/>
+      <line class="g-eje" x1="64" y1="242" x2="636" y2="242"/>
+      <rect class="g-barra" x="64" y="14" width="13" height="13"/>
+      <text class="g-rot" x="83" y="25">Población (miles)</text>
+      <rect class="g-barra-alt" x="214" y="14" width="13" height="13"/>
+      <text class="g-rot" x="233" y="25">Densidad (hab/km²)</text>
+    </svg>
+      <figcaption>El territorio C tiene casi el triple de habitantes que el B y es el <strong>menos</strong> denso de los tres. El B es el menos poblado y el más denso. Ordenar por población y ordenar por densidad da listas opuestas.</figcaption>
+      <details class="datos">
+        <summary>Ver la tabla y las divisiones</summary>
+        <div class="cuerpo-datos">
+          <table class="tabla-datos">
+            <caption>Población, superficie y densidad de los tres territorios. Datos ilustrativos.</caption>
+            <thead>
+              <tr><th scope="col">Territorio</th><th scope="col">Habitantes</th><th scope="col">Superficie</th><th scope="col">División</th><th scope="col">Densidad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>120 000</td><td>400 km²</td><td>120 000 ÷ 400</td><td>300 hab/km²</td></tr>
+              <tr><td>B</td><td>90 000</td><td>150 km²</td><td>90 000 ÷ 150</td><td>600 hab/km²</td></tr>
+              <tr><td>C</td><td>250 000</td><td>1 250 km²</td><td>250 000 ÷ 1 250</td><td>200 hab/km²</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </figure>
+
+    <h3>Qué no dice una densidad</h3>
+    <p>La densidad es una media, y arrastra el mismo problema que vimos en la lección anterior: <strong>reparte por igual lo que no está repartido por igual</strong>. Un territorio de 200 hab/km² puede tener toda su gente apiñada en una ciudad y el resto vacío. La cifra no distingue esos dos casos.</p>
+
+    <div class="caja-tip">
+      <strong>Un documento del Archivo que dice esto mismo, en 1895.</strong> En el <a href="fuentes/index.html">Archivo de fuentes</a> está el estudio de Agnes Sinclair Holbrook sobre el barrio de la calle Halsted, en Chicago: un censo hecho casa por casa que se convirtió en mapas de nacionalidades y de salarios. Su autora advierte por escrito de que cada solar del mapa se pinta entero, lo habite una persona o cien. Es decir, publicó un mapa que parece medir densidad y declaró ella misma que sus datos no sostienen afirmaciones sobre densidad. Es el mismo ejercicio de la Lección 1.2 —qué sostiene un documento y qué no— aplicado a un dato numérico.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 3 · Escala y densidad</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="6 por 25 000 son 150 000 cm. Como un kilómetro son 100 000 cm, resultan 1,5 km.">
+        <div class="enun">Mide 6 cm en un mapa 1 : 25 000. ¿Cuál es la distancia real?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">150 km</div>
+          <div class="opcion" data-op="b">1,5 km</div>
+          <div class="opcion" data-op="c">15 km</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="B tiene 600 hab/km2 con solo 90 mil habitantes, porque su superficie es la más pequeña. La densidad depende de las dos cifras, no solo de la población.">
+        <div class="enun">De los tres territorios, ¿cuál es el más denso?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">C, porque tiene más habitantes</div>
+          <div class="opcion" data-op="b">A, porque queda en medio</div>
+          <div class="opcion" data-op="c">B, con 600 hab/km²</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Es una media, y como toda media reparte por igual lo que no lo está. Un territorio puede tener toda su gente en una ciudad y el resto vacío, y la densidad no lo distingue.">
+        <div class="enun">Una densidad de 200 hab/km² permite afirmar que…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Hay 200 habitantes por cada km² de media, sin saber cómo están repartidos</div>
+          <div class="opcion" data-op="b">Cada kilómetro cuadrado tiene exactamente 200 habitantes</div>
+          <div class="opcion" data-op="c">La población está repartida de forma uniforme</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Diez cambios porcentuales</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Calcule el cambio porcentual con la calculadora, agrupando siempre la resta entre paréntesis: de 40 a 52; de 80 a 60; de 12 a 15; de 250 a 200; de 1.200 a 1.500. Después, para cada uno, diga cuánto habría que cambiar el resultado para volver al valor de partida.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> los cinco cambios son +30 %, −25 %, +25 %, −20 % y +25 %. Y para volver atrás hacen falta −23,08 %, +33,33 %, −20 %, +25 % y −20 %. Nunca coinciden con el de ida, y esa es justamente la lección.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · ¿Cuánto subió de verdad?</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Un salario pasa de 25.000 a 30.000 dólares mientras el índice de precios pasa de 100 a 120. Calcule el cambio del salario, el de los precios y el del poder adquisitivo. Después escriba una frase de dos líneas explicándole el resultado a alguien que cree que basta con restar.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> el salario sube un 20 % y los precios un 20 %. Restando saldría 0 %, y esta vez la resta acierta: 30.000 entre 1,20 son exactamente 25.000, así que el poder adquisitivo no cambió. Que a veces coincida no significa que el método sea correcto; pruébelo con 32.000 a 41.600 e IPC de 100 a 128 y verá que falla.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Su ciudad a escala</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Consiga un mapa impreso con escala, o imprima uno. Con una regla, mida tres distancias y conviértalas a kilómetros reales. Después busque la población y la superficie de su municipio y calcule su densidad. Compárela con las de los tres territorios de la sección 5.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si una de sus tres distancias le sale mil veces mayor o menor de lo razonable, el fallo está en la conversión de unidades, no en la multiplicación. Vuelva a 1 km = 100 000 cm.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 2.3</h2>
+    <p>Doce preguntas: cuatro de cambio porcentual en contexto económico, cuatro de escala de mapas y distancias reales, y cuatro de densidad de población. Tiempo sugerido: 30 minutos. Puede usar calculadora. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de las Prácticas 2 y 3 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de proporcionalidad aplicada, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Calcula el cambio porcentual con la base correcta</td>
+          <td>Divide entre el valor de llegada o da la diferencia como si fuera el porcentaje.</td>
+          <td>Usa la base correcta en subidas, pero se equivoca en bajadas o al volver atrás.</td>
+          <td>Aplica siempre la base de partida y agrupa la resta entre paréntesis.</td>
+          <td>Explica por qué el mismo porcentaje de ida y de vuelta no devuelve al valor inicial.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Distingue puntos porcentuales de porcentaje</td>
+          <td>Usa las dos expresiones como si fueran lo mismo.</td>
+          <td>Sabe que se diferencian, pero no calcula bien el porcentaje.</td>
+          <td>Calcula las dos cifras y dice cuál corresponde a cada expresión.</td>
+          <td>Reconoce cuándo alguien ha elegido una de las dos para agrandar o minimizar un cambio.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Aplica el factor de escala sin errores de unidad</td>
+          <td>Multiplica al azar o confunde el sentido de la escala.</td>
+          <td>Multiplica bien pero entrega el resultado en centímetros cuando piden kilómetros.</td>
+          <td>Convierte a la unidad que pide la pregunta y comprueba que el resultado es razonable.</td>
+          <td>Explica por qué una escala 1 : 25 000 muestra más detalle que una 1 : 100 000.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Calcula e interpreta la densidad</td>
+          <td>Confunde población con densidad.</td>
+          <td>Hace bien la división, pero no compara ni interpreta.</td>
+          <td>Compara territorios y explica por qué el más poblado no es el más denso.</td>
+          <td>Señala que la densidad es una media y que no dice cómo está repartida la gente.</td>
+          <td class="repaso"><a href="#sec5">Sección 5</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 2.3 y cierre del Tema 2</h2>
+    <p>Las tres cuentas de esta lección son divisiones sencillas, y las tres se fallan por lo mismo: <strong>por dividir entre el número equivocado</strong>. El porcentaje se divide entre el valor de partida. La escala se divide, al final, entre la unidad que pide la pregunta. La densidad se divide entre la superficie, no entre nada más.</p>
+    <p>Con esto se cierra el tema. La 2.1 enseñó a leer una gráfica por su estructura antes que por su contenido. La 2.2 enseñó que un solo número nunca describe un conjunto. Y esta enseña que una cifra correcta puede seguir siendo una cifra elegida: dos puntos porcentuales y un cincuenta por ciento son el mismo hecho, y no suenan igual.</p>
+    <p>Es la misma idea con la que terminó el Tema 1, ahora comprobada con números. Los dos temas se sostienen mutuamente, y por eso van seguidos.</p>
+    <p>El <strong>Tema 3</strong> cambia de terreno: cívica y documentos fundacionales, del contrato social a la Declaración de Independencia y la estructura de la Constitución. Es el bloque más grande del examen, y las herramientas de estos dos primeros temas van a hacer falta enteras.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-3">Siguiente: Tema 3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 2 · Lección 2.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Un alquiler sube de 40 a 52. El cambio porcentual es…',
+      ops: ['12 %', '30 %', '23 %', '40 %'],
+      correcta: 1, expl: 'La base es el valor de partida, 40. La diferencia es 12, y 12 entre 40 da 0.3, es decir, 30 por ciento.' },
+
+    { enun: '2. Un precio de 80 sube un 25 % y después baja un 25 %. Queda en…',
+      ops: ['80', '75', '85', '100'],
+      correcta: 1, expl: 'La subida se calcula sobre 80 y la bajada sobre 100. El mismo porcentaje sobre bases distintas da cantidades distintas.' },
+
+    { enun: '3. Para volver de 100 a 80 hay que bajar…',
+      ops: ['Un 25 %', 'Un 20 %', 'Un 15 %', 'Un 80 %'],
+      correcta: 1, expl: 'Ahora la base es 100: la diferencia de 20 entre 100 da un 20 por ciento. El porcentaje de vuelta casi nunca es el mismo que el de ida.' },
+
+    { enun: '4. Un salario pasa de 32.000 a 41.600 mientras el índice de precios pasa de 100 a 128. El poder adquisitivo…',
+      ops: ['Subió un 30 %', 'Subió un 2 %', 'Subió un 1,56 %', 'No cambió'],
+      correcta: 2, expl: '41.600 entre 1,28 son 32.500 dólares del año de partida, que sobre 32.000 es un 1,56 por ciento. Restar 30 menos 28 da 2 y es incorrecto.' },
+
+    { enun: '5. No se pueden restar el 30 % del salario y el 28 % de los precios porque…',
+      ops: ['Están calculados sobre bases distintas', 'Uno es anual y el otro mensual', 'La resta da negativo', 'Sí se pueden restar siempre'],
+      correcta: 0, expl: 'Uno es un porcentaje de un salario y el otro de un índice. Hay que llevar las dos cantidades a la misma unidad: los dólares del año de partida.' },
+
+    { enun: '6. El desempleo pasa del 4 % al 6 %. Eso es…',
+      ops: ['Una subida de 2 puntos porcentuales y del 50 %', 'Una subida del 2 %', 'Una subida de 50 puntos porcentuales', 'Una bajada'],
+      correcta: 0, expl: 'La resta da 2 puntos porcentuales; el cambio porcentual sobre la base 4 da 50 por ciento. Las dos cifras describen el mismo hecho.' },
+
+    { enun: '7. Una escala 1 : 50 000 significa que…',
+      ops: ['El mapa mide 50.000 cm', 'Una unidad de mapa equivale a 50.000 unidades reales', 'Cada centímetro son 50.000 km', 'El mapa está reducido 50 veces'],
+      correcta: 1, expl: 'La escala es una razón sin unidades: funciona con cualquiera, siempre que arriba y abajo sean la misma.' },
+
+    { enun: '8. Mide 8 cm en un mapa 1 : 50 000. La distancia real es…',
+      ops: ['400.000 km', '40 km', '4 km', '0,4 km'],
+      correcta: 2, expl: '8 por 50.000 son 400.000 cm. Como 1 km son 100.000 cm, resultan 4 km. El fallo habitual es entregar la cifra en centímetros.' },
+
+    { enun: '9. Mide 6 cm en un mapa 1 : 25 000. La distancia real es…',
+      ops: ['1,5 km', '15 km', '150 km', '0,15 km'],
+      correcta: 0, expl: '6 por 25.000 son 150.000 cm, es decir, 1,5 km.' },
+
+    { enun: '10. ¿Qué mapa muestra más detalle, uno 1 : 25 000 o uno 1 : 100 000?',
+      ops: ['El de 1 : 100 000', 'El de 1 : 25 000', 'Los dos igual', 'Depende del tamaño del papel'],
+      correcta: 1, expl: 'Cuanto más grande es el número de la derecha, más terreno cabe en el papel y menos detalle hay. El de 25.000 está más ampliado.' },
+
+    { enun: '11. Un territorio de 90.000 habitantes y 150 km² tiene una densidad de…',
+      ops: ['600 hab/km²', '60 hab/km²', '1.350 hab/km²', '90 hab/km²'],
+      correcta: 0, expl: '90.000 entre 150 da 600 habitantes por kilómetro cuadrado. Es el más denso de los tres del ejemplo pese a ser el menos poblado.' },
+
+    { enun: '12. Una densidad de 200 hab/km² permite afirmar que…',
+      ops: ['Cada km² tiene exactamente 200 habitantes', 'La población está repartida de forma uniforme', 'Hay 200 habitantes por km² de media, sin saber cómo se reparten', 'El territorio está poco poblado'],
+      correcta: 2, expl: 'Es una media, y como toda media reparte por igual lo que no lo está. Toda la gente podría estar en una ciudad y el resto vacío.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Con esto queda cerrado el Tema 2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
