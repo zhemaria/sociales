@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<!--
+  Lección 2.1 · Gráficas, tablas y la clínica de la TI-30XS
+  Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 2.1 · Gráficas, tablas y la clínica de la TI-30XS</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 2 — paleta pizarra heredada del plan curricular (--t2) */
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --acento:  #455a64;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #16212a 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(22,33,42,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #263238;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbfc; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbfc;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #263238; }
+
+  /* ══ COMPONENTES DEL TEMA 2 ═══════════════════════════════════
+     Graficas en SVG escrito a mano. Nunca <canvas>: el lector de
+     pantalla no puede entrar en un canvas. Cada figura lleva
+     role="img" + <title> + <desc>, y ademas la tabla de datos
+     desplegable, que sirve al lector de pantalla y a quien
+     prefiera leer las cifras. Los colores salen de las variables
+     del tema, asi que la misma grafica se repinta sola en otro tema.
+     ───────────────────────────────────────────────────────────── */
+  figure.grafica {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.grafica h3 { margin: 0 0 4px; font-size: 16px; }
+  figure.grafica .g-fuente { margin: 0 0 10px; font-size: 12.5px; color: #555; font-style: italic; }
+  figure.grafica svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.grafica figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+
+  .g-eje       { stroke: #90a4ae; stroke-width: 1.5; }
+  .g-reja      { stroke: #eceff1; stroke-width: 1; }
+  .g-barra     { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-linea     { fill: none; stroke: var(--tema); stroke-width: 2.5; }
+  .g-escalon   { fill: none; stroke: var(--acento); stroke-width: 2.5; }
+  .g-punto     { fill: var(--tema); }
+  .g-rot       { font-size: 11px; fill: #37474f; }
+  .g-rot-eje   { font-size: 12px; fill: #263238; font-weight: 700; }
+  .g-valor     { font-size: 10.5px; fill: #263238; font-weight: 700; }
+  .g-sector-1  { fill: #263238; }
+  .g-sector-2  { fill: #455a64; }
+  .g-sector-3  { fill: #78909c; }
+  .g-sector-4  { fill: #b0bec5; }
+  .g-sector-5  { fill: #cfd8dc; }
+  .g-sep       { stroke: #ffffff; stroke-width: 2; }
+
+  details.datos {
+    margin: 10px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: var(--tema-bg);
+  }
+  details.datos > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.datos > summary:hover { background: var(--tema-bg2); }
+  details.datos .cuerpo-datos { padding: 4px 14px 12px; }
+  table.tabla-datos { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+  table.tabla-datos caption {
+    caption-side: top; text-align: left; font-size: 13px;
+    color: #444; padding: 6px 0; font-style: italic;
+  }
+  table.tabla-datos th, table.tabla-datos td {
+    border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left;
+  }
+  table.tabla-datos th { background: var(--tema); color: #ffffff; font-size: 13px; }
+
+  .mini-graficas { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 0; }
+  .mini-graficas .mini {
+    flex: 1 1 280px; background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .mini-graficas .mini h4 {
+    margin: 0 0 8px; font-size: 14px; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  .mini-graficas .mini p { margin: 8px 0 0; font-size: 13.5px; color: #333; }
+
+  /* Clinica de la calculadora */
+  .teclado { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .tecla {
+    display: inline-block; background: #263238; color: #ffffff;
+    border-radius: 6px; padding: 5px 12px; font-size: 14px;
+    font-weight: 700; font-family: 'Consolas', 'Courier New', monospace;
+    box-shadow: 0 2px 0 #0f171c;
+  }
+  .tecla.sec { background: #546e7a; box-shadow: 0 2px 0 #33454d; }
+  .secuencia {
+    background: #263238; color: #eceff1; border-radius: 8px;
+    padding: 10px 14px; margin: 10px 0; font-size: 14.5px;
+    font-family: 'Consolas', 'Courier New', monospace; overflow-x: auto;
+  }
+  .secuencia .res { color: #9BFF8F; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 2 · Razonamiento cuantitativo en estudios sociales</div>
+    <h1>Lección 2.1 · Gráficas, tablas y la clínica de la TI-30XS</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.10 · Representación de datos</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">Puente · Matemáticas Niveles 2 y 3</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 2.1</span>
+    <a class="nav-sig" href="index.html#tema-2">Siguiente: Lección 2.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Leer gráficas de barras, de líneas, circulares y de dispersión procedentes de fuentes sociales y económicas, empezando siempre por el título, los ejes, las unidades y la escala.</li>
+      <li>Distinguir la variable independiente de la dependiente y decir en cuál de los dos ejes vive cada una.</li>
+      <li>Describir la correlación entre dos variables sin afirmar que una causa la otra, y proponer explicaciones alternativas a un patrón.</li>
+      <li>Operar la calculadora TI-30XS MultiView con soltura, en particular la tecla que alterna entre fracción y decimal y el respeto de la jerarquía de operaciones.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> El Tema 1 terminó con dos semanarios de 1905 que contaban la misma reunión y parecían contar dos. Ninguno mentía: cada uno elegía qué contar y con qué palabras.</p>
+    <p>Este tema traslada esa misma sospecha a los números. Una gráfica parece más objetiva que un párrafo, y por eso es más peligrosa: también la dibujó alguien, que eligió qué medir, en qué unidades y hasta dónde llegaba la escala. Un dato no habla solo.</p>
+    <p>Se empieza por lo más práctico, que es saber leer. Y por la herramienta que el examen permite llevar, que es la calculadora.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Los cinco pasos, siempre en este orden</h2>
+
+  <div class="bloque">
+    <p>La mayoría de los errores en el examen no vienen de calcular mal, sino de contestar antes de haber mirado. Estos cinco pasos se hacen en menos de veinte segundos y evitan casi todos.</p>
+
+    <div class="ejemplo">
+      <span class="et">Lista de verificación</span>
+      <div class="paso"><span class="n" aria-hidden="true">1</span><strong>Título.</strong> ¿De qué habla esta gráfica y de qué no?</div>
+      <div class="paso"><span class="n" aria-hidden="true">2</span><strong>Ejes.</strong> ¿Qué hay en el horizontal y qué en el vertical?</div>
+      <div class="paso"><span class="n" aria-hidden="true">3</span><strong>Unidades.</strong> ¿Dólares, personas, porcentajes, miles de personas? Confundir «miles» con «unidades» cambia la respuesta por mil.</div>
+      <div class="paso"><span class="n" aria-hidden="true">4</span><strong>Escala.</strong> ¿Dónde empieza el eje vertical? Si no empieza en cero, las diferencias se ven más grandes de lo que son.</div>
+      <div class="paso"><span class="n" aria-hidden="true">5</span><strong>Tendencia.</strong> Solo ahora: ¿sube, baja, se mantiene, o no hay patrón?</div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>El paso que casi todos saltan es el 4.</strong> Una gráfica cuyo eje vertical empieza en 40 en vez de en 0 puede convertir una diferencia de tres puntos en una montaña. No es falsear: los números son correctos. Es la misma selección interesada del Tema 1, hecha con una escala.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Cuatro formas de mostrar datos</h2>
+
+  <div class="bloque">
+    <p>Cada tipo de gráfica sirve para una pregunta distinta. Elegir la equivocada no es un error de estilo: cambia lo que el lector concluye.</p>
+  </div>
+
+  <figure class="grafica">
+    <h3>Gráfica de barras · comparar cantidades</h3>
+    <p class="g-fuente">Salario mínimo federal de los Estados Unidos en dólares por hora, en nueve de los años en que una ley lo subió. Datos históricos verificables.</p>
+    <svg viewBox="0 0 700 300" role="img" aria-labelledby="g1t g1d" xmlns="http://www.w3.org/2000/svg">
+      <title id="g1t">Salario mínimo federal de los Estados Unidos en dólares nominales, nueve años en que la ley lo subió, de 1938 a 2009</title>
+      <desc id="g1d">Gráfica de barras verticales. El salario parte de 0,25 dólares por hora en 1938 y sube en cada barra sucesiva hasta 7,25 dólares en 2009. Las cifras exactas están en la tabla de datos que acompaña a la gráfica.</desc>
+      <line class="g-reja" x1="62" y1="254.0" x2="686" y2="254.0"/>
+      <text class="g-rot" x="54" y="258.0" text-anchor="end">$0.00</text>
+      <line class="g-reja" x1="62" y1="206.0" x2="686" y2="206.0"/>
+      <text class="g-rot" x="54" y="210.0" text-anchor="end">$1.60</text>
+      <line class="g-reja" x1="62" y1="158.0" x2="686" y2="158.0"/>
+      <text class="g-rot" x="54" y="162.0" text-anchor="end">$3.20</text>
+      <line class="g-reja" x1="62" y1="110.0" x2="686" y2="110.0"/>
+      <text class="g-rot" x="54" y="114.0" text-anchor="end">$4.80</text>
+      <line class="g-reja" x1="62" y1="62.0" x2="686" y2="62.0"/>
+      <text class="g-rot" x="54" y="66.0" text-anchor="end">$6.40</text>
+      <line class="g-reja" x1="62" y1="14.0" x2="686" y2="14.0"/>
+      <text class="g-rot" x="54" y="18.0" text-anchor="end">$8.00</text>
+      <rect class="g-barra" x="76.6" y="246.5" width="40.2" height="7.5"/>
+      <text class="g-valor" x="96.7" y="241.5" text-anchor="middle">$0.25</text>
+      <text class="g-rot" x="96.7" y="272" text-anchor="middle">1938</text>
+      <rect class="g-barra" x="145.9" y="231.5" width="40.2" height="22.5"/>
+      <text class="g-valor" x="166.0" y="226.5" text-anchor="middle">$0.75</text>
+      <text class="g-rot" x="166.0" y="272" text-anchor="middle">1950</text>
+      <rect class="g-barra" x="215.2" y="219.5" width="40.2" height="34.5"/>
+      <text class="g-valor" x="235.3" y="214.5" text-anchor="middle">$1.15</text>
+      <text class="g-rot" x="235.3" y="272" text-anchor="middle">1961</text>
+      <rect class="g-barra" x="284.6" y="206.0" width="40.2" height="48.0"/>
+      <text class="g-valor" x="304.7" y="201.0" text-anchor="middle">$1.60</text>
+      <text class="g-rot" x="304.7" y="272" text-anchor="middle">1968</text>
+      <rect class="g-barra" x="353.9" y="194.0" width="40.2" height="60.0"/>
+      <text class="g-valor" x="374.0" y="189.0" text-anchor="middle">$2.00</text>
+      <text class="g-rot" x="374.0" y="272" text-anchor="middle">1974</text>
+      <rect class="g-barra" x="423.2" y="161.0" width="40.2" height="93.0"/>
+      <text class="g-valor" x="443.3" y="156.0" text-anchor="middle">$3.10</text>
+      <text class="g-rot" x="443.3" y="272" text-anchor="middle">1980</text>
+      <rect class="g-barra" x="492.6" y="140.0" width="40.2" height="114.0"/>
+      <text class="g-valor" x="512.7" y="135.0" text-anchor="middle">$3.80</text>
+      <text class="g-rot" x="512.7" y="272" text-anchor="middle">1990</text>
+      <rect class="g-barra" x="561.9" y="99.5" width="40.2" height="154.5"/>
+      <text class="g-valor" x="582.0" y="94.5" text-anchor="middle">$5.15</text>
+      <text class="g-rot" x="582.0" y="272" text-anchor="middle">1997</text>
+      <rect class="g-barra" x="631.2" y="36.5" width="40.2" height="217.5"/>
+      <text class="g-valor" x="651.3" y="31.5" text-anchor="middle">$7.25</text>
+      <text class="g-rot" x="651.3" y="272" text-anchor="middle">2009</text>
+      <line class="g-eje" x1="62" y1="14" x2="62" y2="254"/>
+      <line class="g-eje" x1="62" y1="254" x2="686" y2="254"/>
+      <text class="g-rot-eje" x="374.0" y="294" text-anchor="middle">Año en que entró en vigor la subida</text>
+    </svg>
+    <figcaption>La barra sirve para <strong>comparar</strong> cantidades entre categorías. Cada barra es independiente de la de al lado; el ojo compara alturas.</figcaption>
+    <details class="datos">
+      <summary>Ver la tabla de datos</summary>
+      <div class="cuerpo-datos">
+        <table class="tabla-datos">
+          <caption>Salario mínimo federal por hora, en dólares nominales, en el año de entrada en vigor.</caption>
+          <thead><tr><th scope="col">Año</th><th scope="col">Salario por hora</th></tr></thead>
+          <tbody>
+            <tr><td>1938</td><td>$0.25</td></tr>
+            <tr><td>1950</td><td>$0.75</td></tr>
+            <tr><td>1961</td><td>$1.15</td></tr>
+            <tr><td>1968</td><td>$1.60</td></tr>
+            <tr><td>1974</td><td>$2.00</td></tr>
+            <tr><td>1980</td><td>$3.10</td></tr>
+            <tr><td>1990</td><td>$3.80</td></tr>
+            <tr><td>1997</td><td>$5.15</td></tr>
+            <tr><td>2009</td><td>$7.25</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </figure>
+
+  <figure class="grafica">
+    <h3>Gráfica de líneas · seguir un cambio en el tiempo</h3>
+    <p class="g-fuente">Los mismos datos de la gráfica anterior, ahora sobre un eje de años real. La línea continua y la escalonada de trazos representan exactamente las mismas nueve cifras.</p>
+    <svg viewBox="0 0 700 320" role="img" aria-labelledby="g2t g2d" xmlns="http://www.w3.org/2000/svg">
+      <title id="g2t">Los mismos datos del salario mínimo trazados de dos maneras: una línea continua y una línea escalonada</title>
+      <desc id="g2d">La línea continua sube en diagonal entre un punto y el siguiente, lo que sugiere que el salario subía poco a poco cada año. La línea escalonada de trazos se mantiene plana entre subida y subida y luego salta de golpe, que es lo que ocurrió en realidad, porque el salario solo cambia cuando lo cambia una ley.</desc>
+      
+      <line class="g-reja" x1="68" y1="272.0" x2="684" y2="272.0"/>
+      <text class="g-rot" x="60" y="276.0" text-anchor="end">$0.00</text>
+      <line class="g-reja" x1="68" y1="208.0" x2="684" y2="208.0"/>
+      <text class="g-rot" x="60" y="212.0" text-anchor="end">$2.00</text>
+      <line class="g-reja" x1="68" y1="144.0" x2="684" y2="144.0"/>
+      <text class="g-rot" x="60" y="148.0" text-anchor="end">$4.00</text>
+      <line class="g-reja" x1="68" y1="80.0" x2="684" y2="80.0"/>
+      <text class="g-rot" x="60" y="84.0" text-anchor="end">$6.00</text>
+      <line class="g-reja" x1="68" y1="16.0" x2="684" y2="16.0"/>
+      <text class="g-rot" x="60" y="20.0" text-anchor="end">$8.00</text>
+      <polyline class="g-linea" points="92.0,264.0 188.0,248.0 276.0,235.2 332.0,220.8 380.0,208.0 428.0,172.8 508.0,150.4 564.0,107.2 660.0,40.0"/>
+      <polyline class="g-escalon" points="92.0,264.0 188.0,264.0 188.0,248.0 276.0,248.0 276.0,235.2 332.0,235.2 332.0,220.8 380.0,220.8 380.0,208.0 428.0,208.0 428.0,172.8 508.0,172.8 508.0,150.4 564.0,150.4 564.0,107.2 660.0,107.2 660.0,40.0" stroke-dasharray="5 3"/>
+      <circle class="g-punto" cx="92.0" cy="264.0" r="4"/>
+      <circle class="g-punto" cx="188.0" cy="248.0" r="4"/>
+      <circle class="g-punto" cx="276.0" cy="235.2" r="4"/>
+      <circle class="g-punto" cx="332.0" cy="220.8" r="4"/>
+      <circle class="g-punto" cx="380.0" cy="208.0" r="4"/>
+      <circle class="g-punto" cx="428.0" cy="172.8" r="4"/>
+      <circle class="g-punto" cx="508.0" cy="150.4" r="4"/>
+      <circle class="g-punto" cx="564.0" cy="107.2" r="4"/>
+      <circle class="g-punto" cx="660.0" cy="40.0" r="4"/>
+      <text class="g-rot" x="108.0" y="290" text-anchor="middle">1940</text>
+      <text class="g-rot" x="268.0" y="290" text-anchor="middle">1960</text>
+      <text class="g-rot" x="428.0" y="290" text-anchor="middle">1980</text>
+      <text class="g-rot" x="588.0" y="290" text-anchor="middle">2000</text>
+      <line class="g-eje" x1="68" y1="16" x2="68" y2="272"/>
+      <line class="g-eje" x1="68" y1="272" x2="684" y2="272"/>
+      <text class="g-rot-eje" x="376.0" y="314" text-anchor="middle">Año</text>
+    </svg>
+    <figcaption>Aquí está la trampa de esta lección. La línea continua sugiere que el salario subía un poco cada año. No fue así: se quedaba quieto durante años y luego saltaba de golpe, cuando una ley lo cambiaba. La línea escalonada cuenta lo que de verdad pasó. <strong>Los datos son idénticos; el dibujo miente en uno de los dos casos.</strong></figcaption>
+    <details class="datos">
+      <summary>Por qué importa la diferencia</summary>
+      <div class="cuerpo-datos">
+        <p>Entre 1997 y 2009 el salario mínimo federal no se movió: doce años en $5.15. La línea continua dibuja ese tramo como una cuesta suave hacia arriba, y quien la lea deprisa concluirá que subió poco a poco durante esos doce años. La línea escalonada lo dibuja plano y luego un salto. Una línea recta entre dos puntos es una suposición sobre lo que pasó en medio, y no siempre es cierta.</p>
+      </div>
+    </details>
+  </figure>
+
+  <figure class="grafica">
+    <h3>Gráfica circular · ver partes de un total</h3>
+    <p class="g-fuente">Reparto del gasto federal en cinco categorías. <strong>Datos ilustrativos</strong>, redondeados para que sumen 100.</p>
+    <svg viewBox="0 0 700 320" role="img" aria-labelledby="g3t g3d" xmlns="http://www.w3.org/2000/svg">
+      <title id="g3t">Gráfica circular del gasto federal repartido en cinco categorías</title>
+      <desc id="g3d">Cinco sectores de un círculo. Todo lo demás ocupa el 27 por ciento, salud pública el 26, seguridad social y jubilaciones el 23, defensa el 13 e intereses de la deuda el 11. Los datos son ilustrativos y las cifras están en la tabla que acompaña a la gráfica.</desc>
+      
+      <path class="g-sector-1 g-sep" d="M 175 160 L 175.0 32.0 A 128 128 0 0 1 302.0 144.0 Z"/>
+      <text x="227.5" y="104.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">23%</text>
+      <path class="g-sector-2 g-sep" d="M 175 160 L 302.0 144.0 A 128 128 0 0 1 183.0 287.7 Z"/>
+      <text x="236.1" y="214.6" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">26%</text>
+      <path class="g-sector-3 g-sep" d="M 175 160 L 183.0 287.7 A 128 128 0 0 1 87.4 253.3 Z"/>
+      <text x="148.1" y="238.7" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">13%</text>
+      <path class="g-sector-4 g-sep" d="M 175 160 L 87.4 253.3 A 128 128 0 0 1 48.0 176.0 Z"/>
+      <text x="104.3" y="200.0" text-anchor="middle" font-size="14" font-weight="700" fill="#263238">11%</text>
+      <path class="g-sector-5 g-sep" d="M 175 160 L 48.0 176.0 A 128 128 0 0 1 175.0 32.0 Z"/>
+      <text x="115.5" y="111.5" text-anchor="middle" font-size="14" font-weight="700" fill="#263238">27%</text>
+      <rect class="g-sector-1" x="378" y="40" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="402" y="53">Seguridad Social y jubilaciones</text>
+      <rect class="g-sector-2" x="378" y="70" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="402" y="83">Salud pública</text>
+      <rect class="g-sector-3" x="378" y="100" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="402" y="113">Defensa</text>
+      <rect class="g-sector-4" x="378" y="130" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="402" y="143">Intereses de la deuda</text>
+      <rect class="g-sector-5" x="378" y="160" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="402" y="173">Todo lo demás</text>
+    </svg>
+    <figcaption>El círculo solo sirve cuando las partes suman un todo y son pocas. Con más de cinco o seis sectores el ojo ya no compara, y una tabla informa mejor.</figcaption>
+    <details class="datos">
+      <summary>Ver la tabla de datos</summary>
+      <div class="cuerpo-datos">
+        <table class="tabla-datos">
+          <caption>Reparto porcentual del gasto federal. Datos ilustrativos.</caption>
+          <thead><tr><th scope="col">Categoría</th><th scope="col">Porcentaje</th></tr></thead>
+          <tbody>
+            <tr><td>Todo lo demás</td><td>27 %</td></tr>
+            <tr><td>Salud pública</td><td>26 %</td></tr>
+            <tr><td>Seguridad Social y jubilaciones</td><td>23 %</td></tr>
+            <tr><td>Defensa</td><td>13 %</td></tr>
+            <tr><td>Intereses de la deuda</td><td>11 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </figure>
+
+  <div class="practica">
+    <h3>Práctica interactiva 1 · Elegir la gráfica y leer la escala</h3>
+
+    <div class="pregunta" data-correcta="b" data-explica="Las partes suman un total y son pocas. Ese es exactamente el caso en que el círculo funciona; para comparar magnitudes entre categorías independientes, la barra es mejor.">
+      <div class="enun">Quiere mostrar cómo se reparte un presupuesto entre cuatro departamentos. ¿Qué gráfica elige?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">De líneas</div>
+        <div class="opcion" data-op="b">Circular</div>
+        <div class="opcion" data-op="c">De dispersión</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="c" data-explica="Doce años en $5.15. La línea continua dibuja una cuesta donde hubo una meseta, porque una recta entre dos puntos supone lo que pasó en medio.">
+      <div class="enun">Según la tabla de la primera gráfica, ¿cuánto tiempo estuvo el salario mínimo federal en $5.15?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Un año</div>
+        <div class="opcion" data-op="b">Cinco años</div>
+        <div class="opcion" data-op="c">Doce años, de 1997 a 2009</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="pregunta" data-correcta="a" data-explica="Si el eje no arranca en cero, las diferencias se exageran. Los números siguen siendo correctos; lo que engaña es el dibujo.">
+      <div class="enun">Una gráfica de barras tiene el eje vertical empezando en 40 en lugar de en 0. ¿Qué efecto produce?</div>
+      <div class="opciones">
+        <div class="opcion" data-op="a">Las diferencias entre barras parecen mayores de lo que son</div>
+        <div class="opcion" data-op="b">Los datos quedan falseados</div>
+        <div class="opcion" data-op="c">No produce ningún efecto</div>
+      </div>
+      <div class="fb"></div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Qué variable va en cada eje</h2>
+
+  <div class="bloque">
+    <p>En cuanto una gráfica relaciona dos cosas medidas, hay que saber cuál manda.</p>
+    <p>La variable <strong>independiente</strong> es la que se supone que actúa, la que se elige o simplemente ocurre primero. Va en el eje <strong>horizontal</strong>.</p>
+    <p>La variable <strong>dependiente</strong> es la que se supone que responde. Va en el eje <strong>vertical</strong>.</p>
+    <div class="caja-tip">
+      <strong>Truco que casi nunca falla.</strong> Complete la frase «si cambia ______, cambiará ______». Lo primero es la independiente y va abajo. El tiempo es siempre independiente: nada de lo que midamos hace que cambien los años.
+    </div>
+  </div>
+
+  <figure class="grafica">
+    <h3>Diagrama de dispersión · ver si dos cosas van juntas</h3>
+    <p class="g-fuente">Dieciséis territorios: años medios de escolaridad frente a ingreso medio anual por hogar, en miles de dólares. <strong>Datos ilustrativos.</strong></p>
+    <svg viewBox="0 0 700 320" role="img" aria-labelledby="g4t g4d" xmlns="http://www.w3.org/2000/svg">
+      <title id="g4t">Diagrama de dispersión de dieciséis territorios: años medios de escolaridad frente a ingreso medio anual por hogar en miles de dólares</title>
+      <desc id="g4d">Los puntos suben de izquierda a derecha: los territorios con más años de escolaridad tienden a tener ingresos más altos. La nube es ancha, no una línea: hay territorios con la misma escolaridad y muy distinto ingreso. Los datos son ilustrativos y están en la tabla que acompaña a la gráfica.</desc>
+      
+      <line class="g-reja" x1="68" y1="272.0" x2="684" y2="272.0"/>
+      <text class="g-rot" x="60" y="276.0" text-anchor="end">20</text>
+      <line class="g-reja" x1="68" y1="186.7" x2="684" y2="186.7"/>
+      <text class="g-rot" x="60" y="190.7" text-anchor="end">40</text>
+      <line class="g-reja" x1="68" y1="101.3" x2="684" y2="101.3"/>
+      <text class="g-rot" x="60" y="105.3" text-anchor="end">60</text>
+      <line class="g-reja" x1="68" y1="16.0" x2="684" y2="16.0"/>
+      <text class="g-rot" x="60" y="20.0" text-anchor="end">80</text>
+      <circle class="g-punto" cx="124.0" cy="225.1" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="180.0" cy="216.5" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="180.0" cy="233.6" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="236.0" cy="203.7" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="292.0" cy="195.2" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="292.0" cy="178.1" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="348.0" cy="165.3" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="348.0" cy="186.7" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="404.0" cy="152.5" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="404.0" cy="131.2" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="460.0" cy="135.5" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="516.0" cy="97.1" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="516.0" cy="122.7" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="572.0" cy="75.7" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="628.0" cy="54.4" r="5" opacity="0.75"/>
+      <circle class="g-punto" cx="628.0" cy="84.3" r="5" opacity="0.75"/>
+      <text class="g-rot" x="124.0" y="290" text-anchor="middle">9</text>
+      <text class="g-rot" x="236.0" y="290" text-anchor="middle">11</text>
+      <text class="g-rot" x="348.0" y="290" text-anchor="middle">13</text>
+      <text class="g-rot" x="460.0" y="290" text-anchor="middle">15</text>
+      <text class="g-rot" x="572.0" y="290" text-anchor="middle">17</text>
+      <text class="g-rot" x="684.0" y="290" text-anchor="middle">19</text>
+      <line class="g-eje" x1="68" y1="16" x2="68" y2="272"/>
+      <line class="g-eje" x1="68" y1="272" x2="684" y2="272"/>
+      <text class="g-rot-eje" x="376.0" y="314" text-anchor="middle">Años medios de escolaridad</text>
+      <text class="g-rot-eje" x="16" y="144.0" text-anchor="middle" transform="rotate(-90 16 144.0)">Ingreso medio (miles $)</text>
+    </svg>
+    <figcaption>Cada punto es un territorio. La nube sube de izquierda a derecha: donde hay más años de escolaridad, tiende a haber más ingreso. Eso es una <strong>correlación positiva</strong>. Fíjese en que la nube es ancha: hay territorios con la misma escolaridad y muy distinto ingreso.</figcaption>
+    <details class="datos">
+      <summary>Ver la tabla de datos</summary>
+      <div class="cuerpo-datos">
+        <table class="tabla-datos">
+          <caption>Años medios de escolaridad e ingreso medio por hogar en miles de dólares. Datos ilustrativos.</caption>
+          <thead><tr><th scope="col">Escolaridad (años)</th><th scope="col">Ingreso (miles $)</th></tr></thead>
+          <tbody>
+            <tr><td>9</td><td>31</td></tr><tr><td>10</td><td>33</td></tr>
+            <tr><td>10</td><td>29</td></tr><tr><td>11</td><td>36</td></tr>
+            <tr><td>12</td><td>38</td></tr><tr><td>12</td><td>42</td></tr>
+            <tr><td>13</td><td>45</td></tr><tr><td>13</td><td>40</td></tr>
+            <tr><td>14</td><td>48</td></tr><tr><td>14</td><td>53</td></tr>
+            <tr><td>15</td><td>52</td></tr><tr><td>16</td><td>61</td></tr>
+            <tr><td>16</td><td>55</td></tr><tr><td>17</td><td>66</td></tr>
+            <tr><td>18</td><td>71</td></tr><tr><td>18</td><td>64</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </figure>
+
+  <div class="bloque">
+    <p>La nube anterior sube. Conviene ver las otras dos formas que puede tomar, porque el examen las presenta las tres y se distinguen de un vistazo.</p>
+    <div class="mini-graficas">
+      <div class="mini">
+        <h4>Correlación negativa</h4>
+        <svg viewBox="0 0 340 230" role="img" aria-labelledby="gnt gnd" xmlns="http://www.w3.org/2000/svg">
+        <title id="gnt">Diagrama de dispersión con correlación negativa: a más horas semanales de televisión, menor calificación media</title>
+        <desc id="gnd">Los puntos bajan de izquierda a derecha. En el extremo izquierdo, con una hora de televisión, las calificaciones rondan los 88 puntos; en el derecho, con doce horas, rondan los 38. La nube tiene dispersión: hay puntos con las mismas horas y calificaciones distintas.</desc>
+        <line class="g-reja" x1="48" y1="186.0" x2="328" y2="186.0"/>
+        <text class="g-rot" x="41" y="190.0" text-anchor="end">30</text>
+        <line class="g-reja" x1="48" y1="128.0" x2="328" y2="128.0"/>
+        <text class="g-rot" x="41" y="132.0" text-anchor="end">50</text>
+        <line class="g-reja" x1="48" y1="70.0" x2="328" y2="70.0"/>
+        <text class="g-rot" x="41" y="74.0" text-anchor="end">70</text>
+        <line class="g-reja" x1="48" y1="12.0" x2="328" y2="12.0"/>
+        <text class="g-rot" x="41" y="16.0" text-anchor="end">90</text>
+        <circle class="g-punto" cx="48.0" cy="17.8" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="73.5" cy="29.4" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="73.5" cy="43.9" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="98.9" cy="41.0" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="124.4" cy="58.4" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="149.8" cy="67.1" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="149.8" cy="81.6" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="175.3" cy="90.3" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="200.7" cy="104.8" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="226.2" cy="113.5" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="226.2" cy="99.0" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="251.6" cy="130.9" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="277.1" cy="139.6" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="302.5" cy="154.1" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="302.5" cy="136.7" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="328.0" cy="162.8" r="4.5" opacity="0.75"/>
+        <text class="g-rot" x="48.0" y="203" text-anchor="middle">1</text>
+        <text class="g-rot" x="175.3" y="203" text-anchor="middle">6</text>
+        <text class="g-rot" x="328.0" y="203" text-anchor="middle">12</text>
+        <line class="g-eje" x1="48" y1="12" x2="48" y2="186"/>
+        <line class="g-eje" x1="48" y1="186" x2="328" y2="186"/>
+        <text class="g-rot-eje" x="188.0" y="226" text-anchor="middle">Horas de televisión a la semana</text>
+        <text class="g-rot-eje" x="12" y="99.0" text-anchor="middle" transform="rotate(-90 12 99.0)">Calificación media</text>
+      </svg>
+        <p>Horas de televisión frente a calificación media. La nube <strong>baja</strong> hacia la derecha: cuando una sube, la otra tiende a bajar. Datos ilustrativos.</p>
+      </div>
+      <div class="mini">
+        <h4>Sin correlación</h4>
+        <svg viewBox="0 0 340 230" role="img" aria-labelledby="gct gcd" xmlns="http://www.w3.org/2000/svg">
+        <title id="gct">Diagrama de dispersión sin correlación: número de letras del apellido frente a calificación media</title>
+        <desc id="gcd">Los puntos están repartidos por todo el recuadro sin ninguna dirección. Para cualquier número de letras aparecen calificaciones altas y bajas por igual, de modo que no se aprecia relación entre las dos variables.</desc>
+        <line class="g-reja" x1="48" y1="186.0" x2="328" y2="186.0"/>
+        <text class="g-rot" x="41" y="190.0" text-anchor="end">30</text>
+        <line class="g-reja" x1="48" y1="128.0" x2="328" y2="128.0"/>
+        <text class="g-rot" x="41" y="132.0" text-anchor="end">50</text>
+        <line class="g-reja" x1="48" y1="70.0" x2="328" y2="70.0"/>
+        <text class="g-rot" x="41" y="74.0" text-anchor="end">70</text>
+        <line class="g-reja" x1="48" y1="12.0" x2="328" y2="12.0"/>
+        <text class="g-rot" x="41" y="16.0" text-anchor="end">90</text>
+        <circle class="g-punto" cx="48.0" cy="122.2" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="73.5" cy="67.1" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="73.5" cy="159.9" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="98.9" cy="99.0" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="124.4" cy="145.4" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="149.8" cy="49.7" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="149.8" cy="113.5" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="175.3" cy="171.5" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="200.7" cy="75.8" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="226.2" cy="133.8" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="226.2" cy="61.3" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="251.6" cy="154.1" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="277.1" cy="90.3" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="302.5" cy="128.0" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="302.5" cy="58.4" r="4.5" opacity="0.75"/>
+        <circle class="g-punto" cx="328.0" cy="104.8" r="4.5" opacity="0.75"/>
+        <text class="g-rot" x="48.0" y="203" text-anchor="middle">1</text>
+        <text class="g-rot" x="175.3" y="203" text-anchor="middle">6</text>
+        <text class="g-rot" x="328.0" y="203" text-anchor="middle">12</text>
+        <line class="g-eje" x1="48" y1="12" x2="48" y2="186"/>
+        <line class="g-eje" x1="48" y1="186" x2="328" y2="186"/>
+        <text class="g-rot-eje" x="188.0" y="226" text-anchor="middle">Letras del apellido</text>
+        <text class="g-rot-eje" x="12" y="99.0" text-anchor="middle" transform="rotate(-90 12 99.0)">Calificación media</text>
+      </svg>
+        <p>Letras del apellido frente a calificación media. Los puntos se reparten <strong>sin dirección</strong>: no se aprecia relación. Datos ilustrativos.</p>
+      </div>
+    </div>
+    <p style="margin-top:14px;">Fíjese en el segundo. Nadie esperaría que el apellido influyera en las notas, y por eso sirve de referencia: <strong>así se ve una nube cuando de verdad no hay relación</strong>. Compararla con las otras dos evita el error de ver patrones donde solo hay dispersión.</p>
+  </div>
+
+  <table class="reglas">
+    <caption>Las tres formas de correlación</caption>
+    <thead><tr><th scope="col">Correlación</th><th scope="col">Qué se ve</th><th scope="col">Cómo se dice</th></tr></thead>
+    <tbody>
+      <tr><td>Positiva</td><td>La nube sube hacia la derecha</td><td>Cuando una sube, la otra tiende a subir</td></tr>
+      <tr><td>Negativa</td><td>La nube baja hacia la derecha</td><td>Cuando una sube, la otra tiende a bajar</td></tr>
+      <tr><td>Ninguna</td><td>Los puntos están dispersos sin dirección</td><td>No se aprecia relación entre las dos</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="seccion" id="sec4">4. Correlación no es causalidad</h2>
+
+  <div class="bloque">
+    <p>Este es el punto central de la lección, y el que el examen premia.</p>
+    <p>Que dos cosas suban juntas no prueba que una haga subir a la otra. Ante cualquier correlación hay siempre <strong>cuatro explicaciones posibles</strong>, y la gráfica por sí sola no permite elegir entre ellas.</p>
+
+    <div class="ejemplo">
+      <span class="et">Las cuatro explicaciones</span>
+      <div class="paso"><span class="n" aria-hidden="true">1</span><strong>A causa B.</strong> Más años de escuela dan mejores empleos.</div>
+      <div class="paso"><span class="n" aria-hidden="true">2</span><strong>B causa A.</strong> Las familias con más ingreso pueden mantener a sus hijos estudiando más años.</div>
+      <div class="paso"><span class="n" aria-hidden="true">3</span><strong>Una tercera cosa causa las dos.</strong> Un territorio próspero tiene a la vez mejores escuelas y mejores empleos. Ni la escolaridad causa el ingreso ni al revés: los dos dependen de algo anterior.</div>
+      <div class="paso"><span class="n" aria-hidden="true">4</span><strong>Casualidad.</strong> Con pocos datos, dos cosas pueden ir juntas por azar.</div>
+    </div>
+
+    <p>Las cuatro son compatibles con la misma nube de puntos. Por eso la respuesta correcta ante un diagrama de dispersión nunca empieza por «esto demuestra que», sino por «esto es compatible con».</p>
+
+    <div class="caja-atencion">
+      <strong>Cómo suena la respuesta que puntúa.</strong> No: «la gráfica demuestra que estudiar más hace ganar más». Sí: «la gráfica muestra una correlación positiva entre escolaridad e ingreso; para saber si una causa la otra harían falta datos que la gráfica no ofrece».
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Variables y correlación</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Se cumple la frase: si cambia la escolaridad, cambiará el ingreso. Además el ingreso es lo que se está midiendo como respuesta, y por eso va en el eje vertical.">
+        <div class="enun">En el diagrama de dispersión anterior, ¿cuál es la variable independiente?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El ingreso medio</div>
+          <div class="opcion" data-op="b">Los años de escolaridad</div>
+          <div class="opcion" data-op="c">El número de territorios</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Nada de lo que midamos puede hacer que cambien los años. El tiempo nunca responde: siempre actúa, y por eso va abajo.">
+        <div class="enun">En una gráfica que muestra la población de una ciudad entre 1950 y 2020, ¿qué va en el eje horizontal?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La población, porque es lo importante</div>
+          <div class="opcion" data-op="b">Depende de quién dibuje la gráfica</div>
+          <div class="opcion" data-op="c">El año, porque el tiempo es siempre la variable independiente</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Es la tercera explicación: el calor hace subir a la vez la venta de helados y el número de bañistas. Ni el helado causa los ahogamientos ni al revés.">
+        <div class="enun">En una ciudad, la venta de helados y el número de ahogamientos suben y bajan juntos a lo largo del año. ¿Qué explica mejor esa correlación?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Una tercera variable, la temperatura, causa las dos</div>
+          <div class="opcion" data-op="b">Comer helado aumenta el riesgo de ahogarse</div>
+          <div class="opcion" data-op="c">La correlación demuestra que hay causa</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Clínica de la TI-30XS MultiView</h2>
+
+  <div class="bloque">
+    <p>Es la calculadora que el examen permite, y viene en pantalla dentro de la prueba. Dos cosas de ella causan casi todos los errores evitables.</p>
+
+    <h3>La tecla de alternancia</h3>
+    <p>La TI-30XS MultiView devuelve muchos resultados <strong>en forma de fracción</strong>. Si la pregunta pide un decimal y usted copia la fracción, la respuesta cuenta como incorrecta aunque el valor sea el mismo. La tecla de alternancia convierte el resultado que está en pantalla de fracción a decimal y al revés.</p>
+    <div class="teclado">
+      <span class="tecla">◄ ►</span>
+      <span class="g-rot" style="align-self:center;">alterna el resultado entre fracción y decimal</span>
+    </div>
+    <div class="caja-tip">
+      <strong>Hábito que conviene automatizar.</strong> Después de cada resultado, mire qué le pide la pregunta. Si pide decimal y ve una fracción, pulse la alternancia antes de escribir nada.
+    </div>
+
+    <h3>La jerarquía de operaciones</h3>
+    <p>Esta calculadora respeta el orden matemático: primero paréntesis, después potencias, luego multiplicaciones y divisiones de izquierda a derecha, y por último sumas y restas. Eso es bueno, pero significa que <strong>hay que escribir los paréntesis que uno tiene en la cabeza</strong>.</p>
+
+    <div class="ejemplo">
+      <span class="et">El error más caro</span>
+      <p>Calcular el porcentaje de cambio de 40 a 52. La fórmula es la diferencia dividida entre el valor inicial.</p>
+      <div class="secuencia">52 − 40 ÷ 40 =  →  <span class="res">51</span>   (la calculadora divide 40 entre 40 primero)</div>
+      <div class="secuencia">( 52 − 40 ) ÷ 40 =  →  <span class="res">0.3</span>  y con la alternancia, <span class="res">3/10</span> = 30 %</div>
+      <p><strong>La correcta es la segunda:</strong> el porcentaje de cambio de 40 a 52 es del <strong>30 %</strong>. La primera secuencia también está bien tecleada y la calculadora la resuelve sin protestar, pero responde a otra pregunta, porque sin los paréntesis divide antes de restar. Una calculadora nunca avisa de que ha contestado a algo distinto de lo que usted quería preguntar.</p>
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 3 · Clínica</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Sin paréntesis, la calculadora divide 40 entre 40 antes de restar, y devuelve 51. La resta tiene que ir agrupada.">
+        <div class="enun">Para el porcentaje de cambio de 40 a 52, ¿qué se teclea?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">52 − 40 ÷ 40 =</div>
+          <div class="opcion" data-op="b">52 ÷ 40 − 40 =</div>
+          <div class="opcion" data-op="c">( 52 − 40 ) ÷ 40 =</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="El valor es el mismo, pero la respuesta que se entrega tiene que estar en el formato que pide la pregunta. La alternancia lo resuelve en una pulsación.">
+        <div class="enun">La pantalla muestra 3/8 y la pregunta pide un decimal. ¿Qué hace?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Escribe 3/8, porque vale lo mismo</div>
+          <div class="opcion" data-op="b">Pulsa la tecla de alternancia y escribe 0.375</div>
+          <div class="opcion" data-op="c">Vuelve a calcular desde el principio</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Multiplicaciones y divisiones se hacen antes que sumas y restas, así que primero 3 por 4, que da 12, y después se le suma 2.">
+        <div class="enun">¿Qué devuelve la calculadora si se teclea 2 + 3 × 4 = ?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">14</div>
+          <div class="opcion" data-op="b">20</div>
+          <div class="opcion" data-op="c">24</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Los cinco pasos en voz alta</div>
+      <div class="cuerpo-act">
+        <span class="duracion">15 minutos</span>
+        <p>Busque tres gráficas en un periódico o en una página oficial. Con cada una, diga en voz alta los cinco pasos de la sección 1 antes de sacar ninguna conclusión. Anote en cuál de las tres el eje vertical no empezaba en cero.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si tardó más de treinta segundos por gráfica, es que estaba leyendo el contenido en vez de la estructura. Los cinco pasos son solo estructura.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Escolaridad e ingreso</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Con el diagrama de dispersión de la sección 3 delante, escriba tres frases: cuál es la variable independiente y por qué, cómo describiría la correlación, y una explicación alternativa distinta de «estudiar más hace ganar más».</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si su tercera frase usa el verbo «demuestra», reescríbala. Un diagrama de dispersión nunca demuestra una causa.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Doce operaciones con la calculadora</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Calcule con la TI-30XS y anote el resultado en decimal <em>y</em> en fracción cuando la calculadora se lo permita: los porcentajes de cambio de 25 a 30, de 80 a 60 y de 12 a 15; las divisiones 3÷8, 5÷16 y 7÷20; y las expresiones 2+3×4, (2+3)×4, 100−20÷5, (100−20)÷5, 6+6÷6+6 y (6+6)÷(6+6).</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> las tres primeras dan 20 %, −25 % y 25 %. Los tres decimales son 0.375, 0.3125 y 0.35. Las seis últimas dan 14, 20, 96, 16, 13 y 1. Si alguna no coincide, el problema casi siempre está en los paréntesis.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 2.1</h2>
+    <p>Doce preguntas: cuatro de lectura de valores en gráficas, cuatro de variables y correlación, y cuatro de operación con la calculadora. Tiempo sugerido: 30 minutos. Para aprobar se requieren al menos 8 respuestas correctas. Puede intentarlo cuantas veces quiera.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de lectura cuantitativa, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identifica título, ejes, unidades y escala</td>
+          <td>Mira los números y responde sin leer el título ni los ejes.</td>
+          <td>Lee título y ejes, pero pasa por alto las unidades o el origen de la escala.</td>
+          <td>Recorre los cinco pasos antes de concluir nada.</td>
+          <td>Detecta además cuándo la escala está elegida para exagerar y lo dice.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Distingue variable dependiente de independiente</td>
+          <td>Las confunde o las asigna al azar.</td>
+          <td>Acierta cuando una de las dos es el tiempo, duda en los demás casos.</td>
+          <td>Usa la frase «si cambia ___, cambiará ___» y acierta con soltura.</td>
+          <td>Reconoce los casos en que la dirección es discutible y explica por qué.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Describe la correlación sin afirmar causalidad</td>
+          <td>Escribe que la gráfica demuestra que una cosa causa la otra.</td>
+          <td>Evita la palabra «causa», pero deja la causa implícita en la frase.</td>
+          <td>Describe la correlación y dice explícitamente que no basta para establecer causa.</td>
+          <td>Propone al menos dos explicaciones alternativas, incluida una tercera variable.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Usa la calculadora con soltura</td>
+          <td>Teclea de corrido y acepta el primer número que aparece.</td>
+          <td>Usa paréntesis a veces, y entrega fracciones cuando le piden decimales.</td>
+          <td>Agrupa con paréntesis y alterna a decimal según lo que pida la pregunta.</td>
+          <td>Anticipa el resultado aproximado antes de teclear y detecta cuándo la pantalla no cuadra.</td>
+          <td class="repaso"><a href="#sec5">Sección 5</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 2.1 y enlace con la 2.2</h2>
+    <p>Queda instalada la herramienta del tema: <strong>una gráfica se lee por su estructura antes que por su contenido</strong>. Título, ejes, unidades, escala, y solo entonces la tendencia.</p>
+    <p>Y queda instalada la frase que más puntos da en el examen: una correlación es compatible con cuatro explicaciones distintas, y la gráfica no permite elegir entre ellas.</p>
+    <p>La <strong>Lección 2.2</strong> baja un nivel más. Con datos de ingresos por hogar en distintos barrios de Chicago, se calculan la media y la mediana y se descubre por qué difieren tanto. Después viene la pregunta interesante: cuál de las dos usaría un funcionario que quiere presentar el barrio como próspero, y cuál usaría quien quiere justificar una ayuda pública. Es la misma selección interesada de la Lección 1.3, ahora hecha con números.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-2">Tema 2 · Razonamiento cuantitativo</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-2">Siguiente: Lección 2.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 2 · Lección 2.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Antes de sacar cualquier conclusión de una gráfica, el primer paso es…',
+      ops: ['Buscar el valor más alto', 'Leer el título, los ejes, las unidades y la escala', 'Calcular la diferencia entre el primero y el último dato', 'Identificar el tipo de gráfica'],
+      correcta: 1, expl: 'La estructura antes que el contenido. Casi todos los errores del examen vienen de responder antes de haber mirado los ejes y las unidades.' },
+
+    { enun: '2. Según la tabla del salario mínimo, ¿cuánto subió de 1938 a 2009?',
+      ops: ['De $0.25 a $5.15', 'De $0.75 a $7.25', 'De $0.25 a $7.25', 'De $1.15 a $7.25'],
+      correcta: 2, expl: 'Parte de $0.25 en 1938 y llega a $7.25 en 2009. Leer los extremos correctos exige mirar la tabla, no la altura de las barras.' },
+
+    { enun: '3. Un eje vertical que empieza en 40 en vez de en cero produce que…',
+      ops: ['Los datos sean incorrectos', 'Las diferencias parezcan mayores de lo que son', 'La gráfica no se pueda leer', 'Las unidades cambien'],
+      correcta: 1, expl: 'Los números siguen siendo ciertos. Lo que engaña es el dibujo, y es la misma selección interesada del Tema 1 aplicada a una escala.' },
+
+    { enun: '4. La gráfica circular conviene cuando…',
+      ops: ['Hay muchas categorías que comparar', 'Se sigue un cambio a lo largo del tiempo', 'Las partes suman un total y son pocas', 'Se relacionan dos variables medidas'],
+      correcta: 2, expl: 'Con más de cinco o seis sectores el ojo deja de comparar bien, y una tabla informa mejor que el círculo.' },
+
+    { enun: '5. La variable independiente va siempre en el eje…',
+      ops: ['Vertical', 'Horizontal', 'El que elija quien dibuja', 'Depende del tipo de gráfica'],
+      correcta: 1, expl: 'Horizontal la que actúa, vertical la que responde. La frase «si cambia ___, cambiará ___» resuelve casi todos los casos.' },
+
+    { enun: '6. En una gráfica de población de una ciudad entre 1950 y 2020, el tiempo es…',
+      ops: ['La variable dependiente', 'La variable independiente', 'Ninguna de las dos', 'Depende de la ciudad'],
+      correcta: 1, expl: 'Nada de lo que midamos hace que cambien los años. El tiempo nunca responde: siempre actúa.' },
+
+    { enun: '7. Una nube de puntos que baja de izquierda a derecha muestra…',
+      ops: ['Correlación positiva', 'Correlación negativa', 'Ausencia de correlación', 'Una relación de causa'],
+      correcta: 1, expl: 'Cuando una variable sube, la otra tiende a bajar. Sigue siendo una correlación, no una causa.' },
+
+    { enun: '8. La venta de helados y los ahogamientos suben juntos cada verano. La mejor explicación es…',
+      ops: ['El helado aumenta el riesgo de ahogarse', 'Los ahogamientos hacen vender más helado', 'Una tercera variable, la temperatura, causa las dos', 'La correlación demuestra la causa'],
+      correcta: 2, expl: 'Es el caso de la tercera variable. Ante cualquier correlación hay cuatro explicaciones posibles y la gráfica no permite elegir entre ellas.' },
+
+    { enun: '9. Ante un diagrama de dispersión, la respuesta que puntúa empieza por…',
+      ops: ['«Esto demuestra que…»', '«Esto es compatible con…»', '«Esto prueba la causa de…»', '«Esto confirma que…»'],
+      correcta: 1, expl: 'Una correlación es compatible con varias explicaciones. Afirmar la causa a partir del dibujo es el error más penalizado.' },
+
+    { enun: '10. Para el porcentaje de cambio de 40 a 52 se teclea…',
+      ops: ['52 − 40 ÷ 40 =', '( 52 − 40 ) ÷ 40 =', '52 ÷ 40 − 40 =', '40 ÷ ( 52 − 40 ) ='],
+      correcta: 1, expl: 'Sin paréntesis la calculadora divide 40 entre 40 antes de restar y devuelve 51. Con paréntesis da 0.3, es decir, 30 por ciento.' },
+
+    { enun: '11. La pantalla muestra 3/8 y la pregunta pide decimal. Lo correcto es…',
+      ops: ['Escribir 3/8, porque vale lo mismo', 'Pulsar la tecla de alternancia y escribir 0.375', 'Volver a calcularlo todo', 'Redondear a 0.4'],
+      correcta: 1, expl: 'El valor es el mismo, pero la respuesta se entrega en el formato que pide la pregunta. La alternancia lo resuelve en una pulsación.' },
+
+    { enun: '12. ¿Qué devuelve la calculadora si se teclea 100 − 20 ÷ 5 = ?',
+      ops: ['16', '96', '80', '4'],
+      correcta: 1, expl: 'La división va antes que la resta: 20 entre 5 da 4, y 100 menos 4 da 96. Para obtener 16 hay que escribir (100 − 20) ÷ 5.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 2.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
