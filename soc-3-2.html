@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<!--
+  Lección 3.2 · La Constitución: estructura y principios
+  Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 3.2 · La Constitución: estructura y principios</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 3 — paleta azul heredada del plan curricular (--t3) */
+    --tema:    #0d47a1;
+    --tema-d:  #08306b;
+    --tema-bg: #e3f2fd;
+    --tema-bg2:#bbdefb;
+    --acento:  #1565c0;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #062350 0%, #08306b 55%, #0d47a1 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(6,35,80,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #08306b;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f8fbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #0b3a7d; font-weight: 600; }
+  .navlecciones .nav-sep { color: #47618a; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f8fbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #0d47a1; }
+
+  /* ══ COMPONENTES DEL TEMA 3 ═══════════════════════════════════ */
+  figure.linea-tiempo {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.linea-tiempo svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.linea-tiempo figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+  .lt-eje    { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto  { fill: var(--tema); }
+  .lt-ano    { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-hecho  { font-size: 11.5px; fill: #333; }
+  .lt-tick   { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Glosario politico */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt {
+    font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px;
+  }
+  dl.glosario dd {
+    margin: 4px 0 0; padding-left: 16px;
+    border-left: 3px solid var(--tema-bg2); font-size: 15px;
+  }
+  dl.glosario dd .en { font-style: italic; color: #555; font-size: 14px; }
+
+  /* Clasificacion de agravios */
+  .agravio-cita {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 10px 16px; margin: 10px 0;
+    font-size: 15px;
+  }
+  .agravio-cita .num {
+    display: inline-block; background: var(--tema); color: #fff;
+    border-radius: 5px; padding: 1px 9px; font-size: 12.5px;
+    font-weight: 700; margin-right: 8px;
+  }
+
+  /* Diagrama de controles y equilibrios */
+  figure.diagrama { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.diagrama svg { display:block; width:100%; height:auto; }
+  figure.diagrama figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .cb-tit { font-size:13px; font-weight:700; fill:#08306b; letter-spacing:.4px; }
+  .cb-sub { font-size:11px; fill:#37474f; }
+  .cb-rot { font-size:11.5px; fill:#0b3a7d; font-weight:600; }
+
+  /* Extractos enfrentados */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .fed  { background:#e3f2fd; border-left:6px solid #0d47a1; }
+  .enfrentados .anti { background:#f3e5f5; border-left:6px solid #6a1b9a; }
+  .enfrentados .lado h3 { margin:0 0 4px; font-size:15px; }
+  .enfrentados .fed h3  { color:#08306b; }
+  .enfrentados .anti h3 { color:#4a127a; }
+  .enfrentados .lado .quien { font-size:12.5px; color:#444; font-style:italic; margin:0 0 10px; }
+  .enfrentados .lado blockquote { margin:0; font-size:14.5px; }
+  .enfrentados .lado blockquote p { margin:0 0 8px; }
+  .enfrentados .lado .miedo {
+    margin-top:10px; font-size:14px; font-weight:700; padding-top:8px;
+    border-top:1px solid rgba(0,0,0,.12);
+  }
+  .enfrentados .fed .miedo  { color:#08306b; }
+  .enfrentados .anti .miedo { color:#4a127a; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales y principios constitucionales</div>
+    <h1>Lección 3.2 · La Constitución: estructura y principios</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 3.2</span>
+    <a class="nav-sig" href="soc-3-3.html">Siguiente: Lección 3.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Identificar las partes de la Constitución —preámbulo, siete artículos y enmiendas— y decir qué regula cada una.</li>
+      <li>Explicar los cinco principios fundamentales y localizar en el texto la cláusula donde se expresa cada uno.</li>
+      <li>Distinguir los principios que están escritos en el documento de los que se establecieron después por la práctica.</li>
+      <li>Reconstruir la posición federalista y la antifederalista sin caricaturizar ninguna de las dos.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior desmontó la Declaración de Independencia y encontró un argumento: una regla general, veintisiete hechos y una conclusión. Pero también dejó un cabo suelto. La Declaración dice <em>para qué</em> debe existir un gobierno y no construye ninguno.</p>
+    <p>Durante los once años siguientes los Estados Unidos funcionaron con los Artículos de la Confederación, y funcionaron mal: un Congreso que no podía cobrar impuestos ni regular el comercio entre estados, y ningún ejecutivo. En 1787 se reunió en Filadelfia una convención convocada para reformarlos. Escribió una constitución nueva.</p>
+    <p>Aquí entra Montesquieu, que en la lección anterior solo asomó la cabeza.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Cómo está construida</h2>
+
+  <div class="bloque">
+    <p>La Constitución es corta. Se lee en menos de una hora, y su estructura se aprende en cinco minutos si se ve el patrón: <strong>los tres primeros artículos crean los tres poderes, en el orden de Montesquieu.</strong></p>
+
+    <table class="reglas">
+      <caption>Las partes de la Constitución y qué regula cada una</caption>
+      <thead>
+        <tr><th scope="col">Parte</th><th scope="col">Qué establece</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Preámbulo</td><td>Quién adopta la Constitución y con qué fines. No otorga ningún poder, pero dice de quién viene la autoridad.</td></tr>
+        <tr><td>Artículo I</td><td>El poder legislativo: el Congreso, sus dos cámaras, cómo se aprueba una ley y qué materias puede legislar.</td></tr>
+        <tr><td>Artículo II</td><td>El poder ejecutivo: la presidencia, su elección, sus atribuciones y sus límites.</td></tr>
+        <tr><td>Artículo III</td><td>El poder judicial: el Tribunal Supremo y los tribunales inferiores que el Congreso decida crear.</td></tr>
+        <tr><td>Artículo IV</td><td>Las relaciones entre los estados y con la Unión: reconocimiento mutuo de actos y admisión de estados nuevos.</td></tr>
+        <tr><td>Artículo V</td><td>Cómo se enmienda la Constitución. Deliberadamente difícil, pero no imposible.</td></tr>
+        <tr><td>Artículo VI</td><td>La cláusula de supremacía, las deudas anteriores y el juramento de los cargos.</td></tr>
+        <tr><td>Artículo VII</td><td>Cuántos estados hacían falta para que entrara en vigor: nueve de trece.</td></tr>
+        <tr><td>Enmiendas</td><td>Las diez primeras, de 1791, son la Carta de Derechos. Hasta hoy hay veintisiete.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El truco para no confundir los artículos en el examen.</strong> Uno, dos y tres van en el orden en que un gobierno actúa: primero se <em>hace</em> la ley, después se <em>ejecuta</em>, después se <em>juzga</em>. Si recuerda ese orden, ya tiene los tres artículos que más se preguntan.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Una advertencia de lectura que arrastramos del Tema 1.</strong> El texto en inglés de la Constitución <strong>es</strong> el instrumento legal. Cualquier versión en español, incluidas las oficiales, es una traducción, y en un texto jurídico la elección de una palabra puede cambiar el alcance de una cláusula. Para estudiar sirve perfectamente; para discutir el significado exacto de una cláusula hay que ir al original.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Los cinco principios y dónde vive cada uno</h2>
+
+  <div class="bloque">
+    <p>Los principios no son un resumen del documento: son mecanismos, y cada uno tiene una dirección en el texto. Saber la dirección es lo que el examen premia.</p>
+
+    <table class="reglas">
+      <caption>Los cinco principios fundamentales y la cláusula que los consagra</caption>
+      <thead>
+        <tr><th scope="col">Principio</th><th scope="col">Qué significa</th><th scope="col">Dónde está</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Soberanía popular</td>
+          <td>La autoridad viene del pueblo, no del gobierno ni de un rey.</td>
+          <td>Las tres primeras palabras del Preámbulo: <em>We the People</em>, «Nosotros, el pueblo».</td>
+        </tr>
+        <tr>
+          <td>Gobierno limitado</td>
+          <td>El gobierno solo puede lo que se le concede; lo demás le está vedado.</td>
+          <td>La lista de materias del Artículo I, y después la Décima Enmienda.</td>
+        </tr>
+        <tr>
+          <td>Separación de poderes</td>
+          <td>Tres funciones en tres manos distintas.</td>
+          <td>La primera frase de cada uno de los Artículos I, II y III, que deposita un poder en un órgano.</td>
+        </tr>
+        <tr>
+          <td>Controles y equilibrios</td>
+          <td>Cada poder puede frenar a los otros dos.</td>
+          <td>Repartido: el veto en el Artículo I, el juicio político y la confirmación de nombramientos en los Artículos I y II.</td>
+        </tr>
+        <tr>
+          <td>Federalismo</td>
+          <td>El poder se reparte entre la Unión y los estados.</td>
+          <td>La cláusula de supremacía del Artículo VI, y en sentido contrario la Décima Enmienda.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Un principio que no está escrito.</strong> Se suele incluir entre los controles el poder de los tribunales de declarar inconstitucional una ley. Búsquelo en el texto y no lo encontrará: la Constitución no se lo concede en ninguna parte. Lo estableció el propio Tribunal Supremo en 1803, al resolver el caso <em>Marbury contra Madison</em>. Es un buen recordatorio de que <strong>una constitución es lo que dice más lo que se ha hecho con ella</strong>, y de que conviene distinguir las dos cosas.
+    </div>
+
+    <figure class="diagrama">
+      <svg viewBox="0 0 700 440" role="img" aria-labelledby="cbt cbd" xmlns="http://www.w3.org/2000/svg">
+      <title id="cbt">Diagrama de los controles y equilibrios entre los tres poderes</title>
+      <desc id="cbd">Tres círculos unidos por flechas. Arriba el poder legislativo, el Congreso del Artículo I, que hace las leyes. Abajo a la izquierda el ejecutivo, el Presidente del Artículo II, que las ejecuta. Abajo a la derecha el judicial, los tribunales del Artículo III, que las interpretan. El presidente puede vetar una ley del Congreso y devolvérsela. El Congreso puede destituir al presidente mediante juicio político. El Congreso confirma a los jueces y también puede destituirlos. Los tribunales pueden declarar inconstitucionales los actos del ejecutivo. Ningún poder puede actuar del todo sin los otros dos.</desc>
+      <defs><marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0d47a1"/></marker></defs>
+      <line x1="307" y1="112" x2="183" y2="252" stroke="#0d47a1" stroke-width="2" marker-end="url(#fl)" opacity="0.75"/>
+      <text class="cb-rot" x="250" y="178" text-anchor="end">veto: el presidente puede</text>
+      <text class="cb-rot" x="250" y="191" text-anchor="end">devolver una ley</text>
+      <line x1="183" y1="252" x2="307" y2="112" stroke="#0d47a1" stroke-width="2" marker-end="url(#fl)" opacity="0.75"/>
+      <text class="cb-rot" x="455" y="178" text-anchor="start">juicio político: el Congreso</text>
+      <text class="cb-rot" x="455" y="191" text-anchor="start">puede destituirlo</text>
+      <line x1="393" y1="112" x2="517" y2="252" stroke="#0d47a1" stroke-width="2" marker-end="url(#fl)" opacity="0.75"/>
+      <text class="cb-rot" x="350" y="236" text-anchor="middle">confirma jueces y puede</text>
+      <text class="cb-rot" x="350" y="249" text-anchor="middle">destituirlos</text>
+      <line x1="496" y1="300" x2="204" y2="300" stroke="#0d47a1" stroke-width="2" marker-end="url(#fl)" opacity="0.75"/>
+      <text class="cb-rot" x="350" y="368" text-anchor="middle">declara inconstitucionales</text>
+      <text class="cb-rot" x="350" y="381" text-anchor="middle">sus actos</text>
+      <circle cx="350" cy="64" r="60" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/>
+      <text class="cb-tit" x="350" y="52" text-anchor="middle">LEGISLATIVO</text>
+      <text class="cb-sub" x="350" y="68" text-anchor="middle">Congreso · Artículo I</text>
+      <text class="cb-sub" x="350" y="84" text-anchor="middle">hace las leyes</text>
+      <circle cx="140" cy="300" r="60" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/>
+      <text class="cb-tit" x="140" y="288" text-anchor="middle">EJECUTIVO</text>
+      <text class="cb-sub" x="140" y="304" text-anchor="middle">Presidente · Artículo II</text>
+      <text class="cb-sub" x="140" y="320" text-anchor="middle">las ejecuta</text>
+      <circle cx="560" cy="300" r="60" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/>
+      <text class="cb-tit" x="560" y="288" text-anchor="middle">JUDICIAL</text>
+      <text class="cb-sub" x="560" y="304" text-anchor="middle">Tribunales · Artículo III</text>
+      <text class="cb-sub" x="560" y="320" text-anchor="middle">las interpreta</text>
+    </svg>
+      <figcaption>Cada flecha es un freno. El diseño no busca eficiencia: busca que ningún poder pueda actuar del todo sin el consentimiento, al menos tácito, de los otros. Que gobernar resulte lento es la intención, no el defecto.</figcaption>
+    </figure>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Localizar el principio</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="El Preámbulo empieza diciendo quién adopta la Constitución: el pueblo. Ahí está la soberanía popular, en tres palabras y antes de conceder un solo poder.">
+        <div class="enun">«Nosotros, el pueblo de los Estados Unidos…» ¿Qué principio expresa esa fórmula?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Federalismo</div>
+          <div class="opcion" data-op="b">Soberanía popular</div>
+          <div class="opcion" data-op="c">Separación de poderes</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Un poder frena a otro: eso son los controles y equilibrios. La separación de poderes es que estén repartidos; el control es que además puedan detenerse entre sí.">
+        <div class="enun">El presidente devuelve al Congreso una ley aprobada, sin firmarla. ¿Qué principio actúa?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Soberanía popular</div>
+          <div class="opcion" data-op="b">Gobierno limitado</div>
+          <div class="opcion" data-op="c">Controles y equilibrios</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Es un reparto de competencias entre la Unión y los estados, que es la definición de federalismo. La Décima Enmienda es la cláusula que lo formula en sentido contrario: lo no delegado queda en los estados.">
+        <div class="enun">Un estado regula una materia sobre la que la Constitución no dice nada. ¿Qué principio está en juego?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Federalismo</div>
+          <div class="opcion" data-op="b">Separación de poderes</div>
+          <div class="opcion" data-op="c">Controles y equilibrios</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="No aparece en el texto. Lo estableció el Tribunal Supremo en 1803, en Marbury contra Madison, y desde entonces se ejerce como si estuviera escrito.">
+        <div class="enun">¿En qué artículo concede la Constitución a los tribunales el poder de anular una ley por inconstitucional?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En el Artículo III</div>
+          <div class="opcion" data-op="b">En ninguno: no está en el texto</div>
+          <div class="opcion" data-op="c">En el Artículo VI</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Dos visiones de la república</h2>
+
+  <div class="bloque">
+    <p>Escrita la Constitución, había que ratificarla, y no estaba nada claro que se lograra. Entre 1787 y 1788 se libró en la prensa una de las discusiones políticas más serias que se han tenido nunca por escrito.</p>
+    <p>De un lado, los <strong>federalistas</strong>, partidarios de ratificar. Del otro, los <strong>antifederalistas</strong>, que la consideraban peligrosa. La costumbre es contar esto como buenos contra malos, según quién lo cuente. Es un error, y la práctica de esta lección consiste en no cometerlo.</p>
+
+    <div class="caja-tip">
+      <strong>La clave para entender la discusión.</strong> Los dos bandos querían lo mismo: una república libre y duradera. Discrepaban en <strong>qué la amenazaba más</strong>. El federalista miraba alrededor y veía desorden: estados peleados, deudas impagadas, un gobierno incapaz. El antifederalista miraba el documento y veía un gobierno lejano con poderes abiertos. Cada uno temía un peligro real y distinto.
+    </div>
+
+    <div class="enfrentados">
+      <div class="lado fed">
+        <h3>El Federalista</h3>
+        <p class="quien">Números <strong>51</strong> (las dos primeras citas) y <strong>10</strong> (la tercera), de James Madison, firmados «Publio», 1787–1788. Traducción del curso. <a href="fuentes/federalista-10-51-1788.html">Ficha completa en el Archivo</a>.</p>
+        <blockquote>
+          <p>Si los hombres fueran ángeles, no haría falta gobierno alguno. Y si fueran ángeles quienes gobiernan a los hombres, no harían falta controles externos ni internos sobre el gobierno.</p>
+          <p>La ambición debe disponerse de modo que contrarreste a la ambición.</p>
+          <p>Extiéndase la república y se abarcará una mayor variedad de partidos y de intereses; con ello será menos probable que una mayoría tenga un motivo común para invadir los derechos de los demás.</p>
+        </blockquote>
+        <p class="miedo">Su miedo: el desorden. Un gobierno demasiado débil no puede sostener la unión, y las facciones acaban devorando la república.</p>
+      </div>
+
+      <div class="lado anti">
+        <h3>Los escritos antifederalistas</h3>
+        <p class="quien">Ensayo <strong>primero</strong>, publicado en el <em>New York Journal</em> el 18 de octubre de 1787. Traducción del curso. Sobre su autoría, vea la nota de abajo. <a href="fuentes/brutus-ensayo-1-1787.html">Ficha completa en el Archivo</a>.</p>
+        <blockquote>
+          <p>En una república, las costumbres, los sentimientos y los intereses del pueblo deben ser semejantes; si no lo son, surgirá un choque constante de opiniones.</p>
+          <p>Una república libre no puede subsistir sobre un territorio tan extenso: el gobierno quedará demasiado lejos del pueblo para que este pueda vigilarlo.</p>
+          <p>La cláusula que permite al Congreso todo lo necesario y conveniente, unida a la de supremacía, dejará que el gobierno federal decida por sí mismo cuáles son sus propios límites.</p>
+        </blockquote>
+        <p class="miedo">Su miedo: la tiranía. Un gobierno lejano, con poderes redactados en términos abiertos, terminará absorbiendo a los estados.</p>
+      </div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Quién escribió «Bruto»: no lo sabemos.</strong> Los ensayos se publicaron con seudónimo. Durante mucho tiempo se atribuyeron a Robert Yates, juez de Nueva York y delegado descontento de la Convención; estudios posteriores han señalado a Melancton Smith, y en 2025 apareció evidencia documental que refuerza esa atribución. No está zanjado. Se dice aquí porque es exactamente lo que enseñó la Lección 1.2: <strong>establecer el origen de un documento forma parte de leerlo</strong>, y a veces la respuesta honesta es que el origen no está establecido.
+    </div>
+
+    <p>Fíjese en algo notable: los dos citan a Montesquieu y los dos tienen razón al hacerlo. El antifederalista recoge su tesis de que la libertad solo se sostiene en repúblicas pequeñas. El federalista recoge su reparto de poderes y responde que en una república grande y variada ninguna facción llega a ser mayoría. Miran el mismo país, se apoyan en el mismo autor y llegan a conclusiones opuestas.</p>
+
+    <table class="reglas">
+      <caption>Qué mecanismo constitucional responde a cada miedo</caption>
+      <thead>
+        <tr><th scope="col">Miedo</th><th scope="col">De quién</th><th scope="col">Mecanismo que lo responde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>La unión se deshace por debilidad</td><td>Federalista</td><td>Poderes propios de la Unión y la cláusula de supremacía del Artículo VI</td></tr>
+        <tr><td>Un poder se apodera de todo</td><td>Antifederalista</td><td>Separación de poderes y controles mutuos entre los tres</td></tr>
+        <tr><td>El gobierno federal absorbe a los estados</td><td>Antifederalista</td><td>La Décima Enmienda: lo no delegado queda en los estados</td></tr>
+        <tr><td>El gobierno invade los derechos individuales</td><td>Antifederalista</td><td>La Carta de Derechos, que se añadió en 1791 para lograr la ratificación</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Quién ganó.</strong> Los federalistas ganaron la votación: la Constitución se ratificó. Pero los antifederalistas ganaron las diez primeras enmiendas, que no estaban en el texto de 1787 y se añadieron precisamente porque ellos no lo aceptaban sin garantías. La Carta de Derechos, que hoy es lo más citado del documento, existe porque el bando perdedor no se rindió.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Reconstruir las dos posiciones</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Temía el desorden: estados enfrentados, deudas impagadas y un gobierno sin fuerza para sostener la unión.">
+        <div class="enun">¿Qué temía sobre todo el bando federalista?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que el gobierno federal fuera demasiado fuerte</div>
+          <div class="opcion" data-op="b">Que un gobierno débil dejara caer la unión en el desorden</div>
+          <div class="opcion" data-op="c">Que los estados perdieran sus tribunales</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Sostenía que un gobierno tan alejado del pueblo no podría ser vigilado, y que las cláusulas abiertas le permitirían fijar sus propios límites.">
+        <div class="enun">¿Cuál era la objeción central de «Bruto» a la Constitución?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que una república libre no puede sostenerse en un territorio tan extenso</div>
+          <div class="opcion" data-op="b">Que el presidente debía ser hereditario</div>
+          <div class="opcion" data-op="c">Que sobraban artículos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Se añadió en 1791 para conseguir la ratificación. Es la victoria del bando que perdió la votación.">
+        <div class="enun">La Carta de Derechos, las diez primeras enmiendas, se debe sobre todo a…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Una propuesta de la Convención de 1787</div>
+          <div class="opcion" data-op="b">Una decisión del Tribunal Supremo</div>
+          <div class="opcion" data-op="c">La presión antifederalista durante la ratificación</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Los dos lo invocan con razón: uno su tesis de la república pequeña, el otro su reparto de poderes. Mismo autor, conclusiones opuestas.">
+        <div class="enun">¿A qué autor citan los dos bandos en apoyo de posiciones contrarias?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">A Locke</div>
+          <div class="opcion" data-op="b">A Montesquieu</div>
+          <div class="opcion" data-op="c">A Jefferson</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Principio y cláusula</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Sin mirar la tabla de la sección 2, escriba los cinco principios y, al lado de cada uno, dónde se encuentra en el documento. Después compruebe. Añada una sexta línea con el principio que no está en el texto y diga de dónde viene.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si escribió «separación de poderes» y «controles y equilibrios» como si fueran lo mismo, revise. El primero reparte las funciones; el segundo permite que cada poder frene a los otros. Se puede tener el primero sin el segundo.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Dos visiones de la república</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Escriba dos párrafos cortos, uno por bando, defendiendo cada posición <strong>en primera persona y en sus mejores términos</strong>. La regla es que un partidario de ese bando debería poder firmar su párrafo sin protestar.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si uno de los dos párrafos le salió más flojo, probablemente es el bando con el que menos simpatiza. Reescríbalo hasta que los dos se sostengan. Esa es la habilidad que mide la práctica SSP.7, y la que el examen premia.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Un conflicto de hoy</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Busque una noticia reciente sobre una discrepancia entre el gobierno federal y un estado. Identifique qué principio constitucional está en juego y qué habrían dicho de ese caso un federalista y un antifederalista de 1788.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si el conflicto es sobre quién manda en una materia, es federalismo. Si es sobre si un poder se ha excedido frente a otro, son controles y equilibrios. La mayoría de las noticias caen en una de esas dos casillas.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 3.2</h2>
+    <p>Doce preguntas: cuatro de estructura y contenido de los artículos, cinco de identificar el principio en una situación dada, y tres de contraste federalista y antifederalista. Tiempo sugerido: 30 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de las Prácticas 1 y 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de comprensión constitucional, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Localiza el contenido en el artículo correcto</td>
+          <td>Confunde los artículos entre sí o no sabe cuántos hay.</td>
+          <td>Sitúa bien los tres primeros, duda con el IV al VII.</td>
+          <td>Asigna cada materia a su artículo sin vacilar.</td>
+          <td>Explica además por qué los tres primeros van en ese orden.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Explica cada principio con un ejemplo</td>
+          <td>Recita los nombres sin poder ilustrarlos.</td>
+          <td>Ilustra dos o tres, confunde separación con controles.</td>
+          <td>Da un ejemplo propio y correcto de los cinco.</td>
+          <td>Distingue lo que está en el texto de lo que se estableció después por la práctica.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Vincula principio y cláusula</td>
+          <td>Sabe los principios pero no dónde están escritos.</td>
+          <td>Localiza alguno, sobre todo el del Preámbulo.</td>
+          <td>Señala para los cinco la parte del documento donde se expresan.</td>
+          <td>Reconoce que un mismo principio puede apoyarse en varias cláusulas a la vez.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Reconstruye ambas posiciones sin caricaturizar</td>
+          <td>Presenta un bando como acertado y el otro como equivocado.</td>
+          <td>Expone los dos, pero uno queda claramente más débil.</td>
+          <td>Formula los dos miedos como preocupaciones razonables y distintas.</td>
+          <td>Muestra que los dos citaban al mismo autor y explica cómo era posible.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 3.2 y enlace con la 3.3</h2>
+    <p>Queda montado el aparato: siete artículos, cinco principios y un diseño que reparte el poder para que nadie lo acumule. Y queda una distinción que conviene no perder: <strong>una parte de lo que hoy llamamos constitucional está en el texto y otra parte se estableció después</strong>. El poder de los tribunales de anular una ley es el ejemplo mayor.</p>
+    <p>Queda también una lección sobre cómo se leen los debates. Federalistas y antifederalistas no fueron los sensatos contra los equivocados. Fueron dos grupos que temían dos peligros reales y distintos, y el documento que tenemos lleva la marca de los dos: el cuerpo lo escribieron los que ganaron, y las diez primeras enmiendas existen por los que perdieron.</p>
+    <p>Los seis fragmentos que leyó aquí son recortes. Los dos documentos están en el <a href="fuentes/index.html">Archivo de fuentes</a>, con su ficha y su apartado de qué sostiene y qué no: <a href="fuentes/federalista-10-51-1788.html">El Federalista</a> y <a href="fuentes/brutus-ensayo-1-1787.html">el primer ensayo de «Bruto»</a>.</p>
+    <p>La <strong><a href="soc-3-3.html">Lección 3.3</a></strong> baja del diseño a la práctica. El federalismo sobre el papel es un reparto ordenado de competencias; en la vida real es una discusión permanente sobre quién manda en qué. Ahí se verán la cláusula de supremacía y la Décima Enmienda tirando cada una en su dirección, que es exactamente lo que temía «Bruto».</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-3-3.html">Siguiente: Lección 3.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 3 · Lección 3.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. ¿Cuántos artículos tiene la Constitución en su texto original?',
+      ops: ['Tres', 'Siete', 'Diez', 'Veintisiete'],
+      correcta: 1, expl: 'Siete. Las veintisiete son las enmiendas, y las diez primeras de ellas forman la Carta de Derechos.' },
+
+    { enun: '2. El Artículo II establece…',
+      ops: ['El Congreso', 'La presidencia', 'Los tribunales', 'La reforma constitucional'],
+      correcta: 1, expl: 'Los tres primeros van en el orden en que actúa un gobierno: se hace la ley, se ejecuta, se juzga.' },
+
+    { enun: '3. ¿Qué artículo explica cómo se enmienda la Constitución?',
+      ops: ['El IV', 'El V', 'El VI', 'El VII'],
+      correcta: 1, expl: 'El Artículo V. El VI trae la cláusula de supremacía y el VII fijó que bastaban nueve estados para entrar en vigor.' },
+
+    { enun: '4. El Preámbulo, jurídicamente…',
+      ops: ['Otorga poderes al Congreso', 'No otorga ningún poder, pero declara de quién viene la autoridad', 'Es una enmienda posterior', 'Establece los tribunales'],
+      correcta: 1, expl: 'No concede competencias. Su valor está en las tres primeras palabras: la autoridad viene del pueblo.' },
+
+    { enun: '5. «Nosotros, el pueblo de los Estados Unidos» expresa el principio de…',
+      ops: ['Federalismo', 'Soberanía popular', 'Gobierno limitado', 'Separación de poderes'],
+      correcta: 1, expl: 'La autoridad sube del pueblo al gobierno, no baja de un rey. Es la teoría del contrato social convertida en fórmula de apertura.' },
+
+    { enun: '6. El presidente devuelve al Congreso una ley sin firmarla. Eso es…',
+      ops: ['Separación de poderes', 'Controles y equilibrios', 'Federalismo', 'Soberanía popular'],
+      correcta: 1, expl: 'Un poder frena a otro. La separación reparte las funciones; el control permite que se detengan entre sí.' },
+
+    { enun: '7. El Congreso decide destituir a un juez federal mediante juicio político. Eso es…',
+      ops: ['Federalismo', 'Gobierno limitado', 'Controles y equilibrios', 'Soberanía popular'],
+      correcta: 2, expl: 'De nuevo un poder frenando a otro, esta vez el legislativo sobre el judicial.' },
+
+    { enun: '8. Un estado legisla sobre una materia que la Constitución no atribuye a la Unión. Eso ilustra…',
+      ops: ['Federalismo', 'Separación de poderes', 'Controles y equilibrios', 'Soberanía popular'],
+      correcta: 0, expl: 'Es el reparto de competencias entre la Unión y los estados, formulado en la Décima Enmienda.' },
+
+    { enun: '9. El poder de los tribunales de anular una ley por inconstitucional…',
+      ops: ['Está en el Artículo III', 'Está en el Artículo VI', 'No está en el texto: lo estableció el Tribunal Supremo en 1803', 'Está en la Décima Enmienda'],
+      correcta: 2, expl: 'Marbury contra Madison. Una constitución es lo que dice más lo que se ha hecho con ella, y conviene distinguir ambas cosas.' },
+
+    { enun: '10. El miedo central del bando federalista era…',
+      ops: ['Un gobierno central demasiado fuerte', 'El desorden y la debilidad de la unión', 'La pérdida de los tribunales estatales', 'La monarquía'],
+      correcta: 1, expl: 'Miraban alrededor y veían estados enfrentados, deudas impagadas y un gobierno incapaz de sostener la unión.' },
+
+    { enun: '11. El miedo central del bando antifederalista era…',
+      ops: ['Que la unión se deshiciera', 'Que un gobierno lejano con poderes abiertos absorbiera a los estados', 'Que hubiera demasiados estados', 'Que el Congreso fuera muy pequeño'],
+      correcta: 1, expl: 'Sostenían que una república libre no se sostiene en un territorio tan extenso y que las cláusulas abiertas dejarían al gobierno fijar sus propios límites.' },
+
+    { enun: '12. La Carta de Derechos existe sobre todo porque…',
+      ops: ['La propuso la Convención de 1787', 'La impuso el Tribunal Supremo', 'Los antifederalistas no aceptaban ratificar sin garantías', 'La exigió Francia'],
+      correcta: 2, expl: 'Los federalistas ganaron la votación, pero las diez primeras enmiendas son la victoria del bando que perdió.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 3.3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>

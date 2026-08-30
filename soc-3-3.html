@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<!--
+  Lección 3.3 · El federalismo en la práctica
+  Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 3.3 · El federalismo en la práctica</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 3 — paleta azul heredada del plan curricular (--t3) */
+    --tema:    #0d47a1;
+    --tema-d:  #08306b;
+    --tema-bg: #e3f2fd;
+    --tema-bg2:#bbdefb;
+    --acento:  #1565c0;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #062350 0%, #08306b 55%, #0d47a1 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(6,35,80,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #08306b;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f8fbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #0b3a7d; font-weight: 600; }
+  .navlecciones .nav-sep { color: #47618a; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f8fbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #0d47a1; }
+
+  /* ══ COMPONENTES DEL TEMA 3 ═══════════════════════════════════ */
+  figure.linea-tiempo {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.linea-tiempo svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.linea-tiempo figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+  .lt-eje    { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto  { fill: var(--tema); }
+  .lt-ano    { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-hecho  { font-size: 11.5px; fill: #333; }
+  .lt-tick   { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Glosario politico */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt {
+    font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px;
+  }
+  dl.glosario dd {
+    margin: 4px 0 0; padding-left: 16px;
+    border-left: 3px solid var(--tema-bg2); font-size: 15px;
+  }
+  dl.glosario dd .en { font-style: italic; color: #555; font-size: 14px; }
+
+  /* Clasificacion de agravios */
+  .agravio-cita {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 10px 16px; margin: 10px 0;
+    font-size: 15px;
+  }
+  .agravio-cita .num {
+    display: inline-block; background: var(--tema); color: #fff;
+    border-radius: 5px; padding: 1px 9px; font-size: 12.5px;
+    font-weight: 700; margin-right: 8px;
+  }
+
+  /* Diagrama de controles y equilibrios */
+  figure.diagrama { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.diagrama svg { display:block; width:100%; height:auto; }
+  figure.diagrama figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .cb-tit { font-size:13px; font-weight:700; fill:#08306b; letter-spacing:.4px; }
+  .cb-sub { font-size:11px; fill:#37474f; }
+  .cb-rot { font-size:11.5px; fill:#0b3a7d; font-weight:600; }
+
+  /* Extractos enfrentados */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .fed  { background:#e3f2fd; border-left:6px solid #0d47a1; }
+  .enfrentados .anti { background:#f3e5f5; border-left:6px solid #6a1b9a; }
+  .enfrentados .lado h3 { margin:0 0 4px; font-size:15px; }
+  .enfrentados .fed h3  { color:#08306b; }
+  .enfrentados .anti h3 { color:#4a127a; }
+  .enfrentados .lado .quien { font-size:12.5px; color:#444; font-style:italic; margin:0 0 10px; }
+  .enfrentados .lado blockquote { margin:0; font-size:14.5px; }
+  .enfrentados .lado blockquote p { margin:0 0 8px; }
+  .enfrentados .lado .miedo {
+    margin-top:10px; font-size:14px; font-weight:700; padding-top:8px;
+    border-top:1px solid rgba(0,0,0,.12);
+  }
+  .enfrentados .fed .miedo  { color:#08306b; }
+  .enfrentados .anti .miedo { color:#4a127a; }
+
+  /* Clasificador de competencias (accesible: botones, no arrastrar y soltar) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .55; }
+  .comp .botones button.acierto { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; opacity: 1; }
+  .comp .botones button.fallo   { background: #ffebee; border-color: #c62828; color: #b71c1c; opacity: 1; }
+  .comp .exp { display: none; margin-top: 9px; font-size: 14px; }
+  .comp .exp.ok { color: #1b5e20; }
+  .comp .exp.no { color: #b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Organigrama de niveles de gobierno */
+  ol.niveles { list-style: none; margin: 14px 0; padding: 0; }
+  ol.niveles > li {
+    background: #fff; border-left: 6px solid var(--tema); border-radius: 0 9px 9px 0;
+    padding: 11px 16px; margin-bottom: 8px; font-size: 15px;
+  }
+  ol.niveles .nivel { font-weight: 700; color: var(--tema-d); display: block; font-size: 13px;
+    text-transform: uppercase; letter-spacing: .3px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales y principios constitucionales</div>
+    <h1>Lección 3.3 · El federalismo en la práctica</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 3.3</span>
+    <a class="nav-sig" href="index.html#tema-4">Siguiente: Tema 4 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Clasificar una competencia como federal, estatal o concurrente, y justificar la clasificación.</li>
+      <li>Explicar la cláusula de supremacía y la Décima Enmienda, y cómo se relacionan entre sí.</li>
+      <li>Identificar qué nivel de gobierno es responsable de un asunto concreto de la vida diaria.</li>
+      <li>Analizar un conflicto entre autoridad federal y estatal diciendo qué principio constitucional está en juego.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior dejó el aparato montado y una discusión sin cerrar. «Bruto» temía que el gobierno federal terminara decidiendo por sí mismo cuáles eran sus propios límites y absorbiera a los estados. Los federalistas respondieron que el reparto de poderes lo impediría.</p>
+    <p>Doscientos treinta y tantos años después, esa discusión sigue viva, y no como un debate de libro: como noticias. Cada vez que un estado y el gobierno federal chocan por una competencia, se está discutiendo lo mismo que en 1788.</p>
+    <p>Esta lección baja del diseño a la práctica, y empieza por lo más útil: saber a quién le toca cada cosa.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Las dos cláusulas que tiran en direcciones contrarias</h2>
+
+  <div class="bloque">
+    <p>El federalismo estadounidense descansa en dos frases cortas que apuntan a lados distintos. Entender la tensión entre ellas es entender el tema entero.</p>
+
+    <div class="documento">
+      <h2><span aria-hidden="true">📜</span> Cláusula de supremacía · Artículo VI</h2>
+      <p class="fuente">Constitución de los Estados Unidos, 1787. Traducción del curso. Documento de dominio público; el texto en inglés es el instrumento legal.</p>
+      <div class="carta">
+        <blockquote>
+          <p>Esta Constitución, y las leyes de los Estados Unidos que se dicten con arreglo a ella, y todos los tratados celebrados bajo la autoridad de los Estados Unidos, serán la ley suprema del país; y los jueces de cada estado quedarán obligados por ella, sin que obste nada en contrario en la constitución o en las leyes de cualquier estado.</p>
+        </blockquote>
+      </div>
+      <p><strong>Qué hace.</strong> Cuando una ley federal válida y una ley estatal chocan de frente, gana la federal. Fíjese en la condición: <em>que se dicten con arreglo a ella</em>. Una ley federal que exceda las competencias de la Unión no es suprema, porque no es válida.</p>
+    </div>
+
+    <div class="documento">
+      <h2><span aria-hidden="true">📜</span> Décima Enmienda · 1791</h2>
+      <p class="fuente">Carta de Derechos, ratificada en 1791. Traducción del curso. Documento de dominio público.</p>
+      <div class="carta">
+        <blockquote>
+          <p>Los poderes que la Constitución no delega en los Estados Unidos, ni prohíbe a los estados, quedan reservados a los estados respectivamente, o al pueblo.</p>
+        </blockquote>
+      </div>
+      <p><strong>Qué hace.</strong> Establece la regla por defecto. Si una materia no se le entregó a la Unión, es de los estados. Y no por casualidad: esta enmienda es una de las que exigieron los antifederalistas para aceptar la ratificación. Es la respuesta escrita al miedo de «Bruto».</p>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Cómo encajan.</strong> La Décima Enmienda dice <em>quién manda por defecto</em>: los estados, salvo en lo delegado. La cláusula de supremacía dice <em>quién gana cuando hay choque</em>: la Unión, siempre que actúe dentro de lo delegado. No se contradicen. Casi toda la discusión práctica es sobre dónde está exactamente la frontera de «lo delegado».
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Tres cestas: federal, estatal y concurrente</h2>
+
+  <div class="bloque">
+    <table class="reglas">
+      <caption>Los tres tipos de competencia</caption>
+      <thead>
+        <tr><th scope="col">Tipo</th><th scope="col">Quién la ejerce</th><th scope="col">De dónde sale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Delegada o federal</td><td>Solo la Unión</td><td>Está nombrada en la Constitución, sobre todo en el Artículo I</td></tr>
+        <tr><td>Reservada o estatal</td><td>Solo los estados</td><td>No está delegada ni prohibida: la Décima Enmienda la deja en los estados</td></tr>
+        <tr><td>Concurrente</td><td>Los dos niveles a la vez</td><td>Ninguno la tiene en exclusiva; cada uno la ejerce en su ámbito</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>La pregunta que resuelve casi todos los casos.</strong> ¿Aparece esta materia nombrada en la Constitución como competencia de la Unión? Si aparece, es federal. Si no aparece, mire si los dos niveles la ejercen de hecho: si ambos, es concurrente; si solo los estados, es reservada. Educación, licencias y matrimonio no se mencionan en el documento, y ahí está la razón de que sean estatales.
+    </div>
+
+    <div class="clasificador">
+      <h3>¿A quién le toca?</h3>
+      <p>Veinte competencias reales. Clasifique cada una y verá al momento por qué. Puede usar el teclado: tabulador para moverse y espacio o intro para elegir.</p>
+      <p class="marcador" id="marcador" role="status" aria-live="polite">Sin responder todavía.</p>
+      <div id="lista-comp"></div>
+      <button class="btn sec" id="btn-reiniciar-comp" type="button">Empezar de nuevo</button>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Dónde vive usted, según la Constitución</h2>
+
+  <div class="bloque">
+    <p>El federalismo no es una abstracción: es la razón de que unos trámites se hagan en una oficina y otros en otra. Así se apilan los niveles para alguien que vive en Chicago.</p>
+
+    <ol class="niveles">
+      <li><span class="nivel">Federal</span>Gobierno de los Estados Unidos. Moneda, defensa, correos, inmigración, comercio entre estados. Presidencia, Congreso y tribunales federales.</li>
+      <li><span class="nivel">Estatal</span>Estado de Illinois. Educación, licencias de conducir y profesionales, código penal, derecho de familia. Un gobernador, una asamblea general de dos cámaras y su propio poder judicial: el estado repite la estructura de tres poderes.</li>
+      <li><span class="nivel">Condado</span>Condado de Cook. Registros de la propiedad, tribunales de primera instancia, salud pública, cárcel del condado.</li>
+      <li><span class="nivel">Municipal</span>Ciudad de Chicago. Alcaldía y concejo municipal. Policía, bomberos, recogida de basura, licencias de negocio, ordenanzas locales.</li>
+      <li><span class="nivel">Distrito especial</span>El distrito escolar y otros distritos con fines específicos. Existen porque el estado los crea, y por eso la educación acaba decidiéndose muy cerca de casa aunque sea competencia estatal.</li>
+    </ol>
+
+    <div class="caja-tip">
+      <strong>Fíjese en el salto que no existe.</strong> Los condados, las ciudades y los distritos escolares <strong>no aparecen en la Constitución federal</strong>. Existen porque el estado los crea, y el estado puede modificarlos. Por eso hablar de tres niveles de gobierno es una simplificación cómoda: en realidad hay dos niveles constitucionales, la Unión y los estados, y todo lo demás es creación estatal.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Cuando los dos niveles chocan</h2>
+
+  <div class="bloque">
+    <p>Los conflictos competenciales no tienen todos la misma forma. Estos tres son distintos entre sí, y reconocer la forma es lo que permite analizarlos.</p>
+
+    <div class="ejemplo">
+      <span class="et">Forma 1 · Suelo federal</span>
+      <p><strong>El salario mínimo.</strong> La Unión fija una cifra mínima y los estados pueden situar la suya por encima, pero no por debajo. Illinois, por ejemplo, ha mantenido durante años un mínimo estatal superior al federal.</p>
+      <p><strong>Por qué no hay conflicto.</strong> Aquí las dos normas conviven: la federal marca un suelo y la estatal construye encima. Es competencia concurrente funcionando como está previsto. Mucha gente lo lee como un choque y no lo es.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Forma 2 · Condición para recibir fondos</span>
+      <p><strong>Las carreteras y las escuelas.</strong> La Unión no puede obligar a un estado a legislar en una materia reservada, pero sí puede ofrecerle dinero federal a cambio de que adopte determinada norma. El estado conserva la facultad de decir que no y quedarse sin los fondos.</p>
+      <p><strong>Qué principio está en juego.</strong> Formalmente no hay supremacía, porque nadie impone nada: hay un acuerdo. En la práctica se discute cuánta presión económica convierte una oferta en una obligación, y ese debate sigue abierto.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">Forma 3 · Choque frontal</span>
+      <p><strong>El cannabis.</strong> La ley federal lo mantiene entre las sustancias prohibidas. Varios estados, entre ellos Illinois, han legalizado su venta y su consumo bajo regulación estatal. Las dos normas dicen cosas incompatibles sobre la misma conducta.</p>
+      <p><strong>Qué principio está en juego.</strong> Supremacía frente a poderes reservados, en estado puro. La ley federal sigue vigente y los estados no pueden derogarla; lo que ha ocurrido es que la Unión ha optado en general por no perseguir la actividad que un estado autoriza. Es una convivencia de hecho, no una resolución jurídica del conflicto.</p>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>El método, en tres preguntas.</strong> Ante cualquier conflicto competencial que lea en la prensa: ¿la materia está delegada a la Unión, reservada a los estados o la ejercen los dos? ¿Las dos normas son incompatibles o pueden convivir? Y si son incompatibles, ¿está la Unión actuando dentro de lo que la Constitución le delega? Con esas tres respuestas ya sabe qué principio está en juego.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva · Analizar el conflicto</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Las dos normas conviven: la federal pone un suelo y la estatal construye encima. Es una competencia concurrente funcionando como está previsto.">
+        <div class="enun">Un estado fija un salario mínimo superior al federal. ¿Qué ocurre?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La ley federal anula la estatal por supremacía</div>
+          <div class="opcion" data-op="b">No hay conflicto: la federal es un suelo y la estatal puede ser más alta</div>
+          <div class="opcion" data-op="c">El estado se excede en sus competencias</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La cláusula dice «con arreglo a ella». Una ley federal fuera de las competencias delegadas no es válida, y lo que no es válido no puede ser supremo.">
+        <div class="enun">¿Puede una ley federal imponerse siempre sobre una estatal?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sí, siempre, sin excepción</div>
+          <div class="opcion" data-op="b">No, la estatal siempre prevalece en su territorio</div>
+          <div class="opcion" data-op="c">Solo si la ley federal se dictó dentro de las competencias que la Constitución delega</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="La Décima Enmienda fija la regla por defecto, y esa regla fue una de las exigencias antifederalistas para aceptar la ratificación. Es la respuesta escrita al miedo de «Bruto».">
+        <div class="enun">Una materia no aparece en la Constitución ni está prohibida a los estados. ¿De quién es?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">De los estados, por la Décima Enmienda</div>
+          <div class="opcion" data-op="b">De la Unión, por la cláusula de supremacía</div>
+          <div class="opcion" data-op="c">De nadie: nadie puede regularla</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="El estado puede rechazar el dinero. Como no hay imposición sino oferta, formalmente no interviene la supremacía; lo que se discute es cuánta presión económica convierte una oferta en obligación.">
+        <div class="enun">La Unión ofrece fondos a un estado a cambio de que adopte cierta norma. ¿Qué forma tiene ese caso?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Choque frontal resuelto por supremacía</div>
+          <div class="opcion" data-op="b">Una competencia delegada</div>
+          <div class="opcion" data-op="c">Una condición para recibir fondos, que el estado puede rechazar</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Sus propios trámites</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Haga una lista de ocho gestiones que haya hecho usted o alguien de su casa en el último año: renovar una licencia, matricular a un hijo, pagar impuestos, sacar un pasaporte, denunciar algo. Diga a qué nivel de gobierno corresponde cada una y por qué.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> el pasaporte es federal, porque la política exterior lo es. La licencia de conducir y la matrícula escolar son estatales, porque no aparecen en la Constitución. Los impuestos suelen ser los dos a la vez.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Un conflicto en la prensa</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Busque una noticia sobre una discrepancia entre el gobierno federal y un estado. Aplíquele las tres preguntas del método de la sección 4 y escriba un párrafo con el argumento de cada nivel de gobierno, <strong>en sus mejores términos</strong>.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si uno de los dos argumentos le sale claramente más débil, revíselo. Es la misma regla de la Lección 3.2 y la misma habilidad que mide la práctica SSP.7: reconstruir dos posiciones sin caricaturizar ninguna.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Las dos cláusulas con sus palabras</div>
+      <div class="cuerpo-act">
+        <span class="duracion">15 minutos</span>
+        <p>Escriba en dos frases, sin mirar, qué dice la cláusula de supremacía y qué dice la Décima Enmienda. Después añada una tercera frase explicando por qué no se contradicen.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> la tercera frase debe contener la palabra «delegado» o equivalente. Una fija quién manda por defecto; la otra, quién gana cuando hay choque, siempre que la Unión actúe dentro de lo delegado.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 3.3</h2>
+    <p>Doce preguntas: cinco de clasificación de competencias, cuatro de aplicación de la cláusula de supremacía y la Décima Enmienda, y tres de análisis de un conflicto competencial. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de federalismo, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clasifica competencias correctamente</td>
+          <td>Adivina, o supone que todo lo importante es federal.</td>
+          <td>Acierta las federales evidentes, falla con las concurrentes.</td>
+          <td>Clasifica las tres categorías y justifica con la Constitución o la Décima Enmienda.</td>
+          <td>Detecta los casos discutibles y explica por qué lo son.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Explica la relación entre supremacía y poderes reservados</td>
+          <td>Cree que las dos cláusulas se contradicen.</td>
+          <td>Sabe qué dice cada una, pero no cómo encajan.</td>
+          <td>Explica que una fija la regla por defecto y la otra quién gana en el choque.</td>
+          <td>Señala que la supremacía solo opera si la ley federal está dentro de lo delegado.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Identifica el nivel responsable en un caso concreto</td>
+          <td>No sabe a qué oficina corresponde un trámite corriente.</td>
+          <td>Distingue federal de estatal, pero no ve el papel de lo local.</td>
+          <td>Sitúa correctamente trámites de la vida diaria en su nivel.</td>
+          <td>Explica que condados y municipios existen porque el estado los crea, no por la Constitución federal.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Reconoce el principio en juego en un conflicto</td>
+          <td>Describe la noticia sin nombrar ningún principio.</td>
+          <td>Nombra un principio, pero no distingue las formas del conflicto.</td>
+          <td>Aplica las tres preguntas del método y nombra el principio.</td>
+          <td>Distingue el choque frontal de la convivencia y de la condición para recibir fondos.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 3.3 y cierre del Tema 3</h2>
+    <p>El federalismo sobre el papel es un reparto ordenado de competencias. En la vida real es una <strong>discusión permanente sobre dónde está la frontera de lo delegado</strong>, y esa discusión no se cerró en 1788 ni se va a cerrar.</p>
+    <p>Con esto termina el tema. La 3.1 mostró de dónde salieron las ideas y cómo se construye un argumento con ellas. La 3.2 mostró el aparato y a los dos bandos que discutieron por dos miedos distintos. Esta ha mostrado que el miedo antifederalista no era teórico: la frontera entre la Unión y los estados sigue siendo el terreno donde se pelea, y la Décima Enmienda, que ellos exigieron, sigue siendo el argumento que se invoca.</p>
+    <p>Vale la pena notar lo que ha hecho usted en estas tres lecciones. Ha leído el documento más citado del país como quien examina un expediente. Ha reconstruido las dos posiciones de un debate sin quedarse con la caricatura de ninguna. Y ha aplicado a noticias de hoy un texto de 1787. Eso es exactamente lo que el examen llama razonar con documentos.</p>
+    <p>El <strong>Tema 4</strong> entra en las tres ramas por dentro: cómo se convierte un proyecto en ley, qué hace de verdad una presidencia y cómo funciona el precedente judicial.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-4">Siguiente: Tema 4 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 3 · Lección 3.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Emitir moneda es una competencia…', ops: ['Federal', 'Estatal', 'Concurrente', 'Municipal'],
+      correcta: 0, expl: 'Está nombrada en la Constitución y además prohibida a los estados, para que no hubiera trece monedas distintas.' },
+    { enun: '2. Expedir licencias de conducir es una competencia…', ops: ['Federal', 'Estatal', 'Concurrente', 'De los tribunales'],
+      correcta: 1, expl: 'No aparece en la Constitución, así que por la Décima Enmienda queda en los estados. De ahí que las normas cambien de un estado a otro.' },
+    { enun: '3. Recaudar impuestos es una competencia…', ops: ['Solo federal', 'Solo estatal', 'Concurrente', 'Solo municipal'],
+      correcta: 2, expl: 'Los dos niveles cobran impuestos, y por eso existe una declaración federal y, en muchos estados, otra estatal.' },
+    { enun: '4. Dirigir las escuelas públicas es una competencia…', ops: ['Federal', 'Estatal', 'Concurrente', 'De los tribunales federales'],
+      correcta: 1, expl: 'La educación no se menciona en la Constitución. Es estatal, y suele delegarse en distritos escolares locales.' },
+    { enun: '5. Establecer tribunales es una competencia…', ops: ['Solo federal', 'Solo estatal', 'Concurrente', 'Reservada al pueblo'],
+      correcta: 2, expl: 'Existen tribunales federales y estatales, en paralelo y con competencias distintas.' },
+    { enun: '6. La cláusula de supremacía dice que la ley federal prevalece…', ops: ['Siempre y sin condición', 'Solo si se dictó con arreglo a la Constitución', 'Solo en tiempo de guerra', 'Solo si el estado lo acepta'],
+      correcta: 1, expl: 'La condición está en el propio texto. Una ley federal fuera de las competencias delegadas no es válida, y lo que no es válido no puede ser supremo.' },
+    { enun: '7. La Décima Enmienda establece que los poderes no delegados ni prohibidos…', ops: ['Se pierden', 'Quedan en los estados o en el pueblo', 'Pasan a la Unión', 'Los decide el Tribunal Supremo'],
+      correcta: 1, expl: 'Es la regla por defecto, y fue una de las exigencias antifederalistas para aceptar la ratificación.' },
+    { enun: '8. Las dos cláusulas, supremacía y Décima Enmienda…', ops: ['Se contradicen entre sí', 'Dicen lo mismo', 'Encajan: una fija la regla por defecto y la otra quién gana en el choque', 'Fueron aprobadas el mismo día'],
+      correcta: 2, expl: 'La discusión práctica no es cuál vale, sino dónde está exactamente la frontera de lo delegado.' },
+    { enun: '9. Los condados y los municipios existen porque…', ops: ['Los crea la Constitución federal', 'Los crea el estado', 'Los crea el Congreso', 'Se crean solos por población'],
+      correcta: 1, expl: 'No aparecen en la Constitución federal. Hay dos niveles constitucionales, la Unión y los estados, y lo demás es creación estatal.' },
+    { enun: '10. Un estado fija un salario mínimo más alto que el federal. Eso es…', ops: ['Un choque frontal', 'Una violación de la supremacía', 'Una competencia concurrente funcionando con un suelo federal', 'Una competencia delegada'],
+      correcta: 2, expl: 'Las dos normas conviven: la federal marca un suelo y la estatal construye encima. Mucha gente lo lee como conflicto y no lo es.' },
+    { enun: '11. La Unión ofrece fondos a un estado a cambio de que adopte una norma. Eso es…', ops: ['Supremacía directa', 'Una condición para recibir fondos, que el estado puede rechazar', 'Una competencia reservada', 'Un tratado'],
+      correcta: 1, expl: 'Formalmente no hay imposición sino oferta. Lo que se discute es cuánta presión económica convierte una oferta en obligación.' },
+    { enun: '12. Ante un conflicto competencial, la primera pregunta del método es…', ops: ['Quién ganó la última elección', '¿Está la materia delegada, reservada, o la ejercen los dos?', 'Cuánto dinero hay en juego', 'Qué dice la prensa'],
+      correcta: 1, expl: 'Después vienen las otras dos: si las normas pueden convivir, y si la Unión actúa dentro de lo delegado.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Con esto queda cerrado el Tema 3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* ---- Clasificador de competencias ----------------------------------
+     Se resuelve con botones, no arrastrando: el arrastre es inaccesible
+     con lector de pantalla y penoso en pantalla tactil. Con botones
+     funciona igual, ademas con teclado, y ensena lo mismo. ------------- */
+  var COMPETENCIAS = [{"t": "Emitir moneda", "c": "F", "e": "Solo la Unión acuña moneda. La Constitución se lo prohíbe expresamente a los estados, para que no hubiera trece monedas distintas."}, {"t": "Declarar la guerra", "c": "F", "e": "Es competencia del Congreso. Un estado no puede declarar la guerra a nadie."}, {"t": "Mantener las fuerzas armadas", "c": "F", "e": "El ejército y la marina son de la Unión. Los estados tienen guardia nacional, que es otra cosa."}, {"t": "Regular el comercio entre estados", "c": "F", "e": "La cláusula de comercio es una de las competencias federales de las que más se ha discutido, porque su alcance no está fijado de una vez."}, {"t": "Establecer el servicio de correos", "c": "F", "e": "Aparece nombrado entre las materias del Artículo I."}, {"t": "Firmar tratados con otros países", "c": "F", "e": "La política exterior corresponde a la Unión. Un estado no firma tratados."}, {"t": "Regular la inmigración y la naturalización", "c": "F", "e": "La naturalización figura entre las materias del Artículo I, y de ahí que sea federal."}, {"t": "Expedir licencias de conducir", "c": "E", "e": "No aparece en la Constitución, así que por la Décima Enmienda queda en los estados. Por eso las normas cambian de un estado a otro."}, {"t": "Dirigir las escuelas públicas", "c": "E", "e": "La educación no se menciona en la Constitución. Es competencia estatal, y suele delegarse en distritos escolares locales."}, {"t": "Organizar las elecciones", "c": "E", "e": "Los estados administran las elecciones, incluso las federales, aunque el Congreso puede regular algunos aspectos de estas últimas."}, {"t": "Expedir licencias de matrimonio", "c": "E", "e": "No está delegada a la Unión. Es de los estados, y por eso el trámite cambia según dónde se haga."}, {"t": "Crear los gobiernos municipales", "c": "E", "e": "Las ciudades y los condados existen porque el estado los crea. La Constitución federal no los menciona."}, {"t": "Dar licencia para ejercer una profesión", "c": "E", "e": "Médicos, electricistas, barberos: cada estado fija sus requisitos, y una licencia no vale automáticamente en otro."}, {"t": "Mantener la policía y los bomberos", "c": "E", "e": "Es el llamado poder de policía, reservado a los estados y ejercido casi siempre por los gobiernos locales."}, {"t": "Recaudar impuestos", "c": "C", "e": "Los dos niveles cobran impuestos. Por eso existe una declaración federal y, en muchos estados, otra estatal."}, {"t": "Construir y mantener carreteras", "c": "C", "e": "Hay carreteras federales y estatales, y muchas obras se pagan entre los dos niveles."}, {"t": "Pedir dinero prestado", "c": "C", "e": "Tanto la Unión como los estados emiten deuda."}, {"t": "Establecer tribunales", "c": "C", "e": "Existen tribunales federales y tribunales estatales, con competencias distintas y en paralelo."}, {"t": "Aprobar leyes y hacerlas cumplir", "c": "C", "e": "Los dos niveles legislan, cada uno en su ámbito. El choque entre esas leyes es el asunto de esta lección."}, {"t": "Fijar el salario mínimo", "c": "C", "e": "La Unión fija un mínimo y los estados pueden situarlo más alto, no más bajo. Es un caso de suelo federal."}];
+  var NOMBRES = { F: 'Federal', E: 'Estatal', C: 'Concurrente' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+
+  var respondidas = 0, aciertos = 0;
+
+  function actualizarMarcador() {
+    if (respondidas === 0) {
+      marcador.textContent = 'Sin responder todavía.';
+    } else {
+      marcador.textContent = 'Lleva ' + aciertos + ' de ' + respondidas +
+        ' correctas, sobre ' + COMPETENCIAS.length + ' competencias.';
+    }
+  }
+
+  function construir() {
+    lista.textContent = '';
+    respondidas = 0; aciertos = 0;
+    actualizarMarcador();
+
+    COMPETENCIAS.forEach(function (item, i) {
+      var caja = document.createElement('div');
+      caja.className = 'comp';
+
+      var texto = document.createElement('div');
+      texto.className = 'texto';
+      texto.id = 'comp-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'comp-txt-' + i);
+
+      var exp = document.createElement('div');
+      exp.className = 'exp';
+
+      ['F', 'E', 'C'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta');
+          respondidas++;
+
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+
+          if (clave === item.c) {
+            aciertos++;
+            b.className = 'acierto';
+            exp.className = 'exp ok';
+            exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) {
+              if (o.textContent === NOMBRES[item.c]) o.className = 'acierto';
+            });
+            exp.className = 'exp no';
+            exp.textContent = 'Es ' + NOMBRES[item.c].toLowerCase() + '. ' + item.e;
+          }
+          exp.style.display = 'block';
+          actualizarMarcador();
+        });
+        botones.appendChild(b);
+      });
+
+      caja.appendChild(botones);
+      caja.appendChild(exp);
+      lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
