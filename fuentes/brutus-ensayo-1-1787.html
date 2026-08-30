@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+  Archivo de fuentes · Primer ensayo de «Bruto», 1787
+  Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+  Los documentos originales son de dominio público.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archivo de fuentes · Primer ensayo de «Bruto», 1787</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Archivo de fuentes — neutro de tinta y papel, fuera de la secuencia
+       de ocho colores de los temas. Un documento puede servir a varios temas,
+       asi que el Archivo no lleva el color de ninguno. */
+    --tema:    #2b2b2b;
+    --tema-d:  #171717;
+    --tema-bg: #f0efed;
+    --tema-bg2:#d9d7d3;
+    --acento:  #44403c;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #0d0d0d 0%, #171717 55%, #2b2b2b 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(20,20,18,.30);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #171717;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #302e2b; font-weight: 600; }
+  .navlecciones .nav-sep { color: #57534e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #302e2b;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #302e2b; }
+  .ficha-fuente a { color: var(--tema-d); }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+  .carta blockquote .dicho {
+    display: block; background: var(--tema-bg); border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fbfaf8;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+  details.original .cuerpo-original .dicho {
+    display: block; background: #f2f0ed; border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption {
+    caption-side: top; text-align: left; font-weight: 700;
+    color: var(--tema-d); padding-bottom: 8px; font-size: 15px;
+  }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #171717; }
+
+  /* Lista de agravios numerada (documentos fundacionales) */
+  ol.agravios, ol.subagravios { list-style: none; margin: 12px 0; padding-left: 0; }
+  ol.agravios > li {
+    position: relative; padding: 8px 0 8px 46px;
+    border-top: 1px solid var(--tema-bg2); font-size: 15px;
+  }
+  ol.subagravios { margin: 10px 0 0; }
+  ol.subagravios > li {
+    position: relative; padding: 6px 0 6px 46px;
+    border-top: 1px dotted var(--tema-bg2); font-size: 14.5px; color: #3a3a3a;
+  }
+  .ag-num {
+    position: absolute; left: 0; top: 8px;
+    background: var(--tema-bg2); color: var(--tema-d);
+    min-width: 30px; height: 22px; line-height: 22px; text-align: center;
+    border-radius: 5px; font-size: 12.5px; font-weight: 700;
+  }
+  ol.subagravios .ag-num { background: #e6e4e0; top: 6px; }
+
+  /* Bloque bilingue de frases clave */
+  table.bilingue { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 14px 0; }
+  table.bilingue caption {
+    caption-side: top; text-align: left; font-size: 13px; color: #444;
+    padding: 6px 0; font-style: italic;
+  }
+  table.bilingue th, table.bilingue td {
+    border: 1px solid var(--tema-bg2); padding: 8px 12px; text-align: left; vertical-align: top;
+  }
+  table.bilingue th { background: var(--tema); color: #ffffff; font-size: 13px; }
+  table.bilingue td.en { font-style: italic; color: #3a3a3a; width: 46%; }
+
+  .partes { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .partes .parte {
+    flex: 1 1 200px; background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 16px;
+  }
+  .partes .parte h3 { margin: 0 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: .3px; }
+  .partes .parte p { margin: 0; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Archivo de fuentes · Tema 3 · Cívica I: documentos fundacionales</div>
+    <h1>Primer ensayo de «Bruto», 18 de octubre de 1787</h1>
+    <div class="meta">Fuente primaria · Prensa de campaña contra la ratificación · Nueva York, 1787</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="../index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Bruto, ensayo primero</span>
+    <a class="nav-sig" href="../soc-3-2.html">Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="ficha-fuente">
+    <dl>
+      <dt>Documento</dt>
+      <dd>Primer ensayo de «Bruto», dirigido a los ciudadanos del estado de Nueva York</dd>
+      <dt>Autor</dt>
+      <dd>Desconocido. Publicado con seudónimo. Véase la nota sobre la autoría, más abajo</dd>
+      <dt>Fecha</dt>
+      <dd>18 de octubre de 1787, nueve días antes del primer número de <em>El Federalista</em></dd>
+      <dt>Lugar</dt>
+      <dd><em>New York Journal</em>. La serie llegó a dieciséis ensayos, hasta abril de 1788</dd>
+      <dt>Propósito declarado</dt>
+      <dd>Persuadir a los votantes de Nueva York de <strong>no</strong> ratificar la Constitución, o de no hacerlo sin cambios</dd>
+      <dt>Tipo de fuente</dt>
+      <dd>Primaria. Escrita por un participante en el debate, mientras el debate ocurría</dd>
+      <dt>Original</dt>
+      <dd>Texto completo en inglés:<br>
+        <a href="https://teachingamericanhistory.org/document/brutus-i/">Brutus I · Teaching American History</a><br>
+        <a href="https://constitution.org/1-Constitution/afp/brutus00.htm">Serie completa de los ensayos de Brutus · Constitution Society</a></dd>
+      <dt>Derechos</dt>
+      <dd>Dominio público. Publicado en 1787. Verificado el 30 de agosto de 2026</dd>
+      <dt>Se usa en</dt>
+      <dd>Lección 3.2. Documento pareja de <a href="federalista-10-51-1788.html">El Federalista, números 10 y 51</a>.</dd>
+    </dl>
+    <p class="nota-lengua">La traducción al español es de este curso. El original en inglés no se reproduce aquí: está enlazado arriba, en repositorios que lo custodian y que verifican mejor que una copia nuestra.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <strong>Esta ficha contiene extractos extensos, no el ensayo completo.</strong> Es la única excepción de todo el Archivo a la regla de guardar el documento entero, y conviene declararla. Los ensayos del debate ratificador son largos y buena parte de cada uno es preámbulo y cortesía dirigidos al lector de un periódico de 1787. Aquí se traduce el <strong>núcleo argumentativo</strong>: los pasajes donde se sostiene la tesis. El texto íntegro en inglés está enlazado en la ficha, y lo que se omite es materia de transición, no argumento.
+  </div>
+
+  <div class="caja-atencion">
+    <strong>Quién escribió esto: no lo sabemos con certeza.</strong> Durante mucho tiempo se atribuyó a Robert Yates, juez de Nueva York que asistió a la Convención de Filadelfia y se marchó descontento. Estudios posteriores, incluidos análisis del estilo, han señalado a Melancton Smith, y en 2025 apareció evidencia documental que refuerza esa segunda atribución. Otras propuestas mencionan a John Williams. <strong>La cuestión no está zanjada.</strong>
+    <br><br>
+    Esta ficha lo declara en lugar de elegir un nombre porque establecer el origen de un documento forma parte de leerlo, y a veces la respuesta honesta es que el origen no está establecido. Es exactamente lo que enseñó la Lección 1.2, aplicado a un documento de primera importancia.
+  </div>
+
+
+  <h2 class="seccion" id="contexto">Contexto: la voz que perdió y ganó</h2>
+
+  <div class="bloque">
+    <p>Nueve días antes de que apareciera el primer número de <em>El Federalista</em>, alguien firmando «Bruto» empezó a publicar en el <em>New York Journal</em> la crítica más seria que recibió la Constitución. El seudónimo no es casual: evoca al romano que participó en el asesinato de César para impedir que acabara con la república.</p>
+    <p>Sus ensayos obligaron a los federalistas a explicarse mejor. Y aunque perdieron la votación, consiguieron algo: la Carta de Derechos existe porque este bando no aceptaba ratificar sin garantías escritas.</p>
+  </div>
+
+  <h2 class="seccion" id="tesis">La tesis: una república libre no cabe en un territorio inmenso</h2>
+
+  <div class="carta">
+    <h3 class="encab-carta">Por qué el tamaño importa</h3>
+    <blockquote>
+      <p>En una república, las costumbres, los sentimientos y los intereses del pueblo deben ser semejantes. Si no lo son, habrá un choque constante de opiniones, y los representantes de una parte estarán empeñados en oponerse a los de otra.</p>
+      <p>En un gobierno republicano libre, la confianza del pueblo en sus gobernantes es esencial. Y esa confianza no puede existir donde el pueblo no conoce a quienes lo gobiernan ni puede vigilarlos de cerca.</p>
+      <p>Un territorio de la extensión de los Estados Unidos, habitado por gentes de costumbres tan distintas, no puede gobernarse mediante una legislatura única sin que esta se vea obligada a emplear la fuerza para hacer cumplir sus leyes.</p>
+    </blockquote>
+  </div>
+
+  <h2 class="seccion" id="clausulas">Las dos cláusulas peligrosas</h2>
+
+  <div class="bloque">
+    <p>La parte más aguda del ensayo no es filosófica: es una lectura técnica del texto propuesto. «Bruto» señala dos cláusulas y predice qué se hará con ellas.</p>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">Lo necesario y conveniente, unido a la supremacía</h3>
+    <blockquote>
+      <p>La cláusula que faculta al Congreso para dictar todas las leyes necesarias y convenientes para llevar a efecto los poderes que se le confieren le da autoridad para aprobar cualquier ley que juzgue conveniente a ese fin.</p>
+      <p>Y como esta Constitución, y las leyes dictadas conforme a ella, han de ser la ley suprema del país, sin que obste nada en contrario en las constituciones o las leyes de los estados, se sigue que los gobiernos estatales quedarán sin autoridad allí donde el general decida ejercerla.</p>
+      <p>Este gobierno tendrá facultad para juzgar por sí mismo la extensión de sus propios poderes, y no habrá quien lo corrija.</p>
+    </blockquote>
+  </div>
+
+  <div class="caja-tip">
+    <strong>La frase que conviene subrayar.</strong> Que el gobierno federal terminaría <em>juzgando por sí mismo la extensión de sus propios poderes</em> es la predicción concreta de este documento. La Lección 3.3 trabaja sobre exactamente esa frontera, doscientos treinta y ocho años después, y la discusión sigue abierta. Lo que hay que ver no es si acertó o se equivocó, sino que la pregunta que planteó sigue siendo la pregunta.
+  </div>
+
+  <h2 class="seccion" id="sostiene">Qué sostiene este documento y qué no sostiene</h2>
+
+  <div class="bloque">
+    <table class="reglas">
+      <caption>Alcance probatorio del documento</caption>
+      <thead>
+        <tr><th scope="col">Sostiene</th><th scope="col">No sostiene</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Qué objeciones concretas se hicieron a la Constitución antes de ratificarla, y sobre qué cláusulas.</td>
+          <td>Quién las hizo. La autoría no está establecida, y eso hay que decirlo cada vez que se cita.</td>
+        </tr>
+        <tr>
+          <td>Que la crítica antifederalista era técnica y no solo emocional: leía el articulado y señalaba cláusulas.</td>
+          <td>Que todos los antifederalistas pensaran así. Fue un bando heterogéneo, unido más por lo que rechazaba que por un programa común.</td>
+        </tr>
+        <tr>
+          <td>Que la tensión entre supremacía y poderes estatales se previó desde el primer momento.</td>
+          <td>Que la predicción se haya cumplido. Eso es una discusión histórica y política, no un dato que este documento pruebe.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Cómo leerlo junto a su pareja.</strong> «Bruto» y <em>El Federalista</em> invocan los dos a Montesquieu, y los dos con razón: uno su tesis de que la libertad solo se sostiene en repúblicas pequeñas, el otro su reparto de poderes. Mismo autor, mismo país, mismos meses, conclusiones opuestas. Ninguno miente. Es la lección del expediente de 1905, ahora en una discusión constitucional.
+    </div>
+  </div>
+
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="../soc-3-2.html">Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 3 · Archivo de fuentes · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026 la traducción y la ficha. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.
+      Los documentos originales son de dominio público.</p>
+  </footer>
+
+</div>
+</body>
+</html>

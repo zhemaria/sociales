@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--
+  Archivo de fuentes · El Federalista, números 10 y 51, 1787-1788
+  Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+  Los documentos originales son de dominio público.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archivo de fuentes · El Federalista, números 10 y 51, 1787-1788</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Archivo de fuentes — neutro de tinta y papel, fuera de la secuencia
+       de ocho colores de los temas. Un documento puede servir a varios temas,
+       asi que el Archivo no lleva el color de ninguno. */
+    --tema:    #2b2b2b;
+    --tema-d:  #171717;
+    --tema-bg: #f0efed;
+    --tema-bg2:#d9d7d3;
+    --acento:  #44403c;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #0d0d0d 0%, #171717 55%, #2b2b2b 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(20,20,18,.30);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #171717;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #302e2b; font-weight: 600; }
+  .navlecciones .nav-sep { color: #57534e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #302e2b;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #302e2b; }
+  .ficha-fuente a { color: var(--tema-d); }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+  .carta blockquote .dicho {
+    display: block; background: var(--tema-bg); border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fbfaf8;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+  details.original .cuerpo-original .dicho {
+    display: block; background: #f2f0ed; border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption {
+    caption-side: top; text-align: left; font-weight: 700;
+    color: var(--tema-d); padding-bottom: 8px; font-size: 15px;
+  }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #171717; }
+
+  /* Lista de agravios numerada (documentos fundacionales) */
+  ol.agravios, ol.subagravios { list-style: none; margin: 12px 0; padding-left: 0; }
+  ol.agravios > li {
+    position: relative; padding: 8px 0 8px 46px;
+    border-top: 1px solid var(--tema-bg2); font-size: 15px;
+  }
+  ol.subagravios { margin: 10px 0 0; }
+  ol.subagravios > li {
+    position: relative; padding: 6px 0 6px 46px;
+    border-top: 1px dotted var(--tema-bg2); font-size: 14.5px; color: #3a3a3a;
+  }
+  .ag-num {
+    position: absolute; left: 0; top: 8px;
+    background: var(--tema-bg2); color: var(--tema-d);
+    min-width: 30px; height: 22px; line-height: 22px; text-align: center;
+    border-radius: 5px; font-size: 12.5px; font-weight: 700;
+  }
+  ol.subagravios .ag-num { background: #e6e4e0; top: 6px; }
+
+  /* Bloque bilingue de frases clave */
+  table.bilingue { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 14px 0; }
+  table.bilingue caption {
+    caption-side: top; text-align: left; font-size: 13px; color: #444;
+    padding: 6px 0; font-style: italic;
+  }
+  table.bilingue th, table.bilingue td {
+    border: 1px solid var(--tema-bg2); padding: 8px 12px; text-align: left; vertical-align: top;
+  }
+  table.bilingue th { background: var(--tema); color: #ffffff; font-size: 13px; }
+  table.bilingue td.en { font-style: italic; color: #3a3a3a; width: 46%; }
+
+  .partes { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .partes .parte {
+    flex: 1 1 200px; background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 16px;
+  }
+  .partes .parte h3 { margin: 0 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: .3px; }
+  .partes .parte p { margin: 0; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Archivo de fuentes · Tema 3 · Cívica I: documentos fundacionales</div>
+    <h1>El Federalista, números 10 y 51</h1>
+    <div class="meta">Fuente primaria · Prensa de campaña por la ratificación · Nueva York, 1787–1788</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="../index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">El Federalista</span>
+    <a class="nav-sig" href="../soc-3-2.html">Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="ficha-fuente">
+    <dl>
+      <dt>Documento</dt>
+      <dd><em>El Federalista</em>, números 10 y 51</dd>
+      <dt>Autor</dt>
+      <dd>James Madison, en los dos casos. Los ochenta y cinco artículos de la serie los escribieron Alexander Hamilton, James Madison y John Jay, todos firmados con el seudónimo «Publio»</dd>
+      <dt>Fechas</dt>
+      <dd>El número 10, el 22 de noviembre de 1787. El número 51, el 6 de febrero de 1788</dd>
+      <dt>Lugar</dt>
+      <dd>Publicados en la prensa de Nueva York durante la campaña por la ratificación</dd>
+      <dt>Propósito declarado</dt>
+      <dd>Persuadir a los votantes del estado de Nueva York de ratificar la Constitución. No es un texto neutral ni pretende serlo: es propaganda de campaña de altísima calidad</dd>
+      <dt>Tipo de fuente</dt>
+      <dd>Primaria. Escrita por participantes en el debate, mientras el debate ocurría</dd>
+      <dt>Original</dt>
+      <dd>Texto completo en inglés en la Biblioteca del Congreso:<br>
+        <a href="https://guides.loc.gov/federalist-papers">The Federalist Papers · Library of Congress</a></dd>
+      <dt>Derechos</dt>
+      <dd>Dominio público. Publicado en 1787 y 1788. Verificado el 30 de agosto de 2026</dd>
+      <dt>Se usa en</dt>
+      <dd>Lección 3.2. Documento pareja de <a href="brutus-ensayo-1-1787.html">los ensayos de «Bruto»</a>.</dd>
+    </dl>
+    <p class="nota-lengua">La traducción al español es de este curso. El original en inglés no se reproduce aquí: está enlazado arriba, en repositorios que lo custodian y que verifican mejor que una copia nuestra.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <strong>Esta ficha contiene extractos extensos, no el ensayo completo.</strong> Es la única excepción de todo el Archivo a la regla de guardar el documento entero, y conviene declararla. Los ensayos del debate ratificador son largos y buena parte de cada uno es preámbulo y cortesía dirigidos al lector de un periódico de 1787. Aquí se traduce el <strong>núcleo argumentativo</strong>: los pasajes donde se sostiene la tesis. El texto íntegro en inglés está enlazado en la ficha, y lo que se omite es materia de transición, no argumento.
+  </div>
+
+
+  <h2 class="seccion" id="contexto">Contexto: quién escribe y para qué</h2>
+
+  <div class="bloque">
+    <p>Escrita la Constitución en Filadelfia en 1787, hacía falta que la ratificaran nueve estados. Nueva York era decisivo y estaba lejos de decidido. Entre octubre de 1787 y agosto de 1788, tres partidarios de la ratificación publicaron ochenta y cinco artículos en la prensa neoyorquina firmados «Publio».</p>
+    <p>Conviene retener esto antes de leer una sola línea: <strong>son textos de campaña</strong>. Se escribieron para ganar una votación. Eso no los hace falsos ni menos valiosos —son de lo mejor que se ha escrito sobre gobierno— pero sí explica qué callan y qué subrayan. La Lección 1.2 lo llamaba propósito, y aquí está declarado sin disimulo.</p>
+  </div>
+
+  <h2 class="seccion" id="n10">Número 10 · El problema de las facciones</h2>
+
+  <div class="bloque">
+    <p>Madison responde a la objeción más seria de sus adversarios: que una república grande no puede ser libre. Su respuesta invierte el argumento.</p>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">Qué es una facción y por qué no se puede eliminar</h3>
+    <blockquote>
+      <p>Por facción entiendo un número de ciudadanos, sean mayoría o minoría, unidos y movidos por algún impulso común de pasión o de interés contrario a los derechos de los demás ciudadanos o a los intereses permanentes del conjunto de la comunidad.</p>
+      <p>Hay dos maneras de remediar los males de la facción: quitar sus causas o controlar sus efectos. Y hay a su vez dos maneras de quitar sus causas: destruir la libertad esencial para su existencia, o dar a todos los ciudadanos las mismas opiniones, las mismas pasiones y los mismos intereses.</p>
+      <p>El primer remedio es peor que la enfermedad. La libertad es al espíritu de partido lo que el aire al fuego: un alimento sin el cual se apaga al instante. Pero abolir la libertad porque alimenta la facción sería tan insensato como desear que se acabara el aire porque da al fuego su poder destructor.</p>
+      <p>El segundo es tan impracticable como el primero sería insensato. Mientras la razón del hombre siga siendo falible y él siga en libertad de ejercerla, se formarán opiniones distintas.</p>
+    </blockquote>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">La solución: una república grande</h3>
+    <blockquote>
+      <p>Si no se puede quitar la causa, el remedio ha de buscarse en los medios de controlar sus efectos.</p>
+      <p>Extiéndase la esfera y se abarcará una mayor variedad de partidos y de intereses; será entonces menos probable que una mayoría del conjunto tenga un motivo común para invadir los derechos de los demás ciudadanos; y, si ese motivo común existe, resultará más difícil a quienes lo sientan descubrir su propia fuerza y actuar de común acuerdo.</p>
+    </blockquote>
+  </div>
+
+  <div class="caja-tip">
+    <strong>El giro que hay que ver.</strong> Sus adversarios decían que una república solo sobrevive si es pequeña y su gente se parece. Madison acepta el diagnóstico —las facciones son inevitables— y da la vuelta a la receta: precisamente porque son inevitables, conviene un territorio <em>grande</em> y variado, donde ninguna llegue a ser mayoría. Es el mismo hecho leído al revés.
+  </div>
+
+  <h2 class="seccion" id="n51">Número 51 · Que el poder detenga al poder</h2>
+
+  <div class="bloque">
+    <p>Aquí Madison explica por qué la Constitución reparte el poder como lo reparte, y lo hace apoyándose en una idea de la naturaleza humana que no adorna.</p>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">Por qué hacen falta controles</h3>
+    <blockquote>
+      <p>La gran seguridad contra la concentración gradual de varios poderes en un mismo departamento consiste en dar a quienes administran cada uno los medios constitucionales y los móviles personales necesarios para resistir las invasiones de los demás.</p>
+      <p>Es preciso que la ambición se disponga de modo que contrarreste a la ambición. El interés del hombre ha de ir unido a los derechos constitucionales del puesto que ocupa.</p>
+      <p>Puede que sea un reproche a la naturaleza humana que hagan falta tales recursos para contener los abusos del gobierno. Pero ¿qué es el gobierno mismo sino el mayor de todos los reproches a la naturaleza humana? Si los hombres fueran ángeles, no haría falta gobierno alguno. Si fueran ángeles quienes gobiernan a los hombres, no harían falta controles externos ni internos sobre el gobierno.</p>
+      <p>Al organizar un gobierno que han de administrar hombres sobre hombres, la gran dificultad está en esto: primero hay que capacitar al gobierno para controlar a los gobernados, y en seguida obligarlo a controlarse a sí mismo.</p>
+    </blockquote>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">La doble seguridad del federalismo</h3>
+    <blockquote>
+      <p>En la república compuesta de América, el poder que el pueblo entrega se divide primero entre dos gobiernos distintos, y después la porción que toca a cada uno se subdivide entre departamentos separados. De ahí nace una doble seguridad para los derechos del pueblo: los dos gobiernos se controlarán uno a otro, y a la vez cada uno se controlará a sí mismo.</p>
+    </blockquote>
+  </div>
+
+  <h2 class="seccion" id="sostiene">Qué sostiene este documento y qué no sostiene</h2>
+
+  <div class="bloque">
+    <table class="reglas">
+      <caption>Alcance probatorio del documento</caption>
+      <thead>
+        <tr><th scope="col">Sostiene</th><th scope="col">No sostiene</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Qué razones daban públicamente los partidarios de la ratificación, y con qué argumentos esperaban convencer.</td>
+          <td>Que esas fueran las razones de todos los que votaron a favor. Es la voz de tres hombres, no de un bando entero.</td>
+        </tr>
+        <tr>
+          <td>Cómo entendían los autores el diseño de la Constitución en 1788.</td>
+          <td>Qué significa hoy una cláusula. Un texto de campaña no es una interpretación autorizada, aunque los tribunales lo citen.</td>
+        </tr>
+        <tr>
+          <td>Que la objeción del territorio extenso era lo bastante seria como para dedicarle un ensayo entero.</td>
+          <td>Que la respuesta de Madison fuera correcta. La historia posterior no ha zanjado esa discusión.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Cómo leerlo junto a su pareja.</strong> Este documento y los ensayos de «Bruto» se escribieron en la misma ciudad, en los mismos meses y para los mismos lectores. Leídos por separado, cada uno convence. Leídos juntos, se ve que discuten sobre un hecho que ninguno de los dos puede probar: qué le ocurre a una república cuando se hace muy grande. Es el ejercicio de la Lección 1.3 aplicado a un debate constitucional.
+    </div>
+  </div>
+
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="../soc-3-2.html">Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 3 · Archivo de fuentes · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026 la traducción y la ficha. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.
+      Los documentos originales son de dominio público.</p>
+  </footer>
+
+</div>
+</body>
+</html>
