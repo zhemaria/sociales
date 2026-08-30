@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<!--
+  Lección 5.2 · El proceso electoral: partidos, campañas y colegio electoral
+  Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 5.2 · El proceso electoral: partidos, campañas y colegio electoral</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 5 — paleta verde azulado heredada del plan curricular (--t5) */
+    --tema:    #00695c;
+    --tema-d:  #004d40;
+    --tema-bg: #e0f2f1;
+    --tema-bg2:#b2dfdb;
+    --acento:  #00796b;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #00332b 0%, #004d40 55%, #00695c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,51,43,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #004d40;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f7fcfb; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #12564c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a726c; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f7fcfb;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #00695c; }
+
+  /* ══ COMPONENTES DEL TEMA 5 ═════════════════════════════════ */
+  figure.linea-tiempo { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.linea-tiempo svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.linea-tiempo figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .lt-eje   { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto { fill: var(--tema); }
+  .lt-ley   { fill: #fff; stroke: var(--tema); stroke-width: 2.5; }
+  .lt-ano   { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-que   { font-size: 11.5px; fill: #333; }
+  .lt-tick  { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Emparejador de casos y enmiendas */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 7px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 13px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de enmiendas */
+  .enmiendas { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+  .enmiendas .em {
+    flex:1 1 210px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:11px 15px;
+  }
+  .enmiendas .em .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .enmiendas .em p { margin:0; font-size:14.5px; }
+
+  /* Posturas enfrentadas (mismo patrón que la Lección 3.2) */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .favor  { background:#e0f2f1; border-left:6px solid #00695c; }
+  .enfrentados .contra { background:#fff3e0; border-left:6px solid #8a4b00; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .favor h3  { color:#004d40; }
+  .enfrentados .contra h3 { color:#5C3900; }
+  .enfrentados .lado ol { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#80cbc4; stroke-width:1.5; }
+  .g-reja   { stroke:#e0f2f1; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-rot    { font-size:11px; fill:#004d40; }
+  .g-rot-eje{ font-size:12px; fill:#004d40; font-weight:700; }
+  .g-valor  { font-size:10.5px; fill:#004d40; font-weight:700; }
+
+  /* Anuncio de campaña para analizar */
+  .anuncio { background:#fff; border:2px dashed var(--tema); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .anuncio .et-anuncio {
+    display:inline-block; background:var(--tema); color:#fff; font-size:12px; font-weight:700;
+    padding:3px 12px; border-radius:12px; margin-bottom:8px; letter-spacing:.3px;
+  }
+  .anuncio blockquote { margin:0; font-size:15.5px; font-style:italic; color:#333; }
+
+  .g-sec-1 { fill: #004d40; }
+  .g-sec-2 { fill: #00695c; }
+  .g-sec-3 { fill: #26a69a; }
+  .g-sec-4 { fill: #80cbc4; }
+  .g-sec-5 { fill: #b2dfdb; }
+
+  /* Clasificador (mismo patrón accesible que la Lección 5.1) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción: derechos, elecciones y finanzas públicas</div>
+    <h1>Lección 5.2 · El proceso electoral: partidos, campañas y colegio electoral</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 5.2</span>
+    <a class="nav-sig" href="soc-5-3.html">Siguiente: Lección 5.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Describir el recorrido electoral desde las primarias hasta la toma de posesión.</li>
+      <li>Explicar cómo funciona el colegio electoral y por qué el voto popular y el electoral pueden divergir.</li>
+      <li>Reconstruir los argumentos a favor y en contra del colegio electoral sin caricaturizar ninguno.</li>
+      <li>Interpretar datos de participación sin sobreinterpretarlos, e identificar técnicas persuasivas en material de campaña.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior terminó con una idea: un derecho escrito y un derecho ejercido no son lo mismo. Aquí entramos en el ejercicio.</p>
+    <p>Y entramos en un terreno donde hay desacuerdo real. Sobre el colegio electoral se discute desde hace más de un siglo, y esa discusión no se resuelve con datos: descansa sobre una pregunta previa que cada persona responde según lo que crea que debe ser una elección presidencial. Este curso <strong>no toma partido</strong>, y la sección 3 explica por qué y expone las dos posiciones con el mismo cuidado.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. El recorrido de una elección presidencial</h2>
+
+  <div class="bloque">
+    <p>Entre que alguien anuncia su candidatura y toma posesión pasa más de un año, en cinco etapas.</p>
+
+    <div class="ejemplo">
+      <span class="et">Las cinco etapas</span>
+      <div class="paso"><span class="n" aria-hidden="true">1</span><strong>Primarias y asambleas.</strong> Cada partido elige a su candidato, estado por estado. No compiten los partidos entre sí: compiten los aspirantes dentro de cada uno.</div>
+      <div class="paso"><span class="n" aria-hidden="true">2</span><strong>Convención del partido.</strong> Se proclama oficialmente al candidato y se aprueba el programa.</div>
+      <div class="paso"><span class="n" aria-hidden="true">3</span><strong>Campaña general.</strong> Ahora sí compiten entre partidos, con debates y propaganda.</div>
+      <div class="paso"><span class="n" aria-hidden="true">4</span><strong>Día de la elección.</strong> Los votantes eligen, en la práctica, a los electores de su estado.</div>
+      <div class="paso"><span class="n" aria-hidden="true">5</span><strong>Colegio electoral y recuento.</strong> Los electores votan, el Congreso hace el recuento oficial y el ganador toma posesión.</div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Un detalle que sorprende a casi todo el mundo.</strong> Cuando usted marca la papeleta presidencial, técnicamente no vota al candidato: <strong>vota a una lista de electores</strong> comprometidos con ese candidato. Ese matiz, que parece un tecnicismo, es la clave de toda la sección siguiente.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Cómo funciona el colegio electoral</h2>
+
+  <div class="bloque">
+    <p>Son <strong>538 votos electorales</strong> y hace falta <strong>270</strong> para ganar. El número sale de una suma sencilla:</p>
+
+    <div class="secuencia">435 representantes + 100 senadores + 3 del Distrito de Columbia = <span class="res">538</span></div>
+
+    <p>Cada estado recibe tantos votos electorales como escaños tiene en el Congreso: sus representantes, que dependen de la población, más sus dos senadores, que son dos para todos. Los tres del Distrito de Columbia se los dio la Vigesimotercera enmienda, en 1961.</p>
+
+    <table class="reglas">
+      <caption>Las tres reglas que producen todos los efectos</caption>
+      <thead>
+        <tr><th scope="col">Regla</th><th scope="col">Consecuencia</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cada estado suma sus dos senadores a sus representantes</td>
+          <td>Ningún estado baja de tres votos electorales, por pequeño que sea. Su peso por habitante es mayor que el de un estado grande</td>
+        </tr>
+        <tr>
+          <td>Casi todos los estados dan <strong>todos</strong> sus votos electorales a quien gana en ese estado</td>
+          <td>Ganar un estado por poco o por mucho da lo mismo. Los votos del candidato perdedor en ese estado no suman nada</td>
+        </tr>
+        <tr>
+          <td>Solo hacen falta 270, vengan de donde vengan</td>
+          <td>Las campañas concentran su esfuerzo en los pocos estados donde el resultado está reñido</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Dos excepciones que conviene conocer.</strong> Maine y Nebraska no aplican la regla de todo para el ganador: reparten parte de sus votos electorales por distrito. Son la prueba de que la regla no está en la Constitución, sino que <strong>cada estado decide cómo reparte sus electores</strong>. Cambiarla no exigiría una enmienda; bastaría con que un estado cambiara su ley.
+    </div>
+
+    <h3>Por qué pueden divergir el voto popular y el electoral</h3>
+    <p>De la segunda regla se sigue directamente. Imagine dos estados:</p>
+
+    <div class="ejemplo">
+      <span class="et">Un ejemplo con números inventados, para ver el mecanismo</span>
+      <p>En el estado A, con 10 votos electorales, la candidata X gana por 5.100.000 contra 4.900.000. Se lleva los <strong>10</strong>.</p>
+      <p>En el estado B, con 10 votos electorales, el candidato Y gana por 9.000.000 contra 1.000.000. Se lleva los <strong>10</strong>.</p>
+      <p>Empatan a votos electorales, 10 y 10. Pero en voto popular, Y tiene 13.900.000 y X tiene 6.100.000. <strong>Los votos de más no suman nada.</strong></p>
+    </div>
+
+    <p>Eso no es una anomalía del ejemplo: es cómo está construido el sistema. En la historia del país ha habido varias elecciones en que quien obtuvo más votos populares no llegó a la presidencia, incluidas las de <strong>1876, 1888, 2000 y 2016</strong>, además del caso especial de 1824, que acabó decidiéndose en la Cámara de Representantes.</p>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. La discusión sobre el colegio electoral</h2>
+
+  <div class="bloque">
+    <p>Aquí es donde este curso se detiene y cambia de registro. Lo anterior son hechos comprobables. Lo que viene es una <strong>discusión abierta</strong> en la que gente informada y de buena fe sostiene posiciones opuestas.</p>
+
+    <div class="caja-atencion">
+      <strong>Por qué el curso no toma partido, y no es por prudencia.</strong> Es porque el desacuerdo no se resuelve con datos. Descansa sobre una pregunta anterior a los datos: <strong>¿qué debe representar una elección presidencial, a las personas o a los estados?</strong> Quien responde «a las personas» concluye una cosa; quien responde «a los estados», la contraria. Las dos respuestas son defendibles, y elegir entre ellas es una decisión de valores que le corresponde a usted, no a un curso de preparación. Lo que sí le corresponde a este curso es que conozca los dos argumentos lo bastante bien como para exponerlos sin deformarlos.
+    </div>
+
+    <div class="enfrentados">
+      <div class="lado favor">
+        <h3>Argumentos a favor de mantenerlo</h3>
+        <ol>
+          <li><strong>Obliga a construir apoyos amplios geográficamente.</strong> Un candidato no puede ganar concentrando votos solo en las zonas más pobladas: necesita reunir mayorías en estados de distinta naturaleza.</li>
+          <li><strong>Protege el peso de los estados pequeños.</strong> Es coherente con el pacto de 1787, donde el Senado ya daba dos escaños a cada estado con independencia de su tamaño. Quitarlo sería revisar esa parte del acuerdo federal.</li>
+          <li><strong>Acota las disputas de recuento.</strong> Un resultado ajustado se dirime dentro de un estado. Sin colegio electoral, una elección reñida podría exigir un recuento nacional.</li>
+          <li><strong>Produce mayorías claras.</strong> Convierte victorias estrechas en mayorías electorales nítidas, lo que reduce las impugnaciones y facilita la transición.</li>
+          <li><strong>Refuerza el federalismo.</strong> La elección la hacen los estados, no un electorado nacional único, lo que es congruente con el resto del diseño constitucional.</li>
+        </ol>
+      </div>
+
+      <div class="lado contra">
+        <h3>Argumentos a favor de cambiarlo</h3>
+        <ol>
+          <li><strong>Puede elegir a quien recibió menos votos.</strong> Ha ocurrido varias veces. Para quien entiende que el presidente representa a las personas, ese resultado es difícil de justificar.</li>
+          <li><strong>Los votos no pesan igual.</strong> Por el mínimo de tres electores, un voto en un estado poco poblado tiene más peso electoral que uno en un estado grande. La desigualdad es medible.</li>
+          <li><strong>Millones de votos no cuentan para nada.</strong> Con la regla de todo para el ganador, quien vota al perdedor de su estado no aporta ni un solo voto electoral, aunque sean millones de personas.</li>
+          <li><strong>Concentra las campañas en unos pocos estados.</strong> Los estados donde el resultado está decidido de antemano reciben poca atención, y con ella pocas promesas y poca movilización.</li>
+          <li><strong>Puede desincentivar la participación.</strong> Si su estado está decidido, votar se percibe como menos útil, y eso afecta desigualmente según dónde viva cada quien.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Fíjese en algo que se le escapa a casi todo el mundo.</strong> Los dos primeros argumentos de cada columna se refieren <em>al mismo hecho</em>: que los estados pequeños pesan más por habitante. Un lado lo llama protección del pacto federal y el otro lo llama desigualdad del voto. No discuten sobre si el hecho existe: discuten sobre si está bien que exista. Reconocer eso es exactamente lo que aprendió en la Lección 1.3.
+    </div>
+
+    <p>Existen propuestas de cambio de distinto alcance, desde repartir los electores en proporción al voto de cada estado hasta acuerdos entre estados para asignarlos al ganador nacional. Unas exigirían enmienda constitucional y otras no. Este curso las menciona para que sepa que el debate está vivo, sin recomendar ninguna.</p>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Mecánica y debate</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="435 representantes más 100 senadores más los 3 del Distrito de Columbia. Hacen falta 270 para ganar.">
+        <div class="enun">¿Cuántos votos electorales hay en total?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">435</div>
+          <div class="opcion" data-op="b">538</div>
+          <div class="opcion" data-op="c">270</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La regla de todo para el ganador no está en la Constitución: cada estado decide cómo reparte sus electores. Maine y Nebraska lo hacen de otro modo.">
+        <div class="enun">¿Dónde se establece que un estado dé todos sus electores a quien gana en él?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En el Artículo II</div>
+          <div class="opcion" data-op="b">En la Vigesimotercera enmienda</div>
+          <div class="opcion" data-op="c">En ninguna parte de la Constitución: lo decide cada estado</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Ganar por mucho no da más electores que ganar por poco, así que los votos de más no se traducen en nada.">
+        <div class="enun">¿Por qué pueden divergir el voto popular y el electoral?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Porque ganar un estado por mucho no da más electores que ganarlo por poco</div>
+          <div class="opcion" data-op="b">Porque los electores votan lo que quieren</div>
+          <div class="opcion" data-op="c">Porque el recuento es nacional</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Los dos lados admiten el hecho de que los estados pequeños pesan más por habitante. Discrepan en si eso es una protección del pacto federal o una desigualdad que corregir.">
+        <div class="enun">Sobre el mayor peso por habitante de los estados pequeños, los dos bandos…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Discuten si el hecho es cierto</div>
+          <div class="opcion" data-op="b">Coinciden en el hecho y discrepan en si está bien que exista</div>
+          <div class="opcion" data-op="c">Lo ignoran los dos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Quién vota, y qué se puede afirmar con eso</h2>
+
+  <div class="bloque">
+    <p>La participación no se reparte por igual entre grupos, y el patrón es constante elección tras elección.</p>
+
+    <figure class="grafica">
+      <h3>Participación por grupo de edad</h3>
+      <p class="g-fuente"><strong>Datos ilustrativos</strong> con la forma real del fenómeno. Para cifras exactas de una elección concreta hay que acudir a la fuente oficial.</p>
+      <svg viewBox="0 0 700 300" role="img" aria-labelledby="pat pad" xmlns="http://www.w3.org/2000/svg">
+      <title id="pat">Participación electoral por grupo de edad</title>
+      <desc id="pad">Cuatro barras que suben de izquierda a derecha. De 18 a 29 años vota alrededor del 35 por ciento; de 30 a 44, el 52; de 45 a 64, el 65; y de 65 en adelante, el 72. La participación aumenta con la edad de forma sostenida. Datos ilustrativos con la forma real del fenómeno.</desc>
+      <line class="g-reja" x1="56" y1="248.0" x2="686" y2="248.0"/>
+      <text class="g-rot" x="48" y="252.0" text-anchor="end">0%</text>
+      <line class="g-reja" x1="56" y1="201.6" x2="686" y2="201.6"/>
+      <text class="g-rot" x="48" y="205.6" text-anchor="end">16%</text>
+      <line class="g-reja" x1="56" y1="155.2" x2="686" y2="155.2"/>
+      <text class="g-rot" x="48" y="159.2" text-anchor="end">32%</text>
+      <line class="g-reja" x1="56" y1="108.8" x2="686" y2="108.8"/>
+      <text class="g-rot" x="48" y="112.8" text-anchor="end">48%</text>
+      <line class="g-reja" x1="56" y1="62.4" x2="686" y2="62.4"/>
+      <text class="g-rot" x="48" y="66.4" text-anchor="end">64%</text>
+      <line class="g-reja" x1="56" y1="16.0" x2="686" y2="16.0"/>
+      <text class="g-rot" x="48" y="20.0" text-anchor="end">80%</text>
+      <rect class="g-barra" x="91.4" y="146.5" width="86.6" height="101.5"/>
+      <text class="g-valor" x="134.8" y="141.5" text-anchor="middle">35%</text>
+      <text class="g-rot" x="134.8" y="265" text-anchor="middle">18 a 29</text>
+      <text class="g-rot" x="134.8" y="278" text-anchor="middle">años</text>
+      <rect class="g-barra" x="248.9" y="97.2" width="86.6" height="150.8"/>
+      <text class="g-valor" x="292.2" y="92.2" text-anchor="middle">52%</text>
+      <text class="g-rot" x="292.2" y="265" text-anchor="middle">30 a 44</text>
+      <text class="g-rot" x="292.2" y="278" text-anchor="middle">años</text>
+      <rect class="g-barra" x="406.4" y="59.5" width="86.6" height="188.5"/>
+      <text class="g-valor" x="449.8" y="54.5" text-anchor="middle">65%</text>
+      <text class="g-rot" x="449.8" y="265" text-anchor="middle">45 a 64</text>
+      <text class="g-rot" x="449.8" y="278" text-anchor="middle">años</text>
+      <rect class="g-barra" x="563.9" y="39.2" width="86.6" height="208.8"/>
+      <text class="g-valor" x="607.2" y="34.2" text-anchor="middle">72%</text>
+      <text class="g-rot" x="607.2" y="265" text-anchor="middle">65 años</text>
+      <text class="g-rot" x="607.2" y="278" text-anchor="middle">o más</text>
+      <line class="g-eje" x1="56" y1="16" x2="56" y2="248"/>
+      <line class="g-eje" x1="56" y1="248" x2="686" y2="248"/>
+      <text class="g-rot-eje" x="371.0" y="294" text-anchor="middle">Grupo de edad</text>
+    </svg>
+      <figcaption>El patrón es sistemático: a más edad, más participación. La diferencia entre el grupo más joven y el mayor es de más del doble.</figcaption>
+    </figure>
+
+    <figure class="grafica">
+      <h3>Participación por nivel educativo</h3>
+      <p class="g-fuente"><strong>Datos ilustrativos</strong> con la forma real del fenómeno.</p>
+      <svg viewBox="0 0 700 300" role="img" aria-labelledby="pet ped" xmlns="http://www.w3.org/2000/svg">
+      <title id="pet">Participación electoral por nivel educativo</title>
+      <desc id="ped">Cuatro barras que suben de izquierda a derecha. Quienes no terminaron la secundaria votan alrededor del 34 por ciento; con diploma de secundaria, el 50; con algo de universidad, el 63; y con título universitario, el 76. La participación aumenta con el nivel educativo. Datos ilustrativos con la forma real del fenómeno.</desc>
+      <line class="g-reja" x1="56" y1="248.0" x2="686" y2="248.0"/>
+      <text class="g-rot" x="48" y="252.0" text-anchor="end">0%</text>
+      <line class="g-reja" x1="56" y1="201.6" x2="686" y2="201.6"/>
+      <text class="g-rot" x="48" y="205.6" text-anchor="end">16%</text>
+      <line class="g-reja" x1="56" y1="155.2" x2="686" y2="155.2"/>
+      <text class="g-rot" x="48" y="159.2" text-anchor="end">32%</text>
+      <line class="g-reja" x1="56" y1="108.8" x2="686" y2="108.8"/>
+      <text class="g-rot" x="48" y="112.8" text-anchor="end">48%</text>
+      <line class="g-reja" x1="56" y1="62.4" x2="686" y2="62.4"/>
+      <text class="g-rot" x="48" y="66.4" text-anchor="end">64%</text>
+      <line class="g-reja" x1="56" y1="16.0" x2="686" y2="16.0"/>
+      <text class="g-rot" x="48" y="20.0" text-anchor="end">80%</text>
+      <rect class="g-barra" x="91.4" y="149.4" width="86.6" height="98.6"/>
+      <text class="g-valor" x="134.8" y="144.4" text-anchor="middle">34%</text>
+      <text class="g-rot" x="134.8" y="265" text-anchor="middle">Sin diploma</text>
+      <text class="g-rot" x="134.8" y="278" text-anchor="middle">de secundaria</text>
+      <rect class="g-barra" x="248.9" y="103.0" width="86.6" height="145.0"/>
+      <text class="g-valor" x="292.2" y="98.0" text-anchor="middle">50%</text>
+      <text class="g-rot" x="292.2" y="265" text-anchor="middle">Diploma de</text>
+      <text class="g-rot" x="292.2" y="278" text-anchor="middle">secundaria</text>
+      <rect class="g-barra" x="406.4" y="65.3" width="86.6" height="182.7"/>
+      <text class="g-valor" x="449.8" y="60.3" text-anchor="middle">63%</text>
+      <text class="g-rot" x="449.8" y="265" text-anchor="middle">Algo de</text>
+      <text class="g-rot" x="449.8" y="278" text-anchor="middle">universidad</text>
+      <rect class="g-barra" x="563.9" y="27.6" width="86.6" height="220.4"/>
+      <text class="g-valor" x="607.2" y="22.6" text-anchor="middle">76%</text>
+      <text class="g-rot" x="607.2" y="265" text-anchor="middle">Título</text>
+      <text class="g-rot" x="607.2" y="278" text-anchor="middle">universitario</text>
+      <line class="g-eje" x1="56" y1="16" x2="56" y2="248"/>
+      <line class="g-eje" x1="56" y1="248" x2="686" y2="248"/>
+      <text class="g-rot-eje" x="371.0" y="294" text-anchor="middle">Nivel educativo alcanzado</text>
+    </svg>
+      <figcaption>El mismo patrón ascendente. Y con el ingreso ocurre algo parecido: a mayor ingreso, mayor participación.</figcaption>
+    </figure>
+
+    <div class="caja-atencion">
+      <strong>Aquí es donde hay que aplicar la Lección 2.1, y con disciplina.</strong> Estas gráficas muestran <strong>correlaciones</strong>. No dicen que estudiar haga votar, ni que la edad cause la participación. Recuerde las cuatro explicaciones posibles de cualquier correlación, y fíjese en la tercera: podría haber factores que empujen a la vez la educación, el ingreso y el hábito de votar, como la estabilidad de la vivienda, el tiempo disponible o la facilidad para registrarse. La gráfica no permite elegir entre esas explicaciones.
+    </div>
+
+    <div class="caja-tip">
+      <strong>Cómo suena una lectura correcta.</strong> No: «los jóvenes no votan porque no les importa». Sí: «la participación de los menores de treinta es sistemáticamente más baja; las causas pueden ser varias y esta gráfica no las distingue».
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. La propaganda de campaña</h2>
+
+  <div class="bloque">
+    <p>Aquí vuelve la Lección 1.3, ahora en un anuncio. Las técnicas son las mismas que usaban los dos semanarios de 1905, con más presupuesto.</p>
+
+    <table class="reglas">
+      <caption>Cinco técnicas persuasivas frecuentes en campaña</caption>
+      <thead>
+        <tr><th scope="col">Técnica</th><th scope="col">Cómo se reconoce</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Apelación al miedo</td><td>Describe lo que ocurrirá si gana el otro, en términos vagos y alarmantes</td></tr>
+        <tr><td>Gente corriente</td><td>Presenta al candidato como uno más, para que su criterio parezca sentido común</td></tr>
+        <tr><td>Testimonio</td><td>Una persona respetada o simpática avala, sin aportar razones</td></tr>
+        <tr><td>Palabras cargadas</td><td>Adjetivos que valoran mientras aparentan describir. Es la señal 1 de la Lección 1.3</td></tr>
+        <tr><td>Contraste selectivo</td><td>Compara lo mejor de uno con lo peor del otro, ambos ciertos y ambos elegidos</td></tr>
+      </tbody>
+    </table>
+
+    <p>Los dos anuncios de abajo son <strong>inventados para esta lección</strong>, sin partido ni candidato real, para que el análisis se centre en la técnica y no en la simpatía política de nadie.</p>
+
+    <div class="anuncio">
+      <span class="et-anuncio">Anuncio A</span>
+      <blockquote>«Nuestro pueblo trabaja duro. Yo crecí aquí, mi padre trabajó en esta fábrica y yo sé lo que cuesta llegar a fin de mes. Mi rival no ha pisado un taller en su vida. El día 5, vote con sentido común.»</blockquote>
+    </div>
+
+    <div class="anuncio">
+      <span class="et-anuncio">Anuncio B</span>
+      <blockquote>«Si ganan ellos, todo lo que usted ha construido estará en peligro. Su empleo. Su barrio. Su familia. No podemos permitirnos ese riesgo. El día 5, protéjase.»</blockquote>
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Identificar la técnica</h3>
+
+      <div class="pregunta" data-correcta="a" data-explica="Se presenta como uno más del lugar, y de ahí deduce que su criterio es el sentido común. Además usa contraste selectivo con el rival.">
+        <div class="enun">En el anuncio A, ¿qué técnica domina?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Gente corriente</div>
+          <div class="opcion" data-op="b">Apelación al miedo</div>
+          <div class="opcion" data-op="c">Testimonio</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Enumera pérdidas posibles sin decir qué las causaría ni cómo. El peligro es concreto en las palabras y vago en el contenido.">
+        <div class="enun">En el anuncio B, ¿qué técnica domina?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Testimonio</div>
+          <div class="opcion" data-op="b">Gente corriente</div>
+          <div class="opcion" data-op="c">Apelación al miedo</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Ninguno de los dos anuncios ofrece una medida concreta ni un dato comprobable. Persuaden por identificación y por alarma, no por argumento.">
+        <div class="enun">¿Qué propuesta concreta de gobierno contienen los dos anuncios?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El anuncio A propone crear empleo industrial</div>
+          <div class="opcion" data-op="b">Ninguna: los dos persuaden sin proponer nada comprobable</div>
+          <div class="opcion" data-op="c">El anuncio B propone bajar impuestos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · El camino a los 270</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Busque una tabla con los votos electorales de cada estado. Construya <strong>dos rutas distintas</strong> hasta 270, usando conjuntos de estados que no se repitan. Después cuente cuántos estados necesitó en cada ruta.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> con los estados más grandes llegará a 270 con muy pocos; con los pequeños necesitará muchísimos. Esa asimetría explica sola dónde hacen campaña los candidatos.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Defender la postura contraria</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Decida en privado qué opina usted sobre el colegio electoral. Después escriba un párrafo defendiendo <strong>la postura contraria</strong> en sus mejores términos, sin ironía y sin apuntar sus debilidades.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> alguien que sostenga sinceramente esa postura debería poder firmar su párrafo sin protestar. Si le sale un párrafo flojo o burlón, no ha entendido todavía el argumento del otro lado, y eso se nota en el examen.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Un anuncio real</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque un anuncio político de cualquier época y analícelo con la tabla de la sección 5. Anote las técnicas que encuentre, transcriba las palabras exactas que las producen y diga qué afirmación comprobable contiene el anuncio, si es que contiene alguna.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si no encuentra ninguna afirmación comprobable, no ha fallado el ejercicio. Ha encontrado el resultado más frecuente.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 5.2</h2>
+    <p>Doce preguntas: cuatro de etapas del proceso electoral, cuatro de funcionamiento del colegio electoral, y cuatro de interpretación de datos de participación. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación del proceso electoral, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ordena las etapas del ciclo</td>
+          <td>Confunde primarias con elección general.</td>
+          <td>Ordena las etapas principales, pero omite el recuento.</td>
+          <td>Recorre las cinco etapas sin ayuda.</td>
+          <td>Explica que en las primarias compiten aspirantes del mismo partido, no partidos entre sí.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Explica el colegio electoral y la divergencia</td>
+          <td>Cree que gana quien tiene más votos populares.</td>
+          <td>Sabe que existen los electores, pero no cómo se reparten.</td>
+          <td>Explica la suma de 538 y cómo la regla de todo para el ganador produce la divergencia.</td>
+          <td>Señala que esa regla la decide cada estado y no la Constitución.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Interpreta datos de participación sin sobreinterpretar</td>
+          <td>Convierte la gráfica en una causa: «no votan porque no les importa».</td>
+          <td>Describe el patrón, pero desliza una causa al final.</td>
+          <td>Describe la correlación y dice explícitamente que no establece causa.</td>
+          <td>Propone una tercera variable plausible que explicaría el patrón.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Identifica técnicas persuasivas</td>
+          <td>Dice que el anuncio «es manipulador» sin señalar cómo.</td>
+          <td>Nombra una técnica, sin citar las palabras que la producen.</td>
+          <td>Nombra la técnica y transcribe las palabras exactas.</td>
+          <td>Distingue lo comprobable de lo que solo persuade, y reconoce que a menudo no hay nada comprobable.</td>
+          <td class="repaso"><a href="#sec5">Sección 5</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 5.2 y enlace con la 5.3</h2>
+    <p>De la mecánica se lleva una regla: <strong>538 votos, 270 para ganar, y casi todos los estados dan todo al ganador</strong>. De esa tercera parte se sigue todo lo demás, incluida la divergencia con el voto popular y la concentración de las campañas en unos pocos estados.</p>
+    <p>Del debate se lleva algo más valioso que una opinión. Los dos bandos coinciden en los hechos y discrepan en qué debe representar una elección presidencial: a las personas o a los estados. Cuando un desacuerdo tiene esa forma, no se resuelve buscando más datos. Saber distinguir un desacuerdo sobre hechos de uno sobre valores es una de las cosas más útiles que se llevará de este curso, y sirve mucho más allá del examen.</p>
+    <p>La <strong><a href="soc-5-3.html">Lección 5.3</a></strong> cierra el tema con el dinero: impuestos, presupuesto y déficit. Y empieza donde la economía deja de ser abstracta, que es en una nómina con sus retenciones.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-5-3.html">Siguiente: Lección 5.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 5 · Lección 5.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. En las primarias de un partido compiten…', ops: ['Los partidos entre sí', 'Los aspirantes dentro del mismo partido', 'Los electores', 'Los gobernadores'],
+      correcta: 1, expl: 'Los partidos no compiten entre ellos hasta la campaña general. En las primarias cada partido elige a su candidato.' },
+    { enun: '2. La convención de un partido sirve para…', ops: ['Contar los votos electorales', 'Proclamar al candidato y aprobar el programa', 'Elegir al presidente', 'Registrar votantes'],
+      correcta: 1, expl: 'Es la etapa que cierra las primarias y abre la campaña general.' },
+    { enun: '3. Cuando un votante marca la papeleta presidencial, en rigor vota…', ops: ['Directamente al candidato', 'A una lista de electores comprometidos con ese candidato', 'Al gobernador de su estado', 'A su representante'],
+      correcta: 1, expl: 'Ese matiz, que parece un tecnicismo, es la clave de cómo funciona el colegio electoral.' },
+    { enun: '4. Después del día de la elección todavía falta…', ops: ['Nada, el resultado es definitivo', 'Que voten los electores y el Congreso haga el recuento oficial', 'Una segunda vuelta obligatoria', 'La confirmación del Tribunal Supremo'],
+      correcta: 1, expl: 'El recuento oficial en el Congreso y la toma de posesión cierran el ciclo.' },
+    { enun: '5. El total de votos electorales es…', ops: ['435', '535', '538', '270'],
+      correcta: 2, expl: '435 representantes más 100 senadores más los 3 del Distrito de Columbia, que le dio la Vigesimotercera enmienda en 1961.' },
+    { enun: '6. Para ganar la presidencia hacen falta…', ops: ['270 votos electorales', '218 votos electorales', 'La mayoría del voto popular', '300 votos electorales'],
+      correcta: 0, expl: 'Basta con 270, vengan del estado que vengan. De ahí que las campañas se concentren donde el resultado está reñido.' },
+    { enun: '7. El número de votos electorales de un estado se calcula…', ops: ['Solo por su población', 'Sus representantes más sus dos senadores', 'Igual para todos los estados', 'Según su superficie'],
+      correcta: 1, expl: 'Por eso ningún estado baja de tres, y su peso por habitante es mayor que el de un estado grande.' },
+    { enun: '8. La regla de dar todos los electores al ganador de un estado está establecida…', ops: ['En la Constitución', 'En una ley federal', 'Por decisión de cada estado', 'Por el Tribunal Supremo'],
+      correcta: 2, expl: 'No está en la Constitución. Maine y Nebraska reparten de otro modo, lo que prueba que cada estado decide.' },
+    { enun: '9. El voto popular y el electoral pueden divergir porque…', ops: ['Los electores votan lo que quieren', 'Ganar por mucho no da más electores que ganar por poco', 'El recuento es nacional', 'Hay dos vueltas'],
+      correcta: 1, expl: 'Los votos por encima de lo necesario para ganar un estado no se traducen en ningún voto electoral adicional.' },
+    { enun: '10. Una gráfica muestra que la participación sube con el nivel educativo. Se puede afirmar que…',
+      ops: ['Estudiar hace votar', 'Existe una correlación, y la gráfica no establece la causa', 'Los menos instruidos no se interesan', 'La educación es la única causa'],
+      correcta: 1, expl: 'Es la disciplina de la Lección 2.1: una correlación admite cuatro explicaciones y el dibujo no permite elegir entre ellas.' },
+    { enun: '11. Una tercera variable que podría explicar a la vez educación, ingreso y participación sería…',
+      ops: ['El color de la papeleta', 'La estabilidad de la vivienda o el tiempo disponible', 'El número de candidatos', 'La fecha de la elección'],
+      correcta: 1, expl: 'Factores que empujan a la vez varias de las variables observadas: es la tercera de las cuatro explicaciones posibles de una correlación.' },
+    { enun: '12. Un anuncio que enumera pérdidas posibles sin decir qué las causaría emplea…',
+      ops: ['Testimonio', 'Gente corriente', 'Apelación al miedo', 'Contraste selectivo'],
+      correcta: 2, expl: 'El peligro es concreto en las palabras y vago en el contenido, que es precisamente cómo funciona esa técnica.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 5.3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>

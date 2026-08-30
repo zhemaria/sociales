@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<!--
+  Lección 5.1 · La Carta de Derechos y la expansión de la ciudadanía
+  Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 5.1 · La Carta de Derechos y la expansión de la ciudadanía</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 5 — paleta verde azulado heredada del plan curricular (--t5) */
+    --tema:    #00695c;
+    --tema-d:  #004d40;
+    --tema-bg: #e0f2f1;
+    --tema-bg2:#b2dfdb;
+    --acento:  #00796b;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #00332b 0%, #004d40 55%, #00695c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,51,43,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #004d40;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f7fcfb; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #12564c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a726c; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f7fcfb;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #00695c; }
+
+  /* ══ COMPONENTES DEL TEMA 5 ═════════════════════════════════ */
+  figure.linea-tiempo { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.linea-tiempo svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.linea-tiempo figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .lt-eje   { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto { fill: var(--tema); }
+  .lt-ley   { fill: #fff; stroke: var(--tema); stroke-width: 2.5; }
+  .lt-ano   { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-que   { font-size: 11.5px; fill: #333; }
+  .lt-tick  { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Emparejador de casos y enmiendas */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 7px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 13px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de enmiendas */
+  .enmiendas { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+  .enmiendas .em {
+    flex:1 1 210px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:11px 15px;
+  }
+  .enmiendas .em .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .enmiendas .em p { margin:0; font-size:14.5px; }
+
+  /* Posturas enfrentadas (mismo patrón que la Lección 3.2) */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .favor  { background:#e0f2f1; border-left:6px solid #00695c; }
+  .enfrentados .contra { background:#fff3e0; border-left:6px solid #8a4b00; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .favor h3  { color:#004d40; }
+  .enfrentados .contra h3 { color:#5C3900; }
+  .enfrentados .lado ol { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#80cbc4; stroke-width:1.5; }
+  .g-reja   { stroke:#e0f2f1; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-rot    { font-size:11px; fill:#004d40; }
+  .g-rot-eje{ font-size:12px; fill:#004d40; font-weight:700; }
+  .g-valor  { font-size:10.5px; fill:#004d40; font-weight:700; }
+
+  /* Anuncio de campaña para analizar */
+  .anuncio { background:#fff; border:2px dashed var(--tema); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .anuncio .et-anuncio {
+    display:inline-block; background:var(--tema); color:#fff; font-size:12px; font-weight:700;
+    padding:3px 12px; border-radius:12px; margin-bottom:8px; letter-spacing:.3px;
+  }
+  .anuncio blockquote { margin:0; font-size:15.5px; font-style:italic; color:#333; }
+
+  .g-sec-1 { fill: #004d40; }
+  .g-sec-2 { fill: #00695c; }
+  .g-sec-3 { fill: #26a69a; }
+  .g-sec-4 { fill: #80cbc4; }
+  .g-sec-5 { fill: #b2dfdb; }
+
+  /* Clasificador (mismo patrón accesible que la Lección 5.1) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción: derechos, elecciones y finanzas públicas</div>
+    <h1>Lección 5.1 · La Carta de Derechos y la expansión de la ciudadanía</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 5.1</span>
+    <a class="nav-sig" href="soc-5-2.html">Siguiente: Lección 5.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Identificar qué protege cada una de las diez primeras enmiendas.</li>
+      <li>Distinguir una libertad civil de un derecho civil, y decir por qué la distinción importa.</li>
+      <li>Determinar qué enmienda protege a una persona en una situación concreta.</li>
+      <li>Situar cronológicamente la expansión del voto y decir quién quedaba fuera antes de cada paso.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> El Tema 4 recorrió las tres ramas por dentro. Este tema pregunta qué significa todo eso para una persona concreta: qué la protege, cómo participa y de dónde sale el dinero público.</p>
+    <p>Empezamos por lo que el Tema 3 dejó dicho de pasada: <strong>la Carta de Derechos existe porque el bando que perdió la votación de ratificación no se rindió</strong>. Los antifederalistas no aceptaban una constitución sin garantías escritas, y en 1791 se añadieron diez enmiendas.</p>
+    <p>Y aquí trabajaremos como trabaja el examen: <strong>partiendo del caso concreto hacia la enmienda</strong>, no memorizando una lista para después buscarle usos.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Las diez primeras, en lenguaje llano</h2>
+
+  <div class="bloque">
+    <div class="enmiendas">
+      <div class="em"><span class="n">1.ª</span><p>Religión, expresión, prensa, reunión y petición al gobierno. Cinco libertades en una sola enmienda.</p></div>
+      <div class="em"><span class="n">2.ª</span><p>El derecho a poseer y portar armas.</p></div>
+      <div class="em"><span class="n">3.ª</span><p>El gobierno no puede alojar soldados en una casa particular en tiempo de paz.</p></div>
+      <div class="em"><span class="n">4.ª</span><p>No hay registros ni incautaciones irrazonables. Hace falta una orden basada en causa probable.</p></div>
+      <div class="em"><span class="n">5.ª</span><p>Debido proceso, no declarar contra uno mismo, no ser juzgado dos veces por lo mismo, y compensación justa si se expropia.</p></div>
+      <div class="em"><span class="n">6.ª</span><p>Garantías del juicio penal: rápido y público, jurado imparcial, saber de qué se le acusa, confrontar testigos y tener abogado.</p></div>
+      <div class="em"><span class="n">7.ª</span><p>Juicio por jurado también en los pleitos civiles.</p></div>
+      <div class="em"><span class="n">8.ª</span><p>Ni fianzas ni multas excesivas, ni castigos crueles e inusuales.</p></div>
+      <div class="em"><span class="n">9.ª</span><p>Que un derecho no figure en la lista no significa que no exista.</p></div>
+      <div class="em"><span class="n">10.ª</span><p>Lo que no se delegó a la Unión queda en los estados o en el pueblo.</p></div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Un patrón que ayuda a recordarlas.</strong> Las cuatro primeras dicen lo que el gobierno <em>no puede hacerle</em> en su vida diaria. De la cuarta a la octava son garantías <em>ante los tribunales</em>, en orden aproximado de un caso: el registro, la acusación, el juicio, el castigo. Y las dos últimas no otorgan nada: dicen cómo hay que leer las anteriores.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Ningún derecho es absoluto, y eso no es una trampa.</strong> La libertad de expresión no ampara una amenaza; la libertad religiosa no exime de cualquier ley general; el derecho a portar armas admite regulación. Dónde está exactamente el límite de cada uno lo han ido decidiendo los tribunales caso por caso, que es justo el mecanismo que estudió en la Lección 4.3. El examen pregunta a menudo por el límite, no solo por el derecho.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Libertad civil y derecho civil</h2>
+
+  <div class="bloque">
+    <p>Se confunden a diario y no son lo mismo. Se distinguen por la dirección de la protección.</p>
+
+    <table class="reglas">
+      <caption>Las dos clases de protección, comparadas</caption>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">Libertad civil</th><th scope="col">Derecho civil</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Qué hace</td><td>Pone límites al gobierno</td><td>Garantiza un trato igual y la participación</td></tr>
+        <tr><td>La frase que la resume</td><td>«El gobierno <strong>no puede</strong>…»</td><td>«Nadie puede ser <strong>excluido</strong> por ser quien es»</td></tr>
+        <tr><td>Frente a quién protege</td><td>Frente al poder público</td><td>Frente a la discriminación, del gobierno o de particulares cuando la ley lo extiende</td></tr>
+        <tr><td>Dónde vive sobre todo</td><td>En las diez primeras enmiendas</td><td>En la Decimocuarta enmienda y en leyes como la de Derechos Civiles de 1964</td></tr>
+        <tr><td>Ejemplo</td><td>La policía no puede registrar su casa sin orden</td><td>No pueden negarle un empleo por su origen</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>La prueba que resuelve casi todos los casos.</strong> Pregúntese qué se está pidiendo. Si se pide que el gobierno <em>deje de hacer</em> algo, es una libertad civil. Si se pide que garantice un <em>trato igual</em>, es un derecho civil. Es la misma diferencia que separa las diez primeras enmiendas de las que vinieron después de la Guerra Civil.
+    </div>
+
+    <div class="clasificador">
+      <h3>¿Qué enmienda le protege?</h3>
+      <p>Doce situaciones. Elija la enmienda aplicable y verá al momento por qué. Funciona con teclado.</p>
+      <p class="marcador" id="marcador" role="status" aria-live="polite">Sin responder todavía.</p>
+      <div id="lista-comp"></div>
+      <button class="btn sec" id="btn-reiniciar-comp" type="button">Empezar de nuevo</button>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Quién contaba como ciudadano</h2>
+
+  <div class="bloque">
+    <p>La Carta de Derechos de 1791 protegía a las personas de un gobierno. No decía quiénes eran esas personas ni quién podía votar. Eso se fue ampliando después, y cada paso costó una enmienda.</p>
+
+    <h3>Las enmiendas de la Reconstrucción</h3>
+    <p>Aprobadas tras la Guerra Civil, entre 1865 y 1870, son el cambio constitucional más profundo desde la fundación.</p>
+
+    <div class="enmiendas">
+      <div class="em"><span class="n">13.ª · 1865</span><p>Abolió la esclavitud y la servidumbre involuntaria.</p></div>
+      <div class="em"><span class="n">14.ª · 1868</span><p>Definió quién es ciudadano y exigió a los estados debido proceso e igual protección de las leyes.</p></div>
+      <div class="em"><span class="n">15.ª · 1870</span><p>Prohibió negar el voto por raza, color o condición previa de servidumbre.</p></div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>La Decimocuarta es la enmienda que más aparece en el examen, y conviene saber por qué.</strong> Hasta ella, la Carta de Derechos limitaba sobre todo al gobierno federal. La Decimocuarta dirige sus exigencias a <strong>los estados</strong>, y sobre ella se apoyó después la aplicación de buena parte de las diez primeras enmiendas frente a los gobiernos estatales. Es también la cláusula que discutieron las dos sentencias de la Lección 4.3.
+    </div>
+
+    <h3>La expansión del voto</h3>
+
+    <figure class="linea-tiempo">
+      <svg viewBox="0 0 700 320" role="img" aria-labelledby="sut sud" xmlns="http://www.w3.org/2000/svg">
+      <title id="sut">Línea de tiempo de la expansión del derecho al voto, de 1870 a 1971</title>
+      <desc id="sud">Cinco hitos. En 1870 la decimoquinta enmienda prohíbe negar el voto por raza o color. En 1920 la decimonovena lo prohíbe por sexo. En 1964 la vigesimocuarta prohíbe el impuesto electoral en elecciones federales. En 1965 la Ley del Derecho al Voto, que no es una enmienda sino una ley del Congreso, establece mecanismos para hacer efectivo lo que la decimoquinta enmienda prometía noventa y cinco años antes. En 1971 la vigesimosexta fija la edad de voto en dieciocho años. Los círculos marcan enmiendas y el cuadrado marca la ley.</desc>
+      <line class="lt-eje" x1="52" y1="148" x2="648" y2="148"/>
+      <line class="lt-tick" x1="78.8" y1="139" x2="78.8" y2="157"/>
+      <circle class="lt-punto" cx="78.8" cy="148" r="7"/>
+      <text class="lt-ano" x="78.8" y="122" text-anchor="middle">1870</text>
+      <text class="lt-que" x="78.8" y="107" text-anchor="middle" font-weight="700">15.ª enmienda</text>
+      <text class="lt-que" x="78.8" y="80" text-anchor="middle">No se puede negar el voto</text>
+      <text class="lt-que" x="78.8" y="93" text-anchor="middle">por raza o color</text>
+      <line class="lt-tick" x1="347.3" y1="139" x2="347.3" y2="157"/>
+      <circle class="lt-punto" cx="347.3" cy="148" r="7"/>
+      <text class="lt-ano" x="347.3" y="178" text-anchor="middle">1920</text>
+      <text class="lt-que" x="347.3" y="193" text-anchor="middle" font-weight="700">19.ª enmienda</text>
+      <text class="lt-que" x="347.3" y="206" text-anchor="middle">No se puede negar el voto</text>
+      <text class="lt-que" x="347.3" y="219" text-anchor="middle">por sexo</text>
+      <line class="lt-tick" x1="583.6" y1="139" x2="583.6" y2="157"/>
+      <circle class="lt-punto" cx="583.6" cy="148" r="7"/>
+      <text class="lt-ano" x="583.6" y="122" text-anchor="middle">1964</text>
+      <text class="lt-que" x="583.6" y="107" text-anchor="middle" font-weight="700">24.ª enmienda</text>
+      <text class="lt-que" x="583.6" y="80" text-anchor="middle">Se prohíbe el impuesto</text>
+      <text class="lt-que" x="583.6" y="93" text-anchor="middle">electoral en lo federal</text>
+      <line class="lt-tick" x1="588.9" y1="139" x2="588.9" y2="157"/>
+      <rect class="lt-ley" x="581.9" y="141" width="14" height="14" rx="3"/>
+      <text class="lt-ano" x="588.9" y="178" text-anchor="middle">1965</text>
+      <text class="lt-que" x="588.9" y="193" text-anchor="middle" font-weight="700">Ley del Derecho</text>
+      <text class="lt-que" x="588.9" y="206" text-anchor="middle" font-weight="700">al Voto</text>
+      <text class="lt-que" x="588.9" y="219" text-anchor="middle">No es enmienda: es ley</text>
+      <text class="lt-que" x="588.9" y="232" text-anchor="middle">del Congreso</text>
+      <line class="lt-tick" x1="621.2" y1="139" x2="621.2" y2="157"/>
+      <circle class="lt-punto" cx="621.2" cy="148" r="7"/>
+      <text class="lt-ano" x="621.2" y="122" text-anchor="middle">1971</text>
+      <text class="lt-que" x="621.2" y="107" text-anchor="middle" font-weight="700">26.ª enmienda</text>
+      <text class="lt-que" x="621.2" y="80" text-anchor="middle">Se vota desde</text>
+      <text class="lt-que" x="621.2" y="93" text-anchor="middle">los 18 años</text>
+      <circle class="lt-punto" cx="52" cy="296" r="6"/>
+      <text class="lt-que" x="65" y="300">Enmienda constitucional</text>
+      <rect class="lt-ley" x="238" y="290" width="13" height="13" rx="3"/>
+      <text class="lt-que" x="257" y="300">Ley del Congreso</text>
+    </svg>
+      <figcaption>Cada hito responde a la pregunta de quién quedaba fuera antes: por raza hasta 1870, por sexo hasta 1920, por no poder pagar un impuesto hasta 1964, y por edad, entre los 18 y los 21, hasta 1971.</figcaption>
+    </figure>
+
+    <div class="caja-tip">
+      <strong>Fíjese en el cuadrado de 1965, que no es una enmienda.</strong> La Decimoquinta enmienda prohibió negar el voto por raza en 1870. Noventa y cinco años después hizo falta una <strong>ley</strong> del Congreso para establecer los mecanismos que hicieran efectiva esa prohibición. Es la distinción de la Lección 4.2 en su forma más elocuente: una cosa es el instrumento que declara un derecho y otra el que lo hace funcionar. Un derecho escrito y un derecho ejercido no son lo mismo.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva · Alcance, límite y cronología</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Se pide que el gobierno deje de hacer algo, y esa es la marca de una libertad civil. Los derechos civiles piden lo contrario: que garantice un trato igual.">
+        <div class="enun">Alguien exige que el gobierno no le impida publicar un artículo. ¿Qué invoca?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Un derecho civil</div>
+          <div class="opcion" data-op="b">Una libertad civil</div>
+          <div class="opcion" data-op="c">Una competencia estatal</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La Decimocuarta dirige sus exigencias a los estados, y sobre ella se apoyó después la aplicación de buena parte de la Carta de Derechos frente a los gobiernos estatales.">
+        <div class="enun">¿Qué aportó la Decimocuarta enmienda que no tenía la Carta de Derechos de 1791?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El derecho al voto de las mujeres</div>
+          <div class="opcion" data-op="b">La abolición de la esclavitud</div>
+          <div class="opcion" data-op="c">Ciudadanía, debido proceso e igual protección exigibles a los estados</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="La enmienda prohibió en 1870; la ley de 1965 estableció los mecanismos para hacerla efectiva. Declarar un derecho y hacerlo funcionar son cosas distintas.">
+        <div class="enun">Si la Decimoquinta enmienda prohibió negar el voto por raza en 1870, ¿por qué hizo falta una ley en 1965?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Porque una prohibición escrita necesitaba mecanismos que la hicieran efectiva</div>
+          <div class="opcion" data-op="b">Porque la enmienda había sido derogada</div>
+          <div class="opcion" data-op="c">Porque la ley amplió el voto a las mujeres</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Ningún derecho es absoluto. Dónde está el límite de cada uno lo han ido fijando los tribunales caso por caso, que es el mecanismo de la Lección 4.3.">
+        <div class="enun">¿Es absoluta la libertad de expresión?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sí, no admite ningún límite</div>
+          <div class="opcion" data-op="b">No: como todo derecho, tiene límites fijados por los tribunales</div>
+          <div class="opcion" data-op="c">Solo es absoluta para la prensa</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Del caso a la enmienda</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Invente cinco situaciones nuevas, distintas de las doce del ejercicio, y empareje cada una con su enmienda. Escriba al lado la frase de la enmienda que lo justifica.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si más de dos de sus cinco caen en la primera enmienda, busque a propósito casos de las que menos usa: la tercera, la séptima y la novena. El examen no se limita a las famosas.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Libertad o derecho</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Busque tres noticias sobre un conflicto de derechos. Para cada una, diga si se reclama una libertad civil o un derecho civil, aplicando la prueba de la sección 2.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> la pregunta es qué se le pide al gobierno. Si se le pide que deje de hacer algo, libertad civil. Si se le pide que garantice un trato igual, derecho civil. Alguna noticia contendrá las dos cosas a la vez, y detectarlo es el nivel alto.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Quién quedaba fuera</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Dibuje la línea de tiempo del voto de memoria y escriba, junto a cada hito, qué grupo quedaba excluido justo antes. Añada una línea explicando por qué el hito de 1965 lleva otra marca.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> raza hasta 1870, sexo hasta 1920, quien no podía pagar el impuesto hasta 1964, y los menores de 21 hasta 1971. El de 1965 lleva otra marca porque es una ley del Congreso, no una enmienda.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 5.1</h2>
+    <p>Doce preguntas: cinco de emparejar una situación con su enmienda, cuatro de distinción entre libertad civil y derecho civil, y tres sobre las enmiendas de la Reconstrucción y del sufragio. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 1 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de derechos constitucionales, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identifica la enmienda aplicable a un caso</td>
+          <td>Responde «la primera» ante casi todo.</td>
+          <td>Acierta en las situaciones más conocidas.</td>
+          <td>Empareja caso y enmienda incluidas las menos usadas.</td>
+          <td>Detecta los casos en que actúan dos enmiendas a la vez.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Distingue libertad civil de derecho civil</td>
+          <td>Usa los dos términos como sinónimos.</td>
+          <td>Sabe que difieren, pero no aplica la distinción a un caso.</td>
+          <td>Aplica la prueba de qué se le pide al gobierno.</td>
+          <td>Reconoce un conflicto donde se reclaman las dos cosas a la vez.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Sitúa cronológicamente la expansión del sufragio</td>
+          <td>No ordena los hitos.</td>
+          <td>Los ordena, pero no dice quién quedaba fuera antes de cada uno.</td>
+          <td>Ordena y nombra el grupo excluido en cada etapa.</td>
+          <td>Explica por qué en 1965 hizo falta una ley además de la enmienda de 1870.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Explica el alcance y también el límite de un derecho</td>
+          <td>Presenta los derechos como absolutos.</td>
+          <td>Admite que hay límites, pero no sabe quién los fija.</td>
+          <td>Explica que los límites los fijan los tribunales caso por caso.</td>
+          <td>Da un ejemplo concreto de límite y dice qué interés lo justifica.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 5.1 y enlace con la 5.2</h2>
+    <p>Dos ideas se llevan de aquí. La primera es de método: <strong>se va del caso a la enmienda</strong>, no al revés. Memorizar diez enmiendas sirve de poco si ante una situación concreta no sabe cuál se activa.</p>
+    <p>La segunda es más de fondo. Un derecho escrito y un derecho ejercido no son lo mismo. La Decimoquinta enmienda prohibió negar el voto por raza en 1870, y noventa y cinco años después hizo falta una ley para que esa prohibición funcionara. Entre el texto y la vida hay siempre un trecho, y ese trecho se recorre con leyes, con sentencias y con gente que insiste.</p>
+    <p>La <strong><a href="soc-5-2.html">Lección 5.2</a></strong> entra en el ejercicio concreto de ese derecho: cómo funciona una elección, por qué el voto popular y el electoral pueden divergir, y qué técnicas usa la propaganda de campaña. Esto último volverá a ser la Lección 1.3, ahora en un anuncio.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-5-2.html">Siguiente: Lección 5.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 5 · Lección 5.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. La policía quiere registrar una casa sin orden judicial. ¿Qué enmienda se activa?',
+      ops: ['La primera', 'La cuarta', 'La sexta', 'La décima'],
+      correcta: 1, expl: 'Protege frente a registros e incautaciones irrazonables. Para entrar hace falta una orden basada en causa probable.' },
+    { enun: '2. A una persona acusada de un delito que no puede pagar abogado le corresponde uno por…',
+      ops: ['La quinta enmienda', 'La sexta enmienda', 'La octava enmienda', 'La novena enmienda'],
+      correcta: 1, expl: 'La sexta reúne las garantías del proceso penal: juicio rápido y público, jurado imparcial, conocer la acusación, confrontar testigos y tener abogado.' },
+    { enun: '3. Una manifestación pacífica en una plaza pública está amparada por…',
+      ops: ['La primera enmienda', 'La segunda', 'La séptima', 'La décima'],
+      correcta: 0, expl: 'La primera reúne cinco libertades: religión, expresión, prensa, reunión y petición al gobierno.' },
+    { enun: '4. Ser juzgado dos veces por el mismo delito lo impide…',
+      ops: ['La cuarta enmienda', 'La quinta enmienda', 'La séptima', 'La octava'],
+      correcta: 1, expl: 'La quinta prohíbe el doble enjuiciamiento, protege contra la autoincriminación y garantiza el debido proceso.' },
+    { enun: '5. Una fianza desproporcionada por una infracción menor choca con…',
+      ops: ['La sexta enmienda', 'La séptima', 'La octava enmienda', 'La novena'],
+      correcta: 2, expl: 'Prohíbe fianzas excesivas, multas excesivas y castigos crueles e inusuales.' },
+    { enun: '6. Una libertad civil se reconoce porque en ella se pide que el gobierno…',
+      ops: ['Garantice un trato igual', 'Deje de hacer algo', 'Pague una compensación', 'Convoque elecciones'],
+      correcta: 1, expl: 'Es la prueba que resuelve casi todos los casos: dejar de hacer algo es libertad civil; garantizar trato igual es derecho civil.' },
+    { enun: '7. Que no puedan negarle un empleo por su origen es…',
+      ops: ['Una libertad civil', 'Un derecho civil', 'Una competencia estatal', 'Una facultad presidencial'],
+      correcta: 1, expl: 'Protege frente a la exclusión por ser quien uno es. Vive sobre todo en la Decimocuarta enmienda y en leyes como la de 1964.' },
+    { enun: '8. Las libertades civiles viven sobre todo en…',
+      ops: ['Las diez primeras enmiendas', 'El Artículo II', 'La Decimoquinta enmienda', 'Las leyes estatales'],
+      correcta: 0, expl: 'La Carta de Derechos es, en su mayor parte, un listado de cosas que el gobierno no puede hacer.' },
+    { enun: '9. ¿Es absoluto algún derecho constitucional?',
+      ops: ['Sí, todos', 'Solo la libertad de expresión', 'No: los tribunales fijan sus límites caso por caso', 'Solo los de la primera enmienda'],
+      correcta: 2, expl: 'El examen pregunta a menudo por el límite, no solo por el derecho. Y fijar ese límite es lo que hacen los tribunales, como vio en la Lección 4.3.' },
+    { enun: '10. La Decimocuarta enmienda aportó, sobre todo…',
+      ops: ['El voto de las mujeres', 'La abolición de la esclavitud', 'Ciudadanía, debido proceso e igual protección exigibles a los estados', 'La edad de voto en 18 años'],
+      correcta: 2, expl: 'Hasta ella, la Carta de Derechos limitaba sobre todo al gobierno federal. La Decimocuarta dirige sus exigencias a los estados.' },
+    { enun: '11. Ordene: ¿en qué año dejó de poder negarse el voto por sexo?',
+      ops: ['1870', '1920', '1964', '1971'],
+      correcta: 1, expl: 'La Decimonovena enmienda, en 1920. Por raza fue en 1870, el impuesto electoral cayó en 1964 y la edad bajó a 18 en 1971.' },
+    { enun: '12. La Ley del Derecho al Voto de 1965 hizo falta porque…',
+      ops: ['La Decimoquinta enmienda había sido derogada', 'Una prohibición escrita en 1870 necesitaba mecanismos que la hicieran efectiva', 'Amplió el voto a las mujeres', 'Bajó la edad de voto'],
+      correcta: 1, expl: 'Es la distinción de la Lección 4.2 en su forma más elocuente: una cosa es el instrumento que declara un derecho y otra el que lo hace funcionar.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 5.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* Emparejador de situaciones y enmiendas. Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla, y usable en el móvil. */
+  var SITUACIONES = [{"t": "La policía quiere entrar a registrar su casa sin orden judicial.", "c": "4", "e": "Protege frente a registros e incautaciones irrazonables. Para entrar hace falta una orden basada en causa probable."}, {"t": "Lo acusan de un delito grave y no puede pagar un abogado.", "c": "6", "e": "Entre las garantías del proceso penal está la asistencia de abogado, además del juicio rápido y público y el jurado imparcial."}, {"t": "Un grupo se manifiesta pacíficamente en una plaza para pedir un cambio.", "c": "1", "e": "Reúne cinco libertades: religión, expresión, prensa, reunión y petición al gobierno."}, {"t": "Lo juzgaron y lo absolvieron, y ahora el fiscal quiere juzgarlo otra vez por lo mismo.", "c": "5", "e": "Prohíbe el doble enjuiciamiento. También protege contra la autoincriminación y garantiza el debido proceso."}, {"t": "El gobierno necesita su terreno para una carretera y quiere expropiarlo.", "c": "5", "e": "Puede hacerlo, pero solo para uso público y pagando una compensación justa. El derecho no impide la expropiación: le pone condiciones."}, {"t": "Le fijan una fianza desproporcionada por una infracción menor.", "c": "8", "e": "Prohíbe fianzas excesivas, multas excesivas y castigos crueles e inusuales."}, {"t": "Quiere publicar un periódico que critica al alcalde.", "c": "1", "e": "La libertad de prensa está en la misma enmienda que la de expresión, y protege especialmente la crítica al poder."}, {"t": "En tiempo de paz, el gobierno pretende alojar soldados en su casa.", "c": "3", "e": "Es la enmienda menos usada hoy, y se entiende mirando 1791: los colonos acababan de vivirlo."}, {"t": "Tiene un pleito civil por dinero y quiere que lo decida un jurado.", "c": "7", "e": "Extiende el juicio por jurado a los casos civiles, no solo a los penales."}, {"t": "Un estado le exige pagar un impuesto para poder votar en una elección federal.", "c": "24", "e": "Prohibió el impuesto electoral en elecciones federales. Era uno de los mecanismos que se usaban para excluir votantes."}, {"t": "Quiere poseer y portar un arma.", "c": "2", "e": "Reconoce ese derecho. Su alcance exacto se ha discutido ante los tribunales durante décadas, que es otra manera de decir que ningún derecho se aplica solo."}, {"t": "Alega un derecho que no aparece en ninguna lista de la Constitución.", "c": "9", "e": "Dice que enumerar algunos derechos no significa negar los demás. Se puso precisamente para que la lista no se leyera como cerrada."}];
+  var OPCIONES = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '24'];
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + SITUACIONES.length + ' situaciones.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    SITUACIONES.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'sit-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'sit-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      OPCIONES.forEach(function (num) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = num + '.ª';
+        b.setAttribute('aria-label', 'Enmienda ' + num);
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (num === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok';
+            exp.textContent = 'Correcto, la ' + item.c + '.ª enmienda. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) {
+              if (o.textContent === item.c + '.ª') o.className = 'acierto';
+            });
+            exp.className = 'exp no';
+            exp.textContent = 'Es la ' + item.c + '.ª enmienda. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>

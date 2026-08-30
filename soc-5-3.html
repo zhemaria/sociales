@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<!--
+  Lección 5.3 · Impuestos, presupuesto y política fiscal
+  Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 5.3 · Impuestos, presupuesto y política fiscal</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 5 — paleta verde azulado heredada del plan curricular (--t5) */
+    --tema:    #00695c;
+    --tema-d:  #004d40;
+    --tema-bg: #e0f2f1;
+    --tema-bg2:#b2dfdb;
+    --acento:  #00796b;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #00332b 0%, #004d40 55%, #00695c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,51,43,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #004d40;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f7fcfb; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #12564c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a726c; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f7fcfb;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #00695c; }
+
+  /* ══ COMPONENTES DEL TEMA 5 ═════════════════════════════════ */
+  figure.linea-tiempo { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.linea-tiempo svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.linea-tiempo figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .lt-eje   { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto { fill: var(--tema); }
+  .lt-ley   { fill: #fff; stroke: var(--tema); stroke-width: 2.5; }
+  .lt-ano   { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-que   { font-size: 11.5px; fill: #333; }
+  .lt-tick  { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Emparejador de casos y enmiendas */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 7px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 13px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de enmiendas */
+  .enmiendas { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+  .enmiendas .em {
+    flex:1 1 210px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:11px 15px;
+  }
+  .enmiendas .em .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .enmiendas .em p { margin:0; font-size:14.5px; }
+
+  /* Posturas enfrentadas (mismo patrón que la Lección 3.2) */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .favor  { background:#e0f2f1; border-left:6px solid #00695c; }
+  .enfrentados .contra { background:#fff3e0; border-left:6px solid #8a4b00; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .favor h3  { color:#004d40; }
+  .enfrentados .contra h3 { color:#5C3900; }
+  .enfrentados .lado ol { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#80cbc4; stroke-width:1.5; }
+  .g-reja   { stroke:#e0f2f1; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: var(--acento); }
+  .g-rot    { font-size:11px; fill:#004d40; }
+  .g-rot-eje{ font-size:12px; fill:#004d40; font-weight:700; }
+  .g-valor  { font-size:10.5px; fill:#004d40; font-weight:700; }
+
+  /* Anuncio de campaña para analizar */
+  .anuncio { background:#fff; border:2px dashed var(--tema); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .anuncio .et-anuncio {
+    display:inline-block; background:var(--tema); color:#fff; font-size:12px; font-weight:700;
+    padding:3px 12px; border-radius:12px; margin-bottom:8px; letter-spacing:.3px;
+  }
+  .anuncio blockquote { margin:0; font-size:15.5px; font-style:italic; color:#333; }
+
+  .g-sec-1 { fill: #004d40; }
+  .g-sec-2 { fill: #00695c; }
+  .g-sec-3 { fill: #26a69a; }
+  .g-sec-4 { fill: #80cbc4; }
+  .g-sec-5 { fill: #b2dfdb; }
+
+  /* Clasificador (mismo patrón accesible que la Lección 5.1) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:#ffebee; border-color:#c62828; color:#b71c1c; opacity:1; }
+  .comp .exp { display:none; margin-top:9px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:#b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 5 · Ciudadanía en acción: derechos, elecciones y finanzas públicas</div>
+    <h1>Lección 5.3 · Impuestos, presupuesto y política fiscal</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">Puente · Matemáticas: porcentajes</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 5.3</span>
+    <a class="nav-sig" href="index.html#tema-6">Siguiente: Tema 6 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Distinguir un impuesto progresivo de uno regresivo y de uno proporcional, y clasificar ejemplos reales.</li>
+      <li>Leer de dónde salen los ingresos federales y adónde va el gasto.</li>
+      <li>Explicar la diferencia entre déficit y deuda.</li>
+      <li>Distinguir una política fiscal expansiva de una restrictiva.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> Las dos lecciones anteriores trataron de derechos y de votos. Esta trata del dinero, que es donde las decisiones políticas dejan de ser declaraciones y se convierten en cifras.</p>
+    <p>Y empieza en el sitio donde todo esto deja de ser abstracto para cualquiera que trabaje: <strong>en una nómina</strong>.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. De su nómina al presupuesto federal</h2>
+
+  <div class="bloque">
+    <p>Esta es una nómina quincenal con las retenciones habituales de un trabajador de Illinois. Las cifras están elegidas para que las cuentas salgan redondas.</p>
+
+    <table class="reglas">
+      <caption>Nómina quincenal con sus retenciones. Cifras ilustrativas.</caption>
+      <thead>
+        <tr><th scope="col">Concepto</th><th scope="col">Tasa</th><th scope="col">Importe</th><th scope="col">Adónde va</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Salario bruto</strong></td><td>—</td><td><strong>$2 000.00</strong></td><td>—</td></tr>
+        <tr><td>Seguro Social</td><td>6.20 %</td><td>$124.00</td><td>Pensiones de jubilación e invalidez</td></tr>
+        <tr><td>Medicare</td><td>1.45 %</td><td>$29.00</td><td>Seguro médico para mayores de 65</td></tr>
+        <tr><td>Retención federal sobre la renta</td><td>variable</td><td>$180.00</td><td>Al fondo general: defensa, intereses, todo lo demás</td></tr>
+        <tr><td>Impuesto de Illinois sobre la renta</td><td>tipo único</td><td>$99.00</td><td>Al presupuesto del estado, no al federal</td></tr>
+        <tr><td><strong>Total retenido</strong></td><td><strong>21.6 %</strong></td><td><strong>$432.00</strong></td><td>—</td></tr>
+        <tr><td><strong>Salario neto</strong></td><td>—</td><td><strong>$1 568.00</strong></td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Dos cosas que conviene notar en esa tabla.</strong> La primera: el 6.20 % y el 1.45 % no van al fondo general, sino a dos programas concretos, y por eso aparecen con su nombre. La segunda: la línea de Illinois no viaja a Washington. Es el federalismo de la Lección 3.3 apareciendo en un recibo.
+    </div>
+
+    <figure class="grafica">
+      <h3>De dónde salen los ingresos federales</h3>
+      <p class="g-fuente"><strong>Datos ilustrativos</strong> con el reparto aproximado real.</p>
+      <svg viewBox="0 0 700 290" role="img" aria-labelledby="int ind" xmlns="http://www.w3.org/2000/svg">
+      <title id="int">De dónde salen los ingresos federales</title>
+      <desc id="ind">Cuatro barras. El impuesto sobre la renta de las personas aporta alrededor del 50 por ciento, las retenciones de nómina de Seguro Social y Medicare el 35, el impuesto de sociedades el 9 y otras fuentes el 6. Datos ilustrativos. Las dos primeras juntas, que salen de la nómina de los trabajadores, suponen unos ochenta y cinco de cada cien dólares.</desc>
+      <line class="g-reja" x1="54" y1="234.0" x2="686" y2="234.0"/>
+      <text class="g-rot" x="46" y="238.0" text-anchor="end">0%</text>
+      <line class="g-reja" x1="54" y1="190.4" x2="686" y2="190.4"/>
+      <text class="g-rot" x="46" y="194.4" text-anchor="end">12%</text>
+      <line class="g-reja" x1="54" y1="146.8" x2="686" y2="146.8"/>
+      <text class="g-rot" x="46" y="150.8" text-anchor="end">24%</text>
+      <line class="g-reja" x1="54" y1="103.2" x2="686" y2="103.2"/>
+      <text class="g-rot" x="46" y="107.2" text-anchor="end">36%</text>
+      <line class="g-reja" x1="54" y1="59.6" x2="686" y2="59.6"/>
+      <text class="g-rot" x="46" y="63.6" text-anchor="end">48%</text>
+      <line class="g-reja" x1="54" y1="16.0" x2="686" y2="16.0"/>
+      <text class="g-rot" x="46" y="20.0" text-anchor="end">60%</text>
+      <rect class="g-barra" x="93.5" y="52.3" width="79.0" height="181.7"/>
+      <text class="g-valor" x="133.0" y="47.3" text-anchor="middle">50%</text>
+      <text class="g-rot" x="133.0" y="251" text-anchor="middle">Renta de las</text>
+      <text class="g-rot" x="133.0" y="264" text-anchor="middle">personas</text>
+      <rect class="g-barra" x="251.5" y="106.8" width="79.0" height="127.2"/>
+      <text class="g-valor" x="291.0" y="101.8" text-anchor="middle">35%</text>
+      <text class="g-rot" x="291.0" y="251" text-anchor="middle">Nóminas: Seguro</text>
+      <text class="g-rot" x="291.0" y="264" text-anchor="middle">Social y Medicare</text>
+      <rect class="g-barra" x="409.5" y="201.3" width="79.0" height="32.7"/>
+      <text class="g-valor" x="449.0" y="196.3" text-anchor="middle">9%</text>
+      <text class="g-rot" x="449.0" y="251" text-anchor="middle">Sociedades</text>
+      <rect class="g-barra" x="567.5" y="212.2" width="79.0" height="21.8"/>
+      <text class="g-valor" x="607.0" y="207.2" text-anchor="middle">6%</text>
+      <text class="g-rot" x="607.0" y="251" text-anchor="middle">Otros</text>
+      <line class="g-eje" x1="54" y1="16" x2="54" y2="234"/>
+      <line class="g-eje" x1="54" y1="234" x2="686" y2="234"/>
+    </svg>
+      <figcaption>Sume las dos primeras barras: alrededor de <strong>ochenta y cinco de cada cien dólares</strong> que ingresa el gobierno federal salen de la nómina de quien trabaja, por una vía o por la otra. La tabla de arriba no es un ejemplo pequeño: es la fuente principal.</figcaption>
+    </figure>
+
+    <figure class="grafica">
+      <h3>Adónde va el gasto federal</h3>
+      <p class="g-fuente"><strong>Datos ilustrativos</strong> con el reparto aproximado real.</p>
+      <svg viewBox="0 0 700 310" role="img" aria-labelledby="gat gad" xmlns="http://www.w3.org/2000/svg">
+      <title id="gat">Reparto del gasto federal en cinco categorías</title>
+      <desc id="gad">Salud pública ocupa el 27 por ciento, todo lo demás el 24, Seguridad Social y jubilaciones el 22, defensa el 14 e intereses de la deuda el 13. Datos ilustrativos. Lo notable es que los intereses de la deuda, que no compran ningún servicio, ocupan casi tanto como la defensa.</desc>
+      <path class="g-sec-1" d="M 175 155 L 175.0 31.0 A 124 124 0 0 1 298.0 170.5 Z" stroke="#fff" stroke-width="2"/>
+      <text x="233.6" y="107.3" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">27%</text>
+      <path class="g-sec-2" d="M 175 155 L 298.0 170.5 A 124 124 0 0 1 182.8 278.8 Z" stroke="#fff" stroke-width="2"/>
+      <text x="228.5" y="215.9" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">22%</text>
+      <path class="g-sec-3" d="M 175 155 L 182.8 278.8 A 124 124 0 0 1 52.0 170.5 Z" stroke="#fff" stroke-width="2"/>
+      <text x="125.2" y="219.2" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">24%</text>
+      <path class="g-sec-4" d="M 175 155 L 52.0 170.5 A 124 124 0 0 1 84.6 70.1 Z" stroke="#fff" stroke-width="2"/>
+      <text x="100.7" y="134.9" text-anchor="middle" font-size="14" font-weight="700" fill="#00352c">14%</text>
+      <path class="g-sec-5" d="M 175 155 L 84.6 70.1 A 124 124 0 0 1 175.0 31.0 Z" stroke="#fff" stroke-width="2"/>
+      <text x="144.0" y="87.3" text-anchor="middle" font-size="14" font-weight="700" fill="#00352c">13%</text>
+      <rect class="g-sec-1" x="368" y="40" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="53">Salud pública</text>
+      <rect class="g-sec-2" x="368" y="70" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="83">Seguridad Social y jubilaciones</text>
+      <rect class="g-sec-3" x="368" y="100" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="113">Todo lo demás</text>
+      <rect class="g-sec-4" x="368" y="130" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="143">Defensa</text>
+      <rect class="g-sec-5" x="368" y="160" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="173">Intereses de la deuda</text>
+    </svg>
+      <figcaption>Fíjese en el sector de los intereses de la deuda: ocupa casi tanto como la defensa y <strong>no compra ningún servicio</strong>. Es lo que cuesta el dinero que se pidió prestado en años anteriores. Volveremos a ello en la sección 3.</figcaption>
+    </figure>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Progresivo, regresivo, proporcional</h2>
+
+  <div class="bloque">
+    <p>Las tres palabras describen <strong>qué porcentaje del ingreso se lleva el impuesto según cuánto gane la persona</strong>. Y ahí está la clave que casi todo el mundo pasa por alto: se mide contra el <em>ingreso</em>, no contra la compra.</p>
+
+    <table class="reglas">
+      <caption>Las tres formas de un impuesto</caption>
+      <thead>
+        <tr><th scope="col">Tipo</th><th scope="col">Al subir el ingreso, el porcentaje pagado…</th><th scope="col">Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Progresivo</td><td>Sube</td><td>El impuesto federal sobre la renta, con sus tramos</td></tr>
+        <tr><td>Proporcional</td><td>Se mantiene igual</td><td>Un impuesto de tipo único, o el 1.45 % de Medicare</td></tr>
+        <tr><td>Regresivo</td><td>Baja</td><td>El impuesto sobre las ventas</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Por qué el impuesto sobre las ventas es regresivo si la tasa es igual para todos</h3>
+    <p>Es la pregunta que más se falla, y se responde con una división.</p>
+
+    <div class="ejemplo">
+      <span class="et">La misma tasa, dos cargas distintas</span>
+      <p><strong>Persona A</strong> gana $2 000 al mes y gasta $1 600 en cosas gravadas. Con una tasa del 10 %, paga <strong>$160</strong>. Eso es el <strong>8 %</strong> de su ingreso.</p>
+      <p><strong>Persona B</strong> gana $10 000 al mes y gasta $4 000 en cosas gravadas. Paga <strong>$400</strong>, más dinero en términos absolutos. Pero eso es el <strong>4 %</strong> de su ingreso.</p>
+      <p>Misma tasa, y la carga relativa de A es el doble que la de B. <strong>La razón es que quien gana menos gasta una proporción mayor de lo que ingresa</strong>, mientras que quien gana más ahorra o invierte una parte, y esa parte no se grava al comprar.</p>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>El caso sutil: el Seguro Social.</strong> Su tasa es 6.20 % para todos, lo que parece proporcional. Pero solo se cotiza hasta un tope de salario; por encima de esa cifra no se paga más. Compare: quien gana $50 000 paga el 6.20 % de todo su ingreso. Quien gana $500 000 paga la misma cantidad que quien llega al tope, y eso equivale a algo más del <strong>2 %</strong> de su ingreso total. La tasa nominal es idéntica; la tasa efectiva baja. Por eso se clasifica como regresivo, y por eso hay que mirar siempre <strong>la tasa efectiva sobre el ingreso</strong>, no la que está impresa.
+    </div>
+
+    <div class="clasificador">
+      <h3>Clasifique seis impuestos reales</h3>
+      <p>Elija la categoría de cada uno y verá al momento por qué. Funciona con teclado.</p>
+      <p class="marcador" id="marcador" role="status" aria-live="polite">Sin responder todavía.</p>
+      <div id="lista-comp"></div>
+      <button class="btn sec" id="btn-reiniciar-comp" type="button">Empezar de nuevo</button>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Déficit y deuda no son lo mismo</h2>
+
+  <div class="bloque">
+    <p>Se confunden a diario en las noticias, y la diferencia es sencilla:</p>
+
+    <table class="reglas">
+      <caption>Déficit y deuda, comparados</caption>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">Déficit</th><th scope="col">Deuda</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Qué mide</td><td>Cuánto se gastó de más <strong>en un año</strong></td><td>Cuánto se debe <strong>en total</strong>, acumulado</td></tr>
+        <tr><td>Periodo</td><td>Un ejercicio</td><td>Toda la historia hasta hoy</td></tr>
+        <tr><td>Comparación doméstica</td><td>Lo que se gastó de más este mes</td><td>El saldo que se debe en la tarjeta</td></tr>
+        <tr><td>Si baja un año…</td><td>Se gastó menos de más que el año anterior</td><td>Solo baja si hay superávit, no si el déficit se reduce</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="grafica">
+      <h3>Diez años de déficit, y la deuda que van dejando</h3>
+      <p class="g-fuente"><strong>Datos ilustrativos.</strong> Lo que importa aquí es la forma, no las cifras.</p>
+      <svg viewBox="0 0 700 320" role="img" aria-labelledby="ddt ddd" xmlns="http://www.w3.org/2000/svg">
+      <title id="ddt">Déficit anual y deuda acumulada a lo largo de diez años</title>
+      <desc id="ddd">Las barras muestran el déficit de cada año, que sube y baja entre tres y nueve. La línea muestra la deuda acumulada, que sube todos los años sin excepción, de veinte a ochenta y ocho, porque cada déficit se suma al total anterior. Aunque el déficit baje un año, la deuda sigue creciendo mientras haya déficit. Datos ilustrativos.</desc>
+      <line class="g-reja" x1="54" y1="268.0" x2="642" y2="268.0"/>
+      <text class="g-rot" x="46" y="272.0" text-anchor="end">0</text>
+      <text class="g-rot" x="650" y="272.0">0</text>
+      <line class="g-reja" x1="54" y1="218.4" x2="642" y2="218.4"/>
+      <text class="g-rot" x="46" y="222.4" text-anchor="end">2</text>
+      <text class="g-rot" x="650" y="222.4">20</text>
+      <line class="g-reja" x1="54" y1="168.8" x2="642" y2="168.8"/>
+      <text class="g-rot" x="46" y="172.8" text-anchor="end">4</text>
+      <text class="g-rot" x="650" y="172.8">40</text>
+      <line class="g-reja" x1="54" y1="119.2" x2="642" y2="119.2"/>
+      <text class="g-rot" x="46" y="123.2" text-anchor="end">6</text>
+      <text class="g-rot" x="650" y="123.2">60</text>
+      <line class="g-reja" x1="54" y1="69.6" x2="642" y2="69.6"/>
+      <text class="g-rot" x="46" y="73.6" text-anchor="end">8</text>
+      <text class="g-rot" x="650" y="73.6">80</text>
+      <line class="g-reja" x1="54" y1="20.0" x2="642" y2="20.0"/>
+      <text class="g-rot" x="46" y="24.0" text-anchor="end">10</text>
+      <text class="g-rot" x="650" y="24.0">100</text>
+      <rect class="g-barra" x="68.7" y="193.6" width="29.4" height="74.4"/>
+      <text class="g-rot" x="83.4" y="285" text-anchor="middle">1</text>
+      <rect class="g-barra" x="127.5" y="168.8" width="29.4" height="99.2"/>
+      <text class="g-rot" x="142.2" y="285" text-anchor="middle">2</text>
+      <rect class="g-barra" x="186.3" y="144.0" width="29.4" height="124.0"/>
+      <text class="g-rot" x="201.0" y="285" text-anchor="middle">3</text>
+      <rect class="g-barra" x="245.1" y="168.8" width="29.4" height="99.2"/>
+      <text class="g-rot" x="259.8" y="285" text-anchor="middle">4</text>
+      <rect class="g-barra" x="303.9" y="119.2" width="29.4" height="148.8"/>
+      <text class="g-rot" x="318.6" y="285" text-anchor="middle">5</text>
+      <rect class="g-barra" x="362.7" y="94.4" width="29.4" height="173.6"/>
+      <text class="g-rot" x="377.4" y="285" text-anchor="middle">6</text>
+      <rect class="g-barra" x="421.5" y="144.0" width="29.4" height="124.0"/>
+      <text class="g-rot" x="436.2" y="285" text-anchor="middle">7</text>
+      <rect class="g-barra" x="480.3" y="69.6" width="29.4" height="198.4"/>
+      <text class="g-rot" x="495.0" y="285" text-anchor="middle">8</text>
+      <rect class="g-barra" x="539.1" y="44.8" width="29.4" height="223.2"/>
+      <text class="g-rot" x="553.8" y="285" text-anchor="middle">9</text>
+      <rect class="g-barra" x="597.9" y="94.4" width="29.4" height="173.6"/>
+      <text class="g-rot" x="612.6" y="285" text-anchor="middle">10</text>
+      <polyline points="83.4,211.0 142.2,201.0 201.0,188.6 259.8,178.7 318.6,163.8 377.4,146.5 436.2,134.1 495.0,114.2 553.8,91.9 612.6,74.6" fill="none" stroke="#8a4b00" stroke-width="3"/>
+      <circle cx="83.4" cy="211.0" r="4" fill="#8a4b00"/>
+      <circle cx="142.2" cy="201.0" r="4" fill="#8a4b00"/>
+      <circle cx="201.0" cy="188.6" r="4" fill="#8a4b00"/>
+      <circle cx="259.8" cy="178.7" r="4" fill="#8a4b00"/>
+      <circle cx="318.6" cy="163.8" r="4" fill="#8a4b00"/>
+      <circle cx="377.4" cy="146.5" r="4" fill="#8a4b00"/>
+      <circle cx="436.2" cy="134.1" r="4" fill="#8a4b00"/>
+      <circle cx="495.0" cy="114.2" r="4" fill="#8a4b00"/>
+      <circle cx="553.8" cy="91.9" r="4" fill="#8a4b00"/>
+      <circle cx="612.6" cy="74.6" r="4" fill="#8a4b00"/>
+      <line class="g-eje" x1="54" y1="20" x2="54" y2="268"/>
+      <line class="g-eje" x1="54" y1="268" x2="642" y2="268"/>
+      <text class="g-rot-eje" x="348.0" y="314" text-anchor="middle">Año</text>
+      <rect class="g-barra" x="54" y="4" width="13" height="13"/><text class="g-rot" x="73" y="15">Déficit de cada año</text>
+      <line x1="204" y1="11" x2="230" y2="11" stroke="#8a4b00" stroke-width="3"/><text class="g-rot" x="236" y="15">Deuda acumulada</text>
+    </svg>
+      <figcaption>Las barras del déficit <strong>bajan en tres de los diez años</strong>. La línea de la deuda <strong>no baja ni uno solo</strong>. Ahí está toda la diferencia: mientras haya déficit, por pequeño que sea, la deuda sigue creciendo.</figcaption>
+    </figure>
+
+    <div class="caja-tip">
+      <strong>La frase que resuelve casi todas las confusiones de titular.</strong> «El déficit se ha reducido» y «la deuda ha bajado» no significan lo mismo, y lo primero no implica lo segundo. Un déficit menor sigue sumando a la deuda; para que la deuda baje hace falta gastar <em>menos</em> de lo que se ingresa, que es un superávit.
+    </div>
+
+    <p>Y esto conecta con la gráfica de la sección 1: los intereses de la deuda son lo que cuestan todos los déficits anteriores juntos. Cuanto mayor es la deuda, mayor es esa porción del presupuesto que no compra ningún servicio.</p>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Política fiscal: acelerar o frenar</h2>
+
+  <div class="bloque">
+    <p>El gobierno puede usar los impuestos y el gasto para influir en la economía. Solo hay dos direcciones.</p>
+
+    <div class="enfrentados">
+      <div class="lado favor">
+        <h3>Expansiva · acelerar</h3>
+        <ol>
+          <li><strong>Qué hace:</strong> gastar más, bajar impuestos, o las dos cosas.</li>
+          <li><strong>Cuándo se usa:</strong> cuando la economía se enfría, hay desempleo alto y poca actividad.</li>
+          <li><strong>Cómo funciona:</strong> pone más dinero en circulación, lo que sostiene el consumo y el empleo.</li>
+          <li><strong>Qué riesgo tiene:</strong> aumenta el déficit y puede empujar los precios al alza.</li>
+        </ol>
+      </div>
+      <div class="lado contra">
+        <h3>Restrictiva · frenar</h3>
+        <ol>
+          <li><strong>Qué hace:</strong> gastar menos, subir impuestos, o las dos cosas.</li>
+          <li><strong>Cuándo se usa:</strong> cuando la economía se recalienta y los precios suben deprisa.</li>
+          <li><strong>Cómo funciona:</strong> retira dinero de circulación y modera la demanda.</li>
+          <li><strong>Qué riesgo tiene:</strong> puede frenar de más y provocar desempleo.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Aquí hay desacuerdo real, y el curso no lo resuelve.</strong> Cuánto conviene usar cada política, con qué intensidad y en qué momento es objeto de discusión entre economistas y entre partidos, y esa discusión mezcla juicios técnicos con juicios sobre qué debe hacer un gobierno. Lo que sí es materia de examen, y lo que se le pide aquí, es reconocer <strong>en qué dirección empuja una medida</strong>: si pone dinero en circulación o lo retira. Eso es descripción, y se puede hacer sin tomar partido.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva · Presupuesto, deuda y dirección fiscal</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Las dos primeras fuentes, la renta de las personas y las retenciones de nómina, salen del trabajo y suman alrededor del 85 por ciento.">
+        <div class="enun">¿De dónde procede la mayor parte de los ingresos federales?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Del impuesto de sociedades</div>
+          <div class="opcion" data-op="b">De los aranceles</div>
+          <div class="opcion" data-op="c">De la renta de las personas y las retenciones de nómina</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Un déficit menor sigue sumando a la deuda. Para que la deuda baje hace falta un superávit, es decir, ingresar más de lo que se gasta.">
+        <div class="enun">El déficit de este año es menor que el del año pasado. ¿Qué le ocurre a la deuda?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Baja también</div>
+          <div class="opcion" data-op="b">Sigue subiendo, aunque más despacio</div>
+          <div class="opcion" data-op="c">Se mantiene exactamente igual</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Bajar impuestos deja más dinero en circulación, así que empuja en dirección expansiva. Que sea acertado o no en un momento dado es otra discusión.">
+        <div class="enun">El gobierno baja los impuestos. ¿En qué dirección empuja esa medida?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Expansiva</div>
+          <div class="opcion" data-op="b">Restrictiva</div>
+          <div class="opcion" data-op="c">En ninguna</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Quien gana menos gasta una proporción mayor de su ingreso, así que la misma tasa le supone un porcentaje mayor de lo que gana.">
+        <div class="enun">¿Por qué es regresivo un impuesto sobre las ventas con tasa igual para todos?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Porque quien gana más paga menos dinero</div>
+          <div class="opcion" data-op="b">Porque la tasa cambia según la tienda</div>
+          <div class="opcion" data-op="c">Porque quien gana menos gasta una proporción mayor de su ingreso</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Su propia nómina</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Con una nómina real delante, la suya o la de alguien que se la preste, identifique cada retención, calcule qué porcentaje del bruto representa y diga adónde va cada una. Compruebe si el Seguro Social sale exactamente al 6.20 % y Medicare al 1.45 %.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> esos dos porcentajes deberían cuadrar al céntimo. Si no cuadran, revise sobre qué base se calculan, porque no siempre es el bruto total. La retención federal sobre la renta sí varía según lo que cada persona haya declarado.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Seis impuestos más</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque seis impuestos que usted pague, de cualquier nivel de gobierno. Clasifíquelos como progresivos, regresivos o proporcionales, y justifique cada uno calculando qué porcentaje del ingreso supondrían para dos personas con ingresos muy distintos.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si clasificó alguno mirando solo la tasa impresa, rehágalo. La clasificación depende de la tasa efectiva sobre el ingreso, y ahí es donde aparecen los topes y las diferencias de consumo.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Un titular fiscal</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Busque un titular sobre déficit o deuda. Determine de cuál de los dos habla, si el titular los distingue con precisión, y en qué dirección empujaría la medida de la que informa.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si el titular usa las dos palabras como sinónimos, lo ha encontrado escrito mal, y eso es un hallazgo legítimo. Anótelo con las palabras exactas, como hizo en la Lección 1.3.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 5.3</h2>
+    <p>Doce preguntas: cuatro de clasificación de impuestos, cuatro de presupuesto y de la diferencia entre déficit y deuda, y cuatro de política fiscal. Tiempo sugerido: 25 minutos. Puede usar calculadora. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación fiscal, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clasifica impuestos por su efecto</td>
+          <td>Clasifica mirando solo la tasa impresa.</td>
+          <td>Acierta con el impuesto sobre la renta, falla con las ventas.</td>
+          <td>Clasifica los tres tipos calculando la tasa efectiva sobre el ingreso.</td>
+          <td>Detecta los casos con tope, como el Seguro Social, y explica por qué son regresivos.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Lee la composición del presupuesto</td>
+          <td>No sabe de dónde sale ni adónde va el dinero.</td>
+          <td>Nombra alguna categoría suelta.</td>
+          <td>Identifica las fuentes principales y las categorías mayores de gasto.</td>
+          <td>Explica qué significa que los intereses ocupen una porción grande.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Distingue déficit de deuda</td>
+          <td>Usa las dos palabras como sinónimas.</td>
+          <td>Sabe que difieren, pero no explica la relación.</td>
+          <td>Explica que uno es de un año y la otra es acumulada.</td>
+          <td>Explica por qué un déficit menor no hace bajar la deuda.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Distingue política expansiva de restrictiva</td>
+          <td>Confunde las dos direcciones.</td>
+          <td>Las define, pero no las aplica a una medida concreta.</td>
+          <td>Dice en qué dirección empuja una medida dada.</td>
+          <td>Separa la descripción de la dirección del juicio sobre si conviene.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 5.3 y cierre del Tema 5</h2>
+    <p>Tres ideas se llevan de aquí, y las tres empiezan en un recibo. <strong>Un impuesto se clasifica por su tasa efectiva sobre el ingreso, no por la que está impresa.</strong> <strong>El déficit es de un año y la deuda es de siempre</strong>, y mientras haya déficit la deuda sigue creciendo. Y una medida fiscal solo puede empujar en dos direcciones: poner dinero en circulación o retirarlo.</p>
+    <p>Con esto termina el Tema 5 y termina el bloque de cívica y gobierno, que es la mitad del examen. En estas tres lecciones ha visto qué le protege, cómo se ejerce el voto y de dónde sale el dinero público. Los tres temas de cívica juntos —el 3, el 4 y el 5— cubren desde la teoría del contrato social hasta la retención de su nómina, y esa continuidad no es casual: <strong>lo que se discutió en 1787 sigue apareciendo en su recibo de salario</strong>.</p>
+    <p>El <strong>Tema 6</strong> cambia de dominio y de método: historia de los Estados Unidos, leída como cadenas de causa y efecto, con documentos nuevos en el <a href="fuentes/index.html">Archivo de fuentes</a>.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-5">Tema 5 · Ciudadanía en acción</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-6">Siguiente: Tema 6 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 5 · Lección 5.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Un impuesto es progresivo cuando, al subir el ingreso…', ops: ['El porcentaje pagado baja', 'El porcentaje pagado sube', 'El porcentaje se mantiene', 'Se deja de pagar'],
+      correcta: 1, expl: 'Se mide siempre como porcentaje del ingreso. El impuesto federal sobre la renta, con sus tramos, es el ejemplo típico.' },
+    { enun: '2. Un impuesto sobre las ventas con la misma tasa para todos es…', ops: ['Progresivo', 'Proporcional', 'Regresivo', 'Ninguno de los tres'],
+      correcta: 2, expl: 'Quien gana menos gasta una proporción mayor de su ingreso, así que la misma tasa le supone un porcentaje mayor de lo que gana.' },
+    { enun: '3. Una persona gana 2.000 y gasta 1.600 en compras gravadas al 10 %. Ese impuesto le supone…', ops: ['El 10 % de su ingreso', 'El 8 % de su ingreso', 'El 16 % de su ingreso', 'El 4 % de su ingreso'],
+      correcta: 1, expl: '160 dólares sobre un ingreso de 2.000 son el 8 por ciento. Quien gana 10.000 y gasta 4.000 paga 400, que es solo el 4 por ciento del suyo.' },
+    { enun: '4. La retención del Seguro Social tiene un tope salarial. Eso la hace…', ops: ['Progresiva', 'Proporcional', 'Regresiva', 'Voluntaria'],
+      correcta: 2, expl: 'Por encima del tope no se cotiza más, así que la tasa efectiva sobre el ingreso total va bajando. La tasa impresa es igual; la efectiva no.' },
+    { enun: '5. La mayor parte de los ingresos federales procede de…', ops: ['El impuesto de sociedades', 'La renta de las personas y las retenciones de nómina', 'Los aranceles', 'La venta de terrenos'],
+      correcta: 1, expl: 'Las dos juntas suponen alrededor de ochenta y cinco de cada cien dólares que ingresa el gobierno federal.' },
+    { enun: '6. Los intereses de la deuda, dentro del gasto federal…', ops: ['No aparecen en el presupuesto', 'Ocupan una porción grande y no compran ningún servicio', 'Son la partida más pequeña', 'Los paga cada estado'],
+      correcta: 1, expl: 'Es lo que cuesta el dinero que se pidió prestado en años anteriores. Cuanto mayor es la deuda, mayor es esa porción.' },
+    { enun: '7. El déficit mide…', ops: ['Lo que se debe en total', 'Cuánto se gastó de más en un año', 'Los intereses pagados', 'El gasto en defensa'],
+      correcta: 1, expl: 'Es un dato de un ejercicio. La deuda, en cambio, es el total acumulado a lo largo de toda la historia.' },
+    { enun: '8. Si el déficit de este año es menor que el del año pasado, la deuda…', ops: ['Baja', 'Sigue subiendo, aunque más despacio', 'Se queda igual', 'Desaparece'],
+      correcta: 1, expl: 'Un déficit menor sigue sumando. Para que la deuda baje hace falta un superávit, es decir, ingresar más de lo que se gasta.' },
+    { enun: '9. Para que la deuda baje de verdad hace falta…', ops: ['Un déficit menor', 'Un superávit', 'Bajar los intereses', 'Subir el gasto'],
+      correcta: 1, expl: 'Solo se reduce el saldo si se ingresa más de lo que se gasta. Es la diferencia entre reducir el ritmo y cambiar de dirección.' },
+    { enun: '10. Una política fiscal expansiva consiste en…', ops: ['Gastar menos o subir impuestos', 'Gastar más o bajar impuestos', 'No hacer nada', 'Subir los tipos de interés'],
+      correcta: 1, expl: 'Pone más dinero en circulación. Se usa cuando la economía se enfría, y su riesgo es aumentar el déficit y empujar los precios.' },
+    { enun: '11. El gobierno sube los impuestos y recorta el gasto. Esa política es…', ops: ['Expansiva', 'Restrictiva', 'Neutral', 'Progresiva'],
+      correcta: 1, expl: 'Retira dinero de circulación. Se usa cuando la economía se recalienta, y su riesgo es frenar de más.' },
+    { enun: '12. Al clasificar un impuesto, lo que hay que mirar es…', ops: ['La tasa impresa', 'La tasa efectiva sobre el ingreso', 'El nombre del impuesto', 'Quién lo recauda'],
+      correcta: 1, expl: 'Ahí es donde aparecen los topes y las diferencias de consumo, que son lo que convierte una tasa igual para todos en una carga desigual.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Con esto queda cerrado el Tema 5.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* Clasificador de impuestos. Botones, no arrastrar: accesible con
+     teclado y con lector de pantalla, y usable en pantalla táctil. */
+  var IMPUESTOS = [{"t": "El impuesto federal sobre la renta, con sus tramos", "c": "P", "e": "Cuanto mayor es el ingreso, mayor es el porcentaje que se paga. Esa es la definición de progresivo."}, {"t": "El impuesto sobre las ventas", "c": "R", "e": "Aunque la tasa sea igual para todos, quien gana menos gasta una proporción mayor de su ingreso, así que el impuesto le supone un porcentaje mayor de lo que gana."}, {"t": "Un impuesto estatal sobre la renta de tipo único, como el de Illinois", "c": "O", "e": "Todos pagan el mismo porcentaje de su ingreso, gane lo que gane. Eso es proporcional."}, {"t": "El impuesto sobre la gasolina", "c": "R", "e": "Es una cantidad fija por galón. Quien gana poco y necesita el coche para trabajar acaba pagando un porcentaje mayor de su ingreso que quien gana mucho."}, {"t": "La retención de Medicare, del 1.45 % sin tope", "c": "O", "e": "Mismo porcentaje para todos y sin límite superior: es proporcional. Compárelo con el Seguro Social, que sí tiene tope."}, {"t": "La retención del Seguro Social, del 6.20 % con tope salarial", "c": "R", "e": "Aquí está el caso sutil. Solo se cotiza hasta cierto salario, así que por encima del tope la tasa efectiva sobre el ingreso total va bajando. La tasa impresa es igual; la efectiva no."}];
+  var NOMBRES = { P: 'Progresivo', O: 'Proporcional', R: 'Regresivo' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + IMPUESTOS.length + ' impuestos.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    IMPUESTOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'imp-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'imp-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['P', 'O', 'R'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Es ' + NOMBRES[item.c].toLowerCase() + '. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
