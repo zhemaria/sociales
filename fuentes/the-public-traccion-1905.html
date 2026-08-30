@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--
+  Archivo de fuentes · The Public, 23 de septiembre de 1905
+  «Progress of the Chicago traction movement», páginas 391-392
+  Spanish ASE Social Studies · Tema 1 · Indagación, fuentes y alfabetización analítica
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archivo de fuentes · The Public, 23 de septiembre de 1905: el pleito de los tranvías de Chicago</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Archivo de fuentes — paleta pizarra propia, comun a todo el Archivo.
+       No hereda el color del tema: un documento puede servir a varios temas. */
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --acento:  #455a64;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #1c2b33 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(28,43,51,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #263238;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #35434a;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #35434a; }
+  .ficha-fuente a { color: var(--tema-d); }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+  .carta blockquote .dicho {
+    display: block; background: var(--tema-bg); border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbfc;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+  details.original .cuerpo-original .dicho {
+    display: block; background: #eef1f3; border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption {
+    caption-side: top; text-align: left; font-weight: 700;
+    color: var(--tema-d); padding-bottom: 8px; font-size: 15px;
+  }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #263238; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Archivo de fuentes · Tema 1 · Indagación, fuentes y alfabetización analítica</div>
+    <h1>The Public, 23 de septiembre de 1905: el pleito de los tranvías de Chicago</h1>
+    <div class="meta">Fuente primaria · Prensa de opinión · Páginas 391 y 392</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.5 · Evaluar razonamientos y evidencia</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="../index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">The Public, 1905</span>
+    <a class="nav-sig" href="../soc-1-3.html">Lección 1.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="ficha-fuente">
+    <dl>
+      <dt>Documento</dt>
+      <dd>«Progress of the Chicago traction movement» (Avances del movimiento tranviario de Chicago)</dd>
+      <dt>Publicación</dt>
+      <dd><em>The Public: A National Journal of Fundamental Democracy and a Weekly Narrative of History in the Making</em></dd>
+      <dt>Fecha</dt>
+      <dd>Sábado 23 de septiembre de 1905</dd>
+      <dt>Volumen</dt>
+      <dd>Volumen VIII («Eighth Year»), páginas 391 y 392</dd>
+      <dt>Lugar</dt>
+      <dd>Chicago, Illinois</dd>
+      <dt>Editores</dt>
+      <dd>Louis F. Post y Alice Thacher Post</dd>
+      <dt>Tipo de fuente</dt>
+      <dd>Primaria. Semanario de opinión contemporáneo de los hechos que narra</dd>
+      <dt>Facsímil</dt>
+      <dd>HathiTrust, vista completa del volumen 8 (abril de 1905 a abril de 1906):<br>
+        <a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015055071990">Ejemplar de la Universidad de Michigan</a><br>
+        <a href="https://babel.hathitrust.org/cgi/pt?id=njp.32101065273722">Ejemplar de la Universidad de Princeton</a></dd>
+      <dt>Derechos</dt>
+      <dd>Dominio p&uacute;blico en los Estados Unidos: obra publicada antes de 1929, sin renovaci&oacute;n posible de derechos. HathiTrust y las bibliotecas depositarias lo sirven en vista completa sin restricci&oacute;n. Verificado el 30 de agosto de 2026.</dd>
+      <dt>Se usa en</dt>
+      <dd>Lecci&oacute;n 1.3. Documento pareja del <a href="street-railway-traccion-1905.html">Street Railway Journal</a> del mismo d&iacute;a.</dd>
+    </dl>
+    <p class="nota-lengua">El documento original está en inglés. La traducción al español es de este curso y procura conservar el registro periodístico de 1905 sin modernizarlo. El original íntegro está plegado al final de cada apartado.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <strong>Nota de transcripción.</strong> Esta transcripción se hizo cotejando el texto contra la imagen escaneada, no contra el reconocimiento óptico automático, que en este documento introduce errores en cifras y en referencias cruzadas. La fecha del aplazamiento del comité resultaba ilegible en el escaneo (día 20 o día 26) y se confirmó como el 26 de septiembre contrastándola con el <a href="street-railway-traccion-1905.html">Street Railway Journal del mismo día</a>, que informa de la misma reunión. Es un ejemplo de lo que hacen dos fuentes juntas y no puede hacer ninguna por separado.
+  </div>
+
+  <h2 class="seccion" id="contexto">Contexto: qué se estaba discutiendo</h2>
+
+  <div class="bloque">
+    <p>En 1905 Chicago llevaba cuarenta años peleándose por sus tranvías. Las líneas pertenecían a compañías privadas que operaban con concesiones municipales (<em>franchises</em>), y la discusión era si la ciudad debía comprarlas y quedarse con ellas, o renovar las concesiones y conservar solo la facultad de regularlas.</p>
+    <p>En abril de 1905 los votantes de Chicago habían elegido alcalde a Edward F. Dunne, que hizo campaña prometiendo la propiedad municipal inmediata. En septiembre, el comité de transporte local del Concejo Municipal estaba recibiendo propuestas de las compañías existentes. Este documento narra una de esas sesiones.</p>
+    <p>Conviene saber quién lo cuenta. <em>The Public</em> era el semanario de Louis F. Post, discípulo de Henry George y partidario declarado de la propiedad municipal. No era un periódico de información general: era un órgano de una causa, y la causa era la del alcalde.</p>
+  </div>
+
+  <h2 class="seccion" id="doc1">Documento: la sesión del 15 de septiembre</h2>
+
+  <div class="carta">
+    <h3 class="encab-carta">Traducción al español · Página 391</h3>
+    <blockquote>
+      <p><strong>Avances del movimiento tranviario de Chicago.</strong></p>
+      <p>En la sesión aplazada del comité de transporte local del Concejo Municipal de Chicago, celebrada el día 15 con el propósito de recibir propuestas de las compañías existentes (p. 375), no se produjo avance alguno. Todos los intereses tranviarios estaban representados, y el coronel E. R. Bliss actuó como portavoz suyo. El coronel Bliss declaró que tenía una propuesta que hacer, pero se negó a presentarla, aunque dijo:</p>
+      <p class="dicho">Nuestra propuesta va por las mismas líneas que el plan de contrato del alcalde, con cuatro o cinco secciones suprimidas. Escriban en él el nombre de la Chicago City Railway Company en lugar de los cinco directores del alcalde, y lo aceptaremos.</p>
+      <p>«¿Accederán ustedes a entregar a la ciudad todas las ganancias salvo un 5 por ciento, y a que ejerza el control?», preguntó el alcalde.</p>
+      <p>«No voy a responder a esa pregunta, pero lo aceptaremos con las secciones 3, 4, 5, 6 y 7 suprimidas.»</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p><strong>Progress of the Chicago traction movement.</strong></p>
+        <p>At the adjourned meeting of the local transportation committee of the City Council of Chicago on the 15th, held for the purpose of receiving proposals from the existing companies (p. 375), no progress was made. All the traction interests were represented, and Col. E. R. Bliss acted as their spokesman. Col. Bliss stated that he had a proposition to make, but refused to submit it, though he said:</p>
+        <p class="dicho">Our proposition is along the same lines as the Mayor's contract plan, with four or five sections omitted. Write the name of the Chicago City Railway Company in it in place of the Mayor's five directors and we will accept it.</p>
+        <p>"Will you agree to give the city all the earnings but 5 per cent, and to exercise control," the Mayor asked.</p>
+        <p>"I won't answer that question, but we will accept it with sections 3, 4, 5, 6 and 7 omitted."</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">Traducción al español · Página 392, primera columna</h3>
+    <blockquote>
+      <p>Las secciones enumeradas por el coronel Bliss son, en sustancia, las siguientes:</p>
+      <p>La sección 3 dispone el nombramiento de directores de una nueva compañía que establezca y opere una red tranviaria en interés de la ciudad.</p>
+      <p>La sección 4 prohíbe emitir más acciones de las estrictamente necesarias para la construcción, y dispone que las acciones se depositen en fideicomiso para garantizar el cumplimiento de las condiciones de la concesión propuesta.</p>
+      <p>La sección 5 exige que las ganancias se destinen a: (a) operación y mantenimiento; (b) salarios de los directores, que fijará el Concejo Municipal; (c) dividendos del cinco por ciento sobre las acciones; y (d) un fondo de amortización que se acreditará a la ciudad cuando esta compre la red.</p>
+      <p>La sección 6 reserva a la ciudad el derecho de comprar y hacerse cargo de la red en cualquier momento, pagando el costo real.</p>
+      <p>La sección 7 permite el aseguramiento de la emisión de acciones, si fuera necesario, a no más del 2½ por ciento.</p>
+      <p>El concejal Foreman preguntó al coronel Bliss:</p>
+      <p class="dicho">A fin de que la Ciudad de Chicago pueda hacerse cargo de sus líneas y ser dueña de ellas en el momento o los momentos en que así lo desee, fijándose ese momento y determinándose con precisión el precio al que se entregará la propiedad, ¿estipulará su compañía lo siguiente? Que en todo acuerdo de arreglo se disponga que, en un período o unos períodos determinados durante la vigencia del acuerdo, la ciudad podrá hacerse cargo de sus líneas, y que el precio, el método de fijarlo y el momento de fijarlo queden establecidos en dicho acuerdo.</p>
+      <p>A esto respondió el coronel Bliss:</p>
+      <p class="dicho">No vamos a decir ahora que accederemos a vender a la ciudad en un período intermedio. Si ustedes sustituyen esto por la ordenanza del alcalde, suprimiendo unos cuantos párrafos, aceptaremos eso.</p>
+      <p>El concejal Finn le preguntó:</p>
+      <p class="dicho">¿Accederán ustedes a vender en cualquier momento en que la ciudad se lo pida, por el costo de construcción, con independencia de los derechos de concesión?</p>
+      <p>El coronel Bliss respondió: «No accederemos.»</p>
+      <p>El concejal Finn preguntó de nuevo: «¿Cuál es la fecha más temprana en que venderán ustedes a la ciudad, con independencia de los derechos de concesión?»</p>
+      <p>A esto respondió el coronel Bliss: «No podemos responder ahora, y no diremos que vayamos a vender en ningún momento.»</p>
+      <p>Preguntado si tenía un plan que ofrecer, el coronel Bliss respondió que sí lo tenía, pero que no lo ofrecería entonces. Los concejales Finn y Dever intentaron llevar el plan ante el comité, pero fueron derrotados en votación, siete contra cinco, por la moción del concejal Foreman de continuar con las preguntas. El comité se aplazó hasta el día 26.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>The sections enumerated by Col. Bliss are in substance as follows:</p>
+        <p>Section 3 provides for naming directors of a new company to establish and operate a traction plant in the interest of the city.</p>
+        <p>Sec. 4 prohibits issue of more stock than is actually necessary for construction, and provides for placing the stock in trust to secure performance of conditions of the proposed franchise.</p>
+        <p>Sec. 5 requires earnings to be distributed for (a) operation and maintenance; (b) salaries of directors, to be fixed by City Council; (c) five per cent. dividends on stock; and (d) sinking fund to be credited to the city on purchase of the plant by it.</p>
+        <p>Sec. 6 reserves to the city the right to buy and take over the plant at any time upon payment of actual cost.</p>
+        <p>Sec. 7 allows underwriting of the stock if necessary at not more than 2½ per cent.</p>
+        <p>Alderman Foreman asked Col. Bliss:</p>
+        <p class="dicho">In order that the City of Chicago may take over and own your lines at such time or times as it desires so to do, which time shall be fixed and the price at which the property shall be turned over definitely ascertained, will your company stipulate as follows. That in any settlement agreement it shall be provided that at a determined period or periods during the life of the agreement the city may take over your lines and that the price and the method of fixing the price and time of fixing the same shall be therein provided.</p>
+        <p>To this Col. Bliss replied:</p>
+        <p class="dicho">We will not say now that we will agree to sell to the city at an intermediate period. If you will substitute the Mayor's ordinance, striking out a few paragraphs, we will accept that.</p>
+        <p>Alderman Finn asked him:</p>
+        <p class="dicho">Will you agree to sell at any time the city asks you to for the cost of construction, irrespective of franchise rights?</p>
+        <p>Col. Bliss replied: "We will not."</p>
+        <p>Alderman Finn again asked: "What is the earliest time you will sell to the city, irrespective of franchise rights?"</p>
+        <p>To this Col. Bliss replied: "We cannot answer now, and will not say that we will sell at any time."</p>
+        <p>Asked if he had a plan to offer, Col. Bliss replied that he had, but would not offer it then. Aldermen Finn and Dever tried to get the plan before the committee, but were voted down, seven to five, on Alderman Foreman's motion to continue with the questions. The committee adjourned until the 26th.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="carta">
+    <h3 class="encab-carta">Traducción al español · Página 392, segunda columna</h3>
+    <blockquote>
+      <p>El día 14, el comité ejecutivo de la Liga por la Propiedad Municipal (p. 376) acordó revocar la resolución que convocaba una asamblea general de la Liga para examinar el plan de contrato del alcalde Dunne, pues una consulta había revelado que el sentir de la Liga era favorable al plan; y el día 19, el comité ejecutivo del Comité de los Cien (vol. VII, p. 697) aprobó también el plan del alcalde.</p>
+      <p>Se están organizando ahora reuniones de barrio con el fin de invitar al alcalde Dunne a comparecer directamente ante el pueblo y explicar su plan. La primera se celebró en el barrio veintiséis el día 19. El salón, con capacidad para unas 300 personas, se llenó, y muchos se quedaron fuera por falta de sitio. Presidió el concejal Lipps, del barrio, un republicano a quien los periódicos tranviarios tenían por hostil al alcalde Dunne. Hablaron en la reunión el interventor McGann y el alcalde Dunne, y el plan del alcalde, tal como él lo explicó, fue acogido con el entusiasmo de un mitin político en plena campaña, pese a que no hay campaña política alguna en curso. En el transcurso de su discurso, el alcalde Dunne dijo, refiriéndose tanto a su propio plan como a todos los demás:</p>
+      <p class="dicho">Les prometo que ninguna ordenanza será aprobada, salvo por encima de mi veto, si antes no ha sido sometida al pueblo para su aprobación.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en inglés</summary>
+      <div class="cuerpo-original">
+        <p>It was decided by the executive committee of the Municipal Ownership League (p. 376) on the 14th to rescind the resolution for a general meeting of the League to consider Mayor Dunne's contract plan, inquiry having shown that the sentiment of the league was in favor of the plan; and on the 19th the executive committee of the Committee of One Hundred (vol. vii, p. 697) also approved the Mayor's plan.</p>
+        <p>Ward meetings are now being organized for the purpose of inviting Mayor Dunne to come directly before the people and explain his plan. The first was held in the Twenty-sixth ward on the 19th. The hall, holding about 300, was crowded, and many people were turned away for want of room. Alderman Lipps, of the ward, a Republican accounted hostile to Mayor Dunne by the traction newspapers, presided. The meeting was addressed by Comptroller McGann and Mayor Dunne, and the Mayor's plan, as he explained it, was welcomed with the enthusiasm of a political meeting in the heat of a political campaign, notwithstanding that no political campaign is on. In the course of his speech Mayor Dunne said with reference both to his own plan and to all others:</p>
+        <p class="dicho">I promise you that no ordinance will pass, except over my veto, unless it first has been submitted to the people for their approval.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 class="seccion" id="sostiene">Qué sostiene este documento y qué no sostiene</h2>
+
+  <div class="bloque">
+    <p>Este apartado no resume el documento. Separa lo que el documento permite afirmar de lo que solo parece permitir. Es la distinción que la lección 1.2 trabajó y que la 1.3 va a poner a prueba.</p>
+
+    <table class="reglas">
+      <caption>Alcance probatorio del documento</caption>
+      <thead>
+        <tr>
+          <th scope="col">Sostiene</th>
+          <th scope="col">No sostiene</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Que el 15 de septiembre de 1905 el comité de transporte del Concejo se reunió para recibir propuestas de las compañías, y que estas estuvieron representadas por el coronel E. R. Bliss.</td>
+          <td>Cuál era la propuesta que Bliss decía tener. El propio documento dice que se negó a presentarla.</td>
+        </tr>
+        <tr>
+          <td>Las palabras que Bliss pronunció allí, según este semanario, incluidas sus negativas a comprometerse a vender.</td>
+          <td>Las razones de las compañías. No aparece ni un solo argumento suyo: solo respuestas cortas y negativas.</td>
+        </tr>
+        <tr>
+          <td>Que la moción de Foreman se impuso por siete votos contra cinco.</td>
+          <td>Que la votación fuera irregular o que respondiera a presiones. El documento no lo afirma ni aporta base para afirmarlo.</td>
+        </tr>
+        <tr>
+          <td>Que dos organizaciones partidarias de la propiedad municipal respaldaron el plan de Dunne en fechas concretas.</td>
+          <td>Que la ciudad de Chicago apoyara a Dunne. Un salón de 300 personas, lleno, no es una medición de la opinión pública.</td>
+        </tr>
+        <tr>
+          <td>Que Dunne prometió públicamente someter cualquier ordenanza al voto popular antes de aprobarla.</td>
+          <td>Que los «periódicos tranviarios» fueran efectivamente hostiles a Dunne. Es una atribución de pasada, sin fuente.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Lo que hay que retener antes de la lección 1.3.</strong> Este documento no es un parte neutral de una sesión municipal. Es el relato que hizo un semanario que defendía una de las dos posturas en litigio. Eso no lo hace falso: las palabras de Bliss son las palabras de Bliss. Lo que hace es dejar un hueco, y el hueco tiene forma. Falta la voz de las compañías contada por ellas mismas.
+    </div>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="../index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="../index.html#tema-1">Tema 1 · Indagación y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="../soc-1-3.html">Lección 1.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 1 · Archivo de fuentes · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

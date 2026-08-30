@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!--
+  Archivo de fuentes . Street Railway Journal, 23 de septiembre de 1905
+  "Chicago company to reply to questions propounded by the City Council", pagina 467
+  Spanish ASE Social Studies . Tema 1 . Indagacion, fuentes y alfabetizacion analitica
+  (c) 2026 Jose M. Fernandez, ABE/ASE Math Master Teacher,
+  Harry S. Truman College - City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) - https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archivo de fuentes &middot; Street Railway Journal, 23 de septiembre de 1905: la misma reuni&oacute;n contada por el sector</title>
+<meta name="author" content="Jos&eacute; M. Fern&aacute;ndez &mdash; Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Archivo de fuentes — paleta pizarra propia, comun a todo el Archivo.
+       No hereda el color del tema: un documento puede servir a varios temas. */
+    --tema:    #37474f;
+    --tema-d:  #263238;
+    --tema-bg: #eceff1;
+    --tema-bg2:#cfd8dc;
+    --acento:  #455a64;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #1c2b33 0%, #263238 55%, #37474f 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(28,43,51,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #263238;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
+  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #35434a;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #35434a; }
+  .ficha-fuente a { color: var(--tema-d); }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+  .carta blockquote .dicho {
+    display: block; background: var(--tema-bg); border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbfc;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+  details.original .cuerpo-original .dicho {
+    display: block; background: #eef1f3; border-radius: 6px;
+    padding: 8px 14px; margin: 8px 0; font-style: italic;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption {
+    caption-side: top; text-align: left; font-weight: 700;
+    color: var(--tema-d); padding-bottom: 8px; font-size: 15px;
+  }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #263238; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Archivo de fuentes &middot; Tema 1 &middot; Indagaci&oacute;n, fuentes y alfabetizaci&oacute;n anal&iacute;tica</div>
+    <h1>Street Railway Journal, 23 de septiembre de 1905: la misma reuni&oacute;n contada por el sector</h1>
+    <div class="meta">Fuente primaria &middot; Prensa t&eacute;cnica del sector tranviario &middot; P&aacute;gina 467</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.3 &middot; Analizar fuentes hist&oacute;ricas</span>
+      <span class="sp">SSP.5 &middot; Evaluar razonamientos y evidencia</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegaci&oacute;n del curso">
+    <a href="../index.html">&Iacute;ndice del curso</a>
+    <span class="nav-sep" aria-hidden="true">&middot;</span>
+    <a href="../index.html#tema-1">Tema 1 &middot; Indagaci&oacute;n y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">&middot;</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">&middot;</span>
+    <span class="nav-actual" aria-current="page">Street Railway Journal, 1905</span>
+    <a class="nav-sig" href="../soc-1-3.html">Lecci&oacute;n 1.3 <span aria-hidden="true">&rarr;</span></a>
+  </nav>
+
+  <div class="ficha-fuente">
+    <dl>
+      <dt>Documento</dt>
+      <dd>&laquo;Chicago company to reply to questions propounded by the City Council&raquo; (La compa&ntilde;&iacute;a de Chicago responder&aacute; a las preguntas planteadas por el Concejo Municipal)</dd>
+      <dt>Publicaci&oacute;n</dt>
+      <dd><em>Street Railway Journal</em></dd>
+      <dt>Fecha</dt>
+      <dd>S&aacute;bado 23 de septiembre de 1905</dd>
+      <dt>Volumen</dt>
+      <dd>Volumen XXVI, n&uacute;mero 13, p&aacute;gina 467</dd>
+      <dt>Editorial</dt>
+      <dd>McGraw Publishing Company, Nueva York</dd>
+      <dt>Naturaleza</dt>
+      <dd>Revista profesional del sector de los ferrocarriles urbanos. Sus lectores y sus anunciantes eran las compa&ntilde;&iacute;as tranviarias y sus proveedores</dd>
+      <dt>Tipo de fuente</dt>
+      <dd>Primaria. Prensa especializada contempor&aacute;nea de los hechos que narra</dd>
+      <dt>Facs&iacute;mil</dt>
+      <dd>Biblioteca y archivo de LA Metro, colecci&oacute;n digitalizada del <em>Street Railway Journal</em>:<br>
+        <a href="https://libraryarchives.metro.net/DPGTL/ERJ/srj-street-railway-journal/1905-srj-volume-26-no-13-september-23.pdf">Ejemplar completo del 23 de septiembre de 1905 (PDF)</a><br>
+        Volumen completo en el Internet Archive, digitalizado por las Bibliotecas Smithsonian:<br>
+        <a href="https://archive.org/details/streetrailwayj261905newy">Volumen XXVI, julio a septiembre de 1905</a></dd>
+      <dt>Derechos</dt>
+      <dd>Dominio p&uacute;blico en los Estados Unidos: obra publicada antes de 1929, sin renovaci&oacute;n posible de derechos. Las Bibliotecas Smithsonian lo publican en el Internet Archive sin restricci&oacute;n, y LA Metro lo sirve en abierto. Verificado el 30 de agosto de 2026.</dd>
+      <dt>Se usa en</dt>
+      <dd>Lecci&oacute;n 1.3. Documento pareja de <a href="the-public-traccion-1905.html">The Public</a> del mismo d&iacute;a.</dd>
+    </dl>
+    <p class="nota-lengua">El documento original est&aacute; en ingl&eacute;s. La traducci&oacute;n al espa&ntilde;ol es de este curso y procura conservar el registro de la prensa t&eacute;cnica de 1905 sin modernizarlo. El original est&aacute; plegado al final.</p>
+  </div>
+
+  <div class="caja-atencion">
+    <strong>Por qu&eacute; est&aacute; este documento en el Archivo.</strong> Los dos semanarios de este expediente salieron el mismo d&iacute;a, el 23 de septiembre de 1905, y cuentan la misma sesi&oacute;n del comit&eacute; de transporte del Concejo de Chicago, celebrada el viernes 15. No se contradicen en ning&uacute;n hecho comprobable. Difieren en qu&eacute; hechos deciden contar.
+  </div>
+
+  <h2 class="seccion" id="contexto">Contexto: qui&eacute;n publica esto</h2>
+
+  <div class="bloque">
+    <p>El <em>Street Railway Journal</em> no era un peri&oacute;dico de ciudad ni un &oacute;rgano de partido. Era la revista profesional del sector: la le&iacute;an los directivos, los ingenieros y los inversores de las compa&ntilde;&iacute;as de tranv&iacute;as de todo el pa&iacute;s, y se financiaba con la publicidad de sus proveedores. Ese mismo n&uacute;mero trae cotizaciones burs&aacute;tiles de las acciones tranviarias, el informe anual de una compa&ntilde;&iacute;a de Filadelfia y noticias del negocio de las ruedas de vagones.</p>
+    <p>Eso no significa que mienta. Significa que escribe para un lector concreto que quiere saber, sobre todo, si su inversi&oacute;n corre peligro. La pregunta que gu&iacute;a la nota no es &laquo;&iquest;qu&eacute; le conviene a Chicago?&raquo;, sino &laquo;&iquest;c&oacute;mo va la negociaci&oacute;n de la concesi&oacute;n?&raquo;.</p>
+  </div>
+
+  <h2 class="seccion" id="doc">Documento: la sesi&oacute;n del 15 de septiembre</h2>
+
+  <div class="carta">
+    <h3 class="encab-carta">Traducci&oacute;n al espa&ntilde;ol &middot; P&aacute;gina 467</h3>
+    <blockquote>
+      <p><strong>La compa&ntilde;&iacute;a de Chicago responder&aacute; a las preguntas planteadas por el Concejo Municipal.</strong></p>
+      <p>La reuni&oacute;n del comit&eacute; de transporte local del Concejo Municipal de Chicago, celebrada el viernes 15 de septiembre, termin&oacute; con el acuerdo de las compa&ntilde;&iacute;as tranviarias de responder el 26 de septiembre a varias preguntas presentadas por los concejales. Los resultados tangibles de la reuni&oacute;n fueron dos ofrecimientos, hechos por la Chicago City Company como parte de lo que aceptar&iacute;a hacer a cambio de obtener una pr&oacute;rroga de la concesi&oacute;n. Aunque los representantes de la Union Traction no se sumaron a esos ofrecimientos, guardaron silencio cuando se formul&oacute; el que les afectaba. Se entiende que quedan obligados por &eacute;l. Los dos ofrecimientos son:</p>
+      <p class="dicho">Un intercambio de transbordos entre las dos compa&ntilde;&iacute;as fuera de una zona determinada, y una circulaci&oacute;n directa de los coches dentro de esa zona, de modo que resulte un caso de &laquo;una ciudad, una tarifa&raquo;.</p>
+      <p class="dicho">Una rehabilitaci&oacute;n inmediata del servicio de la compa&ntilde;&iacute;a conforme a las recomendaciones del informe Arnold.</p>
+      <p>Las preguntas importantes que la compa&ntilde;&iacute;a ha aceptado responder en la pr&oacute;xima reuni&oacute;n del comit&eacute; son:</p>
+      <p class="dicho">En cualquier acuerdo de arreglo que llegue a hacerse, &iquest;se dispondr&aacute; que en un per&iacute;odo o unos per&iacute;odos determinados, durante la vigencia del acuerdo, la ciudad pueda hacerse cargo de sus l&iacute;neas, y que el precio y el m&eacute;todo de fijarlo queden establecidos en dicho acuerdo?</p>
+      <p class="dicho">&iquest;Aceptar&aacute;n ustedes que la ciudad se haga cargo de las l&iacute;neas en cualquier momento durante la vigencia de la concesi&oacute;n, si se otorga una?</p>
+      <p>Las dem&aacute;s preguntas se basan todas en el informe del comit&eacute; del 11 de diciembre de 1901, en el que se perfilaron los t&eacute;rminos de lo que entonces se consideraba una ordenanza de concesi&oacute;n adecuada. Ese informe trata de exigencias de buen servicio por parte de las compa&ntilde;&iacute;as, y dispone despu&eacute;s los transbordos universales; que la ciudad pueda hacerse cargo de las propiedades en cualquier momento a partir de los diez primeros a&ntilde;os; que todas las concesiones expiren a la vez; que se emplee el trole subterr&aacute;neo en el territorio limitado por las avenidas Ashland y North y la calle Veintid&oacute;s; y que las compa&ntilde;&iacute;as operen en los subterr&aacute;neos si la ciudad llega a construirlos.</p>
+    </blockquote>
+    <details class="original">
+      <summary>Ver el original en ingl&eacute;s</summary>
+      <div class="cuerpo-original">
+        <p><strong>Chicago company to reply to questions propounded by the City Council.</strong></p>
+        <p>The meeting of the committee on local transportation of the Chicago City Council on Friday, Sept. 15, ended in the traction companies agreeing to answer on Sept. 26 several questions submitted by aldermen. The tangible results of the meeting were two offers, made by the Chicago City Company, as a part of what it would agree to do in order to secure an extension of franchise. While the Union Traction representatives did not concur in these offers, they sat silent when the one involving them was made. They are understood to be bound by it. The two offers are:</p>
+        <p class="dicho">An exchange of transfers between the two companies outside of a fixed zone and a through routing of cars inside of that zone, so as to make a case of "one city, one fare."</p>
+        <p class="dicho">An immediate rehabilitation of the service of the company on the lines of the recommendations in the Arnold report.</p>
+        <p>The important questions which the company has agreed to answer at the next meeting of the committee are:</p>
+        <p class="dicho">In any settlement agreement which may be made will it be provided that at a determined period, or periods, during the life of the agreement the city may take over your lines and the price and method of fixing the same be therein set forth?</p>
+        <p class="dicho">Will you agree to the city taking over the lines at any time during the life of the franchise, if one is granted?</p>
+        <p>The other questions are all based on the report of the committee on Dec. 11, 1901, when it outlined the terms of what it then considered a proper franchise ordinance. This report deals with requirements calling for good service on the part of the companies, and then provides for universal transfers; that the city can take over the properties at any time after the first ten years; that all grants terminate at the same time; that the underground trolley be used in the territory bounded by Ashland and North Avenues and Twenty-Second Street, and that the companies operate in subways if the city ever builds them.</p>
+      </div>
+    </details>
+    <p class="nota-lengua" style="font-size:13px;color:#4a3a34;">Nota de transcripci&oacute;n: el original dice &laquo;Chicago City Company&raquo;. La empresa se llamaba Chicago City Railway Company; se ha conservado la forma abreviada del original. El &laquo;informe Arnold&raquo; es el estudio t&eacute;cnico sobre los tranv&iacute;as de Chicago que el ingeniero Bion J. Arnold entreg&oacute; a la ciudad en 1902.</p>
+  </div>
+
+  <h2 class="seccion" id="sostiene">Qu&eacute; sostiene este documento y qu&eacute; no sostiene</h2>
+
+  <div class="bloque">
+    <table class="reglas">
+      <caption>Alcance probatorio del documento</caption>
+      <thead>
+        <tr>
+          <th scope="col">Sostiene</th>
+          <th scope="col">No sostiene</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Que la reuni&oacute;n del 15 de septiembre termin&oacute; con el compromiso de las compa&ntilde;&iacute;as de responder el 26 a varias preguntas de los concejales.</td>
+          <td>Que las compa&ntilde;&iacute;as fueran a responder de verdad, ni qu&eacute; responder&iacute;an. El documento se publica antes de esa fecha.</td>
+        </tr>
+        <tr>
+          <td>Que la Chicago City Company hizo dos ofrecimientos concretos: transbordos con tarifa &uacute;nica y rehabilitaci&oacute;n del servicio seg&uacute;n el informe Arnold.</td>
+          <td>Que esos ofrecimientos fueran suficientes, ni que el comit&eacute; los considerara un avance. Quien los califica de &laquo;resultados tangibles&raquo; es la revista.</td>
+        </tr>
+        <tr>
+          <td>Que los representantes de la Union Traction no se sumaron a los ofrecimientos y permanecieron callados.</td>
+          <td>Que la Union Traction quedara obligada por ellos. El documento dice &laquo;se entiende que&raquo;, que es una interpretaci&oacute;n, no un hecho.</td>
+        </tr>
+        <tr>
+          <td>El contenido de las preguntas pendientes y su origen en el informe del comit&eacute; de 1901.</td>
+          <td>Nada de lo que ocurri&oacute; adem&aacute;s en esa sesi&oacute;n: no menciona ninguna negativa, ninguna votaci&oacute;n ni ning&uacute;n portavoz por su nombre.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El hallazgo que abre la lecci&oacute;n 1.3.</strong> Los dos documentos de este expediente coinciden en los hechos que ambos mencionan. La diferencia entera est&aacute; en qu&eacute; deciden mencionar y con qu&eacute; verbos. Donde uno escribe que no hubo avance alguno, el otro escribe que hubo resultados tangibles. Ninguno de los dos miente. Es la misma reuni&oacute;n.
+    </div>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegaci&oacute;n del curso (pie de p&aacute;gina)">
+    <a href="../index.html">&Iacute;ndice del curso</a>
+    <span class="nav-sep" aria-hidden="true">&middot;</span>
+    <a href="../index.html#tema-1">Tema 1 &middot; Indagaci&oacute;n y fuentes</a>
+    <span class="nav-sep" aria-hidden="true">&middot;</span>
+    <a href="index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="../soc-1-3.html">Lecci&oacute;n 1.3 <span aria-hidden="true">&rarr;</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies &middot; Tema 1 &middot; Archivo de fuentes &middot; GEDparaHispanos</p>
+    <p>Jos&eacute; M. Fern&aacute;ndez, ABE/ASE Math Master Teacher, Harry S. Truman College &mdash; City Colleges of Chicago</p>
+    <p>&copy; 2026. Esta obra est&aacute; licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
