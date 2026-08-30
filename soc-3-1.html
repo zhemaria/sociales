@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!--
+  Lección 3.1 · Del contrato social a la Declaración de Independencia
+  Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 3.1 · Del contrato social a la Declaración de Independencia</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 3 — paleta azul heredada del plan curricular (--t3) */
+    --tema:    #0d47a1;
+    --tema-d:  #08306b;
+    --tema-bg: #e3f2fd;
+    --tema-bg2:#bbdefb;
+    --acento:  #1565c0;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #062350 0%, #08306b 55%, #0d47a1 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(6,35,80,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #08306b;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #f8fbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #0b3a7d; font-weight: 600; }
+  .navlecciones .nav-sep { color: #47618a; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #f8fbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #0d47a1; }
+
+  /* ══ COMPONENTES DEL TEMA 3 ═══════════════════════════════════ */
+  figure.linea-tiempo {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  figure.linea-tiempo svg { display: block; width: 100%; height: auto; overflow: visible; }
+  figure.linea-tiempo figcaption { margin-top: 10px; font-size: 14px; color: #333; }
+  .lt-eje    { stroke: var(--tema); stroke-width: 3; }
+  .lt-punto  { fill: var(--tema); }
+  .lt-ano    { font-size: 13px; fill: var(--tema-d); font-weight: 700; }
+  .lt-hecho  { font-size: 11.5px; fill: #333; }
+  .lt-tick   { stroke: var(--tema-bg2); stroke-width: 1.5; }
+
+  /* Glosario politico */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt {
+    font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px;
+  }
+  dl.glosario dd {
+    margin: 4px 0 0; padding-left: 16px;
+    border-left: 3px solid var(--tema-bg2); font-size: 15px;
+  }
+  dl.glosario dd .en { font-style: italic; color: #555; font-size: 14px; }
+
+  /* Clasificacion de agravios */
+  .agravio-cita {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 10px 16px; margin: 10px 0;
+    font-size: 15px;
+  }
+  .agravio-cita .num {
+    display: inline-block; background: var(--tema); color: #fff;
+    border-radius: 5px; padding: 1px 9px; font-size: 12.5px;
+    font-weight: 700; margin-right: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 3 · Cívica I: documentos fundacionales y principios constitucionales</div>
+    <h1>Lección 3.1 · Del contrato social a la Declaración de Independencia</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.6 · Analizar el propósito y el punto de vista</span>
+      <span class="sp">SSP.7 · Comparar fuentes múltiples</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 3.1</span>
+    <a class="nav-sig" href="soc-3-2.html">Siguiente: Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Explicar con sus propias palabras qué es el contrato social y qué son los derechos naturales, tal como los formularon Locke y Montesquieu.</li>
+      <li>Identificar las tres partes del argumento de la Declaración de Independencia y decir qué función cumple cada una.</li>
+      <li>Distinguir un agravio verificable de un recurso retórico, y justificar la distinción.</li>
+      <li>Rastrear en el texto de la Declaración las frases que proceden directamente de Locke.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> Los dos primeros temas dieron tres herramientas: preguntar, interrogar un documento y leer dos a la vez. Después vinieron los números, que resultaron ser igual de elegidos que las palabras.</p>
+    <p>Este tema empieza el bloque más grande del examen. Y empieza con un documento que casi todo el mundo ha oído citar y casi nadie ha leído entero.</p>
+    <p>Aquí no se va a memorizar la Declaración de Independencia. Se va a <strong>desmontar como argumento</strong>, con la misma plantilla de la Lección 1.2: quién lo escribió, para qué, qué sostiene y qué no. Que sea el documento más citado del país no lo exime del procedimiento. Al contrario.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. La idea antes del documento</h2>
+
+  <div class="bloque">
+    <p>En 1776 nadie inventó nada nuevo en el terreno de las ideas. La Declaración aplica una teoría que llevaba casi un siglo circulando, y conviene conocerla antes de leer el documento, porque el documento la da por sabida.</p>
+
+    <h3>El contrato social</h3>
+    <p>La pregunta que intentaba responder era esta: <strong>¿por qué tendría alguien que obedecer a un gobierno?</strong></p>
+    <p>La respuesta antigua era que el rey gobernaba por voluntad divina, y desobedecerlo era desobedecer a Dios. La respuesta nueva invierte el orden. Las personas existen antes que el gobierno y tienen derechos por el hecho de existir. El gobierno es un <strong>acuerdo</strong> que esas personas establecen para proteger esos derechos, y su autoridad viene de ahí y de ningún otro sitio.</p>
+    <p>De eso se siguen dos consecuencias que en 1776 eran explosivas: el poder del gobierno tiene un <strong>límite</strong>, que es el fin para el que se creó; y si lo rebasa de forma sostenida, quienes hicieron el acuerdo pueden deshacerlo.</p>
+
+    <div class="documento">
+      <h2><span aria-hidden="true">📜</span> Documento A · John Locke</h2>
+      <p class="fuente"><em>Segundo tratado sobre el gobierno civil</em>, 1689. Traducción del curso. Original en inglés, de dominio público, disponible en el Proyecto Gutenberg.</p>
+      <div class="carta">
+        <h3 class="encab-carta">Para qué se forma un gobierno · capítulo IX</h3>
+        <blockquote>
+          <p>Los hombres se unen en sociedad para la conservación mutua de sus vidas, sus libertades y sus bienes, cosas a las que doy el nombre general de propiedad.</p>
+        </blockquote>
+      </div>
+      <div class="carta">
+        <h3 class="encab-carta">Qué ocurre cuando el gobierno rebasa su fin · capítulo XIX</h3>
+        <blockquote>
+          <p>Cuando quienes gobiernan actúan de manera contraria a la confianza que se depositó en ellos, esa confianza se pierde necesariamente, y el poder vuelve a quienes lo entregaron, que pueden colocarlo donde crean mejor para su seguridad.</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <h3>La separación de poderes</h3>
+    <p>Montesquieu añade la parte práctica. Si la teoría de Locke dice para qué existe el gobierno, Montesquieu se pregunta cómo se construye uno que no acabe abusando.</p>
+
+    <div class="documento">
+      <h2><span aria-hidden="true">📜</span> Documento B · Montesquieu</h2>
+      <p class="fuente"><em>Del espíritu de las leyes</em>, libro XI, capítulo 6, «De la constitución de Inglaterra», 1748. Traducción del curso. <strong>El original es francés, no inglés.</strong> De dominio público.</p>
+      <div class="carta">
+        <h3 class="encab-carta">Por qué hay que repartir el poder</h3>
+        <blockquote>
+          <p>Es una experiencia eterna que todo hombre que tiene poder tiende a abusar de él. Para que no se pueda abusar del poder, hace falta que, por la disposición de las cosas, el poder detenga al poder.</p>
+          <p>Todo estaría perdido si un mismo hombre ejerciera los tres poderes: el de hacer las leyes, el de ejecutar las decisiones públicas y el de juzgar los delitos y los pleitos entre particulares.</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>La división del trabajo entre los dos.</strong> Locke responde <em>por qué</em> obedecemos y <em>cuándo</em> deja de haber obligación de hacerlo. Montesquieu responde <em>cómo</em> se organiza un gobierno para que ese momento no llegue. La Declaración de 1776 usa a Locke; la Constitución de 1787, que verá en la Lección 3.2, usa a Montesquieu.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · El contrato social</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Ese es el giro entero: la autoridad no baja de Dios al rey, sube de las personas al gobierno. Todo lo demás se sigue de ahí.">
+        <div class="enun">Según la teoría del contrato social, ¿de dónde viene la autoridad de un gobierno?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">De la voluntad divina</div>
+          <div class="opcion" data-op="b">De la tradición y la antigüedad</div>
+          <div class="opcion" data-op="c">Del consentimiento de los gobernados</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Un derecho natural se tiene por existir, no porque el gobierno lo conceda. Por eso el gobierno no puede retirarlo: no era suyo.">
+        <div class="enun">¿Qué significa que un derecho sea «natural» o «inalienable»?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que se tiene por el hecho de existir, y el gobierno no lo concede ni lo puede quitar</div>
+          <div class="opcion" data-op="b">Que está escrito en una ley</div>
+          <div class="opcion" data-op="c">Que solo lo tienen algunas personas</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Locke explica el fundamento y el límite del gobierno; Montesquieu propone el mecanismo para que ese límite funcione en la práctica, repartiendo el poder en tres.">
+        <div class="enun">¿Qué añade Montesquieu a lo que ya decía Locke?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que los derechos son naturales</div>
+          <div class="opcion" data-op="b">Cómo organizar el gobierno para que el poder detenga al poder</div>
+          <div class="opcion" data-op="c">Que el rey gobierna por voluntad divina</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Trece años, de aliados a enemigos</h2>
+
+  <div class="bloque">
+    <p>En 1763 los colonos celebraban una victoria británica en la que habían combatido del lado británico. Trece años después declaraban la independencia. Lo que pasó en medio explica los agravios.</p>
+
+    <figure class="linea-tiempo">
+      <svg viewBox="0 0 700 300" role="img" aria-labelledby="ltt ltd" xmlns="http://www.w3.org/2000/svg">
+      <title id="ltt">Línea de tiempo de 1763 a 1776: de la victoria británica a la Declaración de Independencia</title>
+      <desc id="ltd">Ocho hitos sobre una línea. En 1763 termina la Guerra de los Siete Años y se dicta la Proclamación Real. En 1765 la Ley del Timbre, en 1767 las Leyes Townshend, en 1770 la Masacre de Boston, en 1773 el Motín del té de Boston, en 1774 las Leyes Coercitivas y el Primer Congreso Continental, en 1775 los combates de Lexington y Concord, y en 1776 la Declaración de Independencia. Trece años entre el final de una guerra ganada junto a Gran Bretaña y la separación de ella.</desc>
+      <line class="lt-eje" x1="46" y1="132" x2="654" y2="132"/>
+      <line class="lt-tick" x1="46.0" y1="124" x2="46.0" y2="140"/>
+      <circle class="lt-punto" cx="46.0" cy="132" r="6"/>
+      <text class="lt-ano" x="46.0" y="110" text-anchor="middle">1763</text>
+      <text class="lt-hecho" x="46.0" y="81" text-anchor="middle">Fin de la Guerra de los</text>
+      <text class="lt-hecho" x="46.0" y="94" text-anchor="middle">Siete Años. Proclamación Real</text>
+      <line class="lt-tick" x1="139.5" y1="124" x2="139.5" y2="140"/>
+      <circle class="lt-punto" cx="139.5" cy="132" r="6"/>
+      <text class="lt-ano" x="139.5" y="154" text-anchor="middle">1765</text>
+      <text class="lt-hecho" x="139.5" y="170" text-anchor="middle">Ley del Timbre</text>
+      <line class="lt-tick" x1="233.1" y1="124" x2="233.1" y2="140"/>
+      <circle class="lt-punto" cx="233.1" cy="132" r="6"/>
+      <text class="lt-ano" x="233.1" y="110" text-anchor="middle">1767</text>
+      <text class="lt-hecho" x="233.1" y="94" text-anchor="middle">Leyes Townshend</text>
+      <line class="lt-tick" x1="373.4" y1="124" x2="373.4" y2="140"/>
+      <circle class="lt-punto" cx="373.4" cy="132" r="6"/>
+      <text class="lt-ano" x="373.4" y="154" text-anchor="middle">1770</text>
+      <text class="lt-hecho" x="373.4" y="170" text-anchor="middle">Masacre de Boston</text>
+      <line class="lt-tick" x1="513.7" y1="124" x2="513.7" y2="140"/>
+      <circle class="lt-punto" cx="513.7" cy="132" r="6"/>
+      <text class="lt-ano" x="513.7" y="110" text-anchor="middle">1773</text>
+      <text class="lt-hecho" x="513.7" y="81" text-anchor="middle">Motín del té</text>
+      <text class="lt-hecho" x="513.7" y="94" text-anchor="middle">de Boston</text>
+      <line class="lt-tick" x1="560.5" y1="124" x2="560.5" y2="140"/>
+      <circle class="lt-punto" cx="560.5" cy="132" r="6"/>
+      <text class="lt-ano" x="560.5" y="154" text-anchor="middle">1774</text>
+      <text class="lt-hecho" x="560.5" y="170" text-anchor="middle">Leyes Coercitivas. Primer</text>
+      <text class="lt-hecho" x="560.5" y="183" text-anchor="middle">Congreso Continental</text>
+      <line class="lt-tick" x1="607.2" y1="124" x2="607.2" y2="140"/>
+      <circle class="lt-punto" cx="607.2" cy="132" r="6"/>
+      <text class="lt-ano" x="607.2" y="110" text-anchor="middle">1775</text>
+      <text class="lt-hecho" x="607.2" y="94" text-anchor="middle">Lexington y Concord</text>
+      <line class="lt-tick" x1="654.0" y1="124" x2="654.0" y2="140"/>
+      <circle class="lt-punto" cx="654.0" cy="132" r="6"/>
+      <text class="lt-ano" x="654.0" y="154" text-anchor="middle">1776</text>
+      <text class="lt-hecho" x="654.0" y="170" text-anchor="middle">Declaración de</text>
+      <text class="lt-hecho" x="654.0" y="183" text-anchor="middle">Independencia</text>
+    </svg>
+      <figcaption>La guerra de 1763 dejó a Gran Bretaña con una deuda enorme y con un territorio nuevo que defender. La decisión de que las colonias contribuyeran a pagarlo, mediante impuestos aprobados en Londres y no en las asambleas coloniales, abre toda la cadena.</figcaption>
+    </figure>
+
+    <div class="caja-atencion">
+      <strong>La consigna que resume el conflicto.</strong> «Ningún impuesto sin representación» no era una queja sobre la cantidad de dinero. Era una queja sobre <strong>quién decide</strong>. Los colonos no tenían escaños en el Parlamento que les cobraba, y sostenían que un impuesto solo es legítimo si lo aprueban los representantes de quien lo paga. Ese principio es contrato social aplicado a un recibo.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Anatomía de un argumento</h2>
+
+  <div class="bloque">
+    <p>La Declaración no es una proclama emocional, aunque lo parezca al leerla en voz alta. Es un argumento con la forma de un expediente judicial, y está construida en tres partes que hacen tres trabajos distintos.</p>
+
+    <table class="reglas">
+      <caption>Las tres partes de la Declaración y su función</caption>
+      <thead>
+        <tr><th scope="col">Parte</th><th scope="col">Qué contiene</th><th scope="col">Qué función cumple</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 · Premisa filosófica</td>
+          <td>Los dos primeros párrafos. Una teoría general del gobierno. No menciona a Inglaterra.</td>
+          <td>Establecer la regla con la que se va a juzgar. Si el lector la acepta, ya está medio convencido.</td>
+        </tr>
+        <tr>
+          <td>2 · Los agravios</td>
+          <td>Veintisiete cargos contra el rey, encabezados todos por la misma fórmula.</td>
+          <td>Aportar los hechos que, según la regla anterior, autorizan a romper el contrato.</td>
+        </tr>
+        <tr>
+          <td>3 · Conclusión</td>
+          <td>Los tres párrafos finales. La declaración propiamente dicha.</td>
+          <td>Sacar la consecuencia: si la regla vale y los hechos son ciertos, la separación es legítima.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Fíjese en el orden. La premisa va <strong>primero</strong>, y eso no es casual: obliga al lector a aceptar el criterio antes de conocer los hechos que se van a medir con él. Cuando llega a los agravios, ya ha admitido con qué regla juzgarlos.</p>
+
+    <div class="caja-tip">
+      <strong>Una frase que delata la estrategia.</strong> Al terminar la premisa, el texto anuncia que somete los hechos al juicio de un mundo imparcial. Con esa frase, la Declaración deja de hablar como un bando en una disputa y empieza a hablar como un fiscal que presenta pruebas. El destinatario ya no es solo el rey: es Europa, y en particular Francia, de quien se esperaba una alianza.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Agravio verificable o recurso retórico</h2>
+
+  <div class="bloque">
+    <p>Aquí está el trabajo central de la lección, y es exactamente el de la Lección 1.2: separar lo que un documento sostiene de lo que solo parece sostener.</p>
+    <p>Un agravio es <strong>verificable</strong> si un historiador podría, en principio, buscar el hecho y comprobarlo: una ley concreta, una fecha, un nombramiento, un barco. Es <strong>retórico</strong> si acusa en términos que no señalan ningún hecho comprobable, o si el efecto que busca es emocional antes que probatorio.</p>
+
+    <div class="caja-atencion">
+      <strong>Retórico no significa falso.</strong> Significa que, tal como está redactado, no se puede comprobar. Muchos agravios retóricos describen algo real; lo que ocurre es que el documento no ofrece el dato que permitiría verificarlo. La distinción es sobre la <em>forma</em> de la acusación, no sobre su verdad.
+    </div>
+
+    <p>Los agravios completos, numerados del 1 al 27, están en la <a href="fuentes/declaracion-independencia-1776.html">ficha del documento en el Archivo de fuentes</a>. Aquí van cinco para trabajar.</p>
+
+    <div class="agravio-cita"><span class="num">1</span>Se ha negado a dar su asentimiento a las leyes más saludables y necesarias para el bien público.</div>
+    <div class="agravio-cita"><span class="num">9</span>Ha hecho que los jueces dependan solo de su voluntad en cuanto a la duración de sus cargos y a la cuantía y el pago de sus salarios.</div>
+    <div class="agravio-cita"><span class="num">16</span>Para imponernos contribuciones sin nuestro consentimiento.</div>
+    <div class="agravio-cita"><span class="num">24</span>Ha saqueado nuestros mares, asolado nuestras costas, incendiado nuestras ciudades y destruido la vida de nuestro pueblo.</div>
+    <div class="agravio-cita"><span class="num">25</span>Está transportando en este momento grandes ejércitos de mercenarios extranjeros para completar la obra de muerte, desolación y tiranía ya iniciada, con circunstancias de crueldad y perfidia apenas igualadas en las épocas más bárbaras.</div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Clasificar agravios</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Se puede ir a los archivos y comprobar qué nombramientos y qué salarios judiciales dependían del rey. Señala un mecanismo concreto, no una impresión.">
+        <div class="enun">Agravio 9, sobre los jueces que dependen de la voluntad del rey para su cargo y su salario.</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Retórico</div>
+          <div class="opcion" data-op="b">Verificable</div>
+          <div class="opcion" data-op="c">Ni una cosa ni otra</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="«Las leyes más saludables y necesarias» no nombra ninguna ley. Sin saber cuáles, no hay nada que comprobar. La acusación puede ser cierta y aun así estar redactada de forma no verificable.">
+        <div class="enun">Agravio 1, sobre negarse a aprobar las leyes más saludables y necesarias para el bien público.</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Retórico, por cómo está redactado</div>
+          <div class="opcion" data-op="b">Verificable</div>
+          <div class="opcion" data-op="c">Falso</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Los hechos existieron, pero la redacción acumula verbos de devastación sin fechas ni lugares, y el efecto buscado es la indignación. Muchos agravios están en esta zona intermedia.">
+        <div class="enun">Agravio 24, sobre saquear los mares, asolar las costas e incendiar las ciudades.</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Claramente verificable: se pueden buscar las ciudades</div>
+          <div class="opcion" data-op="b">Claramente retórico: nada de eso ocurrió</div>
+          <div class="opcion" data-op="c">Zona intermedia: los hechos son reales, la redacción busca el efecto</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="La contratación de tropas alemanas es un hecho documentado, con contratos y cifras. Lo que rodea al hecho —crueldad, perfidia, épocas bárbaras— es la parte retórica del mismo agravio.">
+        <div class="enun">Agravio 25, sobre el transporte de ejércitos de mercenarios extranjeros.</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Enteramente retórico</div>
+          <div class="opcion" data-op="b">Contiene un hecho verificable envuelto en lenguaje retórico</div>
+          <div class="opcion" data-op="c">No se refiere a nada real</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Las frases que vienen de Locke</h2>
+
+  <div class="bloque">
+    <p>Puestos uno al lado del otro, el préstamo se ve solo. Y también se ve el cambio.</p>
+
+    <table class="reglas">
+      <caption>Qué dice Locke y qué dice la Declaración</caption>
+      <thead>
+        <tr><th scope="col">Locke, 1689</th><th scope="col">Declaración, 1776</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Los hombres se unen para conservar sus vidas, sus libertades y sus <strong>bienes</strong>.</td><td>Entre los derechos inalienables están la vida, la libertad y la <strong>búsqueda de la felicidad</strong>.</td></tr>
+        <tr><td>El poder vuelve a quienes lo entregaron cuando quienes gobiernan traicionan la confianza depositada.</td><td>Es derecho del pueblo reformar o abolir la forma de gobierno que se vuelva destructora de sus fines.</td></tr>
+        <tr><td>El gobierno existe para un fin, y ese fin es su límite.</td><td>Los gobiernos derivan sus poderes legítimos del consentimiento de los gobernados.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El cambio de una palabra.</strong> Donde Locke escribía <em>estates</em>, bienes o propiedad, la Declaración escribe <em>the pursuit of Happiness</em>. Sobre esa sustitución se lleva discutiendo dos siglos y medio, y no hay acuerdo. Unos ven una ampliación generosa; otros, una manera de no comprometerse con la propiedad en un momento incómodo. La lección no necesita resolverlo: necesita que usted note que <strong>alguien cambió una palabra a propósito</strong>, y que se pregunte por qué. Las siete frases en las dos lenguas están en la <a href="fuentes/declaracion-independencia-1776.html#bilingue">ficha del Archivo</a>.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Vocabulario político</h2>
+
+  <div class="bloque">
+    <p>Cuatro palabras que el examen usa dando por hecho que se entienden.</p>
+
+    <dl class="glosario">
+      <dt>Soberanía</dt>
+      <dd>La autoridad última para decidir dentro de un territorio, la que no responde ante ninguna otra. La discusión de 1776 es sobre dónde reside: si en el rey y el Parlamento o en el pueblo de las colonias. <span class="en">En inglés, <em>sovereignty</em>.</span></dd>
+
+      <dt>Tiranía</dt>
+      <dd>El ejercicio del poder fuera de los límites para los que se concedió, en beneficio de quien manda y no de los gobernados. No significa simplemente crueldad: significa poder sin límite legítimo. <span class="en">En inglés, <em>tyranny</em>.</span></dd>
+
+      <dt>Consentimiento</dt>
+      <dd>El acuerdo de los gobernados, que es lo único que convierte el mando en autoridad legítima. Puede darse por representación, y de ahí la disputa sobre los impuestos. <span class="en">En inglés, <em>consent</em>.</span></dd>
+
+      <dt>Inalienable</dt>
+      <dd>Que no se puede transferir, vender ni retirar, ni siquiera con el acuerdo de quien lo posee. Un derecho inalienable no es un permiso que el gobierno da: es algo que el gobierno encuentra ya puesto. <span class="en">En inglés, <em>unalienable</em>, en la grafía del documento.</span></dd>
+    </dl>
+  </div>
+
+  <h2 class="seccion" id="sec7">7. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Anatomía de un argumento</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Abra la <a href="fuentes/declaracion-independencia-1776.html">ficha del Archivo</a> y lea el documento entero, que son unas diez minutos de lectura. Marque dónde termina cada una de las tres partes. Después escriba una frase por parte diciendo qué función cumple.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> la primera parte termina justo cuando el texto anuncia que somete los hechos al juicio de un mundo imparcial. La segunda termina en el agravio 27. Si sus tres frases dicen «habla de X», reescríbalas: la función no es de qué habla, es para qué está ahí.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Cinco agravios más</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Elija cinco agravios de la lista de 27 que no aparezcan en esta lección. Clasifique cada uno como verificable, retórico o zona intermedia, y escriba en una línea qué haría falta para comprobarlo.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si los cinco le salen de la misma categoría, probablemente eligió de una sola zona del documento. Los agravios del principio tienden a lo jurídico y los del final a lo militar y emocional, y ese orden tampoco es casual.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · El agravio más vigente</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Escriba un párrafo respondiendo a esta pregunta: de los veintisiete agravios, ¿cuál le parece hoy más vigente y por qué? No se trata de decir cuál era más grave en 1776, sino cuál describe un problema que usted reconoce.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> su párrafo debe citar el número y las palabras del agravio, no describirlo de memoria. Esa es la diferencia entre argumentar desde un documento y opinar a su lado.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 3.1</h2>
+    <p>Doce preguntas: cuatro de contrato social y derechos naturales, cuatro de estructura y propósito de la Declaración, y cuatro de vocabulario político en contexto. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de las Prácticas 1 y 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de análisis de documento fundacional, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Explica el contrato social con sus propias palabras</td>
+          <td>Repite la expresión sin poder decir qué significa.</td>
+          <td>Dice que el gobierno nace de un acuerdo, pero no menciona su límite.</td>
+          <td>Explica el origen y el límite del poder, y de dónde viene la autoridad.</td>
+          <td>Contrasta la teoría con la idea anterior del derecho divino y explica por qué era explosiva.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Identifica la estructura argumentativa</td>
+          <td>Lee la Declaración como un texto continuo.</td>
+          <td>Reconoce las tres partes, pero no sabe qué función cumple cada una.</td>
+          <td>Delimita las tres partes y explica el trabajo que hace cada una.</td>
+          <td>Explica además por qué la premisa va antes que los hechos y qué efecto tiene ese orden.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Distingue agravio verificable de recurso retórico</td>
+          <td>Trata los veintisiete como hechos probados.</td>
+          <td>Separa algunos, pero confunde «retórico» con «falso».</td>
+          <td>Clasifica y justifica diciendo qué haría falta para comprobar cada uno.</td>
+          <td>Reconoce los agravios mixtos, con un hecho verificable envuelto en lenguaje de efecto.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Conecta la filosofía política con el texto concreto</td>
+          <td>Trata a Locke y la Declaración como cosas sin relación.</td>
+          <td>Sabe que hay influencia, pero no la localiza en frases.</td>
+          <td>Señala frases concretas de la Declaración que proceden de Locke.</td>
+          <td>Detecta además dónde la Declaración se aparta de Locke y se pregunta por qué.</td>
+          <td class="repaso"><a href="#sec5">Sección 5</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 3.1 y enlace con la 3.2</h2>
+    <p>La Declaración quedó desmontada como lo que es: <strong>un argumento</strong>. Una regla general primero, veintisiete hechos después y una conclusión al final. Y quedó claro que no todos los hechos pesan igual, porque no todos están redactados de manera que se puedan comprobar.</p>
+    <p>Eso no le quita valor al documento. Se lo devuelve. Un texto que se venera no se puede leer; uno que se examina, sí.</p>
+    <p>Queda una cosa pendiente y no es menor. La Declaración dice para qué debe existir un gobierno, pero no construye ninguno. Durante once años los Estados Unidos funcionaron sin una constitución como la de hoy, y funcionaron mal. La <strong><a href="soc-3-2.html">Lección 3.2</a></strong> pasa a la Constitución de 1787: sus siete artículos, sus cinco principios y la pelea por ratificarla, en la que federalistas y antifederalistas discutían por dos miedos distintos. Ahí es donde entra Montesquieu, que en esta lección solo asomó la cabeza.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-3">Tema 3 · Documentos fundacionales</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-3-2.html">Siguiente: Lección 3.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 3 · Lección 3.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Según la teoría del contrato social, la autoridad de un gobierno viene de…',
+      ops: ['La voluntad divina', 'El consentimiento de los gobernados', 'La antigüedad de la institución', 'La fuerza militar'],
+      correcta: 1, expl: 'Ese es el giro entero: la autoridad no baja de Dios al rey, sube de las personas al gobierno. De ahí se sigue que el poder tiene un límite.' },
+
+    { enun: '2. Que un derecho sea inalienable significa que…',
+      ops: ['Está escrito en una ley', 'Solo lo tienen los ciudadanos', 'No se puede transferir ni retirar, ni con el acuerdo de quien lo posee', 'Lo concede el gobierno'],
+      correcta: 2, expl: 'Un derecho inalienable no es un permiso que el gobierno da: es algo que el gobierno encuentra ya puesto y no puede quitar.' },
+
+    { enun: '3. Locke sostenía que los hombres se unen en sociedad para conservar…',
+      ops: ['Sus vidas, libertades y bienes', 'Su religión y sus costumbres', 'Su rey y su reino', 'Su lengua y su territorio'],
+      correcta: 0, expl: 'A esas tres cosas juntas Locke las llamaba propiedad. La Declaración conserva las dos primeras y cambia la tercera.' },
+
+    { enun: '4. La aportación propia de Montesquieu es…',
+      ops: ['La idea de derechos naturales', 'El reparto del poder en tres, para que el poder detenga al poder', 'La teoría del derecho divino', 'El concepto de soberanía popular'],
+      correcta: 1, expl: 'Locke explica por qué existe el gobierno y cuándo deja de obligar; Montesquieu propone el mecanismo para que ese límite funcione.' },
+
+    { enun: '5. La Declaración de Independencia está construida en…',
+      ops: ['Dos partes: quejas y despedida', 'Un texto continuo sin partes', 'Tres partes: premisa filosófica, agravios y conclusión', 'Cuatro partes, una por cada firmante principal'],
+      correcta: 2, expl: 'Cada parte hace un trabajo distinto: establecer la regla, aportar los hechos y sacar la consecuencia.' },
+
+    { enun: '6. ¿Por qué la premisa filosófica va antes que los agravios?',
+      ops: ['Porque es más corta', 'Porque obliga al lector a aceptar el criterio antes de conocer los hechos', 'Porque se escribió primero', 'Porque los agravios son menos importantes'],
+      correcta: 1, expl: 'Cuando el lector llega a los cargos, ya ha admitido con qué regla juzgarlos. El orden es parte del argumento.' },
+
+    { enun: '7. La Declaración contiene, según la cuenta tradicional…',
+      ops: ['Diez agravios', 'Veintisiete agravios', 'Cincuenta y seis agravios', 'Un número indeterminado'],
+      correcta: 1, expl: 'Dieciocho cargos directos contra el rey más las nueve subcláusulas del cargo decimotercero suman veintisiete.' },
+
+    { enun: '8. Que un agravio sea «retórico» significa que…',
+      ops: ['Es falso', 'Está inventado', 'Tal como está redactado, no señala un hecho comprobable', 'Es poco importante'],
+      correcta: 2, expl: 'Muchos agravios retóricos describen algo real. La distinción es sobre la forma de la acusación, no sobre su verdad.' },
+
+    { enun: '9. El agravio sobre los jueces que dependen del rey para su cargo y su salario es…',
+      ops: ['Retórico', 'Verificable, porque señala un mecanismo concreto', 'Falso', 'Irrelevante'],
+      correcta: 1, expl: 'Se pueden buscar en los archivos los nombramientos y los salarios judiciales. Señala un hecho, no una impresión.' },
+
+    { enun: '10. En vocabulario político, «soberanía» designa…',
+      ops: ['La riqueza de un país', 'La autoridad última para decidir en un territorio', 'El derecho a votar', 'La independencia militar'],
+      correcta: 1, expl: 'Es la autoridad que no responde ante ninguna otra. La disputa de 1776 era sobre dónde residía: en el rey y el Parlamento o en el pueblo de las colonias.' },
+
+    { enun: '11. En este vocabulario, «tiranía» significa…',
+      ops: ['Crueldad personal del gobernante', 'Ejercicio del poder fuera de sus límites legítimos y en beneficio propio', 'Gobierno de una sola persona', 'Falta de elecciones'],
+      correcta: 1, expl: 'No es simplemente crueldad: es poder sin límite legítimo. Por eso la acusación de tiranía se sigue de la teoría del contrato social.' },
+
+    { enun: '12. «Ningún impuesto sin representación» era una queja sobre…',
+      ops: ['La cantidad de dinero exigida', 'Quién tiene autoridad para decidir el impuesto', 'El tipo de mercancías gravadas', 'La forma de recaudarlo'],
+      correcta: 1, expl: 'Los colonos sostenían que un impuesto solo es legítimo si lo aprueban los representantes de quien lo paga. Es contrato social aplicado a un recibo.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 3.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
