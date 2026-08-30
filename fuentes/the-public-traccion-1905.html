@@ -18,13 +18,14 @@
 <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
 <style>
   :root {
-    /* Archivo de fuentes — paleta pizarra propia, comun a todo el Archivo.
-       No hereda el color del tema: un documento puede servir a varios temas. */
-    --tema:    #37474f;
-    --tema-d:  #263238;
-    --tema-bg: #eceff1;
-    --tema-bg2:#cfd8dc;
-    --acento:  #455a64;
+    /* Archivo de fuentes — neutro de tinta y papel, fuera de la secuencia
+       de ocho colores de los temas. Un documento puede servir a varios temas,
+       asi que el Archivo no lleva el color de ninguno. */
+    --tema:    #2b2b2b;
+    --tema-d:  #171717;
+    --tema-bg: #f0efed;
+    --tema-bg2:#d9d7d3;
+    --acento:  #44403c;
     --txt:     #222;
     --bg:      #f5f7fa;
   }
@@ -44,9 +45,9 @@
   /* ── ENCABEZADO ─────────────────────────────────────────────── */
   header.principal {
     background: var(--tema-d);
-    background: linear-gradient(135deg, #1c2b33 0%, #263238 55%, #37474f 100%);
+    background: linear-gradient(135deg, #0d0d0d 0%, #171717 55%, #2b2b2b 100%);
     color: #ffffff; padding: 32px 30px; border-radius: 14px;
-    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(28,43,51,.28);
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(20,20,18,.30);
   }
   header.principal .ruta {
     font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
@@ -56,7 +57,7 @@
 
   .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
   .sp {
-    display: inline-block; background: #ffffff; color: #263238;
+    display: inline-block; background: #ffffff; color: #171717;
     font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
     letter-spacing: .3px;
   }
@@ -101,8 +102,8 @@
   .navlecciones a:hover, .navlecciones a:focus {
     border-bottom-color: var(--tema-d); text-decoration: underline;
   }
-  .navlecciones .nav-actual { color: #35434a; font-weight: 600; }
-  .navlecciones .nav-sep { color: #55666e; }
+  .navlecciones .nav-actual { color: #302e2b; font-weight: 600; }
+  .navlecciones .nav-sep { color: #57534e; }
   .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
   .navlecciones.pie { margin: 22px 0 0; }
   @media (max-width: 600px) {
@@ -113,12 +114,12 @@
   .ficha-fuente {
     background: var(--tema-bg); border-left: 5px solid var(--tema);
     border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
-    font-size: 14px; color: #35434a;
+    font-size: 14px; color: #302e2b;
   }
   .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
   .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
   .ficha-fuente dd { margin: 0; }
-  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #35434a; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #302e2b; }
   .ficha-fuente a { color: var(--tema-d); }
 
   .carta { margin: 16px 0; }
@@ -140,7 +141,7 @@
 
   details.original {
     margin: 8px 0 0; border: 1px solid var(--tema-bg2);
-    border-radius: 8px; background: #fafbfc;
+    border-radius: 8px; background: #fbfaf8;
   }
   details.original > summary {
     cursor: pointer; padding: 8px 14px; font-size: 13.5px;
@@ -151,7 +152,7 @@
   details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
   details.original .cuerpo-original p { margin: 0 0 8px; }
   details.original .cuerpo-original .dicho {
-    display: block; background: #eef1f3; border-radius: 6px;
+    display: block; background: #f2f0ed; border-radius: 6px;
     padding: 8px 14px; margin: 8px 0; font-style: italic;
   }
 
@@ -169,7 +170,7 @@
     font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
   }
   footer p { margin: 5px 0; }
-  footer a { color: #263238; }
+  footer a { color: #171717; }
 </style>
 </head>
 <body>
