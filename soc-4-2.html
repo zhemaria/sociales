@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<!--
+  Lección 4.2 · El poder ejecutivo: presidencia, gabinete y burocracia
+  Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 4.2 · El poder ejecutivo: presidencia, gabinete y burocracia</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 4 — paleta índigo heredada del plan curricular (--t4) */
+    --tema:    #283593;
+    --tema-d:  #1a237e;
+    --tema-bg: #e8eaf6;
+    --tema-bg2:#c5cae9;
+    --acento:  #3949ab;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #101452 0%, #1a237e 55%, #283593 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(16,20,82,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #1a237e;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2c3170; font-weight: 600; }
+  .navlecciones .nav-sep { color: #5a5f8f; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #283593; }
+
+  /* ══ COMPONENTES DEL TEMA 4 ═════════════════════════════════ */
+  figure.diagrama { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.diagrama svg { display:block; width:100%; height:auto; }
+  figure.diagrama figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .fl-caja  { fill: var(--tema-bg); stroke: var(--tema); stroke-width: 2; }
+  .fl-muere { fill: #ffebee; stroke: #c62828; stroke-width: 2; }
+  .fl-ley   { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2.5; }
+  .fl-rot   { font-size: 12px; fill: var(--tema-d); font-weight: 600; }
+  .fl-rot-m { font-size: 12px; fill: #b71c1c; font-weight: 700; }
+  .fl-rot-l { font-size: 12px; fill: #1b5e20; font-weight: 700; }
+  .fl-linea { stroke: var(--tema); stroke-width: 2; fill: none; }
+  .fl-mini  { font-size: 10.5px; fill: #555; }
+
+  /* Recorrido interactivo del proyecto */
+  .recorrido { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .recorrido h3 { margin-top: 0; }
+  .etapa-actual { background:#fff; border:2px solid var(--tema); border-radius:9px; padding:14px 18px; margin:12px 0; }
+  .etapa-actual .donde { font-size:12.5px; font-weight:700; color:var(--tema-d); text-transform:uppercase; letter-spacing:.3px; }
+  .etapa-actual .situacion { margin:8px 0 12px; font-size:15px; }
+  .etapa-actual .opciones-r { display:flex; flex-wrap:wrap; gap:8px; }
+  .etapa-actual .opciones-r button {
+    font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;
+    border:2px solid var(--tema); background:#fff; color:var(--tema-d);
+    border-radius:7px; padding:8px 16px;
+  }
+  .etapa-actual .opciones-r button:hover { background: var(--tema-bg2); }
+  .etapa-actual .opciones-r button:focus-visible { outline:3px solid #f9a825; outline-offset:2px; }
+  .bitacora { margin: 12px 0 0; padding-left: 0; list-style: none; }
+  .bitacora li { font-size:14px; padding:6px 0 6px 26px; position:relative; border-top:1px solid var(--tema-bg2); }
+  .bitacora li::before { content:"→"; position:absolute; left:6px; color:var(--tema); font-weight:700; }
+  .bitacora li.muerte::before { content:"✕"; color:#c62828; }
+  .bitacora li.ley::before { content:"✓"; color:#2e7d32; }
+  .desenlace { margin-top:12px; padding:12px 16px; border-radius:8px; font-size:15px; font-weight:600; }
+  .desenlace.muere { background:#ffebee; color:#b71c1c; }
+  .desenlace.ley { background:#e8f5e9; color:#1b5e20; }
+  /* Clasificador (mismo patrón accesible que la Lección 3.3: botones, no arrastrar) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .55; }
+  .comp .botones button.acierto { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; opacity: 1; }
+  .comp .botones button.fallo   { background: #ffebee; border-color: #c62828; color: #b71c1c; opacity: 1; }
+  .comp .exp { display: none; margin-top: 9px; font-size: 14px; }
+  .comp .exp.ok { color: #1b5e20; }
+  .comp .exp.no { color: #b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+  /* Glosario judicial */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt { font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px; }
+  dl.glosario dd { margin: 4px 0 0; padding-left: 16px; border-left: 3px solid var(--tema-bg2); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas y la formación de políticas</div>
+    <h1>Lección 4.2 · El poder ejecutivo: presidencia, gabinete y burocracia</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 4.2</span>
+    <a class="nav-sig" href="soc-4-3.html">Siguiente: Lección 4.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Enumerar las facultades del presidente que fija el Artículo II, y los límites que cada una lleva puesta.</li>
+      <li>Distinguir una ley de una orden ejecutiva y de un reglamento de agencia, por su origen.</li>
+      <li>Explicar por qué unas se revierten con una firma y otras exigen años.</li>
+      <li>Relacionar un problema público concreto con el departamento o la agencia que lo atiende.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior mostró un Congreso donde aprobar una ley es difícil por diseño, y donde la mayoría de los proyectos mueren sin llegar a votarse.</p>
+    <p>Eso deja una pregunta abierta, y esta lección la responde: <strong>si legislar es tan lento, ¿cómo se gobierna mientras tanto?</strong></p>
+    <p>La respuesta es que el ejecutivo dispone de instrumentos propios que no pasan por el Congreso. Son más rápidos y por eso más usados. Y por la misma razón son más frágiles: lo que se hace con una firma se deshace con otra.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Lo que puede un presidente, y con quién tiene que contar</h2>
+
+  <div class="bloque">
+    <p>El Artículo II es notablemente corto comparado con el Artículo I. Casi ninguna facultad presidencial viene sola: casi todas llegan con otro poder pegado al lado.</p>
+
+    <table class="reglas">
+      <caption>Facultades presidenciales y el límite que lleva cada una</caption>
+      <thead>
+        <tr><th scope="col">Facultad</th><th scope="col">Límite</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Firmar o vetar las leyes aprobadas por el Congreso</td><td>El Congreso puede anular el veto con dos tercios de las dos cámaras</td></tr>
+        <tr><td>Nombrar jueces, embajadores y altos cargos</td><td>El Senado tiene que confirmarlos</td></tr>
+        <tr><td>Negociar tratados con otros países</td><td>El Senado los ratifica por dos tercios, o no entran en vigor</td></tr>
+        <tr><td>Mandar las fuerzas armadas como comandante en jefe</td><td>Solo el Congreso puede declarar la guerra y aprobar el dinero</td></tr>
+        <tr><td>Conceder indultos por delitos federales</td><td>No alcanza a los delitos estatales ni al juicio político</td></tr>
+        <tr><td>Dirigir la administración y dictar órdenes ejecutivas</td><td>Solo dentro de la autoridad que ya le dan la Constitución o una ley; los tribunales pueden anularlas</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El patrón que conviene ver.</strong> Lea la tabla en columnas. La izquierda parece un poder enorme; la derecha lo recorta en cada línea. Eso es exactamente lo que la Lección 3.2 llamaba controles y equilibrios, ahora visible facultad por facultad. Ninguna de las seis se ejerce sin contar con alguien.
+    </div>
+
+    <h3>El límite mayor: el juicio político</h3>
+    <p>La Cámara acusa y el Senado juzga, como vimos en la 4.1. Para condenar hacen falta dos tercios del Senado.</p>
+    <p>Los hechos, en orden: la Cámara ha acusado a tres presidentes —Andrew Johnson en 1868, Bill Clinton en 1998 y Donald Trump en 2019 y de nuevo en 2021—. Richard Nixon renunció en 1974 antes de que se votara la acusación. <strong>El Senado no ha condenado nunca a ninguno.</strong></p>
+
+    <div class="caja-atencion">
+      <strong>Lo que enseña ese historial.</strong> No que el mecanismo no funcione, sino cómo está calibrado. Dos tercios del Senado es una mayoría que casi nunca se alcanza sin apoyo de los dos partidos, y eso fue deliberado: los constituyentes querían que destituir a un presidente electo fuera posible, pero no fácil ni partidista. Si le parece que el listón está demasiado alto o demasiado bajo, ese es un juicio político legítimo, y hay quien defiende cada una de las dos posturas. Lo que la lección le pide es que sepa dónde está el listón y por qué se puso ahí.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Ley, orden ejecutiva y reglamento</h2>
+
+  <div class="bloque">
+    <p>Esta es la confusión más frecuente de todo el tema, y el examen la evalúa. Las noticias no ayudan: llaman «medida» a las tres cosas.</p>
+    <p>Se distinguen por una sola pregunta: <strong>¿quién la produjo?</strong></p>
+
+    <table class="reglas">
+      <caption>Los tres instrumentos, por su origen y por lo que cuesta deshacerlos</caption>
+      <thead>
+        <tr><th scope="col">Instrumento</th><th scope="col">Quién lo produce</th><th scope="col">Cómo se deshace</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ley</strong></td>
+          <td>El Congreso, y la firma el presidente</td>
+          <td>Solo con otra ley, que recorre otra vez todo el camino de la Lección 4.1. Difícil</td>
+        </tr>
+        <tr>
+          <td><strong>Orden ejecutiva</strong></td>
+          <td>El presidente, solo</td>
+          <td>El presidente siguiente la revoca con otra orden. Una firma. Fácil</td>
+        </tr>
+        <tr>
+          <td><strong>Reglamento</strong></td>
+          <td>Una agencia, dentro de la autoridad que le dio una ley</td>
+          <td>La agencia debe abrir otra vez el procedimiento, con propuesta pública y plazo de comentarios. Meses o años. Intermedio</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>La regla que resuelve casi todos los casos.</strong> Cuanta más gente hizo falta para crear algo, más gente hace falta para deshacerlo. Una ley necesitó dos cámaras y una firma; una orden ejecutiva necesitó una firma. Por eso la orden ejecutiva es el instrumento rápido de un presidente <em>y</em> el más vulnerable al siguiente.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Ninguno de los tres puede inventarse la autoridad.</strong> Una orden ejecutiva no crea poderes nuevos: solo dirige el uso de los que el presidente ya tiene por la Constitución o por una ley. Un reglamento tampoco: se apoya siempre en una ley que autorizó a esa agencia a regular esa materia. Cuando alguno se pasa de ahí, los tribunales pueden anularlo, y ese es el asunto de la Lección 4.3.
+    </div>
+
+    <div class="clasificador">
+      <h3>¿Ley, orden o reglamento?</h3>
+      <p>Doce medidas reales. Clasifique cada una por su origen y verá al momento por qué. Funciona con teclado.</p>
+      <p class="marcador" id="marcador" role="status" aria-live="polite">Sin responder todavía.</p>
+      <div id="lista-comp"></div>
+      <button class="btn sec" id="btn-reiniciar-comp" type="button">Empezar de nuevo</button>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Sobre la Orden Ejecutiva 9066.</strong> Aparece en el ejercicio porque es el ejemplo más severo del alcance de este instrumento. En 1942 el presidente Roosevelt la firmó solo, y llevó al internamiento de unas ciento veinte mil personas de origen japonés, la mayoría ciudadanas estadounidenses. En 1988 el Congreso aprobó una ley que reconoció el daño y estableció una reparación. Está aquí porque una lección sobre lo que puede hacer un presidente con una firma quedaría incompleta sin ella.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Quién ejecuta de verdad</h2>
+
+  <div class="bloque">
+    <p>Una ley aprobada no se aplica sola. Alguien tiene que inspeccionar, autorizar, pagar, medir y sancionar. Ese alguien es el aparato administrativo, y es donde trabaja la inmensa mayoría de los empleados federales.</p>
+
+    <figure class="diagrama">
+      <svg viewBox="0 0 700 398" role="img" aria-labelledby="orgt orgd" xmlns="http://www.w3.org/2000/svg">
+      <title id="orgt">Organigrama del poder ejecutivo federal</title>
+      <desc id="orgd">En la cima el presidente, cuyas facultades fija el Artículo II. Debajo, el gabinete, formado por quince departamentos: Estado, Tesoro, Defensa, Justicia, Interior, Agricultura, Comercio, Trabajo, Salud y Servicios Humanos, Vivienda y Desarrollo Urbano, Transporte, Energía, Educación, Asuntos de Veteranos y Seguridad Nacional. Aparte figuran las agencias reguladoras independientes, que dictan reglamentos dentro de la autoridad que les concedió una ley del Congreso.</desc>
+      <rect class="fl-caja" x="250" y="14" width="200" height="52" rx="9"/>
+      <text class="fl-rot" x="350" y="36" text-anchor="middle">PRESIDENTE</text>
+      <text class="fl-mini" x="350" y="52" text-anchor="middle">Artículo II</text>
+      <line class="fl-linea" x1="350" y1="66" x2="350" y2="90"/>
+      <rect class="fl-caja" x="200" y="90" width="300" height="40" rx="8"/>
+      <text class="fl-rot" x="350" y="115" text-anchor="middle">Gabinete · 15 departamentos</text>
+      <rect x="14" y="148" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="122.0" y="167" text-anchor="middle">Estado</text>
+      <rect x="238" y="148" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="346.0" y="167" text-anchor="middle">Tesoro</text>
+      <rect x="462" y="148" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="570.0" y="167" text-anchor="middle">Defensa</text>
+      <rect x="14" y="184" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="122.0" y="203" text-anchor="middle">Justicia</text>
+      <rect x="238" y="184" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="346.0" y="203" text-anchor="middle">Interior</text>
+      <rect x="462" y="184" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="570.0" y="203" text-anchor="middle">Agricultura</text>
+      <rect x="14" y="220" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="122.0" y="239" text-anchor="middle">Comercio</text>
+      <rect x="238" y="220" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="346.0" y="239" text-anchor="middle">Trabajo</text>
+      <rect x="462" y="220" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="570.0" y="239" text-anchor="middle">Salud y Servicios Humanos</text>
+      <rect x="14" y="256" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="122.0" y="275" text-anchor="middle">Vivienda y Desarrollo Urbano</text>
+      <rect x="238" y="256" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="346.0" y="275" text-anchor="middle">Transporte</text>
+      <rect x="462" y="256" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="570.0" y="275" text-anchor="middle">Energía</text>
+      <rect x="14" y="292" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="122.0" y="311" text-anchor="middle">Educación</text>
+      <rect x="238" y="292" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="346.0" y="311" text-anchor="middle">Asuntos de Veteranos</text>
+      <rect x="462" y="292" width="216" height="30" rx="6" fill="#f3f4fb" stroke="#c5cae9"/>
+      <text class="fl-mini" x="570.0" y="311" text-anchor="middle">Seguridad Nacional</text>
+      <rect class="fl-caja" x="120" y="338" width="460" height="44" rx="8"/>
+      <text class="fl-rot" x="350" y="358" text-anchor="middle">Agencias reguladoras independientes</text>
+      <text class="fl-mini" x="350" y="374" text-anchor="middle">Dictan reglamentos dentro de la autoridad que les dio una ley</text>
+    </svg>
+      <figcaption>Quince departamentos forman el gabinete; sus titulares los nombra el presidente y los confirma el Senado. Aparte están las agencias reguladoras, que dictan los reglamentos dentro de la autoridad que les concedió una ley.</figcaption>
+    </figure>
+
+    <div class="caja-tip">
+      <strong>Cómo encontrar la agencia de un problema, sin memorizar la lista.</strong> Pregúntese de qué trata el problema y busque esa palabra en el nombre. ¿Un medicamento o un alimento? Salud. ¿Un accidente laboral? Trabajo. ¿Un río contaminado? Medio ambiente. ¿Una carretera? Transporte. El examen no pide la lista de memoria: pide emparejar un problema con quien lo atiende.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva · Facultades, límites y agencias</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="El presidente negocia, pero un tratado no entra en vigor sin dos tercios del Senado. Es la facultad presidencial con el límite más exigente.">
+        <div class="enun">El presidente firma un tratado con otro país. ¿Basta con eso?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sí, la política exterior es suya</div>
+          <div class="opcion" data-op="b">No, lo aprueba la Cámara por mayoría simple</div>
+          <div class="opcion" data-op="c">No, el Senado debe ratificarlo por dos tercios</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Se creó con una firma y se deshace con otra. Ese es a la vez su atractivo para quien gobierna y su debilidad.">
+        <div class="enun">¿Cuál de los tres instrumentos puede revertir el presidente siguiente sin contar con nadie?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La orden ejecutiva</div>
+          <div class="opcion" data-op="b">La ley</div>
+          <div class="opcion" data-op="c">El reglamento de agencia</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="El indulto presidencial alcanza a los delitos federales. No cubre los delitos estatales ni el juicio político.">
+        <div class="enun">¿Hasta dónde llega el indulto presidencial?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">A cualquier delito cometido en el país</div>
+          <div class="opcion" data-op="b">Solo a los delitos federales</div>
+          <div class="opcion" data-op="c">También al juicio político</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="El Senado no ha condenado nunca a un presidente. Hacen falta dos tercios, una mayoría que casi nunca se alcanza sin apoyo de los dos partidos, y eso fue deliberado.">
+        <div class="enun">¿Cuántos presidentes ha destituido el Senado en un juicio político?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Tres</div>
+          <div class="opcion" data-op="b">Uno</div>
+          <div class="opcion" data-op="c">Ninguno</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Facultad y límite</div>
+      <div class="cuerpo-act">
+        <span class="duracion">15 minutos</span>
+        <p>Escriba de memoria seis facultades presidenciales y, al lado de cada una, quién la limita. Después compruebe con la tabla de la sección 1.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si alguna facultad le quedó sin límite en la columna derecha, vuelva a mirar. Ninguna de las seis se ejerce sin contar con otro poder.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Tres noticias, tres instrumentos</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Busque tres noticias sobre medidas del gobierno federal. Determine para cada una si es ley, orden ejecutiva o reglamento, y prediga cuánto costaría deshacerla. Anote qué palabra de la noticia le permitió decidirlo.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si la noticia dice que el Congreso aprobó algo, es ley. Si dice que el presidente firmó una orden, es orden ejecutiva. Si nombra una agencia y habla de un periodo de comentarios públicos, es reglamento. Si ninguna de las tres pistas aparece, la noticia está mal escrita, y eso también es un hallazgo.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · De quién es este problema</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Para cada situación, diga qué departamento o agencia la atiende: un brote de salmonela en lechugas, un puente en mal estado, un vertido en un río, una empresa que no paga las horas extra, una veterana que no recibe su atención médica.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> salud, transporte, medio ambiente, trabajo y asuntos de veteranos. La palabra clave del problema casi siempre aparece en el nombre de quien lo atiende.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 4.2</h2>
+    <p>Doce preguntas: cuatro de facultades y límites presidenciales, cuatro de distinción entre instrumentos normativos, y cuatro de departamentos y agencias. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación del poder ejecutivo, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Enumera facultades y sus límites</td>
+          <td>Nombra facultades sueltas y ningún límite.</td>
+          <td>Enumera varias, pero deja alguna sin límite.</td>
+          <td>Empareja cada facultad con quien la limita.</td>
+          <td>Explica por qué casi ninguna facultad presidencial viene sola.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Distingue ley de orden ejecutiva por su origen</td>
+          <td>Llama «medida» a las tres cosas.</td>
+          <td>Separa ley de orden, pero no ubica el reglamento.</td>
+          <td>Clasifica los tres instrumentos preguntando quién los produjo.</td>
+          <td>Deduce del origen lo que costará deshacer cada uno.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Relaciona un problema con la agencia competente</td>
+          <td>No sabe por dónde empezar.</td>
+          <td>Acierta en los casos evidentes.</td>
+          <td>Empareja problema y agencia con un criterio, no de memoria.</td>
+          <td>Distingue el departamento que gestiona de la agencia que regula.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Explica cómo las otras ramas limitan al ejecutivo</td>
+          <td>Cree que el presidente decide solo.</td>
+          <td>Menciona el Congreso, pero no los tribunales.</td>
+          <td>Nombra los frenos legislativos y judiciales con ejemplos.</td>
+          <td>Explica el juicio político por su calibración, no solo por su mecánica.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 4.2 y enlace con la 4.3</h2>
+    <p>La herramienta de esta lección cabe en una pregunta: <strong>¿quién produjo esto?</strong> De la respuesta se deduce todo lo demás, incluida la que más importa en la práctica, que es cuánto costará deshacerlo.</p>
+    <p>Y queda una idea que conviene no perder. El instrumento rápido y el instrumento duradero son distintos, y no se puede tener las dos cosas a la vez. Una orden ejecutiva permite gobernar sin esperar al Congreso, y por eso mismo dura lo que dure quien la firmó. Una ley cuesta trece meses y sobrevive a quien la aprobó. Cada presidente elige entre velocidad y permanencia, y esa elección se puede leer en las noticias en cuanto uno sabe distinguir los tres instrumentos.</p>
+    <p>Queda un freno del que hemos hablado sin explicarlo: los tribunales pueden anular una orden o un reglamento que se salga de la autoridad que lo sostiene. ¿De dónde sale ese poder, si el Tema 3 mostró que no está escrito en la Constitución? La <strong><a href="soc-4-3.html">Lección 4.3</a></strong> responde, y termina con el ejemplo que mejor enseña qué es un precedente y por qué puede caer.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-4-3.html">Siguiente: Lección 4.3 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 4 · Lección 4.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. El presidente veta una ley. El Congreso puede…', ops: ['Nada, el veto es definitivo', 'Anularlo con dos tercios de las dos cámaras', 'Anularlo con mayoría simple', 'Acudir al Tribunal Supremo'],
+      correcta: 1, expl: 'Dos tercios en las dos cámaras. Es el mismo mecanismo que vio en la Lección 4.1, mirado ahora desde el lado del ejecutivo.' },
+    { enun: '2. Para que un tratado entre en vigor hace falta…', ops: ['Solo la firma del presidente', 'La ratificación del Senado por dos tercios', 'La aprobación de la Cámara', 'Un referéndum'],
+      correcta: 1, expl: 'El presidente negocia, pero sin dos tercios del Senado el tratado no entra en vigor.' },
+    { enun: '3. El indulto presidencial alcanza…', ops: ['A cualquier delito del país', 'Solo a los delitos federales', 'También al juicio político', 'Solo a los delitos estatales'],
+      correcta: 1, expl: 'No cubre los delitos estatales ni el juicio político. Es una facultad amplia pero acotada.' },
+    { enun: '4. ¿A cuántos presidentes ha destituido el Senado?', ops: ['Ninguno', 'Uno', 'Dos', 'Tres'],
+      correcta: 0, expl: 'La Cámara ha acusado a tres, y Nixon renunció antes de la votación. El Senado no ha condenado nunca: hacen falta dos tercios.' },
+    { enun: '5. Una orden ejecutiva la produce…', ops: ['El Congreso', 'El presidente, solo', 'Una agencia', 'El Tribunal Supremo'],
+      correcta: 1, expl: 'Y por eso el presidente siguiente puede revocarla con otra orden. Una firma la crea y una firma la deshace.' },
+    { enun: '6. Un reglamento lo dicta…', ops: ['El presidente', 'El Congreso', 'Una agencia, dentro de la autoridad que le dio una ley', 'Un tribunal'],
+      correcta: 2, expl: 'Se apoya siempre en una ley previa que autorizó a esa agencia a regular esa materia. No crea autoridad nueva.' },
+    { enun: '7. ¿Cuál de los tres cuesta más deshacer?', ops: ['La orden ejecutiva', 'El reglamento', 'La ley', 'Los tres igual'],
+      correcta: 2, expl: 'Deshacer una ley exige otra ley, con todo el recorrido de la Lección 4.1. Cuanta más gente hizo falta para crear algo, más hace falta para deshacerlo.' },
+    { enun: '8. Una noticia dice que una agencia abre un plazo de comentarios públicos. Se trata de…', ops: ['Una ley', 'Una orden ejecutiva', 'Un reglamento', 'Una sentencia'],
+      correcta: 2, expl: 'El procedimiento de propuesta y comentarios es la marca del reglamento, y la razón de que revertirlo lleve meses o años.' },
+    { enun: '9. El gabinete está formado por…', ops: ['Los 50 gobernadores', 'Quince departamentos', 'Los jueces del Tribunal Supremo', 'Los líderes del Congreso'],
+      correcta: 1, expl: 'Sus titulares los nombra el presidente y los confirma el Senado: otra facultad que no viene sola.' },
+    { enun: '10. Un brote de enfermedad por alimentos contaminados lo atiende…', ops: ['Transporte', 'Salud', 'Defensa', 'Comercio'],
+      correcta: 1, expl: 'La palabra clave del problema suele aparecer en el nombre de quien lo atiende. No hay que memorizar la lista.' },
+    { enun: '11. Una empresa que no paga las horas extra es asunto de…', ops: ['Trabajo', 'Educación', 'Interior', 'Energía'],
+      correcta: 0, expl: 'Mismo criterio: el problema es laboral y lo atiende el departamento del trabajo y su agencia correspondiente.' },
+    { enun: '12. Los tribunales pueden anular una orden ejecutiva cuando…', ops: ['No están de acuerdo con ella', 'Se sale de la autoridad que la Constitución o una ley le dan al presidente', 'Es impopular', 'Nunca pueden'],
+      correcta: 1, expl: 'Ninguno de los tres instrumentos puede inventarse la autoridad. De dónde sale ese poder judicial es el asunto de la Lección 4.3.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 4.3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* Clasificador de instrumentos normativos. Mismo patrón accesible
+     de la Lección 3.3: botones, teclado y marcador con aria-live. */
+  var MEDIDAS = [{"t": "La Ley de Derechos Civiles de 1964", "c": "L", "e": "La aprobó el Congreso tras trece meses de recorrido. Es la ley que siguió en la Lección 4.1."}, {"t": "La Ley de Seguridad Social de 1935", "c": "L", "e": "Creó el sistema de pensiones federal. Solo el Congreso puede crear un programa de ese alcance y financiarlo."}, {"t": "Medicare, en 1965", "c": "L", "e": "Un programa de seguro médico creado por ley del Congreso, con su presupuesto aprobado por el mismo camino."}, {"t": "La Ley de Estadounidenses con Discapacidades, de 1990", "c": "L", "e": "Aprobada por el Congreso y firmada por el presidente. Impone obligaciones a empleadores y a comercios de todo el país."}, {"t": "La Orden Ejecutiva 9981, de 1948: fin de la segregación en las fuerzas armadas", "c": "O", "e": "Truman la firmó solo. El Congreso no la aprobó, y no habría sido fácil conseguirlo entonces. Muestra el alcance real de este instrumento."}, {"t": "La Orden Ejecutiva 10730, de 1957: tropas federales a Little Rock", "c": "O", "e": "Eisenhower envió al ejército para hacer cumplir una sentencia judicial de integración escolar. Decisión presidencial directa, sin paso por el Congreso."}, {"t": "La Orden Ejecutiva 9066, de 1942: internamiento de personas de origen japonés", "c": "O", "e": "Roosevelt la firmó solo, y afectó a unas ciento veinte mil personas, la mayoría ciudadanas. En 1988 el Congreso aprobó una ley de disculpa y reparación. Es el ejemplo más duro de hasta dónde llega una orden ejecutiva."}, {"t": "La Orden Ejecutiva 11246, de 1965: no discriminación en los contratistas federales", "c": "O", "e": "Johnson la firmó usando una palanca que el presidente sí controla: las condiciones de los contratos del gobierno."}, {"t": "Las normas de etiquetado nutricional de los alimentos", "c": "R", "e": "Las dicta la agencia de alimentos y medicamentos, dentro de la autoridad que una ley del Congreso le concedió. El Congreso no escribió la etiqueta."}, {"t": "Los límites de emisiones contaminantes de vehículos", "c": "R", "e": "Los fija la agencia de protección ambiental mediante reglamento, con un procedimiento de propuesta y comentarios del público."}, {"t": "Las normas de seguridad en los centros de trabajo", "c": "R", "e": "Las dicta la agencia de seguridad y salud laboral. Detallan lo que una ley enunció en términos generales."}, {"t": "Los requisitos de los cinturones y los airbags en los automóviles", "c": "R", "e": "Reglamento de la agencia de seguridad vial. La ley ordenó proteger a los ocupantes; la agencia decidió cómo."}];
+  var NOMBRES = { L: 'Ley', O: 'Orden ejecutiva', R: 'Reglamento' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + MEDIDAS.length + ' medidas.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    MEDIDAS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'med-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'med-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['L', 'O', 'R'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Es ' + NOMBRES[item.c].toLowerCase() + '. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>

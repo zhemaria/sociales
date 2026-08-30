@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<!--
+  Lección 4.1 · El poder legislativo: del proyecto a la ley
+  Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 4.1 · El poder legislativo: del proyecto a la ley</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 4 — paleta índigo heredada del plan curricular (--t4) */
+    --tema:    #283593;
+    --tema-d:  #1a237e;
+    --tema-bg: #e8eaf6;
+    --tema-bg2:#c5cae9;
+    --acento:  #3949ab;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #101452 0%, #1a237e 55%, #283593 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(16,20,82,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #1a237e;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2c3170; font-weight: 600; }
+  .navlecciones .nav-sep { color: #5a5f8f; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #283593; }
+
+  /* ══ COMPONENTES DEL TEMA 4 ═════════════════════════════════ */
+  figure.diagrama { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.diagrama svg { display:block; width:100%; height:auto; }
+  figure.diagrama figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .fl-caja  { fill: var(--tema-bg); stroke: var(--tema); stroke-width: 2; }
+  .fl-muere { fill: #ffebee; stroke: #c62828; stroke-width: 2; }
+  .fl-ley   { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2.5; }
+  .fl-rot   { font-size: 12px; fill: var(--tema-d); font-weight: 600; }
+  .fl-rot-m { font-size: 12px; fill: #b71c1c; font-weight: 700; }
+  .fl-rot-l { font-size: 12px; fill: #1b5e20; font-weight: 700; }
+  .fl-linea { stroke: var(--tema); stroke-width: 2; fill: none; }
+  .fl-mini  { font-size: 10.5px; fill: #555; }
+
+  /* Recorrido interactivo del proyecto */
+  .recorrido { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .recorrido h3 { margin-top: 0; }
+  .etapa-actual { background:#fff; border:2px solid var(--tema); border-radius:9px; padding:14px 18px; margin:12px 0; }
+  .etapa-actual .donde { font-size:12.5px; font-weight:700; color:var(--tema-d); text-transform:uppercase; letter-spacing:.3px; }
+  .etapa-actual .situacion { margin:8px 0 12px; font-size:15px; }
+  .etapa-actual .opciones-r { display:flex; flex-wrap:wrap; gap:8px; }
+  .etapa-actual .opciones-r button {
+    font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;
+    border:2px solid var(--tema); background:#fff; color:var(--tema-d);
+    border-radius:7px; padding:8px 16px;
+  }
+  .etapa-actual .opciones-r button:hover { background: var(--tema-bg2); }
+  .etapa-actual .opciones-r button:focus-visible { outline:3px solid #f9a825; outline-offset:2px; }
+  .bitacora { margin: 12px 0 0; padding-left: 0; list-style: none; }
+  .bitacora li { font-size:14px; padding:6px 0 6px 26px; position:relative; border-top:1px solid var(--tema-bg2); }
+  .bitacora li::before { content:"→"; position:absolute; left:6px; color:var(--tema); font-weight:700; }
+  .bitacora li.muerte::before { content:"✕"; color:#c62828; }
+  .bitacora li.ley::before { content:"✓"; color:#2e7d32; }
+  .desenlace { margin-top:12px; padding:12px 16px; border-radius:8px; font-size:15px; font-weight:600; }
+  .desenlace.muere { background:#ffebee; color:#b71c1c; }
+  .desenlace.ley { background:#e8f5e9; color:#1b5e20; }
+  /* Clasificador (mismo patrón accesible que la Lección 3.3: botones, no arrastrar) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .55; }
+  .comp .botones button.acierto { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; opacity: 1; }
+  .comp .botones button.fallo   { background: #ffebee; border-color: #c62828; color: #b71c1c; opacity: 1; }
+  .comp .exp { display: none; margin-top: 9px; font-size: 14px; }
+  .comp .exp.ok { color: #1b5e20; }
+  .comp .exp.no { color: #b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+  /* Glosario judicial */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt { font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px; }
+  dl.glosario dd { margin: 4px 0 0; padding-left: 16px; border-left: 3px solid var(--tema-bg2); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas y la formación de políticas</div>
+    <h1>Lección 4.1 · El poder legislativo: del proyecto a la ley</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 4.1</span>
+    <a class="nav-sig" href="soc-4-2.html">Siguiente: Lección 4.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Describir la estructura bicameral del Congreso y las diferencias entre la Cámara y el Senado en representación, plazos y facultades exclusivas.</li>
+      <li>Trazar el recorrido completo de un proyecto de ley desde que se presenta hasta que se promulga o se veta.</li>
+      <li>Identificar en qué etapas puede morir un proyecto, y por qué la mayoría muere.</li>
+      <li>Explicar el veto y su anulación como mecanismo de equilibrio entre dos poderes.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> El Tema 3 montó el aparato: tres poderes, cinco principios y un diseño hecho para que nadie acumule el mando. Este tema entra en cada rama por dentro y pregunta qué hace de verdad.</p>
+    <p>Empezamos por la primera, que la Constitución colocó primera a propósito. Y empezamos por lo que casi nunca se cuenta: <strong>el recorrido de un proyecto de ley no está diseñado para que las leyes se aprueben</strong>. Está diseñado para que sea difícil aprobarlas. La inmensa mayoría de los proyectos que se presentan en un Congreso mueren sin llegar a votarse, y eso no es una avería del sistema.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Dos cámaras que no se parecen</h2>
+
+  <div class="bloque">
+    <p>El Congreso tiene dos cámaras porque en 1787 hubo que resolver una pelea entre estados grandes y pequeños. La solución fue no elegir: una cámara representa a la población y la otra a los estados.</p>
+
+    <table class="reglas">
+      <caption>La Cámara de Representantes y el Senado, comparados</caption>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">Cámara de Representantes</th><th scope="col">Senado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Miembros</td><td>435, repartidos según la población de cada estado</td><td>100, dos por estado sea cual sea su tamaño</td></tr>
+        <tr><td>Duración del cargo</td><td>Dos años. Se renueva entera cada dos años</td><td>Seis años. Se renueva un tercio cada dos años</td></tr>
+        <tr><td>A quién representa</td><td>A un distrito, que es una porción de un estado</td><td>Al estado entero</td></tr>
+        <tr><td>Facultad exclusiva 1</td><td>Iniciar los proyectos de recaudación de ingresos</td><td>Confirmar los nombramientos del presidente</td></tr>
+        <tr><td>Facultad exclusiva 2</td><td>Acusar en el juicio político</td><td>Ratificar los tratados, por dos tercios</td></tr>
+        <tr><td>Facultad exclusiva 3</td><td>Elegir presidente si nadie obtiene mayoría en el colegio electoral</td><td>Juzgar el juicio político, y condenar por dos tercios</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Cómo recordar el reparto del juicio político.</strong> La Cámara <em>acusa</em>, el Senado <em>juzga</em>. Es como una acusación fiscal y un juicio: dos actos distintos, en dos salas distintas. Acusar no destituye a nadie; solo abre el proceso. Es de lo que más se confunde en el examen y en las noticias.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Por qué los plazos son distintos.</strong> Dos años obligan a un representante a pensar en la siguiente elección casi todo el tiempo, y eso lo mantiene pegado al humor de su distrito. Seis años dan margen para votar algo impopular y sobrevivir. La diferencia no es un detalle administrativo: es un diseño para que las dos cámaras reaccionen a ritmos distintos ante la misma presión.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Cámara o Senado</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="La Cámara acusa y el Senado juzga. Son dos actos distintos: acusar abre el proceso, condenar exige dos tercios del Senado.">
+        <div class="enun">¿Qué cámara juzga un proceso de juicio político?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La Cámara de Representantes</div>
+          <div class="opcion" data-op="b">El Senado</div>
+          <div class="opcion" data-op="c">Las dos a la vez</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Confirmar nombramientos y ratificar tratados son facultades del Senado. La Cámara no participa en ninguna de las dos.">
+        <div class="enun">¿Quién confirma a los jueces que nombra el presidente?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La Cámara de Representantes</div>
+          <div class="opcion" data-op="b">Las dos cámaras por separado</div>
+          <div class="opcion" data-op="c">El Senado</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Un senador representa a todo el estado y tiene seis años por delante; un representante responde ante un distrito y vuelve a elecciones en dos.">
+        <div class="enun">Un cargo con seis años de mandato y dos por estado, ¿qué es?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Un senador</div>
+          <div class="opcion" data-op="b">Un representante</div>
+          <div class="opcion" data-op="c">Un gobernador</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. El recorrido, y las salidas de emergencia</h2>
+
+  <div class="bloque">
+    <p>El diagrama que suele enseñarse muestra una escalera hacia arriba. Este muestra también las puertas laterales, que es por donde se va la mayoría.</p>
+
+    <figure class="diagrama">
+      <svg viewBox="0 0 700 620" role="img" aria-labelledby="flt fld" xmlns="http://www.w3.org/2000/svg">
+      <title id="flt">Diagrama de flujo del recorrido de un proyecto de ley, con las salidas en que muere</title>
+      <desc id="fld">Seis etapas en columna. Primero se presenta el proyecto en una de las cámaras. Después pasa a comité, donde hay audiencias, enmiendas y votación; si el comité no lo saca, muere. Después va a debate y votación en la cámara completa; si pierde la votación, muere. Después la otra cámara repite todo el proceso; si lo rechaza, muere. Si las dos versiones difieren, un comité de conferencia produce un texto único. Por último llega al presidente: si lo veta y el Congreso no reúne dos tercios en ambas cámaras, muere; si lo firma, o si el Congreso anula el veto, se convierte en ley. Hay tres salidas de muerte antes siquiera de llegar al presidente.</desc>
+      <defs><marker id="f4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#283593"/></marker></defs>
+      <rect class="fl-caja" x="200" y="20" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="48" text-anchor="middle">Se presenta el proyecto</text>
+      <text class="fl-rot" x="350.0" y="62" text-anchor="middle">en una de las cámaras</text>
+      <rect class="fl-caja" x="200" y="110" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="138" text-anchor="middle">Comité: audiencias,</text>
+      <text class="fl-rot" x="350.0" y="152" text-anchor="middle">enmiendas y votación</text>
+      <rect class="fl-caja" x="200" y="215" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="243" text-anchor="middle">Debate y votación</text>
+      <text class="fl-rot" x="350.0" y="257" text-anchor="middle">en la cámara completa</text>
+      <rect class="fl-caja" x="200" y="320" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="348" text-anchor="middle">La otra cámara repite</text>
+      <text class="fl-rot" x="350.0" y="362" text-anchor="middle">todo el proceso</text>
+      <rect class="fl-caja" x="200" y="425" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="453" text-anchor="middle">Comité de conferencia:</text>
+      <text class="fl-rot" x="350.0" y="467" text-anchor="middle">un texto único</text>
+      <rect class="fl-caja" x="200" y="515" width="300" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="543" text-anchor="middle">El presidente:</text>
+      <text class="fl-rot" x="350.0" y="557" text-anchor="middle">firma o veta</text>
+      <line class="fl-linea" x1="350.0" y1="82" x2="350.0" y2="110" marker-end="url(#f4)"/>
+      <line class="fl-linea" x1="350.0" y1="172" x2="350.0" y2="215" marker-end="url(#f4)"/>
+      <line class="fl-linea" x1="350.0" y1="277" x2="350.0" y2="320" marker-end="url(#f4)"/>
+      <line class="fl-linea" x1="350.0" y1="382" x2="350.0" y2="425" marker-end="url(#f4)"/>
+      <line class="fl-linea" x1="350.0" y1="487" x2="350.0" y2="515" marker-end="url(#f4)"/>
+      <rect class="fl-muere" x="20" y="110" width="150" height="62" rx="8"/>
+      <text class="fl-rot-m" x="95.0" y="138" text-anchor="middle">El comité no lo</text>
+      <text class="fl-rot-m" x="95.0" y="152" text-anchor="middle">saca: muere</text>
+      <line class="fl-linea" x1="200" y1="141" x2="172" y2="141" marker-end="url(#f4)"/>
+      <rect class="fl-muere" x="20" y="215" width="150" height="62" rx="8"/>
+      <text class="fl-rot-m" x="95.0" y="243" text-anchor="middle">Pierde la votación:</text>
+      <text class="fl-rot-m" x="95.0" y="257" text-anchor="middle">muere</text>
+      <line class="fl-linea" x1="200" y1="246" x2="172" y2="246" marker-end="url(#f4)"/>
+      <rect class="fl-muere" x="20" y="320" width="150" height="62" rx="8"/>
+      <text class="fl-rot-m" x="95.0" y="348" text-anchor="middle">La otra cámara</text>
+      <text class="fl-rot-m" x="95.0" y="362" text-anchor="middle">lo rechaza: muere</text>
+      <line class="fl-linea" x1="200" y1="351" x2="172" y2="351" marker-end="url(#f4)"/>
+      <rect class="fl-muere" x="20" y="515" width="150" height="62" rx="8"/>
+      <text class="fl-rot-m" x="95.0" y="543" text-anchor="middle">Veta y el Congreso</text>
+      <text class="fl-rot-m" x="95.0" y="557" text-anchor="middle">no reúne dos tercios</text>
+      <line class="fl-linea" x1="200" y1="546" x2="172" y2="546" marker-end="url(#f4)"/>
+      <rect class="fl-ley" x="530" y="515" width="150" height="62" rx="8"/>
+      <text class="fl-rot-l" x="605.0" y="543" text-anchor="middle">Firma, o el Congreso</text>
+      <text class="fl-rot-l" x="605.0" y="557" text-anchor="middle">anula el veto: LEY</text>
+      <line class="fl-linea" x1="500" y1="546" x2="528" y2="546" marker-end="url(#f4)"/>
+    </svg>
+      <figcaption>Fíjese en el lado izquierdo. <strong>Hay tres salidas de muerte antes siquiera de llegar al presidente</strong>, y la primera es la más letal: si el comité no saca el proyecto, no hay debate, no hay votación y no hay noticia. Muere en silencio.</figcaption>
+    </figure>
+
+    <div class="caja-atencion">
+      <strong>El comité es donde se decide casi todo.</strong> Un comité puede sencillamente no poner un proyecto en su orden del día, y eso lo mata sin que nadie tenga que votar en contra. Es un poder enorme y poco visible: no aparece en ninguna cifra de votación, porque la votación nunca se produce.
+    </div>
+
+    <p>Y al final del recorrido está el veto, que no es la última palabra. Si el presidente veta, el proyecto vuelve al Congreso, y si <strong>las dos cámaras reúnen dos tercios</strong>, la ley se promulga sin la firma presidencial. Eso es controles y equilibrios de la Lección 3.2 funcionando en la práctica: el ejecutivo puede frenar al legislativo, y el legislativo puede pasar por encima si reúne una mayoría muy amplia.</p>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Sigue el proyecto: una ley real</h2>
+
+  <div class="bloque">
+    <p>El diagrama es limpio. La realidad no. Este es el recorrido de la Ley de Derechos Civiles de 1964, colocado sobre las mismas etapas, con las fechas y los votos verificados en fuentes oficiales.</p>
+
+    <table class="reglas">
+      <caption>Recorrido de la Ley de Derechos Civiles de 1964 (proyecto H.R. 7152)</caption>
+      <thead>
+        <tr><th scope="col">Etapa</th><th scope="col">Qué ocurrió</th><th scope="col">Resultado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Presentación</td><td>El presidente Kennedy pide la ley al Congreso en junio de 1963</td><td>El proyecto entra en la Cámara</td></tr>
+        <tr><td>Comité (Cámara)</td><td>Pasa por el Comité Judicial, presidido por Emanuel Celler</td><td>Sale adelante</td></tr>
+        <tr><td><strong>Casi muere aquí</strong></td><td>El Comité de Reglamento, presidido por Howard W. Smith, se niega a programarlo. Sus partidarios amenazan con llevarlo al pleno sin la aprobación del comité</td><td>El comité cede</td></tr>
+        <tr><td>Votación en la Cámara</td><td>10 de febrero de 1964</td><td>Aprobado, 290 contra 130</td></tr>
+        <tr><td>Senado</td><td>Se coloca directamente en el calendario para esquivar el Comité Judicial</td><td>Evita un segundo comité hostil</td></tr>
+        <tr><td><strong>Casi muere aquí</strong></td><td>Un grupo de senadores mantiene un filibustero de unos sesenta días</td><td>El debate no puede cerrarse</td></tr>
+        <tr><td>Clausura</td><td>10 de junio de 1964. Hacían falta 67 votos</td><td>Se obtienen 71 contra 29. Primera vez en la historia que el Senado corta un filibustero sobre una ley de derechos civiles</td></tr>
+        <tr><td>Votación en el Senado</td><td>19 de junio de 1964, sobre un texto de compromiso</td><td>Aprobado, 73 contra 27</td></tr>
+        <tr><td>Vuelta a la Cámara</td><td>2 de julio de 1964, para aceptar la versión del Senado</td><td>Aprobado, 289 contra 126</td></tr>
+        <tr><td>Firma</td><td>2 de julio de 1964, el mismo día</td><td>Se convierte en ley</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Lo que enseña este recorrido.</strong> Trece meses desde la petición hasta la firma. Dos comités que podían haberlo enterrado, uno esquivado y otro doblegado por la amenaza de saltárselo. Un filibustero de dos meses que solo se rompió reuniendo votos de los dos partidos. Y ni una sola vez llegó a haber veto: el peligro estuvo siempre <strong>dentro</strong> del Congreso, no entre el Congreso y el presidente.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Una nota sobre las cifras.</strong> La duración del filibustero aparece en las fuentes como cincuenta y cuatro, cincuenta y siete, sesenta o setenta y cinco días, según se cuenten días de sesión, días naturales o el debate completo sobre el proyecto. Aquí se dice «unos sesenta días» siguiendo al propio Senado. Que una cifra tan concreta varíe según quién la cuente es exactamente lo que enseñó el Tema 2: antes de citar un número conviene saber qué está midiendo.
+    </div>
+
+    <div class="recorrido">
+      <h3>Recorra usted un proyecto</h3>
+      <p>Tome las decisiones en cada etapa y vea dónde acaba. No hay respuestas correctas: hay consecuencias. Funciona con teclado.</p>
+      <div id="etapa"></div>
+      <ol class="bitacora" id="bitacora"></ol>
+      <div id="desenlace"></div>
+      <button class="btn sec" id="btn-reiniciar-ruta" type="button">Empezar otro proyecto</button>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Ordenar las etapas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">15 minutos</span>
+        <p>Sin mirar el diagrama, escriba las seis etapas del recorrido en orden y, al lado de cada una, si en ella el proyecto puede morir. Después compruebe.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> presentación, comité, votación en la cámara, la otra cámara, comité de conferencia y presidente. Puede morir en el comité, en la votación de cualquiera de las dos cámaras y en el veto. Cuatro puntos de muerte en seis etapas.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Dónde estuvo el peligro</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Con la tabla de la sección 3 delante, escriba un párrafo respondiendo a esta pregunta: si el Comité de Reglamento no hubiera cedido, ¿qué habría pasado? Explique qué recurso tenían los partidarios de la ley y por qué funcionó la amenaza.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> su párrafo debe distinguir entre matar un proyecto votándolo en contra y matarlo no programándolo. Son dos poderes distintos, y solo el segundo se ejerce sin dejar rastro en ninguna cifra.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Su representación</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Averigüe quiénes son sus dos senadores y su representante en la Cámara, y en qué distrito vive usted. Anote cuándo termina el mandato de cada uno.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> debe salirle un representante y dos senadores, y los mandatos de los tres deben terminar en años distintos o coincidir solo en parte. Si le salieron dos representantes, confundió el distrito.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 4.1</h2>
+    <p>Doce preguntas: cuatro de comparación entre la Cámara y el Senado, cinco de etapas y orden del proceso legislativo, y tres de facultades exclusivas y anulación del veto. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su trabajo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación del proceso legislativo, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Distingue las dos cámaras por estructura y facultad</td>
+          <td>Las confunde o cree que hacen lo mismo.</td>
+          <td>Sabe el número de miembros, pero no las facultades exclusivas.</td>
+          <td>Separa representación, plazos y facultades de cada una.</td>
+          <td>Explica por qué los plazos distintos producen comportamientos distintos.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Ordena correctamente las etapas</td>
+          <td>Salta etapas o las invierte.</td>
+          <td>Ordena bien salvo el comité de conferencia.</td>
+          <td>Reproduce el recorrido completo sin ayuda.</td>
+          <td>Explica por qué la otra cámara repite el proceso entero en vez de solo votar.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Identifica los puntos de bloqueo</td>
+          <td>Cree que un proyecto solo muere si lo votan en contra.</td>
+          <td>Menciona el veto, pero no el comité.</td>
+          <td>Nombra las cuatro salidas y dice cuál es la más frecuente.</td>
+          <td>Distingue matar un proyecto votándolo de matarlo no programándolo.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Explica el veto y su anulación</td>
+          <td>Cree que el veto es definitivo.</td>
+          <td>Sabe que se puede anular, pero no con qué mayoría.</td>
+          <td>Explica que hacen falta dos tercios en las dos cámaras.</td>
+          <td>Lo relaciona con los controles y equilibrios del Tema 3 y dice qué frena a qué.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 4.1 y enlace con la 4.2</h2>
+    <p>La idea que hay que llevarse es incómoda y es correcta: <strong>el proceso legislativo está construido para que aprobar una ley sea difícil</strong>. Dos cámaras que se eligen de forma distinta, comités que pueden enterrar sin votar, un filibustero que exige mayorías amplias y un veto que solo se supera con dos tercios. Cada obstáculo es un control, y cada control lo puso alguien que temía algo.</p>
+    <p>La Ley de Derechos Civiles tardó trece meses y estuvo a punto de morir dos veces, ninguna de ellas frente al presidente. Eso enseña dónde está el poder real: <strong>en las etapas donde no se vota</strong>.</p>
+    <p>La <strong><a href="soc-4-2.html">Lección 4.2</a></strong> pasa al ejecutivo, y a una confusión que el examen evalúa y las noticias alimentan: no es lo mismo una ley que una orden ejecutiva que un reglamento de agencia. Se distinguen por su origen, y de su origen depende lo fácil que sea deshacerlas.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="soc-4-2.html">Siguiente: Lección 4.2 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 4 · Lección 4.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. La Cámara de Representantes tiene…', ops: ['100 miembros, dos por estado', '435 miembros, repartidos por población', '50 miembros, uno por estado', 'Un número que cambia cada año'],
+      correcta: 1, expl: 'La Cámara representa a la población y el Senado a los estados. Esa fue la solución de 1787 a la pelea entre estados grandes y pequeños.' },
+    { enun: '2. Un senador cumple un mandato de…', ops: ['Dos años', 'Cuatro años', 'Seis años', 'De por vida'],
+      correcta: 2, expl: 'Seis años, y el Senado se renueva por tercios cada dos. La Cámara se renueva entera cada dos años.' },
+    { enun: '3. Confirmar los nombramientos del presidente corresponde…', ops: ['A la Cámara', 'Al Senado', 'A las dos cámaras', 'Al Tribunal Supremo'],
+      correcta: 1, expl: 'Es facultad exclusiva del Senado, igual que ratificar los tratados por dos tercios.' },
+    { enun: '4. En un juicio político, la Cámara acusa y el Senado…', ops: ['Confirma la acusación sin votar', 'Juzga, y condena por dos tercios', 'Devuelve el caso a la Cámara', 'No interviene'],
+      correcta: 1, expl: 'Son dos actos distintos. Acusar abre el proceso; solo el Senado puede destituir, y hace falta una mayoría de dos tercios.' },
+    { enun: '5. La primera etapa del recorrido de un proyecto, después de presentarse, es…', ops: ['El debate en el pleno', 'El comité', 'La firma del presidente', 'El comité de conferencia'],
+      correcta: 1, expl: 'Y es la etapa más letal: si el comité no lo saca, no hay debate ni votación. Muere en silencio.' },
+    { enun: '6. Si el comité no programa un proyecto, este…', ops: ['Pasa igualmente al pleno', 'Muere sin que nadie vote en contra', 'Va directo al presidente', 'Se envía a la otra cámara'],
+      correcta: 1, expl: 'Es un poder enorme y poco visible: no aparece en ninguna cifra de votación, porque la votación nunca se produce.' },
+    { enun: '7. Después de que una cámara aprueba un proyecto…', ops: ['Va directamente al presidente', 'Se convierte en ley', 'La otra cámara repite el proceso', 'Se somete a referéndum'],
+      correcta: 2, expl: 'Tiene que superar las dos cámaras. Si las versiones difieren, un comité de conferencia produce un texto único.' },
+    { enun: '8. El comité de conferencia sirve para…', ops: ['Vetar el proyecto', 'Producir un texto único cuando las dos cámaras aprobaron versiones distintas', 'Elegir al presidente del Congreso', 'Juzgar el juicio político'],
+      correcta: 1, expl: 'Sin ese paso, dos versiones distintas de la misma ley no podrían llegar a la firma.' },
+    { enun: '9. ¿Cuántas salidas de muerte tiene el recorrido antes de llegar al presidente?', ops: ['Ninguna', 'Una', 'Tres', 'Diez'],
+      correcta: 2, expl: 'El comité, la votación en la primera cámara y el rechazo de la segunda. La cuarta, el veto, ya es del presidente.' },
+    { enun: '10. Iniciar los proyectos de recaudación de ingresos corresponde…', ops: ['Al Senado', 'A la Cámara de Representantes', 'Al presidente', 'A cualquiera de las dos'],
+      correcta: 1, expl: 'Es facultad exclusiva de la Cámara, la que se renueva entera cada dos años y responde más de cerca ante los votantes.' },
+    { enun: '11. Para anular un veto presidencial hacen falta…', ops: ['Mayoría simple en una cámara', 'Dos tercios en las dos cámaras', 'Unanimidad', 'Una decisión del Tribunal Supremo'],
+      correcta: 1, expl: 'Es controles y equilibrios en funcionamiento: el ejecutivo frena al legislativo, y el legislativo puede pasar por encima con una mayoría muy amplia.' },
+    { enun: '12. En el recorrido de la Ley de Derechos Civiles de 1964, el peligro mayor estuvo…', ops: ['En el veto presidencial', 'Dentro del propio Congreso: un comité y un filibustero', 'En los tribunales', 'En los gobiernos estatales'],
+      correcta: 1, expl: 'Nunca llegó a haber veto. Estuvo a punto de morir en el Comité de Reglamento y en un filibustero de unos sesenta días que solo se rompió con votos de los dos partidos.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede continuar a la Lección 4.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* ---- Recorrido ramificado de un proyecto de ley ---------------------
+     Con botones, no arrastrando: accesible con teclado y con lector de
+     pantalla, y en el telefono se usa igual de bien. ------------------- */
+  var ETAPAS = {
+    inicio: { donde: 'Presentación',
+      situacion: 'Su proyecto acaba de presentarse en la Cámara. El presidente del comité correspondiente decide si lo programa.',
+      ops: [ {t:'El comité lo programa', ir:'comite', log:'El comité acepta estudiarlo.'},
+             {t:'El comité lo ignora', ir:'muere_comite', log:'El comité no lo pone en su orden del día.'} ] },
+
+    comite: { donde: 'Comité',
+      situacion: 'Hay audiencias y enmiendas. Para salir del comité necesita mayoría, y algunos miembros piden cambios que a usted no le gustan.',
+      ops: [ {t:'Acepta las enmiendas', ir:'pleno', log:'Cede en varias enmiendas y el comité lo aprueba.'},
+             {t:'Se niega a cambiar nada', ir:'muere_comite', log:'Sin las enmiendas, el comité lo rechaza.'} ] },
+
+    pleno: { donde: 'Pleno de la Cámara',
+      situacion: 'Debate y votación en la cámara completa. Le faltan unos pocos votos.',
+      ops: [ {t:'Negocia con el otro partido', ir:'senado', log:'Consigue votos de los dos partidos y se aprueba.'},
+             {t:'Fuerza la votación tal cual', ir:'muere_pleno', log:'Pierde la votación por poco.'} ] },
+
+    senado: { donde: 'Senado',
+      situacion: 'El proyecto llega al Senado. Un grupo de senadores amenaza con un filibustero para impedir que se vote.',
+      ops: [ {t:'Busca los votos para la clausura', ir:'conferencia', log:'Reúne la mayoría necesaria y se corta el debate.'},
+             {t:'Espera a que se cansen', ir:'muere_senado', log:'El filibustero se prolonga y el periodo de sesiones termina.'} ] },
+
+    conferencia: { donde: 'Comité de conferencia',
+      situacion: 'Las dos cámaras aprobaron versiones distintas. Un comité mixto tiene que producir un texto único.',
+      ops: [ {t:'Acepta el texto de compromiso', ir:'presidente', log:'Sale un texto único que las dos cámaras ratifican.'},
+             {t:'Insiste en su versión', ir:'muere_conferencia', log:'No hay acuerdo y el proyecto se queda en el comité.'} ] },
+
+    presidente: { donde: 'El presidente',
+      situacion: 'El proyecto está sobre la mesa del presidente, que no está de acuerdo con una parte. Lo veta.',
+      ops: [ {t:'El Congreso reúne dos tercios', ir:'ley', log:'Las dos cámaras anulan el veto por dos tercios.'},
+             {t:'El Congreso se queda corto', ir:'muere_veto', log:'Falta apoyo para anular el veto.'} ] }
+  };
+
+  var FINALES = {
+    muere_comite:      { tipo:'muere', txt:'El proyecto muere en el comité. Es el final más frecuente con diferencia, y el más silencioso: nadie tuvo que votar en contra.' },
+    muere_pleno:       { tipo:'muere', txt:'El proyecto muere en la votación del pleno. Al menos aquí queda constancia de quién votó qué.' },
+    muere_senado:      { tipo:'muere', txt:'El proyecto muere en el Senado sin llegar a votarse. Un filibustero no derrota una ley: impide que se decida sobre ella.' },
+    muere_conferencia: { tipo:'muere', txt:'El proyecto muere en el comité de conferencia. Las dos cámaras lo aprobaron, pero no la misma versión, y eso basta.' },
+    muere_veto:        { tipo:'muere', txt:'El veto se mantiene y el proyecto muere. Hacían falta dos tercios en las dos cámaras, no mayoría simple.' },
+    ley:               { tipo:'ley',   txt:'Se convierte en ley. Fíjese en lo que hizo falta: ceder en el comité, negociar con el otro partido y reunir dos tercios. El sistema premia los acuerdos amplios porque está construido para eso.' }
+  };
+
+  var cajaEtapa = document.getElementById('etapa');
+  var bitacora  = document.getElementById('bitacora');
+  var desenlace = document.getElementById('desenlace');
+  if (!cajaEtapa) return;
+
+  function pintar(clave) {
+    var e = ETAPAS[clave];
+    cajaEtapa.textContent = '';
+    var d = document.createElement('div'); d.className = 'etapa-actual';
+    var w = document.createElement('div'); w.className = 'donde'; w.textContent = e.donde;
+    var s = document.createElement('p');   s.className = 'situacion'; s.textContent = e.situacion;
+    var o = document.createElement('div'); o.className = 'opciones-r';
+    e.ops.forEach(function (op) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = op.t;
+      b.addEventListener('click', function () { avanzar(op); });
+      o.appendChild(b);
+    });
+    d.appendChild(w); d.appendChild(s); d.appendChild(o);
+    cajaEtapa.appendChild(d);
+  }
+
+  function avanzar(op) {
+    var li = document.createElement('li');
+    li.textContent = op.log;
+    if (FINALES[op.ir]) li.className = FINALES[op.ir].tipo === 'ley' ? 'ley' : 'muerte';
+    bitacora.appendChild(li);
+
+    if (FINALES[op.ir]) {
+      cajaEtapa.textContent = '';
+      desenlace.className = 'desenlace ' + (FINALES[op.ir].tipo === 'ley' ? 'ley' : 'muere');
+      desenlace.textContent = FINALES[op.ir].txt;
+      desenlace.setAttribute('role', 'status');
+    } else {
+      pintar(op.ir);
+    }
+  }
+
+  function reiniciar() {
+    bitacora.textContent = '';
+    desenlace.textContent = ''; desenlace.className = '';
+    pintar('inicio');
+  }
+
+  reiniciar();
+  document.getElementById('btn-reiniciar-ruta').addEventListener('click', reiniciar);
+})();
+</script>
+</body>
+</html>

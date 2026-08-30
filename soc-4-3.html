@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!--
+  Lección 4.3 · El poder judicial: revisión judicial y precedente
+  Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 4.3 · El poder judicial: revisión judicial y precedente</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 4 — paleta índigo heredada del plan curricular (--t4) */
+    --tema:    #283593;
+    --tema-d:  #1a237e;
+    --tema-bg: #e8eaf6;
+    --tema-bg2:#c5cae9;
+    --acento:  #3949ab;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── ENCABEZADO ─────────────────────────────────────────────── */
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #101452 0%, #1a237e 55%, #283593 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(16,20,82,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #1a237e;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .diagrama-wrap { text-align: center; margin: 16px 0; overflow-x: auto; }
+
+  /* ── LO QUE NECESITA (sustituye a «Material y recursos») ──────── */
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: #fff8e1; border-left: 5px solid #f9a825;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: #5C3900;
+  }
+  .caja-atencion strong { color: #5C3900; }
+
+  /* ── DOCUMENTO PARA ANALIZAR (particularidad de Estudios sociales) ── */
+  .documento {
+    background: #fafbff; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento .texto-adaptado {
+    background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+
+  /* ── BARRA DE NAVEGACIÓN DEL CURSO ───────────────────────────── */
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2c3170; font-weight: 600; }
+  .navlecciones .nav-sep { color: #5a5f8f; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) {
+    .navlecciones .nav-sig { margin-left: 0; }
+  }
+
+  /* ── FICHA Y ORIGINAL DE UNA FUENTE DEL ARCHIVO ──────────────── */
+  .ficha-fuente {
+    background: var(--tema-bg); border-left: 5px solid var(--tema);
+    border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 14px 0;
+    font-size: 14px; color: #3e332f;
+  }
+  .ficha-fuente dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+  .ficha-fuente dt { font-weight: 700; color: var(--tema-d); }
+  .ficha-fuente dd { margin: 0; }
+  .ficha-fuente .nota-lengua { margin: 10px 0 0; font-size: 13px; color: #4a3a34; }
+
+  .carta { margin: 16px 0; }
+  .carta h3.encab-carta {
+    font-size: 13px; font-weight: 700; color: var(--tema-d);
+    text-transform: uppercase; letter-spacing: .4px;
+    margin: 0 0 6px; padding: 0; border: 0;
+  }
+  .carta blockquote {
+    margin: 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .carta blockquote p { margin: 0 0 8px; }
+  .carta blockquote p:last-child { margin-bottom: 0; }
+
+  details.original {
+    margin: 8px 0 0; border: 1px solid var(--tema-bg2);
+    border-radius: 8px; background: #fafbff;
+  }
+  details.original > summary {
+    cursor: pointer; padding: 8px 14px; font-size: 13.5px;
+    font-weight: 600; color: var(--tema-d); border-radius: 8px;
+  }
+  details.original > summary:hover { background: var(--tema-bg); }
+  details.original[open] > summary { border-bottom: 1px solid var(--tema-bg2); }
+  details.original .cuerpo-original { padding: 10px 18px 14px; font-size: 14px; color: #333; }
+  details.original .cuerpo-original p { margin: 0 0 8px; }
+
+  /* ── ENLACE AL INTERACTIVO ───────────────────────────────────── */
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: #c62828; background: #ffebee; }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: #b71c1c; }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  /* ── SUGERENCIAS DE PRÁCTICA (versión autodidacta) ───────────── */
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: #ffebee; color: #b71c1c; }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: #fff8e1; font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: #5C3900; }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #283593; }
+
+  /* ══ COMPONENTES DEL TEMA 4 ═════════════════════════════════ */
+  figure.diagrama { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.diagrama svg { display:block; width:100%; height:auto; }
+  figure.diagrama figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .fl-caja  { fill: var(--tema-bg); stroke: var(--tema); stroke-width: 2; }
+  .fl-muere { fill: #ffebee; stroke: #c62828; stroke-width: 2; }
+  .fl-ley   { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2.5; }
+  .fl-rot   { font-size: 12px; fill: var(--tema-d); font-weight: 600; }
+  .fl-rot-m { font-size: 12px; fill: #b71c1c; font-weight: 700; }
+  .fl-rot-l { font-size: 12px; fill: #1b5e20; font-weight: 700; }
+  .fl-linea { stroke: var(--tema); stroke-width: 2; fill: none; }
+  .fl-mini  { font-size: 10.5px; fill: #555; }
+
+  /* Recorrido interactivo del proyecto */
+  .recorrido { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .recorrido h3 { margin-top: 0; }
+  .etapa-actual { background:#fff; border:2px solid var(--tema); border-radius:9px; padding:14px 18px; margin:12px 0; }
+  .etapa-actual .donde { font-size:12.5px; font-weight:700; color:var(--tema-d); text-transform:uppercase; letter-spacing:.3px; }
+  .etapa-actual .situacion { margin:8px 0 12px; font-size:15px; }
+  .etapa-actual .opciones-r { display:flex; flex-wrap:wrap; gap:8px; }
+  .etapa-actual .opciones-r button {
+    font-family:inherit; font-size:14px; font-weight:700; cursor:pointer;
+    border:2px solid var(--tema); background:#fff; color:var(--tema-d);
+    border-radius:7px; padding:8px 16px;
+  }
+  .etapa-actual .opciones-r button:hover { background: var(--tema-bg2); }
+  .etapa-actual .opciones-r button:focus-visible { outline:3px solid #f9a825; outline-offset:2px; }
+  .bitacora { margin: 12px 0 0; padding-left: 0; list-style: none; }
+  .bitacora li { font-size:14px; padding:6px 0 6px 26px; position:relative; border-top:1px solid var(--tema-bg2); }
+  .bitacora li::before { content:"→"; position:absolute; left:6px; color:var(--tema); font-weight:700; }
+  .bitacora li.muerte::before { content:"✕"; color:#c62828; }
+  .bitacora li.ley::before { content:"✓"; color:#2e7d32; }
+  .desenlace { margin-top:12px; padding:12px 16px; border-radius:8px; font-size:15px; font-weight:600; }
+  .desenlace.muere { background:#ffebee; color:#b71c1c; }
+  .desenlace.ley { background:#e8f5e9; color:#1b5e20; }
+  /* Clasificador (mismo patrón accesible que la Lección 3.3: botones, no arrastrar) */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .texto { font-weight: 600; margin-bottom: 9px; font-size: 15px; }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 6px 14px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .55; }
+  .comp .botones button.acierto { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; opacity: 1; }
+  .comp .botones button.fallo   { background: #ffebee; border-color: #c62828; color: #b71c1c; opacity: 1; }
+  .comp .exp { display: none; margin-top: 9px; font-size: 14px; }
+  .comp .exp.ok { color: #1b5e20; }
+  .comp .exp.no { color: #b71c1c; }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+  /* Glosario judicial */
+  dl.glosario { margin: 14px 0; }
+  dl.glosario dt { font-weight: 700; color: var(--tema-d); margin-top: 12px; font-size: 15.5px; }
+  dl.glosario dd { margin: 4px 0 0; padding-left: 16px; border-left: 3px solid var(--tema-bg2); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 4 · Cívica II: las tres ramas y la formación de políticas</div>
+    <h1>Lección 4.3 · El poder judicial: revisión judicial y precedente</h1>
+    <div class="meta">NRS 5–6</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 · Comprensión de conceptos y contextos</span>
+      <span class="sp">SSP.3 · Analizar fuentes históricas</span>
+      <span class="sp">SSP.6 · Propósito y punto de vista</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 4.3</span>
+    <a class="nav-sig" href="index.html#tema-5">Siguiente: Tema 5 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Describir la jerarquía de los tribunales federales y estatales, y la ruta que sigue un caso hasta la Corte Suprema.</li>
+      <li>Explicar de dónde salió la revisión judicial y hasta dónde llega.</li>
+      <li>Identificar el razonamiento central de una sentencia, separándolo de su resultado.</li>
+      <li>Explicar qué tiene que cambiar para que un precedente se revoque, y qué no cambia.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La lección anterior terminó con un freno mencionado y no explicado: los tribunales pueden anular una orden ejecutiva o un reglamento que se salga de su autoridad. Y la Lección 3.2 dejó una deuda mayor todavía: ese poder <strong>no está escrito en la Constitución</strong>.</p>
+    <p>Esta lección paga las dos deudas. Y termina con el ejercicio que mejor enseña qué es un precedente: dos sentencias sobre lo mismo, separadas por cincuenta y ocho años, con resultados opuestos y con el mismo texto constitucional delante.</p>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Cómo sube un caso</h2>
+
+  <div class="bloque">
+    <p>Hay dos sistemas de tribunales funcionando a la vez, el federal y el de cada estado, y solo se tocan arriba del todo.</p>
+
+    <figure class="diagrama">
+      <svg viewBox="0 0 700 430" role="img" aria-labelledby="jert jerd" xmlns="http://www.w3.org/2000/svg">
+      <title id="jert">Jerarquía de los tribunales federales y estatales, y la ruta de apelación hasta la Corte Suprema</title>
+      <desc id="jerd">Dos vías paralelas que confluyen arriba. En la vía federal, el caso empieza en una de las noventa y cuatro cortes de distrito, se apela ante una de las trece cortes de apelaciones y puede llegar a la Corte Suprema. En la vía estatal, empieza en los tribunales del estado, se apela hasta la corte suprema de ese estado, y solo puede pasar a la Corte Suprema federal si el caso plantea una cuestión de derecho federal; en lo demás, la corte suprema del estado tiene la última palabra. La Corte Suprema federal, de nueve jueces, elige qué casos oye: acepta unos pocos de entre varios miles al año, y basta con que cuatro de los nueve quieran oírlo.</desc>
+      <defs><marker id="j4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#283593"/></marker></defs>
+      <rect class="fl-ley" x="215" y="14" width="270" height="58" rx="8"/>
+      <text class="fl-rot" x="350.0" y="41.0" text-anchor="middle">CORTE SUPREMA</text>
+      <text class="fl-mini" x="350.0" y="58.0" text-anchor="middle">Nueve jueces · Artículo III</text>
+      <text class="fl-rot" x="165" y="112" text-anchor="middle">VÍA FEDERAL</text>
+      <text class="fl-rot" x="535" y="112" text-anchor="middle">VÍA ESTATAL</text>
+      <rect class="fl-caja" x="30" y="130" width="270" height="58" rx="8"/>
+      <text class="fl-rot" x="165.0" y="157.0" text-anchor="middle">Cortes de apelaciones</text>
+      <text class="fl-mini" x="165.0" y="174.0" text-anchor="middle">Trece circuitos</text>
+      <rect class="fl-caja" x="30" y="240" width="270" height="58" rx="8"/>
+      <text class="fl-rot" x="165.0" y="267.0" text-anchor="middle">Cortes de distrito</text>
+      <text class="fl-mini" x="165.0" y="284.0" text-anchor="middle">Noventa y cuatro · aquí empieza el caso</text>
+      <rect class="fl-caja" x="400" y="130" width="270" height="58" rx="8"/>
+      <text class="fl-rot" x="535.0" y="157.0" text-anchor="middle">Corte suprema del estado</text>
+      <text class="fl-mini" x="535.0" y="174.0" text-anchor="middle">Última palabra en derecho estatal</text>
+      <rect class="fl-caja" x="400" y="240" width="270" height="58" rx="8"/>
+      <text class="fl-rot" x="535.0" y="267.0" text-anchor="middle">Cortes estatales</text>
+      <text class="fl-mini" x="535.0" y="284.0" text-anchor="middle">De primera instancia y de apelación</text>
+      <line class="fl-linea" x1="165" y1="240" x2="165" y2="190" marker-end="url(#j4)"/>
+      <line class="fl-linea" x1="165" y1="130" x2="250" y2="74" marker-end="url(#j4)"/>
+      <line class="fl-linea" x1="535" y1="240" x2="535" y2="190" marker-end="url(#j4)"/>
+      <line class="fl-linea" x1="535" y1="130" x2="450" y2="74" marker-end="url(#j4)"/>
+      <text class="fl-mini" x="120" y="218" text-anchor="middle">apelación</text>
+      <text class="fl-mini" x="590" y="218" text-anchor="middle">apelación</text>
+      <text class="fl-mini" x="150" y="102" text-anchor="middle">certiorari</text>
+      <text class="fl-mini" x="555" y="102" text-anchor="middle">solo si hay</text>
+      <text class="fl-mini" x="555" y="116" text-anchor="middle">cuestión federal</text>
+      <rect class="fl-caja" x="30" y="340" width="640" height="62" rx="8"/>
+      <text class="fl-rot" x="350.0" y="369.0" text-anchor="middle">La Corte Suprema elige qué casos oye: acepta unos pocos de varios miles al año</text>
+      <text class="fl-mini" x="350.0" y="386.0" text-anchor="middle">Basta con que cuatro de los nueve jueces quieran oírlo</text>
+    </svg>
+      <figcaption>Fíjese en la diferencia entre las dos flechas de arriba. Un caso federal puede llegar a la Corte Suprema por el camino normal. Un caso estatal solo cruza a la vía federal <strong>si plantea una cuestión de derecho federal</strong>; en lo demás, la corte suprema del estado tiene la última palabra y no hay a quién recurrir.</figcaption>
+    </figure>
+
+    <div class="caja-atencion">
+      <strong>Lo que casi nadie sabe: la Corte Suprema elige.</strong> No está obligada a oír los casos que le llegan. De varios miles de peticiones al año acepta unas pocas decenas, y para aceptar una basta con que cuatro de los nueve jueces quieran oírla. Eso significa que <strong>la mayoría de las sentencias de apelación son definitivas de hecho</strong>, no porque nadie pudiera recurrirlas, sino porque la Corte no las tomó.
+    </div>
+
+    <h3>Glosario judicial</h3>
+    <dl class="glosario">
+      <dt>Jurisdicción</dt>
+      <dd>La facultad de un tribunal para conocer de un asunto. Un tribunal sin jurisdicción no puede resolver, aunque tenga clara la respuesta. Recuérdelo, porque es la clave de la sección siguiente.</dd>
+
+      <dt>Apelación</dt>
+      <dd>Pedir a un tribunal superior que revise lo decidido por uno inferior. No es un juicio nuevo: no se vuelven a oír testigos, se discute si hubo error de derecho.</dd>
+
+      <dt>Opinión mayoritaria</dt>
+      <dd>El texto que explica la decisión del tribunal y fija la regla. Es lo que crea precedente, y por eso importa tanto su razonamiento como su resultado.</dd>
+
+      <dt>Opinión disidente</dt>
+      <dd>La de los jueces que no están de acuerdo. No tiene fuerza obligatoria, pero deja constancia del argumento contrario y a veces es la que triunfa décadas después.</dd>
+
+      <dt><em>Stare decisis</em></dt>
+      <dd>La regla de atenerse a lo ya decidido. Da estabilidad y previsibilidad al derecho, y es la razón de que revocar un precedente sea excepcional en lugar de rutinario.</dd>
+    </dl>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. De dónde salió la revisión judicial</h2>
+
+  <div class="bloque">
+    <p>Busque en la Constitución la facultad de los tribunales de anular una ley por inconstitucional. No está. La estableció la propia Corte Suprema en 1803, y la manera en que lo hizo es una lección de estrategia.</p>
+
+    <div class="ejemplo">
+      <span class="et">Marbury contra Madison, 1803</span>
+      <p><strong>Los hechos.</strong> Al terminar su mandato, el presidente Adams nombró a un grupo de jueces. Algunos nombramientos no llegaron a entregarse antes del relevo, y el gobierno entrante, el de Jefferson, se negó a entregarlos. William Marbury, uno de los afectados, acudió directamente a la Corte Suprema pidiendo que le ordenara al secretario de Estado, James Madison, que le entregara el suyo. Se apoyaba en una ley del Congreso de 1789 que permitía acudir a la Corte de ese modo.</p>
+      <p><strong>El aprieto.</strong> Si la Corte ordenaba la entrega, el gobierno podía sencillamente desobedecer, y la Corte quedaría en evidencia. Si no la ordenaba, quedaba como un tribunal sin autoridad.</p>
+      <p><strong>Lo que hizo el presidente de la Corte, John Marshall.</strong> Dividió la respuesta en tres. Primero: Marbury tiene derecho a su nombramiento. Segundo: le corresponde un remedio legal. Y tercero: <strong>esta Corte no puede dárselo</strong>, porque la ley de 1789 que le permitía acudir aquí directamente amplió la jurisdicción de la Corte más allá de lo que la Constitución le concede, y por tanto esa parte de la ley no vale.</p>
+      <p><strong>El resultado.</strong> Marbury perdió. Y la Corte, en el acto de negarse un poder pequeño, se atribuyó uno inmenso: el de declarar que una ley del Congreso contradice la Constitución y no puede aplicarse. Nadie tenía a quién quejarse, porque el gobierno había ganado el caso.</p>
+    </div>
+
+    <div class="caja-tip">
+      <strong>El razonamiento, en una línea.</strong> Si la Constitución es la ley suprema y una ley ordinaria la contradice, algún órgano tiene que decidir cuál se aplica. Y decidir qué dice el derecho en un caso concreto es, precisamente, lo que hacen los tribunales.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Por qué esto importa más allá de 1803.</strong> Aquí termina de responderse lo que quedó pendiente en la Lección 3.2. Buena parte de lo que hoy llamamos constitucional no está en el texto: se estableció después, por la práctica y por decisiones como esta. Saber distinguir lo que la Constitución <em>dice</em> de lo que se ha <em>hecho</em> con ella es una de las cosas que separa a un lector competente de uno que repite.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 1 · Jerarquía y revisión judicial</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="Solo cruza a la vía federal si plantea una cuestión de derecho federal. En lo demás, la corte suprema del estado es la última palabra.">
+        <div class="enun">Un caso resuelto por la corte suprema de un estado sobre una cuestión puramente estatal, ¿puede llegar a la Corte Suprema federal?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sí, siempre se puede recurrir</div>
+          <div class="opcion" data-op="b">No, salvo que plantee una cuestión de derecho federal</div>
+          <div class="opcion" data-op="c">Solo si lo pide el gobernador</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La Corte elige. De varios miles de peticiones al año acepta unas pocas decenas, y bastan cuatro votos de nueve para tomar un caso.">
+        <div class="enun">¿Está obligada la Corte Suprema a oír los casos que le llegan?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Sí, todos</div>
+          <div class="opcion" data-op="b">Sí, si el caso es federal</div>
+          <div class="opcion" data-op="c">No: elige, y basta con que cuatro jueces quieran oírlo</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Marbury tenía derecho al nombramiento, pero la Corte declaró que la ley que le permitía acudir allí directamente excedía la jurisdicción que le da la Constitución.">
+        <div class="enun">¿Quién ganó el caso Marbury contra Madison?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Madison, es decir, el gobierno: Marbury no obtuvo su nombramiento</div>
+          <div class="opcion" data-op="b">Marbury, que recibió su nombramiento</div>
+          <div class="opcion" data-op="c">Nadie: el caso se archivó</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="No está en el texto. La estableció la Corte en 1803 y desde entonces se ejerce como si estuviera escrita, que es exactamente la distinción que enseñó la Lección 3.2.">
+        <div class="enun">¿Dónde concede la Constitución la facultad de anular una ley por inconstitucional?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">En el Artículo III</div>
+          <div class="opcion" data-op="b">En ninguna parte: la estableció la propia Corte</div>
+          <div class="opcion" data-op="c">En la Décima Enmienda</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. De Plessy a Brown: qué cambió y qué no</h2>
+
+  <div class="bloque">
+    <p>Dos sentencias de la Corte Suprema sobre la segregación racial. La misma enmienda constitucional de por medio, la Decimocuarta, con su exigencia de igual protección de las leyes. Cincuenta y ocho años de distancia. Conclusiones opuestas.</p>
+
+    <table class="reglas">
+      <caption>Dos sentencias sobre la misma cuestión constitucional</caption>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">Plessy contra Ferguson, 1896</th><th scope="col">Brown contra el Consejo de Educación, 1954</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cuestión</td><td>¿Puede un estado exigir vagones de tren separados por raza?</td><td>¿Puede un estado tener escuelas públicas separadas por raza?</td></tr>
+        <tr><td>Decisión</td><td>Sí. La separación no es desigualdad mientras las instalaciones sean equivalentes</td><td>No. En la educación pública, separar es intrínsecamente desigual</td></tr>
+        <tr><td>Razonamiento central</td><td>La ley solo mira la igualdad formal. Si un grupo interpreta la separación como una marca de inferioridad, eso ocurre en su percepción, no en la ley</td><td>La separación impuesta por ley transmite un mensaje de inferioridad que afecta al aprendizaje. La desigualdad no está solo en las instalaciones, sino en el hecho mismo de separar</td></tr>
+        <tr><td>Votación</td><td>Mayoría, con una disidencia solitaria del juez Harlan</td><td>Unánime, nueve a cero</td></tr>
+        <tr><td>Texto constitucional aplicado</td><td>Decimocuarta Enmienda</td><td>Decimocuarta Enmienda, la misma</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>La pregunta que hay que responder, y no es fácil.</strong> Si la Constitución no cambió entre 1896 y 1954 —y no cambió: la Decimocuarta Enmienda es de 1868 y sigue igual—, entonces <strong>¿qué cambió?</strong>
+    </div>
+
+    <p>Tres cosas, y ninguna es el texto:</p>
+
+    <div class="ejemplo">
+      <span class="et">1 · La interpretación</span>
+      <p>Qué significa «igual protección de las leyes» no está definido en la enmienda. En 1896 se leyó como igualdad formal: si hay dos vagones equivalentes, hay igualdad. En 1954 se leyó incluyendo los efectos reales de la separación.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">2 · La evidencia disponible</span>
+      <p>En 1954 la Corte contaba con estudios sobre el efecto de la segregación en los niños que en 1896 no existían. Un tribunal no decide en el vacío: decide con lo que se le puede demostrar en su época.</p>
+    </div>
+
+    <div class="ejemplo">
+      <span class="et">3 · El contexto social</span>
+      <p>Entre las dos sentencias hay dos guerras mundiales, un movimiento por los derechos civiles en formación y un país distinto. Los jueces no viven fuera de su tiempo, y eso es una descripción, no un reproche.</p>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Y una cuarta cosa, que enseña qué es una disidencia.</strong> En 1896, el juez Harlan fue el único que votó en contra, y sostuvo que la Constitución no reconoce clases entre los ciudadanos y que la ley no debe atender al color de la piel. Su opinión no obligaba a nadie: perdió ocho a uno. Cincuenta y ocho años después, la Corte entera llegó a una conclusión próxima a la suya. Una disidencia no cambia el resultado del caso, pero deja escrito un argumento que puede ganar más tarde.
+    </div>
+
+    <div class="practica">
+      <h3>Práctica interactiva 2 · Precedente y revocación</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="La Decimocuarta Enmienda es de 1868 y no se tocó. Lo que cambió fue cómo se interpretó, qué evidencia había y en qué país se decidía.">
+        <div class="enun">Entre Plessy y Brown, ¿qué cambió en el texto de la Constitución?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Se añadió una enmienda nueva</div>
+          <div class="opcion" data-op="b">Se modificó la Decimocuarta Enmienda</div>
+          <div class="opcion" data-op="c">Nada: el texto era el mismo</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Stare decisis es atenerse a lo ya decidido. Da estabilidad y previsibilidad, y por eso revocar un precedente es excepcional en lugar de rutinario.">
+        <div class="enun">¿Qué significa <em>stare decisis</em>?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Atenerse a lo ya decidido</div>
+          <div class="opcion" data-op="b">Decidir por unanimidad</div>
+          <div class="opcion" data-op="c">Devolver el caso al tribunal inferior</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="No obliga a nadie y no cambia el resultado del caso. Su valor es dejar escrito un argumento que puede prevalecer más adelante, como ocurrió con la de Harlan.">
+        <div class="enun">¿Qué fuerza tiene una opinión disidente?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La misma que la mayoritaria</div>
+          <div class="opcion" data-op="b">Ninguna obligatoria, pero deja constancia del argumento contrario</div>
+          <div class="opcion" data-op="c">Anula la sentencia</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Lo que crea precedente es la regla y el razonamiento de la opinión mayoritaria, no solo quién ganó. Por eso al leer una sentencia hay que separar el resultado del argumento.">
+        <div class="enun">¿Qué parte de una sentencia crea precedente?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">El nombre de las partes</div>
+          <div class="opcion" data-op="b">Solo quién ganó</div>
+          <div class="opcion" data-op="c">La regla y el razonamiento de la opinión mayoritaria</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · La ruta de un caso</div>
+      <div class="cuerpo-act">
+        <span class="duracion">15 minutos</span>
+        <p>Dibuje de memoria las dos vías, federal y estatal, y marque por dónde puede cruzar un caso de una a otra. Añada al lado en qué punto deja de haber a quién recurrir.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> el cruce solo existe si hay cuestión federal. Y deja de haber a quién recurrir en cuanto la Corte Suprema decide no tomar el caso, cosa que ocurre casi siempre.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · De Plessy a Brown</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Con la tabla de la sección 3 delante, escriba un párrafo respondiendo a esta pregunta: si la Constitución no cambió, ¿en qué se apoya la Corte de 1954 para decidir lo contrario que la de 1896? Nombre las tres cosas que sí cambiaron y ponga un ejemplo de cada una.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si su párrafo dice que la Corte de 1896 se equivocó y ya está, le falta lo esencial. La pregunta no es quién acertó, sino qué permite que dos tribunales lean el mismo texto y lleguen a conclusiones opuestas.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Resultado y razonamiento</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque el resumen de una sentencia reciente de la Corte Suprema. Escriba en una frase quién ganó, y en otra cuál fue el razonamiento. Después diga qué regla queda establecida para casos futuros.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si sus dos frases dicen lo mismo, todavía no ha separado el resultado del argumento. Es lo mismo que hizo en la Lección 1.3 con los dos semanarios: qué se afirma y con qué se sostiene.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 4.3</h2>
+    <p>Doce preguntas: cuatro de jerarquía y ruta de apelación, cuatro de revisión judicial, y cuatro de precedente y su revocación. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su párrafo de la Práctica 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de razonamiento judicial, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Describe la jerarquía y la ruta de apelación</td>
+          <td>Cree que hay un solo sistema de tribunales.</td>
+          <td>Distingue federal de estatal, pero no sabe dónde se cruzan.</td>
+          <td>Traza las dos vías y explica que el cruce exige cuestión federal.</td>
+          <td>Añade que la Corte elige sus casos, y qué implica eso para las apelaciones.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Explica la revisión judicial y su origen</td>
+          <td>Cree que está escrita en la Constitución.</td>
+          <td>Sabe que viene de Marbury, pero no sabe explicar el caso.</td>
+          <td>Cuenta el caso y el razonamiento de Marshall en sus tres pasos.</td>
+          <td>Explica por qué renunciar a un poder pequeño permitió afirmar uno mayor sin oposición.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Identifica el razonamiento central de una sentencia</td>
+          <td>Solo dice quién ganó.</td>
+          <td>Resume la sentencia, pero mezcla resultado y argumento.</td>
+          <td>Separa el resultado del razonamiento y enuncia la regla que queda.</td>
+          <td>Reconoce qué papel juega una disidencia y por qué se escribe.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Explica qué debe cambiar para revocar un precedente</td>
+          <td>Cree que basta con que los jueces cambien de opinión.</td>
+          <td>Menciona el cambio social, pero no la interpretación ni la evidencia.</td>
+          <td>Nombra las tres cosas que cambiaron entre Plessy y Brown.</td>
+          <td>Explica por qué <em>stare decisis</em> hace que revocar sea excepcional y no rutinario.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 4.3 y cierre del Tema 4</h2>
+    <p>Con esto se paga la deuda que venía desde el Tema 3. El poder de anular una ley no está escrito en la Constitución: lo estableció la Corte en 1803, en una sentencia donde perdió quien la había pedido. Buena parte de lo que hoy llamamos constitucional se construyó así, y distinguir el texto de lo que se ha hecho con él es una destreza, no un detalle.</p>
+    <p>Y queda la idea mayor de la lección, que sirve mucho más allá del examen. Un precedente puede caer sin que cambie una coma del texto, porque entre el texto y la decisión hay siempre tres cosas: <strong>cómo se interpreta, qué se puede demostrar y en qué mundo se decide</strong>. Reconocerlas es lo que permite leer una sentencia sin quedarse en quién ganó.</p>
+    <p>Con esta lección termina el Tema 4 y termina el bloque de cívica, que es la mitad del examen. Ha recorrido las tres ramas por dentro: un Congreso donde legislar es difícil por diseño, un ejecutivo que elige a diario entre velocidad y permanencia, y unos tribunales cuyo mayor poder se lo dieron ellos mismos.</p>
+    <p>El <strong>Tema 5</strong> baja a lo que todo esto significa para una persona: derechos, elecciones y de dónde sale y adónde va el dinero público.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-4">Tema 4 · Las tres ramas</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-5">Siguiente: Tema 5 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 4 · Lección 4.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
+  var preguntasQuiz = [
+    { enun: '1. Un caso federal empieza normalmente en…', ops: ['La Corte Suprema', 'Una corte de distrito', 'Una corte de apelaciones', 'La corte suprema del estado'],
+      correcta: 1, expl: 'Hay noventa y cuatro cortes de distrito. De ahí se apela a una de las trece cortes de apelaciones.' },
+    { enun: '2. Un caso estatal puede llegar a la Corte Suprema federal…', ops: ['Siempre', 'Nunca', 'Solo si plantea una cuestión de derecho federal', 'Solo si lo pide el gobernador'],
+      correcta: 2, expl: 'En lo demás, la corte suprema del estado tiene la última palabra y no hay a quién recurrir.' },
+    { enun: '3. ¿Está obligada la Corte Suprema a oír los casos que le llegan?', ops: ['Sí, todos', 'No: elige, y bastan cuatro votos de nueve para tomar uno', 'Sí, si son federales', 'Solo los penales'],
+      correcta: 1, expl: 'De varios miles de peticiones al año acepta unas pocas decenas. Por eso la mayoría de las sentencias de apelación son definitivas de hecho.' },
+    { enun: '4. Una apelación consiste en…', ops: ['Repetir el juicio con nuevos testigos', 'Pedir a un tribunal superior que revise si hubo error de derecho', 'Cambiar de abogado', 'Pedir un indulto'],
+      correcta: 1, expl: 'No es un juicio nuevo. No se vuelven a oír testigos: se discute si el tribunal inferior aplicó mal el derecho.' },
+    { enun: '5. La revisión judicial se estableció en…', ops: ['La Constitución de 1787', 'La Carta de Derechos de 1791', 'Marbury contra Madison, en 1803', 'Brown contra el Consejo de Educación, en 1954'],
+      correcta: 2, expl: 'No está en el texto constitucional. La estableció la propia Corte Suprema, y desde entonces se ejerce como si estuviera escrita.' },
+    { enun: '6. En Marbury contra Madison, la Corte resolvió que…', ops: ['Marbury debía recibir su nombramiento de inmediato', 'Marbury tenía derecho, pero esa Corte no podía dárselo', 'El caso no tenía fundamento', 'El presidente había actuado bien'],
+      correcta: 1, expl: 'Los tres pasos de Marshall: hay derecho, hay remedio, y esta Corte no es quien puede darlo, porque la ley que se lo permitía excedía su jurisdicción.' },
+    { enun: '7. Lo notable de esa sentencia es que la Corte…', ops: ['Se atribuyó un poder mayor al renunciar a uno menor', 'Desobedeció al presidente', 'Anuló la Constitución', 'Ordenó nuevas elecciones'],
+      correcta: 0, expl: 'El gobierno ganó el caso, así que nadie tenía motivo para pelear la doctrina que la Corte acababa de establecer.' },
+    { enun: '8. El razonamiento de fondo de la revisión judicial es que…', ops: ['Los jueces saben más', 'Si una ley contradice la Constitución, alguien debe decidir cuál se aplica, y eso es lo que hacen los tribunales', 'El Congreso lo pidió', 'Lo exige la Décima Enmienda'],
+      correcta: 1, expl: 'Decidir qué dice el derecho en un caso concreto es precisamente la función judicial.' },
+    { enun: '9. Entre Plessy (1896) y Brown (1954), el texto de la Constitución…', ops: ['Se enmendó', 'Se derogó en parte', 'No cambió', 'Se tradujo'],
+      correcta: 2, expl: 'La Decimocuarta Enmienda es de 1868 y siguió igual. Cambiaron la interpretación, la evidencia disponible y el contexto social.' },
+    { enun: '10. «Stare decisis» significa…', ops: ['Atenerse a lo ya decidido', 'Decidir por unanimidad', 'Devolver el caso', 'Suspender el juicio'],
+      correcta: 0, expl: 'Da estabilidad y previsibilidad al derecho, y por eso revocar un precedente es excepcional en lugar de rutinario.' },
+    { enun: '11. Una opinión disidente…', ops: ['Anula la sentencia', 'Obliga igual que la mayoritaria', 'No obliga, pero deja escrito el argumento contrario', 'Impide que haya precedente'],
+      correcta: 2, expl: 'La disidencia solitaria de Harlan en 1896 perdió ocho a uno, y cincuenta y ocho años después la Corte entera llegó a una conclusión próxima.' },
+    { enun: '12. Lo que crea precedente en una sentencia es…', ops: ['Quién ganó', 'El nombre de las partes', 'La regla y el razonamiento de la opinión mayoritaria', 'La fecha'],
+      correcta: 2, expl: 'Por eso al leer una sentencia hay que separar el resultado del argumento: es lo segundo lo que obliga en casos futuros.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Con esto queda cerrado el Tema 4.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
