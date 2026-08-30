@@ -1,330 +1,581 @@
 <!DOCTYPE html>
+<!--
+  Interactivo · El ciclo económico
+  Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El ciclo económico — La "onda" de la economía</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interactivo · El ciclo económico</title>
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
 <style>
   :root {
-    --c-recuperacion: #16a34a;
-    --c-expansion: #22c55e;
-    --c-auge: #06b6d4;
-    --c-recesion: #f97316;
-    --c-depresion: #dc2626;
-    --c-text: #1f2937;
-    --c-text-soft: #4b5563;
-    --c-bg-soft: #f9fafb;
-    --c-border: #e5e7eb;
+    /* Tema 7 — paleta verde heredada del plan curricular (--t7) */
+    --tema:    #1b5e20;
+    --tema-d:  #0f3d13;
+    --tema-bg: #e8f5e9;
+    --tema-bg2:#c8e6c9;
+    --acento:  #2e7d32;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+    /* Colores semánticos de fase, no de identidad */
+    --f-exp:   #1b5e20;
+    --f-auge:  #8a6100;
+    --f-rec:   #b03a1a;
+    --f-fondo: #37474f;
   }
   * { box-sizing: border-box; }
   body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--c-text);
-    background: #ffffff;
-    margin: 0;
-    padding: 2rem 1rem;
-    line-height: 1.5;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
   }
-  .container { max-width: 1200px; margin: 0 auto; }
-  h1 {
-    text-align: center;
-    font-size: clamp(1.5rem, 3.2vw, 2.1rem);
-    margin: 0 0 0.6rem 0;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+  .contenedor { max-width: 1080px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
   }
-  .subtitle {
-    text-align: center;
-    color: var(--c-text-soft);
-    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-    max-width: 760px;
-    margin: 0 auto 2rem auto;
+
+  header.principal {
+    background: linear-gradient(135deg, #0a2c0d 0%, #0f3d13 55%, #1b5e20 100%);
+    color: #fff; padding: 30px; border-radius: 14px; margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(10,44,13,.28);
   }
-  .ciclo-svg {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 1.5rem;
+  header.principal .ruta { font-size: 13px; letter-spacing: .4px; text-transform: uppercase; }
+  header.principal h1 { margin: 8px 0 6px; font-size: 24px; }
+  header.principal .meta { font-size: 14.5px; }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 20px; margin: 30px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
   }
-  .tabla-fases {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--c-bg-soft);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    margin-top: 1rem;
+  h3 { color: var(--tema-d); font-size: 17px; margin: 18px 0 8px; }
+
+  .bloque { background:#fff; border-radius:10px; padding:4px 24px 18px;
+            box-shadow:0 1px 5px rgba(0,0,0,.06); margin-bottom:18px; }
+
+  details.plegable { padding:0 24px 4px; }
+  details.plegable > summary {
+    cursor:pointer; list-style:none; padding:14px 0 6px; margin:0;
+    display:flex; align-items:center; gap:10px;
   }
-  .tabla-fases th,
-  .tabla-fases td {
-    padding: 0.9rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--c-border);
-    font-size: 0.98rem;
+  details.plegable > summary::-webkit-details-marker { display:none; }
+  details.plegable > summary::before {
+    content:"\25B6"; color:var(--tema); font-size:13px;
+    transition:transform .2s; flex:0 0 auto;
   }
-  .tabla-fases th {
-    background: #f3f4f6;
-    font-weight: 600;
-    color: var(--c-text);
+  details.plegable[open] > summary::before { transform:rotate(90deg); }
+  details.plegable > summary:focus-visible { outline:3px solid #f9a825; outline-offset:3px; border-radius:6px; }
+  details.plegable > summary h2 {
+    margin:0; color:var(--tema-d); font-size:20px;
+    padding-bottom:6px; border-bottom:3px solid var(--tema-bg2); flex:1 1 auto;
   }
-  .tabla-fases tr:last-child td { border-bottom: none; }
-  .fase-nombre { font-weight: 600; font-size: 1.02rem; }
-  .col-exp { color: var(--c-expansion); }
-  .col-rec { color: var(--c-recesion); }
-  .col-dep { color: var(--c-depresion); }
-  .nota {
-    margin-top: 1.5rem;
-    padding: 1rem 1.2rem;
-    background: #eff6ff;
-    border-left: 4px solid #0089cd;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: var(--c-text-soft);
+  details.plegable > summary:hover h2 { border-bottom-color:var(--tema); }
+  @media (prefers-reduced-motion: reduce) { details.plegable > summary::before { transition:none; } }
+
+  .caja-tip { background:#e8f5e9; border-left:5px solid #2e7d32; padding:12px 16px;
+              border-radius:0 8px 8px 0; margin:14px 0; color:#12451a; font-size:15px; }
+  .caja-atencion { background:#fff8e1; border-left:5px solid #f9a825; padding:12px 16px;
+                   border-radius:0 8px 8px 0; margin:14px 0; color:#5C3900; font-size:15px; }
+
+  .doble { display:flex; flex-wrap:wrap; gap:18px; align-items:flex-start; }
+  .panel { flex:1 1 320px; background:#fff; border:1px solid #e0e0e0;
+           border-radius:10px; padding:16px 20px; }
+  .lienzo { flex:2 1 460px; background:#fff; border:1px solid #e0e0e0;
+            border-radius:10px; padding:16px 20px; }
+  .lienzo svg { display:block; width:100%; height:auto; }
+
+  .control { margin-bottom:16px; }
+  .control label { display:block; font-weight:700; color:var(--tema-d); margin-bottom:4px; font-size:15px; }
+  .control input[type=range] { width:100%; accent-color: var(--tema); height:26px; }
+  .control input[type=range]:focus-visible { outline:3px solid #f9a825; outline-offset:3px; }
+  .control .lectura { font-size:14px; color:#444; display:flex; justify-content:space-between; }
+  .control .lectura b { color:var(--tema-d); font-size:16px; }
+
+  fieldset.direccion { border:2px solid var(--tema-bg2); border-radius:9px; padding:10px 14px; margin:0 0 16px; }
+  fieldset.direccion legend { font-weight:700; color:var(--tema-d); font-size:15px; padding:0 6px; }
+  fieldset.direccion label { display:inline-flex; align-items:center; gap:6px; margin-right:16px; font-size:15px; }
+  fieldset.direccion input[type=radio] { accent-color: var(--tema); width:20px; height:20px; }
+  fieldset.direccion input[type=radio]:focus-visible { outline:3px solid #f9a825; outline-offset:3px; }
+
+  .botonera { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:6px; }
+  .botonera button {
+    font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer;
+    border:2px solid var(--tema); background:#fff; color:var(--tema-d);
+    border-radius:7px; padding:8px 6px; line-height:1.25;
   }
-  .nota strong { color: var(--c-text); }
+  @media (max-width:520px) { .botonera { grid-template-columns:repeat(2,1fr); } }
+  .botonera button:hover { background:var(--tema-bg2); }
+  .botonera button:focus-visible { outline:3px solid #f9a825; outline-offset:2px; }
+  .botonera button.primario { background:var(--tema); color:#fff; }
+  .botonera button.primario:hover { background:var(--tema-d); }
+
+  .resultado { margin-top:16px; border-radius:10px; padding:14px 18px; border-left:7px solid; }
+  .resultado h3 { margin:0 0 6px; font-size:18px; }
+  .resultado p { margin:0; font-size:15px; }
+  .resultado .tipo { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.4px;
+                     text-transform:uppercase; padding:2px 10px; border-radius:11px;
+                     background:rgba(255,255,255,.75); margin-bottom:6px; }
+  .resultado.expansion { background:#e8f5e9; border-color:var(--f-exp); color:#12451a; }
+  .resultado.auge      { background:#fff8e1; border-color:#f9a825; color:var(--f-auge); }
+  .resultado.recesion  { background:#fbe9e7; border-color:#e64a19; color:var(--f-rec); }
+  .resultado.fondo     { background:#eceff1; border-color:#546e7a; color:var(--f-fondo); }
+
+  .indice-barra { margin-top:12px; }
+  .indice-barra .pista { height:14px; background:var(--tema-bg2); border-radius:7px; overflow:hidden; }
+  .indice-barra .relleno { height:100%; background:var(--tema); width:0%; transition:width .25s; }
+  .indice-barra .pie { font-size:13px; color:#444; margin-top:4px; }
+
+  .ejeRot { font-size:12px; fill:#37474f; font-weight:700; }
+  .rotHito { font-size:12.5px; fill:#0f3d13; font-weight:700; letter-spacing:.4px; }
+  .rotFase { font-size:13.5px; fill:#0f3d13; font-weight:700; letter-spacing:.6px; }
+  .rotTipo { font-size:11px; fill:#5a6b5c; }
+  .rotMarcador { font-size:14px; fill:#1b1b1b; font-weight:700; }
+  #marcador { transition: transform .3s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    #marcador { transition: none; }
+    .indice-barra .relleno { transition: none; }
+  }
+
+  table.reglas { width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px; }
+  table.reglas caption { caption-side:top; text-align:left; font-weight:700;
+                         color:var(--tema-d); padding-bottom:8px; font-size:15px; }
+  table.reglas th, table.reglas td { border:1px solid #e0e0e0; padding:9px 12px;
+                                     text-align:left; vertical-align:top; }
+  table.reglas th { background:var(--tema); color:#fff; }
+  table.reglas td:first-child { background:var(--tema-bg); font-weight:600; color:var(--tema-d); }
+
+  textarea { width:100%; min-height:90px; font-family:inherit; font-size:15px;
+             border:2px solid var(--tema-bg2); border-radius:8px; padding:10px; }
+  textarea:focus-visible { outline:3px solid #f9a825; outline-offset:2px; }
+  .aviso { margin-top:10px; font-size:14.5px; padding:10px 14px; border-radius:8px; display:none; }
+  .aviso.ok { background:#e8f5e9; color:#12451a; display:block; }
+  .aviso.no { background:#fbe9e7; color:#a83214; display:block; }
+
+  footer { text-align:center; padding:20px; color:#555; font-size:13px;
+           border-top:1px solid #ddd; margin-top:24px; }
+  footer p { margin:5px 0; }
+  footer a { color:var(--tema-d); }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="contenedor">
 
-  <h1>El ciclo económico: la "onda" de la economía</h1>
-  <p class="subtitle">
-    La economía no crece de forma lineal, sino que se mueve en ciclos similares a una onda,
-    determinando periodos de empleo y consumo, o crisis financiera.
-  </p>
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 7 · Economía</div>
+    <h1>El ciclo económico</h1>
+    <div class="meta">Dos fases que duran y dos puntos de giro que no</div>
+  </header>
 
-  <!-- ============================================================
-       SVG DEL CICLO ECONÓMICO
-       Esta sección se puede extraer y embeber directamente en tu
-       guía económica de GEDparaHispanos o en Brightspace.
-       ============================================================ -->
-  <svg class="ciclo-svg"
-       viewBox="0 0 1200 720"
-       xmlns="http://www.w3.org/2000/svg"
-       role="img"
-       aria-labelledby="cicloTitulo cicloDesc">
-    <title id="cicloTitulo">Diagrama del ciclo económico</title>
-    <desc id="cicloDesc">Una onda muestra las cinco fases del ciclo económico: recuperación, expansión, auge, recesión y depresión.</desc>
+  <details class="bloque plegable" id="que" open>
+    <summary><h2>Qué compone un ciclo</h2></summary>
+    <p>La economía no crece en línea recta: se mueve en ondas. Y esa onda tiene <strong>cuatro elementos, de dos clases distintas</strong>. Confundir las clases es el error más común.</p>
 
-    <defs>
-      <!-- Degradado de la onda: verde → cyan → naranja → rojo -->
-      <linearGradient id="ondaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"  stop-color="#16a34a"/>
-        <stop offset="22%" stop-color="#22c55e"/>
-        <stop offset="48%" stop-color="#06b6d4"/>
-        <stop offset="68%" stop-color="#f97316"/>
-        <stop offset="100%" stop-color="#dc2626"/>
-      </linearGradient>
+    <table class="reglas">
+      <caption>Los cuatro elementos del ciclo económico</caption>
+      <thead>
+        <tr><th scope="col">Elemento</th><th scope="col">Qué es</th><th scope="col">Cuánto dura</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Expansión</td><td>La economía crece: sube la producción, sube el consumo, baja el desempleo</td><td><strong>Fase.</strong> Meses o años</td></tr>
+        <tr><td>Auge</td><td>El punto más alto, donde el crecimiento se agota y la onda gira</td><td><strong>Punto de giro.</strong> Un instante</td></tr>
+        <tr><td>Recesión</td><td>La economía se contrae: cae la producción, cae el consumo, sube el desempleo</td><td><strong>Fase.</strong> Meses o años</td></tr>
+        <tr><td>Fondo</td><td>El punto más bajo, donde la caída se detiene y la onda vuelve a girar</td><td><strong>Punto de giro.</strong> Un instante</td></tr>
+      </tbody>
+    </table>
 
-      <!-- Onda secundaria (sombra de profundidad) -->
-      <linearGradient id="ondaSombra" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"  stop-color="#16a34a" stop-opacity="0.25"/>
-        <stop offset="48%" stop-color="#06b6d4" stop-opacity="0.25"/>
-        <stop offset="100%" stop-color="#dc2626" stop-opacity="0.25"/>
-      </linearGradient>
-    </defs>
+    <div class="caja-tip">
+      <strong>Fase y punto de giro no son lo mismo.</strong> Una fase es un tramo con duración; un punto de giro es el instante en que la onda cambia de sentido. Es la misma distinción que separa el déficit de la deuda: una cosa es lo que ocurre durante un periodo y otra es un momento concreto.
+    </div>
 
-    <!-- ====== LA ONDA ====== -->
-    <!-- Sombra inferior -->
-    <path d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
-          fill="none"
-          stroke="url(#ondaSombra)"
-          stroke-width="38"
-          stroke-linecap="round"
-          transform="translate(0, 8)"/>
-    <!-- Onda principal -->
-    <path d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
-          fill="none"
-          stroke="url(#ondaGrad)"
-          stroke-width="26"
-          stroke-linecap="round"
-          opacity="0.92"/>
+    <h3>Dos palabras que oirá y que no son fases del ciclo</h3>
+    <div class="caja-atencion">
+      <strong>Recuperación.</strong> Así se llama a menudo el primer tramo de la expansión, justo después del fondo. No es una quinta fase: es la expansión en sus comienzos, cuando la economía todavía no ha vuelto a su nivel anterior.
+    </div>
+    <div class="caja-atencion">
+      <strong>Depresión.</strong> No es una etapa por la que pase todo ciclo. Es el nombre que se da a una recesión <strong>excepcionalmente profunda y prolongada</strong>. La mayoría de las recesiones no llegan a serlo, y en la historia moderna del país se cita sobre todo una, la de los años treinta. Cuidado con los materiales que dibujan la depresión como el final natural de cada onda: eso sugiere que toda recesión acaba en depresión, y no es así.
+    </div>
+  </details>
 
-    <!-- ====== NODO 1: RECUPERACIÓN ====== -->
-    <g transform="translate(120, 510)">
-      <circle r="52" fill="#dcfce7" opacity="0.55"/>
-      <circle r="42" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
-      <!-- Ícono planta brotando -->
-      <g transform="translate(0, 6)">
-        <!-- Tierra/maceta -->
-        <path d="M -16 16 L 16 16 L 12 24 L -12 24 Z" fill="#92400e"/>
-        <ellipse cx="0" cy="16" rx="16" ry="2.5" fill="#a16207"/>
-        <!-- Tallo -->
-        <path d="M 0 16 Q -1 0 0 -14" stroke="#16a34a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        <!-- Hoja izquierda -->
-        <path d="M -1 -1 Q -16 -4 -14 -18 Q -4 -14 -1 -4 Z" fill="#22c55e"/>
-        <!-- Hoja derecha -->
-        <path d="M 0 -7 Q 15 -12 17 -26 Q 5 -20 0 -10 Z" fill="#16a34a"/>
-      </g>
-    </g>
-    <!-- Etiqueta 1 -->
-    <text x="120" y="615" text-anchor="middle"
-          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
-          fill="#16a34a">1. Recuperación</text>
-    <text text-anchor="middle"
-          font-family="Poppins, sans-serif" font-size="13"
-          fill="#4b5563">
-      <tspan x="120" y="640">La economía comienza a levantarse</tspan>
-      <tspan x="120" y="658">tras una crisis con señales positivas.</tspan>
-    </text>
+  <h2 class="seccion" id="interactivo">Pruebe usted</h2>
 
-    <!-- ====== NODO 2: EXPANSIÓN ====== -->
-    <g transform="translate(360, 350)">
-      <circle r="52" fill="#dcfce7" opacity="0.55"/>
-      <circle r="42" fill="#ffffff" stroke="#22c55e" stroke-width="3"/>
-      <!-- Ícono barras subiendo + flecha -->
-      <g transform="translate(0, 4)">
-        <!-- Barras -->
-        <rect x="-18" y="6" width="7" height="14" fill="#86efac" stroke="#16a34a" stroke-width="0.8"/>
-        <rect x="-8"  y="-2" width="7" height="22" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <rect x="2"   y="-12" width="7" height="32" fill="#22c55e" stroke="#16a34a" stroke-width="0.8"/>
-        <!-- Flecha hacia arriba -->
-        <path d="M -22 -8 L 16 -22" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M 9 -22 L 16 -22 L 16 -15" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-    </g>
-    <!-- Etiqueta 2 -->
-    <text x="360" y="450" text-anchor="middle"
-          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
-          fill="#16a34a">2. Expansión</text>
-    <text text-anchor="middle"
-          font-family="Poppins, sans-serif" font-size="13"
-          fill="#4b5563">
-      <tspan x="360" y="475">Mayor crecimiento, empleo y</tspan>
-      <tspan x="360" y="493">consumo para la población.</tspan>
-    </text>
+  <div class="bloque">
+    <p>Mueva los tres indicadores y elija en qué dirección se mueven. Verá dónde queda la economía dentro del ciclo.</p>
 
-    <!-- ====== NODO 3: AUGE ====== -->
-    <g transform="translate(600, 190)">
-      <circle r="52" fill="#cffafe" opacity="0.55"/>
-      <circle r="42" fill="#ffffff" stroke="#06b6d4" stroke-width="3"/>
-      <!-- Ícono indicador (gauge) al máximo -->
-      <g transform="translate(0, 6)">
-        <!-- Arco verde (izq) -->
-        <path d="M -22 6 A 22 22 0 0 1 -8 -14" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
-        <!-- Arco amarillo (centro) -->
-        <path d="M -8 -14 A 22 22 0 0 1 8 -14" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
-        <!-- Arco rojo (der) -->
-        <path d="M 8 -14 A 22 22 0 0 1 22 6" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
-        <!-- Aguja apuntando a la zona alta (cerca del rojo) -->
-        <line x1="0" y1="6" x2="15" y2="-11" stroke="#1f2937" stroke-width="2.6" stroke-linecap="round"/>
-        <circle cx="0" cy="6" r="2.8" fill="#1f2937"/>
-        <!-- Marcas E y F estilizadas -->
-        <text x="-22" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">E</text>
-        <text x="18" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">F</text>
-      </g>
-    </g>
-    <!-- Etiqueta 3 -->
-    <text x="600" y="290" text-anchor="middle"
-          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
-          fill="#06b6d4">3. Auge</text>
-    <text text-anchor="middle"
-          font-family="Poppins, sans-serif" font-size="13"
-          fill="#4b5563">
-      <tspan x="600" y="315">Punto más alto de la onda</tspan>
-      <tspan x="600" y="333">donde el crecimiento se agota.</tspan>
-    </text>
+    <div class="doble">
+      <div class="panel">
+        <h3>Indicadores</h3>
 
-    <!-- ====== NODO 4: RECESIÓN ====== -->
-    <g transform="translate(840, 350)">
-      <circle r="52" fill="#ffedd5" opacity="0.65"/>
-      <circle r="42" fill="#ffffff" stroke="#f97316" stroke-width="3"/>
-      <!-- Ícono barras bajando + flecha descendente -->
-      <g transform="translate(0, 4)">
-        <!-- Barras -->
-        <rect x="-18" y="-12" width="7" height="32" fill="#fdba74" stroke="#c2410c" stroke-width="0.8"/>
-        <rect x="-8"  y="-2" width="7" height="22" fill="#fb923c" stroke="#c2410c" stroke-width="0.8"/>
-        <rect x="2"   y="6" width="7" height="14" fill="#f97316" stroke="#c2410c" stroke-width="0.8"/>
-        <!-- Flecha hacia abajo -->
-        <path d="M -22 -16 L 16 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M 16 -9 L 16 -2 L 9 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-    </g>
-    <!-- Etiqueta 4 -->
-    <text x="840" y="450" text-anchor="middle"
-          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
-          fill="#f97316">4. Recesión</text>
-    <text text-anchor="middle"
-          font-family="Poppins, sans-serif" font-size="13"
-          fill="#4b5563">
-      <tspan x="840" y="475">La actividad cae durante al menos</tspan>
-      <tspan x="840" y="493">seis meses y aumenta el desempleo.</tspan>
-    </text>
+        <div class="control">
+          <label for="produccion">Producción</label>
+          <input type="range" id="produccion" min="0" max="100" value="90"
+                 aria-describedby="produccionLect" />
+          <div class="lectura" id="produccionLect"><span>0 = parada · 100 = a pleno rendimiento</span><b><span id="produccionVal">90</span></b></div>
+        </div>
 
-    <!-- ====== NODO 5: DEPRESIÓN ====== -->
-    <g transform="translate(1080, 510)">
-      <circle r="52" fill="#fee2e2" opacity="0.65"/>
-      <circle r="42" fill="#ffffff" stroke="#dc2626" stroke-width="3"/>
-      <!-- Ícono fábrica con cadena rota -->
-      <g transform="translate(0, 4)">
-        <!-- Cuerpo principal de la fábrica -->
-        <rect x="-18" y="0" width="22" height="20" fill="#9ca3af" stroke="#4b5563" stroke-width="0.8"/>
-        <rect x="4" y="-8" width="14" height="28" fill="#6b7280" stroke="#4b5563" stroke-width="0.8"/>
-        <!-- Techo dentado -->
-        <path d="M -18 0 L -13 -6 L -8 0 L -3 -6 L 2 0 L 4 0" fill="#6b7280" stroke="#4b5563" stroke-width="0.8"/>
-        <!-- Chimenea -->
-        <rect x="8" y="-16" width="6" height="10" fill="#4b5563"/>
-        <!-- Ventanitas -->
-        <rect x="-14" y="6" width="3" height="3" fill="#fef3c7"/>
-        <rect x="-8" y="6" width="3" height="3" fill="#fef3c7"/>
-        <rect x="8" y="6" width="3" height="3" fill="#fef3c7"/>
-        <!-- Cadena rota (eslabones) -->
-        <g stroke="#dc2626" stroke-width="2.2" fill="none" stroke-linecap="round">
-          <ellipse cx="-15" cy="-12" rx="3.5" ry="2.5" transform="rotate(-30 -15 -12)"/>
-          <ellipse cx="-9" cy="-16" rx="3.5" ry="2.5" transform="rotate(-30 -9 -16)"/>
-          <!-- Línea de quiebre -->
-          <line x1="-6" y1="-20" x2="-1" y2="-24"/>
-          <line x1="-3" y1="-22" x2="-7" y2="-19"/>
+        <div class="control">
+          <label for="consumo">Consumo</label>
+          <input type="range" id="consumo" min="0" max="100" value="85"
+                 aria-describedby="consumoLect" />
+          <div class="lectura" id="consumoLect"><span>0 = nadie gasta · 100 = gasto máximo</span><b><span id="consumoVal">85</span></b></div>
+        </div>
+
+        <div class="control">
+          <label for="desempleo">Desempleo</label>
+          <input type="range" id="desempleo" min="0" max="30" value="4"
+                 aria-describedby="desempleoLect" />
+          <div class="lectura" id="desempleoLect"><span>Porcentaje de la población activa</span><b><span id="desempleoVal">4</span>&nbsp;%</b></div>
+        </div>
+
+        <fieldset class="direccion">
+          <legend>¿Hacia dónde se mueven?</legend>
+          <label><input type="radio" name="direccion" value="mejorando" checked /> Mejorando</label>
+          <label><input type="radio" name="direccion" value="empeorando" /> Empeorando</label>
+        </fieldset>
+
+        <div class="indice-barra">
+          <div class="pista"><div class="relleno" id="indiceRelleno"></div></div>
+          <div class="pie">Índice de actividad: <b id="indiceVal">0</b> de 100</div>
+        </div>
+
+        <div class="botonera">
+          <button type="button" class="primario" id="btnAzar">Escenario al azar</button>
+          <button type="button" id="btnCaida">Caída del consumo</button>
+          <button type="button" id="btnReto">Modo reto</button>
+          <button type="button" id="btnReinicio">Reiniciar</button>
+        </div>
+
+        <div class="resultado expansion" id="resultado" role="status" aria-live="polite">
+          <span class="tipo">Fase</span>
+          <h3>Expansión</h3>
+          <p>La producción y el consumo crecen y el desempleo es bajo.</p>
+        </div>
+
+        <div class="aviso" id="avisoReto"></div>
+      </div>
+
+      <div class="lienzo">
+        <h3>Dónde queda en la onda</h3>
+        <svg id="ondaSvg" viewBox="0 0 760 470" role="img" aria-labelledby="ondaT ondaD" xmlns="http://www.w3.org/2000/svg">
+        <title id="ondaT">Onda del ciclo económico con el marcador de la situación actual</title>
+        <desc id="ondaD">Una onda completa recorre un ciclo. Empieza en el fondo, a la izquierda; sube por la fase de expansión; alcanza el auge en la cresta; baja por la fase de recesión; y vuelve al fondo a la derecha. Un punto negro marca dónde se sitúan los indicadores elegidos, y su posición se anuncia también en texto debajo del gráfico.</desc>
+        <defs>
+          <linearGradient id="ondaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"  stop-color="#1b5e20"/>
+            <stop offset="35%" stop-color="#2e7d32"/>
+            <stop offset="52%" stop-color="#f9a825"/>
+            <stop offset="72%" stop-color="#e64a19"/>
+            <stop offset="100%" stop-color="#1b5e20"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="70.0" y="60" width="260.4" height="290" fill="#e8f5e9"/>
+        <rect x="330.4" y="60" width="99.2" height="290" fill="#fff8e1"/>
+        <rect x="429.6" y="60" width="260.4" height="290" fill="#fbe9e7"/>
+
+        <line x1="70" y1="350" x2="700" y2="350" stroke="#a5b8a7" stroke-width="1.5"/>
+        <line x1="70" y1="60"  x2="70"  y2="350" stroke="#a5b8a7" stroke-width="1.5"/>
+        <text x="385" y="380" text-anchor="middle" class="ejeRot">Tiempo</text>
+        <text x="22" y="205" text-anchor="middle" class="ejeRot" transform="rotate(-90 22 205)">Actividad económica</text>
+
+        <polyline points="70.0,318.0 72.6,318.0 75.2,317.8 77.8,317.6 80.3,317.4 82.9,317.0 85.5,316.5 88.1,316.0 90.7,315.4 93.2,314.7 95.8,314.0 98.4,313.1 101.0,312.2 103.6,311.2 106.2,310.2 108.8,309.0 111.3,307.8 113.9,306.5 116.5,305.1 119.1,303.7 121.7,302.2 124.2,300.6 126.8,299.0 129.4,297.2 132.0,295.5 134.6,293.6 137.2,291.7 139.8,289.7 142.3,287.7 144.9,285.6 147.5,283.4 150.1,281.2 152.7,279.0 155.2,276.6 157.8,274.3 160.4,271.8 163.0,269.4 165.6,266.8 168.2,264.3 170.8,261.7 173.3,259.0 175.9,256.3 178.5,253.6 181.1,250.8 183.7,248.0 186.2,245.2 188.8,242.3 191.4,239.4 194.0,236.5 196.6,233.5 199.2,230.5 201.8,227.5 204.3,224.5 206.9,221.5 209.5,218.5 212.1,215.4 214.7,212.3 217.2,209.3 219.8,206.2 222.4,203.1 225.0,200.0 227.6,196.9 230.2,193.8 232.8,190.7 235.3,187.7 237.9,184.6 240.5,181.5 243.1,178.5 245.7,175.5 248.2,172.5 250.8,169.5 253.4,166.5 256.0,163.5 258.6,160.6 261.2,157.7 263.8,154.8 266.3,152.0 268.9,149.2 271.5,146.4 274.1,143.7 276.7,141.0 279.2,138.3 281.8,135.7 284.4,133.2 287.0,130.6 289.6,128.2 292.2,125.7 294.8,123.4 297.3,121.0 299.9,118.8 302.5,116.6 305.1,114.4 307.7,112.3 310.2,110.3 312.8,108.3 315.4,106.4 318.0,104.5 320.6,102.8 323.2,101.0 325.8,99.4 328.3,97.8 330.9,96.3 333.5,94.9 336.1,93.5 338.7,92.2 341.2,91.0 343.8,89.8 346.4,88.8 349.0,87.8 351.6,86.9 354.2,86.0 356.8,85.3 359.3,84.6 361.9,84.0 364.5,83.5 367.1,83.0 369.7,82.6 372.2,82.4 374.8,82.2 377.4,82.0 380.0,82.0 382.6,82.0 385.2,82.2 387.8,82.4 390.3,82.6 392.9,83.0 395.5,83.5 398.1,84.0 400.7,84.6 403.2,85.3 405.8,86.0 408.4,86.9 411.0,87.8 413.6,88.8 416.2,89.8 418.8,91.0 421.3,92.2 423.9,93.5 426.5,94.9 429.1,96.3 431.7,97.8 434.2,99.4 436.8,101.0 439.4,102.8 442.0,104.5 444.6,106.4 447.2,108.3 449.8,110.3 452.3,112.3 454.9,114.4 457.5,116.6 460.1,118.8 462.7,121.0 465.2,123.4 467.8,125.7 470.4,128.2 473.0,130.6 475.6,133.2 478.2,135.7 480.8,138.3 483.3,141.0 485.9,143.7 488.5,146.4 491.1,149.2 493.7,152.0 496.2,154.8 498.8,157.7 501.4,160.6 504.0,163.5 506.6,166.5 509.2,169.5 511.8,172.5 514.3,175.5 516.9,178.5 519.5,181.5 522.1,184.6 524.7,187.7 527.2,190.7 529.8,193.8 532.4,196.9 535.0,200.0 537.6,203.1 540.2,206.2 542.8,209.3 545.3,212.3 547.9,215.4 550.5,218.5 553.1,221.5 555.7,224.5 558.2,227.5 560.8,230.5 563.4,233.5 566.0,236.5 568.6,239.4 571.2,242.3 573.8,245.2 576.3,248.0 578.9,250.8 581.5,253.6 584.1,256.3 586.7,259.0 589.2,261.7 591.8,264.3 594.4,266.8 597.0,269.4 599.6,271.8 602.2,274.3 604.8,276.6 607.3,279.0 609.9,281.2 612.5,283.4 615.1,285.6 617.7,287.7 620.2,289.7 622.8,291.7 625.4,293.6 628.0,295.5 630.6,297.2 633.2,299.0 635.8,300.6 638.3,302.2 640.9,303.7 643.5,305.1 646.1,306.5 648.7,307.8 651.2,309.0 653.8,310.2 656.4,311.2 659.0,312.2 661.6,313.1 664.2,314.0 666.8,314.7 669.3,315.4 671.9,316.0 674.5,316.5 677.1,317.0 679.7,317.4 682.2,317.6 684.8,317.8 687.4,318.0 690.0,318.0" fill="none" stroke="url(#ondaGrad)" stroke-width="16"
+                  stroke-linecap="round" opacity="0.28"/>
+        <polyline points="70.0,318.0 72.6,318.0 75.2,317.8 77.8,317.6 80.3,317.4 82.9,317.0 85.5,316.5 88.1,316.0 90.7,315.4 93.2,314.7 95.8,314.0 98.4,313.1 101.0,312.2 103.6,311.2 106.2,310.2 108.8,309.0 111.3,307.8 113.9,306.5 116.5,305.1 119.1,303.7 121.7,302.2 124.2,300.6 126.8,299.0 129.4,297.2 132.0,295.5 134.6,293.6 137.2,291.7 139.8,289.7 142.3,287.7 144.9,285.6 147.5,283.4 150.1,281.2 152.7,279.0 155.2,276.6 157.8,274.3 160.4,271.8 163.0,269.4 165.6,266.8 168.2,264.3 170.8,261.7 173.3,259.0 175.9,256.3 178.5,253.6 181.1,250.8 183.7,248.0 186.2,245.2 188.8,242.3 191.4,239.4 194.0,236.5 196.6,233.5 199.2,230.5 201.8,227.5 204.3,224.5 206.9,221.5 209.5,218.5 212.1,215.4 214.7,212.3 217.2,209.3 219.8,206.2 222.4,203.1 225.0,200.0 227.6,196.9 230.2,193.8 232.8,190.7 235.3,187.7 237.9,184.6 240.5,181.5 243.1,178.5 245.7,175.5 248.2,172.5 250.8,169.5 253.4,166.5 256.0,163.5 258.6,160.6 261.2,157.7 263.8,154.8 266.3,152.0 268.9,149.2 271.5,146.4 274.1,143.7 276.7,141.0 279.2,138.3 281.8,135.7 284.4,133.2 287.0,130.6 289.6,128.2 292.2,125.7 294.8,123.4 297.3,121.0 299.9,118.8 302.5,116.6 305.1,114.4 307.7,112.3 310.2,110.3 312.8,108.3 315.4,106.4 318.0,104.5 320.6,102.8 323.2,101.0 325.8,99.4 328.3,97.8 330.9,96.3 333.5,94.9 336.1,93.5 338.7,92.2 341.2,91.0 343.8,89.8 346.4,88.8 349.0,87.8 351.6,86.9 354.2,86.0 356.8,85.3 359.3,84.6 361.9,84.0 364.5,83.5 367.1,83.0 369.7,82.6 372.2,82.4 374.8,82.2 377.4,82.0 380.0,82.0 382.6,82.0 385.2,82.2 387.8,82.4 390.3,82.6 392.9,83.0 395.5,83.5 398.1,84.0 400.7,84.6 403.2,85.3 405.8,86.0 408.4,86.9 411.0,87.8 413.6,88.8 416.2,89.8 418.8,91.0 421.3,92.2 423.9,93.5 426.5,94.9 429.1,96.3 431.7,97.8 434.2,99.4 436.8,101.0 439.4,102.8 442.0,104.5 444.6,106.4 447.2,108.3 449.8,110.3 452.3,112.3 454.9,114.4 457.5,116.6 460.1,118.8 462.7,121.0 465.2,123.4 467.8,125.7 470.4,128.2 473.0,130.6 475.6,133.2 478.2,135.7 480.8,138.3 483.3,141.0 485.9,143.7 488.5,146.4 491.1,149.2 493.7,152.0 496.2,154.8 498.8,157.7 501.4,160.6 504.0,163.5 506.6,166.5 509.2,169.5 511.8,172.5 514.3,175.5 516.9,178.5 519.5,181.5 522.1,184.6 524.7,187.7 527.2,190.7 529.8,193.8 532.4,196.9 535.0,200.0 537.6,203.1 540.2,206.2 542.8,209.3 545.3,212.3 547.9,215.4 550.5,218.5 553.1,221.5 555.7,224.5 558.2,227.5 560.8,230.5 563.4,233.5 566.0,236.5 568.6,239.4 571.2,242.3 573.8,245.2 576.3,248.0 578.9,250.8 581.5,253.6 584.1,256.3 586.7,259.0 589.2,261.7 591.8,264.3 594.4,266.8 597.0,269.4 599.6,271.8 602.2,274.3 604.8,276.6 607.3,279.0 609.9,281.2 612.5,283.4 615.1,285.6 617.7,287.7 620.2,289.7 622.8,291.7 625.4,293.6 628.0,295.5 630.6,297.2 633.2,299.0 635.8,300.6 638.3,302.2 640.9,303.7 643.5,305.1 646.1,306.5 648.7,307.8 651.2,309.0 653.8,310.2 656.4,311.2 659.0,312.2 661.6,313.1 664.2,314.0 666.8,314.7 669.3,315.4 671.9,316.0 674.5,316.5 677.1,317.0 679.7,317.4 682.2,317.6 684.8,317.8 687.4,318.0 690.0,318.0" fill="none" stroke="url(#ondaGrad)" stroke-width="6"
+                  stroke-linecap="round"/>
+
+        <g class="hito">
+          <circle cx="70" cy="318" r="8" fill="#fff" stroke="#1b5e20" stroke-width="3"/>
+          <text x="70" y="345" text-anchor="middle" class="rotHito">FONDO</text>
+          <text x="70" y="46" text-anchor="middle" class="rotTipo">punto de giro</text>
         </g>
-      </g>
-    </g>
-    <!-- Etiqueta 5 -->
-    <text x="1080" y="615" text-anchor="middle"
-          font-family="Poppins, sans-serif" font-weight="700" font-size="20"
-          fill="#dc2626">5. Depresión</text>
-    <text text-anchor="middle"
-          font-family="Poppins, sans-serif" font-size="13"
-          fill="#4b5563">
-      <tspan x="1080" y="640">Punto más bajo del ciclo,</tspan>
-      <tspan x="1080" y="658">con desempleo masivo.</tspan>
-    </text>
+        <g class="hito">
+          <circle cx="380" cy="82" r="8" fill="#fff" stroke="#f9a825" stroke-width="3"/>
+          <text x="380" y="70" text-anchor="middle" class="rotHito">AUGE</text>
+          <text x="380" y="46" text-anchor="middle" class="rotTipo">punto de giro</text>
+        </g>
+        <text x="225" y="176" text-anchor="middle" class="rotFase">EXPANSIÓN</text>
+        <text x="225" y="46"  text-anchor="middle" class="rotTipo">fase · dura</text>
+        <text x="535" y="176" text-anchor="middle" class="rotFase">RECESIÓN</text>
+        <text x="535" y="46"  text-anchor="middle" class="rotTipo">fase · dura</text>
 
-  </svg>
+        <g id="marcador" transform="translate(70,318)">
+          <circle r="16" fill="#1b5e20" opacity="0.18"/>
+          <circle r="9" fill="#1b1b1b" stroke="#ffffff" stroke-width="3"/>
+        </g>
+        <text id="marcadorRot" x="70" y="425" text-anchor="middle" class="rotMarcador">Fondo</text>
+      </svg>
+        <p id="descripcionViva" class="sr-only" role="status" aria-live="polite"></p>
+        <div class="caja-tip" id="cajaLeccion">
+      <strong>Haga esta prueba.</strong> Deje los tres indicadores quietos en un nivel medio y cambie solo la dirección, de mejorando a empeorando. La fase cambia de expansión a recesión sin que se mueva ni un indicador. <strong>Eso es lo que significa que una fase se define por la dirección y no por el nivel:</strong> dos economías con la misma producción, el mismo consumo y el mismo desempleo pueden estar en fases opuestas.
+    </div>
+      </div>
+    </div>
 
-  <!-- ====== TABLA COMPARATIVA ====== -->
-  <table class="tabla-fases">
-    <thead>
-      <tr>
-        <th style="width: 22%;">Fase</th>
-        <th style="width: 39%;">📈 Producción y consumo</th>
-        <th style="width: 39%;">👥 Empleo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="fase-nombre col-exp">Expansión</td>
-        <td>En aumento constante</td>
-        <td>Alta demanda de trabajadores</td>
-      </tr>
-      <tr>
-        <td class="fase-nombre col-rec">Recesión</td>
-        <td>En caída libre</td>
-        <td>Aumento del desempleo</td>
-      </tr>
-      <tr>
-        <td class="fase-nombre col-dep">Depresión</td>
-        <td>Mínimos históricos</td>
-        <td>Desempleo masivo</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="nota">
-    <strong>💡 Para recordar:</strong> el ciclo se repite. Después de una depresión, comienza nuevamente
-    la recuperación, y el patrón se reinicia. No hay crecimiento eterno ni crisis eterna —
-    la economía siempre se mueve en ondas.
   </div>
 
+  <div class="bloque">
+    <h2 class="seccion" id="escribir">Escriba su interpretación</h2>
+    <p>Con la situación que tenga ahora en pantalla, explique en dos o tres líneas en qué fase está la economía y en qué se apoya para decirlo.</p>
+    <label for="interpretacion" class="sr-only">Su interpretación</label>
+    <textarea id="interpretacion" placeholder="Por ejemplo: la producción es de… el consumo… y como los indicadores vienen empeorando, la economía está en…"></textarea>
+    <div class="botonera">
+      <button type="button" class="primario" id="btnRevisar">Revisar mi respuesta</button>
+      <button type="button" id="btnBorrar">Borrar</button>
+    </div>
+    <div class="aviso" id="avisoInterpretacion" role="status" aria-live="polite"></div>
+  </div>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 7 · Interactivo · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
 </div>
+<script>
+(function () {
+  'use strict';
+
+  /* ── Geometría de la onda ──────────────────────────────────────────
+     La curva se dibujó con y = CY + AMP*cos(2*pi*t), con t de 0 a 1.
+     Aquí se usa la MISMA fórmula, así que el marcador cae siempre
+     exactamente sobre la línea, sin ajustes a ojo. ------------------- */
+  var X0 = 70, X1 = 690, CY = 200, AMP = 118;
+  function puntoDeLaOnda(t) {
+    return { x: X0 + (X1 - X0) * t, y: CY + AMP * Math.cos(2 * Math.PI * t) };
+  }
+
+  /* ── Clasificación ────────────────────────────────────────────────
+     El nivel de actividad decide si estamos en un punto de giro; la
+     dirección decide, en los niveles intermedios, si la fase es de
+     expansión o de recesión. Sin la dirección no se pueden distinguir:
+     dos economías con los mismos indicadores están en una u otra
+     según hacia dónde vayan. ---------------------------------------- */
+  function indiceActividad(p, c, u) {
+    return Math.max(0, Math.min(100, (p + c) / 2 - u * 1.5));
+  }
+
+  function clasificar(indice, mejorando) {
+    if (indice >= 85) return 'auge';
+    if (indice <= 20) return 'fondo';
+    return mejorando ? 'expansion' : 'recesion';
+  }
+
+  function posicionEnLaOnda(indice, clave) {
+    if (clave === 'fondo') return 0;
+    if (clave === 'auge')  return 0.5;
+    if (clave === 'expansion') return 0.5 * (indice - 20) / 65;
+    return 0.5 + 0.5 * (85 - indice) / 65;
+  }
+
+  var FASES = {
+    expansion: {
+      tipo: 'Fase', nombre: 'Expansión',
+      texto: 'La actividad crece: la producción y el consumo suben y el desempleo baja. Es un tramo con duración, no un instante.'
+    },
+    auge: {
+      tipo: 'Punto de giro', nombre: 'Auge',
+      texto: 'La economía está en su punto más alto y el crecimiento se agota. No es un tramo: es el instante en que la onda cambia de sentido.'
+    },
+    recesion: {
+      tipo: 'Fase', nombre: 'Recesión',
+      texto: 'La actividad se contrae: caen la producción y el consumo y sube el desempleo. Si fuera excepcionalmente profunda y larga, se le llamaría depresión.'
+    },
+    fondo: {
+      tipo: 'Punto de giro', nombre: 'Fondo',
+      texto: 'La economía toca su punto más bajo y la caída se detiene. Lo que viene después, el primer tramo de la expansión, suele llamarse recuperación.'
+    }
+  };
+
+  /* ── Elementos ─────────────────────────────────────────────────── */
+  var produccion = document.getElementById('produccion');
+  var consumo    = document.getElementById('consumo');
+  var desempleo  = document.getElementById('desempleo');
+  var radios     = document.querySelectorAll('input[name="direccion"]');
+
+  var produccionVal = document.getElementById('produccionVal');
+  var consumoVal    = document.getElementById('consumoVal');
+  var desempleoVal  = document.getElementById('desempleoVal');
+  var indiceVal     = document.getElementById('indiceVal');
+  var indiceRelleno = document.getElementById('indiceRelleno');
+
+  var resultado   = document.getElementById('resultado');
+  var marcador    = document.getElementById('marcador');
+  var marcadorRot = document.getElementById('marcadorRot');
+  var descViva    = document.getElementById('descripcionViva');
+  var avisoReto   = document.getElementById('avisoReto');
+
+  var retoActivo = false, retoObjetivo = '';
+
+  function direccionMejorando() {
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) return radios[i].value === 'mejorando';
+    }
+    return true;
+  }
+
+  /* ── Actualización ─────────────────────────────────────────────── */
+  function actualizar() {
+    var p = Number(produccion.value);
+    var c = Number(consumo.value);
+    var u = Number(desempleo.value);
+    var mejorando = direccionMejorando();
+
+    produccionVal.textContent = p;
+    consumoVal.textContent    = c;
+    desempleoVal.textContent  = u;
+
+    var indice = indiceActividad(p, c, u);
+    var clave  = clasificar(indice, mejorando);
+    var fase   = FASES[clave];
+
+    indiceVal.textContent = Math.round(indice);
+    indiceRelleno.style.width = indice + '%';
+
+    resultado.className = 'resultado ' + clave;
+    resultado.textContent = '';
+    var etiqueta = document.createElement('span');
+    etiqueta.className = 'tipo';
+    etiqueta.textContent = fase.tipo;
+    var titulo = document.createElement('h3');
+    titulo.textContent = fase.nombre;
+    var parrafo = document.createElement('p');
+    parrafo.textContent = fase.texto;
+    resultado.appendChild(etiqueta);
+    resultado.appendChild(titulo);
+    resultado.appendChild(parrafo);
+
+    var t = posicionEnLaOnda(indice, clave);
+    var pt = puntoDeLaOnda(t);
+    marcador.setAttribute('transform', 'translate(' + pt.x.toFixed(1) + ',' + pt.y.toFixed(1) + ')');
+    marcadorRot.setAttribute('x', pt.x.toFixed(1));
+    marcadorRot.textContent = fase.nombre;
+
+    /* El SVG es decorativo para quien no lo ve: el estado va en texto. */
+    descViva.textContent = 'Situación actual: ' + fase.nombre + ', ' +
+      fase.tipo.toLowerCase() + '. Índice de actividad ' + Math.round(indice) +
+      ' de 100. Producción ' + p + ', consumo ' + c + ', desempleo ' + u +
+      ' por ciento, indicadores ' + (mejorando ? 'mejorando' : 'empeorando') + '.';
+
+    if (retoActivo) revisarReto(clave);
+  }
+
+  /* ── Modo reto ─────────────────────────────────────────────────── */
+  var CLAVES = ['expansion', 'auge', 'recesion', 'fondo'];
+
+  function activarReto() {
+    retoActivo = true;
+    retoObjetivo = CLAVES[Math.floor(Math.random() * CLAVES.length)];
+    avisoReto.className = 'aviso no';
+    avisoReto.textContent = 'Reto: ajuste los indicadores y la dirección hasta llegar a ' +
+      FASES[retoObjetivo].nombre + '.';
+    actualizar();
+  }
+
+  function revisarReto(claveActual) {
+    if (claveActual === retoObjetivo) {
+      avisoReto.className = 'aviso ok';
+      avisoReto.textContent = 'Conseguido: ha llegado a ' + FASES[retoObjetivo].nombre + '. ' +
+        (FASES[retoObjetivo].tipo === 'Punto de giro'
+          ? 'Fíjese en lo estrecho que es el margen: los puntos de giro son instantes, no tramos.'
+          : 'Pruebe ahora a cambiar solo la dirección y vea qué ocurre.');
+      retoActivo = false;
+    } else {
+      avisoReto.className = 'aviso no';
+      avisoReto.textContent = 'Reto: llegue a ' + FASES[retoObjetivo].nombre +
+        '. Ahora está en ' + FASES[claveActual].nombre + '.';
+    }
+  }
+
+  /* ── Botones ───────────────────────────────────────────────────── */
+  function fijar(p, c, u, mejorando) {
+    produccion.value = p; consumo.value = c; desempleo.value = u;
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].checked = (radios[i].value === (mejorando ? 'mejorando' : 'empeorando'));
+    }
+    actualizar();
+  }
+
+  function alAzar(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  document.getElementById('btnAzar').addEventListener('click', function () {
+    fijar(alAzar(5, 100), alAzar(5, 100), alAzar(1, 28), Math.random() < 0.5);
+  });
+
+  document.getElementById('btnCaida').addEventListener('click', function () {
+    var c = Math.max(0, Number(consumo.value) - 30);
+    var u = Math.min(30, Number(desempleo.value) + 6);
+    fijar(Math.max(0, Number(produccion.value) - 15), c, u, false);
+  });
+
+  document.getElementById('btnReto').addEventListener('click', activarReto);
+
+  document.getElementById('btnReinicio').addEventListener('click', function () {
+    retoActivo = false;
+    avisoReto.className = 'aviso';
+    avisoReto.textContent = '';
+    fijar(90, 85, 4, true);
+  });
+
+  /* ── Interpretación escrita ────────────────────────────────────── */
+  var interpretacion = document.getElementById('interpretacion');
+  var avisoInterp    = document.getElementById('avisoInterpretacion');
+
+  document.getElementById('btnRevisar').addEventListener('click', function () {
+    var t = interpretacion.value.trim();
+    var bajo = t.toLowerCase();
+    if (t.length < 40) {
+      avisoInterp.className = 'aviso no';
+      avisoInterp.textContent = 'Escriba un poco más: hacen falta al menos dos o tres líneas para explicar en qué se apoya.';
+      return;
+    }
+    var nombraFase = ['expansión','expansion','auge','recesión','recesion','fondo']
+      .some(function (w) { return bajo.indexOf(w) !== -1; });
+    var nombraDato = ['producción','produccion','consumo','desempleo','indicador']
+      .some(function (w) { return bajo.indexOf(w) !== -1; });
+    var nombraDireccion = ['mejorando','empeorando','sube','baja','subiendo','bajando','crece','cae']
+      .some(function (w) { return bajo.indexOf(w) !== -1; });
+
+    if (nombraFase && nombraDato && nombraDireccion) {
+      avisoInterp.className = 'aviso ok';
+      avisoInterp.textContent = 'Bien: nombra la fase, se apoya en los indicadores y menciona la dirección. Esas tres cosas juntas son lo que convierte una descripción en un argumento.';
+    } else {
+      var faltan = [];
+      if (!nombraFase) faltan.push('el nombre de la fase o del punto de giro');
+      if (!nombraDato) faltan.push('al menos un indicador concreto');
+      if (!nombraDireccion) faltan.push('hacia dónde se mueven los indicadores');
+      avisoInterp.className = 'aviso no';
+      avisoInterp.textContent = 'Le falta ' + faltan.join(', y ') +
+        '. Sin la dirección no se puede distinguir una expansión de una recesión.';
+    }
+  });
+
+  document.getElementById('btnBorrar').addEventListener('click', function () {
+    interpretacion.value = '';
+    avisoInterp.className = 'aviso';
+    avisoInterp.textContent = '';
+  });
+
+  /* ── Arranque ──────────────────────────────────────────────────── */
+  [produccion, consumo, desempleo].forEach(function (el) {
+    el.addEventListener('input', actualizar);
+  });
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', actualizar);
+  }
+  actualizar();
+})();
+</script>
 </body>
 </html>
