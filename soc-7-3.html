@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<!--
+  Lección 7.3 · Recursos, medio ambiente y sostenibilidad
+  Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 7.3 · Recursos, medio ambiente y sostenibilidad</title>
+<meta name="description" content="Distribución desigual de los recursos, comercio y tensión geopolítica; lectura de mapas temáticos; y evaluación de dos posiciones enfrentadas sobre una política ambiental." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 7 — verde heredado del plan curricular (--t7).
+       El verde se reserva para trazos: encabezados, bordes y cabecera. Los
+       fondos claros del tema son neutros a propósito, para que el único
+       relleno verde de la página sea el de una respuesta acertada. */
+    --tema:    #1b5e20;
+    --tema-d:  #103d15;
+    --tema-bg: #f1f3ef;
+    --tema-bg2:#d7ded3;
+    --acento:  #2e7d32;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #0b2a0f 0%, #103d15 55%, #1b5e20 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(11,42,15,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #103d15;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fbfcfa; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #103d15; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a5546; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #4a5546; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #103d15; }
+
+  /* ══ COMPONENTES DEL TEMA 7 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#103d15; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#9bb69f; stroke-width:1.5; }
+  .g-reja   { stroke:#eef1ec; stroke-width:1; }
+  .g-dem    { stroke:#b3261e; stroke-width:3; fill:none; }
+  .g-of     { stroke:#1f618d; stroke-width:3; fill:none; }
+  .g-ref    { stroke:#6e6e6e; stroke-width:2; stroke-dasharray:5,4; fill:none; }
+  .g-eq     { fill:#103d15; }
+  .g-guia   { stroke:#103d15; stroke-width:1.4; stroke-dasharray:4,4; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#103d15; font-weight:700; }
+
+  /* Clasificador de cuatro opciones */
+  .comp .botones.cuatro button { flex:1 1 140px; }
+
+  /* Tarjetas enfrentadas del tema */
+  .enfrentados .demanda { background:#fdecea; border-left:6px solid #b3261e; }
+  .enfrentados .oferta  { background:#e8eef5; border-left:6px solid #1f618d; }
+  .enfrentados .demanda h3 { color:#8c1c17; }
+  .enfrentados .oferta h3  { color:#164a6d; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado</div>
+    <h1>Lección 7.3 · Recursos, medio ambiente y sostenibilidad</h1>
+    <div class="meta">NRS 5–6 · Cierre del Tema 7</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.7 · Punto de vista</span>
+      <span class="sp">SSP.10 · Datos y mapas</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 7.3</span>
+    <a class="nav-sig" href="index.html#tema-8">Siguiente: Tema 8 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Relacionar la distribución desigual de los recursos con los patrones de comercio y con la tensión entre países.</li>
+      <li>Interpretar un mapa temático sabiendo qué muestra y qué deja fuera.</li>
+      <li>Evaluar dos posiciones enfrentadas sobre una política ambiental identificando la evidencia de cada una.</li>
+      <li>Defender una posición con la que no se está de acuerdo, y reconocer un punto fuerte de la contraria.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La Lección 7.1 trató de mercados y la 7.2 de personas. Esta cierra el tema con lo que hay debajo de las dos: el territorio y lo que se saca de él.</p>
+    <p>Y termina con el ejercicio más difícil del curso, que no es de contenido sino de carácter: <strong>defender bien una postura que uno no comparte.</strong></p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li>El <a href="fuentes/massachusetts-epa-2007.html">Documento 18</a> del Archivo de fuentes. Es el eje de las secciones 3 y 4.</li>
+      <li>La <a href="geografia/">guía de geografía</a>, sobre todo su sección 8.</li>
+      <li>Papel y lápiz. Y, para la Práctica 3, alguien con quien discutir; si no lo tiene, sirve escribir las dos posturas usted mismo.</li>
+      <li>Entre dos y tres horas, repartidas.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Los recursos no están donde está la gente</h2>
+
+  <div class="bloque">
+    <p>La geografía repartió los recursos sin consultar a nadie. El cobre está donde está, el cobalto también, y el agua dulce no cae por igual en todas partes. De ese reparto sale casi todo el comercio mundial, y buena parte de las tensiones entre países.</p>
+    <p>La cadena tiene tres eslabones y conviene verla entera antes de mirar ningún mapa.</p>
+
+    <figure class="grafica">
+      <h3>De la geología a la geopolítica</h3>
+      <p class="g-fuente">Esquema conceptual.</p>
+      <svg viewBox="0 0 660 130" role="img" aria-labelledby="tit-cad desc-cad">
+        <title id="tit-cad">Cadena de tres pasos: distribución desigual, comercio y dependencia</title>
+        <desc id="desc-cad">Un recurso está concentrado en pocos lugares. Eso obliga a comerciar entre quien lo tiene y quien lo necesita. Y de ese comercio nace una dependencia mutua que puede convertirse en presión política.</desc>
+        <rect x="10" y="24" width="180" height="62" rx="8" fill="#f1f3ef" stroke="#1b5e20" stroke-width="2" />
+        <text x="100" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#103d15">1 · Distribución</text>
+        <text x="100" y="68" text-anchor="middle" font-size="12" fill="#333">El recurso está en pocos sitios</text>
+        <path d="M 196 55 L 226 55" stroke="#1b5e20" stroke-width="3" />
+        <path d="M 226 55 l -9 -6 v 12 z" fill="#1b5e20" />
+        <rect x="234" y="24" width="180" height="62" rx="8" fill="#f1f3ef" stroke="#1b5e20" stroke-width="2" />
+        <text x="324" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#103d15">2 · Comercio</text>
+        <text x="324" y="68" text-anchor="middle" font-size="12" fill="#333">Quien lo necesita lo compra</text>
+        <path d="M 420 55 L 450 55" stroke="#1b5e20" stroke-width="3" />
+        <path d="M 450 55 l -9 -6 v 12 z" fill="#1b5e20" />
+        <rect x="458" y="24" width="192" height="62" rx="8" fill="#f1f3ef" stroke="#1b5e20" stroke-width="2" />
+        <text x="554" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#103d15">3 · Dependencia</text>
+        <text x="554" y="68" text-anchor="middle" font-size="12" fill="#333">Y con ella, capacidad de presión</text>
+        <text x="330" y="112" text-anchor="middle" font-size="12" fill="#4a4a4a">Cada flecha es un «por eso»: el paso anterior explica el siguiente</text>
+      </svg>
+      <figcaption>El tercer eslabón es el que suele olvidarse, y es el que convierte un dato de geología en una noticia de política internacional.</figcaption>
+    </figure>
+
+    <table class="reglas">
+      <caption>Cuatro recursos concentrados y la dependencia que crean.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Recurso</th>
+          <th scope="col">Dónde se concentra</th>
+          <th scope="col">Para qué hace falta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Petróleo</td>
+          <td>Una parte muy grande de las reservas está en un puñado de países, sobre todo de Oriente Medio.</td>
+          <td>Transporte, plásticos, fertilizantes. Casi todo.</td>
+        </tr>
+        <tr>
+          <td>Cobre</td>
+          <td>Chile es el mayor productor del mundo; Perú también está entre los primeros.</td>
+          <td>Cableado eléctrico, motores, construcción.</td>
+        </tr>
+        <tr>
+          <td>Cobalto</td>
+          <td>La mayor parte de la producción mundial sale de la República Democrática del Congo.</td>
+          <td>Baterías de teléfonos y de vehículos eléctricos.</td>
+        </tr>
+        <tr>
+          <td>Tierras raras</td>
+          <td>Su extracción y sobre todo su <em>procesamiento</em> están muy concentrados en China.</td>
+          <td>Imanes, electrónica, turbinas eólicas, defensa.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Fíjese en la fila de las tierras raras, que es la más instructiva.</strong> El cuello de botella no está en la mina sino en el <em>procesamiento</em>. Se puede tener el mineral y seguir dependiendo de otro país para convertirlo en algo útil. Cuando el examen pregunte por dependencia de recursos, la respuesta rara vez es solo «quién lo tiene»: suele ser «quién controla algún paso de la cadena».
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Y una advertencia que vale para todo el bloque.</strong> Tener un recurso valioso no garantiza prosperidad. Hay países con enormes reservas y población pobre, y países sin casi nada bajo el suelo que están entre los más ricos del mundo. Si en una respuesta escribe «este país es rico porque tiene petróleo», habrá saltado varios eslabones: quién es dueño de la extracción, adónde va el beneficio y qué se hace con él son preguntas distintas, y son las que deciden.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Cómo se lee un mapa temático</h2>
+
+  <div class="bloque">
+    <p>Un <span class="resalta">mapa temático</span> no muestra el territorio: muestra <strong>un dato repartido sobre el territorio</strong>. Densidad de población, producción de trigo, emisiones por país, acceso a agua potable. Y en el examen aparece casi siempre.</p>
+
+    <div class="paso"><span class="n">1</span><strong>Lea el título antes que nada.</strong> Dice qué se está midiendo. Sin él, los colores no significan nada.</div>
+    <div class="paso"><span class="n">2</span><strong>Lea la leyenda después.</strong> Dice qué significa cada color, y sobre todo <em>en qué unidades</em>. No es lo mismo un mapa de emisiones totales que uno de emisiones por habitante: cambian de sitio los colores oscuros.</div>
+    <div class="paso"><span class="n">3</span><strong>Solo entonces mire el mapa.</strong> Casi todos los errores vienen de haberlo mirado primero.</div>
+    <div class="paso"><span class="n">4</span><strong>Y pregúntese qué no muestra.</strong> Un mapa por países pinta cada país de un solo color, y dentro de un país las diferencias pueden ser enormes. Es el mismo problema del promedio que vio en la Lección 7.2.</div>
+
+    <div class="caja-atencion">
+      <strong>La trampa clásica, con un ejemplo concreto.</strong> Dos mapas de emisiones de dióxido de carbono, uno por país y otro por habitante, señalan lugares distintos y los dos son ciertos. Un país muy poblado puede encabezar el total y quedar en la mitad de la tabla por persona. Si una pregunta le da un mapa y una afirmación, lo primero que hay que comprobar es <strong>si la afirmación está hecha en las mismas unidades que el mapa</strong>. Muchas preguntas se resuelven solo con eso.
+    </div>
+
+    <h3>Fronteras políticas y fronteras culturales</h3>
+
+    <p>Hay un segundo tipo de desajuste que el examen pregunta y que conviene tener claro. Las fronteras políticas se dibujan; las culturales no.</p>
+
+    <table class="reglas">
+      <caption>Dos maneras de dividir el mismo territorio.</caption>
+      <thead>
+        <tr><th scope="col">Frontera política</th><th scope="col">Frontera cultural</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Es una línea acordada o impuesta, y aparece en los mapas.</td>
+          <td>Es una zona de transición donde cambian la lengua, la religión o las costumbres, y no aparece en ningún mapa oficial.</td>
+        </tr>
+        <tr>
+          <td>Puede trazarse en línea recta sobre un escritorio, y en África y en el oeste de Estados Unidos muchas lo están.</td>
+          <td>Sigue ríos, montañas, rutas antiguas y siglos de contacto.</td>
+        </tr>
+        <tr>
+          <td>Cambia con guerras y tratados, en fechas concretas.</td>
+          <td>Cambia despacio, sin fecha, y a veces no cambia aunque cambie la política.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Cuando las dos no coinciden, hay conflicto o hay mezcla, y a veces las dos cosas.</strong> Una frontera política trazada a través de una región culturalmente homogénea la parte en dos; una trazada alrededor de varias regiones distintas las obliga a convivir. Ni lo uno ni lo otro condena a nada por sí solo, pero explica muchas tensiones que de otro modo parecen inexplicables.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. Dos posiciones sobre la misma política</h2>
+
+  <div class="bloque">
+    <p>Llegamos a la parte que da nombre a la práctica SSP.4: <strong>evaluar afirmaciones</strong>. Y para eso hacen falta dos textos que discrepen de verdad, escritos por gente que se lo tomó en serio.</p>
+    <p>El Archivo tiene uno. Es una sentencia dividida del Tribunal Supremo, de 2007, sobre si la agencia federal de medio ambiente puede y debe regular los gases de efecto invernadero que emiten los automóviles. Ganó una postura por cinco votos contra cuatro, y las dos quedaron escritas.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 18 · La mayoría</h2>
+    <p class="fuente">Juez Stevens, por cinco votos. <em>Massachusetts contra la EPA</em>, 2 de abril de 2007.</p>
+
+    <blockquote>
+      <p>Un aumento bien documentado de las temperaturas globales ha coincidido con un incremento significativo de la concentración de dióxido de carbono en la atmósfera. Científicos respetados creen que las dos tendencias están relacionadas.</p>
+      <p>Como los gases de efecto invernadero <strong>encajan sin dificultad en la amplísima definición de «contaminante atmosférico»</strong> de la Ley del Aire Limpio, la EPA tiene autoridad legal para regular la emisión de esos gases por los vehículos nuevos.</p>
+      <p>Sostenemos <strong>únicamente</strong> que la EPA debe fundar en la ley sus razones para actuar o para no actuar.</p>
+    </blockquote>
+
+    <p>Note esa última frase, porque casi siempre se cuenta mal. El tribunal <em>no ordenó regular</em>. Ordenó decidir con arreglo a la ley y explicar la decisión.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 18 · La discrepancia</h2>
+    <p class="fuente">Presidente del Tribunal Roberts, por cuatro votos, en la misma sentencia.</p>
+
+    <blockquote>
+      <p>El calentamiento global puede ser una «crisis», incluso «el problema ambiental más apremiante de nuestro tiempo». […] No es, sin embargo, un problema que haya escapado a la atención de los responsables políticos de los poderes ejecutivo y legislativo de nuestro Gobierno.</p>
+      <p>Aparentemente insatisfechos con el ritmo de avance de este asunto en las ramas electas, los demandantes han acudido a los tribunales […]. Yo rechazaría estas impugnaciones por no ser justiciables.</p>
+      <p><strong>Tal conclusión no implica juicio alguno sobre si el calentamiento global existe, sobre qué lo causa o sobre la magnitud del problema.</strong></p>
+    </blockquote>
+
+    <div class="caja-atencion">
+      <strong>Lea la última frase otra vez, porque de ella depende toda la sección.</strong> Es tentadísimo resumir este cinco contra cuatro como «unos creen en el cambio climático y otros no». El texto lo desmiente por escrito. Quien firma la discrepancia lo llama «crisis» y dice expresamente que no se pronuncia sobre si existe. <span class="resalta">Lo que discuten es quién decide</span>: si un tribunal puede obligar a una agencia a actuar sobre un daño que afecta a todo el mundo, o si eso corresponde a quienes salen elegidos.
+    </div>
+
+    <p class="enlace-ficha"><span aria-hidden="true">→</span> <a href="fuentes/massachusetts-epa-2007.html">Los dos textos completos, la tabla de acuerdos y desacuerdos, y qué ha ocurrido hasta hoy</a></p>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿Quién dice esto?</h3>
+    <p>Ocho afirmaciones. Diga si salen de la mayoría, de la discrepancia, de las dos, o de ninguna de las dos. Las últimas son las que separan a quien leyó de quien supuso.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Defender la postura que no es la suya</h2>
+
+  <div class="bloque">
+    <p>Aquí está el ejercicio que cierra el Tema 7 y, con él, la parte de análisis del curso. Consiste en tomar la posición con la que <em>no</em> está de acuerdo y construir su mejor versión.</p>
+    <p>No es un juego de retórica. Es la única manera de saber si uno entendió el asunto, porque <strong>una postura que solo se conoce en su versión más floja no se ha entendido: se ha caricaturizado.</strong> Y en el examen aparece con frecuencia: le darán dos textos y le pedirán qué sostiene cada uno, no cuál le gusta más.</p>
+
+    <table class="reglas">
+      <caption>Las cuatro reglas del debate con evidencia obligatoria.</caption>
+      <thead>
+        <tr><th scope="col">Regla</th><th scope="col">Qué significa en la práctica</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solo la evidencia del texto</td>
+          <td>Cada afirmación tiene que poder señalarse con el dedo en el documento. Lo que usted sabe por otro lado, aunque sea cierto, hoy no vale.</td>
+        </tr>
+        <tr>
+          <td>La mejor versión, no la más fácil</td>
+          <td>Defienda el argumento más fuerte del lado que le tocó, no el más ridículo. Si su resumen del otro lado suena tonto, es que no es su resumen: es su caricatura.</td>
+        </tr>
+        <tr>
+          <td>Un punto fuerte del contrario</td>
+          <td>Antes de terminar, diga en voz alta una cosa en la que el otro lado tiene razón. Si no encuentra ninguna, vuelva al texto: no ha leído bastante.</td>
+        </tr>
+        <tr>
+          <td>Separar el desacuerdo real</td>
+          <td>Nombre en qué están de acuerdo los dos textos y en qué no. Casi siempre están de acuerdo en más de lo que parece, y el desacuerdo verdadero es más estrecho y más interesante.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Y el curso no le va a decir quién tiene razón.</strong> El Archivo publica los dos textos y no arbitra. Esta lección le enseña a leerlos, a decir qué sostiene cada uno y con qué, y a reconocer un punto fuerte del contrario. Qué opine usted después, con los textos delante, es asunto suyo, y esa es exactamente la diferencia entre estudiar un tema y que se lo cuenten.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Un aviso sobre este caso en concreto.</strong> El asunto sigue vivo y es objeto de disputa política en el presente: la ficha del Documento 18 recoge lo ocurrido hasta la revocación del dictamen de peligro en febrero de 2026, y desde entonces ha seguido debatiéndose y litigándose. Si va a usar el estado actual en un trabajo, compruébelo por su cuenta. Lo que esta lección le pide no es que se posicione sobre eso: es que sepa leer los dos argumentos de 2007 y reconocerlos cuando reaparezcan.
+    </div>
+  </div>
+
+  <div class="bloque">
+    <div class="practica">
+      <h3>Práctica interactiva · Recursos, mapas y argumentos</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="El cuello de botella de las tierras raras no está en la mina sino en el procesamiento. Se puede tener el mineral y seguir dependiendo de otro país para convertirlo en algo útil.">
+        <div class="enun">Un país tiene yacimientos de tierras raras pero depende de otro para usarlas. ¿Por qué?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Porque sus yacimientos son demasiado pequeños</div>
+          <div class="opcion" data-op="b">Porque no tiene puertos para exportarlas</div>
+          <div class="opcion" data-op="c">Porque el procesamiento, y no la extracción, está concentrado en otro sitio</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="No es lo mismo un mapa de emisiones totales que uno por habitante: los colores oscuros cambian de sitio y los dos mapas son ciertos. Comprobar las unidades resuelve muchas preguntas por sí solo.">
+        <div class="enun">Ante un mapa temático de emisiones, ¿qué es lo primero que hay que comprobar?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Qué país tiene el color más oscuro</div>
+          <div class="opcion" data-op="b">En qué unidades está: totales o por habitante</div>
+          <div class="opcion" data-op="c">De qué año son los datos</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="El texto de la discrepancia lo dice con esas palabras. Quien lo resume como negación del cambio climático no ha leído el documento, ha supuesto su contenido.">
+        <div class="enun">El voto discrepante de 2007 declara expresamente que…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Su conclusión no implica juicio sobre si el calentamiento global existe</div>
+          <div class="opcion" data-op="b">La ciencia del clima es incorrecta</div>
+          <div class="opcion" data-op="c">La agencia debería regular más deprisa</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="Si su resumen del otro lado suena tonto, no es su resumen: es su caricatura. Y una postura caricaturizada no se ha entendido, así que tampoco se puede refutar.">
+        <div class="enun">Al defender en un debate la postura contraria a la suya, la regla principal es…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Ser breve, porque no la comparte</div>
+          <div class="opcion" data-op="b">Añadir datos propios para hacerla más creíble</div>
+          <div class="opcion" data-op="c">Construir su mejor versión usando solo la evidencia del texto</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Quién tiene qué</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Elija tres de los cuatro recursos de la tabla de la sección 1. Para cada uno escriba la cadena entera: dónde se concentra, quién lo necesita, por dónde viaja y qué pasaría si ese comercio se interrumpiera. Termine cada cadena señalando <strong>dónde podría haber tensión</strong> y por qué.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si en alguna cadena escribió que un país es rico o pobre <em>por</em> tener el recurso, tache esa frase y rehágala. Quién es dueño de la extracción, adónde va el beneficio y qué se hace con él son tres preguntas distintas, y son las que deciden. Tener el recurso es solo el primer eslabón.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · El mismo dato en dos mapas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque dos mapas del mismo asunto en unidades distintas: emisiones totales y emisiones por habitante sirven muy bien. Anote los cinco países más oscuros de cada uno. Después escriba dos frases verdaderas, una por mapa, que a primera vista parezcan contradecirse.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si las dos frases no le parecen contradictorias, es que ha escrito la misma dos veces. La gracia del ejercicio es acabar con dos afirmaciones ciertas que se pelean, y entender que lo que las separa no son los datos sino las unidades.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · El debate, con la postura que le toque</div>
+      <div class="cuerpo-act">
+        <span class="duracion">45 minutos</span>
+        <p>Abra el <a href="fuentes/massachusetts-epa-2007.html">Documento 18</a> completo. Decida a cara o cruz qué postura defiende: la mayoría o la discrepancia. Prepare tres argumentos, cada uno con el pasaje exacto en el que se apoya. Después escriba, o diga en voz alta a quien esté con usted, <strong>un punto en el que el otro lado tiene razón</strong>. Termine nombrando en qué están de acuerdo los dos textos.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> tres señales de que algo falla. Si le tocó la postura que ya tenía y se sintió cómodo, vuelva a tirar la moneda. Si no encontró ningún punto fuerte del contrario, no ha leído bastante. Y si en su lista de acuerdos no aparece «los dos textos admiten que el asunto es serio», relea el primer párrafo de la discrepancia.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 7.3</h2>
+    <p>Doce preguntas: cuatro de recursos, comercio y dependencia, cuatro de lectura de mapas temáticos y fronteras, y cuatro de evaluación de argumentos enfrentados. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir" type="button">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" type="button" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su hoja de la Práctica 3 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de recursos y medio ambiente, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Relaciona recursos, comercio y tensión</td>
+          <td>Solo dice dónde está el recurso.</td>
+          <td>Añade quién lo compra, pero se detiene ahí.</td>
+          <td>Recorre la cadena entera hasta la dependencia y anticipa dónde puede haber tensión.</td>
+          <td>Distingue entre tener el recurso y controlar un paso de su cadena.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Interpreta un mapa temático</td>
+          <td>Mira los colores antes que el título.</td>
+          <td>Lee título y leyenda, pero no comprueba las unidades.</td>
+          <td>Comprueba las unidades y las compara con la afirmación que se le da.</td>
+          <td>Señala además qué esconde el mapa: las diferencias dentro de cada zona coloreada.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Identifica la evidencia de cada lado</td>
+          <td>Resume los dos textos como si dijeran lo mismo, o como si uno negara al otro.</td>
+          <td>Distingue las dos posturas sin citar en qué se apoya cada una.</td>
+          <td>Da tres argumentos por lado, cada uno con su pasaje.</td>
+          <td>Nombra en qué punto exacto discrepan y en cuántos coinciden.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Reconoce la fuerza del otro lado</td>
+          <td>No encuentra ningún punto válido en la postura contraria.</td>
+          <td>Concede algo menor para cumplir el trámite.</td>
+          <td>Nombra un argumento contrario que le parece de verdad sólido y dice por qué.</td>
+          <td>Construye la mejor versión de la postura contraria y la defiende con el texto.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 7.3 y cierre del Tema 7</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Tener un recurso y controlar su cadena son cosas distintas</strong>, y la segunda es la que da poder. <strong>Un mapa temático hay que leerlo del título hacia abajo</strong>, y las unidades deciden qué país sale oscuro. Y <strong>una postura que solo se conoce en su versión más floja no se ha entendido</strong>: se ha caricaturizado.</p>
+    <p>Con esto termina el Tema 7 y termina también el recorrido por los cuatro dominios del examen. El 1 y el 2 enseñaron a leer fuentes y datos; del 3 al 5, cómo funciona el gobierno; el 6, cómo llegó a ser así; y el 7, la economía y el territorio donde ocurre todo lo demás.</p>
+    <p>Y fíjese en que la última idea de este tema es la misma que abría el curso. En la Lección 1.3 comparó dos crónicas de una misma reunión del Concejo de Chicago, en 1905, que contaban lo mismo con otros verbos. Aquí ha comparado dos votos de un mismo tribunal que leyeron la misma ley y llegaron a conclusiones opuestas. <strong>Entre esas dos lecciones median ciento dos años y ningún cambio de método.</strong></p>
+    <p>El <strong>Tema 8</strong> no trae contenido nuevo: junta todo lo anterior. Escenarios con texto, gráfica y mapa a la vez, un proyecto final y un simulacro cronometrado del examen.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <a class="nav-sig" href="index.html#tema-8">Siguiente: Tema 8 <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 7 · Lección 7.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de cronología, 5 de causalidad, 3 de Artículos y Constitución ---- */
+  var preguntasQuiz = [
+    { enun: '1. ¿Por qué la distribución desigual de los recursos genera comercio?', ops: ['Porque los gobiernos lo obligan', 'Porque quien necesita un recurso que no tiene debe comprarlo a quien lo tiene', 'Porque abarata el transporte', 'Porque lo exigen los tratados internacionales'],
+      correcta: 1, expl: 'Es el primer eslabón de la cadena: distribución, comercio y dependencia. Cada paso explica el siguiente.' },
+    { enun: '2. Un país tiene yacimientos de tierras raras pero depende de otro para usarlas. La razón más probable es que…', ops: ['Sus yacimientos son pequeños', 'El procesamiento del mineral está concentrado en otro país', 'No tiene salida al mar', 'El mineral es de mala calidad'],
+      correcta: 1, expl: 'El cuello de botella no está en la mina sino en convertir el mineral en algo útil. Tener el recurso y controlar su cadena son cosas distintas.' },
+    { enun: '3. ¿Cuál de estas afirmaciones se salta varios eslabones?', ops: ['Este país exporta cobre', 'Este país es rico porque tiene petróleo', 'Este recurso se concentra en pocos lugares', 'Este comercio crea dependencia mutua'],
+      correcta: 1, expl: 'Quién es dueño de la extracción, adónde va el beneficio y qué se hace con él son preguntas distintas, y son las que deciden. Hay países con enormes reservas y población pobre.' },
+    { enun: '4. La dependencia que crea el comercio de un recurso escaso…', ops: ['Es siempre de un solo lado', 'Es mutua: quien vende también depende de quien compra', 'Desaparece si suben los precios', 'Solo afecta a los países pobres'],
+      correcta: 1, expl: 'Por eso es capacidad de presión y no dominio: las dos partes tienen algo que perder si el comercio se interrumpe.' },
+    { enun: '5. Ante un mapa temático, lo primero que hay que leer es…', ops: ['La leyenda', 'El título', 'La escala', 'El país más oscuro'],
+      correcta: 1, expl: 'El título dice qué se está midiendo. Sin él los colores no significan nada, y la leyenda no se puede interpretar.' },
+    { enun: '6. Un mapa de emisiones totales y otro de emisiones por habitante señalan países distintos. Eso significa que…', ops: ['Uno de los dos está mal', 'Los dos pueden ser ciertos, porque miden cosas distintas', 'Los datos están desactualizados', 'Las emisiones no se pueden medir'],
+      correcta: 1, expl: 'Un país muy poblado puede encabezar el total y quedar en la mitad de la tabla por persona. Comprobar las unidades resuelve muchas preguntas por sí solo.' },
+    { enun: '7. ¿Qué esconde un mapa temático coloreado por países?', ops: ['El nombre de los países', 'Las diferencias que hay dentro de cada país', 'La escala del mapa', 'La fuente de los datos'],
+      correcta: 1, expl: 'Cada país queda pintado de un solo color, y dentro puede haber diferencias enormes. Es el mismo problema del promedio de la Lección 7.2.' },
+    { enun: '8. Una frontera cultural se distingue de una política en que…', ops: ['Aparece en los mapas oficiales', 'Es una zona de transición y no una línea acordada', 'La fijan los tratados', 'Cambia con cada elección'],
+      correcta: 1, expl: 'Sigue ríos, montañas y siglos de contacto, y cambia despacio y sin fecha. Cuando las dos no coinciden, suele haber conflicto o mezcla.' },
+    { enun: '9. En Massachusetts contra la EPA, la mayoría sostuvo que…', ops: ['La agencia debía regular de inmediato', 'Los gases de efecto invernadero entran en la definición legal de contaminante atmosférico', 'El cambio climático no está probado', 'El caso correspondía al Congreso'],
+      correcta: 1, expl: 'Y añadió que sostenía «únicamente» que la agencia debía fundar en la ley sus razones para actuar o para no actuar. No ordenó regular.' },
+    { enun: '10. El voto discrepante de esa sentencia declara expresamente que…', ops: ['El calentamiento global no existe', 'Su conclusión no implica juicio sobre si el calentamiento global existe', 'La agencia debe regular más deprisa', 'Los estados no pueden demandar nunca'],
+      correcta: 1, expl: 'Lo dice con esas palabras, y llega a llamar «crisis» al asunto. Quien lo resume como negación del cambio climático ha supuesto el contenido en vez de leerlo.' },
+    { enun: '11. El desacuerdo de fondo entre los dos textos es…', ops: ['Si el clima está cambiando', 'Quién debe decidir: los tribunales o las ramas electas', 'Cuánto contamina un automóvil', 'Qué dice la ciencia sobre el dióxido de carbono'],
+      correcta: 1, expl: 'Los dos textos admiten que el asunto es serio. Lo que discuten es la legitimación para demandar y el reparto de competencias.' },
+    { enun: '12. Al defender en un debate la postura contraria a la propia, la regla principal es…', ops: ['Ser breve', 'Añadir datos propios que la refuercen', 'Construir su mejor versión usando solo la evidencia del texto', 'Señalar sus contradicciones'],
+      correcta: 2, expl: 'Si su resumen del otro lado suena tonto, es que no es su resumen: es su caricatura. Y una postura caricaturizada no se ha entendido, así que tampoco se puede refutar.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Con esto queda cerrado el Tema 7.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* «¿Quién dice esto?». Botones, no arrastrar: accesible con teclado y con
+     lector de pantalla, y usable en pantalla táctil. */
+  var CASOS = [
+    { t: 'Los gases de efecto invernadero encajan en la definición legal de contaminante atmosférico.', c: 'M',
+      e: 'La mayoría. La discrepancia no entra en el fondo del asunto: sostiene que sin legitimación para demandar no hay caso que resolver.' },
+    { t: 'Este asunto corresponde al Congreso y al Presidente, no a los tribunales.', c: 'D',
+      e: 'La discrepancia, y es su argumento central. Cita jurisprudencia anterior para sostenerlo.' },
+    { t: 'El calentamiento global es un asunto serio.', c: 'L',
+      e: 'Los dos. La mayoría lo describe en su primer párrafo; la discrepancia lo llama «crisis» y dice que puede afectar a casi todo el mundo. Ese acuerdo es la primera cosa que hay que anotar en un debate.' },
+    { t: 'El daño que alega Massachusetts es demasiado general y su relación con la negativa de la agencia, demasiado especulativa.', c: 'D',
+      e: 'La discrepancia. Es una objeción sobre legitimación procesal: quién puede acudir a un tribunal y con qué daño.' },
+    { t: 'El tribunal ordena a la agencia regular los gases de efecto invernadero.', c: 'N',
+      e: 'Ninguno de los dos, y este es el error más frecuente sobre este caso. La mayoría escribe que sostiene «únicamente» que la agencia debe fundar en la ley sus razones para actuar o para no actuar. Ordenó decidir y explicar, no regular.' },
+    { t: 'La ciencia del cambio climático es incorrecta.', c: 'N',
+      e: 'Ninguno de los dos. La discrepancia dice expresamente que su conclusión no implica juicio alguno sobre si el calentamiento existe, qué lo causa o cuál es su magnitud. Atribuirle esto es sustituir el texto por una suposición.' },
+    { t: 'La decisión sobre este asunto debe fundarse en lo que dice la ley.', c: 'L',
+      e: 'Los dos, y por eso el desacuerdo es más estrecho de lo que parece. Discrepan sobre qué autoriza esa ley y sobre quién está facultado para plantear la pregunta, no sobre si hay que atenerse a ella.' },
+    { t: 'Quien firmó la discrepancia niega que el cambio climático exista.', c: 'N',
+      e: 'Ninguno de los dos, y es la afirmación que esta práctica existe para desmontar. Es una conclusión sobre la persona, no una lectura del documento, y el documento dice lo contrario por escrito.' }
+  ];
+  var NOMBRES = { M: 'La mayoría', D: 'La discrepancia', L: 'Las dos', N: 'Ninguna' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' afirmaciones.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['M', 'D', 'L', 'N'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
