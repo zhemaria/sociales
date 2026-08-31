@@ -1,0 +1,2652 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementos de la Geografía — GED en Español</title>
+    <style>
+      /* ============================================================
+   Guía de Geografía — GEDparaHispanos.com
+   Target GED: G (Geography)
+   Estética DUA institucional
+   Hex sólidos · sin rgba · sin gradients
+   v2.1 · Correcciones de contenido e imágenes autónomas
+   ============================================================ */
+
+      :root {
+        --c-bg: #fafafa;
+        --c-surface: #ffffff;
+        --c-ink: #1a1a1a;
+        --c-ink-soft: #4a4a4a;
+        --c-ink-mute: #7a7a7a;
+        --c-line: #e0e0e0;
+        --c-line-str: #b0b0b0;
+
+        --c-ss: #8a5a00;
+        --c-ss-dark: #6a4500;
+        --c-ss-soft: #fdf6e3;
+        --c-ss-line: #e8d9b5;
+
+        --c-parch: #faf5e8;
+        --c-parch-ed: #d4c9a8;
+
+        /* Acentos geográficos */
+        --c-land: #6a4500; /* Tierra/relieve */
+        --c-water: #1e5aa6; /* Agua */
+        --c-bio: #0f7a5c; /* Naturaleza/biomas */
+        --c-climate: #b8860b; /* Clima */
+        --c-human: #8a3d3d; /* Humano/cultural */
+
+        --c-good: #0f7a5c;
+        --c-warn: #b8860b;
+        --c-miss: #a63d1e;
+        --c-info: #1e5aa6;
+        --c-good-bg: #e8f5ee;
+        --c-miss-bg: #fbe9e7;
+        --c-info-bg: #eaf2fb;
+
+        --f-display: Georgia, 'Times New Roman', 'Liberation Serif', 'DejaVu Serif', serif;
+        --f-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+        --f-hist: 'Book Antiqua', 'Palatino Linotype', Palatino, Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--f-body);
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--c-ink);
+        background: var(--c-bg);
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 36px 24px 72px;
+      }
+
+      /* ---------- Portada ---------- */
+      .cover {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 6px solid var(--c-ss);
+        padding: 44px 36px;
+        border-radius: 6px;
+        margin-bottom: 28px;
+      }
+      .cover .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-ss-dark);
+        margin: 0 0 14px;
+        font-weight: 700;
+      }
+      .cover h1 {
+        font-family: var(--f-display);
+        font-size: 34px;
+        line-height: 1.2;
+        margin: 0 0 16px;
+        color: var(--c-ink);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .cover .sub {
+        font-size: 17px;
+        color: var(--c-ink-soft);
+        margin: 0 0 24px;
+        max-width: 760px;
+      }
+      .cover .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        font-size: 13px;
+        color: var(--c-ink-mute);
+        border-top: 1px solid var(--c-line);
+        padding-top: 18px;
+      }
+      .cover .meta strong {
+        color: var(--c-ink-soft);
+        font-weight: 600;
+      }
+
+      /* ---------- Tipografía general ---------- */
+      h2 {
+        font-family: var(--f-display);
+        font-size: 26px;
+        margin: 44px 0 14px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--c-ss);
+        color: var(--c-ink);
+        font-weight: 700;
+      }
+      h3 {
+        font-family: var(--f-display);
+        font-size: 20px;
+        margin: 26px 0 10px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+      }
+      h4 {
+        font-size: 13px;
+        margin: 18px 0 6px;
+        color: var(--c-ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+      }
+      p {
+        margin: 0 0 12px;
+      }
+
+      /* ---------- TOC ---------- */
+      .toc {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        padding: 20px 26px;
+        margin-bottom: 28px;
+      }
+      .toc h4 {
+        margin-top: 0;
+        color: var(--c-ss-dark);
+      }
+      .toc ol {
+        margin: 6px 0 0;
+        padding-left: 22px;
+        columns: 2;
+        column-gap: 32px;
+      }
+      .toc li {
+        margin: 4px 0;
+        font-size: 14.5px;
+        break-inside: avoid;
+      }
+      .toc a {
+        color: var(--c-ink-soft);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--c-line-str);
+      }
+      .toc a:hover {
+        color: var(--c-ss-dark);
+        border-bottom-color: var(--c-ss-dark);
+      }
+
+      /* ---------- Callouts ---------- */
+      .callout {
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        padding: 14px 18px;
+        margin: 18px 0;
+        border-radius: 3px;
+        font-size: 15px;
+      }
+      .callout.note {
+        background: var(--c-ss-soft);
+        border-left-color: var(--c-ss);
+      }
+      .callout.good {
+        background: var(--c-good-bg);
+        border-left-color: var(--c-good);
+      }
+      .callout.warn {
+        background: var(--c-miss-bg);
+        border-left-color: var(--c-miss);
+      }
+      .callout strong {
+        color: var(--c-ink);
+      }
+
+      /* ---------- Acordeones ---------- */
+      details.accordion {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        margin: 14px 0;
+        overflow: hidden;
+      }
+      details.accordion[open] {
+        border-color: var(--c-ss-line);
+        box-shadow: 0 1px 3px #f0e6cc;
+      }
+      details.accordion > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 16px 22px;
+        font-weight: 700;
+        font-family: var(--f-display);
+        font-size: 18px;
+        color: var(--c-ink);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        user-select: none;
+        background: var(--c-surface);
+        border-left: 4px solid transparent;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+      }
+      details.accordion[open] > summary {
+        background: var(--c-ss-soft);
+        border-left-color: var(--c-ss);
+        border-bottom: 1px solid var(--c-ss-line);
+      }
+      details.accordion > summary:hover {
+        background: var(--c-ss-soft);
+      }
+      details.accordion > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.accordion > summary::after {
+        content: '▸';
+        margin-left: auto;
+        color: var(--c-ss);
+        font-size: 14px;
+        transition: transform 0.2s;
+      }
+      details.accordion[open] > summary::after {
+        transform: rotate(90deg);
+      }
+      details.accordion .body {
+        padding: 20px 26px 24px;
+      }
+
+      .sec-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: var(--c-ss);
+        color: #fff;
+        border-radius: 50%;
+        font-family: var(--f-body);
+        font-size: 14px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .sec-ic {
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      /* ---------- Tablas ---------- */
+      table.cmp {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0 20px;
+        font-size: 14.5px;
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      table.cmp th {
+        background: var(--c-ss);
+        color: #fff;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+      }
+      table.cmp td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--c-line);
+        vertical-align: top;
+      }
+      table.cmp tbody tr:nth-child(even) td {
+        background: #fafafa;
+      }
+      table.cmp tbody tr:hover td {
+        background: var(--c-ss-soft);
+      }
+
+      /* ---------- Tarjetas ---------- */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+        margin: 18px 0;
+      }
+      .card {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 4px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 16px 18px;
+      }
+      .card h5 {
+        margin: 0 0 8px;
+        font-family: var(--f-display);
+        font-size: 16px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+      }
+      .card p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--c-ink-soft);
+        line-height: 1.55;
+      }
+      .card ul {
+        padding-left: 22px;
+        margin: 8px 0 0;
+        font-size: 13.5px;
+        color: var(--c-ink-soft);
+      }
+      .card ul li {
+        margin: 3px 0;
+      }
+
+      /* Variantes temáticas */
+      .card.land {
+        border-top-color: var(--c-land);
+      }
+      .card.land h5 {
+        color: var(--c-land);
+      }
+      .card.water {
+        border-top-color: var(--c-water);
+      }
+      .card.water h5 {
+        color: var(--c-water);
+      }
+      .card.bio {
+        border-top-color: var(--c-bio);
+      }
+      .card.bio h5 {
+        color: var(--c-bio);
+      }
+      .card.climate {
+        border-top-color: var(--c-climate);
+      }
+      .card.climate h5 {
+        color: var(--c-climate);
+      }
+      .card.human {
+        border-top-color: var(--c-human);
+      }
+      .card.human h5 {
+        color: var(--c-human);
+      }
+
+      /* ---------- Imagen con pie ---------- */
+      .image-box {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 3px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 16px 18px 14px;
+        margin: 20px 0;
+      }
+      .image-box .img-label {
+        font-family: var(--f-display);
+        font-size: 14px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .image-box .img-label::before {
+        content: '🖼';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: var(--c-ss);
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 3px;
+      }
+      .image-box img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        border: 1px solid var(--c-line);
+      }
+      .image-box svg.inline-fig {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        border: 1px solid var(--c-line);
+        background: #ffffff;
+      }
+      .image-box .img-caption {
+        font-size: 12.5px;
+        color: var(--c-ink-mute);
+        font-style: italic;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      /* ---------- Video ---------- */
+      .video-box {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 3px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 16px 18px 18px;
+        margin: 20px 0;
+      }
+      .video-box .video-label {
+        font-family: var(--f-display);
+        font-size: 14px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .video-box .video-label::before {
+        content: '▶';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: var(--c-ss);
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 3px;
+        padding-left: 2px;
+      }
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid var(--c-line);
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ---------- Diagrama SVG coordenadas ---------- */
+      .coord-diagram {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .coord-diagram svg {
+        max-width: 100%;
+        height: auto;
+      }
+      .coord-diagram .cd-caption {
+        font-size: 13px;
+        color: var(--c-ink-mute);
+        font-style: italic;
+        margin-top: 12px;
+      }
+
+      /* ---------- Regiones de EE.UU. ---------- */
+      .us-regions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+      }
+      .us-region {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-left: 5px solid var(--c-ss);
+        border-radius: 4px;
+        padding: 14px 16px;
+      }
+      .us-region.ne {
+        border-left-color: #1e5aa6;
+      }
+      .us-region.s {
+        border-left-color: #a63d1e;
+      }
+      .us-region.mw {
+        border-left-color: #0f7a5c;
+      }
+      .us-region.w {
+        border-left-color: #b8860b;
+      }
+      .us-region h5 {
+        font-family: var(--f-display);
+        font-size: 15px;
+        margin: 0 0 4px;
+        font-weight: 700;
+      }
+      .us-region.ne h5 {
+        color: #1e5aa6;
+      }
+      .us-region.s h5 {
+        color: #a63d1e;
+      }
+      .us-region.mw h5 {
+        color: #0f7a5c;
+      }
+      .us-region.w h5 {
+        color: #b8860b;
+      }
+      .us-region .r-meta {
+        font-size: 11.5px;
+        color: var(--c-ink-mute);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+      .us-region ul {
+        padding-left: 20px;
+        margin: 0;
+        font-size: 13.5px;
+        color: var(--c-ink-soft);
+      }
+      .us-region ul li {
+        margin: 2px 0;
+      }
+
+      /* ---------- Documento histórico ---------- */
+      .hist-doc {
+        background: var(--c-parch);
+        border: 1px solid var(--c-parch-ed);
+        border-left: 6px solid var(--c-ss-dark);
+        padding: 18px 22px 16px;
+        margin: 16px 0;
+        border-radius: 3px;
+        font-family: var(--f-hist);
+        position: relative;
+      }
+      .hist-doc::before {
+        content: '🌐';
+        position: absolute;
+        top: -13px;
+        left: 14px;
+        font-size: 18px;
+        background: var(--c-parch);
+        padding: 0 6px;
+      }
+      .hist-doc .doc-header {
+        font-family: var(--f-body);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed var(--c-parch-ed);
+        padding-bottom: 6px;
+      }
+      .hist-doc .doc-text {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: #2a2a2a;
+      }
+      .hist-doc .doc-text p {
+        margin: 0 0 8px;
+      }
+
+      /* ---------- SSP ---------- */
+      .ssp-conn {
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        border-radius: 4px;
+        padding: 12px 16px;
+        margin: 16px 0 4px;
+        font-size: 13.5px;
+        color: var(--c-ink-soft);
+      }
+      .ssp-conn strong {
+        color: var(--c-info);
+      }
+
+      .term {
+        font-weight: 700;
+        color: var(--c-ss-dark);
+        border-bottom: 1px dotted var(--c-ss);
+        cursor: help;
+      }
+
+      /* ---------- Quiz ---------- */
+      .quiz-wrap {
+        background: var(--c-surface);
+        border: 2px solid var(--c-ss);
+        border-radius: 8px;
+        padding: 28px 30px;
+        margin: 32px 0;
+      }
+      .quiz-wrap h2 {
+        margin-top: 0;
+        border-bottom-color: var(--c-ss);
+      }
+      .quiz-intro {
+        color: var(--c-ink-soft);
+        font-size: 15px;
+        margin-bottom: 18px;
+      }
+      .question {
+        margin: 22px 0;
+        padding: 18px 20px;
+        background: #fafafa;
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+      }
+      .question.answered.correct {
+        border-color: var(--c-good);
+        background: var(--c-good-bg);
+      }
+      .question.answered.wrong {
+        border-color: var(--c-miss);
+        background: var(--c-miss-bg);
+      }
+      .q-num {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--c-ink-mute);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .q-stem {
+        font-size: 15.5px;
+        font-weight: 600;
+        color: var(--c-ink);
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .option {
+        padding: 10px 14px;
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14.5px;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+        user-select: none;
+      }
+      .option:hover {
+        background: var(--c-ss-soft);
+        border-color: var(--c-ss-line);
+      }
+      .option.selected {
+        background: var(--c-info-bg);
+        border-color: var(--c-info);
+      }
+      .option.revealed-correct {
+        background: var(--c-good-bg);
+        border-color: var(--c-good);
+        font-weight: 600;
+      }
+      .option.revealed-wrong {
+        background: var(--c-miss-bg);
+        border-color: var(--c-miss);
+      }
+      .option .marker {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--c-ink-mute);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .option.selected .marker {
+        background: var(--c-info);
+      }
+      .option.revealed-correct .marker {
+        background: var(--c-good);
+      }
+      .option.revealed-wrong .marker {
+        background: var(--c-miss);
+      }
+      .feedback {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: none;
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        line-height: 1.55;
+      }
+      .question.answered .feedback {
+        display: block;
+      }
+      .question.correct .feedback {
+        background: var(--c-good-bg);
+        border-left-color: var(--c-good);
+      }
+      .question.wrong .feedback {
+        background: var(--c-miss-bg);
+        border-left-color: var(--c-miss);
+      }
+      .quiz-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 10px 22px;
+        background: var(--c-ss);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-family: var(--f-body);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+      }
+      .btn:hover {
+        background: var(--c-ss-dark);
+      }
+      .btn.secondary {
+        background: var(--c-surface);
+        color: var(--c-ss-dark);
+        border: 1px solid var(--c-ss);
+      }
+      .btn.secondary:hover {
+        background: var(--c-ss-soft);
+      }
+      .score {
+        font-family: var(--f-display);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--c-ss-dark);
+      }
+      .score .num {
+        font-size: 24px;
+        color: var(--c-ss);
+      }
+
+      /* ---------- Glosario ---------- */
+      .glos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 10px 20px;
+        margin: 14px 0;
+      }
+      .glos-item {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--c-line);
+        font-size: 14.5px;
+      }
+      .glos-item dt {
+        font-weight: 700;
+        color: var(--c-ss-dark);
+        margin-bottom: 2px;
+      }
+      .glos-item dd {
+        margin: 0;
+        color: var(--c-ink-soft);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--c-line);
+        font-size: 12.5px;
+        color: var(--c-ink-mute);
+        text-align: center;
+        line-height: 1.7;
+      }
+
+      ul.plain {
+        padding-left: 22px;
+        margin: 8px 0 14px;
+      }
+      ul.plain li {
+        margin: 4px 0;
+      }
+      ul.check {
+        list-style: none;
+        padding-left: 0;
+        margin: 8px 0 14px;
+      }
+      ul.check li {
+        padding: 3px 0 3px 26px;
+        position: relative;
+      }
+      ul.check li::before {
+        content: '✓';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        color: var(--c-good);
+        font-weight: 700;
+      }
+
+      @media (max-width: 720px) {
+        .toc ol {
+          columns: 1;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .wrap {
+          max-width: 100%;
+          padding: 0;
+        }
+        details.accordion {
+          break-inside: avoid;
+          border: 1px solid #ccc;
+        }
+        details.accordion[open] {
+          box-shadow: none;
+        }
+        details.accordion > summary::after {
+          content: '';
+        }
+        .video-box,
+        .image-box {
+          break-inside: avoid;
+        }
+        .quiz-actions {
+          display: none;
+        }
+        .btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- ============================================================
+     PORTADA
+     ============================================================ -->
+      <header class="cover">
+        <p class="eyebrow">GED® · Estudios Sociales · Geografía</p>
+        <h1>Elementos de la Geografía</h1>
+        <p class="sub">
+          La geografía es mucho más que memorizar capitales. Estudia cómo interactúan la Tierra, los seres humanos y sus sociedades; cómo leer mapas; por qué la gente vive donde vive; cómo influye el
+          territorio en la historia. El examen GED mide varias de estas habilidades: interpretar mapas y gráficas, entender migraciones, relacionar clima con actividad humana, y analizar la
+          interacción con el medio ambiente.
+        </p>
+        <div class="meta">
+          <span>
+            <strong>Target GED:</strong>
+            G (Geography)
+          </span>
+          <span>
+            <strong>Nivel NRS:</strong>
+            4 — 6
+          </span>
+          <span>
+            <strong>Tiempo estimado:</strong>
+            2–3 horas de estudio
+          </span>
+          <span>
+            <strong>Evaluación:</strong>
+            Quiz de 14 ítems · 7 videos · 7 imágenes
+          </span>
+        </div>
+      </header>
+
+      <!-- ============================================================
+     TABLA DE CONTENIDO
+     ============================================================ -->
+      <nav class="toc">
+        <h4>Contenido de la guía</h4>
+        <ol>
+          <li><a href="#s1">Fundamentos de la geografía</a></li>
+          <li><a href="#s2">Mapas, coordenadas y escalas</a></li>
+          <li><a href="#s3">Características del planeta Tierra</a></li>
+          <li><a href="#s4">El entorno físico</a></li>
+          <li><a href="#s5">Clima y ecosistemas</a></li>
+          <li><a href="#s6">Población y migración</a></li>
+          <li><a href="#s7">Regiones y culturas</a></li>
+          <li><a href="#s8">Humanos y medio ambiente</a></li>
+          <li><a href="#quiz">Quiz de autoverificación (14 preguntas)</a></li>
+          <li><a href="#glosario">Glosario</a></li>
+        </ol>
+      </nav>
+
+      <aside class="callout note">
+        <strong>Cómo usar esta guía.</strong>
+        Cada sección se abre al hacer clic en su encabezado. Incluye texto explicativo, imágenes de apoyo, videos en español y ejemplos. La
+        <strong>Sección 2</strong>
+        (Mapas, coordenadas y escalas) es especialmente importante: el examen GED siempre incluye al menos una pregunta de interpretación de mapa.
+      </aside>
+
+      <!-- ============================================================
+     SECCIÓN 1
+     ============================================================ -->
+      <details class="accordion" id="s1">
+        <summary>
+          <span class="sec-num">1</span>
+          <span class="sec-ic">🧭</span>
+          Fundamentos de la geografía
+        </summary>
+        <div class="body">
+          <p>
+            La
+            <span class="term">geografía</span>
+            es la ciencia que estudia la superficie de la Tierra, los paisajes que la forman y las sociedades que la habitan. Es una disciplina
+            <strong>de puente</strong>
+            : combina ciencias naturales (geología, clima, biomas) con ciencias sociales (población, economía, cultura).
+          </p>
+
+          <h3>Las tres grandes ramas</h3>
+
+          <div class="cards">
+            <div class="card land">
+              <h5>🏔️ Geografía física</h5>
+              <p>
+                Estudia los elementos naturales de la Tierra: relieve, clima, hidrografía, biomas, suelos. Pregunta:
+                <em>¿cómo es el territorio?</em>
+              </p>
+            </div>
+            <div class="card human">
+              <h5>👥 Geografía humana</h5>
+              <p>
+                Estudia cómo las personas se distribuyen y organizan en el territorio: población, ciudades, economía, cultura, migraciones. Pregunta:
+                <em>¿cómo vive la gente en el territorio?</em>
+              </p>
+            </div>
+            <div class="card bio">
+              <h5>🌍 Geografía regional</h5>
+              <p>Combina ambas: analiza una región específica (Europa Occidental, el Caribe, el Medio Oeste de EE. UU.) integrando sus aspectos físicos, humanos e históricos.</p>
+            </div>
+          </div>
+
+          <h3>¿Por qué importa la geografía para el GED?</h3>
+          <p>El examen de Estudios Sociales no pide memorizar capitales ni nombres de ríos. Lo que mide es tu capacidad de:</p>
+          <ul class="check">
+            <li>
+              <strong>Interpretar mapas y gráficas geográficas</strong>
+              (casi garantizado en el examen).
+            </li>
+            <li>
+              <strong>Entender cómo el territorio influye en la historia</strong>
+              (por ejemplo: por qué Estados Unidos se expandió hacia el oeste).
+            </li>
+            <li>
+              <strong>Analizar patrones de población y migración</strong>
+              (tema muy relevante para estudiantes hispanos).
+            </li>
+            <li>
+              <strong>Relacionar clima y actividad económica</strong>
+              (por qué ciertas regiones cultivan algodón y otras trigo).
+            </li>
+            <li>
+              <strong>Evaluar el impacto humano sobre el medio ambiente</strong>
+              (cambio climático, sostenibilidad).
+            </li>
+          </ul>
+
+          <div class="callout">
+            <strong>Idea clave:</strong>
+            la geografía es el
+            <em>escenario</em>
+            de la historia. Sin entender el territorio, muchas decisiones humanas parecen arbitrarias. Con la geografía en mente, se vuelven lógicas. Por ejemplo: la Guerra Civil estadounidense tuvo
+            <em>raíces geográficas</em>
+            (clima y suelo apto para algodón en el Sur, industrialización en el Norte).
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con las otras guías:</strong>
+            la geografía se conecta directamente con la guía de Causa y Efecto (SSP.5) — factores geográficos son causas frecuentes en la historia — y con la guía de US History — cada período tuvo su
+            dinámica geográfica (expansión al oeste, inmigración, industrialización en el Noreste, etc.).
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 2 — Mapas y coordenadas
+     ============================================================ -->
+      <details class="accordion" id="s2">
+        <summary>
+          <span class="sec-num">2</span>
+          <span class="sec-ic">🗺️</span>
+          Mapas, coordenadas y escalas
+        </summary>
+        <div class="body">
+          <p>
+            Un
+            <span class="term">mapa</span>
+            es una representación simplificada y a escala de un territorio. Todo mapa tiene cuatro elementos fundamentales:
+            <strong>título</strong>
+            ,
+            <strong>leyenda</strong>
+            ,
+            <strong>escala</strong>
+            y
+            <strong>rosa de los vientos</strong>
+            (indicador de orientación).
+          </p>
+
+          <h3>Coordenadas geográficas: latitud y longitud</h3>
+          <p>Para localizar cualquier punto del planeta usamos un sistema de coordenadas basado en dos tipos de líneas imaginarias:</p>
+
+          <div class="cards">
+            <div class="card water">
+              <h5>Paralelos (líneas horizontales)</h5>
+              <p>
+                Miden la
+                <strong>latitud</strong>
+                : distancia al norte o sur del
+                <span class="term">Ecuador</span>
+                (paralelo 0°). Van de 0° a 90° Norte o Sur.
+              </p>
+              <ul>
+                <li>Ecuador: 0°</li>
+                <li>Trópico de Cáncer: 23.5° N</li>
+                <li>Trópico de Capricornio: 23.5° S</li>
+                <li>Círculo Polar Ártico: 66.5° N</li>
+                <li>Polo Norte: 90° N</li>
+              </ul>
+            </div>
+            <div class="card land">
+              <h5>Meridianos (líneas verticales)</h5>
+              <p>
+                Miden la
+                <strong>longitud</strong>
+                : distancia al este u oeste del
+                <span class="term">Meridiano de Greenwich</span>
+                (meridiano 0°). Van de 0° a 180° Este u Oeste.
+              </p>
+              <ul>
+                <li>Greenwich: 0°</li>
+                <li>Meridiano opuesto: 180°</li>
+                <li>Chicago: aproximadamente 87° Oeste</li>
+                <li>La Habana: aproximadamente 82° Oeste</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coord-diagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280" role="img" aria-label="Diagrama de coordenadas geográficas">
+              <!-- Círculo del globo -->
+              <circle cx="200" cy="140" r="120" fill="#eaf2fb" stroke="#1e5aa6" stroke-width="2" />
+              <!-- Ecuador -->
+              <line x1="80" y1="140" x2="320" y2="140" stroke="#a63d1e" stroke-width="2" />
+              <text x="325" y="144" font-family="Georgia" font-size="12" fill="#a63d1e" font-weight="700">Ecuador 0°</text>
+              <!-- Trópicos -->
+              <path d="M 95 100 Q 200 105 305 100" fill="none" stroke="#8a5a00" stroke-width="1" stroke-dasharray="4,3" />
+              <text x="310" y="103" font-family="Georgia" font-size="10" fill="#8a5a00">T. Cáncer 23.5°N</text>
+              <path d="M 95 180 Q 200 175 305 180" fill="none" stroke="#8a5a00" stroke-width="1" stroke-dasharray="4,3" />
+              <text x="310" y="183" font-family="Georgia" font-size="10" fill="#8a5a00">T. Capricornio 23.5°S</text>
+              <!-- Meridiano de Greenwich -->
+              <line x1="200" y1="20" x2="200" y2="260" stroke="#0f7a5c" stroke-width="2" />
+              <text x="205" y="20" font-family="Georgia" font-size="11" fill="#0f7a5c" font-weight="700">Greenwich 0°</text>
+              <!-- Polos -->
+              <circle cx="200" cy="20" r="4" fill="#1a1a1a" />
+              <text x="208" y="34" font-family="Georgia" font-size="10" fill="#1a1a1a">Polo N 90°</text>
+              <circle cx="200" cy="260" r="4" fill="#1a1a1a" />
+              <text x="208" y="258" font-family="Georgia" font-size="10" fill="#1a1a1a">Polo S 90°</text>
+              <!-- Punto ejemplo Chicago (42°N, 87°O) — corregido -->
+              <circle cx="142" cy="84" r="5" fill="#a63d1e" />
+              <text x="80" y="76" font-family="Georgia" font-size="11" fill="#a63d1e" font-weight="700">Chicago</text>
+              <text x="65" y="66" font-family="Georgia" font-size="9" fill="#4a4a4a">42°N, 87°O</text>
+            </svg>
+            <div class="cd-caption">Diagrama simplificado: Chicago se ubica a 42° de latitud Norte y 87° de longitud Oeste.</div>
+          </div>
+
+          <h3>Proyecciones cartográficas</h3>
+          <p>
+            La Tierra es (casi) esférica, pero los mapas son planos. Convertir una esfera en un plano
+            <strong>siempre implica alguna distorsión</strong>
+            . Las tres proyecciones más usadas son:
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Proyección</th>
+                <th>Característica</th>
+                <th>Uso común</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Mercator</strong>
+                  (1569)
+                </td>
+                <td>
+                  Conserva formas y direcciones pero
+                  <em>exagera el tamaño</em>
+                  cerca de los polos. Groenlandia parece del tamaño de África, cuando es 14 veces más pequeña.
+                </td>
+                <td>Navegación marítima, Google Maps.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Peters</strong>
+                  (1974)
+                </td>
+                <td>Conserva áreas reales pero distorsiona formas. África se ve del tamaño real.</td>
+                <td>Educación, enfoque en equidad geográfica.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Robinson</strong>
+                  (1963)
+                </td>
+                <td>Solución de compromiso: distorsiona poco todo (formas, áreas, distancias).</td>
+                <td>Mapas mundiales en libros de texto.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Escala de un mapa</h3>
+          <p>
+            La
+            <span class="term">escala</span>
+            indica la relación entre la distancia en el mapa y la distancia real en el terreno. Por ejemplo, una escala de
+            <strong>1:100 000</strong>
+            significa que 1 centímetro en el mapa = 100 000 cm = 1 km en la realidad.
+          </p>
+
+          <ul class="plain">
+            <li>
+              <strong>Escala grande</strong>
+              (ej. 1:10 000): muestra mucho detalle de una zona pequeña (plano de un barrio).
+            </li>
+            <li>
+              <strong>Escala pequeña</strong>
+              (ej. 1:50 000 000): cubre mucho territorio con poco detalle (mapa mundial).
+            </li>
+          </ul>
+
+          <h3>Tipos de mapas</h3>
+          <div class="cards">
+            <div class="card human">
+              <h5>🗳️ Mapa político</h5>
+              <p>Muestra fronteras, países, ciudades, capitales. Es el más común en libros de texto.</p>
+            </div>
+            <div class="card land">
+              <h5>⛰️ Mapa físico</h5>
+              <p>Muestra relieve: montañas, ríos, llanuras, elevaciones. Usa colores (verde para llanuras, marrón para montañas).</p>
+            </div>
+            <div class="card climate">
+              <h5>🌦️ Mapa climático</h5>
+              <p>Muestra zonas climáticas, temperaturas promedio, precipitación.</p>
+            </div>
+            <div class="card bio">
+              <h5>📊 Mapa temático</h5>
+              <p>Muestra información específica: densidad poblacional, idiomas, religiones, producción económica.</p>
+            </div>
+          </div>
+
+          <div class="callout warn">
+            <strong>Trampa frecuente del GED:</strong>
+            cuando te muestren un mapa, primero lee el
+            <strong>título</strong>
+            (qué representa el mapa) y después la
+            <strong>leyenda</strong>
+            (qué significan los colores y símbolos). Muchos estudiantes se lanzan a interpretar sin leer estos elementos y terminan equivocándose.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 3 — Planeta Tierra
+     ============================================================ -->
+      <details class="accordion" id="s3">
+        <summary>
+          <span class="sec-num">3</span>
+          <span class="sec-ic">🌎</span>
+          Características del planeta Tierra
+        </summary>
+        <div class="body">
+          <p>
+            La Tierra es un planeta rocoso con una
+            <span class="term">forma esferoidal ligeramente achatada en los polos</span>
+            (técnicamente, un «geoide»). Conocer su estructura y sus movimientos explica muchos fenómenos geográficos cotidianos.
+          </p>
+
+          <h3>Estructura interna de la Tierra</h3>
+
+          <div class="cards">
+            <div class="card land">
+              <h5>🪨 Corteza</h5>
+              <p>
+                Capa externa y más delgada (5–70 km de profundidad). Sobre ella viven los seres humanos. Se divide en
+                <em>placas tectónicas</em>
+                que se mueven lentamente.
+              </p>
+            </div>
+            <div class="card climate">
+              <h5>🔥 Manto</h5>
+              <p>Capa intermedia (desde 70 hasta 2 900 km de profundidad). Roca semifundida que se mueve muy lentamente y causa los terremotos y erupciones.</p>
+            </div>
+            <div class="card human">
+              <h5>⚙️ Núcleo</h5>
+              <p>
+                Parte central (desde 2 900 hasta 6 371 km de profundidad, el centro de la Tierra). Núcleo externo líquido (hierro y níquel fundidos, genera el campo magnético) y núcleo interno sólido.
+              </p>
+            </div>
+          </div>
+
+          <div class="image-box">
+            <div class="img-label">Imagen: Estructura interna de la Tierra</div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Earth-crust-cutaway-spanish.svg/1920px-Earth-crust-cutaway-spanish.svg.png"
+              alt="Diagrama de las capas internas de la Tierra (corteza, manto, núcleo)." />
+            <div class="img-caption">Diagrama de las capas internas de la Tierra. Wikipedia (dominio público).</div>
+          </div>
+
+          <h3>Los dos movimientos principales</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Movimiento</th>
+                <th>Duración</th>
+                <th>Consecuencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Rotación</strong>
+                  <br />
+                  (gira sobre su eje)
+                </td>
+                <td>24 horas (un día)</td>
+                <td>
+                  Produce el
+                  <strong>día y la noche</strong>
+                  .
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Traslación</strong>
+                  <br />
+                  (gira alrededor del Sol)
+                </td>
+                <td>365.25 días (un año)</td>
+                <td>
+                  Produce las
+                  <strong>estaciones del año</strong>
+                  , combinado con la inclinación del eje.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>La inclinación del eje: 23.5°</h3>
+          <p>
+            El eje de la Tierra no está perfectamente vertical: está inclinado
+            <strong>23.5°</strong>
+            . Esta inclinación,
+            <em>combinada</em>
+            con la traslación, es lo que causa las estaciones del año. No es solo que la Tierra se aleje del Sol (de hecho, en enero estamos MÁS cerca del Sol, aunque en el hemisferio norte sea
+            invierno).
+          </p>
+
+          <div class="callout">
+            <strong>Por qué hay estaciones opuestas en hemisferios distintos:</strong>
+            cuando el hemisferio Norte está inclinado hacia el Sol (junio), allí es verano y en el hemisferio Sur es invierno. Seis meses después (diciembre), los roles se invierten. Por eso Navidad
+            en Chicago es con nieve, pero en Buenos Aires es con calor.
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Las estaciones y el movimiento de traslación</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ibKRILd0gaI"
+                title="Estaciones y traslación"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Placas tectónicas</h3>
+          <p>
+            La corteza terrestre está dividida en grandes placas que flotan sobre el manto y se mueven unos centímetros por año. Los bordes entre placas son donde ocurren la mayoría de los
+            <strong>terremotos</strong>
+            y
+            <strong>volcanes</strong>
+            .
+          </p>
+          <p>
+            El llamado
+            <strong>Cinturón de Fuego del Pacífico</strong>
+            es precisamente el borde de varias placas alrededor del océano Pacífico, y concentra aproximadamente el 75% de los volcanes activos y el 90% de los terremotos del mundo (Japón, Chile,
+            California, Alaska, Filipinas).
+          </p>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 4 — Entorno físico
+     ============================================================ -->
+      <details class="accordion" id="s4">
+        <summary>
+          <span class="sec-num">4</span>
+          <span class="sec-ic">🏔️</span>
+          El entorno físico
+        </summary>
+        <div class="body">
+          <p>
+            El
+            <span class="term">entorno físico</span>
+            comprende todos los elementos naturales de la Tierra: el relieve, el agua, los suelos, los biomas. Estos elementos interactúan constantemente y crean los diversos paisajes que vemos en el
+            planeta.
+          </p>
+
+          <h3>Relieve: las formas del terreno</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Forma del relieve</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Montaña</strong></td>
+                <td>Elevación natural de gran altura (más de 700 m).</td>
+                <td>Rocosas (EE. UU.), Andes, Alpes, Himalaya.</td>
+              </tr>
+              <tr>
+                <td><strong>Meseta</strong></td>
+                <td>Terreno elevado pero plano.</td>
+                <td>Meseta del Colorado, Altiplano boliviano.</td>
+              </tr>
+              <tr>
+                <td><strong>Llanura</strong></td>
+                <td>Terreno plano y de baja altura.</td>
+                <td>Great Plains (Medio Oeste de EE. UU.), Pampa argentina.</td>
+              </tr>
+              <tr>
+                <td><strong>Valle</strong></td>
+                <td>Depresión entre montañas, típicamente con un río.</td>
+                <td>Valle del Mississippi, Valle de Napa.</td>
+              </tr>
+              <tr>
+                <td><strong>Desierto</strong></td>
+                <td>Región con muy pocas precipitaciones.</td>
+                <td>Mojave (California), Sahara, Atacama.</td>
+              </tr>
+              <tr>
+                <td><strong>Costa</strong></td>
+                <td>Zona donde la tierra se encuentra con el mar.</td>
+                <td>Costa Este y Costa Oeste de EE. UU.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Hidrografía: el agua en el planeta</h3>
+
+          <div class="cards">
+            <div class="card water">
+              <h5>🌊 Océanos</h5>
+              <p>
+                Cinco océanos cubren aproximadamente el 71% de la superficie terrestre:
+                <strong>Pacífico</strong>
+                (el mayor),
+                <strong>Atlántico</strong>
+                ,
+                <strong>Índico</strong>
+                ,
+                <strong>Ártico</strong>
+                y
+                <strong>Antártico</strong>
+                .
+              </p>
+            </div>
+            <div class="card water">
+              <h5>🏞️ Ríos</h5>
+              <p>
+                Corrientes de agua dulce que fluyen a océanos, lagos u otros ríos. Los más largos del mundo:
+                <strong>Nilo</strong>
+                (África),
+                <strong>Amazonas</strong>
+                (Sudamérica),
+                <strong>Mississippi-Missouri</strong>
+                (EE. UU.).
+              </p>
+            </div>
+            <div class="card water">
+              <h5>🏔️ Lagos</h5>
+              <p>
+                Masas de agua encerradas en tierra. Los
+                <strong>Grandes Lagos</strong>
+                en la frontera EE. UU./Canadá (Superior, Michigan, Huron, Erie, Ontario) contienen ~20% del agua dulce superficial del mundo.
+              </p>
+            </div>
+            <div class="card water">
+              <h5>🧊 Glaciares</h5>
+              <p>Grandes masas de hielo. Contienen ~69% del agua dulce del planeta. Se concentran en Groenlandia y Antártida.</p>
+            </div>
+          </div>
+
+          <h3>Biomas: grandes comunidades de vida</h3>
+          <p>
+            Un
+            <span class="term">bioma</span>
+            es una gran región con clima, vegetación y fauna característicos. Los principales del planeta son:
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Bioma</th>
+                <th>Clima</th>
+                <th>Ubicación típica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tundra</strong></td>
+                <td>Muy frío, poca precipitación</td>
+                <td>Alaska, Norte de Canadá, Siberia</td>
+              </tr>
+              <tr>
+                <td><strong>Taiga (bosque boreal)</strong></td>
+                <td>Frío, inviernos largos</td>
+                <td>Canadá, Rusia, Escandinavia</td>
+              </tr>
+              <tr>
+                <td><strong>Bosque templado</strong></td>
+                <td>Estaciones marcadas</td>
+                <td>Este de EE. UU., Europa Occidental</td>
+              </tr>
+              <tr>
+                <td><strong>Pradera</strong></td>
+                <td>Semiárido, estacional</td>
+                <td>Great Plains (EE. UU.), Pampa argentina</td>
+              </tr>
+              <tr>
+                <td><strong>Desierto</strong></td>
+                <td>Muy seco, extremos de T°</td>
+                <td>Sahara, Arabia, Mojave</td>
+              </tr>
+              <tr>
+                <td><strong>Selva tropical</strong></td>
+                <td>Cálido y húmedo todo el año</td>
+                <td>Amazonas, Congo, sudeste asiático</td>
+              </tr>
+              <tr>
+                <td><strong>Sabana</strong></td>
+                <td>Cálido, estacional</td>
+                <td>África subsahariana, norte de Brasil</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="image-box">
+            <div class="img-label">Diagrama: Los grandes biomas por latitud</div>
+            <svg class="inline-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Bandas de biomas terrestres según latitud">
+              <!-- Fondo -->
+              <rect x="0" y="0" width="720" height="340" fill="#ffffff" />
+              <!-- Marco con latitudes (de 90°N a 90°S) -->
+              <rect x="90" y="30" width="560" height="280" fill="none" stroke="#b0b0b0" stroke-width="1" />
+
+              <!-- Bandas de biomas (simétricas N/S) -->
+              <!-- Polo N: hielo/tundra -->
+              <rect x="90" y="30" width="560" height="26" fill="#e8eef4" />
+              <!-- Tundra -->
+              <rect x="90" y="56" width="560" height="22" fill="#c9d7c0" />
+              <!-- Taiga -->
+              <rect x="90" y="78" width="560" height="30" fill="#3d6b3d" />
+              <!-- Bosque templado -->
+              <rect x="90" y="108" width="560" height="26" fill="#6ba64e" />
+              <!-- Pradera/Desierto subtropical N -->
+              <rect x="90" y="134" width="560" height="22" fill="#d4c28a" />
+              <!-- Sabana N -->
+              <rect x="90" y="156" width="560" height="16" fill="#c79a4e" />
+              <!-- Selva tropical (ecuador) -->
+              <rect x="90" y="172" width="560" height="22" fill="#0f7a5c" />
+              <!-- Sabana S -->
+              <rect x="90" y="194" width="560" height="16" fill="#c79a4e" />
+              <!-- Desierto S -->
+              <rect x="90" y="210" width="560" height="22" fill="#d4c28a" />
+              <!-- Bosque templado S -->
+              <rect x="90" y="232" width="560" height="24" fill="#6ba64e" />
+              <!-- Taiga S (poca) -->
+              <rect x="90" y="256" width="560" height="14" fill="#3d6b3d" />
+              <!-- Tundra S -->
+              <rect x="90" y="270" width="560" height="16" fill="#c9d7c0" />
+              <!-- Antártida -->
+              <rect x="90" y="286" width="560" height="24" fill="#e8eef4" />
+
+              <!-- Línea del ecuador -->
+              <line x1="85" y1="183" x2="655" y2="183" stroke="#a63d1e" stroke-width="2" stroke-dasharray="6,3" />
+
+              <!-- Etiquetas de latitud (izquierda) -->
+              <text x="82" y="34" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">90°N</text>
+              <text x="82" y="81" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">66°N</text>
+              <text x="82" y="136" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">30°N</text>
+              <text x="82" y="174" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">23°N</text>
+              <text x="82" y="187" text-anchor="end" font-family="Georgia" font-size="11" fill="#a63d1e" font-weight="700">0°</text>
+              <text x="82" y="213" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">23°S</text>
+              <text x="82" y="258" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">30°S</text>
+              <text x="82" y="290" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">66°S</text>
+              <text x="82" y="312" text-anchor="end" font-family="Georgia" font-size="10" fill="#4a4a4a">90°S</text>
+
+              <!-- Etiquetas de biomas (centradas en cada banda, derecha) -->
+              <text x="370" y="47" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a4a4a" font-weight="700">Hielo polar</text>
+              <text x="370" y="71" text-anchor="middle" font-family="Arial" font-size="11" fill="#2a3a2a" font-weight="700">Tundra</text>
+              <text x="370" y="97" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff" font-weight="700">Taiga (bosque boreal)</text>
+              <text x="370" y="125" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff" font-weight="700">Bosque templado</text>
+              <text x="370" y="149" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a3a1a" font-weight="700">Desierto / Pradera (subtropical)</text>
+              <text x="370" y="168" text-anchor="middle" font-family="Arial" font-size="10" fill="#ffffff" font-weight="700">Sabana</text>
+              <text x="370" y="187" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff" font-weight="700">Selva tropical</text>
+              <text x="370" y="206" text-anchor="middle" font-family="Arial" font-size="10" fill="#ffffff" font-weight="700">Sabana</text>
+              <text x="370" y="225" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a3a1a" font-weight="700">Desierto (subtropical)</text>
+              <text x="370" y="248" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff" font-weight="700">Bosque templado</text>
+              <text x="370" y="298" text-anchor="middle" font-family="Arial" font-size="11" fill="#2a3a2a" font-weight="700">Tundra</text>
+              <text x="370" y="305" text-anchor="middle" font-family="Arial" font-size="10" fill="#4a4a4a" font-weight="700"></text>
+
+              <!-- Título y ecuador -->
+              <text x="370" y="20" text-anchor="middle" font-family="Georgia" font-size="13" fill="#1a1a1a" font-weight="700">Distribución de biomas por latitud</text>
+              <text x="660" y="187" font-family="Georgia" font-size="10" fill="#a63d1e" font-weight="700">Ecuador</text>
+              <text x="660" y="334" font-family="Arial" font-size="9" fill="#7a7a7a">(esquema simplificado)</text>
+            </svg>
+            <div class="img-caption">La latitud es el factor más importante que determina qué bioma encontramos en cada región. Esquema simplificado.</div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Definición y tipos de ecosistemas</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/3LeeVif_qSQ"
+                title="Tipos de ecosistemas"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con US History:</strong>
+            la geografía física de EE. UU. moldeó su historia. Las Apalaches contuvieron la expansión colonial hasta ~1750. Las Great Plains, con suelos fértiles pero secos, requerían riego y
+            originaron el Dust Bowl (1930s). El Mississippi fue la columna vertebral del comercio interior del siglo XIX.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 5 — Clima y ecosistemas
+     ============================================================ -->
+      <details class="accordion" id="s5">
+        <summary>
+          <span class="sec-num">5</span>
+          <span class="sec-ic">🌦️</span>
+          Clima y ecosistemas
+        </summary>
+        <div class="body">
+          <p>
+            <strong>Tiempo ≠ clima.</strong>
+            Es una distinción clave del GED:
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Concepto</th>
+                <th>Escala temporal</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tiempo atmosférico</strong></td>
+                <td>Horas o días</td>
+                <td>«Hoy está lloviendo en Chicago.»</td>
+              </tr>
+              <tr>
+                <td><strong>Clima</strong></td>
+                <td>Años y décadas (patrones promedio)</td>
+                <td>«Chicago tiene clima continental con inviernos muy fríos y veranos cálidos.»</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Los factores del clima</h3>
+          <p>El clima de un lugar depende de varios factores que interactúan:</p>
+
+          <div class="cards">
+            <div class="card climate">
+              <h5>🌐 Latitud</h5>
+              <p>A mayor latitud (más cerca de los polos), más frío. La latitud es el factor más importante.</p>
+            </div>
+            <div class="card climate">
+              <h5>⛰️ Altitud</h5>
+              <p>A mayor altura, menor temperatura. Por eso hay nieve en las cumbres de los Andes incluso en el ecuador.</p>
+            </div>
+            <div class="card climate">
+              <h5>🌊 Cercanía al mar</h5>
+              <p>El océano modera las temperaturas: veranos menos calurosos e inviernos menos fríos cerca de la costa.</p>
+            </div>
+            <div class="card climate">
+              <h5>💨 Vientos y corrientes oceánicas</h5>
+              <p>Corrientes cálidas (como la del Golfo) suben las temperaturas costeras; corrientes frías las bajan.</p>
+            </div>
+          </div>
+
+          <h3>Las grandes zonas climáticas</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Zona</th>
+                <th>Latitudes</th>
+                <th>Características</th>
+                <th>Ejemplos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tropical</strong></td>
+                <td>0° a 23.5° (N y S)</td>
+                <td>Cálido todo el año; lluvias abundantes.</td>
+                <td>Amazonas, África central, sudeste asiático.</td>
+              </tr>
+              <tr>
+                <td><strong>Subtropical</strong></td>
+                <td>23.5° a 35°</td>
+                <td>Veranos calurosos; inviernos suaves; puede haber desiertos.</td>
+                <td>Sur de EE. UU. (Florida), norte de México.</td>
+              </tr>
+              <tr>
+                <td><strong>Templado</strong></td>
+                <td>35° a 60°</td>
+                <td>Cuatro estaciones marcadas.</td>
+                <td>Mayor parte de EE. UU., Europa, China oriental.</td>
+              </tr>
+              <tr>
+                <td><strong>Continental</strong></td>
+                <td>35° a 60° (interior)</td>
+                <td>Inviernos muy fríos, veranos cálidos.</td>
+                <td>Chicago, Moscú, Minneapolis.</td>
+              </tr>
+              <tr>
+                <td><strong>Polar</strong></td>
+                <td>60° a 90°</td>
+                <td>Fríos extremos todo el año.</td>
+                <td>Alaska norte, Canadá norte, Siberia, Antártida.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="image-box">
+            <div class="img-label">Imagen: Temperatura media anual en la Tierra</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Annual_Average_Temperature_Map.jpg" alt="Mapa mundial con zonas de temperatura media anual, en gradación de colores." />
+            <div class="img-caption">Temperatura media anual. Wikipedia (dominio público).</div>
+          </div>
+
+          <h3>
+            Un
+            <span class="term">ecosistema</span>
+            es...
+          </h3>
+          <p>
+            ...una comunidad de seres vivos (plantas, animales, microorganismos) que interactúan entre sí y con su ambiente físico (suelo, agua, aire, luz solar). Todo ecosistema tiene dos
+            componentes:
+          </p>
+
+          <ul class="plain">
+            <li>
+              <strong>Bióticos (vivos):</strong>
+              plantas, animales, hongos, bacterias.
+            </li>
+            <li>
+              <strong>Abióticos (no vivos):</strong>
+              suelo, agua, temperatura, luz, nutrientes minerales.
+            </li>
+          </ul>
+
+          <div class="video-box">
+            <div class="video-label">Video: La vida en la selva tropical</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/qvj5eWBdgCA"
+                title="La vida en la selva tropical"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 6 — Población y migración
+     ============================================================ -->
+      <details class="accordion" id="s6">
+        <summary>
+          <span class="sec-num">6</span>
+          <span class="sec-ic">👥</span>
+          Población y migración
+        </summary>
+        <div class="body">
+          <p>
+            La
+            <span class="term">población</span>
+            es el conjunto de personas que habita un territorio. La geografía de la población estudia cómo se distribuyen los seres humanos en el planeta, a qué ritmo crecen y por qué se mueven.
+          </p>
+
+          <h3>Conceptos básicos</h3>
+
+          <div class="cards">
+            <div class="card human">
+              <h5>📊 Densidad de población</h5>
+              <p>Número de habitantes por kilómetro cuadrado. EE. UU. tiene ~37 hab/km², bajo. Japón ~340, alto. Groenlandia ~0.15, muy bajo.</p>
+            </div>
+            <div class="card human">
+              <h5>📈 Tasa de crecimiento</h5>
+              <p>Diferencia entre nacimientos y muertes, más inmigración y menos emigración. Países en desarrollo crecen más rápido.</p>
+            </div>
+            <div class="card human">
+              <h5>🌆 Urbanización</h5>
+              <p>Proceso por el cual aumenta el porcentaje que vive en ciudades. En 2025 más del 56% de la población mundial vive en ciudades; en EE. UU. supera el 83%.</p>
+            </div>
+            <div class="card human">
+              <h5>👴 Pirámide poblacional</h5>
+              <p>Gráfico que muestra la distribución por edad y sexo. En países en desarrollo tiene base ancha (muchos jóvenes); en países desarrollados es más cilíndrica o invertida.</p>
+            </div>
+          </div>
+
+          <h3>Factores que atraen o expulsan población</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Factores de ATRACCIÓN (pull)</th>
+                <th>Factores de EXPULSIÓN (push)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Oportunidades de empleo</td>
+                <td>Desempleo, pobreza</td>
+              </tr>
+              <tr>
+                <td>Mejores salarios</td>
+                <td>Salarios bajos</td>
+              </tr>
+              <tr>
+                <td>Educación y salud</td>
+                <td>Falta de servicios básicos</td>
+              </tr>
+              <tr>
+                <td>Estabilidad política</td>
+                <td>Guerras, conflictos, persecución</td>
+              </tr>
+              <tr>
+                <td>Clima favorable</td>
+                <td>Sequías, terremotos, huracanes</td>
+              </tr>
+              <tr>
+                <td>Reunificación familiar</td>
+                <td>Falta de libertades</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="image-box">
+            <div class="img-label">Imagen: Densidad de la población mundial</div>
+            <img src="https://portalacademico.cch.unam.mx/sites/default/files/densidad-poblacion-2015.jpg" alt="Gráfico de distribución de la población mundial por continente." />
+            <div class="img-caption">Países del mundo por densidad de población (2026). Portal Académico CCH-UNAM (dominio público).</div>
+          </div>
+
+          <h3>Migraciones: voluntarias y forzadas</h3>
+
+          <div class="cards">
+            <div class="card human">
+              <h5>🌟 Migración voluntaria</h5>
+              <p>Quienes se mudan por decisión propia buscando mejores oportunidades. Ejemplo: inmigrantes que vienen a EE. UU. por trabajo.</p>
+            </div>
+            <div class="card human">
+              <h5>🚨 Migración forzada</h5>
+              <p>
+                Personas obligadas a moverse por guerra, persecución o desastre. Incluye a
+                <strong>refugiados</strong>
+                (cruzan fronteras internacionales) y
+                <strong>desplazados internos</strong>
+                (se mueven dentro de su país).
+              </p>
+            </div>
+          </div>
+
+          <h3>Tres grandes migraciones en la historia de EE. UU.</h3>
+
+          <div class="hist-doc">
+            <div class="doc-header">Ola 1 · Gran inmigración europea (1880–1920)</div>
+            <div class="doc-text">
+              <p>
+                Aproximadamente
+                <strong>25 millones</strong>
+                de europeos llegaron a EE. UU. en esas cuatro décadas, principalmente del sur y este del continente: italianos, polacos, judíos, griegos, eslavos. La mayoría procesó su entrada en
+                <strong>Isla Ellis</strong>
+                (Nueva York).
+              </p>
+            </div>
+          </div>
+
+          <div class="hist-doc">
+            <div class="doc-header">Ola 2 · The Great Migration (1916–1970)</div>
+            <div class="doc-text">
+              <p>
+                Aproximadamente
+                <strong>6 millones</strong>
+                de afroamericanos se trasladaron del Sur rural a las ciudades del Norte, Medio Oeste y Oeste. Huían del sistema Jim Crow y buscaban trabajos industriales en Chicago, Detroit, Nueva
+                York, Los Ángeles. Transformó la demografía y la cultura estadounidenses.
+              </p>
+            </div>
+          </div>
+
+          <div class="hist-doc">
+            <div class="doc-header">Ola 3 · Inmigración hispana y asiática (1965–presente)</div>
+            <div class="doc-text">
+              <p>
+                Tras la Ley de Inmigración de 1965, que eliminó las cuotas nacionales, EE. UU. recibió oleadas masivas de inmigrantes latinoamericanos (mexicanos, cubanos, dominicanos,
+                centroamericanos) y asiáticos (chinos, vietnamitas, filipinos, indios). Hoy los hispanos son el grupo minoritario más grande del país.
+              </p>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Las migraciones en el mundo</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/695kY4Prqs8"
+                title="Las migraciones en el mundo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con US History:</strong>
+            las tres grandes olas migratorias son parte esencial de la historia estadounidense (períodos 5, 6 y 7 de la guía de US History). Cada una tuvo factores de expulsión y atracción específicos
+            — buen ejemplo para aplicar causa-efecto (SSP.5).
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 7 — Regiones y culturas
+     ============================================================ -->
+      <details class="accordion" id="s7">
+        <summary>
+          <span class="sec-num">7</span>
+          <span class="sec-ic">🌐</span>
+          Regiones y culturas
+        </summary>
+        <div class="body">
+          <p>
+            Una
+            <span class="term">región</span>
+            es un área del planeta con
+            <strong>características similares</strong>
+            que la distinguen de otras. Las regiones pueden definirse por:
+          </p>
+
+          <ul class="plain">
+            <li>
+              <strong>Criterios físicos:</strong>
+              clima, relieve, hidrografía (la región andina, el sur de Europa, el trópico húmedo).
+            </li>
+            <li>
+              <strong>Criterios culturales:</strong>
+              idioma, religión, tradiciones (Hispanoamérica, el mundo árabe, Indochina).
+            </li>
+            <li>
+              <strong>Criterios económicos:</strong>
+              nivel de desarrollo, actividad principal (Europa Occidental desarrollada, África subsahariana, zonas agrícolas, zonas industriales).
+            </li>
+            <li>
+              <strong>Criterios políticos:</strong>
+              países, estados, organizaciones (Unión Europea, OTAN, MERCOSUR).
+            </li>
+          </ul>
+
+          <h3>Las cuatro grandes regiones de Estados Unidos</h3>
+          <p>El Censo de EE. UU. divide oficialmente al país en cuatro regiones. Cada una tiene su propia geografía, historia y personalidad cultural.</p>
+
+          <div class="us-regions">
+            <div class="us-region ne">
+              <h5>Noreste (Northeast)</h5>
+              <div class="r-meta">9 estados · 58 millones hab.</div>
+              <ul>
+                <li>Incluye Nueva Inglaterra (Maine, Massachusetts...) y el Atlántico Medio (NY, NJ, PA...)</li>
+                <li>Cuna de la nación: 13 colonias originales</li>
+                <li>Principal centro financiero (NYC) y académico (Harvard, Yale, MIT)</li>
+                <li>Clima continental-húmedo; inviernos fríos con nieve</li>
+              </ul>
+            </div>
+            <div class="us-region s">
+              <h5>Sur (South)</h5>
+              <div class="r-meta">16 estados + DC · 128 millones hab.</div>
+              <ul>
+                <li>De Maryland y Virginia hasta Texas y Florida</li>
+                <li>Historia marcada por esclavitud, Guerra Civil y Jim Crow</li>
+                <li>Clima cálido; cultura distintiva: comida, música (blues, jazz, country), deportes</li>
+                <li>Hoy: rápido crecimiento económico y demográfico (Sun Belt)</li>
+              </ul>
+            </div>
+            <div class="us-region mw">
+              <h5>Medio Oeste (Midwest)</h5>
+              <div class="r-meta">12 estados · 69 millones hab.</div>
+              <ul>
+                <li>Corazón agrícola e industrial: Illinois, Ohio, Michigan, Wisconsin, Iowa...</li>
+                <li>Great Plains + Great Lakes</li>
+                <li>Chicago como gran centro regional</li>
+                <li>Reconocido como el «Cinturón del Maíz» (Corn Belt) y antiguo «Rust Belt» industrial</li>
+              </ul>
+            </div>
+            <div class="us-region w">
+              <h5>Oeste (West)</h5>
+              <div class="r-meta">13 estados · 79 millones hab.</div>
+              <ul>
+                <li>De las Rocosas al Pacífico</li>
+                <li>Geografía muy variada: desiertos, bosques, costa, montañas</li>
+                <li>California: 5.ª economía del mundo si fuera país</li>
+                <li>Silicon Valley, Hollywood, industria aeroespacial</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="image-box">
+            <div class="img-label">Diagrama: Grandes áreas culturales del mundo</div>
+            <svg class="inline-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Áreas culturales del mundo">
+              <rect x="0" y="0" width="720" height="380" fill="#ffffff" />
+              <text x="360" y="24" text-anchor="middle" font-family="Georgia" font-size="14" fill="#1a1a1a" font-weight="700">Grandes áreas culturales contemporáneas</text>
+
+              <!-- Seis tarjetas culturales -->
+              <!-- Occidente -->
+              <rect x="30" y="50" width="210" height="90" rx="6" fill="#eaf2fb" stroke="#1e5aa6" stroke-width="2" />
+              <text x="135" y="72" text-anchor="middle" font-family="Georgia" font-size="13" fill="#1e5aa6" font-weight="700">🏛️ Occidente</text>
+              <text x="135" y="92" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">Europa · Norteamérica · Oceanía</text>
+              <text x="135" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Raíces grecolatinas, cristianismo,</text>
+              <text x="135" y="121" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">lenguas indoeuropeas, democracias</text>
+              <text x="135" y="134" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">liberales.</text>
+
+              <!-- Hispanoamérica -->
+              <rect x="255" y="50" width="210" height="90" rx="6" fill="#fdf6e3" stroke="#8a5a00" stroke-width="2" />
+              <text x="360" y="72" text-anchor="middle" font-family="Georgia" font-size="13" fill="#8a5a00" font-weight="700">🌎 Hispanoamérica</text>
+              <text x="360" y="92" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">México · Centroamérica · Sudamérica</text>
+              <text x="360" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Fusión ibérica, indígena y africana.</text>
+              <text x="360" y="121" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Español · catolicismo · música,</text>
+              <text x="360" y="134" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">comida y literatura propias.</text>
+
+              <!-- Mundo árabe-islámico -->
+              <rect x="480" y="50" width="210" height="90" rx="6" fill="#e8f5ee" stroke="#0f7a5c" stroke-width="2" />
+              <text x="585" y="72" text-anchor="middle" font-family="Georgia" font-size="13" fill="#0f7a5c" font-weight="700">🕌 Mundo árabe-islámico</text>
+              <text x="585" y="92" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">Norte de África · Medio Oriente</text>
+              <text x="585" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Árabe, islam, caligrafía, arquitectura</text>
+              <text x="585" y="121" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">de mezquitas, tradición mercantil.</text>
+
+              <!-- África subsahariana -->
+              <rect x="30" y="160" width="210" height="90" rx="6" fill="#fbe9e7" stroke="#a63d1e" stroke-width="2" />
+              <text x="135" y="182" text-anchor="middle" font-family="Georgia" font-size="13" fill="#a63d1e" font-weight="700">🌍 África subsahariana</text>
+              <text x="135" y="202" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">África al sur del Sahara</text>
+              <text x="135" y="218" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Miles de lenguas y etnias, tradiciones</text>
+              <text x="135" y="231" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">orales, ritmos musicales, textiles</text>
+              <text x="135" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">distintivos.</text>
+
+              <!-- India-Sur de Asia -->
+              <rect x="255" y="160" width="210" height="90" rx="6" fill="#f3eaff" stroke="#5a2a8a" stroke-width="2" />
+              <text x="360" y="182" text-anchor="middle" font-family="Georgia" font-size="13" fill="#5a2a8a" font-weight="700">🪷 Sur de Asia</text>
+              <text x="360" y="202" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">India · Pakistán · Bangladés</text>
+              <text x="360" y="218" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Hinduismo, budismo, islam.</text>
+              <text x="360" y="231" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Cine (Bollywood), cocina especiada,</text>
+              <text x="360" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">textiles y danza.</text>
+
+              <!-- Asia oriental -->
+              <rect x="480" y="160" width="210" height="90" rx="6" fill="#fff7e6" stroke="#b8860b" stroke-width="2" />
+              <text x="585" y="182" text-anchor="middle" font-family="Georgia" font-size="13" fill="#b8860b" font-weight="700">🐉 Asia oriental</text>
+              <text x="585" y="202" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#4a4a4a">China · Japón · Corea · Vietnam</text>
+              <text x="585" y="218" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">Confucianismo, budismo, escritura</text>
+              <text x="585" y="231" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">de caracteres, gastronomía del arroz,</text>
+              <text x="585" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#7a7a7a">artes marciales.</text>
+
+              <!-- Nota de diversidad -->
+              <rect x="30" y="275" width="660" height="85" rx="6" fill="#fafafa" stroke="#e0e0e0" stroke-width="1" />
+              <text x="360" y="300" text-anchor="middle" font-family="Georgia" font-size="12" fill="#1a1a1a" font-weight="700">La cultura nace de la interacción territorio + historia</text>
+              <text x="360" y="320" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a4a4a">
+                El clima, el relieve y los recursos naturales moldean la dieta, la vivienda, la ropa y las tradiciones;
+              </text>
+              <text x="360" y="336" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a4a4a">
+                la historia (migraciones, conquistas, intercambios) hace el resto. Por eso ninguna cultura
+              </text>
+              <text x="360" y="352" text-anchor="middle" font-family="Arial" font-size="11" fill="#4a4a4a">es «pura»: todas son mezclas en movimiento permanente.</text>
+            </svg>
+            <div class="img-caption">Esquema de grandes áreas culturales del mundo contemporáneo. Clasificación simplificada con fines didácticos.</div>
+          </div>
+
+          <h3>Geografía + cultura: ejemplos concretos</h3>
+          <p>El territorio forma la cultura, y la cultura modifica el territorio. Algunos ejemplos:</p>
+
+          <ul class="plain">
+            <li>
+              <strong>Sociedades costeras</strong>
+              desarrollan tradiciones marítimas (pescado en la dieta, barcos, comercio).
+            </li>
+            <li>
+              <strong>Sociedades montañosas</strong>
+              (Perú andino, Tíbet) se adaptan a altitud: cuerpos distintos, cultivos adaptados, aislamiento cultural relativo.
+            </li>
+            <li>
+              <strong>Sociedades desérticas</strong>
+              (beduinos, tuaregs) desarrollan estrategias de supervivencia específicas: nomadismo, conservación del agua, arquitectura que protege del calor.
+            </li>
+            <li>
+              <strong>Sociedades de llanura</strong>
+              (praderas estadounidenses, pampa argentina) desarrollan ganadería extensiva y culturas asociadas (vaquero, gaucho).
+            </li>
+          </ul>
+
+          <div class="video-box">
+            <div class="video-label">Video: Un viaje cultural por el mundo</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/0ZmzwB0587Q"
+                title="Un viaje cultural por el mundo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 8 — Humanos y medio ambiente
+     ============================================================ -->
+      <details class="accordion" id="s8">
+        <summary>
+          <span class="sec-num">8</span>
+          <span class="sec-ic">🌍</span>
+          Humanos y medio ambiente
+        </summary>
+        <div class="body">
+          <p>
+            Las sociedades humanas han modificado el territorio desde los primeros asentamientos agrícolas hace unos 10 000 años. Pero desde la
+            <strong>Revolución Industrial</strong>
+            (siglo XIX), el impacto humano sobre el medio ambiente se ha multiplicado por órdenes de magnitud.
+          </p>
+
+          <h3>La huella humana en el paisaje</h3>
+
+          <div class="image-box">
+            <div class="img-label">Imagen: Huella urbana (Chicago, Illinois)</div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Downtown_Chicago_Illinois_Nov05_img_2641.jpg/1024px-Downtown_Chicago_Illinois_Nov05_img_2641.jpg"
+              alt="Vista aérea del centro de Chicago con rascacielos junto al lago Michigan." />
+            <div class="img-caption">Chicago: transformación completa del paisaje natural en ciudad.</div>
+          </div>
+
+          <h3>Principales problemas ambientales</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Problema</th>
+                <th>Causa</th>
+                <th>Consecuencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cambio climático</strong></td>
+                <td>Emisiones de gases de efecto invernadero (CO₂, metano) por quema de combustibles fósiles</td>
+                <td>Aumento de temperatura global, deshielo polar, sequías, huracanes más fuertes</td>
+              </tr>
+              <tr>
+                <td><strong>Deforestación</strong></td>
+                <td>Tala de bosques para agricultura, ganadería, madera</td>
+                <td>Pérdida de biodiversidad, menos absorción de CO₂, erosión</td>
+              </tr>
+              <tr>
+                <td><strong>Contaminación del aire</strong></td>
+                <td>Emisiones industriales y vehiculares</td>
+                <td>Enfermedades respiratorias, lluvia ácida</td>
+              </tr>
+              <tr>
+                <td><strong>Contaminación del agua</strong></td>
+                <td>Desechos industriales, agrícolas (pesticidas) y urbanos</td>
+                <td>Muerte de ecosistemas acuáticos, enfermedades</td>
+              </tr>
+              <tr>
+                <td><strong>Pérdida de biodiversidad</strong></td>
+                <td>Destrucción de hábitats, caza, especies invasoras</td>
+                <td>Extinción acelerada de especies</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>El efecto invernadero</h3>
+          <p>
+            El
+            <span class="term">efecto invernadero</span>
+            es un fenómeno
+            <strong>natural y necesario</strong>
+            : ciertos gases de la atmósfera (CO₂, vapor de agua, metano) retienen parte del calor solar, permitiendo la vida en la Tierra. Sin él, la temperatura promedio del planeta sería de −18 °C.
+          </p>
+          <p>
+            El problema es el
+            <strong>efecto invernadero intensificado</strong>
+            : desde la Revolución Industrial, los humanos hemos añadido enormes cantidades de CO₂ a la atmósfera (principalmente por combustibles fósiles), haciendo que el planeta retenga más calor
+            del necesario y se caliente.
+          </p>
+
+          <div class="image-box">
+            <div class="img-label">Imagen: El efecto invernadero</div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Efecto-invernadero-1-728.jpg"
+              alt="Infografía que explica el efecto invernadero: radiación solar atrapada por gases atmosféricos." />
+            <div class="img-caption">Infografía del efecto invernadero y cambio climático. Wikipedia.</div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Reforestación, cuidando el futuro</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/OSzXWZ8JSd8" title="Reforestación" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Sostenibilidad y soluciones</h3>
+          <p>
+            El
+            <span class="term">desarrollo sostenible</span>
+            es el modelo que busca
+            <strong>satisfacer las necesidades presentes sin comprometer la capacidad de las generaciones futuras de satisfacer las suyas</strong>
+            (definición de la ONU, 1987).
+          </p>
+
+          <div class="cards">
+            <div class="card bio">
+              <h5>☀️ Energías renovables</h5>
+              <p>Solar, eólica, hidroeléctrica, geotérmica. No se agotan y producen pocas emisiones.</p>
+            </div>
+            <div class="card bio">
+              <h5>♻️ Reciclaje y economía circular</h5>
+              <p>Reducir, reutilizar, reciclar. Convertir desechos en recursos en lugar de basura.</p>
+            </div>
+            <div class="card bio">
+              <h5>🌲 Reforestación</h5>
+              <p>Plantar árboles para recuperar bosques perdidos. Captura CO₂ y restaura hábitats.</p>
+            </div>
+            <div class="card bio">
+              <h5>🏙️ Ciudades sostenibles</h5>
+              <p>Transporte público, ciclovías, edificios eficientes, espacios verdes.</p>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Energías renovables para un planeta sano</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/E4ZoFhVPqwY" title="Energías renovables" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="callout good">
+            <strong>Mensaje central:</strong>
+            el medio ambiente y la economía no son enemigos. El desarrollo sostenible busca que ambos avancen juntos: no podemos sobrevivir a largo plazo sin un planeta sano, y no podemos sanar el
+            planeta sin un modelo económico que recompense las prácticas sostenibles.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     QUIZ
+     ============================================================ -->
+      <section class="quiz-wrap" id="quiz">
+        <h2>Quiz de autoverificación</h2>
+        <p class="quiz-intro">
+          14 preguntas sobre los conceptos clave de geografía, incluyendo interpretación de mapas, clima, población, migraciones y medio ambiente. Incluye preguntas aplicadas al contexto
+          estadounidense.
+        </p>
+
+        <div id="questions"></div>
+
+        <div class="quiz-actions">
+          <div>
+            <button class="btn" type="button" onclick="gradeQuiz()">Verificar respuestas</button>
+            <button class="btn secondary" type="button" onclick="resetQuiz()">Reiniciar</button>
+          </div>
+          <div class="score" id="scoreDisplay" style="display: none">
+            Puntaje:
+            <span class="num" id="scoreNum">0</span>
+            / 14
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     GLOSARIO
+     ============================================================ -->
+      <details class="accordion" id="glosario">
+        <summary>
+          <span class="sec-ic">📘</span>
+          Glosario de términos clave
+        </summary>
+        <div class="body">
+          <dl class="glos-grid">
+            <div class="glos-item">
+              <dt>Bioma</dt>
+              <dd>Gran región con clima, vegetación y fauna característicos (tundra, taiga, selva, etc.).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Cambio climático</dt>
+              <dd>Alteración de largo plazo del clima global causada por actividades humanas.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Clima</dt>
+              <dd>Condiciones atmosféricas promedio de una región a lo largo de años y décadas.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Densidad poblacional</dt>
+              <dd>Número de habitantes por kilómetro cuadrado.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Desarrollo sostenible</dt>
+              <dd>Modelo que satisface necesidades presentes sin comprometer las futuras.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Ecosistema</dt>
+              <dd>Comunidad de seres vivos interactuando con su ambiente físico.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Ecuador</dt>
+              <dd>Paralelo 0° que divide la Tierra en hemisferios Norte y Sur.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Efecto invernadero</dt>
+              <dd>Retención de calor solar por gases atmosféricos.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Entorno físico</dt>
+              <dd>Conjunto de elementos naturales de la Tierra: relieve, agua, suelos, clima y biomas.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Escala</dt>
+              <dd>Relación entre distancia en el mapa y distancia real.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Geografía</dt>
+              <dd>Ciencia que estudia la superficie terrestre y sus sociedades humanas.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Hemisferio</dt>
+              <dd>Cada una de las mitades en que se divide la Tierra por el ecuador (Norte/Sur) o por el meridiano de Greenwich (Este/Oeste).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Latitud</dt>
+              <dd>Distancia angular al Norte o Sur del Ecuador (0° a 90°).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Longitud</dt>
+              <dd>Distancia angular al Este u Oeste del Meridiano de Greenwich (0° a 180°).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Mapa</dt>
+              <dd>Representación simplificada y a escala de un territorio.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Meridiano de Greenwich</dt>
+              <dd>Línea vertical imaginaria (longitud 0°) que pasa por Greenwich, Inglaterra.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Migración</dt>
+              <dd>Movimiento de personas de un lugar a otro con intención de establecerse.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Placas tectónicas</dt>
+              <dd>Grandes fragmentos de la corteza terrestre que se mueven sobre el manto.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Población</dt>
+              <dd>Conjunto de personas que habita un territorio determinado.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Proyección cartográfica</dt>
+              <dd>Método para representar la superficie esférica de la Tierra en un plano.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Refugiado</dt>
+              <dd>Persona forzada a cruzar fronteras internacionales por guerra o persecución.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Región</dt>
+              <dd>Área con características similares (físicas, culturales, económicas o políticas).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Relieve</dt>
+              <dd>Conjunto de formas de la superficie terrestre (montañas, valles, llanuras).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Rotación</dt>
+              <dd>Movimiento de la Tierra sobre su eje (24 horas: día y noche).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Tiempo atmosférico</dt>
+              <dd>Condiciones atmosféricas instantáneas (horas o días).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Traslación</dt>
+              <dd>Movimiento de la Tierra alrededor del Sol (365 días: estaciones).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Urbanización</dt>
+              <dd>Proceso de crecimiento del porcentaje de población que vive en ciudades.</dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+      <div class="footer">
+        <p>
+          GEDparaHispanos.com · Elementos de la Geografía · v2.1
+          <br />
+          Correcciones v2.1: orden título/leyenda consistente; capas de la Tierra con profundidades claras; diagrama de coordenadas ajustado (Chicago 42°N, 87°O); biomas por latitud y áreas culturales
+          en SVG autónomo; glosario completo.
+          <br />
+          Videos insertados desde YouTube (canales educativos en español). Imágenes: Wikipedia Commons.
+          <br />
+          GED® es una marca registrada del American Council on Education (ACE), administrada por GED Testing Service LLC. Este material no está avalado por ACE ni por GED Testing Service.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     JAVASCRIPT — QUIZ
+     ============================================================ -->
+    <script>
+      const QUIZ = [
+        {
+          stem: '¿Cuál es la diferencia fundamental entre TIEMPO ATMOSFÉRICO y CLIMA?',
+          options: [
+            'No hay diferencia: son sinónimos.',
+            'El tiempo atmosférico es el estado instantáneo (horas o días); el clima es el patrón promedio a lo largo de años y décadas.',
+            'El clima es más frío que el tiempo.',
+            'El tiempo solo aplica en invierno; el clima en verano.'
+          ],
+          correct: 1,
+          feedback:
+            'El TIEMPO es lo que pasa hoy («está lloviendo en Chicago»); el CLIMA es el patrón promedio a largo plazo («Chicago tiene clima continental con inviernos fríos»). Esta distinción aparece a menudo en el GED.'
+        },
+        {
+          stem: 'Un mapa muestra que cierta ciudad está ubicada a «42° N, 87° O». ¿Qué significan esos dos números?',
+          options: [
+            'Altitud en metros y temperatura media.',
+            'Latitud (42° al norte del Ecuador) y longitud (87° al oeste del Meridiano de Greenwich).',
+            'Año de fundación y código postal.',
+            'Dos distancias en kilómetros.'
+          ],
+          correct: 1,
+          feedback:
+            'Son COORDENADAS GEOGRÁFICAS. La latitud (42° N) mide la distancia al norte del Ecuador; la longitud (87° O) mide la distancia al oeste del Meridiano de Greenwich. Estas coordenadas localizan a Chicago.'
+        },
+        {
+          stem: 'La proyección de Mercator (1569) tiene una distorsión bien conocida. ¿Cuál es?',
+          options: [
+            'Exagera el tamaño de los países cerca del Ecuador.',
+            'Hace que Australia parezca inexistente.',
+            'Exagera el tamaño de los países cerca de los polos: Groenlandia parece tan grande como África cuando en realidad es 14 veces más pequeña.',
+            'Convierte todos los países en círculos perfectos.'
+          ],
+          correct: 2,
+          feedback:
+            'La proyección de Mercator conserva formas y direcciones (útil para navegación marítima) pero EXAGERA el tamaño cerca de los polos. Groenlandia se ve enorme, pero en realidad es ~14 veces más pequeña que África.'
+        },
+        {
+          stem: '¿Cuál es la explicación principal de por qué hay ESTACIONES en la Tierra?',
+          options: [
+            'Porque la Tierra se aleja y acerca al Sol durante el año.',
+            'Porque el eje de la Tierra está inclinado 23.5°, combinado con el movimiento de traslación alrededor del Sol.',
+            'Porque la Luna cambia de posición.',
+            'Porque la temperatura del Sol varía cada 3 meses.'
+          ],
+          correct: 1,
+          feedback:
+            'La causa principal es la INCLINACIÓN del eje (23.5°) combinada con la traslación. De hecho, en enero la Tierra está MÁS CERCA del Sol, aunque en el hemisferio norte sea invierno. Lo importante no es la distancia, sino qué hemisferio está inclinado hacia el Sol.'
+        },
+        {
+          stem: 'Las Great Plains del centro de Estados Unidos son un ejemplo clásico del bioma...',
+          options: ['Tundra', 'Pradera (grassland)', 'Selva tropical', 'Desierto'],
+          correct: 1,
+          feedback:
+            'Las Great Plains son el ejemplo paradigmático del bioma de PRADERA: terreno semiárido, vegetación dominada por pastos, clima estacional. Su suelo fértil las convirtió en el principal cinturón agrícola (Corn Belt) de EE. UU.'
+        },
+        {
+          stem: 'Durante los años 1916–1970, aproximadamente 6 millones de afroamericanos se trasladaron del Sur rural al Norte, Medio Oeste y Oeste de Estados Unidos. ¿Qué migración es esta?',
+          options: ['La gran inmigración europea', 'La Great Migration (Gran Migración)', 'El Trail of Tears', 'El Dust Bowl'],
+          correct: 1,
+          feedback:
+            'La GREAT MIGRATION (1916–1970) fue una de las migraciones internas más grandes de la historia estadounidense. Los afroamericanos huían del sistema Jim Crow del Sur y buscaban trabajos industriales en Chicago, Detroit, Nueva York. Transformó la demografía y cultura del país.'
+        },
+        {
+          stem: '¿Cuál de los siguientes es un FACTOR DE EXPULSIÓN (push factor) típico de una migración?',
+          options: [
+            'Mejores salarios en el destino',
+            'Oportunidades educativas en el destino',
+            'Guerras, persecución política, desastres naturales en el lugar de origen',
+            'Clima agradable en el destino'
+          ],
+          correct: 2,
+          feedback:
+            'Los factores de EXPULSIÓN (push) empujan a la gente a salir de su lugar de origen: guerras, persecución, desempleo, sequías, desastres. Los factores de ATRACCIÓN (pull) son los que atraen hacia el destino: salarios, educación, libertad, clima agradable.'
+        },
+        {
+          stem: '¿Cuál es la CAUSA PRINCIPAL del aumento del efecto invernadero desde el siglo XIX?',
+          options: [
+            'Los volcanes han aumentado mucho su actividad.',
+            'La quema de combustibles fósiles (carbón, petróleo, gas) ha emitido enormes cantidades de CO₂ a la atmósfera.',
+            'Los animales producen demasiado metano naturalmente.',
+            'El Sol se ha acercado a la Tierra.'
+          ],
+          correct: 1,
+          feedback:
+            'La causa principal del EFECTO INVERNADERO INTENSIFICADO es la quema de combustibles fósiles (carbón, petróleo, gas) desde la Revolución Industrial. El efecto invernadero natural es necesario para la vida; el problema es su intensificación por actividad humana.'
+        },
+        {
+          stem: 'Las cuatro grandes regiones oficiales del Censo estadounidense son:',
+          options: ['Norte, Sur, Este y Oeste', 'Atlántico, Pacífico, Golfo y Ártico', 'Noreste, Sur, Medio Oeste (Midwest) y Oeste (West)', 'Nueva Inglaterra, Sun Belt, Rust Belt y Bible Belt'],
+          correct: 2,
+          feedback:
+            'Las cuatro regiones oficiales del Censo son: NORESTE (Northeast), SUR (South), MEDIO OESTE (Midwest) y OESTE (West). Otras divisiones como Sun Belt o Bible Belt son descripciones culturales no oficiales. Illinois pertenece al Midwest.'
+        },
+        {
+          stem: '¿En qué zona climática se ubica la mayor parte de Estados Unidos continental (excluyendo Alaska y Hawái)?',
+          options: ['Tropical', 'Polar', 'Templada (con variantes continental-húmeda en el interior y mediterránea en la costa oeste)', 'Ecuatorial'],
+          correct: 2,
+          feedback:
+            'La mayor parte de EE. UU. continental está en la zona TEMPLADA (entre 35° y 60° de latitud norte). Tiene variantes: continental-húmeda en el interior (Chicago), mediterránea en California costera, subtropical húmeda en el sureste (Florida).'
+        },
+        {
+          stem: 'El «Cinturón de Fuego del Pacífico» es conocido por concentrar aproximadamente el 90% de los terremotos mundiales y el 75% de los volcanes activos. ¿Por qué ocurre allí esta concentración?',
+          options: [
+            'Porque el clima del Pacífico es muy caliente.',
+            'Porque es la zona donde se encuentran los bordes de varias placas tectónicas.',
+            'Porque es la región con más huracanes.',
+            'Porque está cerca del Ecuador.'
+          ],
+          correct: 1,
+          feedback:
+            'Los terremotos y volcanes se concentran en los BORDES DE LAS PLACAS TECTÓNICAS. El Cinturón de Fuego del Pacífico es precisamente el borde donde interactúan varias placas (Pacífico, Norteamericana, Sudamericana, Euroasiática, etc.). Por eso Japón, California, Chile, Alaska y Filipinas tienen alta actividad sísmica.'
+        },
+        {
+          stem: 'La geografía física del territorio estadounidense influyó en su historia. ¿Cuál de las siguientes afirmaciones es CORRECTA?',
+          options: [
+            'Las Montañas Apalaches contuvieron la expansión colonial hacia el oeste hasta mediados del siglo XVIII.',
+            'El río Mississippi es irrelevante en la historia de EE. UU.',
+            'Los Grandes Lagos están en Sudamérica.',
+            'Las Rocosas son las montañas más antiguas del país.'
+          ],
+          correct: 0,
+          feedback:
+            'Las APALACHES (al este) contuvieron la expansión colonial hasta el siglo XVIII. El Mississippi fue vital como vía comercial del siglo XIX. Los Grandes Lagos están entre EE. UU. y Canadá. Las Rocosas son más jóvenes que las Apalaches. Este es un ejemplo de cómo la geografía moldea la historia.'
+        },
+        {
+          stem: 'El DESARROLLO SOSTENIBLE se definió en 1987 como...',
+          options: [
+            'Crecer económicamente lo más rápido posible sin pensar en el medio ambiente.',
+            'Satisfacer las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer las suyas.',
+            'Detener todo crecimiento económico.',
+            'Volver a vivir como hace 100 años.'
+          ],
+          correct: 1,
+          feedback:
+            'Esta es la definición clásica de la ONU (Informe Brundtland, 1987). El desarrollo sostenible busca EQUILIBRIO: satisfacer las necesidades actuales (económicas y sociales) SIN agotar los recursos o destruir el planeta que usarán las generaciones futuras.'
+        },
+        {
+          stem: 'Cuando lees un mapa por primera vez, ¿cuál es el primer paso que debes dar?',
+          options: [
+            'Medir las distancias con una regla.',
+            'Leer el TÍTULO y la LEYENDA para saber qué representa el mapa y qué significan los símbolos y colores.',
+            'Contar los países que aparecen.',
+            'Identificar la capital de cada país.'
+          ],
+          correct: 1,
+          feedback:
+            'Antes de interpretar nada, lee el TÍTULO (qué representa el mapa) y la LEYENDA (qué significan los colores y símbolos). Muchos estudiantes se equivocan en el GED porque se lanzan a interpretar sin leer estos elementos. Es el error más común con mapas temáticos.'
+        }
+      ];
+
+      const LETTERS = ['A', 'B', 'C', 'D'];
+
+      function renderQuiz() {
+        const container = document.getElementById('questions');
+        container.innerHTML = '';
+        QUIZ.forEach(function (q, i) {
+          const qEl = document.createElement('div');
+          qEl.className = 'question';
+          qEl.dataset.qi = i;
+
+          const num = document.createElement('div');
+          num.className = 'q-num';
+          num.textContent = 'Pregunta ' + (i + 1) + ' de ' + QUIZ.length;
+          qEl.appendChild(num);
+
+          const stem = document.createElement('div');
+          stem.className = 'q-stem';
+          stem.textContent = q.stem;
+          qEl.appendChild(stem);
+
+          const opts = document.createElement('div');
+          opts.className = 'options';
+          q.options.forEach(function (text, oi) {
+            const opt = document.createElement('div');
+            opt.className = 'option';
+            opt.dataset.qi = i;
+            opt.dataset.oi = oi;
+            opt.onclick = function () {
+              selectOption(i, oi);
+            };
+
+            const marker = document.createElement('span');
+            marker.className = 'marker';
+            marker.textContent = LETTERS[oi];
+            const txt = document.createElement('span');
+            txt.className = 'text';
+            txt.textContent = text;
+
+            opt.appendChild(marker);
+            opt.appendChild(txt);
+            opts.appendChild(opt);
+          });
+          qEl.appendChild(opts);
+
+          const fb = document.createElement('div');
+          fb.className = 'feedback';
+          fb.textContent = q.feedback;
+          qEl.appendChild(fb);
+
+          container.appendChild(qEl);
+        });
+      }
+
+      const userAnswers = {};
+
+      function selectOption(qi, oi) {
+        const qEl = document.querySelector('.question[data-qi="' + qi + '"]');
+        if (qEl.classList.contains('answered')) return;
+        userAnswers[qi] = oi;
+        const opts = qEl.querySelectorAll('.option');
+        opts.forEach(function (o) {
+          o.classList.remove('selected');
+        });
+        const chosen = qEl.querySelector('.option[data-oi="' + oi + '"]');
+        if (chosen) chosen.classList.add('selected');
+      }
+
+      function gradeQuiz() {
+        let score = 0;
+        QUIZ.forEach(function (q, i) {
+          const qEl = document.querySelector('.question[data-qi="' + i + '"]');
+          qEl.classList.add('answered');
+          const chosen = userAnswers[i];
+          const isCorrect = chosen === q.correct;
+          if (isCorrect) {
+            score++;
+            qEl.classList.add('correct');
+          } else {
+            qEl.classList.add('wrong');
+          }
+          const opts = qEl.querySelectorAll('.option');
+          opts.forEach(function (o) {
+            const oi = parseInt(o.dataset.oi, 10);
+            if (oi === q.correct) o.classList.add('revealed-correct');
+            else if (oi === chosen) o.classList.add('revealed-wrong');
+          });
+        });
+        document.getElementById('scoreDisplay').style.display = 'block';
+        document.getElementById('scoreNum').textContent = score;
+        document.getElementById('scoreDisplay').scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+
+      function resetQuiz() {
+        for (const k in userAnswers) delete userAnswers[k];
+        document.getElementById('scoreDisplay').style.display = 'none';
+        renderQuiz();
+        document.getElementById('quiz').scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+
+      renderQuiz();
+    </script>
+  </body>
+</html>

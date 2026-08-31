@@ -1,0 +1,2708 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceptos Fundamentales de Economía — GED en Español</title>
+    <style>
+      /* ============================================================
+   Guía de Economía — GEDparaHispanos.com
+   Target GED: E (Economics) · Estética DUA institucional
+   Hex sólidos · sin rgba · sin gradients · Brightspace-compatible
+   ============================================================ */
+
+      :root {
+        --c-bg: #fafafa;
+        --c-surface: #ffffff;
+        --c-ink: #1a1a1a;
+        --c-ink-soft: #4a4a4a;
+        --c-ink-mute: #7a7a7a;
+        --c-line: #e0e0e0;
+        --c-line-str: #b0b0b0;
+
+        --c-ss: #8a5a00;
+        --c-ss-dark: #6a4500;
+        --c-ss-soft: #fdf6e3;
+        --c-ss-line: #e8d9b5;
+
+        --c-parch: #faf5e8;
+        --c-parch-ed: #d4c9a8;
+
+        /* Acentos económicos */
+        --c-money: #0f7a5c; /* Verde · dinero/ganancia */
+        --c-money-bg: #e8f5ee;
+        --c-loss: #a63d1e; /* Rojo · pérdida/crisis */
+        --c-loss-bg: #fbe9e7;
+        --c-neutral: #1e5aa6; /* Azul · concepto/definición */
+        --c-neutral-bg: #eaf2fb;
+
+        --c-good: #0f7a5c;
+        --c-warn: #b8860b;
+        --c-miss: #a63d1e;
+        --c-info: #1e5aa6;
+        --c-good-bg: #e8f5ee;
+        --c-miss-bg: #fbe9e7;
+        --c-info-bg: #eaf2fb;
+
+        --f-display: Georgia, 'Times New Roman', 'Liberation Serif', 'DejaVu Serif', serif;
+        --f-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+        --f-hist: 'Book Antiqua', 'Palatino Linotype', Palatino, Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--f-body);
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--c-ink);
+        background: var(--c-bg);
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 36px 24px 72px;
+      }
+
+      /* ---------- Portada ---------- */
+      .cover {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 6px solid var(--c-ss);
+        padding: 44px 36px;
+        border-radius: 6px;
+        margin-bottom: 28px;
+      }
+      .cover .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-ss-dark);
+        margin: 0 0 14px;
+        font-weight: 700;
+      }
+      .cover h1 {
+        font-family: var(--f-display);
+        font-size: 34px;
+        line-height: 1.2;
+        margin: 0 0 16px;
+        color: var(--c-ink);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .cover .sub {
+        font-size: 17px;
+        color: var(--c-ink-soft);
+        margin: 0 0 24px;
+        max-width: 760px;
+      }
+      .cover .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        font-size: 13px;
+        color: var(--c-ink-mute);
+        border-top: 1px solid var(--c-line);
+        padding-top: 18px;
+      }
+      .cover .meta strong {
+        color: var(--c-ink-soft);
+        font-weight: 600;
+      }
+
+      /* ---------- Tipografía general ---------- */
+      h2 {
+        font-family: var(--f-display);
+        font-size: 26px;
+        margin: 44px 0 14px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--c-ss);
+        color: var(--c-ink);
+        font-weight: 700;
+      }
+      h3 {
+        font-family: var(--f-display);
+        font-size: 20px;
+        margin: 26px 0 10px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+      }
+      h4 {
+        font-size: 13px;
+        margin: 18px 0 6px;
+        color: var(--c-ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+      }
+      p {
+        margin: 0 0 12px;
+      }
+
+      /* ---------- TOC ---------- */
+      .toc {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        padding: 20px 26px;
+        margin-bottom: 28px;
+      }
+      .toc h4 {
+        margin-top: 0;
+        color: var(--c-ss-dark);
+      }
+      .toc ol {
+        margin: 6px 0 0;
+        padding-left: 22px;
+        columns: 2;
+        column-gap: 32px;
+      }
+      .toc li {
+        margin: 4px 0;
+        font-size: 14.5px;
+        break-inside: avoid;
+      }
+      .toc a {
+        color: var(--c-ink-soft);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--c-line-str);
+      }
+      .toc a:hover {
+        color: var(--c-ss-dark);
+        border-bottom-color: var(--c-ss-dark);
+      }
+
+      /* ---------- Callouts ---------- */
+      .callout {
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        padding: 14px 18px;
+        margin: 18px 0;
+        border-radius: 3px;
+        font-size: 15px;
+      }
+      .callout.note {
+        background: var(--c-ss-soft);
+        border-left-color: var(--c-ss);
+      }
+      .callout.good {
+        background: var(--c-good-bg);
+        border-left-color: var(--c-good);
+      }
+      .callout.warn {
+        background: var(--c-miss-bg);
+        border-left-color: var(--c-miss);
+      }
+      .callout strong {
+        color: var(--c-ink);
+      }
+
+      /* ---------- Acordeones ---------- */
+      details.accordion {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        margin: 14px 0;
+        overflow: hidden;
+      }
+      details.accordion[open] {
+        border-color: var(--c-ss-line);
+        box-shadow: 0 1px 3px #f0e6cc;
+      }
+      details.accordion > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 16px 22px;
+        font-weight: 700;
+        font-family: var(--f-display);
+        font-size: 18px;
+        color: var(--c-ink);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        user-select: none;
+        background: var(--c-surface);
+        border-left: 4px solid transparent;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+      }
+      details.accordion[open] > summary {
+        background: var(--c-ss-soft);
+        border-left-color: var(--c-ss);
+        border-bottom: 1px solid var(--c-ss-line);
+      }
+      details.accordion > summary:hover {
+        background: var(--c-ss-soft);
+      }
+      details.accordion > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.accordion > summary::after {
+        content: '▸';
+        margin-left: auto;
+        color: var(--c-ss);
+        font-size: 14px;
+        transition: transform 0.2s;
+      }
+      details.accordion[open] > summary::after {
+        transform: rotate(90deg);
+      }
+      details.accordion .body {
+        padding: 20px 26px 24px;
+      }
+
+      .sec-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: var(--c-ss);
+        color: #fff;
+        border-radius: 50%;
+        font-family: var(--f-body);
+        font-size: 14px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .sec-ic {
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      /* ---------- Tablas ---------- */
+      table.cmp {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0 20px;
+        font-size: 14.5px;
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      table.cmp th {
+        background: var(--c-ss);
+        color: #fff;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+      }
+      table.cmp td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--c-line);
+        vertical-align: top;
+      }
+      table.cmp tbody tr:nth-child(even) td {
+        background: #fafafa;
+      }
+      table.cmp tbody tr:hover td {
+        background: var(--c-ss-soft);
+      }
+      table.cmp tbody tr.highlight td {
+        background: var(--c-good-bg);
+        font-weight: 600;
+      }
+      table.cmp tbody tr.highlight2 td {
+        background: var(--c-info-bg);
+        font-weight: 600;
+      }
+
+      /* ---------- Tarjetas ---------- */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+        margin: 18px 0;
+      }
+      .card {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 4px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 16px 18px;
+      }
+      .card h5 {
+        margin: 0 0 8px;
+        font-family: var(--f-display);
+        font-size: 16px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+      }
+      .card p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--c-ink-soft);
+        line-height: 1.55;
+      }
+      .card ul {
+        padding-left: 22px;
+        margin: 8px 0 0;
+        font-size: 13.5px;
+        color: var(--c-ink-soft);
+      }
+      .card ul li {
+        margin: 3px 0;
+      }
+
+      /* Variantes de color para cards de agentes económicos */
+      .card.a1 {
+        border-top-color: var(--c-money);
+      }
+      .card.a1 h5 {
+        color: var(--c-money);
+      }
+      .card.a2 {
+        border-top-color: var(--c-ss);
+      }
+      .card.a2 h5 {
+        color: var(--c-ss-dark);
+      }
+      .card.a3 {
+        border-top-color: var(--c-neutral);
+      }
+      .card.a3 h5 {
+        color: var(--c-neutral);
+      }
+
+      /* ---------- Video box ---------- */
+      .video-box {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-top: 3px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 16px 18px 18px;
+        margin: 20px 0;
+      }
+      .video-box .video-label {
+        font-family: var(--f-display);
+        font-size: 14px;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .video-box .video-label::before {
+        content: '▶';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: var(--c-ss);
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 3px;
+        padding-left: 2px;
+      }
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid var(--c-line);
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ---------- Sí / No (salarios) ---------- */
+      .yesno-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 16px 0;
+      }
+      @media (max-width: 600px) {
+        .yesno-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .yesno-box {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        padding: 14px 16px;
+      }
+      .yesno-box.yes {
+        border-left: 4px solid var(--c-good);
+      }
+      .yesno-box.no {
+        border-left: 4px solid var(--c-miss);
+      }
+      .yesno-box h5 {
+        font-family: var(--f-display);
+        font-size: 15px;
+        margin: 0 0 8px;
+        font-weight: 700;
+      }
+      .yesno-box.yes h5 {
+        color: var(--c-good);
+      }
+      .yesno-box.no h5 {
+        color: var(--c-miss);
+      }
+      .yesno-box ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        font-size: 14px;
+        color: var(--c-ink-soft);
+      }
+      .yesno-box ul li {
+        padding: 3px 0 3px 22px;
+        position: relative;
+      }
+      .yesno-box.yes ul li::before {
+        content: '✓';
+        color: var(--c-good);
+        font-weight: 700;
+        position: absolute;
+        left: 4px;
+      }
+      .yesno-box.no ul li::before {
+        content: '✗';
+        color: var(--c-miss);
+        font-weight: 700;
+        position: absolute;
+        left: 4px;
+      }
+
+      /* ---------- Paso a paso ---------- */
+      .step-analysis {
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+        margin: 16px 0;
+        overflow: hidden;
+      }
+      .step-analysis .step {
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--c-line);
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+      .step-analysis .step:last-child {
+        border-bottom: none;
+      }
+      .step-analysis .step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        background: var(--c-ss-soft);
+        color: var(--c-ss-dark);
+        border-radius: 50%;
+        font-family: var(--f-display);
+        font-size: 22px;
+        font-weight: 700;
+        flex-shrink: 0;
+        border: 2px solid var(--c-ss-line);
+      }
+
+      /* ---------- Caja de aplicación ---------- */
+      .hist-doc {
+        background: var(--c-parch);
+        border: 1px solid var(--c-parch-ed);
+        border-left: 6px solid var(--c-ss-dark);
+        padding: 18px 22px 16px;
+        margin: 16px 0;
+        border-radius: 3px;
+        font-family: var(--f-hist);
+        position: relative;
+      }
+      .hist-doc::before {
+        content: '💼';
+        position: absolute;
+        top: -13px;
+        left: 14px;
+        font-size: 18px;
+        background: var(--c-parch);
+        padding: 0 6px;
+      }
+      .hist-doc .doc-header {
+        font-family: var(--f-body);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed var(--c-parch-ed);
+        padding-bottom: 6px;
+      }
+      .hist-doc .doc-text {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: #2a2a2a;
+      }
+      .hist-doc .doc-text p {
+        margin: 0 0 8px;
+      }
+
+      /* ---------- SSP connection ---------- */
+      .ssp-conn {
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        border-radius: 4px;
+        padding: 12px 16px;
+        margin: 16px 0 4px;
+        font-size: 13.5px;
+        color: var(--c-ink-soft);
+      }
+      .ssp-conn strong {
+        color: var(--c-info);
+      }
+
+      .term {
+        font-weight: 700;
+        color: var(--c-ss-dark);
+        border-bottom: 1px dotted var(--c-ss);
+        cursor: help;
+      }
+
+      /* ---------- Quiz ---------- */
+      .quiz-wrap {
+        background: var(--c-surface);
+        border: 2px solid var(--c-ss);
+        border-radius: 8px;
+        padding: 28px 30px;
+        margin: 32px 0;
+      }
+      .quiz-wrap h2 {
+        margin-top: 0;
+        border-bottom-color: var(--c-ss);
+      }
+      .quiz-intro {
+        color: var(--c-ink-soft);
+        font-size: 15px;
+        margin-bottom: 18px;
+      }
+      .question {
+        margin: 22px 0;
+        padding: 18px 20px;
+        background: #fafafa;
+        border: 1px solid var(--c-line);
+        border-radius: 6px;
+      }
+      .question.answered.correct {
+        border-color: var(--c-good);
+        background: var(--c-good-bg);
+      }
+      .question.answered.wrong {
+        border-color: var(--c-miss);
+        background: var(--c-miss-bg);
+      }
+      .q-num {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--c-ink-mute);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .q-stem {
+        font-size: 15.5px;
+        font-weight: 600;
+        color: var(--c-ink);
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .option {
+        padding: 10px 14px;
+        background: var(--c-surface);
+        border: 1px solid var(--c-line);
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14.5px;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+        user-select: none;
+      }
+      .option:hover {
+        background: var(--c-ss-soft);
+        border-color: var(--c-ss-line);
+      }
+      .option.selected {
+        background: var(--c-info-bg);
+        border-color: var(--c-info);
+      }
+      .option.revealed-correct {
+        background: var(--c-good-bg);
+        border-color: var(--c-good);
+        font-weight: 600;
+      }
+      .option.revealed-wrong {
+        background: var(--c-miss-bg);
+        border-color: var(--c-miss);
+      }
+      .option .marker {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--c-ink-mute);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .option.selected .marker {
+        background: var(--c-info);
+      }
+      .option.revealed-correct .marker {
+        background: var(--c-good);
+      }
+      .option.revealed-wrong .marker {
+        background: var(--c-miss);
+      }
+      .feedback {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: none;
+        background: var(--c-info-bg);
+        border-left: 4px solid var(--c-info);
+        line-height: 1.55;
+      }
+      .question.answered .feedback {
+        display: block;
+      }
+      .question.correct .feedback {
+        background: var(--c-good-bg);
+        border-left-color: var(--c-good);
+      }
+      .question.wrong .feedback {
+        background: var(--c-miss-bg);
+        border-left-color: var(--c-miss);
+      }
+      .quiz-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 10px 22px;
+        background: var(--c-ss);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-family: var(--f-body);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+      }
+      .btn:hover {
+        background: var(--c-ss-dark);
+      }
+      .btn.secondary {
+        background: var(--c-surface);
+        color: var(--c-ss-dark);
+        border: 1px solid var(--c-ss);
+      }
+      .btn.secondary:hover {
+        background: var(--c-ss-soft);
+      }
+      .score {
+        font-family: var(--f-display);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--c-ss-dark);
+      }
+      .score .num {
+        font-size: 24px;
+        color: var(--c-ss);
+      }
+
+      /* ---------- Glosario ---------- */
+      .glos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 10px 20px;
+        margin: 14px 0;
+      }
+      .glos-item {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--c-line);
+        font-size: 14.5px;
+      }
+      .glos-item dt {
+        font-weight: 700;
+        color: var(--c-ss-dark);
+        margin-bottom: 2px;
+      }
+      .glos-item dd {
+        margin: 0;
+        color: var(--c-ink-soft);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--c-line);
+        font-size: 12.5px;
+        color: var(--c-ink-mute);
+        text-align: center;
+        line-height: 1.7;
+      }
+
+      ul.plain {
+        padding-left: 22px;
+        margin: 8px 0 14px;
+      }
+      ul.plain li {
+        margin: 4px 0;
+      }
+      ul.check {
+        list-style: none;
+        padding-left: 0;
+        margin: 8px 0 14px;
+      }
+      ul.check li {
+        padding: 3px 0 3px 26px;
+        position: relative;
+      }
+      ul.check li::before {
+        content: '✓';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        color: var(--c-good);
+        font-weight: 700;
+      }
+
+      @media (max-width: 720px) {
+        .toc ol {
+          columns: 1;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .wrap {
+          max-width: 100%;
+          padding: 0;
+        }
+        details.accordion {
+          break-inside: avoid;
+          border: 1px solid #ccc;
+        }
+        details.accordion[open] {
+          box-shadow: none;
+        }
+        details.accordion > summary::after {
+          content: '';
+        }
+        .video-box {
+          break-inside: avoid;
+        }
+        .quiz-actions {
+          display: none;
+        }
+        .btn {
+          display: none;
+        }
+      }
+      /* ============================================================
+   Tarjetica de invitación a recursos interactivos externos
+   ============================================================ */
+      .invita-interactivo {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 22px;
+        align-items: center;
+        background: var(--c-surface);
+        border: 1px solid var(--c-ss-line);
+        border-top: 5px solid var(--c-ss);
+        border-radius: 6px;
+        padding: 22px 26px;
+        margin: 24px 0;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 2px 8px #efe5cc;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .invita-interactivo:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px #e0d0a8;
+        border-color: var(--c-ss);
+      }
+      .ii-icono {
+        width: 64px;
+        height: 64px;
+        background: var(--c-ss-soft);
+        border: 2px solid var(--c-ss-line);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        flex-shrink: 0;
+      }
+      .ii-etiqueta {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-ss-dark);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .ii-titulo {
+        font-family: var(--f-display);
+        font-size: 22px;
+        color: var(--c-ink);
+        margin: 0 0 6px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .ii-desc {
+        font-size: 14.5px;
+        color: var(--c-ink-soft);
+        margin: 0;
+        line-height: 1.5;
+      }
+      .ii-flecha {
+        font-size: 36px;
+        color: var(--c-ss);
+        font-weight: 700;
+        transition: transform 0.15s;
+        flex-shrink: 0;
+      }
+      .invita-interactivo:hover .ii-flecha {
+        transform: translateX(5px);
+      }
+      @media (max-width: 600px) {
+        .invita-interactivo {
+          grid-template-columns: auto 1fr;
+          gap: 14px;
+          padding: 18px 18px;
+        }
+        .ii-flecha {
+          display: none;
+        }
+        .ii-icono {
+          width: 52px;
+          height: 52px;
+          font-size: 26px;
+        }
+        .ii-titulo {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- ============================================================
+     PORTADA
+     ============================================================ -->
+      <header class="cover">
+        <p class="eyebrow">GED® · Estudios Sociales · Economía</p>
+        <h1>Conceptos Fundamentales de Economía</h1>
+        <p class="sub">
+          La economía es la ciencia que estudia cómo las familias, empresas y gobiernos administran recursos escasos para satisfacer necesidades. Esta guía cubre los conceptos clave que aparecen en el
+          examen GED de Estudios Sociales: agentes económicos, factores de producción, bienes y servicios, salarios e impuestos, oferta y demanda, mercado de valores, ciclos económicos, inflación y
+          sistemas económicos.
+        </p>
+        <div class="meta">
+          <span>
+            <strong>Target GED:</strong>
+            E (Economics)
+          </span>
+          <span>
+            <strong>Nivel NRS:</strong>
+            4 — 6
+          </span>
+          <span>
+            <strong>Tiempo estimado:</strong>
+            2–3 horas de estudio
+          </span>
+          <span>
+            <strong>Evaluación:</strong>
+            Quiz de 12 ítems · 8 videos
+          </span>
+        </div>
+      </header>
+
+      <!-- ============================================================
+     TABLA DE CONTENIDO
+     ============================================================ -->
+      <nav class="toc">
+        <h4>Contenido de la guía</h4>
+        <ol>
+          <li><a href="#s1">Agentes económicos y factores de producción</a></li>
+          <li><a href="#s2">Bienes y servicios</a></li>
+          <li><a href="#s3">Salarios e impuestos</a></li>
+          <li><a href="#s4">Precios, intereses y aranceles</a></li>
+          <li><a href="#s5">Mercado de valores</a></li>
+          <li><a href="#s6">Ciclos económicos, crisis e inflación</a></li>
+          <li><a href="#s7">Sistemas económicos</a></li>
+          <li><a href="#quiz">Quiz de autoverificación (12 preguntas)</a></li>
+          <li><a href="#glosario">Glosario</a></li>
+        </ol>
+      </nav>
+
+      <aside class="callout note">
+        <strong>Cómo usar esta guía.</strong>
+        Cada sección se abre al hacer clic en su encabezado. Incluye videos explicativos en español, tablas comparativas, ejemplos y casos de aplicación. Al final, un quiz de 12 preguntas mide tu
+        comprensión.
+      </aside>
+
+      <!-- ============================================================
+     SECCIÓN 1 — Agentes y factores
+     ============================================================ -->
+      <details class="accordion" id="s1">
+        <summary>
+          <span class="sec-num">1</span>
+          <span class="sec-ic">🏢</span>
+          Agentes económicos y factores de producción
+        </summary>
+        <div class="body">
+          <p>
+            La
+            <span class="term">economía</span>
+            es la ciencia social que estudia cómo las familias, empresas y gobiernos organizan los
+            <strong>recursos disponibles</strong>
+            —que suelen ser escasos— para satisfacer las necesidades y alcanzar mayor bienestar.
+          </p>
+
+          <h3>Los tres agentes económicos</h3>
+          <p>
+            Se define como
+            <span class="term">agente económico</span>
+            a toda persona física o jurídica que actúa en cualquier parte del proceso de una operación económica. Hay tres grandes categorías:
+          </p>
+
+          <div class="cards">
+            <div class="card a1">
+              <h5>🏠 Familias</h5>
+              <p>
+                La familia es la
+                <strong>unidad básica de consumo</strong>
+                . Sin hogares que consuman, la economía se paraliza.
+              </p>
+              <ul>
+                <li>Consumen para satisfacer necesidades</li>
+                <li>Ahorran para consumo futuro</li>
+                <li>Trabajan para poder consumir</li>
+                <li>Distribuyen ingresos en consumo, ahorro e impuestos</li>
+              </ul>
+            </div>
+
+            <div class="card a2">
+              <h5>🏭 Empresas</h5>
+              <p>
+                Son los
+                <strong>productores</strong>
+                de la economía: producen los bienes y servicios que consumen los hogares. Buscan maximizar la utilidad para sus accionistas.
+              </p>
+              <ul>
+                <li>Utilizan factores de producción</li>
+                <li>Demandan mano de obra a cambio de salarios</li>
+                <li>Emplean capital a cambio de intereses</li>
+                <li>Ofrecen bienes y servicios al mercado</li>
+              </ul>
+            </div>
+
+            <div class="card a3">
+              <h5>🏛️ Estado</h5>
+              <p>
+                El gobierno
+                <strong>proporciona las reglas</strong>
+                sobre cómo deben interactuar los agentes económicos. También ofrece bienes y servicios públicos.
+              </p>
+              <ul>
+                <li>Regula precios y mercados</li>
+                <li>Recauda impuestos</li>
+                <li>Provee servicios públicos</li>
+                <li>Redistribuye riqueza mediante programas sociales</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Agentes económicos</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/HU2ED9EasTI" title="Agentes económicos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Los cuatro factores de producción</h3>
+          <p>
+            Los sistemas económicos se basan en los
+            <span class="term">factores de producción</span>
+            para operar con eficiencia. Son el punto de partida de toda producción de bienes y servicios.
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th style="width: 160px">Factor</th>
+                <th>¿Qué comprende?</th>
+                <th>¿Qué recibe a cambio?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>🌍 Tierra</strong></td>
+                <td>Todos los recursos naturales: tierra cultivable, minerales, agua, fuentes de energía, bosques.</td>
+                <td>Renta</td>
+              </tr>
+              <tr>
+                <td><strong>👷 Trabajo</strong></td>
+                <td>Tiempo y esfuerzo que las personas dedican a la producción; puede ser físico o intelectual.</td>
+                <td>Salario</td>
+              </tr>
+              <tr>
+                <td><strong>🏗️ Capital</strong></td>
+                <td>Bienes durables usados para producir otros bienes: maquinaria, edificios, carreteras, computadoras.</td>
+                <td>Interés</td>
+              </tr>
+              <tr>
+                <td><strong>🧠 Capacidad empresarial</strong></td>
+                <td>Conocimientos y técnicas para organizar, innovar, asumir riesgos y adaptarse al mercado.</td>
+                <td>Beneficio / ganancia</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-box">
+            <div class="video-label">Video: Factores de producción</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/BUq04TUgMXo"
+                title="Factores de producción"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con habilidades SSP:</strong>
+            cuando el examen GED te presente una pregunta sobre economía, aplica las habilidades de las guías de Estudios Sociales: identifica el
+            <em>propósito</em>
+            del texto (SSP.1), evalúa si la afirmación es un
+            <em>hecho, opinión o juicio razonado</em>
+            (SSP.7), y busca
+            <em>relaciones causa-efecto</em>
+            (SSP.5) entre decisiones de los agentes económicos.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 2 — Bienes y servicios
+     ============================================================ -->
+      <details class="accordion" id="s2">
+        <summary>
+          <span class="sec-num">2</span>
+          <span class="sec-ic">📦</span>
+          Bienes y servicios
+        </summary>
+        <div class="body">
+          <p>
+            Todo proceso productivo tiene como finalidad transformar los insumos y las materias primas en productos. Esos productos se clasifican en dos grandes grupos:
+            <strong>bienes</strong>
+            y
+            <strong>servicios</strong>
+            .
+          </p>
+
+          <div class="callout">
+            <strong>La diferencia esencial:</strong>
+            los
+            <span class="term">bienes</span>
+            son
+            <strong>tangibles</strong>
+            (se pueden tocar); los
+            <span class="term">servicios</span>
+            son
+            <strong>intangibles</strong>
+            (no se pueden tocar).
+          </div>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>Bienes</th>
+                <th>Servicios</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Naturaleza física</strong></td>
+                <td>Tangibles: se ven y se tocan.</td>
+                <td>Intangibles: no se pueden tocar.</td>
+              </tr>
+              <tr>
+                <td><strong>¿Se pueden almacenar?</strong></td>
+                <td>Sí, se pueden guardar.</td>
+                <td>No: se consumen en el momento de prestarse.</td>
+              </tr>
+              <tr>
+                <td><strong>¿Se pueden transferir?</strong></td>
+                <td>Sí, se compran y venden como propiedad.</td>
+                <td>Dependen de quien los presta; inseparables.</td>
+              </tr>
+              <tr>
+                <td><strong>Calidad</strong></td>
+                <td>Estable, medible con estándares.</td>
+                <td>Variable: depende del cliente y del prestador.</td>
+              </tr>
+              <tr>
+                <td><strong>Ejemplos</strong></td>
+                <td>Libros, zapatos, alimentos, automóviles, casas, electrónica.</td>
+                <td>Peluquería, educación, consulta médica, transporte, reparaciones, banca.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Tipos de bienes según su uso</h3>
+          <div class="cards">
+            <div class="card">
+              <h5>🍎 Bienes de consumo</h5>
+              <p>Los que usan directamente las familias para satisfacer necesidades (alimentos, ropa, muebles).</p>
+            </div>
+            <div class="card">
+              <h5>⚙️ Bienes de capital</h5>
+              <p>Los que usan las empresas para producir otros bienes (maquinaria, herramientas, edificios industriales).</p>
+            </div>
+            <div class="card">
+              <h5>📦 Bienes intermedios</h5>
+              <p>Materias primas o productos semielaborados que se transforman en otros bienes (harina, acero, tela).</p>
+            </div>
+            <div class="card">
+              <h5>💎 Bienes duraderos vs. no duraderos</h5>
+              <p>Un auto o una lavadora son duraderos; un pan o una revista son no duraderos.</p>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Bienes y servicios</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/M1hGWJGg_2o" title="Bienes y servicios" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 3 — Salarios e impuestos
+     ============================================================ -->
+      <details class="accordion" id="s3">
+        <summary>
+          <span class="sec-num">3</span>
+          <span class="sec-ic">💵</span>
+          Salarios e impuestos
+        </summary>
+        <div class="body">
+          <p>
+            El
+            <span class="term">salario</span>
+            es la contraprestación que el trabajador recibe a cambio de su trabajo. Los
+            <span class="term">impuestos</span>
+            son contribuciones obligatorias con las que cooperamos para financiar el funcionamiento del Estado.
+          </p>
+
+          <h3>¿Qué se considera salario y qué no?</h3>
+
+          <div class="yesno-grid">
+            <div class="yesno-box yes">
+              <h5>Sí son salario</h5>
+              <ul>
+                <li>Primas (pagos adicionales regulares)</li>
+                <li>Sobresueldos</li>
+                <li>Comisiones</li>
+                <li>Bonificaciones habituales</li>
+                <li>Horas extras</li>
+              </ul>
+            </div>
+            <div class="yesno-box no">
+              <h5>No son salario</h5>
+              <ul>
+                <li>Bonificaciones ocasionales</li>
+                <li>Participación en utilidades</li>
+                <li>Excedentes de las empresas</li>
+                <li>Royalties (regalías)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Tipos de salario</h3>
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Definición</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Salario devengado</strong></td>
+                <td>Cantidad que ya se reconoce al trabajador por servicios prestados, aunque aún no la haya cobrado.</td>
+              </tr>
+              <tr>
+                <td><strong>Salario medio</strong></td>
+                <td>Promedio de lo que reciben los trabajadores en una región o sector.</td>
+              </tr>
+              <tr>
+                <td><strong>Salario mínimo (SMI)</strong></td>
+                <td>Salario más bajo que permite la ley. En Illinois: $15.00/hora desde 2025.</td>
+              </tr>
+              <tr>
+                <td><strong>Salario real</strong></td>
+                <td>Lo que realmente se puede comprar con el salario (ajustado por inflación).</td>
+              </tr>
+              <tr>
+                <td><strong>Salario social</strong></td>
+                <td>Ayuda estatal que reciben familias sin recursos.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-box">
+            <div class="video-label">Video: Tipos de salarios</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/B0KyVn5N6mM" title="Tipos de salarios" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Impuestos en Estados Unidos</h3>
+
+          <div class="cards">
+            <div class="card a2">
+              <h5>💼 Impuesto sobre la renta (Income Tax)</h5>
+              <p>
+                En EE. UU. es
+                <strong>progresivo</strong>
+                : tarifas más altas para quienes ganan más; más bajas para quienes ganan menos.
+              </p>
+              <ul>
+                <li>Se retiene directamente del sueldo (W-4, W-2)</li>
+                <li>Requiere SSN o ITIN</li>
+                <li>Se declara anualmente al IRS (abril)</li>
+                <li>Varía por estado (Illinois: tasa fija de 4.95%)</li>
+              </ul>
+            </div>
+
+            <div class="card a3">
+              <h5>🛒 Impuesto sobre ventas (Sales Tax)</h5>
+              <p>Impuesto que grava la compra de bienes y servicios al momento de la venta.</p>
+              <ul>
+                <li>
+                  <strong>Illinois estatal:</strong>
+                  6.25%
+                </li>
+                <li>
+                  <strong>Local máximo:</strong>
+                  hasta 4.75% adicional
+                </li>
+                <li>
+                  <strong>Chicago combinado:</strong>
+                  10.25%
+                </li>
+                <li>No aplica a alimentos básicos en Illinois (desde 2026 aplica 1% local)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Otros impuestos federales importantes</h3>
+          <ul class="plain">
+            <li>
+              <strong>FICA (Social Security):</strong>
+              6.2% que aporta el empleado y 6.2% que aporta el empleador, para jubilaciones.
+            </li>
+            <li>
+              <strong>Medicare:</strong>
+              1.45% empleado + 1.45% empleador, para cobertura médica de mayores de 65 años.
+            </li>
+            <li>
+              <strong>Impuesto federal a la gasolina:</strong>
+              18.4¢ por galón (financia carreteras federales).
+            </li>
+          </ul>
+
+          <div class="video-box">
+            <div class="video-label">Video: Impuestos</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/35iSDvo6r00" title="Impuestos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="hist-doc">
+            <div class="doc-header">Caso de aplicación · Impuesto progresivo</div>
+            <div class="doc-text">
+              <p>
+                María gana $30 000 al año y paga una tasa efectiva de 10% en impuesto federal. Carlos gana $150 000 y paga 24%. Este es un ejemplo de
+                <strong>impuesto progresivo</strong>
+                : quienes ganan más pagan un porcentaje mayor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 4 — Precios, intereses, aranceles
+     ============================================================ -->
+      <details class="accordion" id="s4">
+        <summary>
+          <span class="sec-num">4</span>
+          <span class="sec-ic">📈</span>
+          Precios, intereses y aranceles
+        </summary>
+        <div class="body">
+          <p>
+            El
+            <span class="term">precio</span>
+            es el valor monetario que un bien o servicio tiene en el mercado. Los precios cumplen una función esencial: coordinan las decisiones de productores y consumidores.
+          </p>
+
+          <h3>Ley de la oferta y la demanda</h3>
+          <p>
+            Es el
+            <strong>principio básico</strong>
+            sobre el que se basa una economía de mercado. Describe cómo interactúan compradores y vendedores para determinar precios y cantidades.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h5>📉 Ley de la demanda</h5>
+              <p>
+                La cantidad demandada de un bien
+                <strong>disminuye</strong>
+                cuando el precio
+                <strong>aumenta</strong>
+                , y viceversa. A precios más bajos, los consumidores compran más.
+              </p>
+            </div>
+            <div class="card">
+              <h5>📈 Ley de la oferta</h5>
+              <p>
+                La cantidad ofrecida de un bien
+                <strong>aumenta</strong>
+                cuando el precio
+                <strong>aumenta</strong>
+                , y viceversa. A precios más altos, los productores ofrecen más.
+              </p>
+            </div>
+            <div class="card a1">
+              <h5>⚖️ Equilibrio de mercado</h5>
+              <p>
+                Punto en el que
+                <strong>la cantidad ofrecida iguala a la demandada</strong>
+                . Define el precio y la cantidad de equilibrio.
+              </p>
+            </div>
+          </div>
+
+          <a href="https://zhemaria.github.io/sociales/oferta_demanda/" class="invita-interactivo" target="_blank" rel="noopener">
+            <div class="ii-icono">⚖️</div>
+            <div>
+              <div class="ii-etiqueta">Recurso interactivo</div>
+              <div class="ii-titulo">Ley de la oferta y la demanda</div>
+              <p class="ii-desc">Mueve los deslizadores y observa cómo se desplaza el punto de equilibrio. Incluye 4 situaciones reales del mercado.</p>
+            </div>
+            <div class="ii-flecha">→</div>
+          </a>
+
+          <div class="video-box">
+            <div class="video-label">Video: Ley de la oferta y la demanda</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/CdSbuLUr9CA"
+                title="Ley de la oferta y la demanda"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Tasas de interés</h3>
+          <p>
+            La
+            <span class="term">tasa de interés</span>
+            es el índice que registra la rentabilidad de un ahorro (si prestas dinero) o el costo de un crédito (si lo pides prestado). Relaciona dinero y tiempo.
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Tipo de tasa</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tasa activa</strong></td>
+                <td>Precio que cobra una institución financiera por el dinero que presta (préstamos, hipotecas, tarjetas de crédito).</td>
+              </tr>
+              <tr>
+                <td><strong>Tasa pasiva</strong></td>
+                <td>Interés que paga el banco al ahorrista por sus depósitos.</td>
+              </tr>
+              <tr>
+                <td><strong>Tasa fija</strong></td>
+                <td>No cambia durante todo el periodo del préstamo. Ofrece estabilidad.</td>
+              </tr>
+              <tr>
+                <td><strong>Tasa flotante (variable)</strong></td>
+                <td>Varía según una tasa de referencia (por ejemplo, la tasa de la Reserva Federal). Ofrece flexibilidad pero más riesgo.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-box">
+            <div class="video-label">Video: Intereses</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/AjnKCIZ05XA" title="Intereses" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Aranceles</h3>
+          <p>
+            Los
+            <span class="term">aranceles</span>
+            son
+            <strong>impuestos que se aplican a las mercancías importadas</strong>
+            . Tienen dos propósitos principales:
+          </p>
+
+          <div class="cards">
+            <div class="card a3">
+              <h5>💰 Fuente de ingresos</h5>
+              <p>Generan recursos para el Estado. Históricamente fueron la principal fuente de ingresos del gobierno federal estadounidense antes del impuesto sobre la renta (1913).</p>
+            </div>
+            <div class="card a1">
+              <h5>🛡️ Protección de industrias nacionales</h5>
+              <p>Encarecen los productos extranjeros para darle ventaja competitiva a los productos hechos en el país.</p>
+            </div>
+          </div>
+
+          <div class="callout warn">
+            <strong>Consecuencia del arancel:</strong>
+            los aranceles benefician a los productores nacionales pero
+            <em>encarecen</em>
+            los productos para los consumidores. Las
+            <em>guerras comerciales</em>
+            ocurren cuando dos países se imponen aranceles mutuos.
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Oferta y demanda</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/LJ2GMkGyJKA" title="Oferta y demanda" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Aranceles</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/lAMO88bB2Hk" title="Aranceles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+          <a href="https://zhemaria.github.io/sociales/balanza_pagos/" class="invita-interactivo" target="_blank" rel="noopener">
+            <div class="ii-icono">⚖️</div>
+            <div>
+              <div class="ii-etiqueta">Recurso interactivo</div>
+              <div class="ii-titulo">Balanza de Pagos</div>
+              <p class="ii-desc">
+                La balanza de pagos es un documento contable que registra todas las transacciones económicas entre los residentes de un país y el resto del mundo durante un período determinado,
+                generalmente un año. Funciona como el "diario financiero" de una nación, anotando lo que entra y lo que sale.
+              </p>
+              <p>
+                Es un indicador fundamental para medir la salud económica de un país. Permite saber si el país le vende más al exterior de lo que le compra (lo que genera un superávit) o si gasta más
+                de lo que ingresa (lo que produce un déficit). Esto influye directamente en el valor de su moneda y en las políticas económicas que debe aplicar el gobierno
+              </p>
+            </div>
+            <div class="ii-flecha">→</div>
+          </a>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 5 — Mercado de valores
+     ============================================================ -->
+      <details class="accordion" id="s5">
+        <summary>
+          <span class="sec-num">5</span>
+          <span class="sec-ic">📊</span>
+          Mercado de valores
+        </summary>
+        <div class="body">
+          <p>
+            El
+            <span class="term">mercado de valores</span>
+            es el espacio económico donde se compran y venden instrumentos financieros (acciones, bonos, fondos). La principal institución física donde ocurre es la
+            <span class="term">Bolsa de Valores</span>
+            .
+          </p>
+
+          <h3>Bolsa de Valores</h3>
+          <p>
+            La Bolsa es un organismo regulado que permite que las empresas obtengan capital ofreciendo partes de su propiedad (acciones) al público, y que los inversionistas compren y vendan esas
+            partes mediante subasta pública.
+          </p>
+
+          <div class="callout">
+            <strong>¿Por qué cotizan las empresas?</strong>
+            Cotizar en Bolsa permite a una empresa acceder a millones de inversionistas potenciales y obtener recursos para financiar proyectos sin endeudarse con un banco. Las bolsas más conocidas de
+            EE. UU. son
+            <strong>NYSE</strong>
+            (New York Stock Exchange) y
+            <strong>NASDAQ</strong>
+            .
+          </div>
+
+          <h3>Acciones</h3>
+          <p>
+            Las
+            <span class="term">acciones</span>
+            son activos financieros que representan una parte del capital social de una empresa. Quien compra una acción se convierte en
+            <strong>socio (accionista)</strong>
+            de la empresa.
+          </p>
+
+          <div class="cards">
+            <div class="card a1">
+              <h5>💸 Dividendos</h5>
+              <p>Pago periódico que la empresa hace a sus accionistas cuando tiene ganancias. Es una forma de ganar dinero con acciones sin venderlas.</p>
+            </div>
+            <div class="card a2">
+              <h5>📈 Ganancia de capital</h5>
+              <p>Ocurre cuando vendes una acción a un precio mayor del que la compraste. Es la forma principal en que la mayoría de inversionistas gana dinero en Bolsa.</p>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: La Bolsa de Valores</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/VFfdt2xHDxU" title="La Bolsa de Valores" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Bonos</h3>
+          <p>
+            Un
+            <span class="term">bono</span>
+            es un préstamo: cuando compras un bono, le prestas dinero a quien lo emite (gobierno o empresa) a cambio de intereses periódicos y la devolución del capital al vencimiento.
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Tipo de bono</th>
+                <th>Descripción</th>
+                <th>Riesgo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bonos del Tesoro (Treasury Bonds)</strong></td>
+                <td>Emitidos por el gobierno de EE. UU. para financiar el gasto público. Son los más seguros del mundo.</td>
+                <td>Muy bajo</td>
+              </tr>
+              <tr>
+                <td><strong>Bonos municipales (Municipal Bonds)</strong></td>
+                <td>Emitidos por estados o ciudades para construir escuelas, carreteras, hospitales. Suelen estar exentos de impuestos federales.</td>
+                <td>Bajo</td>
+              </tr>
+              <tr>
+                <td><strong>Bonos corporativos (Corporate Bonds)</strong></td>
+                <td>Emitidos por empresas privadas para financiar proyectos. Ofrecen mayor interés pero con más riesgo.</td>
+                <td>Medio a alto</td>
+              </tr>
+              <tr>
+                <td><strong>Bonos Libertad (Liberty Bonds)</strong></td>
+                <td>
+                  Bonos históricos del Tesoro emitidos con respaldo de oro durante la
+                  <strong>Primera Guerra Mundial</strong>
+                  para financiar la guerra.
+                </td>
+                <td>Bajo (histórico)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-box">
+            <div class="video-label">Video: Bonos corporativos y bonos del Tesoro</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/A_9Cal_IUSY"
+                title="Bonos corporativos y bonos del Tesoro"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <a href="https://zhemaria.github.io/sociales/mercado_valores/" class="invita-interactivo" target="_blank" rel="noopener">
+            <div class="ii-icono">⚖️</div>
+            <div>
+              <div class="ii-etiqueta">Recurso interactivo</div>
+              <div class="ii-titulo">Explorando el mercado de valores</div>
+              <p class="ii-desc">En esta actividad vas a aprender, paso a paso, cómo funciona algo que aparece en las noticias todos los días: el mercado de valores.</p>
+            </div>
+            <div class="ii-flecha">→</div>
+          </a>
+
+          <h3>
+            La Reserva Federal (
+            <em>The Fed</em>
+            )
+          </h3>
+          <p>
+            La
+            <span class="term">Reserva Federal</span>
+            es el
+            <strong>banco central de Estados Unidos</strong>
+            , creada el 23 de diciembre de 1913. No depende del Congreso: se financia con los intereses de valores gubernamentales que compra en el mercado.
+          </p>
+
+          <h4>Funciones principales</h4>
+          <ul class="check">
+            <li>
+              Dirige la
+              <strong>política monetaria</strong>
+              (control de la cantidad de dinero en circulación)
+            </li>
+            <li>
+              Establece las
+              <strong>tasas de interés de referencia</strong>
+              (Federal Funds Rate)
+            </li>
+            <li>Supervisa a las instituciones bancarias del país</li>
+            <li>
+              Mantiene la
+              <strong>estabilidad del sistema financiero</strong>
+            </li>
+            <li>
+              Actúa como
+              <strong>prestamista de último recurso</strong>
+              en crisis
+            </li>
+          </ul>
+
+          <div class="callout note">
+            <strong>Dato del GED:</strong>
+            cuando la Reserva Federal
+            <em>sube</em>
+            las tasas de interés, el crédito se encarece, el consumo baja y la inflación tiende a moderarse. Cuando
+            <em>baja</em>
+            las tasas, el crédito se abarata, el consumo sube y la economía se estimula. Este es el
+            <strong>mecanismo principal</strong>
+            de la política monetaria.
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Reserva Federal</div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/1h0mTY7kpEE?start=16"
+                title="Reserva Federal"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con US History:</strong>
+            la Reserva Federal se creó en 1913, durante la Era Progresista (período 5 de la guía de US History). La Gran Depresión de 1929 (período 6) se explica en parte por fallas del sistema
+            financiero que la Fed, después de 1933, ayudaría a evitar.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 6 — Ciclos, crisis e inflación
+     ============================================================ -->
+      <details class="accordion" id="s6">
+        <summary>
+          <span class="sec-num">6</span>
+          <span class="sec-ic">🔄</span>
+          Ciclos económicos, crisis e inflación
+        </summary>
+        <div class="body">
+          <p>
+            El
+            <span class="term">ciclo económico</span>
+            describe las fluctuaciones periódicas de la economía: períodos de crecimiento (expansión) seguidos de períodos de contracción (recesión). La economía rara vez crece en línea recta.
+          </p>
+          <div>
+            <!-- ============================================================
+       SVG DEL CICLO ECONÓMICO
+       Esta sección se puede extraer y embeber directamente en tu
+       guía económica de GEDparaHispanos o en Brightspace.
+       ============================================================ -->
+            <svg class="ciclo-svg" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cicloTitulo cicloDesc">
+              <title id="cicloTitulo">Diagrama del ciclo económico</title>
+              <desc id="cicloDesc">Una onda muestra las cinco fases del ciclo económico: recuperación, expansión, auge, recesión y depresión.</desc>
+
+              <defs>
+                <!-- Degradado de la onda: verde → cyan → naranja → rojo -->
+                <linearGradient id="ondaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#16a34a" />
+                  <stop offset="22%" stop-color="#22c55e" />
+                  <stop offset="48%" stop-color="#06b6d4" />
+                  <stop offset="68%" stop-color="#f97316" />
+                  <stop offset="100%" stop-color="#dc2626" />
+                </linearGradient>
+
+                <!-- Onda secundaria (sombra de profundidad) -->
+                <linearGradient id="ondaSombra" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#16a34a" stop-opacity="0.25" />
+                  <stop offset="48%" stop-color="#06b6d4" stop-opacity="0.25" />
+                  <stop offset="100%" stop-color="#dc2626" stop-opacity="0.25" />
+                </linearGradient>
+              </defs>
+
+              <!-- ====== LA ONDA ====== -->
+              <!-- Sombra inferior -->
+              <path
+                d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
+                fill="none"
+                stroke="url(#ondaSombra)"
+                stroke-width="38"
+                stroke-linecap="round"
+                transform="translate(0, 8)" />
+              <!-- Onda principal -->
+              <path
+                d="M 40 510 C 180 510, 220 350, 360 350 C 500 350, 500 190, 600 190 C 700 190, 700 350, 840 350 C 980 350, 1020 510, 1160 510"
+                fill="none"
+                stroke="url(#ondaGrad)"
+                stroke-width="26"
+                stroke-linecap="round"
+                opacity="0.92" />
+
+              <!-- ====== NODO 1: RECUPERACIÓN ====== -->
+              <g transform="translate(120, 510)">
+                <circle r="52" fill="#dcfce7" opacity="0.55" />
+                <circle r="42" fill="#ffffff" stroke="#16a34a" stroke-width="3" />
+                <!-- Ícono planta brotando -->
+                <g transform="translate(0, 6)">
+                  <!-- Tierra/maceta -->
+                  <path d="M -16 16 L 16 16 L 12 24 L -12 24 Z" fill="#92400e" />
+                  <ellipse cx="0" cy="16" rx="16" ry="2.5" fill="#a16207" />
+                  <!-- Tallo -->
+                  <path d="M 0 16 Q -1 0 0 -14" stroke="#16a34a" stroke-width="2.8" fill="none" stroke-linecap="round" />
+                  <!-- Hoja izquierda -->
+                  <path d="M -1 -1 Q -16 -4 -14 -18 Q -4 -14 -1 -4 Z" fill="#22c55e" />
+                  <!-- Hoja derecha -->
+                  <path d="M 0 -7 Q 15 -12 17 -26 Q 5 -20 0 -10 Z" fill="#16a34a" />
+                </g>
+              </g>
+              <!-- Etiqueta 1 -->
+              <text x="120" y="615" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#16a34a">1. Recuperación</text>
+              <text text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#4b5563">
+                <tspan x="120" y="640">La economía comienza a levantarse</tspan>
+                <tspan x="120" y="658">tras una crisis con señales positivas.</tspan>
+              </text>
+
+              <!-- ====== NODO 2: EXPANSIÓN ====== -->
+              <g transform="translate(360, 350)">
+                <circle r="52" fill="#dcfce7" opacity="0.55" />
+                <circle r="42" fill="#ffffff" stroke="#22c55e" stroke-width="3" />
+                <!-- Ícono barras subiendo + flecha -->
+                <g transform="translate(0, 4)">
+                  <!-- Barras -->
+                  <rect x="-18" y="6" width="7" height="14" fill="#86efac" stroke="#16a34a" stroke-width="0.8" />
+                  <rect x="-8" y="-2" width="7" height="22" fill="#4ade80" stroke="#16a34a" stroke-width="0.8" />
+                  <rect x="2" y="-12" width="7" height="32" fill="#22c55e" stroke="#16a34a" stroke-width="0.8" />
+                  <!-- Flecha hacia arriba -->
+                  <path d="M -22 -8 L 16 -22" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round" />
+                  <path d="M 9 -22 L 16 -22 L 16 -15" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </g>
+              <!-- Etiqueta 2 -->
+              <text x="360" y="450" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#16a34a">2. Expansión</text>
+              <text text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#4b5563">
+                <tspan x="360" y="475">Mayor crecimiento, empleo y</tspan>
+                <tspan x="360" y="493">consumo para la población.</tspan>
+              </text>
+
+              <!-- ====== NODO 3: AUGE ====== -->
+              <g transform="translate(600, 190)">
+                <circle r="52" fill="#cffafe" opacity="0.55" />
+                <circle r="42" fill="#ffffff" stroke="#06b6d4" stroke-width="3" />
+                <!-- Ícono indicador (gauge) al máximo -->
+                <g transform="translate(0, 6)">
+                  <!-- Arco verde (izq) -->
+                  <path d="M -22 6 A 22 22 0 0 1 -8 -14" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" />
+                  <!-- Arco amarillo (centro) -->
+                  <path d="M -8 -14 A 22 22 0 0 1 8 -14" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
+                  <!-- Arco rojo (der) -->
+                  <path d="M 8 -14 A 22 22 0 0 1 22 6" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round" />
+                  <!-- Aguja apuntando a la zona alta (cerca del rojo) -->
+                  <line x1="0" y1="6" x2="15" y2="-11" stroke="#1f2937" stroke-width="2.6" stroke-linecap="round" />
+                  <circle cx="0" cy="6" r="2.8" fill="#1f2937" />
+                  <!-- Marcas E y F estilizadas -->
+                  <text x="-22" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">E</text>
+                  <text x="18" y="18" font-family="Poppins, sans-serif" font-size="7" fill="#4b5563" font-weight="700">F</text>
+                </g>
+              </g>
+              <!-- Etiqueta 3 -->
+              <text x="600" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#06b6d4">3. Auge</text>
+              <text text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#4b5563">
+                <tspan x="600" y="315">Punto más alto de la onda</tspan>
+                <tspan x="600" y="333">donde el crecimiento se agota.</tspan>
+              </text>
+
+              <!-- ====== NODO 4: RECESIÓN ====== -->
+              <g transform="translate(840, 350)">
+                <circle r="52" fill="#ffedd5" opacity="0.65" />
+                <circle r="42" fill="#ffffff" stroke="#f97316" stroke-width="3" />
+                <!-- Ícono barras bajando + flecha descendente -->
+                <g transform="translate(0, 4)">
+                  <!-- Barras -->
+                  <rect x="-18" y="-12" width="7" height="32" fill="#fdba74" stroke="#c2410c" stroke-width="0.8" />
+                  <rect x="-8" y="-2" width="7" height="22" fill="#fb923c" stroke="#c2410c" stroke-width="0.8" />
+                  <rect x="2" y="6" width="7" height="14" fill="#f97316" stroke="#c2410c" stroke-width="0.8" />
+                  <!-- Flecha hacia abajo -->
+                  <path d="M -22 -16 L 16 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round" />
+                  <path d="M 16 -9 L 16 -2 L 9 -2" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </g>
+              <!-- Etiqueta 4 -->
+              <text x="840" y="450" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#f97316">4. Recesión</text>
+              <text text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#4b5563">
+                <tspan x="840" y="475">La actividad cae durante al menos</tspan>
+                <tspan x="840" y="493">seis meses y aumenta el desempleo.</tspan>
+              </text>
+
+              <!-- ====== NODO 5: DEPRESIÓN ====== -->
+              <g transform="translate(1080, 510)">
+                <circle r="52" fill="#fee2e2" opacity="0.65" />
+                <circle r="42" fill="#ffffff" stroke="#dc2626" stroke-width="3" />
+                <!-- Ícono fábrica con cadena rota -->
+                <g transform="translate(0, 4)">
+                  <!-- Cuerpo principal de la fábrica -->
+                  <rect x="-18" y="0" width="22" height="20" fill="#9ca3af" stroke="#4b5563" stroke-width="0.8" />
+                  <rect x="4" y="-8" width="14" height="28" fill="#6b7280" stroke="#4b5563" stroke-width="0.8" />
+                  <!-- Techo dentado -->
+                  <path d="M -18 0 L -13 -6 L -8 0 L -3 -6 L 2 0 L 4 0" fill="#6b7280" stroke="#4b5563" stroke-width="0.8" />
+                  <!-- Chimenea -->
+                  <rect x="8" y="-16" width="6" height="10" fill="#4b5563" />
+                  <!-- Ventanitas -->
+                  <rect x="-14" y="6" width="3" height="3" fill="#fef3c7" />
+                  <rect x="-8" y="6" width="3" height="3" fill="#fef3c7" />
+                  <rect x="8" y="6" width="3" height="3" fill="#fef3c7" />
+                  <!-- Cadena rota (eslabones) -->
+                  <g stroke="#dc2626" stroke-width="2.2" fill="none" stroke-linecap="round">
+                    <ellipse cx="-15" cy="-12" rx="3.5" ry="2.5" transform="rotate(-30 -15 -12)" />
+                    <ellipse cx="-9" cy="-16" rx="3.5" ry="2.5" transform="rotate(-30 -9 -16)" />
+                    <!-- Línea de quiebre -->
+                    <line x1="-6" y1="-20" x2="-1" y2="-24" />
+                    <line x1="-3" y1="-22" x2="-7" y2="-19" />
+                  </g>
+                </g>
+              </g>
+              <!-- Etiqueta 5 -->
+              <text x="1080" y="615" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#dc2626">5. Depresión</text>
+              <text text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#4b5563">
+                <tspan x="1080" y="640">Punto más bajo del ciclo,</tspan>
+                <tspan x="1080" y="658">con desempleo masivo.</tspan>
+              </text>
+            </svg>
+          </div>
+
+          <h3>Las cinco fases del ciclo económico</h3>
+
+          <div class="cards">
+            <div class="card a1">
+              <h5>🌱 1. Recuperación</h5>
+              <p>La economía sale de una crisis. Crecimiento aún débil pero con señales positivas.</p>
+            </div>
+            <div class="card a1">
+              <h5>🚀 2. Expansión</h5>
+              <p>Fase de mayor crecimiento económico. Sube la producción, el empleo y el consumo.</p>
+            </div>
+            <div class="card">
+              <h5>⭐ 3. Auge</h5>
+              <p>Pico del ciclo. El crecimiento muestra señales de agotamiento; pueden aparecer inflación y especulación.</p>
+            </div>
+            <div class="card a3" style="border-top-color: var(--c-miss)">
+              <h5>📉 4. Recesión</h5>
+              <p>La actividad económica se reduce. Aumenta el desempleo, cae el consumo. Oficialmente: dos trimestres consecutivos de caída del PIB.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--c-miss)">
+              <h5>⬇️ 5. Depresión</h5>
+              <p>Punto más bajo del ciclo. Actividad muy deprimida, desempleo masivo. La más conocida: la Gran Depresión (1929–1939).</p>
+            </div>
+          </div>
+
+          <h3>Indicadores del ciclo económico</h3>
+
+          <div class="cards">
+            <div class="card a2">
+              <h5>📈 PIB (Producto Interno Bruto)</h5>
+              <p>Valor total de todos los bienes y servicios producidos en un país durante un año.</p>
+              <ul>
+                <li>
+                  <strong>PIB sube:</strong>
+                  expansión, creación de riqueza
+                </li>
+                <li>
+                  <strong>PIB baja:</strong>
+                  recesión, pérdida de riqueza
+                </li>
+              </ul>
+            </div>
+            <div class="card a2">
+              <h5>👷 Tasa de desempleo</h5>
+              <p>Porcentaje de la población económicamente activa sin trabajo.</p>
+              <ul>
+                <li>
+                  <strong>Baja (≤5%):</strong>
+                  pleno empleo, economía sana
+                </li>
+                <li>
+                  <strong>Alta (≥7%):</strong>
+                  señal de recesión
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="video-box">
+            <div class="video-label">Video: Ciclos económicos</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/AanaXs2sLUU" title="Ciclos económicos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Tipos de crisis económica</h3>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descripción</th>
+                <th>Ejemplo histórico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Crisis financiera</strong></td>
+                <td>Disminución de las operaciones bancarias y pérdida de confianza en el sistema.</td>
+                <td>Gran Recesión de 2008</td>
+              </tr>
+              <tr>
+                <td><strong>Crisis de deuda</strong></td>
+                <td>Un país o sector no puede pagar sus compromisos financieros.</td>
+                <td>Crisis de deuda europea 2010–12</td>
+              </tr>
+              <tr>
+                <td><strong>Burbuja económica</strong></td>
+                <td>Subida anormal e incontrolada de precios (bienes raíces, acciones, etc.) seguida de un colapso.</td>
+                <td>Burbuja inmobiliaria de 2008; dot-com 2000</td>
+              </tr>
+              <tr>
+                <td><strong>Crisis de balanza de pagos</strong></td>
+                <td>Un país no tiene reservas suficientes para pagar sus importaciones y servicio de deuda externa.</td>
+                <td>Crisis argentina 2001</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-box">
+            <div class="video-label">Video: Recesión económica</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/VnTVpU2OO9w" title="Recesión económica" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h3>Inflación</h3>
+          <p>
+            La
+            <span class="term">inflación</span>
+            es el aumento general y sostenido de los precios. Reduce el valor del dinero con el tiempo: con $100 hoy compras menos de lo que comprabas hace diez años.
+          </p>
+
+          <div class="callout warn">
+            <strong>Cuidado con la inflación en el GED:</strong>
+            no todos los precios suben igual. La inflación se calcula con una
+            <em>canasta</em>
+            representativa. Además, la inflación afecta más a las familias de ingresos fijos (pensionados, por ejemplo), porque sus ingresos no suben automáticamente.
+          </div>
+
+          <h4>La canasta para calcular la inflación incluye:</h4>
+          <ul class="plain">
+            <li>
+              <strong>Artículos de consumo diario:</strong>
+              alimentos, gasolina, periódicos.
+            </li>
+            <li>
+              <strong>Bienes duraderos:</strong>
+              ropa, electrodomésticos, computadoras.
+            </li>
+            <li>
+              <strong>Servicios:</strong>
+              peluquería, seguros, alquiler, transporte.
+            </li>
+          </ul>
+
+          <h4>Ejemplo de cálculo de inflación</h4>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>Artículo</th>
+                <th>Año base</th>
+                <th>1 año después</th>
+                <th>2 años después</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>150 barras de pan</td>
+                <td>$225.00</td>
+                <td>$195.00</td>
+                <td>$240.00</td>
+              </tr>
+              <tr>
+                <td>100 cafés</td>
+                <td>$240.00</td>
+                <td>$240.00</td>
+                <td>$215.00</td>
+              </tr>
+              <tr>
+                <td>12 cortes de pelo</td>
+                <td>$240.00</td>
+                <td>$264.00</td>
+                <td>$276.00</td>
+              </tr>
+              <tr>
+                <td>1 abrigo</td>
+                <td>$145.00</td>
+                <td>$176.00</td>
+                <td>$160.00</td>
+              </tr>
+              <tr class="highlight2">
+                <td><strong>Costo total</strong></td>
+                <td><strong>$850.00</strong></td>
+                <td><strong>$875.00</strong></td>
+                <td><strong>$891.00</strong></td>
+              </tr>
+              <tr class="highlight">
+                <td><strong>Tasa de inflación</strong></td>
+                <td><strong>0.0%</strong></td>
+                <td><strong>2.9%</strong></td>
+                <td><strong>4.8%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="font-size: 13.5px; color: var(--c-ink-mute); font-style: italic">
+            La fórmula de la inflación entre dos años es: (Costo año nuevo − Costo año base) ÷ Costo año base × 100. Del año base al año 1: (875 − 850) ÷ 850 × 100 ≈ 2.9%. Del año base al año 2: (891
+            − 850) ÷ 850 × 100 ≈ 4.8%.
+          </p>
+
+          <div class="video-box">
+            <div class="video-label">Video: La inflación</div>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/7o-Fjt1kJ_U" title="La inflación" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     SECCIÓN 7 — Sistemas económicos (NUEVA)
+     ============================================================ -->
+      <details class="accordion" id="s7">
+        <summary>
+          <span class="sec-num">7</span>
+          <span class="sec-ic">🌐</span>
+          Sistemas económicos
+        </summary>
+        <div class="body">
+          <p>
+            Un
+            <span class="term">sistema económico</span>
+            es el conjunto de reglas que una sociedad establece para responder a tres preguntas fundamentales:
+            <strong>¿qué producir?</strong>
+            ,
+            <strong>¿cómo producir?</strong>
+            y
+            <strong>¿para quién producir?</strong>
+            . Históricamente han existido tres respuestas principales.
+          </p>
+
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th style="width: 160px">Sistema</th>
+                <th>¿Quién decide?</th>
+                <th>¿Quién es dueño?</th>
+                <th>Ejemplos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Capitalismo</strong>
+                  <br />
+                  (mercado libre)
+                </td>
+                <td>El mercado, mediante precios, oferta y demanda.</td>
+                <td>Particulares (privado).</td>
+                <td>EE. UU. (parcialmente), Hong Kong, Singapur.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Socialismo</strong>
+                  <br />
+                  (planificación central)
+                </td>
+                <td>El Estado, mediante planes gubernamentales.</td>
+                <td>El Estado (público).</td>
+                <td>Cuba, Corea del Norte, antigua URSS.</td>
+              </tr>
+              <tr>
+                <td><strong>Economía mixta</strong></td>
+                <td>Combinación de mercado + Estado.</td>
+                <td>Combinación de privado + público.</td>
+                <td>Casi todos los países actuales: Francia, Alemania, México, Estados Unidos (en la práctica).</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>El sistema estadounidense en la práctica</h3>
+          <p>
+            Aunque EE. UU. se describe como «capitalismo de mercado», en la práctica es una
+            <strong>economía mixta</strong>
+            . Conviven:
+          </p>
+
+          <div class="yesno-grid">
+            <div class="yesno-box yes">
+              <h5>Elementos de mercado libre</h5>
+              <ul>
+                <li>Propiedad privada protegida</li>
+                <li>Precios determinados por oferta y demanda</li>
+                <li>Libertad de empresa</li>
+                <li>Competencia entre empresas</li>
+                <li>Bolsa de valores abierta</li>
+              </ul>
+            </div>
+            <div class="yesno-box no" style="border-left-color: var(--c-info)">
+              <h5 style="color: var(--c-info)">Elementos de intervención estatal</h5>
+              <ul style="list-style: none">
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Seguridad Social (desde 1935)
+                </li>
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Medicare y Medicaid
+                </li>
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Regulación bancaria
+                </li>
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Salario mínimo
+                </li>
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Impuestos progresivos
+                </li>
+                <li style="padding-left: 22px">
+                  <span style="color: var(--c-info); font-weight: 700; position: absolute; left: 4px">◆</span>
+                  Reserva Federal
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Política fiscal vs. política monetaria</h3>
+          <p>Dos herramientas con las que el gobierno y la Fed intervienen en la economía. Aparecen con frecuencia en el GED:</p>
+
+          <div class="cards">
+            <div class="card a2">
+              <h5>💰 Política fiscal</h5>
+              <p>
+                Decisiones del
+                <strong>gobierno</strong>
+                sobre
+                <strong>gasto público</strong>
+                e
+                <strong>impuestos</strong>
+                .
+              </p>
+              <ul>
+                <li>Para estimular: bajar impuestos, aumentar gasto</li>
+                <li>Para enfriar: subir impuestos, recortar gasto</li>
+                <li>La decide el Congreso (EE. UU.)</li>
+              </ul>
+            </div>
+            <div class="card a3">
+              <h5>🏦 Política monetaria</h5>
+              <p>
+                Decisiones de la
+                <strong>Reserva Federal</strong>
+                sobre
+                <strong>tasas de interés</strong>
+                y
+                <strong>oferta monetaria</strong>
+                .
+              </p>
+              <ul>
+                <li>Para estimular: bajar tasas, inyectar liquidez</li>
+                <li>Para enfriar: subir tasas, retirar liquidez</li>
+                <li>La decide la Fed (independiente del Congreso)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ssp-conn">
+            <strong>Conexión con US History:</strong>
+            el New Deal de FDR (1933–39) es el punto de inflexión en que EE. UU. pasó de un capitalismo más puro a una economía mixta. Ejemplos concretos: la Seguridad Social (1935), la FDIC (seguro
+            de depósitos bancarios), la SEC (regulación de la bolsa). Ver el período 6 de la guía de US History.
+          </div>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     QUIZ
+     ============================================================ -->
+      <section class="quiz-wrap" id="quiz">
+        <h2>Quiz de autoverificación</h2>
+        <p class="quiz-intro">
+          12 preguntas sobre los conceptos clave de economía. Selecciona una opción por pregunta y al final presiona
+          <em>Verificar respuestas</em>
+          .
+        </p>
+
+        <div id="questions"></div>
+
+        <div class="quiz-actions">
+          <div>
+            <button class="btn" type="button" onclick="gradeQuiz()">Verificar respuestas</button>
+            <button class="btn secondary" type="button" onclick="resetQuiz()">Reiniciar</button>
+          </div>
+          <div class="score" id="scoreDisplay" style="display: none">
+            Puntaje:
+            <span class="num" id="scoreNum">0</span>
+            / 12
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     GLOSARIO
+     ============================================================ -->
+      <details class="accordion" id="glosario">
+        <summary>
+          <span class="sec-ic">📘</span>
+          Glosario de términos clave
+        </summary>
+        <div class="body">
+          <dl class="glos-grid">
+            <div class="glos-item">
+              <dt>Acción</dt>
+              <dd>Parte del capital social de una empresa; convierte al comprador en socio.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Agente económico</dt>
+              <dd>Persona física o jurídica que participa en operaciones económicas (familia, empresa, Estado).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Arancel</dt>
+              <dd>Impuesto sobre bienes importados.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Bolsa de Valores</dt>
+              <dd>Institución donde se compran y venden acciones, bonos y otros instrumentos financieros.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Bono</dt>
+              <dd>Préstamo del inversionista al emisor (gobierno o empresa) a cambio de intereses.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Capital</dt>
+              <dd>Factor de producción: bienes durables (máquinas, edificios) usados para producir otros bienes.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Ciclo económico</dt>
+              <dd>Fluctuaciones periódicas entre expansión y recesión.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Dividendo</dt>
+              <dd>Pago periódico que la empresa hace a sus accionistas.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Economía</dt>
+              <dd>Ciencia social que estudia cómo se administran los recursos escasos.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Economía mixta</dt>
+              <dd>Sistema económico que combina mercado libre e intervención estatal.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Equilibrio de mercado</dt>
+              <dd>Punto donde la cantidad ofrecida iguala a la demandada.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>FICA</dt>
+              <dd>Impuesto federal estadounidense para Seguridad Social y Medicare.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Inflación</dt>
+              <dd>Aumento general y sostenido de los precios.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Impuesto progresivo</dt>
+              <dd>Tributo donde las tasas aumentan con los ingresos.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Oferta</dt>
+              <dd>Cantidad de un bien que los productores están dispuestos a vender a un precio dado.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>PIB</dt>
+              <dd>Producto Interno Bruto: valor total de bienes y servicios producidos en un país al año.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Política fiscal</dt>
+              <dd>Decisiones del gobierno sobre gasto público e impuestos.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Política monetaria</dt>
+              <dd>Decisiones de la Reserva Federal sobre tasas de interés y oferta monetaria.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Recesión</dt>
+              <dd>Fase del ciclo en la que se reduce la actividad económica por al menos dos trimestres consecutivos.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Reserva Federal</dt>
+              <dd>Banco central de los Estados Unidos (creado en 1913).</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Salario</dt>
+              <dd>Contraprestación que el trabajador recibe por su trabajo.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Sistema económico</dt>
+              <dd>Conjunto de reglas que determinan qué, cómo y para quién producir.</dd>
+            </div>
+            <div class="glos-item">
+              <dt>Tasa de interés</dt>
+              <dd>Índice que registra la rentabilidad de un ahorro o el costo de un crédito.</dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+
+      <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+      <div class="footer">
+        <p>
+          GEDparaHispanos.com · Conceptos Fundamentales de Economía · v2.1
+          <br />
+          Adaptación al ecosistema DUA del material original de GEDparaHispanos.
+          <br />
+          Videos insertados desde YouTube (canales educativos en español).
+          <br />
+          GED® es una marca registrada del American Council on Education (ACE), administrada por GED Testing Service LLC. Este material no está avalado por ACE ni por GED Testing Service.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     JAVASCRIPT — NAVEGACIÓN INTERNA COMPATIBLE CON GOOGLE SITES
+     ------------------------------------------------------------
+     Google Sites embebe el HTML dentro de un <iframe>; los enlaces
+     <a href="#id"> no navegan dentro del iframe porque el navegador
+     intenta actualizar la URL de la página padre. Este handler:
+       1. Intercepta clics en cualquier <a href="#...">.
+       2. Hace preventDefault() para evitar la navegación rota.
+       3. Abre el <details> destino y todos sus ancestros <details>.
+       4. Hace scrollIntoView() suave DENTRO del iframe.
+     Funciona también fuera de Google Sites (no rompe la página suelta).
+     ============================================================ -->
+    <script>
+      (function () {
+        function abrirAncestrosDetails(el) {
+          var p = el;
+          while (p && p !== document.body) {
+            if (p.tagName === 'DETAILS') p.open = true;
+            p = p.parentElement;
+          }
+        }
+
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a[href^="#"]');
+          if (!a) return;
+          var href = a.getAttribute('href');
+          if (!href || href === '#') return;
+          var id = href.slice(1);
+          var destino = document.getElementById(id);
+          if (!destino) return;
+
+          // Evita que el navegador intente cambiar la URL de la página padre
+          e.preventDefault();
+
+          // Si el destino es un <details>, lo abrimos
+          if (destino.tagName === 'DETAILS') destino.open = true;
+          // Y abrimos cualquier <details> ancestro (por si está anidado)
+          abrirAncestrosDetails(destino);
+
+          // Scroll suave dentro del iframe
+          // Pequeño retraso para que el <details> termine de expandirse antes
+          // de calcular la posición final del scroll.
+          setTimeout(function () {
+            destino.scrollIntoView({behavior: 'smooth', block: 'start'});
+          }, 60);
+        });
+      })();
+    </script>
+
+    <!-- ============================================================
+     JAVASCRIPT — QUIZ
+     ============================================================ -->
+    <script>
+      const QUIZ = [
+        {
+          stem: '¿Cuáles de los siguientes son agentes económicos?',
+          options: [
+            'Solamente las familias, que constituyen la unidad básica de consumo.',
+            'Solamente las empresas, que son los productores.',
+            'Solamente los gobiernos, que regulan la economía.',
+            'Los tres: familias, empresas y gobiernos son agentes económicos.'
+          ],
+          correct: 3,
+          feedback:
+            'Los tres son agentes económicos: las familias consumen y ofrecen trabajo, las empresas producen, y los gobiernos regulan, proveen servicios públicos y recaudan impuestos. Sin cualquiera de los tres, la economía moderna no funcionaría.'
+        },
+        {
+          stem: 'Los sistemas económicos se basan en los factores de producción para operar con eficiencia.',
+          options: ['Verdadero', 'Falso'],
+          correct: 0,
+          feedback: 'Verdadero. Los cuatro factores de producción (tierra, trabajo, capital y capacidad empresarial) son la base de cualquier sistema económico; sin ellos no hay producción posible.'
+        },
+        {
+          stem: '¿Cuál de los siguientes NO es un factor de producción?',
+          options: ['El capital (maquinaria, edificios)', 'La tierra (recursos naturales)', 'El salario', 'El trabajo'],
+          correct: 2,
+          feedback: 'El salario NO es un factor de producción: es lo que el trabajador RECIBE a cambio del factor trabajo. Los cuatro factores son: tierra, trabajo, capital y capacidad empresarial.'
+        },
+        {
+          stem: 'Los bienes de consumo son intangibles.',
+          options: ['Verdadero', 'Falso'],
+          correct: 1,
+          feedback: 'Falso. Los bienes son TANGIBLES (se pueden tocar): libros, zapatos, alimentos, automóviles. Los SERVICIOS son los intangibles (peluquería, consulta médica, educación).'
+        },
+        {
+          stem: 'Los servicios son intangibles.',
+          options: ['Verdadero', 'Falso'],
+          correct: 0,
+          feedback:
+            'Verdadero. Los servicios no se pueden tocar físicamente: una consulta médica, un corte de pelo o una clase son servicios. Son inseparables de quien los presta y no se pueden almacenar.'
+        },
+        {
+          stem: 'De los siguientes conceptos, ¿cuál se considera parte del SALARIO según la definición técnica?',
+          options: ['Las bonificaciones ocasionales', 'Las gratificaciones no regulares', 'Las primas (pagos adicionales regulares)', 'Los royalties (regalías)'],
+          correct: 2,
+          feedback:
+            'Las PRIMAS son salario porque son pagos regulares y periódicos. Las bonificaciones ocasionales, gratificaciones no regulares y royalties NO son salario: son pagos eventuales o derivados de otras fuentes. Solo los pagos regulares por el trabajo cuentan como salario.'
+        },
+        {
+          stem: 'La ley de oferta y demanda es el principio básico sobre el que se basa una economía de mercado.',
+          options: ['Verdadero', 'Falso'],
+          correct: 0,
+          feedback:
+            'Verdadero. La interacción entre oferta y demanda determina precios y cantidades en un mercado libre. Es el mecanismo central que coordina las decisiones de millones de productores y consumidores sin planificación central.'
+        },
+        {
+          stem: '¿Cuál de las siguientes aseveraciones sobre la Bolsa de Valores NO es correcta?',
+          options: [
+            'La Bolsa permite a los inversionistas comprar y vender acciones mediante subasta pública.',
+            'Las bolsas de valores son reguladas y supervisadas por los Estados (en EE. UU., por la SEC).',
+            'Las acciones son activos financieros que representan una parte del capital social de una empresa.',
+            'Los bonos corporativos fueron emitidos con respaldo de oro durante la Primera Guerra Mundial para financiar la guerra.'
+          ],
+          correct: 3,
+          feedback:
+            'La afirmación INCORRECTA es la D. Los BONOS LIBERTAD (Liberty Bonds) —no los bonos corporativos— fueron los emitidos con respaldo de oro durante la Primera Guerra Mundial por el Tesoro estadounidense. Los bonos corporativos son deuda emitida por empresas privadas, sin respaldo de oro.'
+        },
+        {
+          stem: '¿Cuál de los siguientes NO es una fase del ciclo económico?',
+          options: ['Desplome', 'Recuperación', 'Expansión', 'Auge'],
+          correct: 0,
+          feedback: '«Desplome» NO es una fase formal del ciclo económico. Las cinco fases son: Recuperación, Expansión, Auge, Recesión y Depresión. «Desplome» es un término coloquial, no técnico.'
+        },
+        {
+          stem: '¿Cuál de las siguientes NO es un tipo reconocido de crisis económica?',
+          options: ['Crisis financiera (sistema bancario)', 'Crisis de deuda (incapacidad de pago)', 'Crisis de tarjeta de crédito', 'Crisis de balanza de pagos (reservas insuficientes)'],
+          correct: 2,
+          feedback:
+            '«Crisis de tarjeta de crédito» NO es un tipo de crisis económica formalmente reconocido. Los tipos clásicos son: crisis financiera, crisis de deuda, burbuja económica y crisis de balanza de pagos. Problemas individuales con tarjetas de crédito no constituyen crisis económica del sistema.'
+        },
+        {
+          stem: 'De los siguientes bienes y servicios, ¿cuál NO se incluye típicamente en la canasta para calcular la inflación al consumidor?',
+          options: ['Alimentos (pan, leche, carne)', 'Servicios de plomería puntuales no recurrentes en el hogar', 'Lavadoras y electrodomésticos', 'Peluquería y servicios personales'],
+          correct: 1,
+          feedback:
+            'Los servicios de plomería puntuales no recurrentes NO se incluyen típicamente en la canasta de inflación al consumidor, porque no son consumo regular. La canasta incluye bienes y servicios de consumo recurrente: alimentos, ropa, electrodomésticos, servicios personales periódicos como peluquería, transporte y vivienda.'
+        },
+        {
+          stem: 'Cuando la Reserva Federal SUBE las tasas de interés, ¿qué efecto económico se busca típicamente?',
+          options: [
+            'Estimular el gasto y el consumo familiar.',
+            'Encarecer el crédito para frenar el consumo y moderar la inflación.',
+            'Bajar los impuestos federales automáticamente.',
+            'Aumentar los salarios mínimos.'
+          ],
+          correct: 1,
+          feedback:
+            'Subir las tasas encarece el crédito: hipotecas y préstamos cuestan más, la gente consume menos, y la presión al alza sobre los precios se modera. Este es el mecanismo clásico de política monetaria ANTI-INFLACIONARIA. Bajar las tasas, en cambio, estimula la economía.'
+        }
+      ];
+
+      const LETTERS = ['A', 'B', 'C', 'D'];
+
+      function renderQuiz() {
+        const container = document.getElementById('questions');
+        container.innerHTML = '';
+        QUIZ.forEach(function (q, i) {
+          const qEl = document.createElement('div');
+          qEl.className = 'question';
+          qEl.dataset.qi = i;
+
+          const num = document.createElement('div');
+          num.className = 'q-num';
+          num.textContent = 'Pregunta ' + (i + 1) + ' de ' + QUIZ.length;
+          qEl.appendChild(num);
+
+          const stem = document.createElement('div');
+          stem.className = 'q-stem';
+          stem.textContent = q.stem;
+          qEl.appendChild(stem);
+
+          const opts = document.createElement('div');
+          opts.className = 'options';
+          q.options.forEach(function (text, oi) {
+            const opt = document.createElement('div');
+            opt.className = 'option';
+            opt.dataset.qi = i;
+            opt.dataset.oi = oi;
+            opt.onclick = function () {
+              selectOption(i, oi);
+            };
+
+            const marker = document.createElement('span');
+            marker.className = 'marker';
+            marker.textContent = LETTERS[oi];
+            const txt = document.createElement('span');
+            txt.className = 'text';
+            txt.textContent = text;
+
+            opt.appendChild(marker);
+            opt.appendChild(txt);
+            opts.appendChild(opt);
+          });
+          qEl.appendChild(opts);
+
+          const fb = document.createElement('div');
+          fb.className = 'feedback';
+          fb.textContent = q.feedback;
+          qEl.appendChild(fb);
+
+          container.appendChild(qEl);
+        });
+      }
+
+      const userAnswers = {};
+
+      function selectOption(qi, oi) {
+        const qEl = document.querySelector('.question[data-qi="' + qi + '"]');
+        if (qEl.classList.contains('answered')) return;
+        userAnswers[qi] = oi;
+        const opts = qEl.querySelectorAll('.option');
+        opts.forEach(function (o) {
+          o.classList.remove('selected');
+        });
+        const chosen = qEl.querySelector('.option[data-oi="' + oi + '"]');
+        if (chosen) chosen.classList.add('selected');
+      }
+
+      function gradeQuiz() {
+        let score = 0;
+        QUIZ.forEach(function (q, i) {
+          const qEl = document.querySelector('.question[data-qi="' + i + '"]');
+          qEl.classList.add('answered');
+          const chosen = userAnswers[i];
+          const isCorrect = chosen === q.correct;
+          if (isCorrect) {
+            score++;
+            qEl.classList.add('correct');
+          } else {
+            qEl.classList.add('wrong');
+          }
+          const opts = qEl.querySelectorAll('.option');
+          opts.forEach(function (o) {
+            const oi = parseInt(o.dataset.oi, 10);
+            if (oi === q.correct) o.classList.add('revealed-correct');
+            else if (oi === chosen) o.classList.add('revealed-wrong');
+          });
+        });
+        document.getElementById('scoreDisplay').style.display = 'block';
+        document.getElementById('scoreNum').textContent = score;
+        document.getElementById('scoreDisplay').scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+
+      function resetQuiz() {
+        for (const k in userAnswers) delete userAnswers[k];
+        document.getElementById('scoreDisplay').style.display = 'none';
+        renderQuiz();
+        document.getElementById('quiz').scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+
+      renderQuiz();
+    </script>
+  </body>
+</html>
