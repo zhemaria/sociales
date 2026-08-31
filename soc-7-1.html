@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<!--
+  Lección 7.1 · Oferta, demanda, mercados y el consumidor
+  Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 7.1 · Oferta, demanda, mercados y el consumidor</title>
+<meta name="description" content="Escasez y costo de oportunidad, lectura de curvas de oferta y demanda, desplazamientos y equilibrio, y el cálculo del costo real del crédito." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 7 — verde heredado del plan curricular (--t7).
+       El verde se reserva para trazos: encabezados, bordes y cabecera. Los
+       fondos claros del tema son neutros a propósito, para que el único
+       relleno verde de la página sea el de una respuesta acertada. */
+    --tema:    #1b5e20;
+    --tema-d:  #103d15;
+    --tema-bg: #f1f3ef;
+    --tema-bg2:#d7ded3;
+    --acento:  #2e7d32;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #0b2a0f 0%, #103d15 55%, #1b5e20 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(11,42,15,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #103d15;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fbfcfa; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #103d15; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a5546; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #4a5546; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #103d15; }
+
+  /* ══ COMPONENTES DEL TEMA 7 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  /* En el Tema 7 se usan las variantes .demanda y .oferta, definidas abajo. */
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#103d15; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#9bb69f; stroke-width:1.5; }
+  .g-reja   { stroke:#eef1ec; stroke-width:1; }
+  .g-dem    { stroke:#b3261e; stroke-width:3; fill:none; }
+  .g-of     { stroke:#1f618d; stroke-width:3; fill:none; }
+  .g-ref    { stroke:#6e6e6e; stroke-width:2; stroke-dasharray:5,4; fill:none; }
+  .g-eq     { fill:#103d15; }
+  .g-guia   { stroke:#103d15; stroke-width:1.4; stroke-dasharray:4,4; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#103d15; font-weight:700; }
+
+  /* Clasificador de cuatro opciones */
+  .comp .botones.cuatro button { flex:1 1 140px; }
+
+  /* Tarjetas enfrentadas del tema */
+  .enfrentados .demanda { background:#fdecea; border-left:6px solid #b3261e; }
+  .enfrentados .oferta  { background:#e8eef5; border-left:6px solid #1f618d; }
+  .enfrentados .demanda h3 { color:#8c1c17; }
+  .enfrentados .oferta h3  { color:#164a6d; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado</div>
+    <h1>Lección 7.1 · Oferta, demanda, mercados y el consumidor</h1>
+    <div class="meta">NRS 5–6 · Calculadora permitida</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.10 · Datos y gráficas</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">Puente · Matemáticas: porcentajes</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="economia/">Guía de economía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 7.1</span>
+    <span class="nav-sig">Siguiente: Lección 7.2 · en preparación</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Explicar la escasez y el costo de oportunidad, y calcular el segundo en una decisión concreta.</li>
+      <li>Identificar qué curva se desplaza ante un suceso, y en qué dirección.</li>
+      <li>Predecir el efecto de ese desplazamiento sobre el precio y la cantidad de equilibrio.</li>
+      <li>Calcular lo que cuesta de verdad una compra a crédito.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> El Tema 6 terminó en 1965. El Tema 7 cambia de dominio: economía y geografía, que juntas son el treinta por ciento del examen. Y cambia de método. Aquí no hay documentos que interpretar: hay <strong>gráficas que leer y cuentas que hacer</strong>.</p>
+    <p>Esta lección empieza donde empieza la economía entera: en que no alcanza para todo.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li>Papel, lápiz y calculadora. En esta lección se calcula de verdad.</li>
+      <li>La <a href="economia/">guía de economía</a> del sitio, sobre todo su sección 2, que desarrolla la escasez.</li>
+      <li>El simulador de oferta y demanda, que se enlaza en la sección 2.</li>
+      <li>Un recibo o un contrato de financiación reales, si tiene alguno a mano, para la Práctica 2.</li>
+      <li>Entre dos y tres horas, repartidas.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. No alcanza para todo</h2>
+
+  <div class="bloque">
+    <p>Toda la economía sale de un solo hecho: los recursos son <span class="resalta">escasos</span> y las necesidades no.</p>
+    <p>Escaso no significa raro, ni caro, ni poco. Significa que no hay suficiente para todos los usos posibles a la vez. Hay muchísima agua potable en el mundo y sigue siendo escasa, porque no está donde se necesita y llevarla cuesta. La prueba es de una sola línea: <strong>si usar algo para una cosa impide usarlo para otra, es escaso.</strong></p>
+    <p>Y de ahí sale, sin ningún paso intermedio, el concepto que más se pregunta de este bloque.</p>
+
+    <div class="ejemplo">
+      <span class="et">Definición</span>
+      <p>El <strong>costo de oportunidad</strong> es el valor de la mejor alternativa a la que se renuncia. <strong>No es lo que se paga: es lo que se deja de hacer.</strong></p>
+    </div>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">Lo que se paga</span>
+        <p>La matrícula de un curso: $600.</p>
+        <span class="ej">Sale en el recibo.</span>
+      </div>
+      <div class="tc">
+        <span class="n">Lo que se deja de hacer</span>
+        <p>Diez horas semanales de estudio que se habrían podido trabajar a $18 la hora.</p>
+        <span class="ej">No sale en ningún sitio.</span>
+      </div>
+      <div class="tc">
+        <span class="n">El costo de oportunidad</span>
+        <p>Los $600 más lo que se habría ganado en esas horas.</p>
+        <span class="ej">Es lo que pregunta el examen.</span>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Las dos reglas que hay que llevarse.</strong> Primera: se busca <strong>una sola alternativa, la mejor de las descartadas</strong>. No se suman todas las opciones a las que se renunció, solo aquella que se habría elegido si la primera no existiera. Segunda: <strong>el costo de oportunidad puede ser tiempo y no dinero</strong>, y una decisión que no cuesta nada en el recibo puede tener un costo de oportunidad enorme.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>El error de examen.</strong> «Dediqué el sábado a estudiar. No me costó nada.» Sí costó: el turno de ocho horas que no trabajó, o el día con su familia. Que algo sea gratis no significa que no cueste. Si en una pregunta de costo de oportunidad su respuesta es «cero», casi seguro que ha mirado el precio en vez de la alternativa.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Dos curvas y un cruce</h2>
+
+  <div class="bloque">
+    <p>Si los recursos son escasos, hay que repartirlos. En una economía de mercado eso lo hace el precio, y el precio sale del cruce de dos curvas.</p>
+
+    <div class="enfrentados">
+      <div class="lado demanda">
+        <h3>La demanda · lo que quieren los compradores</h3>
+        <ul>
+          <li>Cuanto <strong>más alto</strong> el precio, <strong>menos</strong> quieren comprar.</li>
+          <li>Por eso la curva de demanda <strong>baja</strong> de izquierda a derecha.</li>
+          <li>En las gráficas de esta lección va en rojo.</li>
+        </ul>
+      </div>
+      <div class="lado oferta">
+        <h3>La oferta · lo que quieren los vendedores</h3>
+        <ul>
+          <li>Cuanto <strong>más alto</strong> el precio, <strong>más</strong> quieren vender.</li>
+          <li>Por eso la curva de oferta <strong>sube</strong> de izquierda a derecha.</li>
+          <li>En las gráficas de esta lección va en azul.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Donde se cruzan está el <span class="resalta">equilibrio</span>: el único precio al que la cantidad que se quiere comprar es exactamente la que se quiere vender. Ni sobra ni falta.</p>
+
+    <figure class="grafica">
+      <h3>El punto de equilibrio</h3>
+      <p class="g-fuente">Esquema didáctico. Los números están elegidos para que las cuentas salgan redondas.</p>
+      <svg viewBox="0 0 560 340" role="img" aria-labelledby="tit-eq desc-eq">
+        <title id="tit-eq">Gráfica de oferta y demanda con el punto de equilibrio</title>
+        <desc id="desc-eq">La curva de demanda baja de izquierda a derecha y la de oferta sube. Se cruzan en un punto llamado equilibrio, que en este esquema corresponde a un precio de 5 dólares y una cantidad de 50 unidades. Por encima de ese precio sobra producto; por debajo, falta.</desc>
+        <line class="g-reja" x1="70" y1="60" x2="520" y2="60" />
+        <line class="g-reja" x1="70" y1="130" x2="520" y2="130" />
+        <line class="g-reja" x1="70" y1="200" x2="520" y2="200" />
+        <line class="g-eje" x1="70" y1="30" x2="70" y2="270" />
+        <line class="g-eje" x1="70" y1="270" x2="520" y2="270" />
+        <path class="g-dem" d="M 90 50 L 470 250" />
+        <path class="g-of"  d="M 90 250 L 470 50" />
+        <line class="g-guia" x1="70" y1="150" x2="280" y2="150" />
+        <line class="g-guia" x1="280" y1="270" x2="280" y2="150" />
+        <circle class="g-eq" cx="280" cy="150" r="7" />
+        <text class="g-rot-eje" x="292" y="145">Equilibrio: $5 y 50 unidades</text>
+        <text class="g-rot" x="62" y="154" text-anchor="end">$5</text>
+        <text class="g-rot" x="280" y="288" text-anchor="middle">50 u</text>
+        <text class="g-rot-eje" x="478" y="252">D</text>
+        <text class="g-rot-eje" x="478" y="54">O</text>
+        <text class="g-rot-eje" x="30" y="46">Precio</text>
+        <text class="g-rot-eje" x="500" y="292" text-anchor="end">Cantidad</text>
+        <text class="g-rot" x="180" y="90">Aquí sobra producto</text>
+        <text class="g-rot" x="300" y="235">Aquí falta producto</text>
+      </svg>
+      <figcaption>Por encima del precio de equilibrio sobra producto y los vendedores bajan el precio. Por debajo falta y los compradores compiten y lo suben. Por eso el mercado tiende a ese cruce.</figcaption>
+    </figure>
+
+    <a class="enlace-interactivo" href="oferta_demanda/">
+      <span class="ei-icono" aria-hidden="true">⚖️</span>
+      <span>
+        <span class="ei-titulo">Simulador: la ley de la oferta y la demanda</span>
+        <span class="ei-sub">Cinco situaciones reales y dos deslizadores independientes. Cada botón le da el suceso y le esconde la respuesta hasta que usted decida qué curva se mueve. Hágalo antes de seguir con la sección 3.</span>
+        <span class="ei-cta">Abrir el simulador</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="bloque">
+    <h3>La distinción que más se pregunta</h3>
+
+    <p>Estas dos frases parecen la misma y no lo son. Confundirlas es el error más común de todo el bloque de economía.</p>
+
+    <table class="reglas">
+      <caption>Diferencia entre un cambio en la demanda y un cambio en la cantidad demandada.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Se dice</th>
+          <th scope="col">Qué pasa en la gráfica</th>
+          <th scope="col">Qué lo provoca</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cambia la <strong>demanda</strong></td>
+          <td>La curva entera se desplaza a la derecha o a la izquierda.</td>
+          <td>Algo <em>distinto</em> del precio: una moda, más ingreso, un sustituto más barato.</td>
+        </tr>
+        <tr>
+          <td>Cambia la <strong>cantidad demandada</strong></td>
+          <td>La curva no se mueve: usted se desplaza a lo largo de ella.</td>
+          <td>El precio, y solo el precio.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Por eso «subió el precio, así que bajó la demanda» está mal dicho.</strong> Lo que bajó fue la <em>cantidad demandada</em>. La curva de demanda sigue exactamente donde estaba. Y la diferencia importa: si de verdad se hubiera movido la curva, el precio de equilibrio también habría cambiado, y no es el caso.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. ¿Qué le pasa al precio?</h2>
+
+  <div class="bloque">
+    <p>Solo hay cuatro cosas que pueden pasar, y todas caben en esta tabla. Vale la pena aprendérsela, porque con ella se resuelve cualquier pregunta de este tipo.</p>
+
+    <table class="reglas">
+      <caption>Los cuatro desplazamientos posibles y su efecto sobre el equilibrio.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Qué ocurre</th>
+          <th scope="col">Curva que se mueve</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Sube la demanda</td><td>Demanda → derecha</td><td>↑ Sube</td><td>↑ Sube</td></tr>
+        <tr><td>Baja la demanda</td><td>Demanda → izquierda</td><td>↓ Baja</td><td>↓ Baja</td></tr>
+        <tr><td>Sube la oferta</td><td>Oferta → derecha</td><td>↓ Baja</td><td>↑ Sube</td></tr>
+        <tr><td>Baja la oferta</td><td>Oferta → izquierda</td><td>↑ Sube</td><td>↓ Baja</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El truco para no memorizar cuatro filas.</strong> Cuando se mueve la <strong>demanda</strong>, el precio y la cantidad cambian <em>en la misma dirección</em>. Cuando se mueve la <strong>oferta</strong>, cambian <em>en direcciones opuestas</em>. Con eso y con saber hacia dónde se mueve la curva, las cuatro filas salen solas.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Y una pregunta antes de mover nada:</strong> ¿el suceso afecta a quien <em>compra</em> o a quien <em>vende</em>? Una sequía, una máquina nueva, un impuesto a la producción o el precio del combustible tocan al vendedor: mueven la oferta. Una moda, un sueldo mayor, una noticia de salud o el precio de un producto sustituto tocan al comprador: mueven la demanda. Casi todos los fallos de este bloque vienen de saltarse esta pregunta.
+    </div>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿Qué curva se mueve?</h3>
+    <p>Ocho sucesos. Para cada uno, diga qué le pasa al precio y a la cantidad de equilibrio. Primero decida a quién afecta el suceso, si al comprador o al vendedor; después aplique el truco.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Lo que cuesta de verdad</h2>
+
+  <div class="bloque">
+    <p>Hasta aquí, mercados. Ahora la parte que se usa el mismo día en que se sale de clase.</p>
+    <p>Una lavadora cuesta $600. Vea lo que cuesta cada manera de pagarla, <strong>en total</strong>.</p>
+
+    <table class="reglas">
+      <caption>Costo total de una misma compra de $600 según la forma de pago. Cifras redondeadas con fines didácticos.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Forma de pago</th>
+          <th scope="col">Cómo funciona</th>
+          <th scope="col">Lo que acaba pagando</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Al contado</td>
+          <td>Paga los $600 hoy.</td>
+          <td><strong>$600.</strong> Pero se queda sin esos $600 para cualquier otra cosa, y eso es su costo de oportunidad.</td>
+        </tr>
+        <tr>
+          <td>Financiado a plazos</td>
+          <td>24 cuotas de $32 al mes.</td>
+          <td><strong>$768.</strong> Son $168 de interés: un 28 % más que el precio de la etiqueta.</td>
+        </tr>
+        <tr>
+          <td>Con tarjeta, pagando el mínimo</td>
+          <td>Tarjeta al 24 % anual, pagando cerca del mínimo cada mes.</td>
+          <td>Bastante más de $768, y la cifra crece cuanto más se tarde, porque el interés se cobra cada mes sobre lo que queda por pagar.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ejemplo">
+      <span class="et">La cuenta</span>
+      <div class="paso"><span class="n">1</span>Multiplique la cuota por el número de cuotas: <strong>32 × 24 = 768</strong>.</div>
+      <div class="paso"><span class="n">2</span>Réstele el precio al contado: <strong>768 − 600 = 168</strong>. Eso es lo que cuesta el crédito.</div>
+      <div class="paso"><span class="n">3</span>Y para saber cuánto es en porcentaje: <strong>168 ÷ 600 × 100 = 28 %</strong>.</div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Ninguna de las tres opciones es «la correcta».</strong> Pagar al contado cuesta menos dinero y más liquidez; las otras dos compran tiempo a cambio de interés, y a veces eso vale la pena. Lo que sí es siempre un error es <strong>no hacer la cuenta</strong>, porque entonces se elige sin saber el precio de lo que se elige.
+    </div>
+
+    <h3>Y la inflación, que cobra sin que se note</h3>
+
+    <p>La inflación es el aumento general y sostenido de los precios. Su efecto práctico es que <strong>el mismo dinero compra menos cada año</strong>.</p>
+
+    <table class="reglas">
+      <caption>Cálculo de la tasa de inflación a partir del costo de una misma canasta de compra.</caption>
+      <thead>
+        <tr><th scope="col">Año</th><th scope="col">Costo de la canasta</th><th scope="col">Inflación acumulada desde el año base</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Año base</td><td>$850.00</td><td>0,0 %</td></tr>
+        <tr><td>Un año después</td><td>$875.00</td><td>(875 − 850) ÷ 850 × 100 = <strong>2,9 %</strong></td></tr>
+        <tr><td>Dos años después</td><td>$891.00</td><td>(891 − 850) ÷ 850 × 100 = <strong>4,8 %</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Dos cosas que el examen sí pregunta sobre inflación.</strong> Primera: <strong>no todos los precios suben igual</strong>. La inflación se mide con una canasta representativa, y dentro de ella unos artículos suben, otros bajan y el total puede subir de todas formas. Segunda: <strong>castiga más a quien tiene el ingreso fijo</strong>, como un pensionado, porque su dinero pierde valor sin que nadie le suba nada. A quien tiene una deuda a tasa fija, en cambio, la inflación le abarata la deuda.
+    </div>
+  </div>
+
+  <div class="bloque">
+    <div class="practica">
+      <h3>Práctica interactiva · Escasez, curvas y crédito</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="El costo de oportunidad es la mejor alternativa descartada, y aquí es el turno que no trabajó. Que no salga en ningún recibo no significa que no exista.">
+        <div class="enun">Dedica el sábado a estudiar en vez de trabajar un turno de ocho horas a $18. ¿Cuál es el costo de oportunidad?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Cero, porque estudiar es gratis</div>
+          <div class="opcion" data-op="b">Los $144 que habría ganado en ese turno</div>
+          <div class="opcion" data-op="c">El precio de los materiales de estudio</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La sequía afecta a quien produce, así que mueve la oferta, y la mueve a la izquierda. Cuando se mueve la oferta, precio y cantidad van en direcciones opuestas.">
+        <div class="enun">Una sequía arruina la cosecha de tomate. ¿Qué le pasa al precio y a la cantidad de equilibrio?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Los dos suben</div>
+          <div class="opcion" data-op="b">Los dos bajan</div>
+          <div class="opcion" data-op="c">El precio sube y la cantidad baja</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="El precio no desplaza la curva: hace que uno se mueva a lo largo de ella. La curva de demanda solo se mueve si cambia algo distinto del precio.">
+        <div class="enun">Sube el precio del café y la gente compra menos café. ¿Qué ha ocurrido?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Bajó la cantidad demandada; la curva no se movió</div>
+          <div class="opcion" data-op="b">Bajó la demanda; la curva se desplazó a la izquierda</div>
+          <div class="opcion" data-op="c">Subió la oferta; la curva se desplazó a la derecha</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="18 × 36 = 648, y 648 − 500 = 148. Ese es el costo del crédito, casi un 30 % del precio de la etiqueta.">
+        <div class="enun">Un televisor cuesta $500 al contado o 36 cuotas de $18. ¿Cuánto cuesta el crédito?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">$18</div>
+          <div class="opcion" data-op="b">$148</div>
+          <div class="opcion" data-op="c">$648</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Su costo de oportunidad de esta semana</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Escriba tres decisiones que haya tomado esta semana: una de dinero, una de tiempo y una de las dos cosas. Para cada una, anote en dos columnas lo que le costó en dinero y cuál fue la mejor alternativa que descartó. Ponga cifra a esa alternativa siempre que pueda.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si en la columna de la alternativa escribió más de una cosa, elija la mejor y borre el resto: el costo de oportunidad es una sola. Y si alguna decisión le dio costo de oportunidad cero, revísela: casi seguro que existía otra opción y no la miró.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · La cuenta del crédito, con un papel real</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque un contrato de financiación, un plan de pagos o un estado de cuenta de tarjeta, suyo o de quien se lo preste. Localice la cuota y el número de cuotas, multiplíquelos, réstele el precio al contado y calcule qué porcentaje representa esa diferencia. Si es una tarjeta, busque el interés que le cobraron el mes pasado y multiplíquelo por doce para hacerse una idea del año.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si el porcentaje le sale por debajo del cinco por ciento, revise que no haya una cuota final grande escondida. Y si no encuentra en el papel el precio al contado, ya sabe algo del contrato: es el dato que hace visible el costo, y no siempre lo ponen.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Ocho titulares y ocho curvas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque ocho noticias de esta semana en las que suba o baje el precio de algo. Para cada una, escriba tres cosas: a quién afecta el suceso, si al comprador o al vendedor; qué curva se mueve y hacia dónde; y qué le pasa a la cantidad, no solo al precio.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> la tercera es la que se olvida. Casi todos los titulares hablan solo del precio, y la mitad de la respuesta está en la cantidad. Si en alguno no puede decidir a quién afecta el suceso, guárdelo: los casos ambiguos son los buenos, y muchas veces se mueven las dos curvas a la vez.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 7.1</h2>
+    <p>Doce preguntas: cuatro de escasez y costo de oportunidad, cuatro de lectura y desplazamiento de curvas, y cuatro de crédito, interés e inflación. Tiempo sugerido: 30 minutos. Puede usar calculadora. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir" type="button">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" type="button" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con sus hojas de las Prácticas 1 y 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de economía aplicada, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Explica el costo de oportunidad en una decisión concreta</td>
+          <td>Lo confunde con el precio pagado.</td>
+          <td>Sabe que es una alternativa, pero enumera varias.</td>
+          <td>Identifica la mejor alternativa descartada y le pone cifra.</td>
+          <td>Lo aplica también a decisiones sin desembolso, como el tiempo.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Identifica qué curva se desplaza y por qué</td>
+          <td>Mueve la curva equivocada o mueve las dos.</td>
+          <td>Acierta con la curva pero duda de la dirección.</td>
+          <td>Decide primero a quién afecta el suceso y de ahí saca la curva y la dirección.</td>
+          <td>Distingue un cambio en la demanda de un cambio en la cantidad demandada.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Predice el efecto sobre el equilibrio</td>
+          <td>Responde solo sobre el precio.</td>
+          <td>Nombra precio y cantidad, pero a veces con la dirección cambiada.</td>
+          <td>Aplica el truco de la misma dirección o direcciones opuestas y acierta en los cuatro casos.</td>
+          <td>Reconoce cuándo se mueven las dos curvas y por qué entonces un efecto queda indeterminado.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Calcula el costo real del crédito</td>
+          <td>Compara solo el importe de la cuota.</td>
+          <td>Multiplica cuota por plazos pero no lo compara con el contado.</td>
+          <td>Calcula la diferencia y la expresa en dólares y en porcentaje.</td>
+          <td>Añade el costo de oportunidad de pagar al contado y decide con las dos cifras delante.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 7.1</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Si usar algo para una cosa impide usarlo para otra, es escaso</strong>, y de ahí sale que toda elección tenga un costo que no aparece en el recibo. <strong>Antes de mover ninguna curva, pregúntese a quién afecta el suceso</strong>, si al comprador o al vendedor: eso decide cuál se mueve, y el resto sale del truco de la misma dirección o las direcciones opuestas. Y <strong>el crédito cuesta lo que cuesta, y se sabe con una multiplicación y una resta</strong>.</p>
+    <p>Fíjese en que la primera y la tercera son la misma idea. Pagar al contado no es gratis, porque ese dinero deja de estar disponible; financiar no es gratis, porque hay interés. No existe la opción sin costo: existe la opción cuyo costo usted ha calculado y la que no.</p>
+    <p>La <strong>Lección 7.2</strong> cambia de las curvas a los mapas y a las personas: pirámides de población, factores de expulsión y atracción, y urbanización.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="economia/">Guía de economía</a>
+    <span class="nav-sig">Siguiente: Lección 7.2 · en preparación</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 7 · Lección 7.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de cronología, 5 de causalidad, 3 de Artículos y Constitución ---- */
+  var preguntasQuiz = [
+    { enun: '1. Un recurso es escaso cuando…', ops: ['Es raro y difícil de encontrar', 'Usarlo para una cosa impide usarlo para otra', 'Su precio es alto', 'Se está agotando'],
+      correcta: 1, expl: 'Escaso no es lo mismo que raro ni que caro. Hay muchísima agua potable en el mundo y sigue siendo escasa, porque no está donde se necesita.' },
+    { enun: '2. El costo de oportunidad de una decisión es…', ops: ['Lo que se paga por ella', 'La suma de todas las opciones descartadas', 'El valor de la mejor alternativa descartada', 'El precio más los impuestos'],
+      correcta: 2, expl: 'Una sola: la que se habría elegido si la primera no existiera. Y puede ser tiempo en vez de dinero.' },
+    { enun: '3. Una ciudad usa un terreno municipal para hacer un parque. ¿Cuál es el costo de oportunidad?', ops: ['El costo de la obra', 'Lo que ese terreno habría dado en su mejor uso alternativo', 'Cero, porque el terreno ya era suyo', 'El mantenimiento anual'],
+      correcta: 1, expl: 'Que el terreno ya fuera suyo no lo hace gratis: mientras sea parque no puede ser vivienda ni escuela ni venta.' },
+    { enun: '4. Usted estudia el sábado en vez de trabajar ocho horas a $18. Su costo de oportunidad es…', ops: ['$0', '$18', '$144', 'El precio de los libros'],
+      correcta: 2, expl: '8 × 18 = 144. Que estudiar no cueste dinero no significa que no cueste: cuesta el turno que no trabajó.' },
+    { enun: '5. La curva de demanda baja de izquierda a derecha porque…', ops: ['Cuanto más alto el precio, menos quiere comprar la gente', 'Cuanto más alto el precio, más quiere vender la gente', 'Los precios siempre bajan con el tiempo', 'La oferta siempre supera a la demanda'],
+      correcta: 0, expl: 'Y la de oferta sube por la razón contraria: a más precio, más quieren vender los productores.' },
+    { enun: '6. Una nueva máquina abarata la producción de televisores. ¿Qué ocurre?', ops: ['La demanda se desplaza a la derecha', 'La oferta se desplaza a la derecha: el precio baja y la cantidad sube', 'La oferta se desplaza a la izquierda', 'No cambia nada hasta que suba el precio'],
+      correcta: 1, expl: 'El suceso afecta a quien produce, así que mueve la oferta. Cuando se mueve la oferta, precio y cantidad van en direcciones opuestas.' },
+    { enun: '7. Sube el precio de la gasolina y la gente compra menos gasolina. Eso es…', ops: ['Una caída de la demanda', 'Una caída de la cantidad demandada', 'Un aumento de la oferta', 'Una caída de la oferta'],
+      correcta: 1, expl: 'El precio no desplaza la curva: hace que uno se mueva a lo largo de ella. La curva de demanda solo se mueve si cambia algo distinto del precio.' },
+    { enun: '8. Un estudio dice que un alimento es bueno para la salud y más gente lo quiere. ¿Qué le pasa al equilibrio?', ops: ['Precio y cantidad suben', 'Precio y cantidad bajan', 'El precio sube y la cantidad baja', 'El precio baja y la cantidad sube'],
+      correcta: 0, expl: 'La noticia afecta al comprador, así que mueve la demanda a la derecha. Cuando se mueve la demanda, precio y cantidad van en la misma dirección.' },
+    { enun: '9. Un abrigo cuesta $400 al contado o 24 cuotas de $20. ¿Cuánto cuesta el crédito?', ops: ['$20', '$80', '$480', '$400'],
+      correcta: 1, expl: '20 × 24 = 480, y 480 − 400 = 80. Ese es el costo del crédito, un 20 % del precio de la etiqueta.' },
+    { enun: '10. En la pregunta anterior, ¿qué porcentaje del precio al contado representa ese costo?', ops: ['5 %', '12 %', '20 %', '80 %'],
+      correcta: 2, expl: '80 ÷ 400 × 100 = 20 %. Expresarlo en porcentaje permite comparar ofertas de precios distintos.' },
+    { enun: '11. Una canasta costaba $850 el año base y cuesta $891 dos años después. La inflación acumulada es…', ops: ['4,1 %', '4,8 %', '41 %', '8,5 %'],
+      correcta: 1, expl: '(891 − 850) ÷ 850 × 100 = 4,8 %. La fórmula es siempre la misma: diferencia dividida entre el valor de partida, por cien.' },
+    { enun: '12. ¿A quién perjudica más la inflación?', ops: ['A quien tiene una deuda a tasa fija', 'A quien tiene un ingreso fijo, como un pensionado', 'A quien es dueño de una empresa', 'A todos exactamente igual'],
+      correcta: 1, expl: 'Su dinero pierde valor sin que nadie le suba nada. A quien debe a tasa fija, en cambio, la inflación le abarata la deuda.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede pasar a la Lección 7.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* «¿Qué curva se mueve?». Botones, no arrastrar: accesible con teclado y
+     con lector de pantalla, y usable en pantalla táctil. */
+  var CASOS = [
+    { t: 'Una helada destruye la cosecha de naranjas.', c: 'PS',
+      e: 'Afecta al productor, así que se mueve la oferta, y hacia la izquierda. Oferta movida: precio y cantidad en direcciones opuestas.' },
+    { t: 'Se pone de moda una zapatilla y todo el mundo la quiere.', c: 'SS',
+      e: 'Afecta al comprador: la demanda se mueve a la derecha. Demanda movida: precio y cantidad en la misma dirección, los dos suben.' },
+    { t: 'Llega una recesión y las familias tienen menos dinero.', c: 'BB',
+      e: 'Afecta al comprador: la demanda se mueve a la izquierda. Los dos bajan.' },
+    { t: 'Una fábrica nueva permite producir el doble por el mismo costo.', c: 'BS',
+      e: 'Afecta al productor: la oferta se mueve a la derecha. Precio abajo, cantidad arriba.' },
+    { t: 'Sube mucho el precio del combustible que usan los camiones de reparto.', c: 'PS',
+      e: 'Es un costo de producción, así que afecta al vendedor: la oferta se mueve a la izquierda. Precio arriba, cantidad abajo. Ojo con este: habla de un precio, pero no del precio del producto, sino de un insumo.' },
+    { t: 'Baja mucho el precio del té, que mucha gente toma en vez de café. ¿Qué pasa en el mercado del café?', c: 'BB',
+      e: 'Un sustituto más barato afecta al comprador de café: la demanda de café se mueve a la izquierda y los dos bajan. Este es de los que más se fallan, porque el suceso ocurre en otro mercado.' },
+    { t: 'El gobierno da una subvención a los productores de maíz.', c: 'BS',
+      e: 'Abarata producir, así que afecta al vendedor: la oferta se mueve a la derecha. Precio abajo, cantidad arriba.' },
+    { t: 'Llegan más inmigrantes a una ciudad y aumenta la población.', c: 'SS',
+      e: 'Hay más compradores para la vivienda y para casi todo: la demanda se mueve a la derecha y los dos suben. Es el mismo mecanismo de la moda, con otro motivo.' }
+  ];
+  var NOMBRES = { SS: 'Suben los dos', BB: 'Bajan los dos', PS: 'Precio ↑, cantidad ↓', BS: 'Precio ↓, cantidad ↑' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' sucesos.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['SS', 'BB', 'PS', 'BS'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
