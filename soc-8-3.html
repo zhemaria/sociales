@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--
+  Lección 8.3 · Simulacro cronometrado, tipos de ítem y Constitución de Illinois
+  Spanish ASE Social Studies · Tema 8 · Integración y preparación GED
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 8.3 · Simulacro cronometrado, tipos de ítem y Constitución de Illinois</title>
+<meta name="description" content="Los cinco formatos de pregunta del examen GED de Estudios sociales, el reparto de los setenta minutos, el simulacro completo y qué hacer con el informe de errores." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 8 — violeta heredado del plan curricular (--t8). El violeta no
+       choca ni con el verde de acierto ni con el rojo de error, así que
+       aquí se conserva la convención universal de las dos señales. */
+    --tema:    #4a148c;
+    --tema-d:  #2e0a5c;
+    --tema-bg: #f3e5f5;
+    --tema-bg2:#dcc6e6;
+    --acento:  #6a1b9a;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #1f0640 0%, #2e0a5c 55%, #4a148c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(31,6,64,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #2e0a5c;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fdfbfe; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2e0a5c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #574168; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #574168; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #2e0a5c; }
+
+  /* ══ COMPONENTES DEL TEMA 8 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#2e0a5c; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Escenario de estímulo múltiple, con el formato del examen */
+  .escenario { border: 2px solid var(--tema); border-radius: 12px; margin: 22px 0; overflow: hidden; }
+  .escenario > .cabecera {
+    background: var(--tema); color: #fff; padding: 10px 20px;
+    font-weight: 700; font-size: 15px; letter-spacing: .3px;
+  }
+  .escenario > .cuerpo { padding: 4px 20px 18px; background: #fff; }
+  .estimulo { border-left: 5px solid var(--tema-bg2); background: #fbf7fd; padding: 12px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+  .estimulo .et-est {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+    padding: 2px 10px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .estimulo p:last-child { margin-bottom: 0; }
+
+  /* Gráficas */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:14px 16px; margin:14px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:15.5px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#b9a2c7; stroke-width:1.5; }
+  .g-reja   { stroke:#f0e8f4; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: #8d6e93; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#2e0a5c; font-weight:700; }
+  .g-valor  { font-size:11.5px; fill:#2e0a5c; font-weight:700; }
+
+  /* Plantilla de cuatro columnas */
+  table.plantilla td.vacia { background: #fafafa; color: #777; font-style: italic; }
+
+  /* Reloj de la sección de tiempo */
+  .reloj {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;
+  }
+  .reloj .tramo {
+    flex: 1 1 200px; background: var(--tema-bg); border-left: 6px solid var(--tema);
+    border-radius: 0 9px 9px 0; padding: 12px 16px;
+  }
+  .reloj .tramo .t-min {
+    display: inline-block; background: var(--tema); color: #fff; border-radius: 5px;
+    padding: 1px 10px; font-size: 12.5px; font-weight: 700; margin-bottom: 6px;
+  }
+  .reloj .tramo p { margin: 0; font-size: 14.5px; }
+
+  .comp .botones.cuatro button { flex:1 1 140px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 8 · Integración y preparación GED®</div>
+    <h1>Lección 8.3 · Simulacro cronometrado, tipos de ítem y Constitución de Illinois</h1>
+    <div class="meta">NRS 5–6 · Cierre del curso</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.1 a SSP.11 · Todas</span>
+      <span class="sp">Evaluación final sumativa</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 8.3</span>
+    <span class="nav-sig">Última lección del curso</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Manejar con soltura los cinco formatos de pregunta del examen.</li>
+      <li>Repartir setenta minutos entre treinta y cinco reactivos, con los escenarios agrupados.</li>
+      <li>Resolver un simulacro completo en condiciones equivalentes a las del examen.</li>
+      <li>Clasificar los propios errores por dominio y por destreza, y saber a qué lección volver.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> Veintitrés lecciones de contenido y destrezas, y un proyecto. Queda una cosa: comprobar que todo eso funciona <span class="resalta">con un reloj en marcha y sin nadie que ayude</span>.</p>
+    <p>Esta lección no enseña contenido nuevo. Enseña el examen: cómo está hecho, cómo se responde y qué hacer con el resultado.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li><strong>Setenta minutos seguidos y sin interrupciones.</strong> No sirve hacer el simulacro a ratos: la resistencia es parte de lo que se mide.</li>
+      <li>Un sitio tranquilo, el teléfono en silencio y algo para escribir.</li>
+      <li>Calculadora. En el examen real se usa un emulador de la TI-30XS que aparece en la pantalla.</li>
+      <li>Unas cuatro horas en total, repartidas: la preparación un día y el simulacro otro.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Los cinco formatos</h2>
+
+  <div class="bloque">
+    <p>El examen es por computadora y las preguntas no son todas de opción múltiple. Hay cinco maneras de responder, y conviene haberlas usado antes para no perder tiempo averiguando cómo funcionan.</p>
+
+    <table class="reglas">
+      <caption>Los cinco formatos de reactivo y qué conviene hacer con cada uno.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Formato</th>
+          <th scope="col">Cómo se responde</th>
+          <th scope="col">Lo que hay que saber</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Selección múltiple</strong></td>
+          <td>Se elige una opción de cuatro.</td>
+          <td>El más frecuente. Lea las cuatro antes de decidir: la segunda mejor suele estar puesta a propósito, y suele diferenciarse por un absoluto.</td>
+        </tr>
+        <tr>
+          <td><strong>Menú desplegable</strong></td>
+          <td>Se abre una lista dentro de una frase y se elige el término que la completa.</td>
+          <td>Lea la frase entera <em>con</em> cada opción metida dentro, no la lista suelta. Muchas opciones son términos reales que no encajan en esa frase.</td>
+        </tr>
+        <tr>
+          <td><strong>Arrastrar y soltar</strong></td>
+          <td>Se mueven elementos a unas casillas: clasificar, ordenar en el tiempo, emparejar.</td>
+          <td>Coloque primero los que tenga seguros y deje los dudosos para el final. Las casillas ya colocadas reducen las posibilidades de las que quedan.</td>
+        </tr>
+        <tr>
+          <td><strong>Completar espacios</strong></td>
+          <td>Se escribe la respuesta en una casilla, normalmente una palabra o un número.</td>
+          <td>Cuidado con el formato: si piden un porcentaje, escriba el número sin el símbolo salvo que se indique otra cosa. Revise la ortografía de los términos técnicos.</td>
+        </tr>
+        <tr>
+          <td><strong>Punto crítico</strong></td>
+          <td>Se hace clic sobre un lugar de un mapa, una gráfica o una imagen.</td>
+          <td>El más ajeno para quien no lo ha visto. Se usa en mapas y en gráficas: se pide señalar el punto donde ocurre algo. Ubique primero los ejes o la leyenda, y después haga clic.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Los dos que más sorprenden</strong> son el punto crítico y el arrastrar y soltar, porque no se parecen a nada de un examen en papel. Merece la pena hacer unos cuantos antes del día real: el simulacro de la sección 3 los incluye. Lo que se entrena no es la destreza informática, que es sencilla, sino <span class="resalta">no perder treinta segundos por reactivo averiguando qué hay que tocar</span>.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Setenta minutos, treinta y cinco preguntas</h2>
+
+  <div class="bloque">
+    <p>Dos minutos por reactivo de media, pero repartidos de manera desigual, porque cerca de la mitad vienen agrupados en escenarios.</p>
+
+    <div class="reloj">
+      <div class="tramo">
+        <span class="t-min">Minutos 0–5</span>
+        <p><strong>Arranque.</strong> Las primeras preguntas cuestan más porque uno se está asentando. Es normal y no hay que alarmarse.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minuto 35</span>
+        <p><strong>Control de mitad.</strong> Debería ir por la pregunta 17 o 18. Si va por la 12, acelere. Si va por la 24, no corra: revise mejor.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minutos 60–70</span>
+        <p><strong>Cierre.</strong> Últimos diez minutos para las marcadas y para que <strong>no quede ninguna en blanco</strong>.</p>
+      </div>
+    </div>
+
+    <table class="reglas">
+      <caption>Distribución oficial de los dominios en el examen de Estudios sociales.</caption>
+      <thead>
+        <tr><th scope="col">Dominio</th><th scope="col">Peso</th><th scope="col">Reactivos aproximados</th><th scope="col">Temas del curso</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cívica y gobierno</td><td>50 %</td><td>18</td><td>Temas 3, 4 y 5</td></tr>
+        <tr><td>Historia de los Estados Unidos</td><td>20 %</td><td>7</td><td>Tema 6</td></tr>
+        <tr><td>Economía</td><td>15 %</td><td>5</td><td>Lección 7.1 y guía de economía</td></tr>
+        <tr><td>Geografía y el mundo</td><td>15 %</td><td>5</td><td>Lecciones 7.2 y 7.3</td></tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Mire la primera fila y saque la consecuencia.</strong> La mitad del examen es cívica y gobierno. Si tuviera que repasar un solo bloque antes del día señalado, son los temas 3, 4 y 5: cómo se hizo la Constitución, qué hace cada rama y cómo se ejercen los derechos. Historia entera vale siete preguntas; el poder legislativo, el ejecutivo y el judicial valen bastante más.
+    </div>
+
+    <div class="caja-tip">
+      <strong>Las tres reglas de tiempo, otra vez.</strong> Si una pregunta pasa de dos minutos, márquela y siga. En un escenario, la segunda y la tercera pregunta deben costar la mitad que la primera; si no, está releyendo. Y al final <strong>no debe quedar ninguna casilla vacía</strong>: sin penalización por error, una respuesta adivinada tiene alguna probabilidad y una casilla en blanco no tiene ninguna.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. El simulacro</h2>
+
+  <div class="bloque">
+    <p>Este es el examen completo: treinta y cinco reactivos en setenta minutos, con la distribución oficial de dominios y con los cinco formatos. <strong>No corrige sobre la marcha.</strong> Se responde entero, se puede volver atrás y cambiar lo que sea mientras dure el tiempo, y la corrección llega al final, junto con el informe.</p>
+
+    <div class="caja-atencion">
+      <strong>Antes de pulsar «Comenzar», tres condiciones.</strong> Setenta minutos seguidos sin levantarse. Sin consultar apuntes, ni esta página, ni el Archivo de fuentes. Y un solo intento por sesión: si lo interrumpe, el resultado ya no le dice lo que necesita saber. Es incómodo a propósito, porque el día del examen también lo será.
+    </div>
+
+    <a class="enlace-interactivo" href="https://zhemaria.github.io/examen/sociales/">
+      <span class="ei-icono" aria-hidden="true">🏛️</span>
+      <span>
+        <span class="ei-titulo">Simulacro completo de Estudios sociales</span>
+        <span class="ei-sub">35 reactivos · 70 minutos · Cívica 50 %, Historia 20 %, Economía 15 %, Geografía 15 %. Al terminar recibirá un informe con la explicación de cada error y un enlace a la lección del curso donde se estudia ese contenido.</span>
+        <span class="ei-cta">Abrir el simulacro</span>
+      </span>
+    </a>
+
+    <div class="caja-tip">
+      <strong>Y una advertencia sobre el resultado.</strong> Un simulacro mide cómo le fue ese día, no cuánto sabe. Un resultado bajo con tres interrupciones no significa nada; uno alto hecho consultando apuntes, tampoco. <span class="resalta">El número solo vale si las condiciones fueron las de verdad.</span>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Qué hacer con el informe</h2>
+
+  <div class="bloque">
+    <p>Aquí está la parte que casi todo el mundo se salta y que es la que hace que el simulacro sirva de algo. Un examen que solo da un porcentaje es un termómetro; uno que dice qué repasar es un plan.</p>
+    <p>Los errores no son todos iguales, y confundirlos lleva a estudiar lo que no es. Hay cuatro clases.</p>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">De contenido</span>
+        <p>No sabía el dato o el concepto.</p>
+        <span class="ej">Se arregla volviendo a la lección que indica el informe.</span>
+      </div>
+      <div class="tc">
+        <span class="n">De destreza</span>
+        <p>Sabía el contenido y falló al leer la fuente, la gráfica o el argumento.</p>
+        <span class="ej">Se arregla en los temas 1, 2 y en la Lección 8.1, no en el tema del dominio.</span>
+      </div>
+      <div class="tc">
+        <span class="n">De enunciado</span>
+        <p>Sabía la respuesta y contestó otra cosa: no leyó bien lo que se le pedía.</p>
+        <span class="ej">Se arregla leyendo la pregunta dos veces, no estudiando más.</span>
+      </div>
+      <div class="tc">
+        <span class="n">De tiempo</span>
+        <p>No llegó, o contestó deprisa y mal al final.</p>
+        <span class="ej">Se arregla con las reglas de la sección 2.</span>
+      </div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>La distinción que cambia el plan de estudio.</strong> Si falló tres reactivos de tres dominios distintos y los tres eran de escenario con varias fuentes, su problema <em>no</em> es historia, ni economía, ni geografía: <span class="resalta">es la Lección 8.1</span>. Estudiar más contenido no lo arreglaría. Por eso el informe hay que leerlo dos veces: una mirando el dominio y otra mirando qué le pidieron hacer.
+    </div>
+
+    <table class="reglas">
+      <caption>Qué hacer según el resultado del simulacro.</caption>
+      <thead>
+        <tr><th scope="col">Resultado</th><th scope="col">Qué significa</th><th scope="col">Qué hacer</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Menos del 50 %</td>
+          <td>Faltan bases de contenido, no solo técnica.</td>
+          <td>Repase los temas completos que señala el informe, no solo las lecciones sueltas. Y empiece por cívica, que es la mitad del examen.</td>
+        </tr>
+        <tr>
+          <td>Entre el 50 y el 65 %</td>
+          <td>El contenido está y falla la aplicación.</td>
+          <td>Vuelva a las lecciones enlazadas, y sobre todo a la 8.1 y a los temas 1 y 2. Repita el simulacro en una semana.</td>
+        </tr>
+        <tr>
+          <td>Entre el 65 y el 75 %</td>
+          <td>Cerca. Lo que queda suele ser tiempo y lectura del enunciado.</td>
+          <td>Clasifique cada error por las cuatro clases de arriba. Si dominan las de enunciado y tiempo, no estudie más: practique con reloj.</td>
+        </tr>
+        <tr>
+          <td>Más del 75 %</td>
+          <td>Preparado, con margen.</td>
+          <td>Repase solo las lecciones que el informe marque por debajo de ese umbral y haga el <em>GED Ready</em> oficial, que es el que mejor predice el resultado real.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿De qué clase es este error?</h3>
+    <p>Ocho situaciones reales de examen. Clasifique cada una, porque de la clase depende qué hay que hacer después.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. La Constitución de Illinois</h2>
+
+  <div class="bloque">
+    <p>Además de aprobar los cuatro exámenes del GED, en Illinois hay que <strong>cumplir el requisito de la Constitución</strong> para recibir el certificado de escuela secundaria del estado. Es un trámite aparte del examen, y se cumple completando una lección en línea gratuita en el portal oficial.</p>
+
+    <p>Lea las cuatro cosas que vienen a continuación <strong>antes</strong> de abrir el portal, que está al final de la sección. Dos de ellas le pueden ahorrar horas.</p>
+
+    <div class="caja-atencion">
+      <strong>Primero: puede que no tenga que hacerlo.</strong> Quien haya aprobado el examen de la Constitución de Illinois <strong>antes del 1 de julio de 2022</strong> ya cumplió el requisito y no necesita completar esta versión. Si es su caso, busque aquel comprobante antes de ponerse con el módulo. Y si tiene dudas sobre su situación, pregunte en su programa: son ellos quienes tramitan el certificado.
+    </div>
+
+    <div class="caja-tip">
+      <strong>Segundo: póngalo en español antes de leer una sola línea.</strong> El portal abre en inglés, pero tiene un selector de idioma <span class="resalta">arriba a la derecha</span>, junto al icono del globo terráqueo. Elija <strong>ESPAÑOL</strong> y toda la lección, incluidas las preguntas, pasa a estar en español. Mucha gente hace el módulo entero en inglés sin saber que no hacía falta.
+    </div>
+
+    <h3>Tercero: los cuatro pasos del trámite</h3>
+
+    <div class="paso"><span class="n">1</span><strong>Regístrese</strong> en el portal. Hace falta una cuenta: con «Iniciar sesión» solo se entra si ya la tiene.</div>
+    <div class="paso"><span class="n">2</span><strong>Complete la lección en línea.</strong> Al final se le pedirán datos para que el cumplimiento quede conectado con su examen de equivalencia, sea GED o HiSET.</div>
+    <div class="paso"><span class="n">3</span><strong>Imprima o guarde el certificado</strong> que se genera al terminar. Es su prueba de haberlo completado, así que guárdelo también en digital.</div>
+    <div class="paso"><span class="n">4</span><strong>Presente ese certificado en la Oficina Regional de Educación</strong> del condado donde vive. Ese es el paso que cierra el requisito, y sin él los tres anteriores no cuentan.</div>
+
+    <div class="caja-tip">
+      <strong>Y cuarto, la buena noticia:</strong> el contenido de ese módulo ya lo ha estudiado. Estructura de la Constitución, las tres ramas, el federalismo, la Carta de Derechos y las enmiendas son los temas 3, 4 y 5 de este curso. Lo específico de Illinois —la estructura del gobierno estatal y los derechos que añade su constitución— es lo único que hay que mirar aparte, y el propio módulo lo enseña.
+    </div>
+
+    <h3>Ahora sí: el portal</h3>
+
+    <a class="enlace-interactivo" href="https://ilconstitution.org/login" target="_blank" rel="noopener">
+      <span class="ei-icono" aria-hidden="true">🦅</span>
+      <span>
+        <span class="ei-titulo">Portal oficial: Constitución de Illinois</span>
+        <span class="ei-sub">Requisito para la finalización del certificado de escuela secundaria de Illinois. Regístrese, ponga el idioma en español arriba a la derecha, y calcule unas dos horas. Guarde el certificado del final.</span>
+        <span class="ei-cta">Abrir ilconstitution.org</span>
+      </span>
+    </a>
+
+    <div class="ejemplo">
+      <span class="et">Orden recomendado</span>
+      <div class="paso"><span class="n">1</span>Haga el simulacro de la sección 3 y trabaje su informe.</div>
+      <div class="paso"><span class="n">2</span>Repase lo que el informe señale y repita el simulacro.</div>
+      <div class="paso"><span class="n">3</span>Haga el <em>GED Ready</em> oficial cuando pase del 75 % en el simulacro.</div>
+      <div class="paso"><span class="n">4</span>Deje el módulo de la Constitución para después del examen si va justo de tiempo: es un requisito para el certificado, no para aprobar la prueba.</div>
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Antes del cronómetro</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Abra el simulacro, empiece y responda solo las diez primeras preguntas sin mirar el reloj, fijándose en el <em>formato</em> de cada una. Anote cuáles de los cinco le aparecieron y cuál le costó más manejar. Después salga sin terminar.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> esto no es el simulacro, es el ensayo de la máquina. Si el punto crítico o el arrastrar y soltar le hicieron dudar de <em>cómo</em> responder y no de <em>qué</em> responder, ya ha ganado algo: ese titubeo, multiplicado por diez reactivos, son cinco minutos del examen real.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · El simulacro completo</div>
+      <div class="cuerpo-act">
+        <span class="duracion">70 minutos exactos</span>
+        <p>Busque setenta minutos limpios. Teléfono en silencio, nada abierto en la pantalla, nadie que interrumpa. Hágalo entero de una vez y no consulte nada.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> antes de mirar la nota, anote en un papel cómo cree que le fue y en qué dominio cree que falló más. Después compare con el informe. Si acertó, ya sabe autoevaluarse, que es media preparación; si se equivocó mucho, esa distancia también es un dato útil.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Clasificar los errores</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Con el informe delante, coja cada error y póngale una de las cuatro etiquetas de la sección 4: contenido, destreza, enunciado o tiempo. Cuente cuántos hay de cada clase y escriba, en una sola frase, qué va a hacer la semana que viene.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si casi todos le salieron «de contenido», relea los enunciados de dos o tres errores antes de darlo por bueno. Es la etiqueta más cómoda —basta con estudiar más— y por eso se abusa de ella. Los de enunciado y los de tiempo se arreglan más rápido y suben más la nota.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Autoevaluación del proceso</h2>
+    <p>Esta tabla no evalúa su nota: evalúa <strong>cómo hizo el simulacro y qué hizo después</strong>. Es lo único que está en su mano mejorar antes del examen real.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación del proceso del simulacro, con cuatro criterios y cuatro niveles de desempeño.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maneja los cinco formatos</td>
+          <td>Se atasca averiguando cómo responder.</td>
+          <td>Maneja los de texto y duda con el punto crítico o el arrastrar y soltar.</td>
+          <td>Responde los cinco sin pensar en el mecanismo.</td>
+          <td>Además aprovecha las casillas ya colocadas para deducir las que faltan.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Administra el tiempo</td>
+          <td>No llega al final, o termina en la mitad del tiempo.</td>
+          <td>Llega, pero contestando deprisa y mal los últimos reactivos.</td>
+          <td>Va por la 17 o la 18 en el minuto 35 y deja diez minutos de cierre.</td>
+          <td>Marca y abandona la pregunta atascada sin dudarlo, y vuelve a ella.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Hace el simulacro en condiciones</td>
+          <td>Lo hace a ratos o consultando apuntes.</td>
+          <td>Lo hace seguido pero con alguna interrupción.</td>
+          <td>Setenta minutos limpios, sin consultar nada.</td>
+          <td>Y anticipa su resultado antes de verlo, con acierto razonable.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Trabaja el informe</td>
+          <td>Solo mira el porcentaje.</td>
+          <td>Lee los errores pero no los clasifica.</td>
+          <td>Clasifica cada error en las cuatro clases y cuenta.</td>
+          <td>Distingue cuándo el problema es de destreza y no del dominio, y estudia en consecuencia.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 8.3 y cierre del curso</h2>
+    <p>Tres cosas de esta lección. <strong>Los cinco formatos se ensayan antes</strong>, porque medio minuto de titubeo por reactivo son cinco minutos del examen. <strong>La mitad del examen es cívica y gobierno</strong>: si hay que repasar un solo bloque, son los temas 3, 4 y 5. Y <strong>un error de destreza no se arregla estudiando más contenido</strong>, así que el informe se lee dos veces, una mirando el dominio y otra mirando qué le pidieron hacer.</p>
+    <p>Y aquí termina el curso. Veinticuatro lecciones, dieciocho documentos en el Archivo, ocho temas.</p>
+    <p>Si tuviera que quedarse con una sola cosa de todo esto, no sería una fecha ni una enmienda. Sería una pregunta, la que ha aparecido en todos los temas con distintos disfraces: <strong>¿cómo lo sabe, y hasta dónde le da lo que tiene para afirmarlo?</strong> La practicó con dos crónicas de una reunión del Concejo de Chicago en 1905, con un anuncio de fuga y la autobiografía de la misma mujer, con una gráfica de registro electoral en Luisiana, con dos votos de un mismo tribunal, y con un promedio de densidad que no describe a nadie.</p>
+    <p>El examen mide eso. Y también lo mide, todos los días, cualquier cosa que le pidan creer.</p>
+    <p><strong>Suerte.</strong> Y cuando lo apruebe, vuelva y cuéntelo.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sig">Última lección del curso</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 8 · Lección 8.3 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+})();
+
+(function () {
+  /* «¿De qué clase es este error?». Botones, no arrastrar: accesible con
+     teclado y con lector de pantalla. */
+  var CASOS = [
+    { t: 'No sabía qué es la revisión judicial y elegí al azar.', c: 'C',
+      e: 'De contenido. Se arregla volviendo a la lección que indica el informe, en este caso la 4.3.' },
+    { t: 'Sabía qué era, pero la gráfica estaba en porcentajes y yo respondí como si fueran totales.', c: 'D',
+      e: 'De destreza. El contenido lo tenía; lo que falló fue leer las unidades. Eso está en el Tema 2 y en la Lección 8.1, no en el tema del dominio.' },
+    { t: 'La pregunta decía «¿cuál NO es correcta?» y yo señalé la que sí lo era.', c: 'E',
+      e: 'De enunciado. No se arregla estudiando más: se arregla leyendo la pregunta dos veces, sobre todo cuando lleva una negación.' },
+    { t: 'Llegué al minuto 65 con seis preguntas por responder y las marqué a bulto.', c: 'T',
+      e: 'De tiempo. Se arregla con el control de mitad: en el minuto 35 hay que ir por la 17 o la 18.' },
+    { t: 'Fallé tres reactivos de tres dominios distintos, y los tres tenían dos fuentes que reconciliar.', c: 'D',
+      e: 'De destreza, y este es el caso que da sentido a toda la sección. El patrón no está en el contenido, está en el formato: su problema es la Lección 8.1, y estudiar más historia no lo arreglaría.' },
+    { t: 'Elegí una opción que decía «siempre» y resultó ser demasiado absoluta.', c: 'D',
+      e: 'De destreza. Reconocer un absoluto —siempre, nunca, única, todos— es exactamente lo que entrena la plantilla de cuatro columnas de la Lección 8.1.' },
+    { t: 'No recordaba en qué década ocurrió la Gran Migración.', c: 'C',
+      e: 'De contenido. Vuelva a la Lección 6.3 y al Documento 1 del Archivo.' },
+    { t: 'Dediqué siete minutos a una sola pregunta porque me negaba a dejarla.', c: 'T',
+      e: 'De tiempo. Siete minutos son tres reactivos y medio. Marcar y seguir no es rendirse: es aritmética.' }
+  ];
+  var NOMBRES = { C: 'De contenido', D: 'De destreza', E: 'De enunciado', T: 'De tiempo' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' situaciones.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['C', 'D', 'E', 'T'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>

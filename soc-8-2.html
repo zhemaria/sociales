@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<!--
+  Lección 8.2 · Proyecto final: indagación cívica y acción informada
+  Spanish ASE Social Studies · Tema 8 · Integración y preparación GED
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 8.2 · Proyecto final: indagación cívica y acción informada</title>
+<meta name="description" content="Proyecto final del curso: formular una pregunta convincente sobre un asunto de la comunidad, reunir y evaluar fuentes, integrar evidencia y proponer una acción cívica viable." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 8 — violeta heredado del plan curricular (--t8). El violeta no
+       choca ni con el verde de acierto ni con el rojo de error, así que
+       aquí se conserva la convención universal de las dos señales. */
+    --tema:    #4a148c;
+    --tema-d:  #2e0a5c;
+    --tema-bg: #f3e5f5;
+    --tema-bg2:#dcc6e6;
+    --acento:  #6a1b9a;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #1f0640 0%, #2e0a5c 55%, #4a148c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(31,6,64,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #2e0a5c;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fdfbfe; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2e0a5c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #574168; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #574168; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #2e0a5c; }
+
+  /* ══ COMPONENTES DEL TEMA 8 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#2e0a5c; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Escenario de estímulo múltiple, con el formato del examen */
+  .escenario { border: 2px solid var(--tema); border-radius: 12px; margin: 22px 0; overflow: hidden; }
+  .escenario > .cabecera {
+    background: var(--tema); color: #fff; padding: 10px 20px;
+    font-weight: 700; font-size: 15px; letter-spacing: .3px;
+  }
+  .escenario > .cuerpo { padding: 4px 20px 18px; background: #fff; }
+  .estimulo { border-left: 5px solid var(--tema-bg2); background: #fbf7fd; padding: 12px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+  .estimulo .et-est {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+    padding: 2px 10px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .estimulo p:last-child { margin-bottom: 0; }
+
+  /* Gráficas */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:14px 16px; margin:14px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:15.5px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#b9a2c7; stroke-width:1.5; }
+  .g-reja   { stroke:#f0e8f4; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: #8d6e93; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#2e0a5c; font-weight:700; }
+  .g-valor  { font-size:11.5px; fill:#2e0a5c; font-weight:700; }
+
+  /* Plantilla de cuatro columnas */
+  table.plantilla td.vacia { background: #fafafa; color: #777; font-style: italic; }
+
+  /* Reloj de la sección de tiempo */
+  .reloj {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;
+  }
+  .reloj .tramo {
+    flex: 1 1 200px; background: var(--tema-bg); border-left: 6px solid var(--tema);
+    border-radius: 0 9px 9px 0; padding: 12px 16px;
+  }
+  .reloj .tramo .t-min {
+    display: inline-block; background: var(--tema); color: #fff; border-radius: 5px;
+    padding: 1px 10px; font-size: 12.5px; font-weight: 700; margin-bottom: 6px;
+  }
+  .reloj .tramo p { margin: 0; font-size: 14.5px; }
+
+  .comp .botones.cuatro button { flex:1 1 140px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 8 · Integración y preparación GED®</div>
+    <h1>Lección 8.2 · Proyecto final: indagación cívica y acción informada</h1>
+    <div class="meta">NRS 5–6 · Sin quiz: el proyecto es la evaluación</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.10 · Datos y gráficas</span>
+      <span class="sp">Marco C3 · Dimensión 4: acción informada</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 8.2</span>
+    <span class="nav-sig">Siguiente: Lección 8.3 · en preparación</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Formular una pregunta que valga la pena investigar y que admita más de una respuesta razonable.</li>
+      <li>Reunir fuentes pertinentes y evaluar la credibilidad de cada una.</li>
+      <li>Integrar en un mismo argumento evidencia numérica y evidencia de testimonio.</li>
+      <li>Llegar a una conclusión proporcionada a la evidencia y proponer una acción cívica viable.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> En las veintiuna lecciones anteriores usted analizó las fuentes que le dieron. Aquí las elige, las busca y las evalúa por su cuenta, sobre un asunto que le importe de verdad.</p>
+    <p>Este proyecto no tiene quiz. <strong>El proyecto es la evaluación</strong>, y la rúbrica está al final de esta página desde el primer día: léala antes de empezar, no después de terminar.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li>Un asunto de su comunidad que le importe. En la sección 1 hay veinte para elegir si no se le ocurre ninguno.</li>
+      <li>Acceso a internet para buscar datos públicos, y papel para la plantilla del arco de indagación.</li>
+      <li>Alguien que le escuche cinco minutos al final. Puede ser una persona sola.</li>
+      <li>Unas ocho horas repartidas a lo largo de dos o tres semanas. Este proyecto no se hace de una sentada.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. La pregunta lo decide todo</h2>
+
+  <div class="bloque">
+    <p>El paso más importante del proyecto es el primero, y es donde más gente se equivoca. Una <span class="resalta">pregunta convincente</span> tiene que cumplir tres condiciones a la vez.</p>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">Discutible</span>
+        <p>Admite más de una respuesta razonable. Si solo hay una, no es una investigación: es una consulta.</p>
+        <span class="ej">No sirve: «¿cuántas escuelas hay en mi distrito?»</span>
+      </div>
+      <div class="tc">
+        <span class="n">Investigable</span>
+        <p>Existen datos y testimonios accesibles que permiten responderla. Si no los hay, no se puede hacer.</p>
+        <span class="ej">No sirve: «¿qué pensarían los vecinos en 1950?»</span>
+      </div>
+      <div class="tc">
+        <span class="n">Acotada</span>
+        <p>Tiene un lugar y un periodo concretos. Sin eso, cualquier respuesta cabe y ninguna se sostiene.</p>
+        <span class="ej">No sirve: «¿es justa la vivienda?»</span>
+      </div>
+    </div>
+
+    <table class="reglas">
+      <caption>La misma inquietud, formulada de tres maneras, y solo una sirve.</caption>
+      <thead>
+        <tr><th scope="col">Formulación</th><th scope="col">Qué le pasa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>«¿Cuántas líneas de autobús pasan por mi barrio?»</td>
+          <td>Investigable y acotada, pero <strong>no es discutible</strong>: tiene una sola respuesta y se busca en un minuto. Es un dato, no una pregunta.</td>
+        </tr>
+        <tr>
+          <td>«¿Es injusto el transporte público?»</td>
+          <td>Discutible, pero <strong>no es investigable ni está acotada</strong>: no dice dónde, ni cuándo, ni respecto de qué. Cualquier cosa que responda valdrá igual, y eso significa que no vale nada.</td>
+        </tr>
+        <tr>
+          <td>«¿Tiene mi barrio peor acceso al transporte público que otros barrios de la ciudad, y qué explicaría la diferencia?»</td>
+          <td><strong>Sirve.</strong> Admite más de una respuesta, hay datos públicos para responderla, y tiene lugar y comparación.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>La prueba de una buena pregunta.</strong> Si puede imaginar a dos personas razonables e informadas respondiéndola de manera distinta, va bien. Si la respuesta le parece obvia antes de empezar, cámbiela: <span class="resalta">una investigación cuyo resultado ya se conoce no es una investigación</span>, y la rúbrica lo nota.
+    </div>
+
+    <h3>Veinte asuntos para elegir</h3>
+
+    <p>Todos son investigables con datos públicos y todos admiten más de una respuesta. Están redactados como temas, no como preguntas: la pregunta la escribe usted.</p>
+
+    <table class="reglas">
+      <caption>Banco de asuntos locales investigables, agrupados por ámbito.</caption>
+      <thead>
+        <tr><th scope="col">Ámbito</th><th scope="col">Asuntos</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Transporte</td>
+          <td>Frecuencia de autobuses por barrio · Tiempo de trayecto al trabajo según dónde se viva · Accesibilidad de las estaciones · Seguridad vial en cruces concretos · Coste del abono frente al salario mínimo</td>
+        </tr>
+        <tr>
+          <td>Vivienda</td>
+          <td>Evolución del alquiler en su código postal · Proporción de ingreso que se va en vivienda · Vivienda asequible construida en los últimos diez años · Desalojos por barrio</td>
+        </tr>
+        <tr>
+          <td>Escuelas</td>
+          <td>Presupuesto por estudiante entre distritos · Oferta de clases de inglés para adultos · Programas después del horario escolar · Estado de los edificios</td>
+        </tr>
+        <tr>
+          <td>Salud y entorno</td>
+          <td>Calidad del aire por zona · Distancia a la clínica más cercana · Espacios verdes por habitante · Acceso a alimentos frescos</td>
+        </tr>
+        <tr>
+          <td>Servicios y participación</td>
+          <td>Tiempo de respuesta de servicios municipales por barrio · Participación electoral local · Servicios en español en las oficinas públicas</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿Sirve esta pregunta?</h3>
+    <p>Ocho preguntas de proyecto. Diga si sirven, o cuál de las tres condiciones les falta: ser discutible, ser investigable o estar acotada.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. El arco de indagación, en cuatro pasos</h2>
+
+  <div class="bloque">
+    <p>Es la estructura del Marco C3, y también la del proyecto. Cada paso tiene una entrega concreta.</p>
+
+    <div class="paso"><span class="n">1</span><strong>Preguntar.</strong> Escriba su pregunta convincente y, debajo, tres preguntas de apoyo más pequeñas que hay que responder para llegar a ella. <em>Entrega: cuatro líneas.</em></div>
+    <div class="paso"><span class="n">2</span><strong>Buscar y evaluar.</strong> Reúna al menos cuatro fuentes: dos con números y dos con voz humana. De cada una anote quién la produjo, cuándo, y con qué propósito. <em>Entrega: una ficha por fuente.</em></div>
+    <div class="paso"><span class="n">3</span><strong>Integrar.</strong> Construya al menos una representación cuantitativa propia —una tabla o una gráfica hecha por usted con los datos que reunió— y júntela con lo que dicen los testimonios. <em>Entrega: la gráfica y dos párrafos.</em></div>
+    <div class="paso"><span class="n">4</span><strong>Concluir y proponer.</strong> Responda su pregunta con una conclusión del tamaño de su evidencia, diga qué queda sin resolver, y proponga una acción cívica viable. <em>Entrega: el informe y la presentación.</em></div>
+
+    <div class="caja-atencion">
+      <strong>El paso 2 tiene una trampa que la rúbrica castiga.</strong> «Dos con números y dos con voz humana» no es un adorno. Una estadística de desalojos dice cuántos hubo y no dice qué es que te desalojen; el testimonio de una familia dice lo segundo y no prueba lo primero. <span class="resalta">Un proyecto con solo números no convence a nadie y uno con solo testimonios no demuestra nada.</span> Es lo mismo que trabajó en la Lección 6.2 con las enmiendas y el testimonio de Colby.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec3">3. Dónde están los datos</h2>
+
+  <div class="bloque">
+    <p>Más datos públicos de los que uno imagina están disponibles y son gratis. Estos son los sitios donde buscar, ordenados por lo cerca que están de su barrio.</p>
+
+    <table class="reglas">
+      <caption>Fuentes públicas de datos, de lo local a lo nacional.</caption>
+      <thead>
+        <tr><th scope="col">Dónde</th><th scope="col">Qué se encuentra</th><th scope="col">Cómo llegar</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Portal de datos de su ciudad</td>
+          <td>Casi todas las ciudades grandes publican uno: llamadas a servicios municipales, permisos de obra, delitos, inspecciones, presupuesto. Chicago tiene el suyo.</td>
+          <td>Busque «portal de datos abiertos» y el nombre de su ciudad.</td>
+        </tr>
+        <tr>
+          <td>Oficina del Censo de los Estados Unidos</td>
+          <td>Población, ingresos, vivienda, transporte al trabajo, idioma hablado en casa. Con detalle por sector censal, es decir, casi por manzanas.</td>
+          <td>Busque «American Community Survey» y el nombre de su barrio o código postal.</td>
+        </tr>
+        <tr>
+          <td>La agencia de transporte de su área</td>
+          <td>Rutas, frecuencias, puntualidad, número de pasajeros por parada.</td>
+          <td>La página de la propia agencia suele tener una sección de datos o de informes.</td>
+        </tr>
+        <tr>
+          <td>El distrito escolar</td>
+          <td>Presupuesto, matrícula, personal, resultados y estado de los edificios, escuela por escuela.</td>
+          <td>Los distritos publican informes anuales por escuela.</td>
+        </tr>
+        <tr>
+          <td>Su biblioteca pública</td>
+          <td>Acceso a bases de datos de pago, periódicos históricos y, sobre todo, bibliotecarios que saben buscar.</td>
+          <td>Pregunte en el mostrador de referencia. Es gratis y es el atajo más rápido de esta tabla.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Por qué esta tabla no lleva enlaces.</strong> A propósito. Las direcciones cambian, los portales se rediseñan y un enlace roto en un curso es peor que ninguno. Y hay una razón mejor: <strong>saber encontrar la fuente es parte de lo que este proyecto evalúa.</strong> Si alguien le da el enlace, no ha aprendido a buscarlo.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>De cada fuente, anote siempre tres cosas antes de usarla:</strong> quién la produjo, de cuándo son los datos y con qué propósito se publicaron. Es la misma ficha que ha visto en los dieciocho documentos del <a href="fuentes/index.html">Archivo de fuentes</a>, y por la misma razón: una fuente sin procedencia no se puede evaluar, y una que no se puede evaluar no se puede usar.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec4">4. La conclusión y la propuesta</h2>
+
+  <div class="bloque">
+    <p>Los dos últimos pasos son los que separan un buen proyecto de uno excelente, y los dos consisten en <strong>no pasarse</strong>.</p>
+
+    <h3>Una conclusión del tamaño de su evidencia</h3>
+
+    <p>Es la misma disciplina de la Lección 8.1: si su evidencia sostiene una afirmación mediana, no escriba una grande. Y diga en voz alta qué queda sin resolver, que no es una debilidad del trabajo sino una prueba de que lo entendió.</p>
+
+    <table class="reglas">
+      <caption>Tres conclusiones sobre la misma investigación, con la misma evidencia detrás.</caption>
+      <thead>
+        <tr><th scope="col">Conclusión</th><th scope="col">Qué le pasa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>«En mi barrio el transporte es peor.»</td>
+          <td>Demasiado vaga. ¿Peor que dónde, medido cómo? No se puede comprobar, así que tampoco se puede discutir.</td>
+        </tr>
+        <tr>
+          <td>«La ciudad discrimina deliberadamente a mi barrio en el transporte.»</td>
+          <td>Demasiado grande. Los datos de frecuencia no prueban intención, y usted no tiene fuentes sobre cómo se tomaron las decisiones. Es el error del absoluto de la Lección 8.1.</td>
+        </tr>
+        <tr>
+          <td>«Entre 2015 y 2025 la frecuencia de autobuses en mi barrio bajó un X %, mientras que en el conjunto de la ciudad bajó un Y %. Los testimonios recogidos describen trayectos más largos al trabajo. Los datos no permiten decir por qué se decidió así.»</td>
+          <td><strong>Del tamaño correcto.</strong> Dice qué mide, con qué comparación, con qué voz humana, y dónde se detiene lo que puede afirmar.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Una propuesta de acción que se pueda hacer de verdad</h3>
+
+    <p>La cuarta dimensión del Marco C3 se llama <em>acción informada</em>, y las dos palabras cuentan. Informada, porque sale de lo que usted averiguó. Acción, porque tiene que ser algo que alguien pueda hacer el mes que viene.</p>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">Concreta</span>
+        <p>Dice qué se hace exactamente. «Concienciar» no es una acción; «presentar una petición con firmas en la reunión de la junta escolar de marzo» sí lo es.</p>
+      </div>
+      <div class="tc">
+        <span class="n">Dirigida</span>
+        <p>Nombra a quien tiene la potestad de decidirlo. Aquí sirve todo lo que aprendió en los temas 4 y 5 sobre quién hace qué.</p>
+      </div>
+      <div class="tc">
+        <span class="n">A su alcance</span>
+        <p>Es algo que usted o un grupo pequeño puede empezar sin permiso ni presupuesto. Si necesita una ley federal, no es su propuesta: es su deseo.</p>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>La pregunta que ordena esta parte:</strong> <em>¿quién tiene la potestad de cambiar esto?</em> No es lo mismo un asunto que decide el concejal de su distrito, uno que decide la junta escolar y uno que decide el estado. Dirigir una propuesta a quien no puede concederla es la manera más común de que no pase nada, y usted ya sabe distinguirlo desde el Tema 4.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. Cinco minutos y dos preguntas</h2>
+
+  <div class="bloque">
+    <p>La presentación dura cinco minutos y tiene cinco partes. Una por minuto, más o menos, y en este orden.</p>
+
+    <div class="reloj">
+      <div class="tramo">
+        <span class="t-min">Minuto 1</span>
+        <p><strong>La pregunta.</strong> Dígala entera y diga por qué le importa a usted.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minuto 2</span>
+        <p><strong>Las fuentes.</strong> Cuáles usó, de dónde salen y cuál le pareció menos fiable, y por qué.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minuto 3</span>
+        <p><strong>La evidencia.</strong> Enseñe su gráfica y cuente qué dicen los testimonios.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minuto 4</span>
+        <p><strong>La conclusión.</strong> Del tamaño de la evidencia, y qué queda sin resolver.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">Minuto 5</span>
+        <p><strong>La propuesta.</strong> Qué, a quién, y cuándo.</p>
+      </div>
+    </div>
+
+    <p>Después, dos preguntas de quien le escucha. Si trabaja solo, escríbaselas usted mismo y respóndalas por escrito: <strong>estas dos, sean cuales sean las otras.</strong></p>
+
+    <div class="ejemplo">
+      <span class="et">Las dos preguntas obligatorias</span>
+      <div class="paso"><span class="n">1</span>¿Se sostiene su conclusión con la evidencia que ha presentado, o hace falta un dato más?</div>
+      <div class="paso"><span class="n">2</span>¿Es su propuesta realmente viable, y va dirigida a quien puede concederla?</div>
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Si trabaja acompañado, esto es lo que le pide el curso a quien escucha.</strong> Señalar <em>una</em> fortaleza concreta en el uso de la evidencia y <em>una</em> fuente que convendría verificar. No una opinión sobre el tema, ni un consejo general. Es la misma disciplina de la Lección 7.3: se comenta el trabajo, no la postura.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec6">6. Cómo repartir el trabajo</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Semana 1 · La pregunta y las fuentes</div>
+      <div class="cuerpo-act">
+        <span class="duracion">3 horas</span>
+        <p>Elija el asunto, escriba la pregunta convincente y las tres de apoyo. Después salga a buscar: reúna las cuatro fuentes mínimas, dos con números y dos con voz humana, y haga la ficha de cada una.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> lea su pregunta a alguien y pídale que la responda de memoria. Si le da una respuesta segura y rápida, la pregunta no era discutible y hay que rehacerla ahora, no en la semana 3.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Semana 2 · La evidencia</div>
+      <div class="cuerpo-act">
+        <span class="duracion">3 horas</span>
+        <p>Construya su gráfica o su tabla con los datos que reunió. No copie una de internet: haga la suya, aunque sea a mano. Escriba dos párrafos, uno describiendo lo que muestra y otro con lo que aportan los testimonios.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> en el párrafo de descripción no puede aparecer la palabra «porque». Describir y explicar son dos cosas, como vio en la Lección 6.2, y mezclarlas es lo que la rúbrica llama conclusión desproporcionada.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Semana 3 · La conclusión, la propuesta y la voz</div>
+      <div class="cuerpo-act">
+        <span class="duracion">2 horas</span>
+        <p>Escriba la conclusión y la propuesta, y ensaye la presentación en voz alta con un reloj. Cinco minutos son menos de lo que parecen.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si al ensayar se pasa de cinco minutos, no hable más rápido: quite. Y si lo que quita es la parte de «qué queda sin resolver», póngala de nuevo y quite otra cosa, porque esa parte vale un nivel entero de la rúbrica.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica del proyecto final</h2>
+    <p><strong>Léala antes de empezar, no al terminar.</strong> Son cinco criterios de cuatro niveles: veinte puntos en total. Esta rúbrica sustituye al quiz de la lección.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica analítica del proyecto final, con cinco criterios y cuatro niveles de desempeño cada uno.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 · Pregunta convincente</td>
+          <td>Pide un dato, o es tan amplia que cualquier respuesta vale.</td>
+          <td>Es discutible pero le falta lugar o periodo.</td>
+          <td>Es discutible, investigable y acotada.</td>
+          <td>Además viene desglosada en preguntas de apoyo que la construyen paso a paso.</td>
+        </tr>
+        <tr>
+          <td>2 · Fuentes y credibilidad</td>
+          <td>Usa una o dos fuentes sin decir de dónde salen.</td>
+          <td>Reúne varias pero no evalúa ninguna.</td>
+          <td>Cuatro fuentes con su ficha: quién, cuándo y con qué propósito.</td>
+          <td>Señala cuál es la menos fiable y por qué, y explica qué haría para verificarla.</td>
+        </tr>
+        <tr>
+          <td>3 · Integración de evidencia</td>
+          <td>Solo números, o solo testimonios.</td>
+          <td>Trae las dos clases pero en secciones separadas, sin relacionarlas.</td>
+          <td>Construye una representación cuantitativa propia y la une a los testimonios.</td>
+          <td>Dice qué sabe por los números que no sabría por los testimonios, y al revés.</td>
+        </tr>
+        <tr>
+          <td>4 · Conclusión proporcionada</td>
+          <td>Afirma más de lo que la evidencia permite, o no concluye nada.</td>
+          <td>Concluye razonablemente pero no menciona ningún límite.</td>
+          <td>La conclusión es del tamaño de la evidencia y nombra lo que queda incierto.</td>
+          <td>Distingue lo que los datos muestran de lo que solo sugieren, y dice qué dato faltaría.</td>
+        </tr>
+        <tr>
+          <td>5 · Acción y presentación</td>
+          <td>La propuesta es un deseo general, o no la hay.</td>
+          <td>Es concreta pero no dice a quién se dirige.</td>
+          <td>Concreta, dirigida a quien tiene la potestad, y al alcance de una persona o un grupo pequeño.</td>
+          <td>Además la presentación cabe en cinco minutos y responde con solvencia a las dos preguntas.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 8.2</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Una investigación cuyo resultado ya se conoce no es una investigación</strong>, así que si su pregunta le parece obvia antes de empezar, cámbiela. <strong>Los números y las voces se necesitan</strong>: una estadística de desalojos dice cuántos hubo y no dice qué es que te desalojen. Y <strong>una propuesta se dirige a quien tiene la potestad de concederla</strong>, que es lo primero que hay que averiguar.</p>
+    <p>Este proyecto es el único trabajo del curso en el que nadie le dice de antemano cuál es la respuesta correcta, y eso es a propósito. Todo lo demás ha sido entrenamiento para esto: leer una fuente, dudar de un promedio, distinguir describir de explicar, reconocer un absoluto y saber quién decide qué.</p>
+    <p>La <strong>Lección 8.3</strong> cierra el curso con el simulacro cronometrado, los cinco formatos de pregunta del examen y el módulo de la Constitución de Illinois.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sig">Siguiente: Lección 8.3 · en preparación</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 8 · Lección 8.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+})();
+
+(function () {
+  /* «¿Sirve esta pregunta?». Botones, no arrastrar: accesible con teclado y
+     con lector de pantalla. */
+  var CASOS = [
+    { t: '¿Cuántas escuelas primarias hay en mi distrito?', c: 'D',
+      e: 'Le falta ser discutible. Tiene una sola respuesta y se busca en un minuto: es un dato, no una investigación. Puede servir como pregunta de apoyo, no como pregunta convincente.' },
+    { t: '¿Es justo el sistema de vivienda?', c: 'A',
+      e: 'Le falta estar acotada, y con ella se va también la posibilidad de investigarla. No dice dónde, ni cuándo, ni respecto de qué. Cualquier respuesta valdría igual.' },
+    { t: '¿Qué habrían opinado los vecinos de mi barrio en 1930 sobre el transporte?', c: 'I',
+      e: 'Le falta ser investigable. Salvo que existan encuestas o cartas de la época y usted pueda acceder a ellas, no hay manera de responderla con evidencia.' },
+    { t: '¿Ha aumentado el alquiler medio en mi código postal más deprisa que en el conjunto de la ciudad en los últimos diez años, y qué lo explicaría?', c: 'S',
+      e: 'Sirve. Es discutible en su segunda mitad, hay datos públicos para la primera, y está acotada en lugar y periodo.' },
+    { t: '¿Debería haber más parques?', c: 'A',
+      e: 'Le falta estar acotada. Dónde, cuántos, para quién, comparado con qué. Reformulada como «¿tiene mi barrio menos superficie verde por habitante que la media de la ciudad?» ya serviría.' },
+    { t: '¿Cuál es la línea de autobús con más pasajeros de la ciudad?', c: 'D',
+      e: 'Le falta ser discutible. Es un dato único y verificable. Sirve dentro de una investigación, no como su pregunta central.' },
+    { t: '¿Reciben las escuelas de mi distrito menos presupuesto por estudiante que las de distritos vecinos, y qué explicaría la diferencia?', c: 'S',
+      e: 'Sirve, y por las mismas tres razones que la cuarta. Fíjese en que las dos preguntas que sirven tienen la misma forma: una comparación medible más un «qué lo explicaría».' },
+    { t: '¿Es mi ciudad un buen lugar para vivir?', c: 'A',
+      e: 'Le falta estar acotada, y además no dice respecto de qué ni para quién. Es una pregunta legítima en una conversación y no lo es en una investigación, porque no hay manera de decir que la respuesta esté equivocada.' }
+  ];
+  var NOMBRES = { S: 'Sirve', D: 'No es discutible', I: 'No es investigable', A: 'No está acotada' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' preguntas.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['S', 'D', 'I', 'A'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
