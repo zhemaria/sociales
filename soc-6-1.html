@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<!--
+  Lección 6.1 · Colonia, Revolución y la construcción de la nación
+  Spanish ASE Social Studies · Tema 6 · Historia de los Estados Unidos: causalidad y cambio
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 6.1 · Colonia, Revolución y la construcción de la nación</title>
+<meta name="description" content="Distinguir cronología de causalidad en el período 1754-1800, con la Declaración de derechos y agravios de 1765, la Ley Declaratoria de 1766 y la carta de Washington a Knox de 1786." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+  :root {
+    /* Tema 6 — rojo heredado del plan curricular (--t6) */
+    --tema:    #b71c1c;
+    --tema-d:  #7f0000;
+    --tema-bg: #ffebee;
+    --tema-bg2:#ffcdd2;
+    --acento:  #c62828;
+    /* En el Tema 6 el rojo es la identidad del tema, así que la señal de
+       error pasa al ámbar oscuro #5C3900 sobre #fff8e1 (10.29:1). */
+    --err:     #5C3900;
+    --err-b:   #8a5a00;
+    --err-bg:  #fff8e1;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #5c0000 0%, #7f0000 55%, #b71c1c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(92,0,0,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #7f0000;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fffafa; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #7f0000; font-weight: 600; }
+  .navlecciones .nav-sep { color: #6d4040; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #6d4040; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #1b5e20; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #7f0000; }
+
+  /* ══ COMPONENTES DEL TEMA 6 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #1b5e20; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#7f0000; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 6 · Historia de los Estados Unidos: causalidad y cambio</div>
+    <h1>Lección 6.1 · Colonia, Revolución y la construcción de la nación</h1>
+    <div class="meta">NRS 5–6 · Período 1754–1800</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.3 · Cronología y causalidad</span>
+      <span class="sp">SSP.5 · Fuentes múltiples</span>
+      <span class="sp">SSP.7 · Punto de vista</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-6">Tema 6 · Historia de los Estados Unidos</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 6.1</span>
+    <span class="nav-sig">Siguiente: Lección 6.2 · en preparación</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Distinguir la causa inmediata de la causa estructural en el origen de la Revolución.</li>
+      <li>Reconocer cuándo dos hechos solo se suceden y cuándo uno explica al otro.</li>
+      <li>Explicar qué debilidad concreta de los Artículos de la Confederación resolvió cada cláusula de la Constitución.</li>
+      <li>Ordenar los hitos de 1754 a 1800 y comprobar que el orden causal no es el orden del calendario.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> Los temas 3, 4 y 5 trataron de cómo funciona el gobierno: qué dicen los documentos fundacionales, cómo se reparte el poder y de dónde sale el dinero público. El Tema 6 cambia de pregunta. Ya no se trata de <em>cómo funciona</em>, sino de <em>por qué llegó a ser así</em>.</p>
+    <p>Y ahí aparece un problema que no es de historia sino de razonamiento, y que el examen mide directamente: la diferencia entre lo que vino después y lo que vino <strong>por causa de</strong>.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li>Papel y lápiz. Va a construir dos listas y a compararlas.</li>
+      <li>Tres documentos del <a href="fuentes/index.html">Archivo de fuentes</a>: el 9, el 10 y el 11. Puede leerlos aquí en fragmento y completos en el Archivo.</li>
+      <li>La línea de tiempo interactiva del origen de los Estados Unidos, que se enlaza en la sección 3.</li>
+      <li>Entre dos y tres horas, repartidas. No conviene hacerla de un tirón.</li>
+    </ul>
+  </div>
+  <h2 class="seccion" id="sec1">1. Después no es por causa de</h2>
+
+  <div class="bloque">
+    <p>Esta lección trabaja una práctica del examen que tiene nombre propio: <span class="resalta">SSP.3</span>, distinguir cronología de causalidad. Se la nombra aquí a propósito, porque es la destreza que se evalúa y conviene que usted sepa cuál está entrenando.</p>
+
+    <p>El error tiene nombre desde hace veinte siglos. Los romanos lo llamaban <em>post hoc, ergo propter hoc</em>: «después de esto, luego a causa de esto». Consiste en dar por probado que A causó B porque B ocurrió después de A. Es un error tan cómodo que casi nadie lo nota, porque las dos cosas se parecen mucho: en ambos casos hay un orden, y el orden se lee igual.</p>
+
+    <div class="ejemplo">
+      <span class="et">Ejemplo</span>
+      <p>Usted se toma un té y al día siguiente se le pasa el catarro. El té vino antes. ¿Curó el té el catarro? Podría ser, pero también podría ser que el catarro durase exactamente eso, con té o sin él. Para saberlo hace falta algo más que el orden de los sucesos.</p>
+    </div>
+
+    <p>Ese «algo más» son tres preguntas. Sirven igual para el té que para la Revolución.</p>
+
+    <div class="paso"><span class="n">1</span><strong>¿Hay un mecanismo?</strong> Puedo explicar <em>cómo</em> A produce B, paso a paso, sin saltos. Si no puedo, tengo una coincidencia.</div>
+    <div class="paso"><span class="n">2</span><strong>¿Lo dice alguna fuente?</strong> Alguien de la época conecta las dos cosas por escrito, o hay un documento que registra la conexión. Si solo la veo yo, doscientos años después, es una hipótesis mía.</div>
+    <div class="paso"><span class="n">3</span><strong>¿Habría pasado igual sin A?</strong> Si B iba a ocurrir de todas formas, A no es la causa. Como mucho es el momento en que ocurrió.</div>
+
+    <p>La tercera es la más incómoda y la más útil. Obliga a imaginar el mundo sin ese hecho, y muchas veces se descubre que el mundo habría seguido casi igual.</p>
+  </div>
+
+  <h3>Tres cosas que no son lo mismo</h3>
+
+  <div class="bloque">
+    <p>Cuando una causa sí resiste esas tres preguntas, todavía hay que decir de qué clase es. El examen distingue tres, y confundirlas es el segundo error más frecuente.</p>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">Condición previa</span>
+        <p>El terreno. No provoca nada por sí sola, pero sin ella nada de lo demás habría sido posible.</p>
+        <span class="ej">Las colonias llevaban siglo y medio gobernándose con asambleas propias.</span>
+      </div>
+      <div class="tc">
+        <span class="n">Causa estructural</span>
+        <p>Un conflicto de fondo que dura años, no se resuelve y sigue disponible para reactivarse.</p>
+        <span class="ej">Quién tiene la potestad de cobrar impuestos a las colonias.</span>
+      </div>
+      <div class="tc">
+        <span class="n">Causa inmediata</span>
+        <p>El suceso concreto que dispara la reacción. Es el que sale en los titulares y el que peor se explica solo.</p>
+        <span class="ej">El motín del té de Boston, en diciembre de 1773.</span>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>La regla práctica.</strong> Una causa inmediata explica <em>cuándo</em> pasó algo. Una causa estructural explica <em>por qué</em> pasó. Si en una respuesta de examen solo menciona la inmediata, ha contestado la mitad.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Mil setecientos sesenta y cinco: lo que se resolvió y lo que no</h2>
+
+  <div class="bloque">
+    <p>El mejor sitio para ver la diferencia entre las dos clases de causa es un año concreto y su respuesta cinco meses después.</p>
+    <p>En marzo de 1765 el Parlamento británico aprobó la <strong>Ley del Timbre</strong>. Gravaba casi todo el papel de uso legal y comercial de las colonias: periódicos, contratos, licencias, escrituras, barajas. Era el primer impuesto interno que Londres cobraba directamente, sin pasar por las asambleas coloniales. Llegaba después de una guerra larguísima contra Francia que había dejado a Gran Bretaña con una deuda enorme, y la lógica en Londres era sencilla: la guerra defendió a las colonias, que las colonias paguen su parte.</p>
+    <p>La reacción fue de dos clases, y conviene no confundirlas nunca. En la calle, los Hijos de la Libertad quemaron efigies y asaltaron casas de recaudadores hasta que casi ninguno se atrevió a ejercer el cargo. En una sala de Nueva York, en octubre, delegados de nueve de las trece colonias hicieron otra cosa muy distinta.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 9 · Declaración de derechos y agravios</h2>
+    <p class="fuente">Congreso de la Ley del Timbre, Nueva York, 19 de octubre de 1765. Catorce declaraciones. Se citan tres.</p>
+
+    <blockquote>
+      <p><strong>1.</strong> Que los súbditos de Su Majestad en estas colonias deben a la Corona de Gran Bretaña la misma lealtad que le deben sus súbditos nacidos dentro del reino, y <strong>toda la debida subordinación a ese augusto cuerpo, el Parlamento de Gran Bretaña</strong>.</p>
+      <p><strong>3.</strong> Que es inseparablemente esencial a la libertad de un pueblo, y derecho indudable de los ingleses, que <strong>no se les impongan contribuciones sino con su propio consentimiento</strong>, dado personalmente o por sus representantes.</p>
+      <p><strong>4.</strong> Que el pueblo de estas colonias <strong>no está representado en la Cámara de los Comunes</strong> de Gran Bretaña, ni puede estarlo, por sus circunstancias locales.</p>
+    </blockquote>
+
+    <p>Léalas en ese orden y verá aparecer la contradicción. La primera concede al Parlamento «toda la debida subordinación». La tercera y la cuarta le quitan la facultad de cobrar un impuesto. El documento no dice dónde está la frontera entre una cosa y la otra, porque no lo sabe: nadie lo sabía.</p>
+    <p>Fíjese también en lo que <em>no</em> dice. No pide la independencia. No la menciona. Pide la derogación de una ley por la vía de la petición leal, y jura fidelidad al rey dos veces. Quien lea aquí un movimiento independentista está metiendo 1776 dentro de 1765.</p>
+
+    <p class="enlace-ficha"><span aria-hidden="true">→</span> <a href="fuentes/derechos-agravios-1765.html">Las catorce declaraciones completas, con ficha y original en inglés</a></p>
+  </div>
+
+  <div class="bloque">
+    <p>Y ahora la parte que casi nunca se cuenta. El 18 de marzo de 1766 el Parlamento derogó la Ley del Timbre. En las colonias hubo campanas, hogueras y brindis por el rey. Ese mismo día, el mismo Parlamento aprobó una segunda ley, mucho más corta, que casi nadie celebró porque casi nadie la leyó.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 10 · La Ley Declaratoria</h2>
+    <p class="fuente">Parlamento de Gran Bretaña, Westminster, 18 de marzo de 1766. El mismo día de la derogación.</p>
+
+    <blockquote>
+      <p>…se declara que dichas colonias y plantaciones de América <strong>han estado, están y de derecho deben estar subordinadas</strong> a la corona imperial y al parlamento de Gran Bretaña… y que la majestad del Rey… ha tenido, tiene y de derecho debe tener pleno poder y autoridad para dictar leyes y estatutos de fuerza y validez suficientes para obligar a las colonias y al pueblo de América <strong>en todos los casos, sean cuales fueren</strong>.</p>
+      <p><strong>II.</strong> Y además se declara… que todas las resoluciones, votos, acuerdos y actuaciones habidas en cualquiera de dichas colonias… por las que se niegue o se ponga en cuestión el poder y la autoridad del parlamento… son, y por la presente se declaran, <strong>enteramente nulas y sin valor alguno</strong>.</p>
+    </blockquote>
+
+    <p>Esa sección II anula, por escrito y por adelantado, el Documento 9 y todo lo que se le parezca.</p>
+
+    <p class="enlace-ficha"><span aria-hidden="true">→</span> <a href="fuentes/ley-declaratoria-1766.html">La ley completa, con la tabla de contraste entre los dos documentos</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>Lo que ocurrió en marzo de 1766, dicho con precisión</h3>
+
+    <div class="enfrentados">
+      <div class="lado colonos">
+        <h3>Lo que se resolvió</h3>
+        <ul>
+          <li>El impuesto se retiró. Nadie iba a pagar el timbre.</li>
+          <li>Las celebraciones fueron sinceras: el conflicto <em>inmediato</em> había terminado de verdad.</li>
+          <li>La vía de la petición leal pareció funcionar, lo que reforzó a los moderados.</li>
+        </ul>
+      </div>
+      <div class="lado londres">
+        <h3>Lo que quedó intacto</h3>
+        <ul>
+          <li>La potestad de gravar, reafirmada entera y por escrito.</li>
+          <li>La potestad de legislar «en todos los casos», sin excepción declarada.</li>
+          <li>La disputa de fondo, sin resolver y disponible para reactivarse en cuanto hiciera falta dinero otra vez.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Aquí está la lección entera en un solo par de fechas. <span class="resalta">Se resolvió la causa inmediata y se dejó viva la causa estructural.</span> Por eso 1766 no es un final feliz: es una tregua sobre un problema que nadie tocó. Y por eso, cuando en 1767 y en 1773 vuelvan los impuestos, no habrá que empezar el conflicto de nuevo. Estaba esperando.</p>
+
+    <div class="caja-atencion">
+      <strong>Cuidado con la conclusión fácil.</strong> Es tentador decir que la Ley Declaratoria «causó» la Revolución. Aplique la tercera pregunta: entre 1766 y 1775 hay diez años, tres leyes fiscales más, un motín, una ocupación militar y una guerra que empieza sin que nadie la declare. Una causa estructural <em>hace posible</em> un desenlace; no lo produce sola. Decir «lo causó» es saltarse diez años de decisiones que pudieron haber ido de otra manera.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. Diez sucesos, dos órdenes distintos</h2>
+
+  <div class="bloque">
+    <p>Antes de razonar sobre causas hay que tener el calendario delante. Esta es la cronología de referencia de la lección. No la memorice: úsela.</p>
+
+    <table class="crono">
+      <caption>Cronología de referencia, 1754–1800. La columna de la derecha indica qué documento del Archivo cubre cada hito.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Suceso</th>
+          <th scope="col">En el Archivo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="anio">1754–1763</td><td>Guerra franco-india. Gran Bretaña gana Norteamérica y queda con una deuda enorme.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1765 · marzo</td><td>Ley del Timbre. Primer impuesto interno directo sobre las colonias.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1765 · octubre</td><td>Congreso de la Ley del Timbre. Catorce declaraciones de derechos y agravios.</td><td class="doc"><a href="fuentes/derechos-agravios-1765.html">Doc. 9</a></td></tr>
+        <tr><td class="anio">1766 · marzo</td><td>Derogación de la Ley del Timbre y, el mismo día, Ley Declaratoria.</td><td class="doc"><a href="fuentes/ley-declaratoria-1766.html">Doc. 10</a></td></tr>
+        <tr><td class="anio">1773 · diciembre</td><td>Motín del té de Boston.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1774</td><td>Leyes Intolerables y Primer Congreso Continental, con doce colonias.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1775 · abril</td><td>Lexington y Concord. Empieza la guerra sin que nadie la declare.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1776 · julio</td><td>Declaración de Independencia.</td><td class="doc"><a href="fuentes/declaracion-independencia-1776.html">Doc. 6</a></td></tr>
+        <tr><td class="anio">1781</td><td>Se ratifican los Artículos de la Confederación. Victoria en Yorktown.</td><td class="doc">—</td></tr>
+        <tr><td class="anio">1786–1787</td><td>Rebelión de Shays en Massachusetts. Reunión de Annápolis en septiembre de 1786.</td><td class="doc"><a href="fuentes/washington-knox-1786.html">Doc. 11</a></td></tr>
+        <tr><td class="anio">1787</td><td>Convención de Filadelfia. Se redacta la Constitución.</td><td class="doc"><a href="fuentes/federalista-10-51-1788.html">Doc. 7</a> · <a href="fuentes/brutus-ensayo-1-1787.html">Doc. 8</a></td></tr>
+        <tr><td class="anio">1788–1791</td><td>Ratificación, primer gobierno federal y Carta de Derechos.</td><td class="doc">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="enlace-interactivo" href="linea_origen_usa/">
+    <span class="ei-icono" aria-hidden="true">🕰️</span>
+    <span>
+      <span class="ei-titulo">Línea de tiempo: Origen de los Estados Unidos de América</span>
+      <span class="ei-sub">Nueve bloques con texto, imagen y preguntas, desde la Confederación Iroquesa hasta los Artículos de la Confederación. Léala entera antes de seguir: esta lección da por vistos los hechos y trabaja sobre las relaciones entre ellos.</span>
+      <span class="ei-cta">Abrir la línea de tiempo</span>
+    </span>
+  </a>
+
+  <div class="bloque">
+    <p>Cuando la haya recorrido, fíjese en algo que salta a la vista y que no es un defecto sino un dato: <strong>los bloques se solapan</strong>. Uno va de 1600 a 1722, otro de 1607 a 1732, otro de 1619 a 1865. Tres cosas ocurren a la vez durante doscientos años y ninguna causa a las otras dos.</p>
+    <p>Eso es exactamente lo que una línea de tiempo puede y no puede hacer. Le dice qué había en cada momento. No le dice qué salió de qué. Para eso hace falta el segundo orden.</p>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿Sucesión o causa?</h3>
+    <p>Ocho pares de sucesos, todos en orden cronológico correcto: en los ocho, el segundo ocurrió después del primero. La pregunta no es esa. La pregunta es si el primero <strong>explica</strong> al segundo.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <div class="bloque">
+    <div class="caja-tip">
+      <strong>Lo que debería haberle pasado.</strong> Si ordenó los ocho pares por fecha, salen ocho. Si los ordena por causa, no salen ocho: algunos pares se caen, y hay causas que saltan por encima de diez años mientras que sucesos consecutivos no tienen nada que ver entre sí. <span class="resalta">Las dos listas no coinciden.</span> Ese desajuste es el contenido de esta lección.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. Por qué fracasaron los Artículos</h2>
+
+  <div class="bloque">
+    <p>Ganada la guerra, quedaba gobernar. El primer intento fueron los <strong>Artículos de la Confederación</strong>, propuestos en 1777 y ratificados en 1781, y fueron débiles a propósito. Quienes acababan de romper con un gobierno lejano y poderoso no iban a construir otro. Los Artículos crearon «una firme liga de amistad» entre trece estados soberanos, con un Congreso de una sola cámara, un voto por estado y muy poco más.</p>
+    <p>El problema es que un gobierno que no puede cobrar impuestos no puede pagar deudas, y uno que no puede regular el comercio no puede impedir que trece estados se pongan aranceles entre sí. En 1786 eso dejó de ser una discusión teórica.</p>
+    <p>En el oeste de Massachusetts, agricultores endeudados —muchos de ellos veteranos de la guerra que aún no habían cobrado— cerraron por la fuerza los tribunales que ejecutaban embargos contra ellos. El movimiento tomó el nombre de uno de sus cabecillas, Daniel Shays. El gobierno de la Confederación no podía hacer nada: no tenía dinero, ni ejército propio, ni autoridad para entrar en un estado sin que el estado lo pidiera.</p>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 11 · Washington escribe a Knox</h2>
+    <p class="fuente">George Washington a Henry Knox, Mount Vernon, 26 de diciembre de 1786. Carta privada. Washington llevaba tres años retirado y sin cargo público.</p>
+
+    <blockquote>
+      <p>En esto, como en casi todo lo demás, vamos demasiado despacio. Cuando este espíritu despuntó, probablemente habría sido fácil contenerlo; pero apenas alcanza hoy el discernimiento humano a decir cuándo, dónde ni cómo terminará. <strong>Hay materias inflamables en todos los estados, a las que una chispa podría prender fuego.</strong></p>
+      <p>[…] ¿Qué impidió a los estados del este asistir a la reunión de septiembre en Annápolis? […] ¿Cuál es el sentir dominante acerca de la que ahora se propone celebrar en Filadelfia el próximo mayo? ¿Y con qué asistencia contará?</p>
+      <p>[…] Si los poderes son inadecuados, <strong>enmiéndense o altérense</strong>; pero no nos hundamos en el más bajo estado de humillación y de desprecio.</p>
+      <p>[…] Hago esta pregunta para informarme: <strong>no conozco los hechos.</strong></p>
+    </blockquote>
+
+    <p>Cuatro párrafos y tres cosas distintas. La primera frase es alarma. La tercera es un programa político: si los poderes no bastan, cámbiense. Y la última es lo más valioso que tiene el documento.</p>
+
+    <div class="caja-atencion">
+      <strong>Lea otra vez la última frase.</strong> Washington está escribiendo indignado sobre unos hombres a los que llama insurgentes y a los que atribuye depravación… y a la vez reconoce por escrito que no sabe lo que pasó. Todo lo que cree saber se lo ha contado Knox, que tampoco es neutral. Cuando una fuente declara su propio límite, hay que tomarle la palabra: esta carta prueba muy bien <strong>lo que temía la élite política en diciembre de 1786</strong>, y no prueba casi nada sobre <strong>lo que hicieron o quisieron los agricultores de Massachusetts</strong>. Para eso harían falta sus propias fuentes, y esta lección no las tiene.
+    </div>
+
+    <p class="enlace-ficha"><span aria-hidden="true">→</span> <a href="fuentes/washington-knox-1786.html">La carta completa, con ficha y el cuadro de lo que sostiene y lo que no</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>El párrafo de en medio es una trampa cronológica</h3>
+    <p>Casi todos los manuales dicen que la rebelión de Shays llevó a la Convención de Filadelfia. Compruebe las fechas con esta carta delante.</p>
+    <p>La convocatoria de Filadelfia salió de la reunión de Annápolis, en <strong>septiembre de 1786</strong>. La rebelión había empezado a cerrar tribunales a finales de agosto, y su momento más grave —el asalto al arsenal de Springfield— fue en <strong>enero de 1787</strong>, un mes después de esta carta. Washington pregunta por las dos cosas en el mismo párrafo, y pregunta por Annápolis en pasado.</p>
+    <p>La formulación honesta, entonces, no es «la rebelión causó la Convención». Es esta: <span class="resalta">la convocatoria ya existía y la rebelión le dio urgencia, asistencia y argumentos.</span> Es una diferencia pequeña de redacción y grande de razonamiento, y es la clase de precisión que separa una respuesta de nivel 3 de una de nivel 4 en la rúbrica.</p>
+  </div>
+
+  <div class="bloque">
+    <h3>Debilidad por debilidad, cláusula por cláusula</h3>
+    <p>La Constitución de 1787 no se inventó de cero. Se escribió mirando una lista de averías concretas. Esta tabla las pone en paralelo.</p>
+
+    <table class="reglas">
+      <caption>Cada debilidad de los Artículos de la Confederación y la cláusula de la Constitución que la resolvió.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Debilidad de los Artículos</th>
+          <th scope="col">Qué provocaba en la práctica</th>
+          <th scope="col">Qué hizo la Constitución</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>El Congreso no podía cobrar impuestos</td>
+          <td>Pedía dinero a los estados y los estados no lo mandaban. La deuda de guerra quedó sin pagar y los soldados sin cobrar.</td>
+          <td>Artículo I, sección 8: el Congreso establece y recauda impuestos directamente.</td>
+        </tr>
+        <tr>
+          <td>El Congreso no podía regular el comercio</td>
+          <td>Cada estado ponía aranceles a sus vecinos. Nueva York gravaba lo que entraba de Nueva Jersey.</td>
+          <td>Cláusula de comercio: el Congreso regula el comercio entre los estados y con el exterior.</td>
+        </tr>
+        <tr>
+          <td>No había poder ejecutivo</td>
+          <td>Nadie ejecutaba lo que el Congreso acordaba. Un acuerdo aprobado podía no ocurrir nunca.</td>
+          <td>Artículo II: una presidencia con el deber de hacer cumplir las leyes.</td>
+        </tr>
+        <tr>
+          <td>No había tribunales federales</td>
+          <td>Las disputas entre estados no tenían dónde resolverse, y cada estado interpretaba los tratados a su manera.</td>
+          <td>Artículo III: un poder judicial federal con jurisdicción sobre esos casos.</td>
+        </tr>
+        <tr>
+          <td>Enmendar exigía unanimidad</td>
+          <td>Un solo estado bloqueaba cualquier reforma. El sistema no podía corregirse a sí mismo.</td>
+          <td>Artículo V: dos tercios del Congreso para proponer, tres cuartos de los estados para ratificar.</td>
+        </tr>
+        <tr>
+          <td>Un voto por estado, sin importar la población</td>
+          <td>Delaware pesaba lo mismo que Virginia. Los estados grandes no aceptaban seguir así.</td>
+          <td>Congreso de dos cámaras: el Senado por estados, la Cámara por población.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Cómo se usa esta tabla en el examen.</strong> Las preguntas de este bloque suelen darle una consecuencia y pedirle la causa, o al revés. Si sabe leer la tabla en las dos direcciones —«esto pasaba porque faltaba aquello» y «esto se puso porque pasaba aquello»— tiene resuelto el bloque entero.
+    </div>
+  </div>
+
+  <div class="bloque">
+    <div class="practica">
+      <h3>Práctica interactiva · Causas, tipos y cláusulas</h3>
+
+      <div class="pregunta" data-correcta="b" data-explica="La Ley Declaratoria no impuso ningún impuesto ni provocó ninguna reacción inmediata: dejó vivo, por escrito, el conflicto sobre quién puede gravar. Eso es una causa estructural.">
+        <div class="enun">La Ley Declaratoria de 1766, dentro del origen de la Revolución, es…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Una causa inmediata</div>
+          <div class="opcion" data-op="b">Una causa estructural</div>
+          <div class="opcion" data-op="c">Una consecuencia sin efectos posteriores</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La convocatoria de Filadelfia salió de Annápolis en septiembre de 1786, y la propia carta de Washington pregunta por ella en diciembre. La rebelión reforzó el argumento; no originó la convocatoria.">
+        <div class="enun">¿Qué relación sostiene con precisión el Documento 11 entre la rebelión de Shays y la Convención de Filadelfia?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">La rebelión causó la convocatoria de la Convención</div>
+          <div class="opcion" data-op="b">La Convención causó la rebelión</div>
+          <div class="opcion" data-op="c">La convocatoria ya existía y la rebelión le dio urgencia</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Washington escribe que no conoce los hechos y que todo lo sabe por Knox. La carta documenta muy bien el temor de quien la escribe, y no documenta lo que hicieron los rebeldes.">
+        <div class="enun">¿Qué se puede sostener con la carta de Washington a Knox?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Lo que temían las figuras políticas destacadas en diciembre de 1786</div>
+          <div class="opcion" data-op="b">Lo que reclamaban los agricultores de Massachusetts</div>
+          <div class="opcion" data-op="c">Que Gran Bretaña estaba conspirando en la frontera</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Sin poder de gravar, el Congreso solo podía pedir dinero a los estados y esperar. De ahí la deuda impagada y los soldados sin cobrar.">
+        <div class="enun">Bajo los Artículos, la deuda de guerra quedó sin pagar sobre todo porque el Congreso…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">No tenía moneda propia</div>
+          <div class="opcion" data-op="b">No podía cobrar impuestos</div>
+          <div class="opcion" data-op="c">No tenía ejército</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Las dos listas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Copie en una hoja los doce hitos de la cronología de la sección 3, en orden de fecha. Al lado, en una segunda columna, dibuje flechas: de cada hito a aquel o aquellos que ayudó a producir. Para cada flecha, escriba en una línea el mecanismo, es decir, <em>cómo</em> lo produjo.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si alguna flecha va de un hito al inmediatamente siguiente sin que pueda escribir el mecanismo, bórrela. Y si le queda algún hito sin ninguna flecha de entrada ni de salida, no lo tache: pregúntese si es una condición previa. Debería acabar con menos flechas que hitos y con al menos una flecha que salte varios años.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Los dos documentos del mismo día</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Abra las fichas completas del <a href="fuentes/derechos-agravios-1765.html">Documento 9</a> y del <a href="fuentes/ley-declaratoria-1766.html">Documento 10</a>. Escriba dos párrafos: en el primero, explique la disputa como la contaría un delegado del Congreso de la Ley del Timbre en octubre de 1765; en el segundo, como la contaría un miembro del Parlamento en marzo de 1766. Los dos párrafos deben ser exactos: ninguno puede decir nada falso.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si uno de los dos párrafos le salió claramente peor, es que está defendiendo una postura en vez de reconstruirla. Vuelva sobre él. Poder explicar bien la posición con la que no simpatiza es la mitad de la práctica SSP.7, y aparece en el examen con mucha más frecuencia de lo que la gente espera.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Un titular de hoy</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Busque una noticia de esta semana que afirme o insinúe que un hecho causó otro. Aplíquele las tres preguntas de la sección 1: mecanismo, fuente, y qué habría pasado sin el primer hecho. Escriba el veredicto en tres líneas.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si el titular no supera ninguna de las tres, ha encontrado un <em>post hoc</em> publicado, y eso es un hallazgo legítimo. Anote las palabras exactas, como hizo en la Lección 1.3. Si supera las tres, guárdelo también: los buenos ejemplos escasean.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 6.1</h2>
+    <p>Doce preguntas: cuatro de ordenamiento cronológico, cinco de relaciones causales y tres sobre los Artículos frente a la Constitución. Tiempo sugerido: 25 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir" type="button">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" type="button" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con su hoja de la Práctica 1 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de causalidad histórica, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ordena los hitos correctamente</td>
+          <td>Confunde el orden de los hechos principales.</td>
+          <td>Ordena los más conocidos y duda con el resto.</td>
+          <td>Ordena los doce hitos sin consultar.</td>
+          <td>Además sitúa los que se solapan y explica por qué se solapan.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Distingue causa inmediata de estructural</td>
+          <td>Usa «causa» para cualquier hecho anterior.</td>
+          <td>Define los dos tipos, pero no los aplica a un caso.</td>
+          <td>Clasifica correctamente las causas de un hecho dado.</td>
+          <td>Añade la condición previa y explica qué aporta cada nivel.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Evita confundir sucesión con causalidad</td>
+          <td>Da por causa todo lo que vino antes.</td>
+          <td>Sospecha del <em>post hoc</em>, pero no sabe descartarlo.</td>
+          <td>Aplica las tres preguntas y descarta las coincidencias.</td>
+          <td>Reformula la afirmación con precisión en vez de aceptarla o rechazarla entera.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Sustenta la relación causal con la fuente</td>
+          <td>Afirma sin citar de dónde lo saca.</td>
+          <td>Cita el documento, pero le atribuye más de lo que dice.</td>
+          <td>Cita el pasaje concreto que sostiene su afirmación.</td>
+          <td>Declara también el límite del documento, como hace la ficha del 11.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 6.1</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Después no es por causa de</strong>: el orden del calendario y el orden de las causas son dos listas distintas, y comprobar que no coinciden es el trabajo. <strong>Una causa inmediata dice cuándo; una causa estructural dice por qué</strong>, y una respuesta con solo la primera está a medias. Y <strong>una fuente prueba lo que prueba</strong>: Washington, que estaba alarmadísimo, escribió con todas sus letras que no conocía los hechos.</p>
+    <p>Marzo de 1766 es el par de fechas que resume el tema entero. Se retiró el impuesto y se guardó la potestad. Diez años después, la <a href="fuentes/declaracion-independencia-1776.html">Declaración de Independencia</a> le contestó al Parlamento con su propia fórmula jurídica, invertida: donde 1766 decía que las colonias «han estado, están y de derecho deben estar subordinadas», 1776 dijo que «son, y de derecho deben ser, Estados libres e independientes».</p>
+    <p>La <strong>Lección 6.2</strong> sigue el mismo método sobre un conflicto que tampoco se resolvió cuando pareció resolverse: la expansión territorial, la esclavitud, la Guerra Civil y los límites de la Reconstrucción.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-6">Tema 6 · Historia de los Estados Unidos</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sig">Siguiente: Lección 6.2 · en preparación</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 6 · Lección 6.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de cronología, 5 de causalidad, 3 de Artículos y Constitución ---- */
+  var preguntasQuiz = [
+    { enun: '1. ¿Cuál de estos sucesos ocurrió primero?', ops: ['La Ley del Timbre', 'El motín del té de Boston', 'La Declaración de Independencia', 'La rebelión de Shays'],
+      correcta: 0, expl: 'La Ley del Timbre es de marzo de 1765. El motín del té es de 1773, la Declaración de 1776 y la rebelión de 1786.' },
+    { enun: '2. La Ley Declaratoria y la derogación de la Ley del Timbre se aprobaron…', ops: ['Con diez años de diferencia', 'El mismo día', 'La Declaratoria primero, en 1765', 'Después de la Declaración de Independencia'],
+      correcta: 1, expl: 'Las dos son del 18 de marzo de 1766. Que sean del mismo día es justo lo que hace legible el episodio.' },
+    { enun: '3. Ordene: Lexington y Concord, Primer Congreso Continental, Declaración de Independencia.', ops: ['Declaración, Lexington, Congreso', 'Congreso, Lexington, Declaración', 'Lexington, Congreso, Declaración', 'Congreso, Declaración, Lexington'],
+      correcta: 1, expl: 'Primer Congreso Continental en 1774, Lexington y Concord en abril de 1775, Declaración en julio de 1776. La guerra empieza antes de que se declare la independencia.' },
+    { enun: '4. Los Artículos de la Confederación se ratificaron…', ops: ['Antes de la Declaración de Independencia', 'En 1781, durante la guerra', 'Después de la Constitución', 'En 1787, en Filadelfia'],
+      correcta: 1, expl: 'Se propusieron en 1777 y se ratificaron en 1781, el mismo año de Yorktown. La Constitución es seis años posterior.' },
+    { enun: '5. El error de dar por probado que A causó B solo porque B ocurrió después se llama…', ops: ['Falsa disyuntiva', 'Post hoc, ergo propter hoc', 'Argumento de autoridad', 'Generalización apresurada'],
+      correcta: 1, expl: 'Literalmente, «después de esto, luego a causa de esto». Es el error que esta lección entrena a detectar.' },
+    { enun: '6. La disputa sobre quién tiene la potestad de gravar a las colonias es, respecto de la Revolución…', ops: ['Una causa inmediata', 'Una causa estructural', 'Una consecuencia', 'Una coincidencia'],
+      correcta: 1, expl: 'Dura desde 1765 hasta la guerra, no se resuelve en 1766 y reaparece cada vez que hay un impuesto nuevo. Eso es una causa estructural.' },
+    { enun: '7. El motín del té de Boston, respecto de las Leyes Intolerables, es…', ops: ['Una causa inmediata', 'Una causa estructural', 'Una condición previa', 'Un hecho sin relación'],
+      correcta: 0, expl: 'Las Leyes Intolerables son la respuesta directa y declarada al motín, aprobadas pocos meses después. Es el caso más limpio de causa inmediata del período.' },
+    { enun: '8. ¿Cuál de estas afirmaciones sobre la rebelión de Shays y la Convención de Filadelfia es la más precisa?', ops: ['La rebelión causó la convocatoria de la Convención', 'La convocatoria era anterior y la rebelión le dio urgencia', 'No hubo ninguna relación entre ambas', 'La Convención se reunió para reprimir la rebelión'],
+      correcta: 1, expl: 'La convocatoria salió de Annápolis en septiembre de 1786; la carta de Washington de diciembre pregunta por ella. La rebelión reforzó el argumento sin originarlo.' },
+    { enun: '9. Después de leer la carta de Washington a Knox, ¿qué NO se puede afirmar con ella?', ops: ['Que Washington estaba alarmado', 'Que se hablaba ya de la convención de mayo', 'Que los agricultores rebeldes eran gente depravada', 'Que Washington quería reformar los poderes del gobierno'],
+      correcta: 2, expl: 'Washington lo insinúa, pero también escribe que no conoce los hechos y que todo lo sabe por Knox. La carta prueba lo que él creía, no lo que los rebeldes eran.' },
+    { enun: '10. Bajo los Artículos, el Congreso no podía cobrar impuestos. La consecuencia directa fue…', ops: ['Que no hubiera ejército durante la guerra', 'Que la deuda quedara impagada y los soldados sin cobrar', 'Que los estados no pudieran comerciar', 'Que no se pudiera enmendar el documento'],
+      correcta: 1, expl: 'Solo podía pedir dinero a los estados y esperar. La Constitución lo resolvió en el artículo I, sección 8.' },
+    { enun: '11. Que cada estado pusiera aranceles a sus vecinos se resolvió con…', ops: ['La cláusula de comercio', 'El artículo II', 'La Carta de Derechos', 'El artículo V'],
+      correcta: 0, expl: 'La cláusula de comercio dio al Congreso la regulación del comercio entre estados, que es exactamente la avería que había.' },
+    { enun: '12. Bajo los Artículos, enmendar el documento exigía unanimidad. ¿Por qué era eso grave?', ops: ['Porque no había quien contara los votos', 'Porque un solo estado impedía corregir el sistema', 'Porque los estados grandes decidían solos', 'Porque el rey podía vetarlo'],
+      correcta: 1, expl: 'Un sistema que no puede corregirse a sí mismo tiene que ser sustituido entero. Por eso el artículo V bajó el listón a dos tercios y tres cuartos.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede pasar a la Lección 6.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar: accesible con
+     teclado y con lector de pantalla, y usable en pantalla táctil. */
+  var PARES = [
+    { a: 'Guerra franco-india, 1754–1763', b: 'Ley del Timbre, marzo de 1765', c: 'C',
+      e: 'Sí explica. La guerra dejó a Gran Bretaña con una deuda enorme y con tropas que mantener en América; el impuesto es la manera de pagarlas. El mecanismo es directo y las fuentes de la época lo dicen.' },
+    { a: 'Ley del Timbre, marzo de 1765', b: 'Congreso de la Ley del Timbre, octubre de 1765', c: 'C',
+      e: 'Sí explica. El Congreso se convocó para responder a esa ley concreta y su documento la nombra. Es una causa inmediata, con siete meses de distancia.' },
+    { a: 'Congreso de la Ley del Timbre, octubre de 1765', b: 'Derogación de la Ley del Timbre, marzo de 1766', c: 'S',
+      e: 'Solo sucesión, o al menos eso es todo lo que sostiene el Documento 9. Sobre el Parlamento pesaron también el boicot comercial y la presión de los comerciantes británicos, que perdían ventas. Una petición leal es una de varias presiones, y el documento por sí solo no permite decir cuál pesó.' },
+    { a: 'Ley Declaratoria, marzo de 1766', b: 'Declaración de Independencia, julio de 1776', c: 'S',
+      e: 'Solo sucesión, dicho así. Median diez años, tres leyes fiscales, un motín, una ocupación y una guerra. La Ley Declaratoria es una causa estructural que hace posible el desenlace; llamarla causa de la Declaración se salta una década de decisiones.' },
+    { a: 'Motín del té de Boston, diciembre de 1773', b: 'Leyes Intolerables, 1774', c: 'C',
+      e: 'Sí explica, y es el caso más limpio del período. Las Leyes Intolerables se aprobaron declaradamente como castigo por el motín, y una de ellas cierra el puerto de Boston hasta que se pague el té destruido.' },
+    { a: 'Declaración de Independencia, julio de 1776', b: 'Victoria en Yorktown, octubre de 1781', c: 'S',
+      e: 'Solo sucesión. Declarar la independencia no gana batallas. Entre las dos fechas están Saratoga, la alianza con Francia y la flota francesa, que sí explican Yorktown. La Declaración ayudó a conseguir esa alianza, pero esa es otra flecha, y hay que dibujarla aparte.' },
+    { a: 'Reunión de Annápolis, septiembre de 1786', b: 'Convención de Filadelfia, mayo de 1787', c: 'C',
+      e: 'Sí explica. De Annápolis salió la convocatoria de Filadelfia, con fecha y lugar. El Documento 11 lo confirma: en diciembre de 1786 Washington pregunta por Annápolis en pasado y por Filadelfia en futuro.' },
+    { a: 'Rebelión de Shays, 1786–1787', b: 'Convención de Filadelfia, mayo de 1787', c: 'S',
+      e: 'Solo sucesión, si la afirmación es que la rebelión causó la convocatoria: esa ya existía desde septiembre de 1786. Lo que sí puede sostener es una afirmación más modesta y más exacta: la rebelión aumentó la urgencia, la asistencia y los argumentos. Reformular vale más que aceptar o rechazar entero.' }
+  ];
+  var NOMBRES = { S: 'Solo vino después', C: 'Vino después y por causa de' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + PARES.length + ' pares.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    PARES.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+
+      var pa = document.createElement('p');
+      pa.className = 'par-a'; pa.id = 'par-txt-' + i;
+      var eta = document.createElement('span');
+      eta.className = 'et-par'; eta.textContent = 'Primero';
+      pa.appendChild(eta);
+      pa.appendChild(document.createTextNode(item.a));
+      caja.appendChild(pa);
+
+      var pb = document.createElement('p');
+      pb.className = 'par-b';
+      var etb = document.createElement('span');
+      etb.className = 'et-par'; etb.textContent = 'Después';
+      pb.appendChild(etb);
+      pb.appendChild(document.createTextNode(item.b));
+      caja.appendChild(pb);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'par-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['S', 'C'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
