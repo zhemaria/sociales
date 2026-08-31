@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--
+  Lección 7.2 · Población, migración y geografía humana
+  Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 7.2 · Población, migración y geografía humana</title>
+<meta name="description" content="Leer pirámides de población y predecir con su forma, distinguir factores de expulsión y atracción en la migración, y analizar la urbanización y la densidad con datos." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 7 — verde heredado del plan curricular (--t7).
+       El verde se reserva para trazos: encabezados, bordes y cabecera. Los
+       fondos claros del tema son neutros a propósito, para que el único
+       relleno verde de la página sea el de una respuesta acertada. */
+    --tema:    #1b5e20;
+    --tema-d:  #103d15;
+    --tema-bg: #f1f3ef;
+    --tema-bg2:#d7ded3;
+    --acento:  #2e7d32;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #0b2a0f 0%, #103d15 55%, #1b5e20 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(11,42,15,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #103d15;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fbfcfa; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #103d15; font-weight: 600; }
+  .navlecciones .nav-sep { color: #4a5546; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #4a5546; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #103d15; }
+
+  /* ══ COMPONENTES DEL TEMA 7 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#103d15; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Gráficas del tema */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:16px 18px; margin:18px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:16px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#9bb69f; stroke-width:1.5; }
+  .g-reja   { stroke:#eef1ec; stroke-width:1; }
+  .g-dem    { stroke:#b3261e; stroke-width:3; fill:none; }
+  .g-of     { stroke:#1f618d; stroke-width:3; fill:none; }
+  .g-ref    { stroke:#6e6e6e; stroke-width:2; stroke-dasharray:5,4; fill:none; }
+  .g-eq     { fill:#103d15; }
+  .g-guia   { stroke:#103d15; stroke-width:1.4; stroke-dasharray:4,4; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#103d15; font-weight:700; }
+
+  /* Clasificador de cuatro opciones */
+  .comp .botones.cuatro button { flex:1 1 140px; }
+
+  /* Tarjetas enfrentadas del tema */
+  .enfrentados .demanda { background:#fdecea; border-left:6px solid #b3261e; }
+  .enfrentados .oferta  { background:#e8eef5; border-left:6px solid #1f618d; }
+  .enfrentados .demanda h3 { color:#8c1c17; }
+  .enfrentados .oferta h3  { color:#164a6d; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado</div>
+    <h1>Lección 7.2 · Población, migración y geografía humana</h1>
+    <div class="meta">NRS 5–6 · Calculadora permitida</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.10 · Datos y gráficas</span>
+      <span class="sp">SSP.11 · Razonamiento cuantitativo</span>
+      <span class="sp">SSP.4 · Evaluar afirmaciones</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="geografia/">Guía de geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 7.2</span>
+    <span class="nav-sig">Siguiente: Lección 7.3 · en preparación</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Leer una pirámide de población y predecir con su forma qué le espera a ese país en veinte años.</li>
+      <li>Distinguir los factores de expulsión de los de atracción en un caso migratorio documentado.</li>
+      <li>Interpretar datos de densidad y de urbanización, y saber qué esconde un promedio.</li>
+      <li>Separar lo que dice el dato de lo que uno supone.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> La Lección 7.1 trató de curvas y de cuentas. Esta trata de personas contadas: cuántas hay, de qué edades, dónde están y por qué se mueven.</p>
+    <p>Y empieza cerca, porque el primer dato de la lección se puede comprobar mirando por la ventana.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li>Papel, lápiz y calculadora.</li>
+      <li>La <a href="geografia/">guía de geografía</a> del sitio, sobre todo su sección 6.</li>
+      <li>El <a href="fuentes/cartas-migrantes-1917.html">Documento 1</a> del Archivo de fuentes, para la sección 3.</li>
+      <li>Entre dos y tres horas, repartidas.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. El promedio que esconde el país</h2>
+
+  <div class="bloque">
+    <p>La <span class="resalta">densidad de población</span> es una división: habitantes entre superficie. Estados Unidos tiene unos <strong>37 habitantes por kilómetro cuadrado</strong>. Japón, unos 330. Groenlandia, menos de uno.</p>
+    <p>Ahora la misma cuenta, hecha en Chicago: unos <strong>4 500 habitantes por kilómetro cuadrado</strong>.</p>
+
+    <div class="ejemplo">
+      <span class="et">La cuenta</span>
+      <p>Chicago tiene alrededor de 2,7 millones de habitantes en unos 590 kilómetros cuadrados. 2 700 000 ÷ 590 ≈ <strong>4 576</strong>. Es <strong>más de cien veces</strong> la densidad media del país en el que está.</p>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Y ahí está la lección de la sección.</strong> Los dos datos son correctos y ninguno miente. Lo que ocurre es que <span class="resalta">un promedio nacional no describe a nadie</span>: se calcula repartiendo a toda la población por todo el territorio, incluidos los desiertos de Nevada y las montañas de Alaska, donde no vive casi nadie. El promedio es una cifra real que no corresponde a ningún sitio real.
+    </div>
+
+    <p>Esto ya lo vio en el Tema 2, con las medidas de tendencia central. Aquí vuelve aplicado a un mapa, y con la misma advertencia: <strong>antes de interpretar un promedio, pregúntese qué está repartiendo entre qué.</strong></p>
+
+    <div class="caja-atencion">
+      <strong>Cómo aparece esto en el examen.</strong> Le darán un mapa de densidad o una tabla de países y le pedirán una conclusión. La respuesta correcta casi nunca es la que generaliza. Si un país tiene densidad media baja y usted concluye «está vacío», habrá caído: puede tener el noventa por ciento de su gente en tres ciudades. Egipto es el ejemplo clásico, con casi toda su población en la ribera de un solo río.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Leer el futuro en una pirámide</h2>
+
+  <div class="bloque">
+    <p>Una <span class="resalta">pirámide de población</span> es un gráfico de barras girado: cada barra es un grupo de edad, los hombres a la izquierda y las mujeres a la derecha, los más jóvenes abajo y los más viejos arriba.</p>
+    <p>Lo que importa no son las cifras de cada barra: es <strong>la forma</strong>. Y la forma de hoy dice qué va a pasar dentro de veinte años, porque los que hoy están abajo estarán entonces en el medio.</p>
+
+    <figure class="grafica">
+      <h3>Las tres formas básicas</h3>
+      <p class="g-fuente">Esquema didáctico. Cada barra representa un grupo de edad, de los más jóvenes abajo a los más viejos arriba.</p>
+      <svg viewBox="0 0 660 200" role="img" aria-labelledby="tit-pir desc-pir">
+        <title id="tit-pir">Tres pirámides de población: expansiva, estacionaria y regresiva</title>
+        <desc id="desc-pir">La pirámide expansiva tiene la base muy ancha y se estrecha deprisa hacia arriba, en forma de triángulo. La estacionaria tiene las barras de los grupos jóvenes y adultos casi iguales, con forma de columna que solo se estrecha en la cima. La regresiva tiene la base más estrecha que la parte media, con forma de urna.</desc>
+        <text x="110" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Expansiva</text>
+        <rect x="60" y="18" width="46" height="14" fill="#1f618d" /><rect x="114" y="18" width="46" height="14" fill="#a04000" />
+        <rect x="66" y="36" width="40" height="14" fill="#1f618d" /><rect x="114" y="36" width="40" height="14" fill="#a04000" />
+        <rect x="72" y="54" width="34" height="14" fill="#1f618d" /><rect x="114" y="54" width="34" height="14" fill="#a04000" />
+        <rect x="79" y="72" width="27" height="14" fill="#1f618d" /><rect x="114" y="72" width="27" height="14" fill="#a04000" />
+        <rect x="86" y="90" width="20" height="14" fill="#1f618d" /><rect x="114" y="90" width="20" height="14" fill="#a04000" />
+        <rect x="93" y="108" width="13" height="14" fill="#1f618d" /><rect x="114" y="108" width="13" height="14" fill="#a04000" />
+        <rect x="99" y="126" width="7" height="14" fill="#1f618d" /><rect x="114" y="126" width="7" height="14" fill="#a04000" />
+        <text x="330" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Estacionaria</text>
+        <rect x="296" y="18" width="30" height="14" fill="#1f618d" /><rect x="334" y="18" width="30" height="14" fill="#a04000" />
+        <rect x="295" y="36" width="31" height="14" fill="#1f618d" /><rect x="334" y="36" width="31" height="14" fill="#a04000" />
+        <rect x="295" y="54" width="31" height="14" fill="#1f618d" /><rect x="334" y="54" width="31" height="14" fill="#a04000" />
+        <rect x="296" y="72" width="30" height="14" fill="#1f618d" /><rect x="334" y="72" width="30" height="14" fill="#a04000" />
+        <rect x="300" y="90" width="26" height="14" fill="#1f618d" /><rect x="334" y="90" width="26" height="14" fill="#a04000" />
+        <rect x="308" y="108" width="18" height="14" fill="#1f618d" /><rect x="334" y="108" width="18" height="14" fill="#a04000" />
+        <rect x="318" y="126" width="8" height="14" fill="#1f618d" /><rect x="334" y="126" width="8" height="14" fill="#a04000" />
+        <text x="550" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Regresiva</text>
+        <rect x="530" y="18" width="16" height="14" fill="#1f618d" /><rect x="554" y="18" width="16" height="14" fill="#a04000" />
+        <rect x="527" y="36" width="19" height="14" fill="#1f618d" /><rect x="554" y="36" width="19" height="14" fill="#a04000" />
+        <rect x="522" y="54" width="24" height="14" fill="#1f618d" /><rect x="554" y="54" width="24" height="14" fill="#a04000" />
+        <rect x="516" y="72" width="30" height="14" fill="#1f618d" /><rect x="554" y="72" width="30" height="14" fill="#a04000" />
+        <rect x="514" y="90" width="32" height="14" fill="#1f618d" /><rect x="554" y="90" width="32" height="14" fill="#a04000" />
+        <rect x="520" y="108" width="26" height="14" fill="#1f618d" /><rect x="554" y="108" width="26" height="14" fill="#a04000" />
+        <rect x="534" y="126" width="12" height="14" fill="#1f618d" /><rect x="554" y="126" width="12" height="14" fill="#a04000" />
+        <text x="110" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Muchos niños, pocos ancianos</text>
+        <text x="330" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Cada generación repone a la anterior</text>
+        <text x="550" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Menos niños que adultos</text>
+        <rect x="248" y="176" width="14" height="12" fill="#1f618d" />
+        <text x="268" y="186" font-size="11" fill="#2c2c2c">Hombres</text>
+        <rect x="338" y="176" width="14" height="12" fill="#a04000" />
+        <text x="358" y="186" font-size="11" fill="#2c2c2c">Mujeres</text>
+      </svg>
+      <figcaption>La base ancha del primer caso es la gente que dentro de veinte años estará buscando trabajo. La base estrecha del tercero es la que entonces tendrá que sostener a los de arriba.</figcaption>
+    </figure>
+
+    <table class="reglas">
+      <caption>Qué anticipa cada forma sobre los veinte años siguientes.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Forma</th>
+          <th scope="col">Qué se ve</th>
+          <th scope="col">Qué necesita ahora</th>
+          <th scope="col">Qué le espera en veinte años</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Expansiva (triángulo)</td>
+          <td>Base muy ancha, cima estrecha: nacen muchos niños y poca gente llega a vieja.</td>
+          <td>Escuelas, vacunas, atención a la maternidad, alimentos.</td>
+          <td>Una avalancha de jóvenes buscando su primer empleo. Si no hay trabajo, habrá emigración.</td>
+        </tr>
+        <tr>
+          <td>Estacionaria (columna)</td>
+          <td>Grupos jóvenes y adultos parecidos: cada generación repone a la anterior.</td>
+          <td>Mantener lo que ya tiene.</td>
+          <td>Pocos cambios bruscos. Es la más estable de las tres.</td>
+        </tr>
+        <tr>
+          <td>Regresiva (urna)</td>
+          <td>Base más estrecha que el centro: nacen menos niños de los que hacen falta para reponer.</td>
+          <td>Residencias, pensiones, atención sanitaria de mayores.</td>
+          <td>Menos trabajadores sosteniendo a más jubilados. Suele responderse con inmigración, con más edad de jubilación, o con las dos.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>El razonamiento entero, en una frase.</strong> <em>Los que hoy están en esta barra, dentro de veinte años estarán en aquella.</em> Mire la barra más ancha, cuéntele veinte años hacia arriba y pregúntese qué necesitará esa gente cuando llegue allí. Con eso se responde cualquier pregunta de pirámides sin memorizar nada.
+    </div>
+
+    <div class="caja-atencion">
+      <strong>Dos trampas.</strong> La primera: una pirámide muestra <em>edades</em>, no calidad de vida. Una base ancha no significa pobreza, aunque suelan ir juntas, y decir lo contrario es una suposición, no una lectura. La segunda: <strong>una muesca en mitad de una pirámide casi siempre tiene una causa histórica</strong>. Una guerra, una hambruna o una emigración masiva se ven como un hueco en el grupo de edad correspondiente. Esa muesca es historia dibujada en un gráfico de población, y el examen a veces pregunta justo por ella.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. Por qué se va la gente y por qué llega</h2>
+
+  <div class="bloque">
+    <p>Toda migración se explica con dos listas: lo que empuja a salir de un sitio y lo que atrae hacia otro. Se llaman <span class="resalta">factores de expulsión</span> y <span class="resalta">factores de atracción</span>.</p>
+
+    <div class="enfrentados">
+      <div class="lado demanda">
+        <h3>Expulsión · lo que empuja a salir</h3>
+        <ul>
+          <li>Desempleo, salarios bajos, pobreza.</li>
+          <li>Guerra, persecución, violencia.</li>
+          <li>Falta de servicios básicos o de libertades.</li>
+          <li>Sequías, terremotos, huracanes.</li>
+        </ul>
+      </div>
+      <div class="lado oferta">
+        <h3>Atracción · lo que tira desde el otro lado</h3>
+        <ul>
+          <li>Empleo disponible y mejores salarios.</li>
+          <li>Educación y atención sanitaria.</li>
+          <li>Estabilidad política y seguridad.</li>
+          <li>Familia que ya está allí.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Casi nunca actúa uno solo.</strong> Quien se va suele tener varios factores de expulsión y varios de atracción a la vez, y por eso la pregunta interesante no es cuáles hay, sino <strong>cuáles pesaron más</strong>. Esa segunda pregunta ya no se responde con una lista: se responde con una fuente.
+    </div>
+  </div>
+
+  <div class="documento">
+    <h2><span aria-hidden="true">📄</span> Documento 1 · Cartas de migrantes, 1917</h2>
+    <p class="fuente">Once cartas escritas por personas del sur de Estados Unidos al periódico <em>Chicago Defender</em> y a la Liga Urbana de Chicago, mientras decidían si emigrar al norte. Recopiladas por Emmett J. Scott y publicadas en 1919.</p>
+
+    <p>Usted ya trabajó con este documento en la Lección 1.1, entonces para aprender a leer una fuente primaria. Aquí vuelve por otro motivo: <strong>es un caso migratorio documentado por quienes lo protagonizaron</strong>, y sirve para poner a prueba la lista de arriba con gente real en vez de con categorías.</p>
+
+    <p>Estas cartas son parte de la Gran Migración, el traslado de unos seis millones de afroamericanos del Sur rural a las ciudades del Norte y el Oeste entre 1916 y 1970. Es la misma población que, décadas después, hizo posible la elección de Oscar De Priest por un distrito de Chicago, con la que se cerró la <a href="soc-6-2.html">Lección 6.2</a>.</p>
+
+    <div class="caja-atencion">
+      <strong>Lo que hay que hacer con ellas, y no es resumirlas.</strong> Abra el documento completo y, para cada carta, anote en dos columnas qué factores de expulsión y qué factores de atracción menciona <em>quien la escribe</em>. Solo los que estén en el texto: si una carta no dice por qué se quiere ir, esa casilla se queda vacía, y eso también es un dato. Después de las once, mire cuál se repite más. Ese es el peso, medido con la fuente y no con la impresión.
+    </div>
+
+    <p class="enlace-ficha"><span aria-hidden="true">→</span> <a href="fuentes/cartas-migrantes-1917.html">Las once cartas completas, con su ficha</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>Voluntaria y forzada, y por qué la distinción importa</h3>
+
+    <table class="reglas">
+      <caption>Los dos grandes tipos de migración y las consecuencias jurídicas de la distinción.</caption>
+      <thead>
+        <tr><th scope="col">Tipo</th><th scope="col">Qué la define</th><th scope="col">Por qué importa la etiqueta</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Voluntaria</strong></td>
+          <td>La persona decide moverse buscando mejores oportunidades. Predominan los factores de atracción.</td>
+          <td>Se rige por las leyes de inmigración ordinarias de cada país.</td>
+        </tr>
+        <tr>
+          <td><strong>Forzada</strong></td>
+          <td>La persona no tiene alternativa razonable: guerra, persecución o desastre. Predominan los factores de expulsión.</td>
+          <td>Quien cruza una frontera huyendo de persecución es un <strong>refugiado</strong>, y esa condición tiene protecciones que la migración voluntaria no tiene. Quien se mueve dentro de su propio país es un <strong>desplazado interno</strong>, y no las tiene.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>La frontera entre las dos no siempre está clara, y eso es materia de examen.</strong> ¿Alguien que se va porque no encuentra trabajo migra voluntariamente? ¿Y si en su región no hay trabajo desde hace diez años? ¿Y si se va porque una sequía acabó con su cosecha? Estos casos se discuten en serio, entre otras razones porque de la etiqueta dependen derechos concretos. El examen no le pedirá su opinión: le pedirá que identifique qué factores hay en el caso y de qué clase son.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. La gente se está mudando a las ciudades</h2>
+
+  <div class="bloque">
+    <p>La <span class="resalta">urbanización</span> es el aumento del porcentaje de población que vive en ciudades. Es uno de los cambios más grandes de la historia reciente y sigue en marcha: ya vive en ciudades algo más de la mitad de la humanidad, y en Estados Unidos la proporción supera el ochenta por ciento.</p>
+
+    <table class="reglas">
+      <caption>Consecuencias habituales de una urbanización rápida, en las dos direcciones.</caption>
+      <thead>
+        <tr><th scope="col">En la ciudad que recibe</th><th scope="col">En el campo que se vacía</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Presión sobre la vivienda: más demanda con la misma oferta, y ya sabe usted de la Lección 7.1 qué le pasa entonces al precio.</td>
+          <td>Menos mano de obra agrícola, que suele responderse con más maquinaria.</td>
+        </tr>
+        <tr>
+          <td>Más demanda de transporte, agua, alcantarillado y escuelas.</td>
+          <td>Escuelas y hospitales rurales que cierran por falta de usuarios.</td>
+        </tr>
+        <tr>
+          <td>Más actividad económica concentrada y más oportunidades de empleo.</td>
+          <td>Población que envejece, porque quien se va suele ser joven.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-tip">
+      <strong>Fíjese en la última fila, que es la que conecta toda la lección.</strong> Si de una región se va sobre todo la gente joven, la pirámide de esa región se vuelve regresiva y la de la ciudad que la recibe se ensancha por el medio. <span class="resalta">Migración y pirámide son el mismo fenómeno visto de dos maneras.</span>
+    </div>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · Expulsión, atracción o ninguna de las dos</h3>
+    <p>Ocho enunciados. Diga si describen un factor de expulsión, uno de atracción, o si no son un factor migratorio sino una consecuencia de la migración. Los tres últimos son los difíciles.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+
+  <div class="bloque">
+    <div class="practica">
+      <h3>Práctica interactiva · Densidad, pirámides y migración</h3>
+
+      <div class="pregunta" data-correcta="c" data-explica="Los dos datos son correctos. El promedio nacional reparte a toda la población por todo el territorio, incluidos los desiertos y las montañas donde no vive casi nadie.">
+        <div class="enun">Estados Unidos tiene 37 habitantes por km² y Chicago unos 4 500. ¿Qué se concluye?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que uno de los dos datos está mal</div>
+          <div class="opcion" data-op="b">Que Chicago no es representativa de su país</div>
+          <div class="opcion" data-op="c">Que un promedio nacional no describe ningún lugar concreto</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="a" data-explica="Los que hoy están en la base ancha, dentro de veinte años estarán buscando su primer empleo. Ese es el razonamiento entero.">
+        <div class="enun">Un país tiene una pirámide con la base muy ancha. ¿Qué desafío tendrá dentro de veinte años?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Crear empleo para una generación numerosa que llegará a la edad de trabajar</div>
+          <div class="opcion" data-op="b">Pagar pensiones a una población muy envejecida</div>
+          <div class="opcion" data-op="c">Cerrar escuelas por falta de niños</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="b" data-explica="Es un factor de atracción: no empuja a salir de ningún sitio, tira desde el destino. Es además uno de los más potentes, porque reduce el costo y el riesgo de llegar.">
+        <div class="enun">«Mi hermana ya vive allí y me puede alojar los primeros meses.» Eso es…</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Un factor de expulsión</div>
+          <div class="opcion" data-op="b">Un factor de atracción</div>
+          <div class="opcion" data-op="c">Una consecuencia de la migración</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+
+      <div class="pregunta" data-correcta="c" data-explica="La muesca corresponde a una generación que falta. Una guerra, una hambruna o una emigración masiva dejan ese hueco en el grupo de edad que las vivió.">
+        <div class="enun">Una pirámide tiene una muesca clara en el grupo de 60 a 70 años. ¿Qué sugiere?</div>
+        <div class="opciones">
+          <div class="opcion" data-op="a">Que la esperanza de vida bajó de golpe</div>
+          <div class="opcion" data-op="b">Que hubo un error al recoger los datos</div>
+          <div class="opcion" data-op="c">Que un suceso histórico redujo esa generación cuando era joven o aún no había nacido</div>
+        </div>
+        <div class="fb"></div>
+      </div>
+    </div>
+  </div>
+  <h2 class="seccion" id="sec5">5. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Leer el futuro en una pirámide</div>
+      <div class="cuerpo-act">
+        <span class="duracion">30 minutos</span>
+        <p>Elija una de las tres formas del diagrama de la sección 2 y escriba <strong>tres desafíos concretos</strong> que ese país enfrentará dentro de veinte años. Cada uno tiene que ir justificado con la forma del gráfico: qué barra está mirando y dónde estará esa gente en veinte años.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> lea sus tres desafíos y táchese los que no pueda deducir de la forma. Si escribió algo sobre pobreza, sobre el tipo de gobierno o sobre la cultura de ese país, fuera: eso es una suposición suya, no una lectura del dato. Debería quedarle al menos uno bien justificado; si le quedan los tres, muy bien.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Las once cartas, en dos columnas</div>
+      <div class="cuerpo-act">
+        <span class="duracion">40 minutos</span>
+        <p>Abra el <a href="fuentes/cartas-migrantes-1917.html">Documento 1</a>. Haga una tabla de once filas, una por carta, y dos columnas: expulsión y atracción. Anote solo lo que diga el texto de cada carta. Al final, cuente cuál es el factor que más se repite en cada columna y escriba una frase que empiece por «según estas once cartas…».</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> dos avisos. Si alguna casilla le quedó vacía, no la rellene por simetría: que una carta no diga por qué se quiere ir también es un dato. Y esa frase final tiene que empezar por «según estas once cartas», no por «los migrantes»: once cartas prueban lo que prueban, y quien escribe una carta al periódico no es cualquiera.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · La densidad de su barrio</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque la población y la superficie de su ciudad y calcule su densidad. Compárela con los 37 habitantes por kilómetro cuadrado del país. Después busque el mismo dato para dos barrios distintos de esa ciudad, si están disponibles, y compárelos entre sí.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> cuidado con las unidades. Muchas fuentes estadounidenses dan la superficie en millas cuadradas, y una milla cuadrada son 2,59 kilómetros cuadrados. Si su resultado le sale unas dos veces y media más alto de lo esperado, ese es el error. Y si los dos barrios le dan cifras muy distintas, acaba de comprobar en su propia ciudad lo mismo que la sección 1 decía del país.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 7.2</h2>
+    <p>Doce preguntas: cuatro de lectura e interpretación de pirámides, cuatro de factores migratorios y cuatro de urbanización y densidad. Tiempo sugerido: 25 minutos. Puede usar calculadora. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir" type="button">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" type="button" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con sus hojas de las Prácticas 1 y 2 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de geografía humana, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Interpreta la forma de una pirámide</td>
+          <td>Lee cifras sueltas sin ver la forma.</td>
+          <td>Nombra la forma pero no deduce nada de ella.</td>
+          <td>Predice desafíos a veinte años contando barras hacia arriba.</td>
+          <td>Reconoce una muesca y la atribuye a un suceso histórico.</td>
+          <td class="repaso"><a href="#sec2">Sección 2</a></td>
+        </tr>
+        <tr>
+          <td>Clasifica factores migratorios</td>
+          <td>Mezcla expulsión y atracción.</td>
+          <td>Los separa, pero añade factores que la fuente no menciona.</td>
+          <td>Clasifica usando solo lo que dice el texto, y deja vacío lo que falta.</td>
+          <td>Determina cuál pesó más y lo sostiene contando en la fuente.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Relaciona urbanización y consecuencias</td>
+          <td>Solo ve el crecimiento de la ciudad.</td>
+          <td>Nombra alguna consecuencia urbana.</td>
+          <td>Explica efectos en la ciudad que recibe y en la región que se vacía.</td>
+          <td>Conecta ese vaciado con la forma de la pirámide de las dos regiones.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Sostiene con el dato y no con la impresión</td>
+          <td>Generaliza a partir de un promedio.</td>
+          <td>Duda del promedio, pero no sabe qué preguntar.</td>
+          <td>Pregunta qué reparte el promedio entre qué antes de interpretarlo.</td>
+          <td>Distingue en sus propias conclusiones lo que dice el dato de lo que él supone.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 7.2</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Un promedio no describe a nadie</strong>: los 37 habitantes por kilómetro cuadrado de Estados Unidos y los 4 500 de Chicago son el mismo país y las dos cifras son correctas. <strong>La forma de una pirámide dice el futuro</strong>, porque los que hoy están en una barra dentro de veinte años estarán en la de arriba. Y <strong>una migración se explica con dos listas, pero se entiende cuando se sabe cuál pesó más</strong>, y eso solo lo dice una fuente.</p>
+    <p>Fíjese en que las tres son la misma advertencia con tres disfraces: <span class="resalta">no confunda lo que dice el dato con lo que usted supone</span>. Es la misma que aprendió en el Tema 1 con las fuentes y en el Tema 2 con las gráficas, y es probablemente lo que más se evalúa en todo el examen.</p>
+    <p>La <strong>Lección 7.3</strong> cierra el tema con los recursos, el medio ambiente y la sostenibilidad, y con un debate en el que habrá que defender una posición usando solo la evidencia de los textos.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-7">Tema 7 · Economía y geografía</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="geografia/">Guía de geografía</a>
+    <span class="nav-sig">Siguiente: Lección 7.3 · en preparación</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 7 · Lección 7.2 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de cronología, 5 de causalidad, 3 de Artículos y Constitución ---- */
+  var preguntasQuiz = [
+    { enun: '1. En una pirámide de población, ¿qué va abajo?', ops: ['Los hombres', 'Los grupos de edad más jóvenes', 'La población urbana', 'Los datos menos fiables'],
+      correcta: 1, expl: 'Los más jóvenes abajo y los más viejos arriba; hombres a la izquierda y mujeres a la derecha. Por eso se lee hacia arriba para mirar el futuro.' },
+    { enun: '2. Una pirámide con la base muy ancha y la cima estrecha se llama…', ops: ['Regresiva', 'Estacionaria', 'Expansiva', 'Invertida'],
+      correcta: 2, expl: 'Nacen muchos niños y poca gente llega a vieja. Necesita escuelas ahora y empleo dentro de veinte años.' },
+    { enun: '3. Un país con pirámide regresiva, en forma de urna, tendrá sobre todo el problema de…', ops: ['Construir escuelas', 'Sostener a muchos jubilados con pocos trabajadores', 'Alimentar a una población infantil enorme', 'Frenar el crecimiento de la población'],
+      correcta: 1, expl: 'La base estrecha de hoy son los pocos trabajadores de dentro de veinte años. Se suele responder con inmigración, con más edad de jubilación, o con las dos cosas.' },
+    { enun: '4. Una muesca en el grupo de 60 a 70 años sugiere…', ops: ['Un error de recogida de datos', 'Un suceso histórico que redujo esa generación', 'Que la esperanza de vida cayó', 'Que hubo mucha inmigración'],
+      correcta: 1, expl: 'Una guerra, una hambruna o una emigración masiva dejan un hueco en el grupo que las vivió. Es historia dibujada en un gráfico de población.' },
+    { enun: '5. «En mi región no hay trabajo desde hace años.» Eso es un factor de…', ops: ['Atracción', 'Expulsión', 'Urbanización', 'Densidad'],
+      correcta: 1, expl: 'Empuja a salir del lugar de origen. Los de atracción tiran desde el destino: empleo disponible, familia que ya está allí, seguridad.' },
+    { enun: '6. ¿Cuál de estos es un factor de atracción?', ops: ['Una sequía prolongada', 'La persecución política', 'Que un familiar ya viva en el destino', 'La falta de hospitales en el origen'],
+      correcta: 2, expl: 'Y es de los más potentes, porque reduce el costo y el riesgo de llegar. Los otros tres empujan desde el origen.' },
+    { enun: '7. La diferencia entre un refugiado y un desplazado interno es que…', ops: ['El refugiado cruza una frontera internacional', 'El desplazado interno se va voluntariamente', 'El refugiado se mueve por motivos económicos', 'No hay diferencia legal entre ambos'],
+      correcta: 0, expl: 'Y de esa diferencia dependen protecciones concretas: quien cruza una frontera huyendo de persecución tiene un estatuto que quien se mueve dentro de su país no tiene.' },
+    { enun: '8. Al clasificar los factores de un caso migratorio documentado, hay que anotar…', ops: ['Todos los que uno sepa de ese país', 'Solo los que menciona la propia fuente', 'Los que aparecen en las noticias', 'Los que expliquen mejor la decisión'],
+      correcta: 1, expl: 'Si una carta no dice por qué su autor quiere irse, esa casilla se queda vacía, y eso también es un dato. Rellenarla con lo que uno sabe del país es sustituir la fuente por una suposición.' },
+    { enun: '9. Estados Unidos tiene 37 habitantes por km² y Chicago unos 4 500. Eso demuestra que…', ops: ['Un dato de los dos está equivocado', 'Un promedio nacional no describe ningún lugar concreto', 'Chicago está sobrepoblada', 'La densidad no sirve para nada'],
+      correcta: 1, expl: 'El promedio reparte a toda la población por todo el territorio, incluidos los desiertos y las montañas. Es una cifra real que no corresponde a ningún sitio real.' },
+    { enun: '10. Una ciudad tiene 2 700 000 habitantes en 590 km². Su densidad es de unos…', ops: ['460 hab/km²', '1 600 hab/km²', '4 600 hab/km²', '46 000 hab/km²'],
+      correcta: 2, expl: '2 700 000 ÷ 590 ≈ 4 576. La densidad es siempre una división: habitantes entre superficie.' },
+    { enun: '11. La urbanización rápida suele producir, en la ciudad que recibe…', ops: ['Bajada del precio de la vivienda', 'Presión sobre la vivienda, el transporte y los servicios', 'Envejecimiento de la población', 'Cierre de escuelas'],
+      correcta: 1, expl: 'Más demanda con la misma oferta empuja el precio hacia arriba, exactamente como vio en la Lección 7.1. El envejecimiento y el cierre de escuelas ocurren en la región que se vacía.' },
+    { enun: '12. Si de una región emigra sobre todo gente joven, su pirámide…', ops: ['Se ensancha por la base', 'Se vuelve más regresiva', 'No cambia de forma', 'Se vuelve expansiva'],
+      correcta: 1, expl: 'Pierde a los que estaban en el medio y a los que habrían tenido hijos. Migración y pirámide son el mismo fenómeno visto de dos maneras.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede pasar a la Lección 7.3.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* «Expulsión, atracción o ninguna de las dos». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  var CASOS = [
+    { t: 'Una guerra civil obliga a huir a familias enteras.', c: 'E',
+      e: 'Expulsión, y de las más claras. Cuando este factor domina, la migración se considera forzada.' },
+    { t: 'En la ciudad de destino hay obras y contratan a todo el que llega.', c: 'A',
+      e: 'Atracción. El empleo disponible es el factor de atracción más frecuente de todos.' },
+    { t: 'Una sequía acaba con la cosecha de la que vivía la familia.', c: 'E',
+      e: 'Expulsión. Y es de los casos que discuten los juristas: la persona no huye de una persecución, pero tampoco tenía alternativa razonable.' },
+    { t: 'Un hermano que ya emigró ofrece alojamiento los primeros meses.', c: 'A',
+      e: 'Atracción, y muy potente, porque reduce a la vez el costo y el riesgo de llegar. Es lo que hace que las migraciones sigan cadenas familiares.' },
+    { t: 'El país de origen no permite estudiar más allá de cierta edad.', c: 'E',
+      e: 'Expulsión. La falta de servicios o de libertades empuja desde el origen aunque no haya violencia.' },
+    { t: 'El barrio de destino sube de precio porque llega mucha gente a la vez.', c: 'N',
+      e: 'Ninguna de las dos: es una consecuencia de la migración, no una causa. Ocurre después, no antes, y confundir consecuencia con causa es el error de la Lección 6.1 aplicado aquí.' },
+    { t: 'La región de origen se queda con una población cada vez más vieja.', c: 'N',
+      e: 'Ninguna de las dos: también es una consecuencia. Se va la gente joven, y la pirámide de esa región se vuelve regresiva por eso mismo.' },
+    { t: 'El destino tiene un salario mínimo tres veces mayor que el origen.', c: 'A',
+      e: 'Atracción, aunque tiene truco: la misma diferencia se podría contar como expulsión —«en mi país se cobra muy poco»—. Lo que decide la etiqueta es desde dónde se mira. En un caso documentado, se clasifica según cómo lo formula quien lo cuenta.' }
+  ];
+  var NOMBRES = { E: 'Expulsión', A: 'Atracción', N: 'Ninguna: es consecuencia' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' enunciados.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['E', 'A', 'N'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
