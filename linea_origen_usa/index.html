@@ -298,6 +298,40 @@
           justify-content: center;
         }
       }
+      /* Barra de navegación del curso, integrada en el encabezado */
+      .navcurso {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px 14px;
+        margin: 24px 30px 0;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 0.9rem;
+      }
+
+      .navcurso a {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+        padding-bottom: 1px;
+      }
+
+      .navcurso a:hover,
+      .navcurso a:focus {
+        border-bottom-color: #ffffff;
+        text-decoration: underline;
+      }
+
+      .navcurso .nav-actual {
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .navcurso .nav-sep {
+        color: #d8e1ee;
+      }
     </style>
   </head>
   <body>
@@ -305,6 +339,18 @@
       <header>
         <h1>Origen de los Estados Unidos de América</h1>
         <p>Línea de Tiempo Interactiva</p>
+
+        <nav class="navcurso" aria-label="Navegación del curso">
+          <a href="../index.html">Índice del curso</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="../index.html#tema-6">Tema 6 · Historia de los Estados Unidos</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="../soc-6-1.html">Lección 6.1</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="../fuentes/index.html">Archivo de fuentes</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <span class="nav-actual" aria-current="page">Línea de tiempo</span>
+        </nav>
       </header>
       <div class="timeline-container">
         <div class="timeline"></div>
@@ -1189,8 +1235,9 @@
                   invitado por la legislatura estatal, y carecía de fuerzas armadas propias o financiación independiente; expuso las dificultades económicas generalizadas resultantes de la incapacidad
                   del gobierno para desarrollar políticas monetarias y comerciales coherentes, gestionar la deuda nacional o regular la moneda; alimentó temores de anarquía social y "excesos
                   democráticos" entre muchos líderes revolucionarios, que vieron en la rebelión una amenaza potencial a la propiedad privada y al orden republicano; y ocurrió en un momento
-                  estratégico, apenas seis meses antes de la Convención Constitucional de Filadelfia, proporcionando a los federalistas un poderoso ejemplo práctico de las consecuencias de un gobierno
-                  central débil. George Washington expresó la reacción de muchos cuando escribió que "hay combustibles suficientes en todos los Estados para encender el fuego de la sedición," mientras
+                  estratégico: la convocatoria de la Convención de Filadelfia ya había salido de la reunión de Annápolis, en septiembre de 1786, de modo que la rebelión no la originó, pero sí
+                  le dio urgencia, asistencia y argumentos, proporcionando a los federalistas un ejemplo práctico de las consecuencias de un gobierno central débil. George Washington expresó la reacción de muchos cuando escribió a Henry Knox, el 26 de diciembre de 1786, que "hay materias inflamables en todos los estados, a las
+                  que una chispa podría prender fuego" (<a href="../fuentes/washington-knox-1786.html">carta completa en el Archivo de fuentes</a>), mientras
                   que Henry Knox advirtió alarmistamente sobre un espíritu de "nivelación social" que amenazaba los derechos de propiedad. La rebelión cambió fundamentalmente los términos del debate
                   político, convenciendo a figuras clave como James Madison, Alexander Hamilton y Washington de que la preservación de la república requería un gobierno nacional más fuerte. Así, en la
                   Convención Constitucional, los delegados repetidamente citaron la Rebelión de Shays como evidencia de la necesidad de abandonar los Artículos, transformando lo que inicialmente se
