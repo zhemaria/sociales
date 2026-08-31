@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!--
+  Lección 8.1 · Escenarios de estímulo múltiple: texto, gráfica y mapa
+  Spanish ASE Social Studies · Tema 8 · Integración y preparación GED
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lección 8.1 · Escenarios de estímulo múltiple: texto, gráfica y mapa</title>
+<meta name="description" content="Reconciliar texto, gráfica y dato sobre un mismo asunto, distinguir una contradicción real de una diferencia de alcance, y gestionar el tiempo en escenarios encadenados del examen." />
+<meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+
+  :root {
+    /* Tema 8 — violeta heredado del plan curricular (--t8). El violeta no
+       choca ni con el verde de acierto ni con el rojo de error, así que
+       aquí se conserva la convención universal de las dos señales. */
+    --tema:    #4a148c;
+    --tema-d:  #2e0a5c;
+    --tema-bg: #f3e5f5;
+    --tema-bg2:#dcc6e6;
+    --acento:  #6a1b9a;
+    --err:     #b3261e;
+    --err-b:   #b3261e;
+    --err-bg:  #fdecea;
+    --txt:     #222;
+    --bg:      #f5f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0; background: var(--bg); color: var(--txt);
+    line-height: 1.6; font-size: 16px;
+  }
+  .contenedor { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.principal {
+    background: var(--tema-d);
+    background: linear-gradient(135deg, #1f0640 0%, #2e0a5c 55%, #4a148c 100%);
+    color: #ffffff; padding: 32px 30px; border-radius: 14px;
+    margin-bottom: 22px; box-shadow: 0 4px 14px rgba(31,6,64,.28);
+  }
+  header.principal .ruta {
+    font-size: 13px; color: #ffffff; letter-spacing: .4px; text-transform: uppercase;
+  }
+  header.principal h1 { margin: 8px 0 6px; font-size: 23px; font-weight: 700; color: #ffffff; }
+  header.principal .meta { font-size: 14px; color: #ffffff; }
+
+  .practicas-sp { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sp {
+    display: inline-block; background: #ffffff; color: #2e0a5c;
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px;
+    letter-spacing: .3px;
+  }
+
+  h2.seccion {
+    color: var(--tema-d); font-size: 21px; margin: 34px 0 12px;
+    padding-bottom: 6px; border-bottom: 3px solid var(--tema-bg2);
+  }
+  h3 { color: var(--tema-d); font-size: 17px; margin: 20px 0 8px; }
+
+  .caja-objetivos {
+    background: var(--tema-bg); border-left: 6px solid var(--tema);
+    padding: 18px 22px; border-radius: 0 10px 10px 0; margin-bottom: 22px;
+  }
+  .caja-objetivos h2 { margin: 0 0 10px; color: var(--tema-d); font-size: 19px; }
+  .caja-objetivos ul { margin: 0; padding-left: 22px; }
+  .caja-objetivos li { margin: 5px 0; }
+
+  .bloque {
+    background: #fff; border-radius: 10px; padding: 4px 24px 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-bottom: 18px;
+  }
+  p { margin: 10px 0; }
+
+  .materiales {
+    background: #eceff1; border-left: 6px solid #37474f;
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .materiales h2 { margin: 0 0 8px; color: #263238; font-size: 18px; }
+  .materiales ul { margin: 8px 0 0; padding-left: 22px; }
+  .materiales li { margin: 5px 0; }
+
+  .ejemplo {
+    background: #fafafa; border: 1px solid #e3e3e3;
+    border-radius: 8px; padding: 14px 18px; margin: 14px 0;
+  }
+  .ejemplo .et {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 12px; font-weight: 700; padding: 3px 12px;
+    border-radius: 12px; margin-bottom: 8px; letter-spacing: .4px;
+  }
+  .paso { margin: 7px 0; padding-left: 30px; position: relative; }
+  .paso .n {
+    position: absolute; left: 0; top: 0;
+    background: var(--tema-bg2); color: var(--tema-d);
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 13px; font-weight: 700; text-align: center; line-height: 22px;
+  }
+  .resalta { background: var(--tema-bg2); padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--tema-d); }
+
+  .caja-tip {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    color: #1b5e20; font-size: 15px;
+  }
+  .caja-tip strong { color: #1b5e20; }
+
+  .caja-atencion {
+    background: var(--err-bg); border-left: 5px solid var(--err-b);
+    padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0;
+    font-size: 15px; color: var(--err);
+  }
+  .caja-atencion strong { color: var(--err); }
+
+  .documento {
+    background: #fdfbfe; border: 2px solid var(--tema);
+    border-radius: 10px; padding: 6px 22px 18px; margin: 18px 0;
+  }
+  .documento h2 { color: var(--tema-d); font-size: 19px; }
+  .documento .fuente { font-size: 13px; color: #555; font-style: italic; }
+  .documento blockquote {
+    margin: 12px 0; background: #ffffff; border-left: 5px solid var(--tema-bg2);
+    padding: 12px 18px; border-radius: 0 8px 8px 0;
+  }
+  .documento blockquote p { margin: 0 0 8px; }
+  .documento blockquote p:last-child { margin-bottom: 0; }
+  .documento .enlace-ficha { font-size: 14px; margin: 10px 0 0; }
+  .documento .enlace-ficha a { color: var(--tema-d); }
+
+  .navlecciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    background: var(--tema-bg); border: 1px solid var(--tema-bg2);
+    border-radius: 10px; padding: 10px 16px; margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .navlecciones a {
+    color: var(--tema-d); text-decoration: none;
+    border-bottom: 1px solid var(--tema-bg2); padding-bottom: 1px;
+  }
+  .navlecciones a:hover, .navlecciones a:focus {
+    border-bottom-color: var(--tema-d); text-decoration: underline;
+  }
+  .navlecciones .nav-actual { color: #2e0a5c; font-weight: 600; }
+  .navlecciones .nav-sep { color: #574168; }
+  .navlecciones .nav-sig { margin-left: auto; font-weight: 600; color: #574168; }
+  .navlecciones.pie { margin: 22px 0 0; }
+  @media (max-width: 600px) { .navlecciones .nav-sig { margin-left: 0; } }
+
+  .enlace-interactivo {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--tema-bg); border: 2px solid var(--tema);
+    border-left: 6px solid var(--tema); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; text-decoration: none;
+    color: var(--tema-d); transition: background .15s;
+  }
+  .enlace-interactivo:hover, .enlace-interactivo:focus { background: var(--tema-bg2); }
+  .enlace-interactivo .ei-icono { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .enlace-interactivo .ei-titulo { display: block; font-weight: 700; font-size: 16px; color: var(--tema-d); }
+  .enlace-interactivo .ei-sub { display: block; font-size: 14px; color: #333; margin: 4px 0 8px; }
+  .enlace-interactivo .ei-cta {
+    display: inline-block; background: var(--tema); color: #ffffff;
+    font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 7px;
+  }
+
+  .reglas { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .reglas caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .reglas th, .reglas td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  .reglas th { background: var(--tema); color: #ffffff; }
+  .reglas td:first-child { background: var(--tema-bg); font-weight: 600; color: var(--tema-d); }
+
+  /* Cronología de referencia */
+  table.crono { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  table.crono caption { text-align: left; font-size: 13px; color: #555; margin-bottom: 6px; }
+  table.crono th, table.crono td { border: 1px solid #e0e0e0; padding: 9px 12px; text-align: left; vertical-align: top; }
+  table.crono th { background: var(--tema); color: #ffffff; }
+  table.crono td.anio { background: var(--tema-bg); font-weight: 700; color: var(--tema-d); white-space: nowrap; width: 1%; }
+  table.crono td.doc { font-size: 13px; }
+  table.crono td.doc a { color: var(--tema-d); }
+
+  .practica {
+    background: var(--tema-bg2); border: 1px dashed var(--tema);
+    border-radius: 10px; padding: 16px 20px; margin: 18px 0;
+  }
+  .practica h3 { margin-top: 0; color: var(--tema-d); }
+  .pregunta { margin: 14px 0; }
+  .pregunta .enun { font-weight: 600; margin-bottom: 8px; }
+  .opciones { display: flex; flex-direction: column; gap: 7px; }
+  .opcion {
+    background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;
+    padding: 9px 14px; cursor: pointer; transition: all .15s;
+  }
+  .opcion:hover { border-color: var(--tema); }
+  .opcion.correcta { border-color: #2e7d32; background: #e8f5e9; font-weight: 600; }
+  .opcion.incorrecta { border-color: var(--err-b); background: var(--err-bg); }
+  .opcion.elegida { border-color: var(--tema); }
+  .fb { margin-top: 8px; font-size: 14px; display: none; }
+  .fb .veredicto { font-weight: 700; }
+  .fb.ok { color: #1b5e20; }
+  .fb.no { color: var(--err); }
+
+  .btn {
+    background: var(--tema); color: #ffffff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 14px;
+    font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px;
+  }
+  .btn:hover { background: var(--tema-d); }
+  .btn:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .btn.sec { background: #546e7a; }
+  .btn.sec:hover { background: #37474f; }
+
+  .sugerencia { margin-bottom: 18px; }
+  .sugerencia > .titulo-act {
+    font-weight: 700; color: var(--tema-d); font-size: 15px;
+    background: var(--tema-bg); padding: 7px 14px; border-radius: 7px;
+  }
+  .sugerencia .cuerpo-act { padding: 10px 4px 0; font-size: 15px; }
+  .duracion {
+    display: inline-block; background: #eceff1; color: #37474f;
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; margin-bottom: 6px;
+  }
+  .autocheck {
+    background: #e8f5e9; border-left: 5px solid #2e7d32;
+    padding: 10px 15px; border-radius: 0 8px 8px 0; margin: 10px 0 0;
+    font-size: 14px; color: #1b5e20;
+  }
+  .autocheck strong { color: #1b5e20; }
+
+  .quiz { background: #fff; border: 2px solid var(--tema); border-radius: 12px; padding: 8px 24px 20px; margin: 22px 0; }
+  .quiz h2 { color: var(--tema-d); }
+  #resultado-quiz {
+    font-size: 17px; font-weight: 700; margin: 14px 0;
+    padding: 12px; border-radius: 8px; text-align: center; display: none;
+  }
+  #resultado-quiz.aprob { background: #e8f5e9; color: #1b5e20; }
+  #resultado-quiz.repro { background: var(--err-bg); color: var(--err); }
+
+  .rubrica { margin: 22px 0; overflow-x: auto; }
+  .rubrica h2 { color: var(--tema-d); }
+  table.tabla-rubrica {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  }
+  table.tabla-rubrica th, table.tabla-rubrica td {
+    border: 1px solid #e0e0e0; padding: 8px 10px; vertical-align: top;
+  }
+  table.tabla-rubrica th {
+    background: var(--tema); color: #ffffff; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  table.tabla-rubrica td:first-child {
+    background: var(--tema-bg); font-weight: 600; color: var(--tema-d);
+  }
+  table.tabla-rubrica td.repaso { background: var(--err-bg); font-weight: 600; }
+  table.tabla-rubrica td.repaso a { color: var(--err); }
+
+  .cierre {
+    background: #263238; color: #eceff1; border-radius: 12px;
+    padding: 22px 26px; margin: 24px 0 10px;
+  }
+  .cierre h2 { color: #ffffff; margin-top: 0; }
+  .cierre strong { color: #9BFF8F; }
+  .cierre a { color: #9BFF8F; }
+
+  footer {
+    text-align: center; padding: 20px; color: #555;
+    font-size: 13px; border-top: 1px solid #ddd; margin-top: 20px;
+  }
+  footer p { margin: 5px 0; }
+  footer a { color: #2e0a5c; }
+
+  /* ══ COMPONENTES DEL TEMA 8 ═════════════════════════════════ */
+  /* Emparejador «¿sucesión o causa?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .clasificador h3 { margin-top: 0; }
+  .marcador { font-size: 14px; font-weight: 700; color: var(--tema-d); margin: 8px 0 14px; }
+  .comp { background: #fff; border: 2px solid #e0e0e0; border-radius: 9px; padding: 12px 16px; margin-bottom: 10px; }
+  .comp .par-a, .comp .par-b { font-size: 15px; margin: 0 0 4px; }
+  .comp .et-par {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; border-radius: 4px;
+    padding: 0 7px; margin-right: 7px; letter-spacing: .3px;
+  }
+  .comp .botones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .comp .botones button {
+    font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    border: 2px solid var(--tema); background: #fff; color: var(--tema-d);
+    border-radius: 7px; padding: 7px 14px; min-width: 44px;
+  }
+  .comp .botones button:hover:not(:disabled) { background: var(--tema-bg2); }
+  .comp .botones button:focus-visible { outline: 3px solid #b3261e; outline-offset: 2px; }
+  .comp .botones button:disabled { cursor: default; opacity: .5; }
+  .comp .botones button.acierto { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; opacity:1; }
+  .comp .botones button.fallo   { background:var(--err-bg); border-color:var(--err-b); color:var(--err); opacity:1; }
+  .comp .exp { display:none; margin-top:10px; font-size:14px; }
+  .comp .exp.ok { color:#1b5e20; }
+  .comp .exp.no { color:var(--err); }
+  .comp.resuelta { border-color: var(--tema-bg2); }
+
+  /* Tarjetas de tipo de causa */
+  .tipos-causa { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+  .tipos-causa .tc {
+    flex:1 1 240px; background:#fff; border:1px solid #e0e0e0;
+    border-left:6px solid var(--tema); border-radius:0 9px 9px 0; padding:12px 16px;
+  }
+  .tipos-causa .tc .n {
+    display:inline-block; background:var(--tema); color:#fff; border-radius:5px;
+    padding:1px 9px; font-size:12.5px; font-weight:700; margin-bottom:6px;
+  }
+  .tipos-causa .tc p { margin:0; font-size:14.5px; }
+  .tipos-causa .tc .ej { display:block; margin-top:7px; font-size:13.5px; color:#555; font-style:italic; }
+
+  /* Posturas enfrentadas */
+  .enfrentados { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+  .enfrentados .lado { flex:1 1 300px; border-radius:10px; padding:14px 18px; }
+  .enfrentados .colonos  { background:var(--tema-bg); border-left:6px solid var(--tema); }
+  .enfrentados .londres  { background:#eceff1; border-left:6px solid #37474f; }
+  .enfrentados .lado h3 { margin:0 0 10px; font-size:15.5px; }
+  .enfrentados .colonos h3 { color:#2e0a5c; }
+  .enfrentados .londres h3 { color:#263238; }
+  .enfrentados .lado ul { margin:0; padding-left:20px; font-size:14.5px; }
+  .enfrentados .lado li { margin-bottom:9px; }
+
+  /* Escenario de estímulo múltiple, con el formato del examen */
+  .escenario { border: 2px solid var(--tema); border-radius: 12px; margin: 22px 0; overflow: hidden; }
+  .escenario > .cabecera {
+    background: var(--tema); color: #fff; padding: 10px 20px;
+    font-weight: 700; font-size: 15px; letter-spacing: .3px;
+  }
+  .escenario > .cuerpo { padding: 4px 20px 18px; background: #fff; }
+  .estimulo { border-left: 5px solid var(--tema-bg2); background: #fbf7fd; padding: 12px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+  .estimulo .et-est {
+    display: inline-block; background: var(--tema-bg2); color: var(--tema-d);
+    font-size: 11.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+    padding: 2px 10px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .estimulo p:last-child { margin-bottom: 0; }
+
+  /* Gráficas */
+  figure.grafica { background:#fff; border:1px solid #e0e0e0; border-radius:10px; padding:14px 16px; margin:14px 0; }
+  figure.grafica h3 { margin:0 0 4px; font-size:15.5px; }
+  figure.grafica .g-fuente { margin:0 0 10px; font-size:12.5px; color:#555; font-style:italic; }
+  figure.grafica svg { display:block; width:100%; height:auto; overflow:visible; }
+  figure.grafica figcaption { margin-top:10px; font-size:14px; color:#333; }
+  .g-eje    { stroke:#b9a2c7; stroke-width:1.5; }
+  .g-reja   { stroke:#f0e8f4; stroke-width:1; }
+  .g-barra  { fill: var(--tema); }
+  .g-barra-alt { fill: #8d6e93; }
+  .g-rot    { font-size:12px; fill:#333; }
+  .g-rot-eje{ font-size:12.5px; fill:#2e0a5c; font-weight:700; }
+  .g-valor  { font-size:11.5px; fill:#2e0a5c; font-weight:700; }
+
+  /* Plantilla de cuatro columnas */
+  table.plantilla td.vacia { background: #fafafa; color: #777; font-style: italic; }
+
+  /* Reloj de la sección de tiempo */
+  .reloj {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;
+  }
+  .reloj .tramo {
+    flex: 1 1 200px; background: var(--tema-bg); border-left: 6px solid var(--tema);
+    border-radius: 0 9px 9px 0; padding: 12px 16px;
+  }
+  .reloj .tramo .t-min {
+    display: inline-block; background: var(--tema); color: #fff; border-radius: 5px;
+    padding: 1px 10px; font-size: 12.5px; font-weight: 700; margin-bottom: 6px;
+  }
+  .reloj .tramo p { margin: 0; font-size: 14.5px; }
+
+  .comp .botones.cuatro button { flex:1 1 140px; }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Spanish ASE Social Studies · Tema 8 · Integración y preparación GED®</div>
+    <h1>Lección 8.1 · Escenarios de estímulo múltiple: texto, gráfica y mapa</h1>
+    <div class="meta">NRS 5–6 · Con el reloj a la vista</div>
+    <div class="practicas-sp">
+      <span class="sp">SSP.4 · Evaluar fuentes y afirmaciones</span>
+      <span class="sp">SSP.7 · Punto de vista</span>
+      <span class="sp">SSP.10 · Datos y gráficas</span>
+    </div>
+  </header>
+
+  <nav class="navlecciones" aria-label="Navegación del curso">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <span class="nav-actual" aria-current="page">Lección 8.1</span>
+    <span class="nav-sig">Siguiente: Lección 8.2 · en preparación</span>
+  </nav>
+
+  <div class="caja-objetivos">
+    <h2>Objetivos de la lección</h2>
+    <ul>
+      <li>Reconciliar la información de un texto, una gráfica y un dato referidos al mismo asunto.</li>
+      <li>Distinguir una contradicción real de una diferencia de periodo, de población o de unidad.</li>
+      <li>Determinar si la evidencia disponible sostiene una conclusión, o si solo la roza.</li>
+      <li>Responder tres preguntas encadenadas sin volver a leer el estímulo desde el principio.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <p><strong>Dónde quedamos.</strong> Los siete temas anteriores enseñaron el contenido y las destrezas por separado. El Tema 8 no trae nada nuevo: <strong>junta todo y lo pone bajo un reloj</strong>.</p>
+    <p>Y empieza por el formato que más pesa en el examen. Cerca de la mitad de los reactivos no vienen sueltos: vienen agrupados en <span class="resalta">escenarios</span>, dos o tres preguntas sobre un mismo conjunto de fuentes. Quien sabe manejarlos gana tiempo en todo el examen; quien no, lo pierde releyendo.</p>
+  </div>
+
+  <div class="materiales">
+    <h2>Lo que necesita</h2>
+    <ul>
+      <li><strong>Un cronómetro a la vista desde el primer escenario.</strong> No es un adorno: la gestión del tiempo es parte de la destreza que se evalúa.</li>
+      <li>Papel y lápiz para la plantilla de cuatro columnas.</li>
+      <li>Calculadora.</li>
+      <li>Entre dos y tres horas, repartidas.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="sec1">1. Qué es un escenario y cómo se ataca</h2>
+
+  <div class="bloque">
+    <p>Un escenario le da dos o tres fuentes sobre un mismo asunto —un texto, una gráfica, un mapa, una tabla— y después le hace varias preguntas seguidas. Las fuentes nunca dicen exactamente lo mismo: si lo dijeran, sobraría una.</p>
+    <p>El orden en que se lee decide cuánto tiempo se tarda. Este es el que funciona.</p>
+
+    <div class="paso"><span class="n">1</span><strong>Lea primero los títulos y las etiquetas de todo</strong>, sin entrar en el contenido. Qué mide cada fuente, de qué periodo y en qué unidades. Treinta segundos.</div>
+    <div class="paso"><span class="n">2</span><strong>Pregúntese qué aporta cada fuente que no aporte la otra.</strong> Esa es la razón de que estén las dos, y casi siempre es la respuesta de alguna pregunta.</div>
+    <div class="paso"><span class="n">3</span><strong>Lea la primera pregunta y solo entonces vuelva al detalle</strong>, al trozo que hace falta. No memorice el estímulo entero.</div>
+    <div class="paso"><span class="n">4</span><strong>Para la segunda y la tercera, no vuelva al principio.</strong> Ya sabe dónde está cada cosa. Volver a leer desde cero es lo que se come el tiempo.</div>
+
+    <div class="caja-tip">
+      <strong>La pregunta que resuelve la mitad de los escenarios</strong> es la del paso 2: <em>¿qué sabe usted por esta fuente que no sabría por la otra?</em> Un texto suele dar el motivo, la intención o el contexto; una gráfica da la magnitud y la tendencia; un mapa da la distribución. Cuando una pregunta le pida algo que solo una de las fuentes puede dar, la respuesta está ahí y no hace falta mirar el resto.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec2">2. Escenario A · Luisiana, 1896–1904</h2>
+
+  <div class="escenario">
+    <div class="cabecera">Escenario A · Tres fuentes sobre el mismo asunto</div>
+    <div class="cuerpo">
+
+      <div class="estimulo">
+        <span class="et-est">Fuente 1 · Texto</span>
+        <p>En 1898 el estado de Luisiana aprobó una constitución nueva que estableció un impuesto electoral y una prueba de alfabetización como requisitos para registrarse a votar. La misma constitución incluyó una cláusula que eximía de esos dos requisitos a quien tuviera padre o abuelo con derecho a voto antes del 1 de enero de 1867.</p>
+      </div>
+
+      <figure class="grafica">
+        <h3>Fuente 2 · Votantes negros registrados en Luisiana</h3>
+        <p class="g-fuente">Registros electorales del estado, recogidos por The Historic New Orleans Collection y 64 Parishes.</p>
+        <svg viewBox="0 0 560 250" role="img" aria-labelledby="tit-lou desc-lou">
+          <title id="tit-lou">Votantes negros registrados en Luisiana en 1896 y en 1904</title>
+          <desc id="desc-lou">En 1896 había 130 344 votantes negros registrados. En 1904 quedaban 1342. La segunda barra es tan pequeña que apenas se distingue del eje.</desc>
+          <line class="g-reja" x1="90" y1="40" x2="520" y2="40" />
+          <line class="g-reja" x1="90" y1="95" x2="520" y2="95" />
+          <line class="g-reja" x1="90" y1="150" x2="520" y2="150" />
+          <line class="g-eje" x1="90" y1="30" x2="90" y2="200" />
+          <line class="g-eje" x1="90" y1="200" x2="520" y2="200" />
+          <text class="g-rot" x="82" y="45" text-anchor="end">140 000</text>
+          <text class="g-rot" x="82" y="100" text-anchor="end">96 000</text>
+          <text class="g-rot" x="82" y="155" text-anchor="end">48 000</text>
+          <text class="g-rot" x="82" y="205" text-anchor="end">0</text>
+          <rect class="g-barra" x="160" y="35" width="120" height="165" />
+          <text class="g-valor" x="220" y="28" text-anchor="middle">130 344</text>
+          <text class="g-rot-eje" x="220" y="222" text-anchor="middle">1896</text>
+          <rect class="g-barra" x="340" y="198" width="120" height="2" />
+          <text class="g-valor" x="400" y="190" text-anchor="middle">1342</text>
+          <text class="g-rot-eje" x="400" y="222" text-anchor="middle">1904</text>
+        </svg>
+        <figcaption>De 130 344 a 1342 en ocho años.</figcaption>
+      </figure>
+
+      <div class="estimulo">
+        <span class="et-est">Fuente 3 · Dato adicional</span>
+        <p>En el mismo periodo, el número de votantes blancos registrados en Luisiana también descendió de manera considerable. Buena parte de los blancos pobres no llegó a acogerse a la cláusula de exención.</p>
+      </div>
+
+      <div class="practica">
+        <h3>Tres preguntas encadenadas</h3>
+        <p>Respóndalas seguidas y sin volver al principio del escenario.</p>
+
+        <div class="pregunta" data-correcta="b" data-explica="La gráfica da la magnitud del cambio; el texto da el mecanismo legal que lo hace inteligible. Ninguna de las dos, sola, permite explicar lo ocurrido.">
+          <div class="enun">1. ¿Qué aporta la Fuente 1 que no aporte la Fuente 2?</div>
+          <div class="opciones">
+            <div class="opcion" data-op="a">Las cifras exactas del registro</div>
+            <div class="opcion" data-op="b">El mecanismo legal que puede explicar la caída</div>
+            <div class="opcion" data-op="c">La comparación con otros estados</div>
+          </div>
+          <div class="fb"></div>
+        </div>
+
+        <div class="pregunta" data-correcta="c" data-explica="No se contradicen: hablan de poblaciones distintas. Que la medida afectara también a votantes blancos pobres es compatible con que estuviera dirigida, y la cláusula de exención es la prueba de la dirección.">
+          <div class="enun">2. ¿Contradice la Fuente 3 a la Fuente 2?</div>
+          <div class="opciones">
+            <div class="opcion" data-op="a">Sí: si bajaron los dos, la medida no iba dirigida a nadie</div>
+            <div class="opcion" data-op="b">Sí: una de las dos fuentes tiene que estar equivocada</div>
+            <div class="opcion" data-op="c">No: hablan de poblaciones distintas y las dos pueden ser ciertas</div>
+          </div>
+          <div class="fb"></div>
+        </div>
+
+        <div class="pregunta" data-correcta="a" data-explica="Las tres fuentes juntas sostienen esa afirmación: hay un mecanismo con una exención de diseño, una caída medida y un efecto colateral reconocido. Las otras dos van más allá de lo que hay.">
+          <div class="enun">3. ¿Cuál de estas conclusiones sostienen las tres fuentes juntas?</div>
+          <div class="opciones">
+            <div class="opcion" data-op="a">Una medida dirigida a un grupo puede afectar también a otros sin dejar de estar dirigida</div>
+            <div class="opcion" data-op="b">La constitución de 1898 fue la única causa de la caída</div>
+            <div class="opcion" data-op="c">En 1904 ya no votaba nadie en Luisiana</div>
+          </div>
+          <div class="fb"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bloque">
+    <div class="caja-atencion">
+      <strong>Lo que entrena este escenario.</strong> La segunda pregunta es la importante y la que más se falla. Dos fuentes que apuntan en direcciones distintas <em>casi nunca</em> se contradicen: suelen hablar de poblaciones distintas, de periodos distintos o en unidades distintas. Antes de escribir «se contradicen», compruebe esas tres cosas. La sección siguiente es exactamente eso.
+    </div>
+  </div>
+  <h2 class="seccion" id="sec3">3. Cuando la contradicción no es contradicción</h2>
+
+  <div class="bloque">
+    <p>Dos afirmaciones ciertas pueden parecer incompatibles. Casi siempre la culpa es de una de estas tres cosas.</p>
+
+    <div class="tipos-causa">
+      <div class="tc">
+        <span class="n">El periodo</span>
+        <p>Miden el mismo asunto en años distintos.</p>
+        <span class="ej">«La inmigración subió» y «la inmigración cayó» son las dos ciertas: una habla de 1901 y la otra de 1935.</span>
+      </div>
+      <div class="tc">
+        <span class="n">La población</span>
+        <p>Miden a grupos distintos, o a un grupo y a su conjunto.</p>
+        <span class="ej">Es el caso del Escenario A: votantes negros y votantes blancos.</span>
+      </div>
+      <div class="tc">
+        <span class="n">La unidad</span>
+        <p>Miden en totales y en proporciones, o en distintas escalas.</p>
+        <span class="ej">La más traicionera de las tres, y la que viene ahora.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="escenario">
+    <div class="cabecera">Escenario B · Dos afirmaciones que parecen pelearse</div>
+    <div class="cuerpo">
+
+      <div class="estimulo">
+        <span class="et-est">Afirmación 1</span>
+        <p>«En la década de 1901 a 1910 llegaron a los Estados Unidos casi nueve millones de inmigrantes, más que en cualquier otra década de su historia hasta entonces.»</p>
+      </div>
+
+      <div class="estimulo">
+        <span class="et-est">Afirmación 2</span>
+        <p>«En 1910 los nacidos en el extranjero eran alrededor del quince por ciento de la población de los Estados Unidos, una proporción parecida a la de 1870 y a la de 1890.»</p>
+      </div>
+
+      <div class="estimulo">
+        <span class="et-est">Fuente</span>
+        <p>Anuarios estadísticos del servicio federal de inmigración para la primera cifra; censos de los Estados Unidos, recogidos por la Oficina del Censo, para la segunda.</p>
+      </div>
+
+      <div class="practica">
+        <h3>Dos preguntas</h3>
+
+        <div class="pregunta" data-correcta="c" data-explica="La primera cuenta personas; la segunda mide una proporción sobre una población que también estaba creciendo. Son dos maneras de medir lo mismo y las dos son correctas.">
+          <div class="enun">1. ¿Se contradicen las dos afirmaciones?</div>
+          <div class="opciones">
+            <div class="opcion" data-op="a">Sí: si llegó una cifra récord, la proporción tuvo que subir</div>
+            <div class="opcion" data-op="b">Sí: los datos de una de las dos fuentes están mal</div>
+            <div class="opcion" data-op="c">No: una cuenta personas y la otra mide una proporción</div>
+          </div>
+          <div class="fb"></div>
+        </div>
+
+        <div class="pregunta" data-correcta="b" data-explica="Con la primera se responde cuánta gente llegó; con la segunda, cuánto pesaba esa gente dentro del país. Son preguntas distintas, y elegir mal la fuente es el error más común de todo el bloque de datos.">
+          <div class="enun">2. Le preguntan si la sociedad estadounidense de 1910 estaba más formada por inmigrantes que la de 1870. ¿Qué afirmación usa?</div>
+          <div class="opciones">
+            <div class="opcion" data-op="a">La primera, porque da la cifra mayor</div>
+            <div class="opcion" data-op="b">La segunda, porque la pregunta es sobre proporción</div>
+            <div class="opcion" data-op="c">Ninguna: con estos datos no se puede responder</div>
+          </div>
+          <div class="fb"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bloque">
+    <div class="caja-tip">
+      <strong>La regla, en una línea.</strong> Antes de declarar una contradicción, compruebe <span class="resalta">periodo, población y unidad</span>. Si las tres coinciden y las fuentes siguen discrepando, entonces sí: hay una contradicción real, y ahí toca decidir cuál fuente es más creíble y por qué. Pero eso ocurre mucho menos de lo que parece.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec4">4. La plantilla de cuatro columnas</h2>
+
+  <div class="bloque">
+    <p>Cuando una pregunta le da una <strong>conclusión</strong> y le pide si la evidencia la sostiene, esta plantilla resuelve el problema y evita la respuesta impulsiva.</p>
+
+    <table class="reglas plantilla">
+      <caption>Plantilla de análisis, aplicada a una conclusión del Escenario A.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Afirmación</th>
+          <th scope="col">Evidencia a favor</th>
+          <th scope="col">Evidencia en contra</th>
+          <th scope="col">Veredicto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>La constitución de 1898 fue diseñada para reducir el voto negro.</td>
+          <td>Impuesto electoral y prueba de alfabetización, con una exención que solo podía cumplir quien tuviera antepasados con voto antes de 1867. La caída de 130 344 a 1342.</td>
+          <td class="vacia">Ninguna en estas fuentes.</td>
+          <td>Sostenida.</td>
+        </tr>
+        <tr>
+          <td>La constitución de 1898 fue la única causa de la caída.</td>
+          <td>La coincidencia de fechas.</td>
+          <td>Nada en las fuentes descarta otras causas, y no se ofrece ninguna comparación.</td>
+          <td><strong>No sostenida.</strong> La palabra «única» exige más de lo que hay.</td>
+        </tr>
+        <tr>
+          <td>La medida no iba dirigida a nadie, porque también cayó el registro blanco.</td>
+          <td>La Fuente 3.</td>
+          <td>La cláusula de exención está redactada de modo que solo la cumple un grupo. Eso es diseño, no efecto colateral.</td>
+          <td><strong>No sostenida.</strong> Confunde el efecto con la intención declarada en el texto.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="caja-atencion">
+      <strong>Mire la columna del veredicto y fíjese en qué las tumba.</strong> No son los datos: es <em>una palabra</em>. «Única» en la segunda; «no iba dirigida a nadie» en la tercera. En el examen, la diferencia entre una conclusión sostenida y una que no lo está suele estar en un adverbio o en un absoluto: <strong>siempre, nunca, única, todos, ninguno</strong>. Cuando vea una de esas palabras en una opción de respuesta, compruebe si la evidencia da para tanto. Casi nunca da.
+    </div>
+  </div>
+
+  <h2 class="seccion" id="sec5">5. El reloj</h2>
+
+  <div class="bloque">
+    <p>El examen dura setenta minutos y trae unos treinta y cinco reactivos. Eso son <strong>dos minutos por pregunta</strong> de media, y los escenarios no se reparten igual: el primero de cada grupo cuesta más porque hay que leer el estímulo, y los siguientes cuestan mucho menos.</p>
+
+    <div class="reloj">
+      <div class="tramo">
+        <span class="t-min">≈ 90 segundos</span>
+        <p><strong>Leer el estímulo.</strong> Títulos, etiquetas, periodos y unidades. Aún no ha respondido nada, y no pasa nada.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">≈ 90 segundos</span>
+        <p><strong>Primera pregunta.</strong> Vuelve al detalle que hace falta, no al estímulo entero.</p>
+      </div>
+      <div class="tramo">
+        <span class="t-min">≈ 45 segundos</span>
+        <p><strong>Segunda y tercera.</strong> Ya sabe dónde está cada cosa. Si tarda lo mismo que en la primera, está releyendo.</p>
+      </div>
+    </div>
+
+    <div class="caja-tip">
+      <strong>Y la regla que más puntos salva.</strong> Si una pregunta lleva más de dos minutos, márquela y siga. Volver con tiempo sobrante y la cabeza fresca da mejor resultado que atascarse. <span class="resalta">Una pregunta sin responder y una respondida mal valen lo mismo</span>, así que nunca deje ninguna en blanco al final: si hay que adivinar, se adivina, pero al final y no en el momento del atasco.
+    </div>
+  </div>
+
+  <div class="clasificador">
+    <h3>Práctica interactiva · ¿Contradicción real o diferencia de alcance?</h3>
+    <p>Ocho pares de afirmaciones, todas verdaderas. Diga si la diferencia entre las dos viene del periodo, de la población, de la unidad de medida, o si es una contradicción de verdad.</p>
+    <p class="marcador" id="marcador" role="status">Sin responder todavía.</p>
+    <div id="lista-comp"></div>
+    <button class="btn sec" id="btn-reiniciar-comp" type="button">Volver a empezar</button>
+  </div>
+  <h2 class="seccion" id="sec6">6. Sugerencias de práctica</h2>
+
+  <div class="bloque">
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 1 · Cronometrarse de verdad</div>
+      <div class="cuerpo-act">
+        <span class="duracion">20 minutos</span>
+        <p>Vuelva al Escenario A con un cronómetro en marcha. Anote cuánto tarda en las tres partes por separado: leer el estímulo, la primera pregunta y las otras dos. Repita el ejercicio con el Escenario B.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> lo que interesa no es el total, es la forma. Si la segunda y la tercera pregunta le costaron casi lo mismo que la primera, está releyendo el estímulo cada vez, y eso es exactamente lo que se lleva el tiempo del examen. Si le pasa, repítalo tapando el estímulo mientras responde.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 2 · Construya usted un escenario</div>
+      <div class="cuerpo-act">
+        <span class="duracion">35 minutos</span>
+        <p>Elija un asunto de cualquier tema del curso y reúna tres fuentes propias: un texto breve, un dato numérico y una tercera cosa. Escriba tres preguntas encadenadas, y para cada una anote cuál de las fuentes hace falta. Después escriba <strong>una conclusión falsa que parezca verdadera</strong> con esas tres fuentes.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> esa conclusión falsa es la parte que enseña. Si le costó inventarla, mírela otra vez: lo más fácil es añadirle un absoluto —única, siempre, todos— a una afirmación verdadera. Quien sabe fabricar la trampa la reconoce después en el examen.</div>
+      </div>
+    </div>
+
+    <div class="sugerencia">
+      <div class="titulo-act">Práctica 3 · Cuatro columnas sobre una noticia</div>
+      <div class="cuerpo-act">
+        <span class="duracion">25 minutos</span>
+        <p>Busque una noticia con una gráfica. Escriba la conclusión que el titular quiere que usted saque y páse la por la plantilla de cuatro columnas: evidencia a favor, evidencia en contra y veredicto. Solo con lo que hay en la propia noticia.</p>
+        <div class="autocheck"><strong>Compruebe usted mismo:</strong> si la columna de evidencia en contra le quedó vacía, no dé por buena la conclusión todavía. Pregúntese qué dato haría falta para ponerla en duda y si la noticia lo trae. Muchas veces el problema no es que la evidencia contradiga: es que no hay bastante, y eso también es un veredicto.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz de la lección 8.1</h2>
+    <p>Doce preguntas sobre escenarios de estímulo múltiple: cuatro de reconciliación entre fuentes, cuatro sobre si la evidencia sostiene la conclusión y cuatro de integración de dato cuantitativo con narrativa. Tiempo sugerido: 35 minutos. Para aprobar se requieren al menos 8 respuestas correctas.</p>
+    <div id="quiz-cuerpo"></div>
+    <div id="resultado-quiz"></div>
+    <button class="btn" id="btn-corregir" type="button">Corregir quiz</button>
+    <button class="btn sec" id="btn-reintentar" type="button" style="display:none;">Intentar de nuevo</button>
+  </div>
+
+  <div class="rubrica">
+    <h2><span aria-hidden="true">📊</span> Rúbrica para autoevaluarse</h2>
+    <p>Lea los cuatro criterios con sus hojas de las Prácticas 1 y 3 delante y sitúese con honestidad en un nivel. Nadie va a leer esta tabla: su utilidad depende por completo de la sinceridad con que se use.</p>
+    <table class="tabla-rubrica">
+      <caption class="sr-only">Rúbrica de autoevaluación de integración de fuentes, con cuatro criterios, cuatro niveles de desempeño y la sección de la lección que conviene repasar en cada caso.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Criterio</th>
+          <th scope="col">Inicial (1)</th>
+          <th scope="col">En desarrollo (2)</th>
+          <th scope="col">Competente (3)</th>
+          <th scope="col">Destacado (4)</th>
+          <th scope="col">Dónde repasar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Extrae de cada fuente lo que solo ella aporta</td>
+          <td>Lee las fuentes como si dijeran lo mismo.</td>
+          <td>Ve que difieren, pero no sabe nombrar qué añade cada una.</td>
+          <td>Dice qué sabe por cada fuente que no sabría por la otra.</td>
+          <td>Usa esa pregunta para saltar directamente a la fuente que responde.</td>
+          <td class="repaso"><a href="#sec1">Sección 1</a></td>
+        </tr>
+        <tr>
+          <td>Identifica el punto exacto de divergencia</td>
+          <td>Declara contradicción en cuanto dos fuentes no coinciden.</td>
+          <td>Sospecha que no es contradicción, pero no sabe comprobarlo.</td>
+          <td>Comprueba periodo, población y unidad antes de concluir.</td>
+          <td>Reconoce además la contradicción real cuando la hay, y dice qué fuente es más creíble y por qué.</td>
+          <td class="repaso"><a href="#sec3">Sección 3</a></td>
+        </tr>
+        <tr>
+          <td>Determina si la evidencia sostiene la conclusión</td>
+          <td>Acepta la conclusión si suena razonable.</td>
+          <td>Busca evidencia a favor y se detiene ahí.</td>
+          <td>Llena las cuatro columnas, incluida la de en contra.</td>
+          <td>Detecta el absoluto —única, siempre, todos— que hace insostenible una afirmación por lo demás correcta.</td>
+          <td class="repaso"><a href="#sec4">Sección 4</a></td>
+        </tr>
+        <tr>
+          <td>Gestiona el tiempo sin releer</td>
+          <td>Relee el estímulo entero en cada pregunta.</td>
+          <td>Relee a veces, sin darse cuenta.</td>
+          <td>Responde la segunda y la tercera pregunta en la mitad de tiempo que la primera.</td>
+          <td>Marca y deja atrás la pregunta atascada, y vuelve al final.</td>
+          <td class="repaso"><a href="#sec5">Sección 5</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cierre">
+    <h2>Cierre de la lección 8.1</h2>
+    <p>Tres ideas se llevan de aquí. <strong>Pregúntese qué aporta cada fuente que no aporte la otra</strong>: esa pregunta resuelve la mitad de los escenarios y ahorra la mitad del tiempo. <strong>Antes de declarar una contradicción, compruebe periodo, población y unidad</strong>, porque dos afirmaciones que parecen pelearse casi siempre miden cosas distintas. Y <strong>lo que suele tumbar una conclusión es una palabra</strong>: única, siempre, todos, ninguno.</p>
+    <p>Nada de esto es nuevo. Es lo que hizo en la Lección 1.3 con dos crónicas de la misma reunión, en la 6.2 con un anuncio y una autobiografía, y en la 7.3 con dos votos del mismo tribunal. La diferencia es que ahora hay un reloj.</p>
+    <p>La <strong>Lección 8.2</strong> le pide hacer todo esto por su cuenta y sobre un asunto que usted elija de su propia comunidad: el proyecto final.</p>
+  </div>
+
+  <nav class="navlecciones pie" aria-label="Navegación del curso (pie de página)">
+    <a href="index.html">Índice del curso</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="index.html#tema-8">Tema 8 · Integración y preparación</a>
+    <span class="nav-sep" aria-hidden="true">·</span>
+    <a href="fuentes/index.html">Archivo de fuentes</a>
+    <span class="nav-sig">Siguiente: Lección 8.2 · en preparación</span>
+  </nav>
+
+  <footer>
+    <p>Spanish ASE Social Studies · Tema 8 · Lección 8.1 · GEDparaHispanos</p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>
+    <p>© 2026. Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons
+      Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  /* ---- Práctica de opciones (bloques .practica y .documento) ----
+     Cada .pregunta lleva data-correcta y data-explica. La explicación
+     se muestra tanto al acertar como al fallar: sin docente delante,
+     el estudiante necesita saber por qué, no solo si. ---------------- */
+  var preguntasOp = document.querySelectorAll('.practica .pregunta[data-correcta], .documento .pregunta[data-correcta]');
+  preguntasOp.forEach(function (preg) {
+    var correcta = preg.getAttribute('data-correcta');
+    var explica  = preg.getAttribute('data-explica') || '';
+    var opciones = preg.querySelectorAll('.opcion');
+    var fb = preg.querySelector('.fb');
+    opciones.forEach(function (op) {
+      op.addEventListener('click', function () {
+        opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+        var elegida = op.getAttribute('data-op');
+        var veredicto = document.createElement('span');
+        veredicto.className = 'veredicto';
+        fb.textContent = '';
+        if (elegida === correcta) {
+          op.classList.add('correcta');
+          veredicto.textContent = 'Correcto. ';
+          fb.className = 'fb ok';
+        } else {
+          op.classList.add('incorrecta');
+          opciones.forEach(function (o) {
+            if (o.getAttribute('data-op') === correcta) o.classList.add('correcta');
+          });
+          veredicto.textContent = 'Revise: la opción marcada en verde es la correcta. ';
+          fb.className = 'fb no';
+        }
+        fb.appendChild(veredicto);
+        fb.appendChild(document.createTextNode(explica));
+        fb.style.display = 'block';
+      });
+    });
+  });
+
+  /* ---- Quiz: 4 de cronología, 5 de causalidad, 3 de Artículos y Constitución ---- */
+  var preguntasQuiz = [
+    { enun: '1. En un escenario de estímulo múltiple, lo primero que conviene leer es…', ops: ['El texto completo, de principio a fin', 'Los títulos, etiquetas, periodos y unidades de cada fuente', 'La primera pregunta', 'La fuente más corta'],
+      correcta: 1, expl: 'Treinta segundos en saber qué mide cada fuente ahorran varios minutos después. El detalle se lee cuando una pregunta lo pide.' },
+    { enun: '2. ¿Qué pregunta resuelve la mitad de los escenarios?', ops: ['¿Cuál es la fuente más fiable?', '¿Qué aporta cada fuente que no aporte la otra?', '¿Cuál es más reciente?', '¿Cuál es más larga?'],
+      correcta: 1, expl: 'Un texto suele dar el motivo o el contexto; una gráfica, la magnitud; un mapa, la distribución. Si una pregunta pide algo que solo una fuente puede dar, la respuesta está ahí.' },
+    { enun: '3. Dos fuentes parecen contradecirse. Antes de concluir que se contradicen, hay que comprobar…', ops: ['Quién las publicó', 'Periodo, población y unidad', 'Cuál tiene más datos', 'Si están traducidas'],
+      correcta: 1, expl: 'Casi siempre la diferencia viene de una de esas tres cosas, y entonces las dos afirmaciones son ciertas a la vez.' },
+    { enun: '4. «La inmigración alcanzó su récord en 1901–1910» y «la proporción de nacidos en el extranjero era parecida en 1870 y 1910». Estas dos afirmaciones…', ops: ['Se contradicen', 'Pueden ser ciertas las dos: una cuenta personas y la otra mide una proporción', 'Prueban que un dato está mal', 'Hablan de países distintos'],
+      correcta: 1, expl: 'La población total también estaba creciendo. Es la diferencia de unidad, la más traicionera de las tres.' },
+    { enun: '5. En el escenario de Luisiana, el texto de la constitución aporta sobre todo…', ops: ['Las cifras del registro', 'El mecanismo legal que puede explicar la caída', 'La comparación con otros estados', 'La fecha del censo'],
+      correcta: 1, expl: 'La gráfica da la magnitud; el texto da el mecanismo. Ninguna de las dos, sola, permite explicar lo ocurrido.' },
+    { enun: '6. Que el registro de votantes blancos también cayera en Luisiana significa que…', ops: ['La medida no iba dirigida a nadie', 'Los datos del registro negro están mal', 'Una medida dirigida puede tener efectos sobre otros grupos', 'No hubo ninguna medida'],
+      correcta: 2, expl: 'La cláusula de exención está redactada de modo que solo la cumple un grupo: eso es diseño. Que además tuviera efectos no buscados no lo desmiente.' },
+    { enun: '7. ¿Qué palabra suele volver insostenible una conclusión por lo demás correcta?', ops: ['Aproximadamente', 'Única', 'Probablemente', 'Parcialmente'],
+      correcta: 1, expl: 'Los absolutos —siempre, nunca, única, todos, ninguno— exigen más evidencia de la que un escenario suele dar. Cuando vea uno, compruebe si la evidencia da para tanto.' },
+    { enun: '8. En la plantilla de cuatro columnas, la columna que más se olvida es…', ops: ['La afirmación', 'La evidencia a favor', 'La evidencia en contra', 'El veredicto'],
+      correcta: 2, expl: 'Y si queda vacía no significa que la conclusión sea correcta: puede significar que no hay bastante evidencia, y eso también es un veredicto.' },
+    { enun: '9. Si en una gráfica y en un texto los números no coinciden, lo primero que hay que mirar es…', ops: ['Cuál de los dos es más reciente', 'Si miden en las mismas unidades y en el mismo periodo', 'Cuál ocupa más espacio', 'Quién firma el texto'],
+      correcta: 1, expl: 'Totales frente a proporciones, o años distintos, explican la mayoría de estos desajustes antes de que haya que dudar de ninguna fuente.' },
+    { enun: '10. El examen dura setenta minutos y trae unos treinta y cinco reactivos. Eso da de media…', ops: ['Un minuto por pregunta', 'Dos minutos por pregunta', 'Cinco minutos por pregunta', 'Medio minuto por pregunta'],
+      correcta: 1, expl: '70 ÷ 35 = 2. Pero no se reparten igual: el primer reactivo de cada escenario cuesta más y los siguientes bastante menos.' },
+    { enun: '11. Si una pregunta lleva más de dos minutos, lo mejor es…', ops: ['Insistir hasta resolverla', 'Marcarla y seguir, para volver al final', 'Responder al azar y olvidarla', 'Saltarse el escenario entero'],
+      correcta: 1, expl: 'Volver con tiempo sobrante y la cabeza fresca da mejor resultado que atascarse. Pero al final no debe quedar ninguna en blanco.' },
+    { enun: '12. Al terminar el examen, dejar una pregunta sin responder…', ops: ['Es mejor que arriesgarse a fallar', 'Vale lo mismo que responderla mal, así que conviene contestar siempre', 'Resta puntos', 'Permite repetir el examen'],
+      correcta: 1, expl: 'Sin penalización por error, una respuesta adivinada tiene alguna probabilidad de acertar y una casilla vacía no tiene ninguna.' }
+  ];
+
+  var cuerpo = document.getElementById('quiz-cuerpo');
+  preguntasQuiz.forEach(function (p, i) {
+    var div = document.createElement('div');
+    div.className = 'pregunta';
+    div.setAttribute('data-idx', i);
+    var enun = document.createElement('div');
+    enun.className = 'enun';
+    enun.textContent = p.enun;
+    div.appendChild(enun);
+    var cont = document.createElement('div');
+    cont.className = 'opciones';
+    p.ops.forEach(function (texto, j) {
+      var op = document.createElement('div');
+      op.className = 'opcion';
+      op.setAttribute('data-j', j);
+      op.textContent = texto;
+      op.addEventListener('click', function () {
+        if (div.getAttribute('data-bloqueado') === 'si') return;
+        cont.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('elegida'); });
+        op.classList.add('elegida');
+        div.setAttribute('data-elegida', j);
+      });
+      cont.appendChild(op);
+    });
+    div.appendChild(cont);
+    var fb = document.createElement('div');
+    fb.className = 'fb';
+    div.appendChild(fb);
+    cuerpo.appendChild(div);
+  });
+
+  var btnCorregir = document.getElementById('btn-corregir');
+  var btnReintentar = document.getElementById('btn-reintentar');
+  var resultado = document.getElementById('resultado-quiz');
+
+  function pintarFb(fb, clase, veredictoTexto, explicacion) {
+    fb.textContent = '';
+    fb.className = 'fb ' + clase;
+    var v = document.createElement('span');
+    v.className = 'veredicto';
+    v.textContent = veredictoTexto + ' ';
+    fb.appendChild(v);
+    fb.appendChild(document.createTextNode(explicacion));
+    fb.style.display = 'block';
+  }
+
+  btnCorregir.addEventListener('click', function () {
+    var aciertos = 0;
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div, i) {
+      var elegida = div.getAttribute('data-elegida');
+      var fb = div.querySelector('.fb');
+      var opciones = div.querySelectorAll('.opcion');
+      div.setAttribute('data-bloqueado', 'si');
+      opciones.forEach(function (o) { o.classList.remove('correcta', 'incorrecta'); });
+      if (elegida === null) {
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'No se respondió esta pregunta.', preguntasQuiz[i].expl);
+        return;
+      }
+      var idxElegida = parseInt(elegida, 10);
+      if (idxElegida === preguntasQuiz[i].correcta) {
+        aciertos++;
+        opciones[idxElegida].classList.add('correcta');
+        pintarFb(fb, 'ok', 'Correcto.', preguntasQuiz[i].expl);
+      } else {
+        opciones[idxElegida].classList.add('incorrecta');
+        opciones[preguntasQuiz[i].correcta].classList.add('correcta');
+        pintarFb(fb, 'no', 'Incorrecto. La respuesta correcta está marcada en verde.', preguntasQuiz[i].expl);
+      }
+    });
+
+    resultado.style.display = 'block';
+    if (aciertos >= 8) {
+      resultado.className = 'aprob';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Aprobado. Puede pasar a la Lección 8.2.';
+    } else {
+      resultado.className = 'repro';
+      resultado.textContent = 'Resultado: ' + aciertos + ' de 12 correctas. Lea las explicaciones, repase la lección e intente de nuevo (se requieren 8).';
+    }
+    btnCorregir.style.display = 'none';
+    btnReintentar.style.display = 'inline-block';
+  });
+
+  btnReintentar.addEventListener('click', function () {
+    var divs = cuerpo.querySelectorAll('.pregunta');
+    divs.forEach(function (div) {
+      div.removeAttribute('data-elegida');
+      div.removeAttribute('data-bloqueado');
+      div.querySelectorAll('.opcion').forEach(function (o) { o.classList.remove('correcta', 'incorrecta', 'elegida'); });
+      var fb = div.querySelector('.fb');
+      fb.style.display = 'none';
+      fb.textContent = '';
+    });
+    resultado.style.display = 'none';
+    btnReintentar.style.display = 'none';
+    btnCorregir.style.display = 'inline-block';
+    window.scrollTo({ top: document.querySelector('.quiz').offsetTop - 20, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  /* «¿Contradicción real o diferencia de alcance?». Botones, no arrastrar:
+     accesible con teclado y con lector de pantalla. */
+  var CASOS = [
+    { t: '«La inmigración alcanzó un récord» / «la inmigración se desplomó». Estados Unidos.', c: 'T',
+      e: 'El periodo. La primera habla de la década de 1901 a 1910; la segunda, de la de 1931 a 1940. Las dos son ciertas.' },
+    { t: '«Llegaron casi nueve millones de inmigrantes» / «la proporción de nacidos en el extranjero apenas cambió».', c: 'U',
+      e: 'La unidad. Una cuenta personas y la otra mide una proporción sobre una población que también crecía.' },
+    { t: '«El registro de votantes negros se hundió» / «el registro de votantes blancos también bajó». Luisiana, 1896–1904.', c: 'P',
+      e: 'La población. Hablan de dos grupos distintos, y las dos cosas ocurrieron.' },
+    { t: '«Estados Unidos tiene 37 habitantes por km²» / «Chicago tiene unos 4 500 habitantes por km²».', c: 'P',
+      e: 'La población, o mejor dicho el territorio al que se refiere cada cifra. Un promedio nacional no describe ningún lugar concreto.' },
+    { t: '«Este país es el que más dióxido de carbono emite» / «este país está en la mitad de la tabla de emisiones».', c: 'U',
+      e: 'La unidad. Totales frente a emisiones por habitante. Un país muy poblado puede encabezar una lista y quedar en el medio de la otra.' },
+    { t: '«Después de 1918 Estados Unidos se retiró del orden internacional» / «después de 1945 se quedó dentro de él».', c: 'T',
+      e: 'El periodo. No son dos versiones del mismo hecho: son dos hechos distintos, separados por veintisiete años, y el contraste entre ellos es justamente el contenido de la Lección 6.3.' },
+    { t: '«La sentencia obligó a la agencia a regular» / «la sentencia solo la obligó a fundar su decisión en la ley».', c: 'C',
+      e: 'Contradicción real, y la segunda es la correcta: el texto de la mayoría dice «sostenemos únicamente». La primera afirmación es un resumen equivocado, no otra manera de medir.' },
+    { t: '«El comité creado en 1941 podía sancionar a las empresas» / «el comité solo podía investigar y recomendar».', c: 'C',
+      e: 'Contradicción real, y aquí la fuente decide: el texto de la orden ejecutiva dice que el comité recibirá e investigará denuncias y recomendará medidas. Cuando periodo, población y unidad coinciden y las afirmaciones siguen chocando, hay que ir al documento.' }
+  ];
+  var NOMBRES = { T: 'El periodo', P: 'La población', U: 'La unidad', C: 'Contradicción real' };
+
+  var lista = document.getElementById('lista-comp');
+  var marcador = document.getElementById('marcador');
+  if (!lista) return;
+  var respondidas = 0, aciertos = 0;
+
+  function actualizar() {
+    marcador.textContent = respondidas === 0
+      ? 'Sin responder todavía.'
+      : 'Lleva ' + aciertos + ' de ' + respondidas + ' correctas, sobre ' + CASOS.length + ' pares.';
+  }
+
+  function construir() {
+    lista.textContent = ''; respondidas = 0; aciertos = 0; actualizar();
+    CASOS.forEach(function (item, i) {
+      var caja = document.createElement('div'); caja.className = 'comp';
+      var texto = document.createElement('div');
+      texto.className = 'texto'; texto.id = 'caso-txt-' + i;
+      texto.textContent = (i + 1) + '. ' + item.t;
+      caja.appendChild(texto);
+
+      var botones = document.createElement('div');
+      botones.className = 'botones cuatro';
+      botones.setAttribute('role', 'group');
+      botones.setAttribute('aria-labelledby', 'caso-txt-' + i);
+      var exp = document.createElement('div'); exp.className = 'exp';
+
+      ['T', 'P', 'U', 'C'].forEach(function (clave) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = NOMBRES[clave];
+        b.addEventListener('click', function () {
+          if (caja.classList.contains('resuelta')) return;
+          caja.classList.add('resuelta'); respondidas++;
+          var todos = botones.querySelectorAll('button');
+          todos.forEach(function (o) { o.disabled = true; });
+          if (clave === item.c) {
+            aciertos++; b.className = 'acierto';
+            exp.className = 'exp ok'; exp.textContent = 'Correcto. ' + item.e;
+          } else {
+            b.className = 'fallo';
+            todos.forEach(function (o) { if (o.textContent === NOMBRES[item.c]) o.className = 'acierto'; });
+            exp.className = 'exp no';
+            exp.textContent = 'Revise. ' + item.e;
+          }
+          exp.style.display = 'block'; actualizar();
+        });
+        botones.appendChild(b);
+      });
+      caja.appendChild(botones); caja.appendChild(exp); lista.appendChild(caja);
+    });
+  }
+
+  construir();
+  document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
+})();
+</script>
+</body>
+</html>
