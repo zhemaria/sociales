@@ -184,11 +184,11 @@
       }
 
       .btn-question {
-        background-color: #2ecc71;
+        background-color: #047857;
       }
 
       .btn-question:hover {
-        background-color: #27ae60;
+        background-color: #047857;
       }
 
       .event-content {
@@ -202,6 +202,7 @@
         border-radius: 8px;
         background-color: #f5f7fa;
         display: none;
+        color: var(--text-color);
       }
 
       .content-section.active {
@@ -223,7 +224,7 @@
       .question {
         font-weight: 600;
         font-size: 1.1rem;
-        color: #2ecc71;
+        color: #047857;
         margin-bottom: 10px;
         padding: 10px;
         border-radius: 5px;
@@ -240,8 +241,9 @@
         background-color: #ffffff;
         border-radius: 5px;
         margin-bottom: 15px;
-        border-left: 4px solid #2ecc71;
+        border-left: 4px solid #047857;
         display: none;
+        color: var(--text-color);
       }
 
       .answer.show {
@@ -261,6 +263,15 @@
         font-style: italic;
         color: #777;
         margin-top: 10px;
+      }
+
+      .text-section p {
+        color: var(--text-color);
+        background-color: transparent;
+      }
+
+      .text-section strong {
+        color: #111;
       }
 
       @media (max-width: 768px) {
@@ -298,6 +309,7 @@
           justify-content: center;
         }
       }
+
       /* Barra de navegación del curso, integrada en el encabezado */
       .navcurso {
         display: flex;
@@ -355,19 +367,19 @@
       <div class="timeline-container">
         <div class="timeline"></div>
 
-        <!-- Evento 1 -->
+        <!-- Evento 1: Confederación Iroquesa -->
         <div class="event">
-          <div class="event-date">1600-1722</div>
+          <div class="event-date">c. 1570-1800</div>
           <div class="event-marker"></div>
           <div class="event-connector"></div>
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
-              <h3 class="event-title">La Confederación Iroquesa</h3>
-              <p class="event-summary">Una influyente alianza de naciones nativas americanas que inspiró aspectos del sistema político estadounidense</p>
+              <h3 class="event-title">Confederación Iroquesa</h3>
+              <p class="event-summary">La primera democracia de América del Norte y su influencia en la constitución estadounidense</p>
               <div class="event-buttons">
                 <button class="btn btn-text" onclick="toggleSection(this, 'text-1')">📝 Texto</button>
                 <button class="btn btn-image" onclick="toggleSection(this, 'image-1')">🖼️ Imagen</button>
-
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-1')">🎬 Video</button>
                 <button class="btn btn-question" onclick="toggleSection(this, 'questions-1')">❓ Preguntas</button>
               </div>
             </div>
@@ -376,163 +388,287 @@
                 <p>
                   La
                   <strong>Confederación Iroquesa</strong>
-                  , también conocida como la Liga de las Cinco Naciones (posteriormente Seis Naciones), fue una poderosa alianza de pueblos nativos americanos que habitaban la región de los Grandes
-                  Lagos y el noreste de Norteamérica. Originalmente formada entre 1570 y 1600, estaba compuesta por cinco naciones: Mohawk, Oneida, Onondaga, Cayuga y Seneca. En 1722, los Tuscarora se
-                  unieron a la confederación, convirtiéndola en la Liga de las Seis Naciones.
+                  , también conocida como
+                  <strong>Haudenosaunee</strong>
+                  ("Gente de la Casa Larga"), se formó alrededor de 1570 cuando cinco naciones indígenas —Mohawk, Oneida, Onondaga, Cayuga y Seneca— se unieron bajo la "Gran Ley de la Paz"
+                  (Gayanashagowa). Más tarde, en 1722, los Tuscarora se unieron, formando las Seis Naciones. Este sistema político sofisticado estableció uno de los primeros gobiernos democráticos en
+                  América del Norte, mucho antes de la llegada de los colonos europeos.
                 </p>
                 <p>
-                  Esta confederación representa uno de los primeros y más sofisticados sistemas de gobierno democrático en América del Norte. Su estructura política y social se basaba en la Gran Ley
-                  de la Paz (Gayanashagowa), una constitución oral que establecía un sistema de gobierno representativo con controles y equilibrios de poder. Cada nación mantenía su autonomía en
-                  asuntos internos, pero se unían para tomar decisiones que afectaban a toda la confederación mediante un consejo central de sachems (jefes).
+                  La Confederación funcionaba mediante un consejo de 50 sachems (jefes) de diferentes clanes, quienes tomaban decisiones por consenso. Las mujeres tenían un papel fundamental, pues
+                  eran las encargadas de nombrar a los sachems y podían removerlos si no cumplían con sus responsabilidades. Este sistema estableció conceptos como el federalismo, la separación de
+                  poderes, el equilibrio entre naciones, y procesos para enmendar leyes, todos ellos principios que más tarde influirían en los fundadores de Estados Unidos.
                 </p>
                 <p>
-                  La importancia de la Confederación Iroquesa en la historia de Estados Unidos es significativa, ya que varios Padres Fundadores, incluyendo a Benjamin Franklin, admiraban su sistema
-                  de gobierno. Existen evidencias históricas que sugieren que aspectos de la Gran Ley de la Paz influyeron en el diseño de la Constitución estadounidense y en el concepto del
-                  federalismo. La estructura de la confederación, con naciones individuales manteniendo soberanía dentro de una unión más amplia, presenta paralelismos con el sistema federal que
-                  posteriormente adoptarían los Estados Unidos.
+                  Benjamin Franklin expresó admiración por este sistema y distribuyó copias de la constitución iroquesa entre los delegados de Albany en 1754. Historiadores han documentado cómo este
+                  modelo indígena influyó en el diseño del sistema federal estadounidense y en la redacción de su constitución. La Confederación Iroquesa mantuvo su poder e influencia durante siglos,
+                  siendo una potencia diplomática y militar crucial en las guerras coloniales entre franceses y británicos, y más tarde durante la Revolución Americana, cuando la mayoría apoyó a los
+                  británicos, lo que llevó a su debilitamiento tras la independencia estadounidense.
                 </p>
               </div>
               <div id="image-1" class="content-section image-section">
-                <img src="https://la5tapata.net/wp-content/uploads/2020/06/Confederaci%C3%B3n-Iroquesa.jpg" alt="Representación de la Confederación Iroquesa" class="event-image" />
-                <p class="caption">Representación artística de un consejo de la Confederación Iroquesa, donde los jefes de las distintas naciones deliberaban sobre asuntos comunes</p>
+                <img src="https://m.gutenberg.org/files/56251/56251-h/images/image089.png" alt="Representación de un consejo iroqués con jefes reunidos en deliberación" class="event-image" />
+                <p class="caption">Representación de un consejo de la Confederación Iroquesa, donde los sachems (jefes) de las diferentes naciones se reunían para tomar decisiones por consenso</p>
               </div>
-
+              <div id="video-1" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/V9V9R6mKrUQ?si=YyleyZt22pO5UYWs"
+                    allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <p class="caption">Video sobre la Confederación Iroquesa y su sistema político</p>
+              </div>
               <div id="questions-1" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Cómo influenció la Confederación Iroquesa en la Constitución de Estados Unidos?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo funcionaba el sistema político de la Confederación Iroquesa?</div>
                 <div class="answer">
-                  La Confederación Iroquesa ejerció una influencia notable en la formación de la Constitución de Estados Unidos a través de varios elementos: primero, su sistema federal de gobierno,
-                  donde naciones independientes se unían bajo un consejo común mientras mantenían autonomía interna, inspiró el federalismo estadounidense; segundo, su sistema de controles y
-                  equilibrios de poder entre diferentes ramas del gobierno se reflejó en la separación de poderes constitucional; tercero, el proceso de deliberación y toma de decisiones por consenso
-                  influyó en los conceptos de debate legislativo y representación; cuarto, la participación de las mujeres en la selección de líderes y la toma de decisiones (aunque no se adoptó
-                  inicialmente en la Constitución estadounidense) representaba un modelo democrático avanzado que impresionó a observadores como Franklin y Jefferson; y quinto, el concepto de una ley
-                  fundamental escrita (aunque la Gran Ley de la Paz era oral, se transmitía mediante cinturones de wampum) que establecía las reglas del gobierno resonó con la idea de una constitución
-                  escrita. Estos conceptos llegaron a los fundadores a través de sus interacciones con representantes iroqueses en tratados y conferencias, y por los escritos de Benjamin Franklin,
-                  quien publicó extensamente sobre el sistema iroqués después de su participación en el Congreso de Albany de 1754. Aunque la influencia exacta sigue siendo debatida por historiadores,
-                  el Congreso de Estados Unidos reconoció formalmente esta contribución en 1988 con la Resolución Concurrente 331, que agradece a los iroqueses por su influencia en la Constitución y
-                  el sistema federal estadounidense.
+                  El sistema político iroqués se basaba en la "Gran Ley de la Paz" (Gayanashagowa), una constitución oral que más tarde fue transcrita. El gobierno consistía en un consejo de 50
+                  sachems (jefes) que representaban a los diferentes clanes de las naciones miembros. Cada nación tenía un número específico de representantes: 9 para los Mohawk, 9 para los Oneida, 14
+                  para los Onondaga, 10 para los Cayuga y 8 para los Seneca (los Tuscarora, incorporados posteriormente, no recibieron posiciones de sachems). Los jefes eran nominados por las mujeres
+                  de los clanes matrilineales, quienes también podían destituirlos si no representaban adecuadamente los intereses del pueblo. Las decisiones se tomaban por consenso, no por mayoría,
+                  lo que requería un proceso deliberativo extenso. Existía una clara separación de poderes: las decisiones de guerra y paz estaban equilibradas entre diferentes consejos, y había
+                  procedimientos formales para resolver disputas entre naciones. Este sistema estableció un equilibrio entre la autoridad central y la autonomía local, un concepto similar al
+                  federalismo estadounidense posterior.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué era la Gran Ley de la Paz y cómo funcionaba?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué evidencias existen sobre la influencia de la Confederación Iroquesa en la Constitución de Estados Unidos?</div>
                 <div class="answer">
-                  La Gran Ley de la Paz (Gayanashagowa) era la constitución oral de la Confederación Iroquesa, establecida según la tradición por el Peacemaker con la ayuda de Hiawatha, para terminar
-                  con los conflictos entre las naciones iroquesas. Esta constitución establecía un complejo sistema de gobierno representativo con los siguientes elementos fundamentales: un consejo
-                  confederado compuesto por 50 sachems (jefes) de las diferentes naciones, con posiciones hereditarias transmitidas por línea materna; un sistema de toma de decisiones que requería
-                  consenso (unanimidad) para los asuntos importantes que afectaban a toda la confederación; procedimientos formales para presentar asuntos al consejo, con debates primero en los
-                  clanes, luego entre naciones y finalmente en el consejo general; un sistema de clanes matrilineales que cruzaba las fronteras nacionales, creando vínculos familiares entre todas las
-                  naciones de la confederación; un notable papel para las mujeres, quienes seleccionaban a los sachems masculinos, podían destituirlos si se consideraba que no actuaban en interés del
-                  pueblo, y tenían voz en asuntos de guerra y paz; y un elaborado sistema de rituales, protocolos y ceremonias que formalizaban los procesos políticos. La Gran Ley de la Paz se
-                  preservaba y transmitía de generación en generación a través de la memorización ritual y el uso de cinturones de wampum como dispositivos mnemotécnicos. Esta constitución no solo
-                  proporcionaba un marco político, sino que también integraba aspectos espirituales, sociales y diplomáticos, creando un sistema holístico de gobierno que promovía la paz entre las
-                  naciones miembros y establecía protocolos para las relaciones con otros pueblos.
+                  Existen múltiples evidencias documentales sobre esta influencia. Benjamin Franklin, que pasó mucho tiempo negociando con los iroqueses como representante colonial de Pensilvania,
+                  publicó extensamente sobre su gobierno. En 1744, Franklin asistió al Tratado de Lancaster donde escuchó al jefe Canassatego recomendar que las colonias se unieran de manera similar a
+                  las naciones iroquesas. En 1751, escribió una carta admirando cómo los iroqueses mantenían su unidad. El Congreso Continental adoptó numerosos símbolos y prácticas iroquesas,
+                  incluyendo el águila como símbolo (importante en la simbología iroquesa). John Rutledge, miembro del comité que redactó la Constitución de EE.UU., leyó en voz alta partes de la Gran
+                  Ley Iroquesa durante los debates constitucionales. En 1988, el Congreso de EE.UU. aprobó la Resolución 331, que reconoce la influencia de la Confederación Iroquesa en la Constitución
+                  y el sistema federalista estadounidense. Conceptos como la distribución de poderes, el sistema de controles y equilibrios, la ratificación por estados (naciones), y procedimientos de
+                  destitución tienen paralelos claros en el sistema iroqués.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué papel jugó la Confederación Iroquesa en las guerras coloniales?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuál fue el papel de las mujeres en la Confederación Iroquesa?</div>
                 <div class="answer">
-                  La Confederación Iroquesa desempeñó un papel crucial y estratégico durante las guerras coloniales en Norteamérica, actuando como una poderosa fuerza militar y diplomática que influía
-                  significativamente en el equilibrio de poder entre franceses y británicos. Durante el siglo XVII y principios del XVIII, la confederación generalmente mantuvo una alianza con los
-                  holandeses y posteriormente con los británicos (Covenant Chain), mientras mantenía relaciones hostiles con los franceses y sus aliados nativos, particularmente los Hurones y
-                  Algonquinos. Este posicionamiento estratégico les permitió controlar importantes rutas comerciales, especialmente en el lucrativo comercio de pieles. En la Guerra Franco-India
-                  (1754-1763), aunque inicialmente intentaron mantener la neutralidad, la mayoría de las naciones iroquesas eventualmente se alinearon con los británicos, con la notable excepción de
-                  algunos grupos Seneca y los Oneida. Su participación en esta guerra fue decisiva para la victoria británica, ya que ayudaron a proteger la frontera colonial y realizaron expediciones
-                  militares contra asentamientos franceses y sus aliados nativos. Durante la Revolución Americana, la confederación enfrentó su mayor crisis política, pues no pudo mantener una
-                  posición unificada: los Oneida y Tuscarora apoyaron generalmente a los colonos americanos, mientras que Mohawk, Onondaga, Cayuga y Seneca se aliaron mayoritariamente con los
-                  británicos, liderados por Joseph Brant. Esta división interna, junto con las devastadoras campañas militares como la Expedición Sullivan de 1779, que destruyó numerosos pueblos
-                  iroqueses, debilitó permanentemente el poder político y territorial de la confederación. Tras la guerra, muchos iroqueses pro-británicos se refugiaron en Canadá, estableciendo nuevas
-                  comunidades, mientras que aquellos que permanecieron en Estados Unidos fueron relegados a reservas cada vez más reducidas. A pesar de estas pérdidas, la Confederación Iroquesa
-                  continuó existiendo como entidad política, adaptándose a las nuevas realidades y manteniendo su estructura de gobierno tradicional junto con sus principios culturales.
+                  Las mujeres tenían un poder significativo en la sociedad iroquesa, que era matrilineal y en muchos aspectos matriarcal. Las mujeres de los clanes, especialmente las "Madres de Clan"
+                  (matronas), seleccionaban a los sachems (jefes) masculinos que representarían a su clan en el Gran Consejo. También tenían autoridad para remover a un jefe que no cumpliera sus
+                  responsabilidades o actuara contra los intereses del pueblo. Controlaban la distribución de recursos, particularmente la tierra y los alimentos, ya que eran las principales
+                  agricultoras y mantenían los almacenes comunales. Poseían las casas comunales (longhouses) y los campos de cultivo. En asuntos de guerra, aunque no participaban directamente en los
+                  combates, tenían voz crucial en las decisiones, pudiendo autorizar o vetar acciones militares. Esta posición de las mujeres iroquesas contrastaba fuertemente con la limitada
+                  participación política femenina en las sociedades europeas de la época, y este aspecto del sistema iroqués no fue adoptado por los padres fundadores estadounidenses, quienes
+                  excluyeron a las mujeres de la participación política formal.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 2 -->
+        <!-- Evento 2: Primeros asentamientos ingleses -->
         <div class="event">
-          <div class="event-date">1607-1732</div>
+          <div class="event-date">1607-1620</div>
           <div class="event-marker"></div>
           <div class="event-connector"></div>
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
-              <h3 class="event-title">Formación de las 13 Colonias</h3>
-              <p class="event-summary">Establecimiento de los asentamientos británicos que se convertirían en la base de los Estados Unidos</p>
+              <h3 class="event-title">Primeros asentamientos ingleses</h3>
+              <p class="event-summary">Jamestown, Plymouth y los inicios de la colonización inglesa en Norteamérica</p>
               <div class="event-buttons">
                 <button class="btn btn-text" onclick="toggleSection(this, 'text-2')">📝 Texto</button>
                 <button class="btn btn-image" onclick="toggleSection(this, 'image-2')">🖼️ Imagen</button>
-
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-2')">🎬 Video</button>
                 <button class="btn btn-question" onclick="toggleSection(this, 'questions-2')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
               <div id="text-2" class="content-section text-section">
                 <p>
-                  Entre 1607 y 1732, Gran Bretaña estableció
-                  <strong>trece colonias</strong>
-                  a lo largo de la costa este de Norteamérica, que eventualmente formarían los primeros estados de los Estados Unidos. El proceso comenzó con la fundación de Jamestown (Virginia) en
-                  1607 por la Compañía de Virginia, seguida por la llegada de los Peregrinos a Plymouth (Massachusetts) en 1620. La última colonia en establecerse fue Georgia en 1732, fundada en parte
-                  como zona de amortiguamiento contra la Florida española.
+                  Los primeros asentamientos permanentes ingleses en Norteamérica comenzaron a principios del siglo XVII.
+                  <strong>Jamestown</strong>
+                  , fundada en 1607 en la actual Virginia por la Compañía de Londres, se convirtió en el primer asentamiento inglés duradero. Establecida como empresa comercial para buscar riquezas y
+                  competir con España, los primeros años fueron extremadamente difíciles. El "tiempo de hambruna" (1609-1610) casi eliminó la colonia, con solo 60 de los 500 colonos sobreviviendo al
+                  invierno.
                 </p>
                 <p>
-                  Las colonias se fundaron por diversas razones: algunas como empresas comerciales (Virginia, Nueva York), otras como refugios religiosos (Massachusetts, Pensilvania, Maryland), y
-                  otras como extensiones del poder real (Georgia, Carolina del Norte y del Sur). Aunque todas estaban bajo el control británico, desarrollaron diferentes estructuras de gobierno:
-                  colonias reales (administradas directamente por la Corona), colonias propietarias (otorgadas a individuos o grupos) y colonias con carta propia (con mayor autonomía).
+                  La introducción del cultivo de tabaco por John Rolfe en 1612 cambió radicalmente las perspectivas económicas de Jamestown. El matrimonio de Rolfe con
+                  <strong>Pocahontas</strong>
+                  , hija del jefe Powhatan, en 1614, estableció un breve período de paz con los nativos americanos. En 1619, dos eventos significativos ocurrieron en Jamestown: la llegada de los
+                  primeros africanos (posiblemente como siervos contratados inicialmente) y la creación de la Casa de Burgeses, el primer cuerpo legislativo elegido en las Américas.
                 </p>
                 <p>
-                  Para 1750, estas colonias albergaban aproximadamente 1.5 millones de habitantes, incluyendo colonos europeos, esclavos africanos y poblaciones nativas americanas. Esta diversidad
-                  demográfica, junto con las diferencias geográficas, económicas y sociales entre las colonias, sentaría las bases para muchos de los desafíos y dinámicas que caracterizarían a la
-                  futura nación. A pesar de estas diferencias, las colonias comenzaron a desarrollar una identidad compartida e intereses comunes que eventualmente conducirían al movimiento por la
-                  independencia.
+                  Por otro lado,
+                  <strong>Plymouth</strong>
+                  fue fundada en 1620 por los Peregrinos, separatistas religiosos que buscaban libertad para practicar su fe. Habiendo partido en el Mayflower, estos colonos firmaron el
+                  <strong>Pacto del Mayflower</strong>
+                  antes de desembarcar, estableciendo un autogobierno por consentimiento de los gobernados. Como Jamestown, Plymouth enfrentó enormes dificultades iniciales, con la mitad de los
+                  colonos muriendo el primer invierno. La ayuda de nativos americanos como Squanto y Massasoit fue crucial para su supervivencia. Estos primeros asentamientos establecieron los
+                  patrones de colonización, relaciones con los nativos, organización política y desarrollo económico que modelarían la expansión inglesa posterior en Norteamérica.
                 </p>
               </div>
               <div id="image-2" class="content-section image-section">
-                <img src="https://www.socialhizo.com/images/mapas/trece-colonias.png" alt="Mapa de las 13 Colonias" class="event-image" />
-                <p class="caption">Mapa histórico mostrando la distribución geográfica de las trece colonias británicas en Norteamérica hacia 1750</p>
+                <img src="https://i.imgur.com/Rn1kC9g.png" alt="Recreación del asentamiento original de Jamestown" class="event-image" />
+                <p class="caption">Recreación histórica del fuerte y asentamiento original de Jamestown, Virginia, el primer asentamiento inglés permanente en América</p>
               </div>
-
+              <div id="video-2" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/QNGMkKz7m7c?si=ZGpO_GdILK_bY26Z"
+                    allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <p class="caption">Video sobre los primeros asentamientos ingleses en Norteamérica</p>
+              </div>
               <div id="questions-2" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Cuáles eran las 13 colonias y cuándo fueron fundadas?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Por qué Jamestown y Plymouth tuvieron motivaciones diferentes para su fundación?</div>
                 <div class="answer">
-                  Las 13 colonias británicas que eventualmente se convertirían en los primeros estados de Estados Unidos fueron establecidas en el siguiente orden cronológico: Virginia (1607), fundada
-                  por la Compañía de Virginia como la primera colonia británica permanente en Jamestown; Massachusetts (1620), iniciada por los Peregrinos en Plymouth y expandida por los Puritanos en
-                  la Bahía de Massachusetts (1630); New Hampshire (1623), originalmente parte de Massachusetts, establecida como colonia separada en 1679; Maryland (1634), fundada como refugio para
-                  católicos por Lord Baltimore; Connecticut (1636), establecida por colonos de Massachusetts bajo Thomas Hooker; Rhode Island (1636), fundada por Roger Williams como santuario para la
-                  libertad religiosa; Delaware (1638), inicialmente colonizada por suecos y holandeses antes de pasar a control inglés en 1664; Carolina del Norte (1653) y Carolina del Sur (1663),
-                  originalmente una sola colonia dividida en 1712; New Jersey (1664), establecida tras la captura de territorio holandés; Nueva York (1664), anteriormente Nueva Ámsterdam holandesa,
-                  tomada por los ingleses y nombrada en honor al Duque de York; Pensilvania (1682), fundada por William Penn como refugio para cuáqueros; y Georgia (1732), la última colonia,
-                  establecida como zona de amortiguamiento contra Florida española y como lugar para deudores ingleses. Este proceso de colonización abarcó 125 años, creando un mosaico de entidades
-                  políticas con diferentes orígenes, propósitos y sistemas de gobierno que eventualmente encontrarían causa común en la resistencia al control británico.
+                  Jamestown y Plymouth fueron fundadas con propósitos fundamentalmente diferentes. Jamestown fue principalmente una empresa comercial establecida por la Compañía de Virginia de
+                  Londres, una sociedad anónima con inversionistas que esperaban obtener ganancias. Los colonos buscaban riquezas, especialmente oro y plata, siguiendo el modelo español, y querían
+                  establecer un puesto comercial para competir con otras potencias europeas. La mayoría de los primeros colonos eran hombres jóvenes, muchos de ellos caballeros aventureros sin
+                  experiencia agrícola o artesanal. Por el contrario, Plymouth fue fundada por separatistas religiosos (luego conocidos como Peregrinos) que huían de la persecución religiosa en
+                  Inglaterra. Tras vivir en Holanda durante años, buscaban un lugar donde pudieran practicar su fe libremente y mantener su identidad inglesa. Emigraron como comunidades familiares
+                  completas con la intención de establecer una sociedad basada en sus principios religiosos puritanos, lo que llamaban "un experimento de ciudad sobre una colina". Estas diferentes
+                  motivaciones —económicas versus religiosas— influyeron profundamente en la estructura social, el desarrollo y las instituciones de las dos colonias.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué tipos de sistemas de gobierno existían en las colonias?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué importancia tuvo el Pacto del Mayflower en la historia constitucional estadounidense?</div>
                 <div class="answer">
-                  Las trece colonias británicas desarrollaron tres principales sistemas de gobierno, cada uno con diferente grado de control directo desde Londres: las colonias reales o de la Corona
-                  (Nueva Hampshire, Nueva York, Nueva Jersey, Virginia, Carolina del Norte, Carolina del Sur y Georgia) eran administradas directamente por la Corona británica, con gobernadores
-                  nombrados por el rey y consejos ejecutivos designados, aunque mantenían asambleas elegidas localmente con poderes limitados; las colonias propietarias (Maryland, Pensilvania y
-                  Delaware) fueron concedidas a individuos o grupos específicos llamados propietarios, quienes tenían autoridad para establecer gobiernos, asignar tierras y nombrar funcionarios, con
-                  William Penn en Pensilvania y Lord Baltimore en Maryland como ejemplos notables; y las colonias autónomas con carta propia (Massachusetts, Rhode Island y Connecticut) operaban bajo
-                  cartas reales que les otorgaban considerable autonomía, permitiéndoles elegir sus propios gobernadores y asambleas, teniendo el mayor grado de autogobierno. A pesar de estas
-                  diferencias, todas las colonias compartían elementos comunes: asambleas legislativas locales, tribunales basados en la ley común inglesa, y la autoridad última del Parlamento
-                  británico. Este sistema creó una tradición de gobierno representativo local, donde los colonos se acostumbraron a tener voz en sus asuntos, sentando precedentes importantes de
-                  autogobierno que influirían en el desarrollo político posterior de Estados Unidos. Con el tiempo, especialmente en el siglo XVIII, la Corona intentó ejercer mayor control directo
-                  sobre todas las colonias, convirtiendo varias colonias propietarias y autónomas en colonias reales, generando tensiones que contribuirían a los movimientos de independencia.
+                  El Pacto del Mayflower, firmado el 11 de noviembre de 1620 por 41 hombres adultos a bordo del barco antes de desembarcar en Plymouth, es considerado uno de los primeros documentos de
+                  autogobierno democrático en Norteamérica y un precursor importante para el constitucionalismo estadounidense. Su importancia radica en varios aspectos: estableció el principio del
+                  gobierno por consentimiento de los gobernados, ya que los firmantes acordaron "combinarse en un cuerpo político civil" y acatar las leyes que establecieran para el bien común;
+                  implementó la idea de un contrato social, donde individuos acuerdan voluntariamente formar una sociedad y ser gobernados por reglas mutuamente convenidas; introdujo un sistema de
+                  gobierno representativo donde los líderes serían elegidos democráticamente; y sentó precedente para redactar documentos constitucionales escritos. Aunque era un documento breve que
+                  no establecía instituciones específicas, su concepto fundamental de que la autoridad gubernamental deriva del consentimiento de los gobernados sería posteriormente central en la
+                  Declaración de Independencia y la Constitución estadounidense. Historiadores como Samuel Eliot Morison han señalado que el Pacto representó la primera aplicación de la teoría del
+                  contrato social en América, y su legado influyó en documentos posteriores como las Órdenes Fundamentales de Connecticut (1639) y eventualmente en la estructura constitucional de
+                  Estados Unidos.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué motivó a los diferentes grupos a establecerse en América del Norte?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionaron las relaciones con los nativos americanos en los primeros asentamientos?</div>
                 <div class="answer">
-                  Los diversos grupos que se establecieron en las colonias británicas de América del Norte fueron motivados por una compleja mezcla de factores religiosos, económicos, políticos y
-                  sociales: la búsqueda de libertad religiosa impulsó a grupos como los puritanos en Massachusetts, los cuáqueros en Pensilvania, los católicos en Maryland y los judíos sefardíes en
-                  Rhode Island y Nueva York, quienes escapaban de la persecución en Europa; las oportunidades económicas atrajeron a muchos colonos, desde empresarios buscando riqueza en el comercio
-                  de pieles, tabaco o índigo, hasta agricultores en busca de tierras propias, imposibles de obtener en una Inglaterra con sistema señorial; la movilidad social y política motivó a
-                  muchos, especialmente en sociedades donde las rígidas jerarquías europeas limitaban el ascenso social basado en el nacimiento; la huida de la pobreza y la hambruna, particularmente
-                  entre inmigrantes escoceses-irlandeses y alemanes del Palatinado, que escapaban de condiciones económicas devastadoras; los programas de colonización dirigidos por gobiernos y
-                  empresas, como la Compañía de Virginia, que reclutaba activamente colonos mediante sistemas como las concesiones de tierras; los convictos o sirvientes contratados, muchos de los
-                  cuales no tenían elección en su traslado, con la servidumbre por contrato como una forma común de financiar el pasaje a América; los esclavos africanos, que fueron traídos contra su
-                  voluntad para trabajar en plantaciones y otros emprendimientos económicos, principalmente en las colonias del sur; y las ambiciones imperiales británicas que buscaban contrarrestar
-                  la influencia de otras potencias europeas, expandir su comercio y asegurar recursos estratégicos. Esta diversidad de motivaciones contribuyó a la heterogeneidad de las colonias y
-                  sentó las bases para una sociedad compleja con diferentes intereses regionales, económicos y sociales que eventualmente tendrían que reconciliarse en la formación de una nación
-                  unificada.
+                  Las relaciones entre colonos y nativos americanos siguieron una trayectoria compleja que inicialmente combinó cooperación y dependencia, pero gradualmente se deterioró hacia
+                  conflictos cada vez más graves. En Jamestown, las relaciones iniciales con la Confederación Powhatan alternaron entre cooperación tensa y conflicto abierto. El matrimonio de John
+                  Rolfe con Pocahontas en 1614 estableció una paz temporal, pero tras la muerte de ella en 1617 y de su padre Powhatan en 1618, las relaciones se deterioraron, culminando en el ataque
+                  de 1622 liderado por Opechancanough que mató a un tercio de los colonos. En Plymouth, los Peregrinos establecieron relaciones inicialmente amistosas con los Wampanoag, facilitadas
+                  por Squanto (un nativo que hablaba inglés tras haber sido previamente capturado y llevado a Europa) y el jefe Massasoit. El famoso "Primer Día de Acción de Gracias" de 1621 celebró
+                  esta cooperación. Sin embargo, factores como la expansión territorial inglesa, las diferentes concepciones de propiedad de la tierra, enfermedades europeas que diezmaron poblaciones
+                  nativas (creando vacíos territoriales), conflictos por comercio y recursos, y malentendidos culturales profundos, gradualmente erosionaron estas relaciones. Para 1675, la Guerra del
+                  Rey Felipe (Metacomet) marcó un punto de inflexión violento. Este patrón de cooperación inicial seguida de deterioro y conflicto se repetiría a lo largo de la expansión colonial, con
+                  los colonos eventualmente desplazando o subyugando a las poblaciones nativas a medida que crecía su número y poder.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 3 -->
+        <!-- Evento 3: Las 13 colonias inglesas -->
+        <div class="event">
+          <div class="event-date">1607-1732</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Las 13 colonias inglesas</h3>
+              <p class="event-summary">Establecimiento y desarrollo de las colonias que formarían Estados Unidos</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-3')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-3')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-3')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-3')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-3" class="content-section text-section">
+                <p>
+                  Entre 1607 y 1732, Gran Bretaña estableció
+                  <strong>trece colonias</strong>
+                  a lo largo de la costa atlántica de Norteamérica que eventualmente formarían los Estados Unidos. Estas colonias se desarrollaron en tres regiones distintas, cada una con
+                  características económicas, sociales y culturales particulares.
+                </p>
+                <p>
+                  Las
+                  <strong>colonias de Nueva Inglaterra</strong>
+                  (Massachusetts, Rhode Island, Connecticut y New Hampshire) fueron fundadas principalmente por puritanos y separatistas religiosos. Desarrollaron economías basadas en el comercio
+                  marítimo, la pesca, la manufactura de pequeña escala y la agricultura de subsistencia. Sus comunidades se caracterizaban por pueblos compactos centrados alrededor de iglesias
+                  congregacionales, altos niveles de alfabetización, y un fuerte énfasis en la educación, estableciendo las primeras escuelas públicas y universidades de América del Norte, como
+                  Harvard (1636).
+                </p>
+                <p>
+                  Las
+                  <strong>colonias centrales</strong>
+                  (Nueva York, Nueva Jersey, Pensilvania y Delaware) fueron las más diversas cultural y religiosamente. Pennsylvania, fundada por William Penn como refugio cuáquero, practicaba la
+                  tolerancia religiosa, atrayendo a muchos grupos perseguidos de Europa. Estas colonias desarrollaron economías mixtas con agricultura comercial, manufacturas y comercio próspero, con
+                  ciudades como Filadelfia y Nueva York convirtiéndose en importantes centros urbanos.
+                </p>
+                <p>
+                  Las
+                  <strong>colonias del sur</strong>
+                  (Maryland, Virginia, Carolina del Norte, Carolina del Sur y Georgia) desarrollaron economías basadas en grandes plantaciones que producían cultivos comerciales como tabaco, arroz e
+                  índigo para exportación. Dependían fuertemente del trabajo de esclavos africanos, especialmente en las plantaciones más grandes. La sociedad sureña era más jerárquica, dominada por
+                  una élite terrateniente, con menor desarrollo urbano y menos énfasis en la educación pública que en Nueva Inglaterra.
+                </p>
+                <p>
+                  A pesar de sus diferencias, todas las colonias compartían ciertas características: instituciones de autogobierno local, asambleas representativas, un grado de libertad religiosa
+                  mayor que en Europa, una economía predominantemente agraria, y un sentido emergente de identidad colonial distinta de la británica. Esta combinación de diversidad regional y
+                  características compartidas sentaría las bases para la futura nación estadounidense.
+                </p>
+              </div>
+              <div id="image-3" class="content-section image-section">
+                <img src="https://i.pinimg.com/564x/2a/9f/78/2a9f7810e0a406c67107ca41d0a8a87e.jpg" alt="Mapa de las 13 colonias inglesas en Norteamérica" class="event-image" />
+                <p class="caption">Mapa de las 13 colonias inglesas en Norteamérica, mostrando las tres regiones: Nueva Inglaterra, colonias centrales y colonias del sur</p>
+              </div>
+              <div id="video-3" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/3HYMh3HlSj8?si=KZdSpshxsjzcNjHz"
+                    allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <p class="caption">Video sobre el establecimiento y desarrollo de las 13 colonias que formarían Estados Unidos</p>
+              </div>
+              <div id="questions-3" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron las principales diferencias entre las colonias de Nueva Inglaterra, centrales y del sur?</div>
+                <div class="answer">
+                  Las tres regiones coloniales diferían significativamente en aspectos económicos, sociales, religiosos y políticos. Económicamente, Nueva Inglaterra se centraba en el comercio
+                  marítimo, pesca, construcción naval y agricultura de subsistencia en pequeñas granjas familiares, con pocas plantaciones grandes o esclavos. Las colonias centrales tenían una
+                  economía mixta con granjas medianas diversificadas (trigo y otros cereales), artesanías y comercio importante a través de puertos como Filadelfia y Nueva York. El sur desarrolló una
+                  economía de exportación basada en grandes plantaciones de cultivos comerciales (tabaco, arroz, índigo y más tarde algodón) altamente dependiente del trabajo esclavo. Socialmente,
+                  Nueva Inglaterra era la más homogénea, predominantemente de origen inglés, con asentamientos compactos organizados alrededor de comunidades religiosas. Las colonias centrales eran
+                  las más diversas étnica y religiosamente, con inmigrantes alemanes, holandeses, suecos, escoceses e irlandeses. El sur tenía la estructura social más estratificada con una élite de
+                  plantadores, pequeños granjeros, y una gran población esclava. Religiosamente, Nueva Inglaterra era dominada por el puritanismo congregacionalista (excepto Rhode Island, que
+                  practicaba la libertad religiosa). Las colonias centrales eran las más tolerantes, con cuáqueros en Pensilvania, holandeses reformados en Nueva York, y diversas denominaciones
+                  protestantes. El sur era nominalmente anglicano, especialmente entre las élites, pero con una práctica religiosa menos central en la vida diaria que en Nueva Inglaterra. Estas
+                  diferencias regionales persistirían a lo largo de la historia estadounidense, influyendo en divisiones políticas y culturales hasta la actualidad.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué tipos de gobierno existían en las colonias y cómo funcionaban?</div>
+                <div class="answer">
+                  Las colonias británicas desarrollaron tres modelos principales de gobierno. Las colonias reales (New Hampshire, Nueva York, Nueva Jersey, Virginia, Carolina del Norte, Carolina del
+                  Sur y Georgia en sus etapas finales) eran administradas directamente por la Corona. El rey nombraba a un gobernador y un consejo, mientras que los colonos elegían una asamblea
+                  legislativa baja. Las colonias de propietarios (Maryland, Delaware, Pensilvania y originalmente Nueva Jersey, Carolina del Norte y del Sur) eran concedidas a uno o varios
+                  propietarios que recibían autoridad gubernamental y territorial. Los propietarios nombraban gobernadores, pero generalmente establecían asambleas electas. Las colonias corporativas
+                  (Massachusetts, Rhode Island y Connecticut) operaban bajo cartas otorgadas a una compañía, cuyos accionistas (en Massachusetts) o colonos (en Rhode Island y Connecticut) elegían sus
+                  propios gobernadores y consejos. Independientemente del tipo, todas las colonias desarrollaron asambleas representativas elegidas por sufragio limitado (generalmente propietarios
+                  varones adultos), que controlaban los impuestos locales y presupuestos. El autogobierno local era fuerte, especialmente en Nueva Inglaterra con su sistema de reuniones municipales
+                  donde todos los hombres elegibles podían votar sobre asuntos comunitarios. Aunque las colonias permanecían subordinadas a la autoridad británica (con leyes sujetas a revisión por el
+                  Consejo Privado en Londres), en la práctica disfrutaban de considerable autonomía debido a la distancia geográfica y la política británica de "negligencia benigna". Este alto grado
+                  de autogobierno local se convertiría en una expectativa arraigada, y los intentos posteriores de la Corona para restringirlo contribuirían significativamente a las tensiones que
+                  llevaron a la Revolución.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó la economía colonial y qué papel jugó en ella el mercantilismo?</div>
+                <div class="answer">
+                  La economía colonial evolucionó desde la lucha por la supervivencia básica hacia un sistema comercial complejo integrado en el imperio británico. En sus primeras etapas (1607-1660),
+                  los colonos se centraron en la autosuficiencia agrícola, con comercio limitado principalmente con nativos americanos y ocasionalmente con Inglaterra. El punto de inflexión llegó con
+                  la introducción de cultivos comerciales (tabaco en Virginia, arroz e índigo en Carolina) que crearon vínculos comerciales más fuertes con Europa. A partir de 1660, el sistema
+                  mercantilista británico estructuró formalmente la economía colonial mediante las Leyes de Navegación, que requerían que el comercio colonial fluyera a través de puertos ingleses,
+                  utilizara barcos ingleses o coloniales, y que ciertos productos coloniales (enumerados) fueran exportados exclusivamente a Inglaterra. Este sistema buscaba que las colonias
+                  proporcionaran materias primas no disponibles en Inglaterra y compraran manufacturas británicas. Las colonias desarrollaron patrones económicos regionales distintivos: Nueva
+                  Inglaterra construyó una economía marítima con pesca, construcción naval y comercio triangular (llevando ron a África, esclavos al Caribe, y melaza a Nueva Inglaterra); las colonias
+                  centrales exportaban alimentos y productos forestales; y el sur exportaba cultivos de plantación. Surgió una clase mercantil colonial próspera en puertos como Boston, Nueva York,
+                  Filadelfia y Charleston. Aunque el mercantilismo restringía algunas actividades económicas coloniales, también proporcionaba mercados garantizados, protección naval, y subsidios para
+                  productos estratégicos como madera naval y cáñamo. Con el tiempo, los colonos desarrollaron formas de evadir restricciones inconvenientes, como el contrabando generalizado con el
+                  Caribe no británico. Para la década de 1760, la economía colonial era robusta y diversificada, con los colonos norteamericanos disfrutando de uno de los niveles de vida más altos del
+                  mundo occidental.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 4: Diferencias entre las Colonias del Norte y del Sur (Origen) -->
         <div class="event">
           <div class="event-date">1607-1776</div>
           <div class="event-marker"></div>
@@ -542,14 +678,13 @@
               <h3 class="event-title">Diferencias entre las Colonias del Norte y del Sur</h3>
               <p class="event-summary">Contrastes económicos, sociales y culturales que marcarían el desarrollo de la futura nación</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-3')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-3')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-3')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-4')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-4')">🖼️ Imagen</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-4')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-3" class="content-section text-section">
+              <div id="text-4" class="content-section text-section">
                 <p>
                   A lo largo del periodo colonial, se desarrollaron marcadas
                   <strong>diferencias</strong>
@@ -571,12 +706,12 @@
                   eventualmente a la Guerra Civil estadounidense y dejando un legado que sigue influyendo en la política y cultura norteamericanas hasta nuestros días.
                 </p>
               </div>
-              <div id="image-3" class="content-section image-section">
+              <div id="image-4" class="content-section image-section">
                 <img src="https://zhemaria.github.io/sociales/imagenes/granja_vs_plantacion.jpg" alt="Contraste entre colonias del norte y sur" class="event-image" />
                 <p class="caption">Ilustración que contrasta una granja familiar en Nueva Inglaterra con una plantación sureña, representando las diferentes estructuras económicas y sociales</p>
               </div>
 
-              <div id="questions-3" class="content-section questions-section">
+              <div id="questions-4" class="content-section questions-section">
                 <div class="question" onclick="toggleAnswer(this)">¿Qué diferencias económicas existían entre las colonias del norte y del sur?</div>
                 <div class="answer">
                   Las diferencias económicas entre las colonias del norte y del sur eran fundamentales y sistémicas: las colonias del norte desarrollaron una economía diversificada que incluía
@@ -623,114 +758,236 @@
           </div>
         </div>
 
-        <!-- Evento 4 -->
+        <!-- Evento 5: Esclavitud en las 13 colonias (Tiempo) -->
         <div class="event">
-          <div class="event-date">1619-1865</div>
+          <div class="event-date">1619-1776</div>
           <div class="event-marker"></div>
           <div class="event-connector"></div>
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
-              <h3 class="event-title">La Esclavitud en los Estados Unidos</h3>
-              <p class="event-summary">La institución que moldeó profundamente la economía, política y sociedad estadounidense</p>
+              <h3 class="event-title">Esclavitud en las 13 colonias</h3>
+              <p class="event-summary">Orígenes y evolución del sistema esclavista en la América colonial británica</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-4')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-4')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-4')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-5')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-5')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-5')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-5')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-4" class="content-section text-section">
+              <div id="text-5" class="content-section text-section">
                 <p>
-                  La historia de la
-                  <strong>esclavitud</strong>
-                  en Estados Unidos comenzó en 1619, cuando un barco holandés trajo a los primeros africanos esclavizados a Jamestown, Virginia. Durante los siguientes dos siglos y medio, la
-                  esclavitud se convertiría en una institución fundamental que moldeó la economía, política y sociedad estadounidense, especialmente en las colonias y posteriormente estados del sur.
+                  La esclavitud en las colonias británicas de Norteamérica comenzó en 1619 cuando un barco holandés llevó aproximadamente 20 africanos a Jamestown, Virginia. Aunque el estatus legal de
+                  estos primeros africanos es debatido (pudieron haber sido tratados inicialmente como siervos contratados), hacia 1640 la esclavitud basada en la raza comenzó a solidificarse en las
+                  leyes coloniales, especialmente en Virginia y Maryland.
                 </p>
                 <p>
-                  Aunque inicialmente la servidumbre por contrato (tanto de africanos como europeos) fue común, hacia finales del siglo XVII la esclavitud racial hereditaria quedó codificada en la
-                  ley, creando un sistema donde los africanos y sus descendientes fueron relegados permanentemente a la condición de propiedad. Para mediados del siglo XVIII, este sistema estaba
-                  plenamente establecido, particularmente en las colonias del sur, donde la mano de obra esclava era fundamental para la economía de plantación.
+                  Durante el siglo XVII, la esclavitud coexistió con la servidumbre por contrato, pero a medida que disminuía la disponibilidad de siervos europeos y aumentaba la demanda de mano de
+                  obra para las plantaciones, la esclavitud africana se expandió significativamente. El
+                  <strong>Código de Esclavos de Virginia</strong>
+                  de 1705 consagró legalmente el estatus hereditario y perpetuo de la esclavitud basada en la raza, negando a los esclavos derechos legales básicos y criminalizando los matrimonios
+                  interraciales.
                 </p>
                 <p>
-                  Durante el período revolucionario, la contradicción entre los ideales de libertad y la realidad de la esclavitud fue evidente. Varios estados del norte iniciaron procesos de
-                  emancipación gradual, mientras que en el sur la esclavitud se intensificó con la expansión del cultivo de algodón tras la invención de la desmotadora en 1793. La división entre
-                  estados "libres" y "esclavistas" se profundizó, manifestándose en controversias políticas como el Compromiso de Missouri (1820), el Compromiso de 1850 y la Ley Kansas-Nebraska
-                  (1854).
+                  La distribución de la esclavitud variaba considerablemente entre las colonias. En las plantaciones del sur, especialmente en Carolina del Sur y Georgia, los esclavos llegaron a
+                  constituir la mayoría de la población total. La economía de plantación dependía completamente del trabajo esclavo para el cultivo de tabaco, arroz, índigo y, más tarde, algodón. Las
+                  colonias centrales tenían un número moderado de esclavos, principalmente en granjas medianas y como sirvientes domésticos urbanos. Nueva Inglaterra, con su economía de pequeñas
+                  granjas, comercio y manufactura, tenía el menor número de esclavos, aunque los puertos como Boston y Newport participaban activamente en el comercio de esclavos transatlántico.
                 </p>
                 <p>
-                  La resistencia a la esclavitud tomó diversas formas: desde rebeliones de esclavos (Nat Turner, 1831), el movimiento abolicionista liderado por figuras como Frederick Douglass y
-                  Harriet Tubman, hasta el "Ferrocarril Subterráneo" que ayudaba a esclavos a escapar hacia el norte. Las tensiones sobre la esclavitud eventualmente culminaron en la Guerra Civil
-                  (1861-1865), que resultó en la Proclamación de Emancipación (1863) y la Decimotercera Enmienda (1865) que abolió oficialmente la esclavitud. Sin embargo, el legado de esta
-                  institución continuaría influenciando la historia americana a través de la segregación, discriminación y desigualdades estructurales que persisten hasta nuestros días.
+                  Los africanos esclavizados resistieron su cautiverio de múltiples formas: desde rebeliones abiertas (como la Rebelión de Stono en 1739), hasta formas cotidianas de resistencia como
+                  trabajo lento, sabotaje y fuga. Algunos esclavos lograron comprar su libertad o fueron manumitidos por sus propietarios. Se desarrollaron comunidades afroamericanas libres pequeñas
+                  pero significativas, especialmente en ciudades como Filadelfia, Nueva York y Boston. Para 1776, aproximadamente 500,000 personas de origen africano vivían esclavizadas en las trece
+                  colonias, representando cerca del 20% de la población colonial total.
                 </p>
               </div>
-              <div id="image-4" class="content-section image-section">
+              <div id="image-5" class="content-section image-section">
                 <img
-                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Cotton_pickers_and_overseer_around_1850.jpg/1920px-Cotton_pickers_and_overseer_around_1850.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-                  alt="Ilustración histórica relacionada con la esclavitud"
+                  src="https://www.lavanguardia.com/files/image_449_220/uploads/2020/07/10/5f15ef8eb01ce.jpeg"
+                  alt="Ilustración histórica de una plantación colonial con trabajo esclavo"
                   class="event-image" />
-                <p class="caption">
-                  Representación histórica del trabajo esclavo en una plantación sureña de algodón, una de las principales actividades económicas sustentadas por el trabajo forzado
-                </p>
+                <p class="caption">Ilustración histórica de una plantación colonial donde el trabajo esclavo era la base de la economía de exportación, especialmente en las colonias del sur</p>
               </div>
-
-              <div id="questions-4" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el sistema legal de la esclavitud en las colonias?</div>
-                <div class="answer">
-                  El sistema legal de la esclavitud en las colonias americanas evolucionó gradualmente desde una indefinición inicial hasta un elaborado conjunto de códigos raciales: en las primeras
-                  décadas del siglo XVII, el estatus de los africanos en las colonias era ambiguo, similar en algunos aspectos a la servidumbre por contrato temporal que también afectaba a europeos,
-                  con algunos africanos obteniendo eventualmente su libertad y derechos limitados; sin embargo, entre 1640 y 1660 surgieron las primeras leyes que distinguían específicamente a los
-                  sirvientes negros de los blancos, comenzando con Maryland y Virginia que establecieron la servidumbre perpetua para los africanos; el momento crucial llegó entre 1660 y 1700 cuando
-                  las colonias desarrollaron "códigos de esclavos" formales que definían la esclavitud como una condición hereditaria transmitida por la madre, negaban personalidad jurídica a los
-                  esclavos (considerándolos como propiedad), criminalizaban el matrimonio interracial, limitaban severamente la manumisión (liberación de esclavos), y eliminaban derechos fundamentales
-                  como testificar contra blancos, poseer propiedad o aprender a leer y escribir. La codificación legal más influyente fue la Ley de Esclavos de Virginia de 1705, que sirvió como modelo
-                  para otras colonias, estableciendo claramente la conexión entre raza y esclavitud. Tras la independencia, la Constitución de 1787, aunque evitaba mencionar explícitamente la palabra
-                  "esclavitud", protegió la institución indirectamente a través de disposiciones como la Cláusula de los Tres Quintos (contando 3/5 de la población esclava para representación), la
-                  prohibición de legislar contra la importación de esclavos hasta 1808, y la Cláusula de Esclavos Fugitivos. A medida que crecía la oposición a la esclavitud en el siglo XIX, los
-                  estados del sur respondieron con leyes aún más estrictas, criminalizando la expresión de sentimientos abolicionistas y fortaleciendo los controles sobre los esclavos, culminando en
-                  el caso Dred Scott v. Sandford (1857) donde la Corte Suprema dictaminó que los afroamericanos no podían ser ciudadanos y que el Congreso no podía prohibir la esclavitud en los
-                  territorios, ilustrando cómo el sistema legal evolucionó para proteger y expandir la institución de la esclavitud.
+              <div id="video-5" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/AZKsv6LA9F4?si=FxmzPNFe_kUSNnlY"
+                    allowfullscreen="allowfullscreen"></iframe>
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Cuál fue el impacto económico de la esclavitud en el desarrollo de Estados Unidos?</div>
+                <p class="caption">Video sobre la historia de la esclavitud en las colonias británicas de Norteamérica</p>
+              </div>
+              <div id="questions-5" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó la esclavitud desde un sistema poco definido a una institución legal codificada?</div>
                 <div class="answer">
-                  El impacto económico de la esclavitud en el desarrollo de Estados Unidos fue profundo y generalizado, extendiéndose mucho más allá de las plantaciones sureñas: en el sur, la
-                  esclavitud facilitó el desarrollo de una economía de plantación altamente rentable pero de baja diversificación, centrada en cultivos comerciales de exportación como tabaco, arroz,
-                  índigo y, especialmente después de 1793, algodón, que llegó a constituir más del 50% de las exportaciones estadounidenses antes de la Guerra Civil; la riqueza generada por el trabajo
-                  esclavo no solo benefició a los propietarios de plantaciones, sino que fue fundamental para la capitalización y desarrollo de instituciones financieras, compañías de seguros y
-                  empresas de transporte tanto en el sur como en el norte; las manufacturas del norte prosperaron procesando materias primas producidas por esclavos, particularmente en la industria
-                  textil de Nueva Inglaterra que transformaba el algodón sureño, creando una interdependencia económica regional; las casas comerciales norteñas, especialmente en Nueva York y Boston,
-                  obtuvieron enormes beneficios al comercializar productos agrícolas producidos por esclavos y al financiar plantaciones a través de préstamos e hipotecas; y el comercio triangular
-                  transatlántico, que incluía el tráfico de esclavos, generó una acumulación de capital que financió una parte significativa del desarrollo industrial y comercial temprano de Estados
-                  Unidos. El valor económico de los esclavos como "propiedad" era inmenso: para 1860, el valor de los esclavos ($3.5 mil millones) excedía el valor combinado de todos los
-                  ferrocarriles, fábricas y bancos de la nación, representando la mayor concentración de riqueza del país. Aunque los historiadores económicos debaten el nivel exacto de eficiencia del
-                  sistema esclavista, existe consenso en que la esclavitud fue central en la transformación de Estados Unidos de una economía colonial a una potencia económica mundial emergente en el
-                  siglo XIX, incluso mientras limitaba el desarrollo económico diversificado del sur. Este legado económico persiste en patrones de desigualdad regional y racial hasta nuestros días,
-                  con estudios contemporáneos demostrando conexiones directas entre la riqueza acumulada a través de la esclavitud y el desarrollo institucional y financiero moderno de Estados Unidos.
+                  La evolución de la esclavitud en las colonias británicas fue un proceso gradual pero inexorable hacia un sistema racializado y codificado legalmente. Cuando los primeros africanos
+                  llegaron a Virginia en 1619, su estatus legal era ambiguo, similar en algunos aspectos al de los siervos contratados europeos. Algunos africanos de esta primera generación lograron
+                  completar su servicio, obtener libertad, adquirir propiedades e incluso esclavos. Sin embargo, entre 1640 y 1660 ocurrió un cambio significativo. Los casos judiciales comenzaron a
+                  diferenciar a africanos de europeos, extendiendo los términos de servicio para los primeros. La legislación colonial empezó a establecer distinciones raciales: Maryland (1664) y
+                  Virginia (1662) aprobaron leyes declarando que los hijos de madres esclavas serían esclavos de por vida, estableciendo la esclavitud como condición hereditaria. Virginia estableció
+                  que el bautismo cristiano no alteraba el estatus de esclavitud (1667) y prohibió los matrimonios interraciales (1691). El cambio decisivo ocurrió con el Código de Esclavos de
+                  Virginia de 1705, que consolidó legalmente un sistema completo de esclavitud racial, restringiendo severamente derechos y movimientos de africanos, prohibiéndoles poseer armas o
+                  reunirse en grupos, y aplicando castigos más severos que a los blancos por los mismos delitos. Para mediados del siglo XVIII, todas las colonias habían establecido códigos legales
+                  similares que definían a los esclavos como propiedad mueble sin derechos legales. Este desarrollo fue impulsado por factores económicos (demanda de mano de obra para plantaciones),
+                  demográficos (disminución de siervos europeos) e ideológicos (desarrollo de teorías de inferioridad racial para justificar el sistema). La transformación representa uno de los
+                  ejemplos más claros de construcción legal y social de una jerarquía racial en la historia mundial.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Cómo influyó la cuestión de la esclavitud en la formación política de la nueva nación?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué formas de resistencia desarrollaron los esclavos en las colonias?</div>
                 <div class="answer">
-                  La cuestión de la esclavitud influyó fundamentalmente en la formación política de Estados Unidos desde sus inicios: durante la Convención Constitucional de 1787, generó profundos
-                  debates y delicados compromisos, incluyendo la Cláusula de los Tres Quintos (contando 3/5 de la población esclava para representación), la prohibición de legislar contra la
-                  importación de esclavos hasta 1808, y la Cláusula de Esclavos Fugitivos, compromisos que otorgaron al sur un poder político desproporcionado; esta ventaja política permitió a los
-                  intereses esclavistas dominar el gobierno federal durante las primeras décadas de la república, con esclavistas ocupando la presidencia durante 50 de los primeros 64 años de la
-                  nación y controlando la Corte Suprema y el Congreso durante gran parte de este período; la adquisición de territorios, desde la Compra de Luisiana (1803) hasta la Guerra
-                  Mexicana-Americana (1846-1848), estuvo profundamente influenciada por consideraciones sobre la expansión o limitación de la esclavitud, generando crisis políticas con cada nuevo
-                  territorio; la polarización sectorial se manifestó en la formación del sistema de partidos, con el colapso del primer sistema bipartidista (Federalistas vs. Demócrata-Republicanos) y
-                  el surgimiento de partidos con fuerte identidad regional como los Republicanos, específicamente organizados en oposición a la expansión de la esclavitud; y una serie de conflictos
-                  legislativos como el Compromiso de Missouri (1820), la Crisis de Anulación (1832), el Compromiso de 1850 y la Ley Kansas-Nebraska (1854) revelaron la dificultad fundamental de
-                  reconciliar un sistema "mitad libre, mitad esclavo" dentro de una unión federal. La política estadounidense se vio transformada por esta cuestión con el surgimiento del movimiento
-                  abolicionista y las respuestas a éste, la fragmentación de denominaciones religiosas a lo largo de líneas seccionales, y el colapso de los mecanismos tradicionales de compromiso
-                  político en la década de 1850, culminando en la Guerra Civil (1861-1865). Incluso después de la abolición formal de la esclavitud, su legado continuó definiendo la política
-                  estadounidense durante la Reconstrucción y más allá, con la implementación de leyes Jim Crow, disputas sobre derechos civiles, y debates sobre las responsabilidades federales versus
-                  estatales que siguen resonando en la política contemporánea americana.
+                  Los africanos esclavizados desarrollaron un amplio repertorio de resistencia a su cautiverio. Las formas más visibles eran las rebeliones abiertas, como la Conspiración de Nueva York
+                  (1712), la Rebelión del Río Stono en Carolina del Sur (1739) y la Conspiración de Gabriel Prosser (Virginia, 1800). Aunque estas insurrecciones fueron brutalmente reprimidas,
+                  inspiraron miedo entre los propietarios e influyeron en códigos de esclavos más estrictos. La fuga era una forma común de resistencia, con esclavos escapando hacia territorios
+                  españoles, comunidades nativas americanas, o colonias del norte. Comunidades de cimarrones (esclavos fugitivos) se establecieron en regiones pantanosas y montañosas inaccesibles. Sin
+                  embargo, la mayoría de la resistencia era cotidiana y menos visible: trabajo deliberadamente lento o ineficiente, roturas "accidentales" de herramientas y equipos, fingimiento de
+                  enfermedad o incomprensión de órdenes, y pequeños actos de sabotaje como incendios en graneros o envenenamiento de ganado. La resistencia cultural incluyó la preservación de idiomas,
+                  religiones, música y tradiciones africanas, a menudo sincretizadas con elementos europeos, creando formas culturales distintivamente afroamericanas. La espiritualidad,
+                  particularmente el cristianismo reinterpretado que enfatizaba temas de liberación, proporcionaba consuelo y esperanza mientras que las historias transmitidas oralmente mantenían viva
+                  la memoria de África y la resistencia. Los lazos familiares, aunque constantemente amenazados por ventas que separaban familias, eran celosamente mantenidos cuando era posible.
+                  También existían formas de negociación y acomodación estratégica, donde los esclavos negociaban mejores condiciones o pequeños privilegios dentro del sistema. Esta combinación de
+                  resistencia abierta, encubierta y cultural desmiente el mito del esclavo pasivo y demuestra la persistente lucha por dignidad y libertad bajo condiciones extremadamente opresivas.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo afectó la esclavitud al desarrollo económico y social de las diferentes regiones coloniales?</div>
+                <div class="answer">
+                  El impacto de la esclavitud varió significativamente entre las regiones coloniales, definiendo sus estructuras económicas y sociales de maneras que persistirían durante siglos. En el
+                  sur, la esclavitud posibilitó el sistema de plantaciones que dominó la economía regional. Virginia y Maryland desarrollaron plantaciones de tabaco, mientras Carolina del Sur y
+                  Georgia se especializaron en arroz e índigo, todos cultivos intensivos en mano de obra que requerían gran capital invertido en esclavos. Esto creó una sociedad altamente
+                  estratificada dominada por una élite de plantadores, con desarrollo urbano e industrial limitado. Las colonias centrales desarrollaron un sistema de esclavitud de menor escala. En
+                  Nueva York y Nueva Jersey, los esclavos trabajaban en granjas medianas diversificadas, mientras en Pensilvania y Delaware, la esclavitud coexistía con mano de obra libre y servil,
+                  especialmente en granjas de trigo. Las economías más diversificadas de estas colonias produjeron estructuras sociales menos polarizadas. En Nueva Inglaterra, con condiciones menos
+                  favorables para la agricultura de plantación, la esclavitud directa era limitada, principalmente en contextos domésticos urbanos. Sin embargo, la región participaba ampliamente en el
+                  comercio triangular, con mercaderes de Boston, Newport y Providence financiando barcos esclavistas y transportando productos como ron a África y melaza del Caribe. Económicamente, la
+                  esclavitud generó inmensas riquezas para propietarios y comerciantes, financiando el desarrollo de ciudades como Charleston, creando capital que eventualmente financiaría la
+                  industrialización del norte, y permitiendo el surgimiento de una clase de elite con tiempo libre para dedicarse a la política y las artes. Socialmente, la esclavitud racializada
+                  instauró un sistema de castas que definió las relaciones raciales estadounidenses más allá de la abolición. Las regiones donde la esclavitud fue más intensiva desarrollaron culturas
+                  distintivas -tanto para blancos como para negros- que sentaron las bases para las diferencias regionales que eventualmente contribuirían a la Guerra Civil.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 5 -->
+        <!-- Evento 6: Relación metrópoli-colonia -->
+        <div class="event">
+          <div class="event-date">1660-1774</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Relación metrópoli-colonia</h3>
+              <p class="event-summary">Evolución y deterioro de las relaciones entre Gran Bretaña y sus colonias norteamericanas</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-6')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-6')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-6')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-6')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-6" class="content-section text-section">
+                <p>
+                  La relación entre Gran Bretaña y sus colonias norteamericanas evolucionó a lo largo de más de un siglo, pasando de una asociación mutuamente beneficiosa a un conflicto cada vez más
+                  profundo. Después de la restauración de la monarquía en 1660, Inglaterra instituyó formalmente el
+                  <strong>sistema mercantilista</strong>
+                  mediante las Leyes de Navegación, que requerían que el comercio colonial pasara por puertos ingleses, utilizara barcos ingleses o coloniales, y que ciertos productos "enumerados"
+                  (como tabaco, azúcar y algodón) se exportaran exclusivamente a Inglaterra.
+                </p>
+                <p>
+                  Durante gran parte del siglo XVII y principios del XVIII, este sistema funcionó relativamente bien. La política británica de
+                  <strong>"negligencia benigna"</strong>
+                  permitía a las colonias considerable autonomía interna, mientras la protección naval británica y el acceso garantizado a mercados beneficiaban a los colonos. Las colonias
+                  desarrollaron instituciones de autogobierno como asambleas legislativas que, aunque formalmente subordinadas a los gobernadores reales, ejercían control significativo sobre impuestos
+                  y asuntos locales.
+                </p>
+                <p>
+                  Las tensiones comenzaron a intensificarse después de la Guerra Franco-India (1754-1763), que aumentó enormemente la deuda británica. El Parlamento implementó una serie de medidas
+                  para aumentar los ingresos y fortalecer el control imperial: la
+                  <strong>Proclamación de 1763</strong>
+                  prohibió los asentamientos al oeste de los Apalaches; la
+                  <strong>Ley de Azúcar y Ley del Timbre (1764-1765)</strong>
+                  impusieron impuestos directos a los colonos; las
+                  <strong>Leyes Townshend (1767)</strong>
+                  gravaron importaciones como el té y establecieron una junta de aduanas para combatir el contrabando generalizado; y las
+                  <strong>Leyes Coercitivas (1774)</strong>
+                  , llamadas "Intolerables" por los colonos, castigaron a Massachusetts tras el Motín del Té de Boston cerrando el puerto de Boston y revocando el autogobierno colonial.
+                </p>
+                <p>
+                  Los colonos resistieron estas medidas basándose en el principio de "No hay impuestos sin representación," argumentando que, como no elegían representantes en el Parlamento, éste no
+                  podía gravarlos directamente. Esta resistencia tomó múltiples formas: protestas, boicots a productos británicos, intimidación de funcionarios reales, e incluso violencia como en la
+                  Masacre de Boston (1770). Las élites coloniales, formadas en las tradiciones políticas británicas de John Locke y la Ilustración, desarrollaron una ideología revolucionaria que veía
+                  estas medidas como una conspiración para destruir sus libertades, estableciendo las bases intelectuales para la posterior ruptura con Gran Bretaña.
+                </p>
+              </div>
+              <div id="image-6" class="content-section image-section">
+                <img src="https://cdn.zendalibros.com/wp-content/uploads/masacre-de-boston.jpg" alt="Grabado de la Masacre de Boston del 5 de marzo de 1770" class="event-image" />
+                <p class="caption">
+                  Grabado de Paul Revere representando la Masacre de Boston del 5 de marzo de 1770, un evento que cristalizó el creciente resentimiento colonial contra la presencia militar británica
+                </p>
+              </div>
+              <div id="video-6" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/bdKV4N5-O3M?si=4HYitkBTlEhsU7dE"
+                    allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <p class="caption">Video sobre el deterioro de las relaciones entre Gran Bretaña y sus colonias americanas tras la Guerra Franco-India</p>
+              </div>
+              <div id="questions-6" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Qué papel jugó el mercantilismo en la relación entre Gran Bretaña y sus colonias?</div>
+                <div class="answer">
+                  El mercantilismo, la teoría económica dominante del período, concebía las colonias principalmente como fuentes de materias primas y mercados para manufacturas metropolitanas, todo
+                  orientado a fortalecer el poder y riqueza nacionales. En la práctica, el sistema mercantilista británico, formalizado mediante las Leyes de Navegación (1651-1696), tenía aspectos
+                  tanto restrictivos como beneficiosos para los colonos. Restrictivamente, requería que el comercio colonial pasara por puertos británicos y utilizara barcos británicos o coloniales;
+                  ciertos productos "enumerados" (como tabaco, azúcar, melaza, índigo y más tarde el arroz) solo podían exportarse a Gran Bretaña; y se prohibían o restringían manufacturas coloniales
+                  que competían con las británicas, como sombreros de castor y productos de hierro acabados. Beneficiosamente, el sistema proporcionaba a los colonos acceso al mayor mercado del mundo,
+                  protección naval en rutas comerciales peligrosas, subsidios para productos estratégicos como cáñamo y mástiles navales, tarifas preferenciales para productos coloniales, y reembolsos
+                  fiscales para productos reexportados desde Gran Bretaña. Durante mucho tiempo, este sistema funcionó razonablemente bien gracias a la aplicación laxa (permitiendo contrabando
+                  generalizado, especialmente con el Caribe francés y español) y al desarrollo colonial dentro de nichos complementarios más que competitivos con la economía británica. Sin embargo,
+                  tras la Guerra de los Siete Años (1756-1763), los intentos británicos de implementar el mercantilismo más estrictamente mediante actos como la Ley del Azúcar (1764) y la creación de
+                  un Consejo Americano de Aduanas más eficiente alteraron este equilibrio, provocando resistencia colonial. Fundamentalmente, mientras Gran Bretaña veía estas medidas como ajustes
+                  necesarios a un sistema imperial legítimo, los colonos las percibían como innovaciones tiránicas que amenazaban sus derechos económicos tradicionales.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Por qué la política británica hacia las colonias cambió tan dramáticamente después de 1763?</div>
+                <div class="answer">
+                  El cambio dramático en la política británica después de 1763 fue resultado de múltiples factores convergentes. Financieramente, la Guerra de los Siete Años (o Guerra Franco-India en
+                  América) duplicó la deuda nacional británica a £130 millones, con intereses anuales de £4.5 millones. Esto creó presión para incrementar ingresos y racionalizar el imperio,
+                  especialmente dado que los colonos, principales beneficiarios de la victoria sobre Francia, contribuían proporcionalmente menos que los contribuyentes británicos. Estratégicamente,
+                  la adquisición de vastos territorios franceses en América del Norte requería nuevas políticas administrativas y defensivas, incluyendo mantener tropas permanentes (costosas) y
+                  gestionar relaciones con poblaciones nativas. Políticamente, el ascenso de Jorge III (1760) y su ministro Lord Bute introdujo una nueva generación de líderes menos familiarizados con
+                  el equilibrio anterior y más inclinados hacia la autoridad centralizada. La Rebelión de Pontiac (1763) demostró la volatilidad de la frontera, reforzando la percepción de necesidad
+                  de mayor control. Comercialmente, el contrabando colonial generalizado (estimado en un tercio del comercio total) representaba significativas pérdidas de ingresos que el nuevo
+                  Consejo de Aduanas Americanas intentaría recuperar. Conceptualmente, dentro del gobierno británico emergió una visión más coherente del imperio que enfatizaba unidad, jerarquía y
+                  subordinación colonial a los intereses imperiales. Legalmente, la soberanía parlamentaria se había consolidado en Gran Bretaña, con la expectativa de que se extendería lógicamente a
+                  las colonias. Estos factores combinados llevaron a la serie de medidas desde la Proclamación de 1763 hasta las Leyes Intolerables de 1774 que intentaban reestructurar
+                  fundamentalmente la relación imperial. Sin embargo, los británicos subestimaron gravemente cuánto se habían acostumbrado los colonos a su autonomía anterior y su determinación de
+                  resistir lo que veían como una "innovación" inaceptable en el orden constitucional establecido.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el concepto colonial de "libertad" y "derechos" durante este período?</div>
+                <div class="answer">
+                  El concepto colonial de libertad y derechos evolucionó significativamente durante este período, transformándose desde una comprensión tradicional británica hacia una visión cada vez
+                  más radical y distintivamente americana. Inicialmente, los colonos invocaban los "derechos de los ingleses" tradicionales, arraigados en documentos como la Carta Magna y la
+                  Declaración de Derechos inglesa de 1689, enfatizando protecciones como juicio por jurado, habeas corpus, y el principio de que ningún inglés podía ser gravado sin consentimiento.
+                  Tras la Ley del Timbre (1765), el argumento se refinó alrededor del principio de "No hay impuestos sin representación", con los colonos afirmando que solo sus propias asambleas
+                  elegidas, no el Parlamento donde no tenían representantes, podían imponer impuestos directos. La distinción entre "representación virtual" (defendida por los británicos, donde cada
+                  miembro del Parlamento representaba todo el imperio) y "representación real" (exigida por los colonos) se volvió central. A medida que el conflicto escalaba, los pensadores
+                  coloniales como James Otis, Samuel Adams y Thomas Jefferson comenzaron a articular una visión más amplia de derechos naturales e inalienables derivados no simplemente de ser
+                  británicos sino de la ley natural y la razón humana. Esta evolución fue influenciada por la Ilustración, particularmente John Locke, cuyas ideas sobre derechos naturales,
+                  consentimiento de los gobernados y el derecho a la revolución ganaron prominencia. Para 1774, el Primer Congreso Continental ya afirmaba "derechos de la naturaleza" junto a los
+                  derechos constitucionales. Los Comités de Correspondencia entre colonias difundieron y refinaron estos conceptos, creando un vocabulario político compartido. La distinción entre
+                  "libertad" (condición natural del hombre) y "libertades" (privilegios garantizados por el gobierno) se volvió borrosa, con los colonos cada vez más convencidos de que sus derechos
+                  eran anteriores y superiores a cualquier gobierno. Esta radicalización conceptual fue crucial para justificar eventualmente no solo la resistencia sino la ruptura completa con Gran
+                  Bretaña, sentando las bases filosóficas para la Declaración de Independencia y posteriormente la Constitución estadounidense.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 7: Primer Congreso Continental (Tiempo) -->
         <div class="event">
           <div class="event-date">1774</div>
           <div class="event-marker"></div>
@@ -738,97 +995,121 @@
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
               <h3 class="event-title">Primer Congreso Continental</h3>
-              <p class="event-summary">Reunión de delegados de doce colonias que representó el primer paso hacia un gobierno unificado</p>
+              <p class="event-summary">La primera acción unificada de las colonias frente a Gran Bretaña</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-5')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-5')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-5')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-7')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-7')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-7')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-7')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-5" class="content-section text-section">
+              <div id="text-7" class="content-section text-section">
                 <p>
                   El
                   <strong>Primer Congreso Continental</strong>
-                  se celebró entre el 5 de septiembre y el 26 de octubre de 1774 en Filadelfia, Pensilvania, como respuesta directa a las Leyes Intolerables (Coercitivas) impuestas por Gran Bretaña
-                  tras el Motín del Té de Boston. Esta asamblea reunió a 56 delegados de 12 de las 13 colonias (Georgia fue la única ausente), incluyendo a figuras prominentes como George Washington,
-                  John Adams, Samuel Adams y Patrick Henry.
+                  se reunió en Filadelfia del 5 de septiembre al 26 de octubre de 1774, en respuesta directa a las Leyes Coercitivas (o "Intolerables") impuestas por Gran Bretaña tras el Motín del Té
+                  de Boston. Delegados de 12 de las 13 colonias (todas excepto Georgia) se congregaron en Carpenters' Hall para coordinar una respuesta colonial unificada a lo que consideraban una
+                  crisis constitucional.
                 </p>
                 <p>
-                  El Congreso representó un momento crucial en el desarrollo de la identidad colonial unificada, ya que era la primera vez que las colonias actuaban conjuntamente de manera formal. Sus
-                  principales logros incluyeron la Declaración y Resoluciones, que afirmaba los derechos de los colonos como súbditos británicos mientras rechazaba la autoridad del Parlamento para
-                  gravar a las colonias sin representación; la creación de la Asociación Continental, un sistema de boicot económico a productos británicos; y el envío de una petición al Rey Jorge III
-                  solicitando la derogación de las leyes consideradas opresivas.
+                  Entre los 56 delegados se encontraban figuras que más tarde serían líderes prominentes de la revolución y la nueva nación, como George Washington, John y Samuel Adams, Patrick Henry,
+                  y John Jay. El Congreso representaba un espectro de opiniones, desde moderados que buscaban reconciliación con Gran Bretaña hasta radicales que ya consideraban la posibilidad de
+                  independencia.
+                </p>
+                <p>Las acciones más significativas del Congreso incluyeron:</p>
+                <p>
+                  1. La aprobación de la
+                  <strong>Asociación Continental</strong>
+                  , un acuerdo de boicot a las importaciones, exportaciones y consumo de bienes británicos, estableciendo comités locales para asegurar su cumplimiento. Este fue el primer esfuerzo
+                  coordinado de resistencia económica a escala continental.
                 </p>
                 <p>
-                  Aunque el Congreso aún no buscaba la independencia formal, sino la reparación de agravios dentro del Imperio Británico, estableció las bases para la posterior resistencia organizada
-                  y la cooperación intercolonial. El fracaso de estas peticiones y el inicio de enfrentamientos armados en Lexington y Concord en abril de 1775 llevarían a la convocatoria del Segundo
-                  Congreso Continental, que eventualmente declararía la independencia.
+                  2. La redacción de una
+                  <strong>Declaración de Derechos y Agravios</strong>
+                  , que rechazaba la autoridad del Parlamento para gravar a las colonias sin representación, aunque reconocía el derecho del Parlamento a regular el comercio imperial y profesaba
+                  lealtad a la Corona británica.
+                </p>
+                <p>
+                  3. El envío de
+                  <strong>peticiones</strong>
+                  al rey Jorge III, al pueblo británico y a las colonias canadienses, explicando la posición americana y buscando apoyo.
+                </p>
+                <p>
+                  Aunque el tono del Congreso fue generalmente moderado, buscando una solución dentro del marco imperial, también acordó reunirse nuevamente en mayo de 1775 si las quejas coloniales no
+                  eran atendidas. El Primer Congreso Continental representó un paso crucial en la formación de una identidad política americana unificada y sentó las bases institucionales para el
+                  gobierno revolucionario que seguiría.
                 </p>
               </div>
-              <div id="image-5" class="content-section image-section">
+              <div id="image-7" class="content-section image-section">
                 <img
-                  src="https://www.meisterdrucke.us/kunstwerke/1260px/Clyde_Osmer_Deland_-_The_First_Continental_Congress_Carpenters_Hall_Philadelphia_in_1774_-_%28MeisterDrucke-1403488%29.jpg"
-                  alt="Primer Congreso Continental"
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/CarpentersHall00.jpg/1280px-CarpentersHall00.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Carpenters' Hall en Filadelfia, sede del Primer Congreso Continental"
                   class="event-image" />
-                <p class="caption">Representación de los delegados reunidos frente al Carpenters' Hall, en Filadelfia, durante el Primer Congreso Continental.</p>
+                <p class="caption">Carpenters' Hall en Filadelfia, donde se reunió el Primer Congreso Continental en 1774, un edificio que simboliza el nacimiento de la cooperación intercolonial</p>
               </div>
-
-              <div id="questions-5" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Qué fueron las "Leyes Intolerables" y cómo provocaron el Primer Congreso Continental?</div>
-                <div class="answer">
-                  Las "Leyes Intolerables" (o Coercitivas, como las llamaban los británicos) fueron una serie de medidas punitivas aprobadas por el Parlamento británico en 1774 como respuesta directa
-                  al Motín del Té de Boston, y provocaron el Primer Congreso Continental al crear un sentido de emergencia compartida entre todas las colonias. Estas leyes incluían: la Ley del Puerto
-                  de Boston, que cerraba este puerto vital hasta que se pagaran los daños por el té destruido, estrangulando económicamente a la ciudad; la Ley de Administración de Massachusetts, que
-                  alteraba radicalmente el gobierno colonial, revocando la carta colonial, limitando las asambleas municipales y permitiendo al gobernador nombrar jueces y oficiales sin aprobación
-                  local; la Ley de Justicia, que permitía juzgar a funcionarios coloniales acusados de delitos capitales en Inglaterra o en otras colonias, fuera del alcance de jurados locales
-                  potencialmente simpatizantes; la Ley de Acuartelamiento (revisada), que obligaba a los colonos a proporcionar alojamiento a soldados británicos incluso en hogares privados; y la Ley
-                  de Quebec, que extendía los límites de Quebec hacia territorios reclamados por otras colonias y garantizaba derechos a católicos, alarmando a los colonos protestantes. La severidad
-                  de estas medidas, especialmente porque castigaban colectivamente a Massachusetts por acciones de un grupo específico en Boston, generó una ola de solidaridad intercolonial. Los
-                  comités de correspondencia, ya establecidos para compartir información entre colonias, facilitaron una respuesta coordinada, organizando reuniones locales que culminaron en la
-                  convocatoria del Primer Congreso Continental. Delegados de 12 colonias (todas excepto Georgia) se reunieron en Filadelfia para discutir una respuesta unificada, representando un
-                  momento decisivo: por primera vez, las colonias actuaban como una entidad política cohesionada frente a Gran Bretaña, transformando disputas locales en una causa continental y
-                  estableciendo mecanismos para la acción coordinada que eventualmente conducirían al movimiento independentista.
+              <div id="video-7" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/7N-lohOmLK4?si=2Va7pMYS-bMt4Oc6"
+                    allowfullscreen="allowfullscreen"></iframe>
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los principales acuerdos del Primer Congreso Continental?</div>
+                <p class="caption">Video sobre el Primer Congreso Continental y su importancia en el camino hacia la independencia estadounidense</p>
+              </div>
+              <div id="questions-7" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Qué importancia tuvo la Asociación Continental como primera acción coordinada entre las colonias?</div>
                 <div class="answer">
-                  El Primer Congreso Continental alcanzó varios acuerdos fundamentales que establecieron las bases para la resistencia unificada colonial: la Declaración de Derechos y Agravios, que
-                  afirmaba los derechos de los colonos como súbditos británicos, incluidos los derechos a la vida, libertad y propiedad, el derecho a ser gravados solo con su consentimiento, y el
-                  derecho a reunirse pacíficamente para discutir agravios, mientras detallaba las violaciones específicas de estos derechos por parte del Parlamento británico; la Asociación
-                  Continental, un acuerdo de boicot económico integral que prohibía la importación de bienes británicos a partir del 1 de diciembre de 1774, cesaba la exportación de productos
-                  americanos a Gran Bretaña a partir del 10 de septiembre de 1775 si los agravios no eran resueltos, y establecía comités locales para vigilar su cumplimiento, marcando la primera
-                  acción económica coordinada de las colonias; una petición al Rey Jorge III, conocida como la "Petición de la Rama de Olivo", que expresaba lealtad al monarca mientras solicitaba su
-                  intervención para derogar las Leyes Intolerables y reparar las relaciones; el acuerdo de volver a reunirse en mayo de 1775 si las peticiones al rey no recibían respuesta
-                  satisfactoria, estableciendo así la continuidad institucional que eventualmente llevaría al Segundo Congreso Continental; y cartas dirigidas al pueblo de Gran Bretaña y a las otras
-                  colonias británicas (incluyendo Canadá, Florida, y las Indias Occidentales) explicando la posición americana y buscando apoyo. Estos acuerdos representaron un equilibrio entre
-                  posturas moderadas que buscaban la reconciliación (representadas por figuras como Joseph Galloway, cuyo "Plan de Unión" que proponía un gobierno colonial dentro del imperio fue
-                  rechazado) y posiciones más radicales que comenzaban a considerar la posibilidad de resistencia armada. La unanimidad lograda en estas resoluciones, a pesar de las diferencias
-                  regionales y políticas, demostró la creciente solidaridad colonial y sentó las bases para la cooperación política y económica que eventualmente permitiría la independencia.
+                  La Asociación Continental, adoptada el 20 de octubre de 1774, representó un punto de inflexión crucial en la resistencia colonial por varias razones fundamentales. Estratégicamente,
+                  transformó protestas locales dispersas en una acción económica coordinada a escala continental. Estableció un boicot completo de importaciones británicas a partir del 1 de diciembre
+                  de 1774, la suspensión de exportaciones a Gran Bretaña después del 10 de septiembre de 1775, y prohibiciones al consumo de productos británicos como té. Organizativamente, la
+                  Asociación creó un sistema de comités locales de vigilancia y observación en cada condado, ciudad y pueblo para supervisar el cumplimiento, efectivamente estableciendo una estructura
+                  de gobierno revolucionario paralela que operaba independientemente de las autoridades coloniales oficiales. Estos comités, elegidos por el pueblo, se convirtieron en centros de poder
+                  político local y ayudaron a radicalizar a la población al involucrar a ciudadanos comunes en acciones políticas concretas. Políticamente, la Asociación demostró que las colonias
+                  podían unirse efectivamente y actuar como una entidad política coherente, estableciendo un precedente crucial para la futura unión. Económicamente, el boicot ejerció presión
+                  significativa sobre los comerciantes británicos, quienes a su vez presionaron al Parlamento. Socialmente, la Asociación promovió la "frugalidad, economía y sencillez" como virtudes
+                  patrióticas americanas, fomentando una identidad nacional distintiva. La Asociación Continental fue notablemente efectiva: las importaciones desde Gran Bretaña cayeron
+                  aproximadamente un 97% en 1775. Aunque su objetivo declarado era presionar por la derogación de las leyes opresivas británicas, la Asociación funcionó de facto como la primera ley
+                  nacional estadounidense, creando instituciones de autogobierno que servirían como base para la resistencia armada y eventualmente para la formación de un nuevo gobierno nacional.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Quiénes fueron los delegados más importantes y qué papel desempeñaron?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los principales debates y divisiones entre los delegados del Primer Congreso Continental?</div>
                 <div class="answer">
-                  Los delegados más influyentes del Primer Congreso Continental representaron un destacado grupo de líderes coloniales que posteriormente serían fundamentales en la fundación de la
-                  nación: Peyton Randolph de Virginia, respetado por su moderación y experiencia, fue elegido presidente del Congreso, proporcionando liderazgo equilibrado en un momento de creciente
-                  tensión; Samuel Adams de Massachusetts, considerado el "Instigador en Jefe" de la resistencia, jugó un papel crucial organizando la oposición a las Leyes Intolerables y manteniendo
-                  vivo el espíritu de protesta; su primo John Adams, también de Massachusetts, aunque menos radical que Samuel, emergió como un poderoso orador y estratega, trabajando incansablemente
-                  en comités y estableciéndose como una voz intelectual del movimiento revolucionario; George Washington de Virginia, ya respetado por su experiencia militar en la Guerra Franco-India,
-                  asistió en uniforme militar, señalando simbólicamente la disponibilidad de apoyo militar a la causa, y comenzó a establecerse como líder intercolonial; Patrick Henry de Virginia,
-                  conocido por su elocuencia radical, pronunció su famosa declaración "No soy virginiano, sino americano", articulando una identidad continental emergente que trascendía las lealtades
-                  coloniales individuales; John Jay de Nueva York, más moderado y cauteloso, trabajó en la redacción de los documentos oficiales, aportando una voz de precisión legal y prudencia;
-                  Joseph Galloway de Pensilvania, leal a la Corona, propuso el Plan de Unión que habría mantenido las colonias dentro del Imperio con mayor autonomía (fue rechazado por sólo un voto,
-                  ilustrando cuán divididas estaban aún las colonias sobre la independencia); Richard Henry Lee de Virginia, quien trabajó estrechamente con los delegados de Massachusetts para formar
-                  una alianza estratégica entre colonias del norte y sur; y Christopher Gadsden de Carolina del Sur, quien promovió la solidaridad intercolonial con su famosa frase "No hay hombres de
-                  Nueva Inglaterra, ni de Nueva York, sino americanos". Notablemente ausentes estaban Benjamin Franklin (aún en Londres como representante colonial) y Thomas Jefferson (no seleccionado
-                  como delegado), quienes posteriormente desempeñarían papeles cruciales en el movimiento independentista. Estas figuras, provenientes de diversas colonias y representando un espectro
-                  de opiniones políticas, sentaron las bases para el liderazgo que eventualmente guiaría a las colonias hacia la independencia y la formación de un nuevo gobierno nacional.
+                  El Primer Congreso Continental enfrentó divisiones significativas que reflejaban las diferentes perspectivas regionales y políticas sobre la crisis con Gran Bretaña. La división
+                  principal se dio entre delegados moderados que buscaban reconciliación dentro del imperio y radicales que consideraban medidas más drásticas. El Plan Galloway, propuesto por Joseph
+                  Galloway de Pensilvania, representó la posición moderada, sugiriendo un gobierno federal para América dentro del imperio británico con un Presidente General nombrado por el rey y un
+                  Gran Consejo elegido por las asambleas coloniales. Este plan fue rechazado por solo un voto (6-5), mostrando cuán dividido estaba el Congreso inicialmente. Los delegados de Nueva
+                  Inglaterra, especialmente Massachusetts, junto con Patrick Henry y Richard Henry Lee de Virginia, presionaban por medidas más firmes, mientras que representantes de colonias
+                  centrales como Pensilvania y Nueva York favorecían enfoques más conciliadores. Otras divisiones importantes surgieron respecto al alcance del boicot económico (importaciones,
+                  exportaciones o ambas); si las colonias debían rechazar toda autoridad parlamentaria o solo el poder de imponer impuestos; y el lenguaje y tono de las peticiones al rey, con
+                  moderados prefiriendo un tono más respetuoso y radicales uno más firme. La postura sobre el comercio de esclavos también causó tensiones, con una propuesta de Georgia para prohibir
+                  el comercio de esclavos como parte del boicot siendo rechazada para no alienar a Carolina del Sur. Para lograr unidad, el Congreso adoptó el sufragio proporcional (un voto por
+                  colonia), estableciendo un precedente de igualdad entre estados que influenciaría la futura estructura gubernamental. El Congreso finalmente logró un compromiso que unió a moderados
+                  y radicales: afirmar lealtad al rey mientras rechazaban firmemente la autoridad parlamentaria sobre asuntos internos coloniales, y adoptar un boicot económico escalonado que daba
+                  tiempo para presionar políticamente antes de medidas más drásticas.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo reaccionó el gobierno británico a las acciones del Primer Congreso Continental?</div>
+                <div class="answer">
+                  La reacción del gobierno británico a las acciones del Primer Congreso Continental fue predominantemente negativa y contribuyó a la escalada del conflicto. El rey Jorge III rechazó la
+                  petición del Congreso, declarando en noviembre de 1774 que "las líneas de batalla están trazadas" y que las colonias parecían dirigirse hacia la rebelión. En su discurso al
+                  Parlamento del 30 de noviembre, caracterizó la situación en Massachusetts como "subversiva del orden constitucional". El primer ministro Lord North y la mayoría parlamentaria
+                  consideraron las acciones del Congreso como una usurpación ilegítima de autoridad, ya que las asambleas coloniales no tenían derecho reconocido a formar congresos intercoloniales. En
+                  febrero de 1775, el Parlamento declaró a Massachusetts en estado de rebelión y aprobó la Ley de Restricción del Comercio de Nueva Inglaterra, prohibiendo a las colonias de Nueva
+                  Inglaterra comerciar con cualquier nación excepto Gran Bretaña e Irlanda y excluyéndolas de las pesquerías del Atlántico Norte, una medida económica punitiva severa. Posteriormente,
+                  esta restricción se extendió a otras colonias. Militarmente, el gobierno envió refuerzos al general Gage en Boston con órdenes de arrestar a los líderes de la resistencia. Algunas
+                  voces moderadas británicas, como Edmund Burke y William Pitt, abogaron por la conciliación, con Burke pronunciando su famoso discurso sobre la "Conciliación con América" en marzo de
+                  1775, pero fueron ignorados. Un último intento de compromiso, el Plan de Conciliación de Lord North (febrero 1775), ofreció que el Parlamento no gravaría colonias que contribuyeran
+                  voluntariamente a la defensa imperial, pero fue rechazado por considerarse insuficiente. Mientras el Parlamento debatía estas medidas, los enfrentamientos armados en Lexington y
+                  Concord (abril 1775) iniciaron el conflicto militar, haciendo que la respuesta británica a las acciones del Primer Congreso Continental se volviera académica frente a la realidad de
+                  la guerra abierta.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 6 -->
+        <!-- Evento 8: Segundo Congreso Continental (Tiempo) -->
         <div class="event">
           <div class="event-date">1775-1781</div>
           <div class="event-marker"></div>
@@ -836,207 +1117,252 @@
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
               <h3 class="event-title">Segundo Congreso Continental</h3>
-              <p class="event-summary">La asamblea que declaró la independencia y dirigió la guerra revolucionaria</p>
+              <p class="event-summary">Del gobierno revolucionario a la creación de una nueva nación</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-6')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-6')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-6')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-8')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-8')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-8')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-8')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-6" class="content-section text-section">
+              <div id="text-8" class="content-section text-section">
                 <p>
                   El
                   <strong>Segundo Congreso Continental</strong>
-                  se reunió por primera vez el 10 de mayo de 1775 en Filadelfia, apenas tres semanas después de los primeros enfrentamientos armados en Lexington y Concord. A diferencia de su
-                  predecesor, que había sido principalmente deliberativo, este Congreso rápidamente asumió las funciones de un gobierno nacional de facto, dirigiendo el esfuerzo bélico y estableciendo
-                  las bases del nuevo país.
+                  se reunió en Filadelfia el 10 de mayo de 1775, pocas semanas después de los enfrentamientos en Lexington y Concord que iniciaron la Guerra de Independencia. A diferencia de su
+                  predecesor, este Congreso se vio inmediatamente obligado a funcionar como un gobierno revolucionario de facto, asumiendo poderes ejecutivos, legislativos y judiciales sin una
+                  autorización formal.
                 </p>
                 <p>
-                  Entre sus acciones más significativas estuvieron: la creación del Ejército Continental (15 de junio de 1775) y el nombramiento de George Washington como Comandante en Jefe; el
-                  establecimiento de un Departamento de Marina y la autorización de corsarios; la apertura de relaciones diplomáticas con potencias extranjeras; la creación de un servicio postal; la
-                  emisión de papel moneda para financiar la guerra; y, crucialmente, la aprobación de la Declaración de Independencia el 4 de julio de 1776.
+                  Entre sus primeras y más cruciales acciones estuvo la creación de un
+                  <strong>Ejército Continental</strong>
+                  el 14 de junio de 1775, y el nombramiento de George Washington como su Comandante en Jefe al día siguiente. Simultáneamente, el Congreso mantenía su postura oficial de lealtad a la
+                  Corona británica, enviando la
+                  <strong>Petición de la Rama de Olivo</strong>
+                  al rey Jorge III en julio de 1775, solicitando reconciliación. El rechazo de esta petición y la declaración real de que las colonias estaban en rebelión aceleraron el movimiento
+                  hacia la independencia.
                 </p>
                 <p>
-                  El Segundo Congreso continuó funcionando como órgano gubernamental hasta 1781, cuando fue reemplazado por el Congreso de la Confederación tras la ratificación de los Artículos de la
-                  Confederación. Durante su existencia, operó sin una constitución formal y dependió de la cooperación voluntaria de los estados. A pesar de estas limitaciones, logró mantener unidas a
-                  las colonias durante los años críticos de la guerra y sentar las bases institucionales para el futuro gobierno estadounidense.
+                  El 4 de julio de 1776, el Congreso aprobó la
+                  <strong>Declaración de Independencia</strong>
+                  , redactada principalmente por Thomas Jefferson. Este documento no solo proclamaba la separación de las colonias de Gran Bretaña, sino que articulaba los principios filosóficos de la
+                  revolución: gobierno por consentimiento de los gobernados, igualdad natural de los hombres, y el derecho a la revolución contra gobiernos opresivos.
+                </p>
+                <p>
+                  Durante los años siguientes, el Congreso funcionó como gobierno nacional, dirigiendo la guerra, negociando alianzas extranjeras (particularmente con Francia en 1778), emitiendo
+                  moneda, estableciendo departamentos ejecutivos, y sentando las bases diplomáticas para el reconocimiento internacional. En 1777, propuso los
+                  <strong>Artículos de la Confederación</strong>
+                  , la primera constitución estadounidense, aunque no fueron ratificados hasta 1781.
+                </p>
+                <p>
+                  El Segundo Congreso Continental se disolvió el 1 de marzo de 1781, siendo reemplazado por el Congreso de la Confederación, que gobernaría hasta la implementación de la Constitución
+                  de Estados Unidos en 1789. A pesar de sus limitaciones y desafíos financieros crónicos, el Segundo Congreso Continental logró lo extraordinario: transformar trece colonias en guerra
+                  en una nación independiente con instituciones gubernamentales funcionales.
                 </p>
               </div>
-              <div id="image-6" class="content-section image-section">
+              <div id="image-8" class="content-section image-section">
                 <img
-                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/1920px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-                  alt="Segundo Congreso Continental"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/960px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg"
+                  alt="Pintura de la firma de la Declaración de Independencia"
                   class="event-image" />
-                <p class="caption">Representación del Segundo Congreso Continental durante la firma de la Declaración de Independencia</p>
+                <p class="caption">"Declaración de Independencia", pintura de John Trumbull que representa la presentación del borrador de la Declaración al Segundo Congreso Continental</p>
               </div>
-
-              <div id="questions-6" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el Segundo Congreso desde la reconciliación hacia la independencia?</div>
-                <div class="answer">
-                  La evolución del Segundo Congreso Continental desde la búsqueda de reconciliación hacia la declaración de independencia siguió un camino gradual marcado por eventos críticos: cuando
-                  el Congreso se reunió en mayo de 1775, la mayoría de los delegados aún esperaban una reconciliación con Gran Bretaña, evidenciado por la aprobación de la Petición de la Rama de Olivo
-                  al Rey Jorge III el 5 de julio de 1775, que reafirmaba la lealtad colonial mientras solicitaba el cese de las hostilidades; sin embargo, esta petición fue rechazada en agosto de
-                  1775, cuando el rey declaró a las colonias en estado de rebelión y autorizó el uso de la fuerza militar contra ellas. Simultáneamente a estas gestiones diplomáticas, el Congreso tomó
-                  medidas prácticas para la defensa armada, creando el Ejército Continental (junio 1775) y nombrando a George Washington como comandante, acciones que, aunque defensivas en su
-                  justificación, representaban pasos efectivos hacia la soberanía. El apoyo popular a la independencia aumentó significativamente tras la publicación de "Sentido Común" de Thomas Paine
-                  en enero de 1776, que articulaba argumentos convincentes para la separación total de Gran Bretaña y vendió más de 150,000 copias en pocos meses. La escalada del conflicto militar,
-                  con batallas en Bunker Hill, la invasión de Canadá y el asedio de Boston, hizo cada vez más difícil imaginar un retorno al status quo anterior. En mayo de 1776, el Congreso aprobó
-                  una resolución aconsejando a las colonias formar gobiernos independientes, efectivamente repudiando la autoridad real, y el 7 de junio, Richard Henry Lee presentó una resolución
-                  formal declarando la independencia. Tras un intenso debate, el Congreso nombró un comité para redactar la declaración formal, liderado por Thomas Jefferson, y el 2 de julio de 1776
-                  votó a favor de la independencia, con la aprobación formal del documento el 4 de julio. Esta evolución de 14 meses desde la primera reunión hasta la independencia refleja cómo el
-                  fracaso de los esfuerzos de reconciliación, la escalada militar, el cambio en la opinión pública y la creciente confianza institucional del Congreso transformaron un cuerpo
-                  inicialmente cauteloso en el núcleo gubernamental de una nueva nación independiente.
+              <div id="video-8" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/764a8UAa0Ro?si=cVp14gblp23gCHy4"
+                    allowfullscreen="allowfullscreen"></iframe>
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los desafíos financieros que enfrentó el Congreso durante la guerra?</div>
+                <p class="caption">Video sobre el Segundo Congreso Continental y su papel en la Revolución Americana</p>
+              </div>
+              <div id="questions-8" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el Segundo Congreso Continental de un cuerpo consultivo a un gobierno revolucionario?</div>
                 <div class="answer">
-                  El Segundo Congreso Continental enfrentó formidables desafíos financieros durante la Guerra Revolucionaria que amenazaron repetidamente el esfuerzo bélico: carecía de autoridad para
-                  imponer impuestos directos, dependiendo de contribuciones voluntarias de los estados que frecuentemente no se materializaban, obligando al Congreso a solicitar repetidamente a los
-                  estados fondos que rara vez llegaban en la cantidad o tiempo requeridos; ante esta falta de ingresos, recurrió a la emisión masiva de papel moneda continental sin respaldo adecuado
-                  (más de $240 millones durante la guerra), provocando una hiperinflación devastadora que llevó a la frase "no vale un continental" como sinónimo de algo sin valor, con la moneda
-                  depreciándose hasta 1/100 de su valor nominal; se vio forzado a recurrir a préstamos internacionales, principalmente de Francia y Holanda, además de préstamos internos a través de
-                  certificados de deuda a ciudadanos patriotas, acumulando una significativa deuda externa e interna; luchó con la especulación y la devaluación monetaria que encarecían los
-                  suministros militares, mientras comerciantes y proveedores exigían pagos en oro o plata en lugar de papel continental; enfrentó una crisis de suministros para el ejército,
-                  ejemplificada por el famoso invierno en Valley Forge (1777-1778) donde las tropas sufrieron hambre y frío extremo; e implementó medidas desesperadas como la confiscación de bienes
-                  (con o sin compensación), el establecimiento de controles de precios, y préstamos forzosos que generaron resentimiento. La situación financiera se deterioró dramáticamente hacia
-                  1780, cuando el colapso monetario casi paralizó las operaciones militares. La creación del Departamento de Finanzas en 1781 bajo Robert Morris trajo algunas mejoras, incluyendo la
-                  fundación del Banco de Norteamérica para estabilizar la moneda y centralizar las finanzas. Francia proporcionó ayuda financiera crucial ($8 millones en préstamos directos y
-                  subsidios) que permitió continuar la guerra hasta la victoria. Estos persistentes problemas financieros resaltaron las debilidades fundamentales del gobierno confederado y se
-                  convertirían en un argumento central para la posterior creación de un gobierno federal más fuerte bajo la Constitución de 1787, con poderes de imposición fiscal directa y la
-                  capacidad de regular el comercio y establecer una política monetaria unificada.
+                  La transformación del Segundo Congreso Continental ocurrió de manera gradual y pragmática, impulsada por necesidades urgentes más que por un plan premeditado. Inicialmente convocado
+                  como continuación del Primer Congreso, con el objetivo principal de coordinar la respuesta colonial a las políticas británicas, el estallido de hostilidades en Lexington y Concord
+                  (abril 1775) alteró fundamentalmente su propósito. La primera fase de transformación comenzó cuando el Congreso asumió responsabilidades militares: creó el Ejército Continental
+                  (junio 1775), nombró a Washington como comandante, estableció un Departamento de Guerra, autorizó la creación de una Armada Continental, y comenzó a emitir papel moneda (los
+                  "Continentales") para financiar operaciones militares. Simultáneamente mantenía esperanzas de reconciliación, enviando la Petición de la Rama de Olivo al rey. La segunda fase crucial
+                  ocurrió tras el rechazo real a la petición y la publicación de "Sentido Común" de Thomas Paine (enero 1776), que aceleró el sentimiento pro-independencia. El Congreso comenzó a
+                  comportarse como un estado soberano, autorizando a las colonias a establecer gobiernos independientes (mayo 1776) y eventualmente declarando la independencia (julio 1776). La tercera
+                  fase involucró la construcción de un aparato gubernamental completo: estableció departamentos ejecutivos (Asuntos Exteriores, Guerra, Marina, Tesoro); creó un servicio postal;
+                  estableció tribunales para casos de presas marítimas; envió representantes diplomáticos a cortes europeas; negoció tratados internacionales; y redactó los Artículos de la
+                  Confederación. Esta evolución no estuvo exenta de controversias: muchos delegados cuestionaban si el Congreso tenía autoridad legítima para ejercer tales poderes, y algunos estados
+                  resistían sus directivas. Sin embargo, ante la necesidad apremiante de coordinar la guerra y administrar asuntos nacionales, el Congreso asumió poderes gubernamentales por defecto,
+                  estableciendo precedentes críticos para el futuro gobierno federal.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué papel desempeñaron las relaciones exteriores en el éxito de la revolución?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué importancia tuvo la Declaración de Independencia como documento filosófico y político?</div>
                 <div class="answer">
-                  Las relaciones exteriores desempeñaron un papel decisivo en el éxito de la Revolución Americana, transformando una rebelión colonial en un conflicto internacional que superó las
-                  limitaciones de los rebeldes: la alianza franco-americana, formalizada con el Tratado de Alianza de 1778 tras la victoria estadounidense en Saratoga, proporcionó ayuda militar
-                  crítica (armas, municiones, uniformes, entrenamiento militar y eventualmente tropas y apoyo naval), apoyo financiero (préstamos y subsidios que sumaron millones de libras) y
-                  legitimidad diplomática internacional, culminando con la intervención directa que fue decisiva en la victoria de Yorktown; la asistencia española, aunque sin reconocer formalmente la
-                  independencia americana, proporcionó préstamos sustanciales, abrió sus puertos a barcos americanos y declaró guerra a Gran Bretaña en 1779, distrayendo recursos británicos; los
-                  Países Bajos, importantes socios comerciales, proporcionaron préstamos cruciales y se convirtieron en el segundo país en reconocer oficialmente la independencia estadounidense en
-                  1782; y las Ligas de Neutralidad Armada lideradas por Rusia que protegían el comercio neutral durante la guerra beneficiaron indirectamente a los estadounidenses al complicar los
-                  esfuerzos británicos por bloquear el comercio colonial. Este éxito diplomático fue fruto de representantes estadounidenses talentosos como Benjamin Franklin (cuya popularidad en
-                  Francia fue inestimable), John Adams, John Jay, y Silas Deane, quienes aprovecharon magistralmente las rivalidades europeas, especialmente la animosidad franco-británica tras la
-                  Guerra de los Siete Años. El Segundo Congreso Continental estableció un Comité de Correspondencia Secreta (1775) que evolucionó hacia el Comité de Asuntos Exteriores, primer
-                  departamento de relaciones exteriores de EE.UU., y nombró representantes a cortes europeas incluso antes de declarar formalmente la independencia. Estos esfuerzos culminaron en las
-                  negociaciones del Tratado de París (1783), donde los diplomáticos estadounidenses, negociando separadamente de Francia cuando era conveniente, aseguraron términos excepcionalmente
-                  favorables: reconocimiento de la independencia, territorio expandido hasta el río Mississippi, derechos de pesca en Terranova, y la retirada de tropas británicas. La diplomacia
-                  estadounidense durante la Revolución, combinando idealismo republicano con pragmatismo estratégico, convirtió la intervención extranjera en un multiplicador de fuerza decisivo y
-                  estableció precedentes fundamentales para la futura política exterior americana.
+                  La Declaración de Independencia trasciende su función inmediata como documento de separación política para convertirse en un texto fundacional de profunda significación filosófica y
+                  política. Como manifiesto político, su objetivo práctico era triple: justificar la ruptura con Gran Bretaña ante el "tribunal de la opinión mundial"; unificar a las colonias en su
+                  causa revolucionaria; y facilitar el reconocimiento internacional y apoyo, particularmente de Francia. Sin embargo, su importancia perdurable reside en su articulación de principios
+                  filosóficos. El preámbulo, redactado por Jefferson e influenciado por John Locke y la Ilustración, establece principios universales: que todos los hombres son creados iguales; que
+                  poseen derechos inalienables, incluyendo vida, libertad y búsqueda de la felicidad; que los gobiernos derivan su poder legítimo del consentimiento de los gobernados; y que cuando un
+                  gobierno se vuelve destructivo de estos fines, el pueblo tiene el derecho de alterarlo o abolirlo. El cuerpo central del documento presenta 27 agravios específicos contra Jorge III,
+                  construyendo metódicamente el caso de un patrón de abuso tiránico que justifica la revolución según los principios establecidos. Aunque la Declaración no tenía autoridad legal
+                  vinculante dentro del nuevo gobierno, su impacto como documento aspiracional ha sido profundo. Abraham Lincoln la invocó como promesa fundacional en su Discurso de Gettysburg; los
+                  movimientos abolicionistas, sufragistas y de derechos civiles la citaron para expandir su promesa de igualdad a grupos inicialmente excluidos; y ha inspirado movimientos de
+                  liberación nacional en todo el mundo. La paradoja central de la Declaración—proclamar principios universales mientras era escrita por una sociedad esclavista con sufragio limitado—ha
+                  creado una tensión productiva en la historia estadounidense, impulsando generaciones a trabajar por realizar más plenamente sus ideales. Como documento filosófico, estableció el
+                  contractualismo liberal y los derechos naturales como fundamentos del experimento político estadounidense.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los principales desafíos que enfrentó el Segundo Congreso Continental durante la guerra?</div>
+                <div class="answer">
+                  El Segundo Congreso Continental enfrentó desafíos formidables mientras intentaba dirigir una guerra revolucionaria sin precedentes. Financieramente, carecía de poder para recaudar
+                  impuestos directamente, dependiendo de solicitudes voluntarias a los estados que frecuentemente eran ignoradas. La emisión excesiva de papel moneda ("Continentales") provocó
+                  hiperinflación devastadora—para 1780, los Continentales valían menos del 1% de su valor nominal, inspirando la frase "no vale un Continental". Esto causó privaciones severas al
+                  ejército y dificultades para adquirir suministros. Militarmente, el Congreso luchaba para reclutar, equipar y mantener un ejército regular mientras dependía fuertemente de milicias
+                  estatales de servicio corto y confiabilidad variable. Las tensiones entre Washington y el Congreso sobre estrategia, logística y control eran frecuentes. Diplomáticamente, el
+                  Congreso necesitaba desesperadamente reconocimiento y apoyo extranjero, particularmente de Francia, sin aparecer demasiado débil o dependiente. Las negociaciones secretas eran
+                  complicadas por comunicaciones lentas transatlánticas y facciones pro-francesas y pro-británicas entre los delegados. Políticamente, las rivalidades entre estados socavaban
+                  constantemente la unidad, con estados pequeños temiendo la dominación de los grandes, y divisiones regionales sobre comercio, tierras occidentales y esclavitud amenazando la
+                  coalición revolucionaria. Institucionalmente, el Congreso carecía de infraestructura ejecutiva eficiente, trabajando inicialmente a través de comités ad hoc antes de establecer
+                  departamentos más formales. Logísticamente, el Congreso fue obligado a trasladarse varias veces durante la guerra, abandonando Filadelfia cuando los británicos se acercaban, lo que
+                  interrumpía la continuidad gubernamental. Ideológicamente, existían profundas divisiones sobre los objetivos de la revolución: algunos delegados favorecían una república democrática
+                  radical, mientras otros preferían un gobierno más centralizado y conservador. A pesar de estos desafíos monumentales, el Congreso logró mantener suficiente cohesión para sostener el
+                  esfuerzo bélico hasta la victoria, negociar una alianza crucial con Francia en 1778, y establecer las bases para el futuro gobierno federal. Su mayor logro quizás fue simplemente
+                  sobrevivir y mantener alguna forma de gobierno nacional cohesivo bajo circunstancias extraordinariamente adversas.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 7 -->
+        <!-- Evento 9: Guerra de Independencia (Tiempo) -->
         <div class="event">
-          <div class="event-date">1776-1783</div>
+          <div class="event-date">1775-1783</div>
           <div class="event-marker"></div>
           <div class="event-connector"></div>
           <div class="event-card">
             <div class="event-header" onclick="toggleContent(this)">
-              <h3 class="event-title">Guerra de la Independencia de los EE. UU.</h3>
-              <p class="event-summary">El conflicto armado que estableció la independencia de Estados Unidos frente a Gran Bretaña</p>
+              <h3 class="event-title">Guerra de Independencia</h3>
+              <p class="event-summary">El conflicto armado que dio origen a los Estados Unidos de América</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-7')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-7')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-7')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-9')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-9')">🖼️ Imagen</button>
+                <button class="btn btn-video" onclick="toggleSection(this, 'video-9')">🎬 Video</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-9')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-7" class="content-section text-section">
+              <div id="text-9" class="content-section text-section">
                 <p>
                   La
-                  <strong>Guerra de Independencia de los Estados Unidos</strong>
-                  (1775-1783) comenzó oficialmente con los enfrentamientos en Lexington y Concord el 19 de abril de 1775, aunque la declaración formal de independencia no se produjo hasta julio de
-                  1776. El conflicto enfrentó a las trece colonias británicas de Norteamérica contra el que entonces era el imperio más poderoso del mundo.
+                  <strong>Guerra de Independencia Estadounidense</strong>
+                  (1775-1783) comenzó con los enfrentamientos en Lexington y Concord el 19 de abril de 1775, cuando tropas británicas intentaron confiscar armas almacenadas por la milicia colonial. Lo
+                  que comenzó como una resistencia a políticas imperiales específicas se transformó en una guerra por la independencia total tras la Declaración de Independencia en julio de 1776.
                 </p>
                 <p>
-                  Militarmente, la guerra puede dividirse en varias fases: una inicial (1775-1778) centrada principalmente en las colonias del norte, incluyendo la evacuación británica de Boston, la
-                  Batalla de Saratoga y la ocupación de Filadelfia; una fase media (1778-1779) donde el conflicto se expandió geográficamente hacia el sur y el oeste, y se internacionalizó con la
-                  entrada de Francia como aliada de los rebeldes; y una fase final (1780-1783) concentrada en las colonias del sur, culminando con la decisiva victoria franco-americana en Yorktown
-                  (1781) que efectivamente terminó las operaciones militares terrestres significativas, aunque la paz formal no llegó hasta el Tratado de París en 1783.
+                  Militarmente, los colonos enfrentaban desventajas significativas: Gran Bretaña poseía el ejército profesional más poderoso del mundo, una armada dominante, y recursos financieros
+                  vastamente superiores. Las fuerzas americanas, lideradas por George Washington, consistían en un pequeño Ejército Continental complementado por milicias estatales de fiabilidad
+                  variable. Sin embargo, los estadounidenses tenían ventajas importantes: conocimiento del terreno, líneas de suministro más cortas, y la necesidad británica de pacificar una inmensa
+                  área geográfica con población mayoritariamente hostil.
                 </p>
                 <p>
-                  La guerra fue extraordinaria por múltiples razones: representó la primera vez en la era moderna que una colonia derrotó militarmente a su metrópoli; combinó tácticas de guerra
-                  convencional europea con guerra de guerrillas fronteriza; implicó complejas dinámicas sociales y raciales, con la participación de afroamericanos (tanto esclavos como libres),
-                  nativos americanos y colonos leales a la Corona (Lealistas); y evolucionó de un conflicto colonial a una guerra internacional que involucró a Francia, España y los Países Bajos
-                  contra Gran Bretaña.
+                  Las primeras grandes campañas incluyeron el asedio de Boston (1775-76), que terminó con la evacuación británica; la fallida invasión americana de Canadá (1775-76); y la campaña de
+                  Nueva York (1776), donde el general británico William Howe derrotó a Washington pero no logró destruir el Ejército Continental. La guerra tomó un giro crucial en el invierno de
+                  1776-77, cuando Washington cruzó el río Delaware y derrotó a los hessianos (mercenarios alemanes) en Trenton y a los británicos en Princeton, revitalizando la causa americana.
                 </p>
                 <p>
-                  El liderazgo de George Washington como Comandante en Jefe fue crucial para mantener unido al Ejército Continental durante momentos de extrema adversidad. Su capacidad para adaptarse
-                  estratégicamente, preservar sus fuerzas frente a la superioridad británica, y mantener la lealtad de sus hombres a pesar de las terribles condiciones y retrasos en el pago, fue
-                  determinante para el eventual triunfo americano.
+                  El punto de inflexión llegó en octubre de 1777 con la victoria americana en
+                  <strong>Saratoga</strong>
+                  , donde el general Horatio Gates forzó la rendición del ejército británico del general John Burgoyne. Esta victoria convenció a Francia para entrar formalmente en la guerra como
+                  aliada de los Estados Unidos en 1778, seguida por España (1779) y los Países Bajos (1780), transformando el conflicto en una guerra global que estiró los recursos británicos.
+                </p>
+                <p>
+                  Después de 1778, la guerra se intensificó en el sur, donde los británicos inicialmente tuvieron éxito en Georgia y las Carolinas. Sin embargo, la combinación del acoso de la
+                  guerrilla americana liderada por Francis Marion (el "Zorro del Pantano") y las operaciones del Ejército Continental bajo Nathanael Greene debilitaron a las fuerzas británicas. La
+                  campaña culminó en
+                  <strong>Yorktown</strong>
+                  (octubre 1781), donde Washington, con asistencia naval francesa crucial, forzó la rendición del ejército del general Cornwallis, efectivamente terminando las principales operaciones
+                  militares.
+                </p>
+                <p>
+                  El
+                  <strong>Tratado de París</strong>
+                  (1783) reconoció formalmente la independencia estadounidense y estableció generosas fronteras para la nueva nación, extendiéndose hasta el río Mississippi. La guerra transformó trece
+                  colonias distintas en una nación independiente y estableció un precedente revolucionario que inspiraría movimientos de liberación en todo el mundo.
                 </p>
               </div>
-              <div id="image-7" class="content-section image-section">
+              <div id="image-9" class="content-section image-section">
                 <img
-                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg/1920px-Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-                  alt="Washington cruzando el Delaware"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg/1920px-Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Washington cruzando el Delaware, pintura de Emanuel Leutze"
                   class="event-image" />
-                <p class="caption">Representación del General Washington cruzando el río Delaware antes de la Batalla de Trenton, un momento crucial que revitalizó la causa americana</p>
+                <p class="caption">
+                  "Washington cruzando el Delaware", pintura de Emanuel Leutze que representa el ataque sorpresa a Trenton la noche del 25-26 de diciembre de 1776, un momento crucial que revitalizó la
+                  causa revolucionaria
+                </p>
               </div>
-
-              <div id="questions-7" class="content-section questions-section">
-                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron las batallas más decisivas de la Guerra de Independencia?</div>
-                <div class="answer">
-                  Las batallas más decisivas de la Guerra de Independencia cambiaron el curso del conflicto en momentos críticos: la Batalla de Bunker Hill (junio 1775), aunque técnicamente una
-                  victoria británica, demostró que los colonos podían enfrentarse efectivamente a tropas regulares británicas e infligir bajas significativas (más de 1,000 bajas británicas), elevando
-                  la moral revolucionaria mientras disminuía la confianza británica en una victoria rápida; la Batalla de Trenton (diciembre 1776) y Princeton (enero 1777), donde tras una serie de
-                  derrotas desmoralizantes y la retirada a través de Nueva Jersey, Washington sorprendió a los mercenarios hessianos en Trenton y luego derrotó a fuerzas británicas en Princeton,
-                  revitalizando la causa revolucionaria cuando estaba al borde del colapso; la Batalla de Saratoga (septiembre-octubre 1777), considerada el punto de inflexión estratégico de la
-                  guerra, donde las fuerzas americanas bajo el general Gates derrotaron y capturaron un importante ejército británico bajo el general Burgoyne, persuadiendo a Francia a entrar
-                  formalmente en la guerra como aliada americana; la Batalla de Kings Mountain (octubre 1780), donde milicianos patriotas derrotaron decisivamente a lealistas en Carolina del Sur,
-                  comenzando a revertir la situación en el sur después de varias derrotas americanas; la Batalla de Cowpens (enero 1781), donde el general Daniel Morgan ejecutó brillantemente una
-                  táctica de doble envolvimiento que destruyó la unidad de élite de caballería británica bajo Banastre Tarleton, debilitando significativamente la capacidad ofensiva británica en el
-                  sur; y la Batalla/Sitio de Yorktown (septiembre-octubre 1781), la confrontación final significativa, donde fuerzas combinadas franco-americanas atraparon al ejército del general
-                  Cornwallis contra el río York mientras la armada francesa bloqueaba cualquier escape o refuerzo por mar, forzando la rendición de 8,000 tropas británicas. Yorktown efectivamente
-                  terminó las operaciones militares principales, pues el Parlamento británico, cansado de la costosa guerra, votó por ponerle fin. Estas batallas decisivas ilustran cómo los americanos
-                  emplearon una combinación de tácticas convencionales y no convencionales, aprovecharon la geografía, mantuvieron la cohesión en momentos críticos, y utilizaron efectivamente la
-                  alianza francesa para superar la superioridad militar británica y asegurar su independencia.
+              <div id="video-9" class="content-section video-section">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+                  <iframe
+                    style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden"
+                    frameborder="0"
+                    type="text/html"
+                    src="https://www.youtube.com/embed/aXKMGMFw7B8?si=lDtnkfYYiMrxwsAZ"
+                    allowfullscreen="allowfullscreen"></iframe>
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Qué papel desempeñaron los nativos americanos en el conflicto?</div>
+                <p class="caption">Video sobre las principales batallas y estrategias de la Guerra de Independencia Estadounidense</p>
+              </div>
+              <div id="questions-9" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Por qué Gran Bretaña, con su superioridad militar, no logró derrotar a los rebeldes americanos?</div>
                 <div class="answer">
-                  Los nativos americanos desempeñaron un papel complejo y crucial en la Guerra de Independencia, convirtiéndose en actores estratégicos que influyeron significativamente en el
-                  desarrollo del conflicto: la gran mayoría de las naciones nativas que participaron (especialmente las Seis Naciones Iroquesas, Cherokee, Creek, y tribus de los Grandes Lagos) se
-                  aliaron con los británicos, quienes habían establecido la Proclamación de 1763 limitando la expansión colonial hacia territorios indígenas, mientras que los colonos representaban una
-                  amenaza creciente a sus tierras; la Confederación Iroquesa, particularmente importante por su ubicación estratégica, sufrió una división interna con los Oneida y Tuscarora apoyando a
-                  los patriotas mientras Mohawk, Cayuga, Onondaga y Seneca (liderados por Joseph Brant/Thayendanegea) se aliaban con los británicos; los nativos aliados británicos realizaron
-                  incursiones devastadoras en asentamientos fronterizos en Nueva York, Pensilvania y los valles de Ohio y Wyoming, provocando respuestas militares americanas como la Expedición
-                  Sullivan de 1779, que destruyó sistemáticamente más de 40 pueblos iroqueses; algunas tribus del este, como los Stockbridge-Munsee y Passamaquoddy, apoyaron a los patriotas,
-                  proporcionando exploradores y guerreros que conocían el terreno; y el liderazgo nativo desarrolló sofisticadas estrategias diplomáticas, intentando utilizar la guerra para defender
-                  sus propios intereses territoriales y políticos, no simplemente como subordinados de cualquier potencia europea. Trágicamente, el Tratado de París de 1783 ignoró casi completamente
-                  los intereses de los aliados nativos de Gran Bretaña, cediendo enormes territorios a los Estados Unidos sin consultarles, dejando a muchas naciones indígenas expuestas a la posterior
-                  expansión americana. Los nativos que habían luchado junto a los británicos enfrentaron represalias, desplazamiento y confiscación de tierras, mientras aquellos que apoyaron a los
-                  patriotas raramente recibieron las recompensas prometidas por su lealtad. La guerra representó así un punto de inflexión para muchas sociedades nativas, acelerando procesos de
-                  pérdida territorial y transformación cultural que continuarían durante el siguiente siglo. Para la nueva nación estadounidense, el conflicto con los pueblos nativos no terminó con la
-                  independencia sino que se intensificó, sentando las bases para las guerras indias del siglo XIX mientras se expandía hacia el oeste.
+                  La derrota británica resulta de una combinación de factores estratégicos, logísticos, políticos y diplomáticos. Logísticamente, Gran Bretaña enfrentaba el desafío sin precedentes de
+                  mantener un ejército a 3,000 millas de distancia, con comunicaciones que tomaban dos meses en cada dirección. Los costos de transporte y suministro eran enormes: cada soldado en
+                  América costaba cuatro veces más que uno en Europa. Estratégicamente, los británicos enfrentaban un dilema fundamental: para vencer necesitaban controlar el territorio, pero con
+                  aproximadamente 50,000 tropas en su punto máximo, era imposible ocupar efectivamente un área tan vasta con población hostil. Las victorias en batallas convencionales rara vez eran
+                  decisivas porque Washington adoptó una estrategia "fabiana" de preservar su ejército y prolongar el conflicto, evitando confrontaciones decisivas cuando las desventajas eran grandes.
+                  Geográficamente, el terreno americano, con bosques densos, ríos, montañas y pocos caminos, favorecía a los defensores familiarizados con el territorio. Políticamente, la voluntad de
+                  guerra británica estaba dividida, con una oposición parlamentaria significativa que cuestionaba el conflicto, mientras los colonos luchaban por su libertad y hogares con
+                  determinación sostenida. La entrada de Francia (1778), España (1779) y los Países Bajos (1780) transformó una rebelión colonial en una guerra mundial, forzando a Gran Bretaña a
+                  defender posesiones en el Caribe, Gibraltar, Menorca y la India. La intervención francesa fue particularmente crucial, proporcionando ayuda financiera, materiales, tropas y,
+                  crucialmente, poder naval que neutralizó la ventaja marítima británica en momentos decisivos como Yorktown. Adicionalmente, la guerra de guerrillas conducida por unidades americanas
+                  irregulares desgastó a las fuerzas británicas, interrumpiendo comunicaciones y suministros. Estos factores combinados elevaron los costos del conflicto más allá de lo que el público
+                  británico estaba dispuesto a soportar, especialmente por una guerra cada vez más vista como impopular e imposible de ganar.
                 </div>
-                <div class="question" onclick="toggleAnswer(this)">¿Por qué lograron vencer los colonos a la poderosa Gran Bretaña?</div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué papel jugaron Francia y otras potencias extranjeras en la Guerra de Independencia?</div>
                 <div class="answer">
-                  La victoria de los colonos americanos sobre la poderosa Gran Bretaña resultó de una combinación única de factores geográficos, estratégicos, diplomáticos y políticos: la inmensa
-                  distancia geográfica (3,000 millas de océano) creaba desafíos logísticos extraordinarios para Gran Bretaña, con suministros y comunicaciones que tardaban meses, tropas que llegaban
-                  en condiciones deterioradas, y costos operativos enormemente inflados; el vasto territorio americano (casi 1,000 millas de costa y profundidad territorial) imposibilitaba una
-                  ocupación efectiva, permitiendo a Washington adoptar una estrategia de "guerra prolongada" donde simplemente mantener al Ejército Continental en el campo era una forma de victoria;
-                  el conocimiento superior del terreno y el apoyo de la población local proporcionaba a los americanos ventajas en inteligencia, reclutamiento y suministros, mientras los británicos
-                  operaban en territorio hostil; la intervención extranjera, especialmente de Francia (a partir de 1778), pero también de España y los Países Bajos, transformó un conflicto colonial en
-                  una guerra mundial que dispersó recursos británicos globalmente; la hábil diplomacia americana, particularmente de Benjamin Franklin en Francia, aseguró ayuda militar, naval y
-                  financiera crítica; el liderazgo excepcional de Washington, quien combinó habilidad táctica, visión estratégica y capacidad para mantener unido un ejército frágil durante ocho años
-                  de conflicto; la fragmentación política en Gran Bretaña, donde una significativa oposición "whig" en el Parlamento se oponía a la guerra, limitando el compromiso nacional británico;
-                  y la tenacidad y adaptabilidad de las fuerzas americanas, que evolucionaron de milicianos inexpertos a un ejército profesional, complementado por tácticas de guerrilla y milicias
-                  locales. También influyeron factores como el tiempo: Gran Bretaña inicialmente subestimó la determinación colonial, permitiendo que la rebelión se consolidara; y los objetivos
-                  asimétricos: los británicos necesitaban una victoria total para restaurar su autoridad, mientras los americanos simplemente necesitaban persistir y no perder decisivamente.
-                  Finalmente, aunque los colonos representaban solo una fracción de la población y riqueza británicas, la causa de la independencia generó un nivel de cohesión social y compromiso
-                  popular que, combinado con estos otros factores, permitió superar la aparente disparidad de poder y lograr una victoria que transformaría la historia mundial.
+                  El apoyo extranjero, particularmente francés, fue absolutamente crucial para la victoria americana. La asistencia extranjera evolucionó en distintas fases, comenzando con ayuda
+                  encubierta antes de convertirse en alianzas abiertas. Francia, motivada por el deseo de venganza tras su derrota en la Guerra de los Siete Años y la oportunidad de debilitar a su
+                  rival británico, proporcionó ayuda crucial incluso antes de entrar formalmente en la guerra. Entre 1775-1777, envió aproximadamente 90% de la pólvora utilizada por los americanos a
+                  través de la compañía ficticia Roderigue Hortalez et Cie, establecida por el dramaturgo y agente secreto Beaumarchais con aprobación gubernamental. Tras la victoria americana en
+                  Saratoga (octubre 1777), Francia firmó tratados de alianza y comercio (febrero 1778), reconociendo oficialmente la independencia estadounidense y entrando en guerra contra Gran
+                  Bretaña. La contribución francesa incluyó: préstamos y subsidios por aproximadamente 13 millones de libras (equivalentes a miles de millones en moneda actual); envío de un ejército
+                  expedicionario bajo el Conde de Rochambeau (crucial en Yorktown); operaciones navales bajo el Almirante de Grasse que negaron a los británicos su ventaja marítima en momentos
+                  críticos; equipamiento militar incluyendo más de 100,000 mosquetes; y apoyo diplomático en Europa. España, aunque nunca reconoció formalmente a los Estados Unidos durante la guerra,
+                  declaró guerra a Gran Bretaña en 1779, proporcionando préstamos sustanciales, permitiendo que los americanos utilizaran puertos españoles, y conduciendo campañas militares que
+                  distrajeron recursos británicos. Los Países Bajos proporcionaron préstamos importantes y se convirtieron en beligerantes en 1780. Voluntarios europeos como el Marqués de Lafayette,
+                  Tadeusz Kościuszko y Baron von Steuben aportaron experiencia militar europea. Sin esta asistencia, particularmente la intervención naval francesa en Yorktown que impidió la
+                  evacuación o refuerzo de Cornwallis, es dudoso que los americanos hubieran logrado una victoria militar definitiva contra las fuerzas británicas.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuál fue el impacto social de la guerra en diferentes grupos de americanos?</div>
+                <div class="answer">
+                  La Guerra de Independencia tuvo impactos sociales profundamente diferentes según clase, raza, género y región. Para los esclavos africanos, la guerra presentó tanto oportunidades
+                  como nuevos peligros. Aproximadamente 20,000 esclavos (principalmente del Sur) escaparon para unirse a los británicos tras proclamaciones como la de Lord Dunmore en 1775, que ofrecía
+                  libertad a esclavos que lucharan por la Corona. Aproximadamente 5,000 afroamericanos (principalmente del Norte) sirvieron en fuerzas patriotas. Varios estados del Norte comenzaron
+                  procesos de emancipación gradual durante o después de la guerra, influenciados por la contradicción entre luchar por libertad mientras mantenían esclavitud. Sin embargo, la
+                  esclavitud se consolidó en el Sur, con plantadores recuperando esclavos fugitivos tras la guerra. Para las mujeres, la guerra trajo responsabilidades ampliadas: manejaban granjas y
+                  negocios en ausencia de hombres, y algunas (como Mercy Otis Warren) participaron activamente en el discurso político. El concepto de "republicanismo femenino" valoraba la
+                  contribución de las mujeres como madres de futuros ciudadanos, aunque sin otorgarles derechos políticos formales. Para los nativos americanos, la guerra fue devastadora: la mayoría
+                  se alió con los británicos (viendo correctamente la expansión colonial como mayor amenaza), y tras la derrota británica perdieron su principal contrapeso contra la expansión
+                  estadounidense. Socialmente, la guerra aceleró tendencias igualitarias, debilitando jerarquías tradicionales. El porcentaje de hombres blancos con derecho a voto aumentó
+                  significativamente, y constituciones estatales eliminaron requisitos aristocráticos para cargos públicos. Económicamente, la guerra causó inflación severa, escasez de bienes, y
+                  trastorno comercial. Algunas élites mercantiles prosperaron mediante contratos militares y especulación, mientras pequeños agricultores frecuentemente sufrían confiscaciones forzosas
+                  de alimentos y animales. Aproximadamente 60,000 leales (15-20% de la población blanca) fueron exiliados, sus propiedades confiscadas y redistribuidas, alterando la estructura de
+                  propiedad, particularmente en áreas con alta concentración lealista. La guerra, con 25,000 americanos muertos (1% de la población), trastornó profundamente la vida familiar y
+                  comunitaria, pero también forjó una identidad nacional emergente entre personas que previamente se identificaban principalmente con sus colonias individuales.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Evento 8 -->
+        <!-- Evento 10: La Declaración de Independencia (Origen) -->
         <div class="event">
           <div class="event-date">1776</div>
           <div class="event-marker"></div>
@@ -1046,14 +1372,13 @@
               <h3 class="event-title">La Declaración de Independencia</h3>
               <p class="event-summary">El documento fundacional que proclamó la separación de las trece colonias de Gran Bretaña</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-8')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-8')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-8')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-10')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-10')">🖼️ Imagen</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-10')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-8" class="content-section text-section">
+              <div id="text-10" class="content-section text-section">
                 <p>
                   La
                   <strong>Declaración de Independencia</strong>
@@ -1078,7 +1403,7 @@
                   colgaremos por separado".
                 </p>
               </div>
-              <div id="image-8" class="content-section image-section">
+              <div id="image-10" class="content-section image-section">
                 <img src="https://www.worldhistory.org/img/r/p/1500x1500/18469.png.webp?v=1772406005-1707732862" alt="Firma de la Declaración de Independencia" class="event-image" />
                 <p class="caption">
                   Una pintura de Jean Leon Gerome Ferris que muestra a Thomas Jefferson (derecha), Benjamin Franklin (izquierda) y John Adams redactando la Declaración de Independencia de los Estados
@@ -1086,7 +1411,7 @@
                 </p>
               </div>
 
-              <div id="questions-8" class="content-section questions-section">
+              <div id="questions-10" class="content-section questions-section">
                 <div class="question" onclick="toggleAnswer(this)">¿Qué influencias filosóficas se reflejan en la Declaración de Independencia?</div>
                 <div class="answer">
                   La Declaración de Independencia refleja diversas influencias filosóficas que convergieron en el pensamiento político americano del siglo XVIII: la influencia dominante fue John
@@ -1104,7 +1429,7 @@
                 </div>
                 <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron las principales acusaciones contra el Rey Jorge III?</div>
                 <div class="answer">
-                  La Declaración de Independencia enumera 27 acusaciones específicas contra el Rey Jorge III, estratégicamente construidas para justificar la separación de las colonias: el rey es
+                  La Declaración de Independencia enumeraba 27 acusaciones específicas contra el Rey Jorge III, estratégicamente construidas para justificar la separación de las colonias: el rey es
                   acusado de interferir con el proceso legislativo, negándose a aprobar leyes "necesarias para el bien público", disolviendo cuerpos legislativos coloniales que se oponían a sus
                   invasiones de los derechos del pueblo, negándose a permitir la elección de nuevas legislaturas, y convocando reuniones legislativas en lugares inusuales, incómodos y distantes; se le
                   acusa de obstruir la administración de justicia, haciendo que los jueces dependieran de su voluntad para el cargo y el salario, y enviando "enjambres de funcionarios" para acosar al
@@ -1141,7 +1466,7 @@
           </div>
         </div>
 
-        <!-- Evento 9 -->
+        <!-- Evento 11: Los Artículos de la Confederación (Origen) -->
         <div class="event">
           <div class="event-date">1777-1781</div>
           <div class="event-marker"></div>
@@ -1151,14 +1476,13 @@
               <h3 class="event-title">Los Artículos de la Confederación</h3>
               <p class="event-summary">El primer documento constitucional de Estados Unidos que estableció un gobierno nacional débil</p>
               <div class="event-buttons">
-                <button class="btn btn-text" onclick="toggleSection(this, 'text-9')">📝 Texto</button>
-                <button class="btn btn-image" onclick="toggleSection(this, 'image-9')">🖼️ Imagen</button>
-
-                <button class="btn btn-question" onclick="toggleSection(this, 'questions-9')">❓ Preguntas</button>
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-11')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-11')">🖼️ Imagen</button>
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-11')">❓ Preguntas</button>
               </div>
             </div>
             <div class="event-content">
-              <div id="text-9" class="content-section text-section">
+              <div id="text-11" class="content-section text-section">
                 <p>
                   Los
                   <strong>Artículos de la Confederación</strong>
@@ -1182,7 +1506,7 @@
                   federal más fuerte. Estas deficiencias llevaron directamente a la Convención Constitucional de 1787 y a la redacción de la Constitución que actualmente rige Estados Unidos.
                 </p>
               </div>
-              <div id="image-9" class="content-section image-section">
+              <div id="image-11" class="content-section image-section">
                 <img
                   src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Articles_page1.jpg/960px-Articles_page1.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
                   alt="Artículos de la Confederación"
@@ -1190,7 +1514,7 @@
                 <p class="caption">Primera página de los Artículos de la Confederación, el primer documento constitucional de los Estados Unidos</p>
               </div>
 
-              <div id="questions-9" class="content-section questions-section">
+              <div id="questions-11" class="content-section questions-section">
                 <div class="question" onclick="toggleAnswer(this)">¿Por qué los Artículos de la Confederación establecían un gobierno central tan débil?</div>
                 <div class="answer">
                   Los Artículos de la Confederación establecieron un gobierno central deliberadamente débil debido a múltiples factores históricos y filosóficos: la experiencia colonial reciente bajo
@@ -1235,13 +1559,14 @@
                   invitado por la legislatura estatal, y carecía de fuerzas armadas propias o financiación independiente; expuso las dificultades económicas generalizadas resultantes de la incapacidad
                   del gobierno para desarrollar políticas monetarias y comerciales coherentes, gestionar la deuda nacional o regular la moneda; alimentó temores de anarquía social y "excesos
                   democráticos" entre muchos líderes revolucionarios, que vieron en la rebelión una amenaza potencial a la propiedad privada y al orden republicano; y ocurrió en un momento
-                  estratégico: la convocatoria de la Convención de Filadelfia ya había salido de la reunión de Annápolis, en septiembre de 1786, de modo que la rebelión no la originó, pero sí
-                  le dio urgencia, asistencia y argumentos, proporcionando a los federalistas un ejemplo práctico de las consecuencias de un gobierno central débil. George Washington expresó la reacción de muchos cuando escribió a Henry Knox, el 26 de diciembre de 1786, que "hay materias inflamables en todos los estados, a las
-                  que una chispa podría prender fuego" (<a href="../fuentes/washington-knox-1786.html">carta completa en el Archivo de fuentes</a>), mientras
-                  que Henry Knox advirtió alarmistamente sobre un espíritu de "nivelación social" que amenazaba los derechos de propiedad. La rebelión cambió fundamentalmente los términos del debate
-                  político, convenciendo a figuras clave como James Madison, Alexander Hamilton y Washington de que la preservación de la república requería un gobierno nacional más fuerte. Así, en la
-                  Convención Constitucional, los delegados repetidamente citaron la Rebelión de Shays como evidencia de la necesidad de abandonar los Artículos, transformando lo que inicialmente se
-                  planeó como una revisión limitada en la creación de un nuevo sistema constitucional con poderes ejecutivos, legislativos y judiciales sustancialmente fortalecidos.
+                  estratégico: la convocatoria de la Convención de Filadelfia ya había salido de la reunión de Annápolis, en septiembre de 1786, de modo que la rebelión no la originó, pero sí le dio
+                  urgencia, asistencia y argumentos, proporcionando a los federalistas un ejemplo práctico de las consecuencias de un gobierno central débil. George Washington expresó la reacción de
+                  muchos cuando escribió a Henry Knox, el 26 de diciembre de 1786, que "hay materias inflamables en todos los estados, a las que una chispa podría prender fuego" (
+                  <a href="../fuentes/washington-knox-1786.html">carta completa en el Archivo de fuentes</a>
+                  ), mientras que Henry Knox advirtió alarmistamente sobre un espíritu de "nivelación social" que amenazaba los derechos de propiedad. La rebelión cambió fundamentalmente los términos
+                  del debate político, convenciendo a figuras clave como James Madison, Alexander Hamilton y Washington de que la preservación de la república requería un gobierno nacional más fuerte.
+                  Así, en la Convención Constitucional, los delegados repetidamente citaron la Rebelión de Shays como evidencia de la necesidad de abandonar los Artículos, transformando lo que
+                  inicialmente se planeó como una revisión limitada en la creación de un nuevo sistema constitucional con poderes ejecutivos, legislativos y judiciales sustancialmente fortalecidos.
                 </div>
               </div>
             </div>
