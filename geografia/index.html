@@ -1,9 +1,23 @@
 <!doctype html>
+<!--
+  Elementos de la geografía · Guía
+  Spanish ASE Social Studies · Tema 7 · Economía y geografía del mundo conectado
+  © 2026 José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0
+  Internacional (CC BY-NC-SA 4.0) — https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elementos de la Geografía — GED en Español</title>
+    <meta
+      name="description"
+      content="Guía de geografía para el examen GED de Estudios sociales en español: mapas y escalas, clima y biomas, población, pirámides de población y migración, regiones y medio ambiente." />
+    <meta name="author" content="José M. Fernández — Harry S. Truman College, City Colleges of Chicago" />
+    <meta name="license" content="CC BY-NC-SA 4.0" />
+    <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" />
     <style>
       /* ============================================================
    Guía de Geografía — GEDparaHispanos.com
@@ -890,6 +904,36 @@
           display: none;
         }
       }
+      .navcurso {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 14px;
+        background: #eef2ea;
+        border: 1px solid #cfdac6;
+        border-left: 6px solid #2f6b3a;
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
+        margin-bottom: 1.2rem;
+        font-size: 0.9rem;
+      }
+      .navcurso a {
+        color: #26562f;
+        text-decoration: none;
+        border-bottom: 1px solid #cfdac6;
+      }
+      .navcurso a:hover,
+      .navcurso a:focus {
+        border-bottom-color: #26562f;
+        text-decoration: underline;
+      }
+      .navcurso .nav-actual {
+        color: #26562f;
+        font-weight: bold;
+      }
+      .navcurso .nav-sep {
+        color: #5a6b52;
+      }
     </style>
   </head>
   <body>
@@ -897,6 +941,16 @@
       <!-- ============================================================
      PORTADA
      ============================================================ -->
+      <nav class="navcurso" aria-label="Navegación del curso">
+        <a href="../index.html">Índice del curso</a>
+        <span class="nav-sep" aria-hidden="true">·</span>
+        <a href="../index.html#tema-7">Tema 7 · Economía y geografía</a>
+        <span class="nav-sep" aria-hidden="true">·</span>
+        <a href="../economia/">Guía de economía</a>
+        <span class="nav-sep" aria-hidden="true">·</span>
+        <span class="nav-actual" aria-current="page">Guía de geografía</span>
+      </nav>
+
       <header class="cover">
         <p class="eyebrow">GED® · Estudios Sociales · Geografía</p>
         <h1>Elementos de la Geografía</h1>
@@ -936,7 +990,7 @@
           <li><a href="#s3">Características del planeta Tierra</a></li>
           <li><a href="#s4">El entorno físico</a></li>
           <li><a href="#s5">Clima y ecosistemas</a></li>
-          <li><a href="#s6">Población y migración</a></li>
+          <li><a href="#s6">Población, pirámides y migración</a></li>
           <li><a href="#s7">Regiones y culturas</a></li>
           <li><a href="#s8">Humanos y medio ambiente</a></li>
           <li><a href="#quiz">Quiz de autoverificación (14 preguntas)</a></li>
@@ -1028,7 +1082,7 @@
 
           <div class="ssp-conn">
             <strong>Conexión con las otras guías:</strong>
-            la geografía se conecta directamente con la guía de Causa y Efecto (SSP.5) — factores geográficos son causas frecuentes en la historia — y con la guía de US History — cada período tuvo su
+            la geografía se conecta directamente con la guía de Causa y Efecto (SSP.3) — factores geográficos son causas frecuentes en la historia — y con la guía de US History — cada período tuvo su
             dinámica geográfica (expansión al oeste, inmigración, industrialización en el Noreste, etc.).
           </div>
         </div>
@@ -1252,7 +1306,10 @@
             </div>
             <div class="card climate">
               <h5>🔥 Manto</h5>
-              <p>Capa intermedia (desde 70 hasta 2 900 km de profundidad). Roca semifundida que se mueve muy lentamente y causa los terremotos y erupciones.</p>
+              <p>
+                Capa intermedia (desde 70 hasta 2 900 km de profundidad). Roca semifundida que se mueve muy lentamente. Ese movimiento arrastra las placas de la corteza, y es en los bordes de esas
+                placas donde ocurren los terremotos y las erupciones.
+              </p>
             </div>
             <div class="card human">
               <h5>⚙️ Núcleo</h5>
@@ -1267,7 +1324,9 @@
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Earth-crust-cutaway-spanish.svg/1920px-Earth-crust-cutaway-spanish.svg.png"
               alt="Diagrama de las capas internas de la Tierra (corteza, manto, núcleo)." />
-            <div class="img-caption">Diagrama de las capas internas de la Tierra. Wikipedia (dominio público).</div>
+            <div class="img-caption">
+              Diagrama de las capas internas de la Tierra, alojado en Wikimedia Commons. Compruebe su licencia en el archivo de origen antes de reutilizarlo fuera de esta guía.
+            </div>
           </div>
 
           <h3>Los dos movimientos principales</h3>
@@ -1712,7 +1771,7 @@
           <div class="image-box">
             <div class="img-label">Imagen: Temperatura media anual en la Tierra</div>
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Annual_Average_Temperature_Map.jpg" alt="Mapa mundial con zonas de temperatura media anual, en gradación de colores." />
-            <div class="img-caption">Temperatura media anual. Wikipedia (dominio público).</div>
+            <div class="img-caption">Temperatura media anual, mapa alojado en Wikimedia Commons. Compruebe su licencia en el archivo de origen antes de reutilizarlo fuera de esta guía.</div>
           </div>
 
           <h3>
@@ -1778,13 +1837,238 @@
             </div>
             <div class="card human">
               <h5>🌆 Urbanización</h5>
-              <p>Proceso por el cual aumenta el porcentaje que vive en ciudades. En 2025 más del 56% de la población mundial vive en ciudades; en EE. UU. supera el 83%.</p>
+              <p>
+                Proceso por el cual aumenta el porcentaje que vive en ciudades. Ya vive en ciudades algo más de la mitad de la población mundial, y en EE. UU. supera el 80%. La cifra sube cada año:
+                compruebe la última antes de citarla.
+              </p>
             </div>
             <div class="card human">
               <h5>👴 Pirámide poblacional</h5>
-              <p>Gráfico que muestra la distribución por edad y sexo. En países en desarrollo tiene base ancha (muchos jóvenes); en países desarrollados es más cilíndrica o invertida.</p>
+              <p>
+                Gráfico que muestra la distribución por edad y sexo. Su
+                <em>forma</em>
+                permite anticipar los problemas que tendrá un país dentro de veinte años. Se explica a fondo más abajo.
+              </p>
             </div>
           </div>
+
+          <h3>Cómo se lee una pirámide de población</h3>
+
+          <p>
+            Una pirámide de población es un gráfico de barras girado: cada barra es un grupo de edad, los hombres a la izquierda y las mujeres a la derecha, los más jóvenes abajo y los más viejos
+            arriba. Lo que importa no son las cifras exactas: es
+
+            <strong>la forma</strong>
+
+            . La forma de hoy dice qué va a pasar dentro de veinte años, porque los que hoy están abajo estarán entonces en medio.
+          </p>
+
+          <div class="image-box">
+            <div class="img-label">Diagrama: Las tres formas básicas de una pirámide de población</div>
+
+            <svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tit-pir desc-pir" style="width: 100%; height: auto">
+              <title id="tit-pir">Tres pirámides de población: expansiva, estacionaria y regresiva</title>
+
+              <desc id="desc-pir">
+                La pirámide expansiva tiene la base muy ancha y se estrecha rápidamente hacia arriba, en forma de triángulo. La estacionaria tiene las barras de los grupos jóvenes y adultos casi
+                iguales, con forma de columna que solo se estrecha en la cima. La regresiva tiene la base más estrecha que la parte media, con forma de urna o de pera invertida.
+              </desc>
+
+              <text x="110" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Expansiva</text>
+
+              <rect x="60" y="18" width="46" height="14" fill="#1f618d" />
+
+              <rect x="114" y="18" width="46" height="14" fill="#a04000" />
+
+              <rect x="66" y="36" width="40" height="14" fill="#1f618d" />
+
+              <rect x="114" y="36" width="40" height="14" fill="#a04000" />
+
+              <rect x="72" y="54" width="34" height="14" fill="#1f618d" />
+
+              <rect x="114" y="54" width="34" height="14" fill="#a04000" />
+
+              <rect x="79" y="72" width="27" height="14" fill="#1f618d" />
+
+              <rect x="114" y="72" width="27" height="14" fill="#a04000" />
+
+              <rect x="86" y="90" width="20" height="14" fill="#1f618d" />
+
+              <rect x="114" y="90" width="20" height="14" fill="#a04000" />
+
+              <rect x="93" y="108" width="13" height="14" fill="#1f618d" />
+
+              <rect x="114" y="108" width="13" height="14" fill="#a04000" />
+
+              <rect x="99" y="126" width="7" height="14" fill="#1f618d" />
+
+              <rect x="114" y="126" width="7" height="14" fill="#a04000" />
+
+              <text x="330" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Estacionaria</text>
+
+              <rect x="296" y="18" width="30" height="14" fill="#1f618d" />
+
+              <rect x="334" y="18" width="30" height="14" fill="#a04000" />
+
+              <rect x="295" y="36" width="31" height="14" fill="#1f618d" />
+
+              <rect x="334" y="36" width="31" height="14" fill="#a04000" />
+
+              <rect x="295" y="54" width="31" height="14" fill="#1f618d" />
+
+              <rect x="334" y="54" width="31" height="14" fill="#a04000" />
+
+              <rect x="296" y="72" width="30" height="14" fill="#1f618d" />
+
+              <rect x="334" y="72" width="30" height="14" fill="#a04000" />
+
+              <rect x="300" y="90" width="26" height="14" fill="#1f618d" />
+
+              <rect x="334" y="90" width="26" height="14" fill="#a04000" />
+
+              <rect x="308" y="108" width="18" height="14" fill="#1f618d" />
+
+              <rect x="334" y="108" width="18" height="14" fill="#a04000" />
+
+              <rect x="318" y="126" width="8" height="14" fill="#1f618d" />
+
+              <rect x="334" y="126" width="8" height="14" fill="#a04000" />
+
+              <text x="550" y="12" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c2c2c">Regresiva</text>
+
+              <rect x="530" y="18" width="16" height="14" fill="#1f618d" />
+
+              <rect x="554" y="18" width="16" height="14" fill="#a04000" />
+
+              <rect x="527" y="36" width="19" height="14" fill="#1f618d" />
+
+              <rect x="554" y="36" width="19" height="14" fill="#a04000" />
+
+              <rect x="522" y="54" width="24" height="14" fill="#1f618d" />
+
+              <rect x="554" y="54" width="24" height="14" fill="#a04000" />
+
+              <rect x="516" y="72" width="30" height="14" fill="#1f618d" />
+
+              <rect x="554" y="72" width="30" height="14" fill="#a04000" />
+
+              <rect x="514" y="90" width="32" height="14" fill="#1f618d" />
+
+              <rect x="554" y="90" width="32" height="14" fill="#a04000" />
+
+              <rect x="520" y="108" width="26" height="14" fill="#1f618d" />
+
+              <rect x="554" y="108" width="26" height="14" fill="#a04000" />
+
+              <rect x="534" y="126" width="12" height="14" fill="#1f618d" />
+
+              <rect x="554" y="126" width="12" height="14" fill="#a04000" />
+
+              <text x="110" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Muchos niños, pocos ancianos</text>
+
+              <text x="330" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Cada generación repone a la anterior</text>
+
+              <text x="550" y="160" text-anchor="middle" font-size="11" fill="#4a4a4a">Menos niños que adultos</text>
+
+              <rect x="248" y="176" width="14" height="12" fill="#1f618d" />
+
+              <text x="268" y="186" font-size="11" fill="#2c2c2c">Hombres</text>
+
+              <rect x="338" y="176" width="14" height="12" fill="#a04000" />
+
+              <text x="358" y="186" font-size="11" fill="#2c2c2c">Mujeres</text>
+            </svg>
+
+            <div class="img-caption">Las tres formas básicas. Esquema simplificado: cada barra representa un grupo de edad, de los más jóvenes abajo a los más viejos arriba.</div>
+          </div>
+
+          <table>
+            <caption>Qué anticipa cada forma sobre los próximos veinte años.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Forma</th>
+
+                <th scope="col">Qué se ve</th>
+
+                <th scope="col">Qué necesita ese país ahora</th>
+
+                <th scope="col">Qué le espera en veinte años</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Expansiva</strong>
+                  <br />
+                  (triángulo)
+                </td>
+
+                <td>Base muy ancha y cima estrecha: nacen muchos niños y poca gente llega a vieja.</td>
+
+                <td>Escuelas, vacunas, maternidad, alimentos.</td>
+
+                <td>Una avalancha de jóvenes buscando su primer empleo. Si no hay trabajo, habrá emigración.</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Estacionaria</strong>
+                  <br />
+                  (columna)
+                </td>
+
+                <td>Los grupos jóvenes y adultos son parecidos: cada generación repone a la anterior.</td>
+
+                <td>Mantener lo que ya tiene.</td>
+
+                <td>Poco cambio brusco. Es la forma más estable de las tres.</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Regresiva</strong>
+                  <br />
+                  (urna)
+                </td>
+
+                <td>La base es más estrecha que el centro: nacen menos niños de los que hacen falta para reponer.</td>
+
+                <td>Residencias, pensiones, atención sanitaria de mayores.</td>
+
+                <td>Menos trabajadores sosteniendo a más jubilados. Suele responderse con inmigración, con más edad de jubilación o con las dos cosas.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="callout note">
+            <strong>Cómo se pregunta esto en el GED.</strong>
+
+            No le van a pedir la cifra de ninguna barra. Le van a enseñar una pirámide y le van a preguntar
+
+            <strong>qué se puede predecir</strong>
+
+            . El razonamiento siempre es el mismo y cabe en una frase:
+            <em>los que hoy están en esta barra, dentro de veinte años estarán en aquella</em>
+            . Mire la barra más ancha, cuéntele veinte años hacia arriba y pregúntese qué necesitará esa gente cuando llegue allí.
+          </aside>
+
+          <aside class="callout good">
+            <strong>Practique con las tres del diagrama.</strong>
+
+            Elija una y escriba tres desafíos concretos que ese país enfrentará dentro de veinte años, justificando cada uno con la forma del gráfico y no con lo que usted crea del país. Después
+            compruébelo con la tabla de arriba. Si alguno de sus tres desafíos no se puede deducir de la forma, quítelo: eso es una opinión, no una lectura del dato.
+          </aside>
+
+          <aside class="callout warn">
+            <strong>Dos trampas frecuentes.</strong>
+
+            La primera: una pirámide muestra
+            <em>edades</em>
+            , no calidad de vida. Una base ancha no significa pobreza, aunque suelan ir juntas. La segunda: una muesca o un escalón en mitad de una pirámide casi siempre tiene una causa histórica: una
+            guerra, una hambruna o una emigración masiva se ven como un hueco en el grupo de edad correspondiente. Esa muesca es un dato de historia dibujado en un gráfico de población.
+          </aside>
 
           <h3>Factores que atraen o expulsan población</h3>
 
@@ -1826,7 +2110,10 @@
           <div class="image-box">
             <div class="img-label">Imagen: Densidad de la población mundial</div>
             <img src="https://portalacademico.cch.unam.mx/sites/default/files/densidad-poblacion-2015.jpg" alt="Gráfico de distribución de la población mundial por continente." />
-            <div class="img-caption">Países del mundo por densidad de población (2026). Portal Académico CCH-UNAM (dominio público).</div>
+            <div class="img-caption">
+              Países del mundo por densidad de población, datos de 2015. Portal Académico CCH-UNAM, bajo licencia Creative Commons Reconocimiento-NoComercial-SinObraDerivada; no es dominio público. Se
+              enlaza sin modificar.
+            </div>
           </div>
 
           <h3>Migraciones: voluntarias y forzadas</h3>
@@ -1899,7 +2186,7 @@
           <div class="ssp-conn">
             <strong>Conexión con US History:</strong>
             las tres grandes olas migratorias son parte esencial de la historia estadounidense (períodos 5, 6 y 7 de la guía de US History). Cada una tuvo factores de expulsión y atracción específicos
-            — buen ejemplo para aplicar causa-efecto (SSP.5).
+            — buen ejemplo para aplicar causa-efecto (SSP.3).
           </div>
         </div>
       </details>
@@ -1981,7 +2268,7 @@
               <ul>
                 <li>De las Rocosas al Pacífico</li>
                 <li>Geografía muy variada: desiertos, bosques, costa, montañas</li>
-                <li>California: 5.ª economía del mundo si fuera país</li>
+                <li>California, sola, produce tanto como los mayores países del mundo: unos $4,1 billones en 2024</li>
                 <li>Silicon Valley, Hollywood, industria aeroespacial</li>
               </ul>
             </div>
@@ -2175,7 +2462,9 @@
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Efecto-invernadero-1-728.jpg"
               alt="Infografía que explica el efecto invernadero: radiación solar atrapada por gases atmosféricos." />
-            <div class="img-caption">Infografía del efecto invernadero y cambio climático. Wikipedia.</div>
+            <div class="img-caption">
+              Infografía del efecto invernadero y cambio climático, alojada en Wikimedia Commons. Compruebe su licencia en el archivo de origen antes de reutilizarla fuera de esta guía.
+            </div>
           </div>
 
           <div class="video-box">
@@ -2380,7 +2669,16 @@
      ============================================================ -->
       <div class="footer">
         <p>
-          GEDparaHispanos.com · Elementos de la Geografía · v2.1
+          GEDparaHispanos.com · Elementos de la Geografía · v2.2
+          <br />
+          José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+          <br />
+          © 2026. Esta obra está licenciada bajo
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>
+          .
+          <br />
+          Correcciones v2.2: bloque nuevo de pirámides de población con diagrama de las tres formas y su lectura; licencias de las imágenes externas corregidas; California sin puesto fijo en el
+          ranking mundial; precisado dónde ocurren los terremotos; numeración SSP alineada con el plan curricular.
           <br />
           Correcciones v2.1: orden título/leyenda consistente; capas de la Tierra con profundidades claras; diagrama de coordenadas ajustado (Chicago 42°N, 87°O); biomas por latitud y áreas culturales
           en SVG autónomo; glosario completo.
@@ -2647,6 +2945,10 @@
       }
 
       renderQuiz();
+    </script>
+  </body>
+</html>
+enderQuiz();
     </script>
   </body>
 </html>
