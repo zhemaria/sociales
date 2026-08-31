@@ -1,0 +1,1267 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Línea de Tiempo: Origen de los Estados Unidos de América</title>
+    <style>
+      :root {
+        --primary-color: #3c5b8d;
+        --accent-color: #c41230;
+        --text-color: #333;
+        --bg-color: #f5f7fa;
+        --card-bg: #ffffff;
+        --timeline-width: 6px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 30px 0;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .timeline-container {
+        position: relative;
+        padding: 0 0 100px 0;
+      }
+
+      .timeline {
+        position: absolute;
+        width: var(--timeline-width);
+        background-color: var(--primary-color);
+        left: 50px;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+      }
+
+      .event {
+        position: relative;
+        margin-bottom: 80px;
+        padding-left: 100px;
+        max-width: 800px;
+        min-height: 100px;
+      }
+
+      .event-marker {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: var(--accent-color);
+        border: 4px solid var(--primary-color);
+        border-radius: 50%;
+        left: 41px;
+        top: 15px;
+        z-index: 2;
+      }
+
+      .event-connector {
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: var(--accent-color);
+        left: 63px;
+        top: 25px;
+      }
+
+      .event-date {
+        position: absolute;
+        left: -120px;
+        width: 150px;
+        top: 15px;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-align: right;
+        font-size: 1.2rem;
+      }
+
+      .event-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-header {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+      }
+
+      .event-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      .event-summary {
+        margin-bottom: 15px;
+      }
+
+      .event-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.2s ease;
+        color: white;
+      }
+
+      .btn-text {
+        background-color: #3c5b8d;
+      }
+
+      .btn-text:hover {
+        background-color: #304973;
+      }
+
+      .btn-image {
+        background-color: #9b59b6;
+      }
+
+      .btn-image:hover {
+        background-color: #8e44ad;
+      }
+
+      .btn-video {
+        background-color: #c41230;
+      }
+
+      .btn-video:hover {
+        background-color: #a10e28;
+      }
+
+      .btn-question {
+        background-color: #2ecc71;
+      }
+
+      .btn-question:hover {
+        background-color: #27ae60;
+      }
+
+      .event-content {
+        padding: 20px;
+        display: none;
+      }
+
+      .content-section {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #f5f7fa;
+        display: none;
+      }
+
+      .content-section.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #2ecc71;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+
+      .question:hover {
+        background-color: #e8e8e8;
+      }
+
+      .answer {
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        border-left: 4px solid #2ecc71;
+        display: none;
+      }
+
+      .answer.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      img.event-image {
+        max-width: 100%;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .caption {
+        text-align: center;
+        font-style: italic;
+        color: #777;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .event {
+          padding-left: 60px;
+        }
+
+        .timeline {
+          left: 30px;
+        }
+
+        .event-marker {
+          left: 21px;
+        }
+
+        .event-connector {
+          width: 30px;
+          left: 43px;
+        }
+
+        .event-date {
+          position: relative;
+          left: 0;
+          text-align: left;
+          margin-bottom: 10px;
+          width: auto;
+        }
+
+        .event-buttons {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Origen de los Estados Unidos de América</h1>
+        <p>Línea de Tiempo Interactiva</p>
+      </header>
+      <div class="timeline-container">
+        <div class="timeline"></div>
+
+        <!-- Evento 1 -->
+        <div class="event">
+          <div class="event-date">1600-1722</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">La Confederación Iroquesa</h3>
+              <p class="event-summary">Una influyente alianza de naciones nativas americanas que inspiró aspectos del sistema político estadounidense</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-1')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-1')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-1')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-1" class="content-section text-section">
+                <p>
+                  La
+                  <strong>Confederación Iroquesa</strong>
+                  , también conocida como la Liga de las Cinco Naciones (posteriormente Seis Naciones), fue una poderosa alianza de pueblos nativos americanos que habitaban la región de los Grandes
+                  Lagos y el noreste de Norteamérica. Originalmente formada entre 1570 y 1600, estaba compuesta por cinco naciones: Mohawk, Oneida, Onondaga, Cayuga y Seneca. En 1722, los Tuscarora se
+                  unieron a la confederación, convirtiéndola en la Liga de las Seis Naciones.
+                </p>
+                <p>
+                  Esta confederación representa uno de los primeros y más sofisticados sistemas de gobierno democrático en América del Norte. Su estructura política y social se basaba en la Gran Ley
+                  de la Paz (Gayanashagowa), una constitución oral que establecía un sistema de gobierno representativo con controles y equilibrios de poder. Cada nación mantenía su autonomía en
+                  asuntos internos, pero se unían para tomar decisiones que afectaban a toda la confederación mediante un consejo central de sachems (jefes).
+                </p>
+                <p>
+                  La importancia de la Confederación Iroquesa en la historia de Estados Unidos es significativa, ya que varios Padres Fundadores, incluyendo a Benjamin Franklin, admiraban su sistema
+                  de gobierno. Existen evidencias históricas que sugieren que aspectos de la Gran Ley de la Paz influyeron en el diseño de la Constitución estadounidense y en el concepto del
+                  federalismo. La estructura de la confederación, con naciones individuales manteniendo soberanía dentro de una unión más amplia, presenta paralelismos con el sistema federal que
+                  posteriormente adoptarían los Estados Unidos.
+                </p>
+              </div>
+              <div id="image-1" class="content-section image-section">
+                <img src="https://la5tapata.net/wp-content/uploads/2020/06/Confederaci%C3%B3n-Iroquesa.jpg" alt="Representación de la Confederación Iroquesa" class="event-image" />
+                <p class="caption">Representación artística de un consejo de la Confederación Iroquesa, donde los jefes de las distintas naciones deliberaban sobre asuntos comunes</p>
+              </div>
+
+              <div id="questions-1" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo influenció la Confederación Iroquesa en la Constitución de Estados Unidos?</div>
+                <div class="answer">
+                  La Confederación Iroquesa ejerció una influencia notable en la formación de la Constitución de Estados Unidos a través de varios elementos: primero, su sistema federal de gobierno,
+                  donde naciones independientes se unían bajo un consejo común mientras mantenían autonomía interna, inspiró el federalismo estadounidense; segundo, su sistema de controles y
+                  equilibrios de poder entre diferentes ramas del gobierno se reflejó en la separación de poderes constitucional; tercero, el proceso de deliberación y toma de decisiones por consenso
+                  influyó en los conceptos de debate legislativo y representación; cuarto, la participación de las mujeres en la selección de líderes y la toma de decisiones (aunque no se adoptó
+                  inicialmente en la Constitución estadounidense) representaba un modelo democrático avanzado que impresionó a observadores como Franklin y Jefferson; y quinto, el concepto de una ley
+                  fundamental escrita (aunque la Gran Ley de la Paz era oral, se transmitía mediante cinturones de wampum) que establecía las reglas del gobierno resonó con la idea de una constitución
+                  escrita. Estos conceptos llegaron a los fundadores a través de sus interacciones con representantes iroqueses en tratados y conferencias, y por los escritos de Benjamin Franklin,
+                  quien publicó extensamente sobre el sistema iroqués después de su participación en el Congreso de Albany de 1754. Aunque la influencia exacta sigue siendo debatida por historiadores,
+                  el Congreso de Estados Unidos reconoció formalmente esta contribución en 1988 con la Resolución Concurrente 331, que agradece a los iroqueses por su influencia en la Constitución y
+                  el sistema federal estadounidense.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué era la Gran Ley de la Paz y cómo funcionaba?</div>
+                <div class="answer">
+                  La Gran Ley de la Paz (Gayanashagowa) era la constitución oral de la Confederación Iroquesa, establecida según la tradición por el Peacemaker con la ayuda de Hiawatha, para terminar
+                  con los conflictos entre las naciones iroquesas. Esta constitución establecía un complejo sistema de gobierno representativo con los siguientes elementos fundamentales: un consejo
+                  confederado compuesto por 50 sachems (jefes) de las diferentes naciones, con posiciones hereditarias transmitidas por línea materna; un sistema de toma de decisiones que requería
+                  consenso (unanimidad) para los asuntos importantes que afectaban a toda la confederación; procedimientos formales para presentar asuntos al consejo, con debates primero en los
+                  clanes, luego entre naciones y finalmente en el consejo general; un sistema de clanes matrilineales que cruzaba las fronteras nacionales, creando vínculos familiares entre todas las
+                  naciones de la confederación; un notable papel para las mujeres, quienes seleccionaban a los sachems masculinos, podían destituirlos si se consideraba que no actuaban en interés del
+                  pueblo, y tenían voz en asuntos de guerra y paz; y un elaborado sistema de rituales, protocolos y ceremonias que formalizaban los procesos políticos. La Gran Ley de la Paz se
+                  preservaba y transmitía de generación en generación a través de la memorización ritual y el uso de cinturones de wampum como dispositivos mnemotécnicos. Esta constitución no solo
+                  proporcionaba un marco político, sino que también integraba aspectos espirituales, sociales y diplomáticos, creando un sistema holístico de gobierno que promovía la paz entre las
+                  naciones miembros y establecía protocolos para las relaciones con otros pueblos.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué papel jugó la Confederación Iroquesa en las guerras coloniales?</div>
+                <div class="answer">
+                  La Confederación Iroquesa desempeñó un papel crucial y estratégico durante las guerras coloniales en Norteamérica, actuando como una poderosa fuerza militar y diplomática que influía
+                  significativamente en el equilibrio de poder entre franceses y británicos. Durante el siglo XVII y principios del XVIII, la confederación generalmente mantuvo una alianza con los
+                  holandeses y posteriormente con los británicos (Covenant Chain), mientras mantenía relaciones hostiles con los franceses y sus aliados nativos, particularmente los Hurones y
+                  Algonquinos. Este posicionamiento estratégico les permitió controlar importantes rutas comerciales, especialmente en el lucrativo comercio de pieles. En la Guerra Franco-India
+                  (1754-1763), aunque inicialmente intentaron mantener la neutralidad, la mayoría de las naciones iroquesas eventualmente se alinearon con los británicos, con la notable excepción de
+                  algunos grupos Seneca y los Oneida. Su participación en esta guerra fue decisiva para la victoria británica, ya que ayudaron a proteger la frontera colonial y realizaron expediciones
+                  militares contra asentamientos franceses y sus aliados nativos. Durante la Revolución Americana, la confederación enfrentó su mayor crisis política, pues no pudo mantener una
+                  posición unificada: los Oneida y Tuscarora apoyaron generalmente a los colonos americanos, mientras que Mohawk, Onondaga, Cayuga y Seneca se aliaron mayoritariamente con los
+                  británicos, liderados por Joseph Brant. Esta división interna, junto con las devastadoras campañas militares como la Expedición Sullivan de 1779, que destruyó numerosos pueblos
+                  iroqueses, debilitó permanentemente el poder político y territorial de la confederación. Tras la guerra, muchos iroqueses pro-británicos se refugiaron en Canadá, estableciendo nuevas
+                  comunidades, mientras que aquellos que permanecieron en Estados Unidos fueron relegados a reservas cada vez más reducidas. A pesar de estas pérdidas, la Confederación Iroquesa
+                  continuó existiendo como entidad política, adaptándose a las nuevas realidades y manteniendo su estructura de gobierno tradicional junto con sus principios culturales.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="event">
+          <div class="event-date">1607-1732</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Formación de las 13 Colonias</h3>
+              <p class="event-summary">Establecimiento de los asentamientos británicos que se convertirían en la base de los Estados Unidos</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-2')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-2')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-2')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-2" class="content-section text-section">
+                <p>
+                  Entre 1607 y 1732, Gran Bretaña estableció
+                  <strong>trece colonias</strong>
+                  a lo largo de la costa este de Norteamérica, que eventualmente formarían los primeros estados de los Estados Unidos. El proceso comenzó con la fundación de Jamestown (Virginia) en
+                  1607 por la Compañía de Virginia, seguida por la llegada de los Peregrinos a Plymouth (Massachusetts) en 1620. La última colonia en establecerse fue Georgia en 1732, fundada en parte
+                  como zona de amortiguamiento contra la Florida española.
+                </p>
+                <p>
+                  Las colonias se fundaron por diversas razones: algunas como empresas comerciales (Virginia, Nueva York), otras como refugios religiosos (Massachusetts, Pensilvania, Maryland), y
+                  otras como extensiones del poder real (Georgia, Carolina del Norte y del Sur). Aunque todas estaban bajo el control británico, desarrollaron diferentes estructuras de gobierno:
+                  colonias reales (administradas directamente por la Corona), colonias propietarias (otorgadas a individuos o grupos) y colonias con carta propia (con mayor autonomía).
+                </p>
+                <p>
+                  Para 1750, estas colonias albergaban aproximadamente 1.5 millones de habitantes, incluyendo colonos europeos, esclavos africanos y poblaciones nativas americanas. Esta diversidad
+                  demográfica, junto con las diferencias geográficas, económicas y sociales entre las colonias, sentaría las bases para muchos de los desafíos y dinámicas que caracterizarían a la
+                  futura nación. A pesar de estas diferencias, las colonias comenzaron a desarrollar una identidad compartida e intereses comunes que eventualmente conducirían al movimiento por la
+                  independencia.
+                </p>
+              </div>
+              <div id="image-2" class="content-section image-section">
+                <img src="https://www.socialhizo.com/images/mapas/trece-colonias.png" alt="Mapa de las 13 Colonias" class="event-image" />
+                <p class="caption">Mapa histórico mostrando la distribución geográfica de las trece colonias británicas en Norteamérica hacia 1750</p>
+              </div>
+
+              <div id="questions-2" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles eran las 13 colonias y cuándo fueron fundadas?</div>
+                <div class="answer">
+                  Las 13 colonias británicas que eventualmente se convertirían en los primeros estados de Estados Unidos fueron establecidas en el siguiente orden cronológico: Virginia (1607), fundada
+                  por la Compañía de Virginia como la primera colonia británica permanente en Jamestown; Massachusetts (1620), iniciada por los Peregrinos en Plymouth y expandida por los Puritanos en
+                  la Bahía de Massachusetts (1630); New Hampshire (1623), originalmente parte de Massachusetts, establecida como colonia separada en 1679; Maryland (1634), fundada como refugio para
+                  católicos por Lord Baltimore; Connecticut (1636), establecida por colonos de Massachusetts bajo Thomas Hooker; Rhode Island (1636), fundada por Roger Williams como santuario para la
+                  libertad religiosa; Delaware (1638), inicialmente colonizada por suecos y holandeses antes de pasar a control inglés en 1664; Carolina del Norte (1653) y Carolina del Sur (1663),
+                  originalmente una sola colonia dividida en 1712; New Jersey (1664), establecida tras la captura de territorio holandés; Nueva York (1664), anteriormente Nueva Ámsterdam holandesa,
+                  tomada por los ingleses y nombrada en honor al Duque de York; Pensilvania (1682), fundada por William Penn como refugio para cuáqueros; y Georgia (1732), la última colonia,
+                  establecida como zona de amortiguamiento contra Florida española y como lugar para deudores ingleses. Este proceso de colonización abarcó 125 años, creando un mosaico de entidades
+                  políticas con diferentes orígenes, propósitos y sistemas de gobierno que eventualmente encontrarían causa común en la resistencia al control británico.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué tipos de sistemas de gobierno existían en las colonias?</div>
+                <div class="answer">
+                  Las trece colonias británicas desarrollaron tres principales sistemas de gobierno, cada uno con diferente grado de control directo desde Londres: las colonias reales o de la Corona
+                  (Nueva Hampshire, Nueva York, Nueva Jersey, Virginia, Carolina del Norte, Carolina del Sur y Georgia) eran administradas directamente por la Corona británica, con gobernadores
+                  nombrados por el rey y consejos ejecutivos designados, aunque mantenían asambleas elegidas localmente con poderes limitados; las colonias propietarias (Maryland, Pensilvania y
+                  Delaware) fueron concedidas a individuos o grupos específicos llamados propietarios, quienes tenían autoridad para establecer gobiernos, asignar tierras y nombrar funcionarios, con
+                  William Penn en Pensilvania y Lord Baltimore en Maryland como ejemplos notables; y las colonias autónomas con carta propia (Massachusetts, Rhode Island y Connecticut) operaban bajo
+                  cartas reales que les otorgaban considerable autonomía, permitiéndoles elegir sus propios gobernadores y asambleas, teniendo el mayor grado de autogobierno. A pesar de estas
+                  diferencias, todas las colonias compartían elementos comunes: asambleas legislativas locales, tribunales basados en la ley común inglesa, y la autoridad última del Parlamento
+                  británico. Este sistema creó una tradición de gobierno representativo local, donde los colonos se acostumbraron a tener voz en sus asuntos, sentando precedentes importantes de
+                  autogobierno que influirían en el desarrollo político posterior de Estados Unidos. Con el tiempo, especialmente en el siglo XVIII, la Corona intentó ejercer mayor control directo
+                  sobre todas las colonias, convirtiendo varias colonias propietarias y autónomas en colonias reales, generando tensiones que contribuirían a los movimientos de independencia.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué motivó a los diferentes grupos a establecerse en América del Norte?</div>
+                <div class="answer">
+                  Los diversos grupos que se establecieron en las colonias británicas de América del Norte fueron motivados por una compleja mezcla de factores religiosos, económicos, políticos y
+                  sociales: la búsqueda de libertad religiosa impulsó a grupos como los puritanos en Massachusetts, los cuáqueros en Pensilvania, los católicos en Maryland y los judíos sefardíes en
+                  Rhode Island y Nueva York, quienes escapaban de la persecución en Europa; las oportunidades económicas atrajeron a muchos colonos, desde empresarios buscando riqueza en el comercio
+                  de pieles, tabaco o índigo, hasta agricultores en busca de tierras propias, imposibles de obtener en una Inglaterra con sistema señorial; la movilidad social y política motivó a
+                  muchos, especialmente en sociedades donde las rígidas jerarquías europeas limitaban el ascenso social basado en el nacimiento; la huida de la pobreza y la hambruna, particularmente
+                  entre inmigrantes escoceses-irlandeses y alemanes del Palatinado, que escapaban de condiciones económicas devastadoras; los programas de colonización dirigidos por gobiernos y
+                  empresas, como la Compañía de Virginia, que reclutaba activamente colonos mediante sistemas como las concesiones de tierras; los convictos o sirvientes contratados, muchos de los
+                  cuales no tenían elección en su traslado, con la servidumbre por contrato como una forma común de financiar el pasaje a América; los esclavos africanos, que fueron traídos contra su
+                  voluntad para trabajar en plantaciones y otros emprendimientos económicos, principalmente en las colonias del sur; y las ambiciones imperiales británicas que buscaban contrarrestar
+                  la influencia de otras potencias europeas, expandir su comercio y asegurar recursos estratégicos. Esta diversidad de motivaciones contribuyó a la heterogeneidad de las colonias y
+                  sentó las bases para una sociedad compleja con diferentes intereses regionales, económicos y sociales que eventualmente tendrían que reconciliarse en la formación de una nación
+                  unificada.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="event">
+          <div class="event-date">1607-1776</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Diferencias entre las Colonias del Norte y del Sur</h3>
+              <p class="event-summary">Contrastes económicos, sociales y culturales que marcarían el desarrollo de la futura nación</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-3')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-3')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-3')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-3" class="content-section text-section">
+                <p>
+                  A lo largo del periodo colonial, se desarrollaron marcadas
+                  <strong>diferencias</strong>
+                  entre las colonias del norte y del sur, estableciendo patrones que influirían profundamente en la historia estadounidense. Estas diferencias abarcaban aspectos económicos, sociales,
+                  religiosos y culturales que eventualmente contribuirían a tensiones regionales en la nación emergente.
+                </p>
+                <p>
+                  Las colonias del norte (Nueva Inglaterra y colonias medias) desarrollaron economías diversificadas basadas en el comercio marítimo, la manufactura artesanal, la pesca y la
+                  agricultura de pequeña escala. Sus asentamientos tendían a organizarse alrededor de pueblos compactos con fuerte énfasis en la educación y la religión. La mano de obra se componía
+                  principalmente de agricultores libres, artesanos y comerciantes, con relativamente pocos esclavos.
+                </p>
+                <p>
+                  En contraste, las colonias del sur desarrollaron una economía basada en grandes plantaciones dedicadas a cultivos comerciales como tabaco, arroz, índigo y, más tarde, algodón. Este
+                  sistema dependía fuertemente del trabajo esclavo, resultando en una sociedad altamente estratificada dominada por una élite terrateniente. El carácter rural y disperso de los
+                  asentamientos sureños dificultaba el desarrollo de escuelas públicas y congregaciones religiosas centralizadas.
+                </p>
+                <p>
+                  Estas diferencias regionales conformaron distintas visiones sobre el gobierno, la economía y la sociedad que persistirían mucho después de la independencia, contribuyendo
+                  eventualmente a la Guerra Civil estadounidense y dejando un legado que sigue influyendo en la política y cultura norteamericanas hasta nuestros días.
+                </p>
+              </div>
+              <div id="image-3" class="content-section image-section">
+                <img src="https://zhemaria.github.io/sociales/imagenes/granja_vs_plantacion.jpg" alt="Contraste entre colonias del norte y sur" class="event-image" />
+                <p class="caption">Ilustración que contrasta una granja familiar en Nueva Inglaterra con una plantación sureña, representando las diferentes estructuras económicas y sociales</p>
+              </div>
+
+              <div id="questions-3" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Qué diferencias económicas existían entre las colonias del norte y del sur?</div>
+                <div class="answer">
+                  Las diferencias económicas entre las colonias del norte y del sur eran fundamentales y sistémicas: las colonias del norte desarrollaron una economía diversificada que incluía
+                  agricultura de pequeña escala con granjas familiares que producían principalmente para el consumo local (trigo, maíz, ganado), comercio marítimo internacional con una importante
+                  flota mercante que conectaba América con Europa, África y el Caribe, manufactura artesanal como construcción naval, mueblería, textiles, herrerías y destilerías, recursos naturales
+                  como madera y pesca, particularmente el lucrativo comercio de bacalao, y centros urbanos como Boston, Nueva York y Filadelfia que funcionaban como núcleos comerciales y artesanales.
+                  En contraste, las colonias del sur basaron su economía en el sistema de plantaciones que producían cultivos comerciales para exportación (tabaco en Virginia y Maryland, arroz e
+                  índigo en Carolina del Sur y Georgia, y posteriormente algodón), dependían fuertemente del trabajo esclavo africano como base de su sistema productivo, operaban con un comercio
+                  directo con Inglaterra que prescindía en gran medida de intermediarios coloniales, tenían un desarrollo manufacturero limitado ya que importaban la mayoría de bienes terminados de
+                  Inglaterra, y mantenían un carácter predominantemente rural con pocas ciudades importantes. Estas diferencias económicas fundamentales crearon distintos intereses comerciales y
+                  políticos que influirían en las posiciones sobre aranceles, comercio internacional y esclavitud después de la independencia, y eventualmente contribuirían a las tensiones que
+                  llevaron a la Guerra Civil americana en el siglo XIX.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo se diferenciaban las estructuras sociales de ambas regiones?</div>
+                <div class="answer">
+                  Las estructuras sociales de las colonias del norte y del sur presentaban marcados contrastes: en el norte, predominaba una sociedad relativamente igualitaria con una amplia clase
+                  media de agricultores, artesanos y comerciantes; existía movilidad social basada en habilidades, educación y emprendimiento; se desarrollaban comunidades urbanas cohesionadas con
+                  estructuras de gobierno local participativo (asambleas municipales o "town meetings"); el trabajo manual era valorado y respetado; y aunque existía esclavitud, representaba un
+                  porcentaje mucho menor de la población, concentrándose en áreas urbanas y servicio doméstico. En contraste, el sur desarrolló una sociedad altamente estratificada dominada por una
+                  élite de grandes terratenientes (los "plantadores") que controlaban la economía y política regional; tenía una limitada clase media y muchos agricultores blancos pequeños o "yeomen";
+                  dependía enormemente del trabajo esclavo africano, que en algunas áreas superaba numéricamente a la población blanca; presentaba un patrón de asentamiento disperso basado en
+                  plantaciones autosuficientes más que en comunidades concentradas; y desarrolló un código aristocrático entre las clases altas con énfasis en el honor, la distinción social y la
+                  caballerosidad, intentando emular a la aristocracia inglesa. Estas diferentes estructuras sociales influyeron profundamente en las actitudes hacia la autoridad, los derechos
+                  individuales y el gobierno, creando tradiciones políticas diferenciadas que persistirían mucho después de la independencia: el norte tendió hacia una mayor participación democrática
+                  y preocupación por el bien común, mientras el sur enfatizaba los derechos de propiedad, la autonomía local y la resistencia a la autoridad central que pudiera amenazar su sistema
+                  social.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué impacto tuvieron estas diferencias regionales en la formación de los Estados Unidos?</div>
+                <div class="answer">
+                  Las diferencias regionales entre las colonias del norte y del sur tuvieron un impacto profundo y duradero en la formación de los Estados Unidos: durante la redacción de la
+                  Constitución, generaron complejos compromisos como el Compromiso de los Tres Quintos (contando tres quintos de la población esclava para representación) y la estructura del Congreso
+                  bicameral (Senado con igual representación por estado y Cámara basada en población); crearon tensiones tempranas sobre política económica, con el norte favoreciendo aranceles
+                  proteccionistas para su industria y el sur defendiendo el libre comercio para sus exportaciones agrícolas; influyeron en las visiones contrastantes sobre el gobierno federal, con el
+                  norte generalmente apoyando un gobierno central más fuerte y el sur defendiendo los derechos estatales; impulsaron la expansión territorial con distintas motivaciones: el norte
+                  buscando tierras para pequeños agricultores y el sur necesitando expandir el área para cultivos como el algodón; y alimentaron el debate sobre la esclavitud, que se intensificó con
+                  cada nuevo territorio anexado, culminando en la Guerra Civil (1861-1865). Estas diferencias también moldearon tradiciones políticas distintivas: en el norte surgió el Partido
+                  Federalista (luego Whig y Republicano) favoreciendo un gobierno central fuerte y desarrollo económico diversificado, mientras el sur se alineó con los Demócrata-Republicanos (luego
+                  Demócratas) defendiendo los derechos estatales y la economía agraria. Incluso después de la Guerra Civil, estas divisiones regionales continuaron manifestándose en patrones
+                  electorales, políticas económicas y valores culturales que persisten hasta nuestros días, creando lo que los historiadores llaman "las dos Américas" con distintas visiones sobre el
+                  papel del gobierno, los derechos individuales y la identidad nacional.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 4 -->
+        <div class="event">
+          <div class="event-date">1619-1865</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">La Esclavitud en los Estados Unidos</h3>
+              <p class="event-summary">La institución que moldeó profundamente la economía, política y sociedad estadounidense</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-4')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-4')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-4')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-4" class="content-section text-section">
+                <p>
+                  La historia de la
+                  <strong>esclavitud</strong>
+                  en Estados Unidos comenzó en 1619, cuando un barco holandés trajo a los primeros africanos esclavizados a Jamestown, Virginia. Durante los siguientes dos siglos y medio, la
+                  esclavitud se convertiría en una institución fundamental que moldeó la economía, política y sociedad estadounidense, especialmente en las colonias y posteriormente estados del sur.
+                </p>
+                <p>
+                  Aunque inicialmente la servidumbre por contrato (tanto de africanos como europeos) fue común, hacia finales del siglo XVII la esclavitud racial hereditaria quedó codificada en la
+                  ley, creando un sistema donde los africanos y sus descendientes fueron relegados permanentemente a la condición de propiedad. Para mediados del siglo XVIII, este sistema estaba
+                  plenamente establecido, particularmente en las colonias del sur, donde la mano de obra esclava era fundamental para la economía de plantación.
+                </p>
+                <p>
+                  Durante el período revolucionario, la contradicción entre los ideales de libertad y la realidad de la esclavitud fue evidente. Varios estados del norte iniciaron procesos de
+                  emancipación gradual, mientras que en el sur la esclavitud se intensificó con la expansión del cultivo de algodón tras la invención de la desmotadora en 1793. La división entre
+                  estados "libres" y "esclavistas" se profundizó, manifestándose en controversias políticas como el Compromiso de Missouri (1820), el Compromiso de 1850 y la Ley Kansas-Nebraska
+                  (1854).
+                </p>
+                <p>
+                  La resistencia a la esclavitud tomó diversas formas: desde rebeliones de esclavos (Nat Turner, 1831), el movimiento abolicionista liderado por figuras como Frederick Douglass y
+                  Harriet Tubman, hasta el "Ferrocarril Subterráneo" que ayudaba a esclavos a escapar hacia el norte. Las tensiones sobre la esclavitud eventualmente culminaron en la Guerra Civil
+                  (1861-1865), que resultó en la Proclamación de Emancipación (1863) y la Decimotercera Enmienda (1865) que abolió oficialmente la esclavitud. Sin embargo, el legado de esta
+                  institución continuaría influenciando la historia americana a través de la segregación, discriminación y desigualdades estructurales que persisten hasta nuestros días.
+                </p>
+              </div>
+              <div id="image-4" class="content-section image-section">
+                <img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Cotton_pickers_and_overseer_around_1850.jpg/1920px-Cotton_pickers_and_overseer_around_1850.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Ilustración histórica relacionada con la esclavitud"
+                  class="event-image" />
+                <p class="caption">
+                  Representación histórica del trabajo esclavo en una plantación sureña de algodón, una de las principales actividades económicas sustentadas por el trabajo forzado
+                </p>
+              </div>
+
+              <div id="questions-4" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el sistema legal de la esclavitud en las colonias?</div>
+                <div class="answer">
+                  El sistema legal de la esclavitud en las colonias americanas evolucionó gradualmente desde una indefinición inicial hasta un elaborado conjunto de códigos raciales: en las primeras
+                  décadas del siglo XVII, el estatus de los africanos en las colonias era ambiguo, similar en algunos aspectos a la servidumbre por contrato temporal que también afectaba a europeos,
+                  con algunos africanos obteniendo eventualmente su libertad y derechos limitados; sin embargo, entre 1640 y 1660 surgieron las primeras leyes que distinguían específicamente a los
+                  sirvientes negros de los blancos, comenzando con Maryland y Virginia que establecieron la servidumbre perpetua para los africanos; el momento crucial llegó entre 1660 y 1700 cuando
+                  las colonias desarrollaron "códigos de esclavos" formales que definían la esclavitud como una condición hereditaria transmitida por la madre, negaban personalidad jurídica a los
+                  esclavos (considerándolos como propiedad), criminalizaban el matrimonio interracial, limitaban severamente la manumisión (liberación de esclavos), y eliminaban derechos fundamentales
+                  como testificar contra blancos, poseer propiedad o aprender a leer y escribir. La codificación legal más influyente fue la Ley de Esclavos de Virginia de 1705, que sirvió como modelo
+                  para otras colonias, estableciendo claramente la conexión entre raza y esclavitud. Tras la independencia, la Constitución de 1787, aunque evitaba mencionar explícitamente la palabra
+                  "esclavitud", protegió la institución indirectamente a través de disposiciones como la Cláusula de los Tres Quintos (contando 3/5 de la población esclava para representación), la
+                  prohibición de legislar contra la importación de esclavos hasta 1808, y la Cláusula de Esclavos Fugitivos. A medida que crecía la oposición a la esclavitud en el siglo XIX, los
+                  estados del sur respondieron con leyes aún más estrictas, criminalizando la expresión de sentimientos abolicionistas y fortaleciendo los controles sobre los esclavos, culminando en
+                  el caso Dred Scott v. Sandford (1857) donde la Corte Suprema dictaminó que los afroamericanos no podían ser ciudadanos y que el Congreso no podía prohibir la esclavitud en los
+                  territorios, ilustrando cómo el sistema legal evolucionó para proteger y expandir la institución de la esclavitud.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuál fue el impacto económico de la esclavitud en el desarrollo de Estados Unidos?</div>
+                <div class="answer">
+                  El impacto económico de la esclavitud en el desarrollo de Estados Unidos fue profundo y generalizado, extendiéndose mucho más allá de las plantaciones sureñas: en el sur, la
+                  esclavitud facilitó el desarrollo de una economía de plantación altamente rentable pero de baja diversificación, centrada en cultivos comerciales de exportación como tabaco, arroz,
+                  índigo y, especialmente después de 1793, algodón, que llegó a constituir más del 50% de las exportaciones estadounidenses antes de la Guerra Civil; la riqueza generada por el trabajo
+                  esclavo no solo benefició a los propietarios de plantaciones, sino que fue fundamental para la capitalización y desarrollo de instituciones financieras, compañías de seguros y
+                  empresas de transporte tanto en el sur como en el norte; las manufacturas del norte prosperaron procesando materias primas producidas por esclavos, particularmente en la industria
+                  textil de Nueva Inglaterra que transformaba el algodón sureño, creando una interdependencia económica regional; las casas comerciales norteñas, especialmente en Nueva York y Boston,
+                  obtuvieron enormes beneficios al comercializar productos agrícolas producidos por esclavos y al financiar plantaciones a través de préstamos e hipotecas; y el comercio triangular
+                  transatlántico, que incluía el tráfico de esclavos, generó una acumulación de capital que financió una parte significativa del desarrollo industrial y comercial temprano de Estados
+                  Unidos. El valor económico de los esclavos como "propiedad" era inmenso: para 1860, el valor de los esclavos ($3.5 mil millones) excedía el valor combinado de todos los
+                  ferrocarriles, fábricas y bancos de la nación, representando la mayor concentración de riqueza del país. Aunque los historiadores económicos debaten el nivel exacto de eficiencia del
+                  sistema esclavista, existe consenso en que la esclavitud fue central en la transformación de Estados Unidos de una economía colonial a una potencia económica mundial emergente en el
+                  siglo XIX, incluso mientras limitaba el desarrollo económico diversificado del sur. Este legado económico persiste en patrones de desigualdad regional y racial hasta nuestros días,
+                  con estudios contemporáneos demostrando conexiones directas entre la riqueza acumulada a través de la esclavitud y el desarrollo institucional y financiero moderno de Estados Unidos.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo influyó la cuestión de la esclavitud en la formación política de la nueva nación?</div>
+                <div class="answer">
+                  La cuestión de la esclavitud influyó fundamentalmente en la formación política de Estados Unidos desde sus inicios: durante la Convención Constitucional de 1787, generó profundos
+                  debates y delicados compromisos, incluyendo la Cláusula de los Tres Quintos (contando 3/5 de la población esclava para representación), la prohibición de legislar contra la
+                  importación de esclavos hasta 1808, y la Cláusula de Esclavos Fugitivos, compromisos que otorgaron al sur un poder político desproporcionado; esta ventaja política permitió a los
+                  intereses esclavistas dominar el gobierno federal durante las primeras décadas de la república, con esclavistas ocupando la presidencia durante 50 de los primeros 64 años de la
+                  nación y controlando la Corte Suprema y el Congreso durante gran parte de este período; la adquisición de territorios, desde la Compra de Luisiana (1803) hasta la Guerra
+                  Mexicana-Americana (1846-1848), estuvo profundamente influenciada por consideraciones sobre la expansión o limitación de la esclavitud, generando crisis políticas con cada nuevo
+                  territorio; la polarización sectorial se manifestó en la formación del sistema de partidos, con el colapso del primer sistema bipartidista (Federalistas vs. Demócrata-Republicanos) y
+                  el surgimiento de partidos con fuerte identidad regional como los Republicanos, específicamente organizados en oposición a la expansión de la esclavitud; y una serie de conflictos
+                  legislativos como el Compromiso de Missouri (1820), la Crisis de Anulación (1832), el Compromiso de 1850 y la Ley Kansas-Nebraska (1854) revelaron la dificultad fundamental de
+                  reconciliar un sistema "mitad libre, mitad esclavo" dentro de una unión federal. La política estadounidense se vio transformada por esta cuestión con el surgimiento del movimiento
+                  abolicionista y las respuestas a éste, la fragmentación de denominaciones religiosas a lo largo de líneas seccionales, y el colapso de los mecanismos tradicionales de compromiso
+                  político en la década de 1850, culminando en la Guerra Civil (1861-1865). Incluso después de la abolición formal de la esclavitud, su legado continuó definiendo la política
+                  estadounidense durante la Reconstrucción y más allá, con la implementación de leyes Jim Crow, disputas sobre derechos civiles, y debates sobre las responsabilidades federales versus
+                  estatales que siguen resonando en la política contemporánea americana.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 5 -->
+        <div class="event">
+          <div class="event-date">1774</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Primer Congreso Continental</h3>
+              <p class="event-summary">Reunión de delegados de doce colonias que representó el primer paso hacia un gobierno unificado</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-5')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-5')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-5')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-5" class="content-section text-section">
+                <p>
+                  El
+                  <strong>Primer Congreso Continental</strong>
+                  se celebró entre el 5 de septiembre y el 26 de octubre de 1774 en Filadelfia, Pensilvania, como respuesta directa a las Leyes Intolerables (Coercitivas) impuestas por Gran Bretaña
+                  tras el Motín del Té de Boston. Esta asamblea reunió a 56 delegados de 12 de las 13 colonias (Georgia fue la única ausente), incluyendo a figuras prominentes como George Washington,
+                  John Adams, Samuel Adams y Patrick Henry.
+                </p>
+                <p>
+                  El Congreso representó un momento crucial en el desarrollo de la identidad colonial unificada, ya que era la primera vez que las colonias actuaban conjuntamente de manera formal. Sus
+                  principales logros incluyeron la Declaración y Resoluciones, que afirmaba los derechos de los colonos como súbditos británicos mientras rechazaba la autoridad del Parlamento para
+                  gravar a las colonias sin representación; la creación de la Asociación Continental, un sistema de boicot económico a productos británicos; y el envío de una petición al Rey Jorge III
+                  solicitando la derogación de las leyes consideradas opresivas.
+                </p>
+                <p>
+                  Aunque el Congreso aún no buscaba la independencia formal, sino la reparación de agravios dentro del Imperio Británico, estableció las bases para la posterior resistencia organizada
+                  y la cooperación intercolonial. El fracaso de estas peticiones y el inicio de enfrentamientos armados en Lexington y Concord en abril de 1775 llevarían a la convocatoria del Segundo
+                  Congreso Continental, que eventualmente declararía la independencia.
+                </p>
+              </div>
+              <div id="image-5" class="content-section image-section">
+                <img
+                  src="https://www.meisterdrucke.us/kunstwerke/1260px/Clyde_Osmer_Deland_-_The_First_Continental_Congress_Carpenters_Hall_Philadelphia_in_1774_-_%28MeisterDrucke-1403488%29.jpg"
+                  alt="Primer Congreso Continental"
+                  class="event-image" />
+                <p class="caption">Representación de los delegados reunidos frente al Carpenters' Hall, en Filadelfia, durante el Primer Congreso Continental.</p>
+              </div>
+
+              <div id="questions-5" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Qué fueron las "Leyes Intolerables" y cómo provocaron el Primer Congreso Continental?</div>
+                <div class="answer">
+                  Las "Leyes Intolerables" (o Coercitivas, como las llamaban los británicos) fueron una serie de medidas punitivas aprobadas por el Parlamento británico en 1774 como respuesta directa
+                  al Motín del Té de Boston, y provocaron el Primer Congreso Continental al crear un sentido de emergencia compartida entre todas las colonias. Estas leyes incluían: la Ley del Puerto
+                  de Boston, que cerraba este puerto vital hasta que se pagaran los daños por el té destruido, estrangulando económicamente a la ciudad; la Ley de Administración de Massachusetts, que
+                  alteraba radicalmente el gobierno colonial, revocando la carta colonial, limitando las asambleas municipales y permitiendo al gobernador nombrar jueces y oficiales sin aprobación
+                  local; la Ley de Justicia, que permitía juzgar a funcionarios coloniales acusados de delitos capitales en Inglaterra o en otras colonias, fuera del alcance de jurados locales
+                  potencialmente simpatizantes; la Ley de Acuartelamiento (revisada), que obligaba a los colonos a proporcionar alojamiento a soldados británicos incluso en hogares privados; y la Ley
+                  de Quebec, que extendía los límites de Quebec hacia territorios reclamados por otras colonias y garantizaba derechos a católicos, alarmando a los colonos protestantes. La severidad
+                  de estas medidas, especialmente porque castigaban colectivamente a Massachusetts por acciones de un grupo específico en Boston, generó una ola de solidaridad intercolonial. Los
+                  comités de correspondencia, ya establecidos para compartir información entre colonias, facilitaron una respuesta coordinada, organizando reuniones locales que culminaron en la
+                  convocatoria del Primer Congreso Continental. Delegados de 12 colonias (todas excepto Georgia) se reunieron en Filadelfia para discutir una respuesta unificada, representando un
+                  momento decisivo: por primera vez, las colonias actuaban como una entidad política cohesionada frente a Gran Bretaña, transformando disputas locales en una causa continental y
+                  estableciendo mecanismos para la acción coordinada que eventualmente conducirían al movimiento independentista.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los principales acuerdos del Primer Congreso Continental?</div>
+                <div class="answer">
+                  El Primer Congreso Continental alcanzó varios acuerdos fundamentales que establecieron las bases para la resistencia unificada colonial: la Declaración de Derechos y Agravios, que
+                  afirmaba los derechos de los colonos como súbditos británicos, incluidos los derechos a la vida, libertad y propiedad, el derecho a ser gravados solo con su consentimiento, y el
+                  derecho a reunirse pacíficamente para discutir agravios, mientras detallaba las violaciones específicas de estos derechos por parte del Parlamento británico; la Asociación
+                  Continental, un acuerdo de boicot económico integral que prohibía la importación de bienes británicos a partir del 1 de diciembre de 1774, cesaba la exportación de productos
+                  americanos a Gran Bretaña a partir del 10 de septiembre de 1775 si los agravios no eran resueltos, y establecía comités locales para vigilar su cumplimiento, marcando la primera
+                  acción económica coordinada de las colonias; una petición al Rey Jorge III, conocida como la "Petición de la Rama de Olivo", que expresaba lealtad al monarca mientras solicitaba su
+                  intervención para derogar las Leyes Intolerables y reparar las relaciones; el acuerdo de volver a reunirse en mayo de 1775 si las peticiones al rey no recibían respuesta
+                  satisfactoria, estableciendo así la continuidad institucional que eventualmente llevaría al Segundo Congreso Continental; y cartas dirigidas al pueblo de Gran Bretaña y a las otras
+                  colonias británicas (incluyendo Canadá, Florida, y las Indias Occidentales) explicando la posición americana y buscando apoyo. Estos acuerdos representaron un equilibrio entre
+                  posturas moderadas que buscaban la reconciliación (representadas por figuras como Joseph Galloway, cuyo "Plan de Unión" que proponía un gobierno colonial dentro del imperio fue
+                  rechazado) y posiciones más radicales que comenzaban a considerar la posibilidad de resistencia armada. La unanimidad lograda en estas resoluciones, a pesar de las diferencias
+                  regionales y políticas, demostró la creciente solidaridad colonial y sentó las bases para la cooperación política y económica que eventualmente permitiría la independencia.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Quiénes fueron los delegados más importantes y qué papel desempeñaron?</div>
+                <div class="answer">
+                  Los delegados más influyentes del Primer Congreso Continental representaron un destacado grupo de líderes coloniales que posteriormente serían fundamentales en la fundación de la
+                  nación: Peyton Randolph de Virginia, respetado por su moderación y experiencia, fue elegido presidente del Congreso, proporcionando liderazgo equilibrado en un momento de creciente
+                  tensión; Samuel Adams de Massachusetts, considerado el "Instigador en Jefe" de la resistencia, jugó un papel crucial organizando la oposición a las Leyes Intolerables y manteniendo
+                  vivo el espíritu de protesta; su primo John Adams, también de Massachusetts, aunque menos radical que Samuel, emergió como un poderoso orador y estratega, trabajando incansablemente
+                  en comités y estableciéndose como una voz intelectual del movimiento revolucionario; George Washington de Virginia, ya respetado por su experiencia militar en la Guerra Franco-India,
+                  asistió en uniforme militar, señalando simbólicamente la disponibilidad de apoyo militar a la causa, y comenzó a establecerse como líder intercolonial; Patrick Henry de Virginia,
+                  conocido por su elocuencia radical, pronunció su famosa declaración "No soy virginiano, sino americano", articulando una identidad continental emergente que trascendía las lealtades
+                  coloniales individuales; John Jay de Nueva York, más moderado y cauteloso, trabajó en la redacción de los documentos oficiales, aportando una voz de precisión legal y prudencia;
+                  Joseph Galloway de Pensilvania, leal a la Corona, propuso el Plan de Unión que habría mantenido las colonias dentro del Imperio con mayor autonomía (fue rechazado por sólo un voto,
+                  ilustrando cuán divididas estaban aún las colonias sobre la independencia); Richard Henry Lee de Virginia, quien trabajó estrechamente con los delegados de Massachusetts para formar
+                  una alianza estratégica entre colonias del norte y sur; y Christopher Gadsden de Carolina del Sur, quien promovió la solidaridad intercolonial con su famosa frase "No hay hombres de
+                  Nueva Inglaterra, ni de Nueva York, sino americanos". Notablemente ausentes estaban Benjamin Franklin (aún en Londres como representante colonial) y Thomas Jefferson (no seleccionado
+                  como delegado), quienes posteriormente desempeñarían papeles cruciales en el movimiento independentista. Estas figuras, provenientes de diversas colonias y representando un espectro
+                  de opiniones políticas, sentaron las bases para el liderazgo que eventualmente guiaría a las colonias hacia la independencia y la formación de un nuevo gobierno nacional.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 6 -->
+        <div class="event">
+          <div class="event-date">1775-1781</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Segundo Congreso Continental</h3>
+              <p class="event-summary">La asamblea que declaró la independencia y dirigió la guerra revolucionaria</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-6')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-6')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-6')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-6" class="content-section text-section">
+                <p>
+                  El
+                  <strong>Segundo Congreso Continental</strong>
+                  se reunió por primera vez el 10 de mayo de 1775 en Filadelfia, apenas tres semanas después de los primeros enfrentamientos armados en Lexington y Concord. A diferencia de su
+                  predecesor, que había sido principalmente deliberativo, este Congreso rápidamente asumió las funciones de un gobierno nacional de facto, dirigiendo el esfuerzo bélico y estableciendo
+                  las bases del nuevo país.
+                </p>
+                <p>
+                  Entre sus acciones más significativas estuvieron: la creación del Ejército Continental (15 de junio de 1775) y el nombramiento de George Washington como Comandante en Jefe; el
+                  establecimiento de un Departamento de Marina y la autorización de corsarios; la apertura de relaciones diplomáticas con potencias extranjeras; la creación de un servicio postal; la
+                  emisión de papel moneda para financiar la guerra; y, crucialmente, la aprobación de la Declaración de Independencia el 4 de julio de 1776.
+                </p>
+                <p>
+                  El Segundo Congreso continuó funcionando como órgano gubernamental hasta 1781, cuando fue reemplazado por el Congreso de la Confederación tras la ratificación de los Artículos de la
+                  Confederación. Durante su existencia, operó sin una constitución formal y dependió de la cooperación voluntaria de los estados. A pesar de estas limitaciones, logró mantener unidas a
+                  las colonias durante los años críticos de la guerra y sentar las bases institucionales para el futuro gobierno estadounidense.
+                </p>
+              </div>
+              <div id="image-6" class="content-section image-section">
+                <img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/1920px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Segundo Congreso Continental"
+                  class="event-image" />
+                <p class="caption">Representación del Segundo Congreso Continental durante la firma de la Declaración de Independencia</p>
+              </div>
+
+              <div id="questions-6" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo evolucionó el Segundo Congreso desde la reconciliación hacia la independencia?</div>
+                <div class="answer">
+                  La evolución del Segundo Congreso Continental desde la búsqueda de reconciliación hacia la declaración de independencia siguió un camino gradual marcado por eventos críticos: cuando
+                  el Congreso se reunió en mayo de 1775, la mayoría de los delegados aún esperaban una reconciliación con Gran Bretaña, evidenciado por la aprobación de la Petición de la Rama de Olivo
+                  al Rey Jorge III el 5 de julio de 1775, que reafirmaba la lealtad colonial mientras solicitaba el cese de las hostilidades; sin embargo, esta petición fue rechazada en agosto de
+                  1775, cuando el rey declaró a las colonias en estado de rebelión y autorizó el uso de la fuerza militar contra ellas. Simultáneamente a estas gestiones diplomáticas, el Congreso tomó
+                  medidas prácticas para la defensa armada, creando el Ejército Continental (junio 1775) y nombrando a George Washington como comandante, acciones que, aunque defensivas en su
+                  justificación, representaban pasos efectivos hacia la soberanía. El apoyo popular a la independencia aumentó significativamente tras la publicación de "Sentido Común" de Thomas Paine
+                  en enero de 1776, que articulaba argumentos convincentes para la separación total de Gran Bretaña y vendió más de 150,000 copias en pocos meses. La escalada del conflicto militar,
+                  con batallas en Bunker Hill, la invasión de Canadá y el asedio de Boston, hizo cada vez más difícil imaginar un retorno al status quo anterior. En mayo de 1776, el Congreso aprobó
+                  una resolución aconsejando a las colonias formar gobiernos independientes, efectivamente repudiando la autoridad real, y el 7 de junio, Richard Henry Lee presentó una resolución
+                  formal declarando la independencia. Tras un intenso debate, el Congreso nombró un comité para redactar la declaración formal, liderado por Thomas Jefferson, y el 2 de julio de 1776
+                  votó a favor de la independencia, con la aprobación formal del documento el 4 de julio. Esta evolución de 14 meses desde la primera reunión hasta la independencia refleja cómo el
+                  fracaso de los esfuerzos de reconciliación, la escalada militar, el cambio en la opinión pública y la creciente confianza institucional del Congreso transformaron un cuerpo
+                  inicialmente cauteloso en el núcleo gubernamental de una nueva nación independiente.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los desafíos financieros que enfrentó el Congreso durante la guerra?</div>
+                <div class="answer">
+                  El Segundo Congreso Continental enfrentó formidables desafíos financieros durante la Guerra Revolucionaria que amenazaron repetidamente el esfuerzo bélico: carecía de autoridad para
+                  imponer impuestos directos, dependiendo de contribuciones voluntarias de los estados que frecuentemente no se materializaban, obligando al Congreso a solicitar repetidamente a los
+                  estados fondos que rara vez llegaban en la cantidad o tiempo requeridos; ante esta falta de ingresos, recurrió a la emisión masiva de papel moneda continental sin respaldo adecuado
+                  (más de $240 millones durante la guerra), provocando una hiperinflación devastadora que llevó a la frase "no vale un continental" como sinónimo de algo sin valor, con la moneda
+                  depreciándose hasta 1/100 de su valor nominal; se vio forzado a recurrir a préstamos internacionales, principalmente de Francia y Holanda, además de préstamos internos a través de
+                  certificados de deuda a ciudadanos patriotas, acumulando una significativa deuda externa e interna; luchó con la especulación y la devaluación monetaria que encarecían los
+                  suministros militares, mientras comerciantes y proveedores exigían pagos en oro o plata en lugar de papel continental; enfrentó una crisis de suministros para el ejército,
+                  ejemplificada por el famoso invierno en Valley Forge (1777-1778) donde las tropas sufrieron hambre y frío extremo; e implementó medidas desesperadas como la confiscación de bienes
+                  (con o sin compensación), el establecimiento de controles de precios, y préstamos forzosos que generaron resentimiento. La situación financiera se deterioró dramáticamente hacia
+                  1780, cuando el colapso monetario casi paralizó las operaciones militares. La creación del Departamento de Finanzas en 1781 bajo Robert Morris trajo algunas mejoras, incluyendo la
+                  fundación del Banco de Norteamérica para estabilizar la moneda y centralizar las finanzas. Francia proporcionó ayuda financiera crucial ($8 millones en préstamos directos y
+                  subsidios) que permitió continuar la guerra hasta la victoria. Estos persistentes problemas financieros resaltaron las debilidades fundamentales del gobierno confederado y se
+                  convertirían en un argumento central para la posterior creación de un gobierno federal más fuerte bajo la Constitución de 1787, con poderes de imposición fiscal directa y la
+                  capacidad de regular el comercio y establecer una política monetaria unificada.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué papel desempeñaron las relaciones exteriores en el éxito de la revolución?</div>
+                <div class="answer">
+                  Las relaciones exteriores desempeñaron un papel decisivo en el éxito de la Revolución Americana, transformando una rebelión colonial en un conflicto internacional que superó las
+                  limitaciones de los rebeldes: la alianza franco-americana, formalizada con el Tratado de Alianza de 1778 tras la victoria estadounidense en Saratoga, proporcionó ayuda militar
+                  crítica (armas, municiones, uniformes, entrenamiento militar y eventualmente tropas y apoyo naval), apoyo financiero (préstamos y subsidios que sumaron millones de libras) y
+                  legitimidad diplomática internacional, culminando con la intervención directa que fue decisiva en la victoria de Yorktown; la asistencia española, aunque sin reconocer formalmente la
+                  independencia americana, proporcionó préstamos sustanciales, abrió sus puertos a barcos americanos y declaró guerra a Gran Bretaña en 1779, distrayendo recursos británicos; los
+                  Países Bajos, importantes socios comerciales, proporcionaron préstamos cruciales y se convirtieron en el segundo país en reconocer oficialmente la independencia estadounidense en
+                  1782; y las Ligas de Neutralidad Armada lideradas por Rusia que protegían el comercio neutral durante la guerra beneficiaron indirectamente a los estadounidenses al complicar los
+                  esfuerzos británicos por bloquear el comercio colonial. Este éxito diplomático fue fruto de representantes estadounidenses talentosos como Benjamin Franklin (cuya popularidad en
+                  Francia fue inestimable), John Adams, John Jay, y Silas Deane, quienes aprovecharon magistralmente las rivalidades europeas, especialmente la animosidad franco-británica tras la
+                  Guerra de los Siete Años. El Segundo Congreso Continental estableció un Comité de Correspondencia Secreta (1775) que evolucionó hacia el Comité de Asuntos Exteriores, primer
+                  departamento de relaciones exteriores de EE.UU., y nombró representantes a cortes europeas incluso antes de declarar formalmente la independencia. Estos esfuerzos culminaron en las
+                  negociaciones del Tratado de París (1783), donde los diplomáticos estadounidenses, negociando separadamente de Francia cuando era conveniente, aseguraron términos excepcionalmente
+                  favorables: reconocimiento de la independencia, territorio expandido hasta el río Mississippi, derechos de pesca en Terranova, y la retirada de tropas británicas. La diplomacia
+                  estadounidense durante la Revolución, combinando idealismo republicano con pragmatismo estratégico, convirtió la intervención extranjera en un multiplicador de fuerza decisivo y
+                  estableció precedentes fundamentales para la futura política exterior americana.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 7 -->
+        <div class="event">
+          <div class="event-date">1776-1783</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Guerra de la Independencia de los EE. UU.</h3>
+              <p class="event-summary">El conflicto armado que estableció la independencia de Estados Unidos frente a Gran Bretaña</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-7')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-7')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-7')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-7" class="content-section text-section">
+                <p>
+                  La
+                  <strong>Guerra de Independencia de los Estados Unidos</strong>
+                  (1775-1783) comenzó oficialmente con los enfrentamientos en Lexington y Concord el 19 de abril de 1775, aunque la declaración formal de independencia no se produjo hasta julio de
+                  1776. El conflicto enfrentó a las trece colonias británicas de Norteamérica contra el que entonces era el imperio más poderoso del mundo.
+                </p>
+                <p>
+                  Militarmente, la guerra puede dividirse en varias fases: una inicial (1775-1778) centrada principalmente en las colonias del norte, incluyendo la evacuación británica de Boston, la
+                  Batalla de Saratoga y la ocupación de Filadelfia; una fase media (1778-1779) donde el conflicto se expandió geográficamente hacia el sur y el oeste, y se internacionalizó con la
+                  entrada de Francia como aliada de los rebeldes; y una fase final (1780-1783) concentrada en las colonias del sur, culminando con la decisiva victoria franco-americana en Yorktown
+                  (1781) que efectivamente terminó las operaciones militares terrestres significativas, aunque la paz formal no llegó hasta el Tratado de París en 1783.
+                </p>
+                <p>
+                  La guerra fue extraordinaria por múltiples razones: representó la primera vez en la era moderna que una colonia derrotó militarmente a su metrópoli; combinó tácticas de guerra
+                  convencional europea con guerra de guerrillas fronteriza; implicó complejas dinámicas sociales y raciales, con la participación de afroamericanos (tanto esclavos como libres),
+                  nativos americanos y colonos leales a la Corona (Lealistas); y evolucionó de un conflicto colonial a una guerra internacional que involucró a Francia, España y los Países Bajos
+                  contra Gran Bretaña.
+                </p>
+                <p>
+                  El liderazgo de George Washington como Comandante en Jefe fue crucial para mantener unido al Ejército Continental durante momentos de extrema adversidad. Su capacidad para adaptarse
+                  estratégicamente, preservar sus fuerzas frente a la superioridad británica, y mantener la lealtad de sus hombres a pesar de las terribles condiciones y retrasos en el pago, fue
+                  determinante para el eventual triunfo americano.
+                </p>
+              </div>
+              <div id="image-7" class="content-section image-section">
+                <img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg/1920px-Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Washington cruzando el Delaware"
+                  class="event-image" />
+                <p class="caption">Representación del General Washington cruzando el río Delaware antes de la Batalla de Trenton, un momento crucial que revitalizó la causa americana</p>
+              </div>
+
+              <div id="questions-7" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron las batallas más decisivas de la Guerra de Independencia?</div>
+                <div class="answer">
+                  Las batallas más decisivas de la Guerra de Independencia cambiaron el curso del conflicto en momentos críticos: la Batalla de Bunker Hill (junio 1775), aunque técnicamente una
+                  victoria británica, demostró que los colonos podían enfrentarse efectivamente a tropas regulares británicas e infligir bajas significativas (más de 1,000 bajas británicas), elevando
+                  la moral revolucionaria mientras disminuía la confianza británica en una victoria rápida; la Batalla de Trenton (diciembre 1776) y Princeton (enero 1777), donde tras una serie de
+                  derrotas desmoralizantes y la retirada a través de Nueva Jersey, Washington sorprendió a los mercenarios hessianos en Trenton y luego derrotó a fuerzas británicas en Princeton,
+                  revitalizando la causa revolucionaria cuando estaba al borde del colapso; la Batalla de Saratoga (septiembre-octubre 1777), considerada el punto de inflexión estratégico de la
+                  guerra, donde las fuerzas americanas bajo el general Gates derrotaron y capturaron un importante ejército británico bajo el general Burgoyne, persuadiendo a Francia a entrar
+                  formalmente en la guerra como aliada americana; la Batalla de Kings Mountain (octubre 1780), donde milicianos patriotas derrotaron decisivamente a lealistas en Carolina del Sur,
+                  comenzando a revertir la situación en el sur después de varias derrotas americanas; la Batalla de Cowpens (enero 1781), donde el general Daniel Morgan ejecutó brillantemente una
+                  táctica de doble envolvimiento que destruyó la unidad de élite de caballería británica bajo Banastre Tarleton, debilitando significativamente la capacidad ofensiva británica en el
+                  sur; y la Batalla/Sitio de Yorktown (septiembre-octubre 1781), la confrontación final significativa, donde fuerzas combinadas franco-americanas atraparon al ejército del general
+                  Cornwallis contra el río York mientras la armada francesa bloqueaba cualquier escape o refuerzo por mar, forzando la rendición de 8,000 tropas británicas. Yorktown efectivamente
+                  terminó las operaciones militares principales, pues el Parlamento británico, cansado de la costosa guerra, votó por ponerle fin. Estas batallas decisivas ilustran cómo los americanos
+                  emplearon una combinación de tácticas convencionales y no convencionales, aprovecharon la geografía, mantuvieron la cohesión en momentos críticos, y utilizaron efectivamente la
+                  alianza francesa para superar la superioridad militar británica y asegurar su independencia.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Qué papel desempeñaron los nativos americanos en el conflicto?</div>
+                <div class="answer">
+                  Los nativos americanos desempeñaron un papel complejo y crucial en la Guerra de Independencia, convirtiéndose en actores estratégicos que influyeron significativamente en el
+                  desarrollo del conflicto: la gran mayoría de las naciones nativas que participaron (especialmente las Seis Naciones Iroquesas, Cherokee, Creek, y tribus de los Grandes Lagos) se
+                  aliaron con los británicos, quienes habían establecido la Proclamación de 1763 limitando la expansión colonial hacia territorios indígenas, mientras que los colonos representaban una
+                  amenaza creciente a sus tierras; la Confederación Iroquesa, particularmente importante por su ubicación estratégica, sufrió una división interna con los Oneida y Tuscarora apoyando a
+                  los patriotas mientras Mohawk, Cayuga, Onondaga y Seneca (liderados por Joseph Brant/Thayendanegea) se aliaban con los británicos; los nativos aliados británicos realizaron
+                  incursiones devastadoras en asentamientos fronterizos en Nueva York, Pensilvania y los valles de Ohio y Wyoming, provocando respuestas militares americanas como la Expedición
+                  Sullivan de 1779, que destruyó sistemáticamente más de 40 pueblos iroqueses; algunas tribus del este, como los Stockbridge-Munsee y Passamaquoddy, apoyaron a los patriotas,
+                  proporcionando exploradores y guerreros que conocían el terreno; y el liderazgo nativo desarrolló sofisticadas estrategias diplomáticas, intentando utilizar la guerra para defender
+                  sus propios intereses territoriales y políticos, no simplemente como subordinados de cualquier potencia europea. Trágicamente, el Tratado de París de 1783 ignoró casi completamente
+                  los intereses de los aliados nativos de Gran Bretaña, cediendo enormes territorios a los Estados Unidos sin consultarles, dejando a muchas naciones indígenas expuestas a la posterior
+                  expansión americana. Los nativos que habían luchado junto a los británicos enfrentaron represalias, desplazamiento y confiscación de tierras, mientras aquellos que apoyaron a los
+                  patriotas raramente recibieron las recompensas prometidas por su lealtad. La guerra representó así un punto de inflexión para muchas sociedades nativas, acelerando procesos de
+                  pérdida territorial y transformación cultural que continuarían durante el siguiente siglo. Para la nueva nación estadounidense, el conflicto con los pueblos nativos no terminó con la
+                  independencia sino que se intensificó, sentando las bases para las guerras indias del siglo XIX mientras se expandía hacia el oeste.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Por qué lograron vencer los colonos a la poderosa Gran Bretaña?</div>
+                <div class="answer">
+                  La victoria de los colonos americanos sobre la poderosa Gran Bretaña resultó de una combinación única de factores geográficos, estratégicos, diplomáticos y políticos: la inmensa
+                  distancia geográfica (3,000 millas de océano) creaba desafíos logísticos extraordinarios para Gran Bretaña, con suministros y comunicaciones que tardaban meses, tropas que llegaban
+                  en condiciones deterioradas, y costos operativos enormemente inflados; el vasto territorio americano (casi 1,000 millas de costa y profundidad territorial) imposibilitaba una
+                  ocupación efectiva, permitiendo a Washington adoptar una estrategia de "guerra prolongada" donde simplemente mantener al Ejército Continental en el campo era una forma de victoria;
+                  el conocimiento superior del terreno y el apoyo de la población local proporcionaba a los americanos ventajas en inteligencia, reclutamiento y suministros, mientras los británicos
+                  operaban en territorio hostil; la intervención extranjera, especialmente de Francia (a partir de 1778), pero también de España y los Países Bajos, transformó un conflicto colonial en
+                  una guerra mundial que dispersó recursos británicos globalmente; la hábil diplomacia americana, particularmente de Benjamin Franklin en Francia, aseguró ayuda militar, naval y
+                  financiera crítica; el liderazgo excepcional de Washington, quien combinó habilidad táctica, visión estratégica y capacidad para mantener unido un ejército frágil durante ocho años
+                  de conflicto; la fragmentación política en Gran Bretaña, donde una significativa oposición "whig" en el Parlamento se oponía a la guerra, limitando el compromiso nacional británico;
+                  y la tenacidad y adaptabilidad de las fuerzas americanas, que evolucionaron de milicianos inexpertos a un ejército profesional, complementado por tácticas de guerrilla y milicias
+                  locales. También influyeron factores como el tiempo: Gran Bretaña inicialmente subestimó la determinación colonial, permitiendo que la rebelión se consolidara; y los objetivos
+                  asimétricos: los británicos necesitaban una victoria total para restaurar su autoridad, mientras los americanos simplemente necesitaban persistir y no perder decisivamente.
+                  Finalmente, aunque los colonos representaban solo una fracción de la población y riqueza británicas, la causa de la independencia generó un nivel de cohesión social y compromiso
+                  popular que, combinado con estos otros factores, permitió superar la aparente disparidad de poder y lograr una victoria que transformaría la historia mundial.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 8 -->
+        <div class="event">
+          <div class="event-date">1776</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">La Declaración de Independencia</h3>
+              <p class="event-summary">El documento fundacional que proclamó la separación de las trece colonias de Gran Bretaña</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-8')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-8')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-8')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-8" class="content-section text-section">
+                <p>
+                  La
+                  <strong>Declaración de Independencia</strong>
+                  , adoptada por el Segundo Congreso Continental el 4 de julio de 1776, anunció formalmente la separación de las trece colonias americanas del Imperio Británico. Este documento,
+                  redactado principalmente por Thomas Jefferson con aportes de Benjamin Franklin, John Adams y otros miembros del comité designado, se ha convertido en uno de los textos políticos más
+                  influyentes de la historia.
+                </p>
+                <p>
+                  Estructuralmente, la Declaración consta de varias partes: un preámbulo que establece la necesidad de explicar la separación; una sección teórica que articula principios fundamentales
+                  (la famosa afirmación de que "todos los hombres son creados iguales" y tienen derechos inalienables como "la vida, la libertad y la búsqueda de la felicidad"); un extenso listado de
+                  agravios contra el Rey Jorge III; y finalmente, la declaración formal de independencia.
+                </p>
+                <p>
+                  La importancia de la Declaración trasciende su función inmediata como justificación de la independencia. Filosóficamente, sintetizó ideas de la Ilustración sobre derechos naturales,
+                  consentimiento de los gobernados y el derecho a la revolución. Diplomáticamente, buscaba obtener apoyo internacional para la causa americana. Y a largo plazo, sus ideales de libertad
+                  e igualdad, aunque inicialmente no aplicados a todos los habitantes de la nueva nación, establecerían aspiraciones que inspirarían movimientos por la expansión de derechos a lo largo
+                  de la historia estadounidense.
+                </p>
+                <p>
+                  El documento fue firmado inicialmente por John Hancock, presidente del Congreso Continental, y eventualmente por 56 delegados en total. La firma representaba un acto de enorme riesgo
+                  personal, ya que podía considerarse traición contra la Corona británica, castigable con la muerte. Como señaló Benjamin Franklin: "Debemos mantenernos unidos, o con toda certeza
+                  colgaremos por separado".
+                </p>
+              </div>
+              <div id="image-8" class="content-section image-section">
+                <img src="https://www.worldhistory.org/img/r/p/1500x1500/18469.png.webp?v=1772406005-1707732862" alt="Firma de la Declaración de Independencia" class="event-image" />
+                <p class="caption">
+                  Una pintura de Jean Leon Gerome Ferris que muestra a Thomas Jefferson (derecha), Benjamin Franklin (izquierda) y John Adams redactando la Declaración de Independencia de los Estados
+                  Unidos en 1776. (Virginia Historical Society, Biblioteca del Congreso)
+                </p>
+              </div>
+
+              <div id="questions-8" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Qué influencias filosóficas se reflejan en la Declaración de Independencia?</div>
+                <div class="answer">
+                  La Declaración de Independencia refleja diversas influencias filosóficas que convergieron en el pensamiento político americano del siglo XVIII: la influencia dominante fue John
+                  Locke, cuya teoría del contrato social, desarrollada en sus "Dos tratados sobre el gobierno civil" (1689), proporcionó el marco conceptual básico, especialmente las ideas de derechos
+                  naturales inalienables, gobierno basado en el consentimiento de los gobernados, y el derecho a la rebelión cuando el gobierno viola sistemáticamente sus obligaciones; otras
+                  importantes influencias incluyen a Montesquieu, cuya teoría de la separación de poderes influyó en la visión de los fundadores sobre el equilibrio gubernamental; la Ilustración
+                  escocesa, particularmente Francis Hutcheson, Adam Smith y David Hume, que enfatizaba el "sentido moral" innato, la razón práctica y el progreso social; Thomas Paine, cuyo panfleto
+                  "Sentido Común" (1776) articuló argumentos populares para la independencia que resonaron en la Declaración; y tradiciones inglesas como la Carta Magna (1215), la Petición de Derechos
+                  (1628), y la Declaración de Derechos inglesa (1689), que establecieron precedentes para limitar el poder monárquico y proteger los derechos individuales. La influencia de pensadores
+                  clásicos como Cicerón, que enfatizaba el gobierno republicano y la ley natural, también es evidente. Jefferson sintetizó estas diversas corrientes filosóficas, transformando
+                  conceptos abstractos en principios políticos prácticos. Aunque la frase "todos los hombres son creados iguales" con derechos a "la vida, la libertad y la búsqueda de la felicidad"
+                  muestra la influencia directa de Locke (quien había escrito sobre "vida, libertad y propiedad"), Jefferson adaptó estas ideas para articular una visión específicamente americana.
+                  Esta síntesis filosófica es lo que hace que la Declaración trascienda su función inmediata como documento político, convirtiéndola en una expresión perdurable de ideales políticos
+                  que ha inspirado movimientos por la libertad y la igualdad en todo el mundo durante más de dos siglos.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron las principales acusaciones contra el Rey Jorge III?</div>
+                <div class="answer">
+                  La Declaración de Independencia enumera 27 acusaciones específicas contra el Rey Jorge III, estratégicamente construidas para justificar la separación de las colonias: el rey es
+                  acusado de interferir con el proceso legislativo, negándose a aprobar leyes "necesarias para el bien público", disolviendo cuerpos legislativos coloniales que se oponían a sus
+                  invasiones de los derechos del pueblo, negándose a permitir la elección de nuevas legislaturas, y convocando reuniones legislativas en lugares inusuales, incómodos y distantes; se le
+                  acusa de obstruir la administración de justicia, haciendo que los jueces dependieran de su voluntad para el cargo y el salario, y enviando "enjambres de funcionarios" para acosar al
+                  pueblo; las acusaciones militares incluyen mantener ejércitos permanentes en tiempos de paz sin consentimiento colonial, protegiendo a soldados de castigos por crímenes contra
+                  colonos mediante "juicios simulados", y utilizando mercenarios extranjeros (hessianos) y nativos americanos para "completar las obras de muerte, desolación y tiranía"; se le reprocha
+                  imponer impuestos sin consentimiento, privar a los colonos del beneficio de juicio por jurado, transportar a ciudadanos al extranjero para ser juzgados por supuestos delitos, y
+                  abolir el sistema legal inglés en ciertas colonias; y acusaciones económicas como cortar el comercio colonial con el resto del mundo e imponer impuestos sin representación. La
+                  Declaración también acusa al rey de ignorar repetidamente las peticiones coloniales de reparación, afirmando que "un príncipe cuyo carácter está así marcado por cada acto que puede
+                  definir a un tirano, no es apto para ser el gobernante de un pueblo libre". Estas acusaciones reflejan el concepto de soberanía en evolución: aunque históricamente las colonias
+                  habían reconocido el Parlamento como fuente de agravios, la Declaración estratégicamente dirige todas las acusaciones contra el monarca, evitando la complicación de explicar por qué
+                  rechazaban la autoridad del Parlamento que teóricamente los representaba. Este enfoque singular en el rey como tirano proporcionó una justificación clara y comprensible para la
+                  independencia, adaptada tanto al público doméstico como internacional, mientras articulaba un nuevo entendimiento de la relación apropiada entre gobernantes y gobernados que
+                  definiría la república americana.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo se manejó la cuestión de la esclavitud en la redacción de la Declaración?</div>
+                <div class="answer">
+                  La cuestión de la esclavitud generó una significativa tensión durante la redacción de la Declaración de Independencia, revelando contradicciones fundamentales en la fundación de la
+                  nación: el borrador original de Jefferson incluía un pasaje extenso que condenaba la trata de esclavos como una "guerra cruel" contra la naturaleza humana y acusaba al rey Jorge III
+                  de "violar los derechos más sagrados de vida y libertad" al mantener un mercado donde "se venden HOMBRES"; esta sección fue eliminada completamente del documento final debido a
+                  objeciones de delegados de Georgia y las Carolinas, estados profundamente dependientes de la esclavitud, y porque habría comprometido a colonos del norte que también participaban en
+                  el comercio de esclavos y la industria esclavista; la eliminación de este pasaje representó un compromiso pragmático para mantener la unidad entre las colonias, pero también
+                  estableció un patrón de subordinar los derechos de los esclavizados a los intereses políticos y económicos dominantes. El lenguaje universalista de la Declaración ("todos los hombres
+                  son creados iguales") quedó en marcado contraste con la realidad de la esclavitud, creando lo que el historiador Samuel Johnson señaló sarcásticamente como la hipocresía de
+                  "conductores de negros" clamando por libertad. Esta contradicción fundamental no escapó a los contemporáneos, particularmente a los propios esclavizados: cinco años después, un grupo
+                  de esclavos de Massachusetts peticionó su libertad citando los mismos principios de la Declaración, afirmando que "cada principio desde el cual América justifica su independencia"
+                  también justificaba su libertad. La ironía se vuelve aún más pronunciada considerando que Jefferson mismo poseía más de 600 personas esclavizadas a lo largo de su vida, y mientras
+                  denunciaba la esclavitud en escritos privados, nunca liberó a la mayoría de ellos, ni siquiera en su testamento. Intelectuales negros como Frederick Douglass posteriormente
+                  reclamarían el lenguaje universalista de la Declaración como promesa incumplida, argumentando que sus principios debían aplicarse a todos. Esta tensión no resuelta entre los ideales
+                  proclamados en la Declaración y la realidad de la esclavitud establecería un conflicto moral y político que eventualmente llevaría a la Guerra Civil y continuaría definiendo la lucha
+                  por la igualdad racial en Estados Unidos durante siglos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 9 -->
+        <div class="event">
+          <div class="event-date">1777-1781</div>
+          <div class="event-marker"></div>
+          <div class="event-connector"></div>
+          <div class="event-card">
+            <div class="event-header" onclick="toggleContent(this)">
+              <h3 class="event-title">Los Artículos de la Confederación</h3>
+              <p class="event-summary">El primer documento constitucional de Estados Unidos que estableció un gobierno nacional débil</p>
+              <div class="event-buttons">
+                <button class="btn btn-text" onclick="toggleSection(this, 'text-9')">📝 Texto</button>
+                <button class="btn btn-image" onclick="toggleSection(this, 'image-9')">🖼️ Imagen</button>
+
+                <button class="btn btn-question" onclick="toggleSection(this, 'questions-9')">❓ Preguntas</button>
+              </div>
+            </div>
+            <div class="event-content">
+              <div id="text-9" class="content-section text-section">
+                <p>
+                  Los
+                  <strong>Artículos de la Confederación</strong>
+                  constituyeron el primer documento constitucional de los Estados Unidos, redactados por el Segundo Congreso Continental y propuestos a los estados en 1777, aunque no fueron
+                  ratificados por todos los estados hasta 1781. Este marco de gobierno reflejaba la profunda desconfianza que los colonos sentían hacia cualquier autoridad central fuerte, tras su
+                  experiencia con el dominio británico.
+                </p>
+                <p>
+                  Los Artículos establecieron una "firme liga de amistad" entre estados soberanos e independientes, más que un gobierno nacional cohesionado. El documento creaba un Congreso unicameral
+                  donde cada estado tenía un voto, independientemente de su tamaño o población. Este Congreso tenía autoridad limitada: podía declarar guerra, negociar con potencias extranjeras y
+                  resolver disputas entre estados, pero crucialmente, carecía del poder para imponer impuestos, regular el comercio interestatal o hacer cumplir leyes nacionales.
+                </p>
+                <p>
+                  Las principales limitaciones de los Artículos incluían: la ausencia de un poder ejecutivo o judicial nacional; la incapacidad para recaudar fondos directamente, dependiendo de
+                  contribuciones voluntarias de los estados; el requisito de unanimidad para cualquier enmienda al documento; y la necesidad de nueve de los trece estados para aprobar legislación
+                  importante. Estas restricciones pronto probaron ser paralizantes para el nuevo gobierno.
+                </p>
+                <p>
+                  Aunque los Artículos permitieron al Congreso administrar la Guerra Revolucionaria y negociar la paz con Gran Bretaña, sus debilidades se hicieron cada vez más evidentes en la
+                  posguerra. Crisis como la Rebelión de Shays en 1786-87, la incapacidad para pagar la deuda nacional, y las disputas comerciales entre estados demostraron la necesidad de un gobierno
+                  federal más fuerte. Estas deficiencias llevaron directamente a la Convención Constitucional de 1787 y a la redacción de la Constitución que actualmente rige Estados Unidos.
+                </p>
+              </div>
+              <div id="image-9" class="content-section image-section">
+                <img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Articles_page1.jpg/960px-Articles_page1.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                  alt="Artículos de la Confederación"
+                  class="event-image" />
+                <p class="caption">Primera página de los Artículos de la Confederación, el primer documento constitucional de los Estados Unidos</p>
+              </div>
+
+              <div id="questions-9" class="content-section questions-section">
+                <div class="question" onclick="toggleAnswer(this)">¿Por qué los Artículos de la Confederación establecían un gobierno central tan débil?</div>
+                <div class="answer">
+                  Los Artículos de la Confederación establecieron un gobierno central deliberadamente débil debido a múltiples factores históricos y filosóficos: la experiencia colonial reciente bajo
+                  el control británico había generado una profunda desconfianza hacia cualquier autoridad central fuerte, con las colonias habiendo luchado precisamente contra lo que consideraban el
+                  poder arbitrario y tiránico de un gobierno distante; la tradición política angloamericana, influenciada por pensadores como John Locke y Montesquieu, enfatizaba que la concentración
+                  de poder era una amenaza inherente a la libertad; las colonias se habían desarrollado durante más de 150 años como entidades separadas con sus propias tradiciones políticas,
+                  económicas y sociales, creando fuertes identidades estatales que resistían la subordinación a una autoridad nacional; existía una división conceptual fundamental entre
+                  "republicanismo" y "federalismo" - muchos revolucionarios creían que las repúblicas solo podían funcionar efectivamente a pequeña escala, donde los ciudadanos podían participar
+                  directamente en el gobierno; los modelos históricos de confederaciones, como la Liga Aquea de la antigua Grecia o la República Holandesa, proporcionaban ejemplos de estados
+                  independientes cooperando sin ceder soberanía significativa; y los intereses económicos divergentes entre estados comerciales (principalmente del norte) y agrícolas (principalmente
+                  del sur) generaban temores de que un gobierno central fuerte favoreciera a unos sobre otros. El estadista John Dickinson, principal redactor de los Artículos, expresó el consenso
+                  contemporáneo al escribir que los poderes delegados al gobierno central debían ser "tan pocos y tan claramente definidos como sea posible". Los Artículos reflejaban así una filosofía
+                  predominante que priorizaba la prevención de la tiranía sobre la eficiencia gubernamental, considerando que el mayor peligro para la libertad provenía de un exceso de poder central,
+                  no de su insuficiencia. Solo después de que las crisis de la posguerra demostraran las insuficiencias prácticas de este enfoque, muchos líderes revolucionarios reconsiderarían el
+                  equilibrio entre libertad estatal y autoridad nacional, conduciendo eventualmente a la Constitución de 1787.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cuáles fueron los logros más importantes bajo los Artículos de la Confederación?</div>
+                <div class="answer">
+                  A pesar de sus limitaciones, los Artículos de la Confederación permitieron varios logros significativos: la conclusión exitosa de la Guerra Revolucionaria, con el gobierno
+                  confederado coordinando esfuerzos militares, manteniendo al Ejército Continental, y forjando la crucial alianza con Francia que resultó decisiva para la victoria; la negociación del
+                  ventajoso Tratado de París de 1783, que obtuvo términos excepcionalmente favorables, asegurando la independencia americana, estableciendo límites territoriales expansivos hasta el
+                  río Mississippi, y obteniendo derechos de pesca en aguas de Terranova; la creación de un sistema para administrar los territorios occidentales a través de la Ordenanza del Noroeste
+                  de 1787, estableciendo procedimientos para la creación y posterior admisión de nuevos estados en condiciones de igualdad con los originales, prohibiendo la esclavitud en el
+                  Territorio del Noroeste, y reservando tierras para educación pública, sentando las bases para la expansión territorial ordenada; el establecimiento de departamentos ejecutivos
+                  funcionales para Asuntos Exteriores, Guerra y Finanzas, que proporcionaron infraestructura administrativa para el futuro gobierno federal; la gestión de asuntos diplomáticos,
+                  incluyendo el establecimiento de relaciones con potencias europeas, la negociación de tratados comerciales, y el enfrentamiento a desafíos como la piratería berberisca; y el
+                  mantenimiento de la unión durante un período crítico de transición, evitando que las colonias recién independizadas se fragmentaran en entidades separadas o fueran recolonizadas por
+                  potencias europeas. También bajo los Artículos, el Congreso estableció una moneda nacional, aunque imperfecta, creó el Servicio Postal, y desarrolló un sistema para la gestión de la
+                  deuda nacional. Estos logros, especialmente la Ordenanza del Noroeste, son recordados como contribuciones significativas al desarrollo nacional, demostrando que incluso un gobierno
+                  confederado débil podía lograr avances importantes. Como señaló el historiador Gordon Wood, los Artículos no deben verse simplemente como un fracaso, sino como un "primer experimento
+                  en gobierno republicano" que proporcionó lecciones indispensables para el desarrollo constitucional posterior, funcionando como un paso evolutivo necesario entre la independencia y
+                  el establecimiento de un gobierno federal más robusto.
+                </div>
+                <div class="question" onclick="toggleAnswer(this)">¿Cómo influyó la Rebelión de Shays en el abandono de los Artículos de la Confederación?</div>
+                <div class="answer">
+                  La Rebelión de Shays (1786-1787) actuó como catalizador crucial para abandonar los Artículos de la Confederación al exponer dramáticamente las debilidades del gobierno confederado:
+                  este levantamiento de aproximadamente 4,000 agricultores, principalmente veteranos revolucionarios endeudados liderados por Daniel Shays en Massachusetts occidental, estalló cuando
+                  enfrentaron ejecuciones hipotecarias y encarcelamiento por deudas en un período de grave depresión económica posguerra; los rebeldes impidieron el funcionamiento de tribunales de
+                  justicia y eventualmente atacaron el arsenal federal en Springfield, siendo finalmente dispersados por una milicia financiada privadamente, ya que Massachusetts carecía de fondos
+                  para movilizar tropas y el gobierno nacional fue incapaz de proporcionar asistencia efectiva. La rebelión tuvo un profundo impacto psicológico en las élites políticas americanas por
+                  varias razones: demostró la incapacidad del gobierno nacional para responder a crisis internas, ya que bajo los Artículos solo podía intervenir en disturbios estatales si era
+                  invitado por la legislatura estatal, y carecía de fuerzas armadas propias o financiación independiente; expuso las dificultades económicas generalizadas resultantes de la incapacidad
+                  del gobierno para desarrollar políticas monetarias y comerciales coherentes, gestionar la deuda nacional o regular la moneda; alimentó temores de anarquía social y "excesos
+                  democráticos" entre muchos líderes revolucionarios, que vieron en la rebelión una amenaza potencial a la propiedad privada y al orden republicano; y ocurrió en un momento
+                  estratégico, apenas seis meses antes de la Convención Constitucional de Filadelfia, proporcionando a los federalistas un poderoso ejemplo práctico de las consecuencias de un gobierno
+                  central débil. George Washington expresó la reacción de muchos cuando escribió que "hay combustibles suficientes en todos los Estados para encender el fuego de la sedición," mientras
+                  que Henry Knox advirtió alarmistamente sobre un espíritu de "nivelación social" que amenazaba los derechos de propiedad. La rebelión cambió fundamentalmente los términos del debate
+                  político, convenciendo a figuras clave como James Madison, Alexander Hamilton y Washington de que la preservación de la república requería un gobierno nacional más fuerte. Así, en la
+                  Convención Constitucional, los delegados repetidamente citaron la Rebelión de Shays como evidencia de la necesidad de abandonar los Artículos, transformando lo que inicialmente se
+                  planeó como una revisión limitada en la creación de un nuevo sistema constitucional con poderes ejecutivos, legislativos y judiciales sustancialmente fortalecidos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Función para mostrar/ocultar el contenido del evento
+      function toggleContent(header) {
+        const content = header.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      }
+
+      // Función para mostrar/ocultar secciones de contenido
+      function toggleSection(btn, sectionId) {
+        // Evitar que el clic se propague al header y cierre el contenido
+        if (event) {
+          event.stopPropagation();
+        }
+
+        // Asegurarse de que el contenido del evento esté visible
+        const header = btn.closest('.event-header');
+        const contentContainer = header.nextElementSibling;
+        contentContainer.style.display = 'block';
+
+        // Obtener la sección específica
+        const section = document.getElementById(sectionId);
+        if (!section) {
+          console.error('No se encontró la sección:', sectionId);
+          return;
+        }
+
+        // Verificar si la sección ya está activa
+        const isAlreadyActive = section.classList.contains('active');
+
+        // Ocultar TODAS las secciones en este contenedor
+        const allSections = contentContainer.querySelectorAll('.content-section');
+        allSections.forEach(sec => {
+          sec.classList.remove('active');
+        });
+
+        // Si la sección no estaba activa, mostrarla; si ya estaba activa, quedará cerrada
+        if (!isAlreadyActive) {
+          section.classList.add('active');
+        }
+      }
+
+      // Función para mostrar/ocultar respuestas
+      function toggleAnswer(question) {
+        const answer = question.nextElementSibling;
+        if (answer.classList.contains('show')) {
+          answer.classList.remove('show');
+        } else {
+          answer.classList.add('show');
+        }
+      }
+
+      // Inicializar: No mostrar ningún evento expandido por defecto
+      document.addEventListener('DOMContentLoaded', function () {
+        // No hacemos nada aquí, para que ningún evento aparezca expandido por defecto
+      });
+    </script>
+  </body>
+</html>
