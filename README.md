@@ -204,6 +204,7 @@ Las lecciones trabajan con fragmentos; el Archivo conserva los documentos comple
 
 | Interactivo | Apoya |
 |---|---|
+| [Fuera de contexto: cómo verificar una cita](https://zhemaria.github.io/sociales/fuera_de_contexto/) | Tema 1 (evaluación de fuentes) |
 | [El ciclo económico](https://zhemaria.github.io/sociales/ciclo_economico/) | Lección 5.3 |
 | [Origen de los Estados Unidos de América](https://zhemaria.github.io/sociales/linea_origen_usa/) | Lección 6.1 |
 | [Oferta y demanda](https://zhemaria.github.io/sociales/oferta_demanda/) | Lección 7.1 |
@@ -242,6 +243,7 @@ sociales/
 │   └── index.html          ← Archivo de fuentes y fichas de los documentos
 ├── balanza_pagos/          ┐
 ├── ciclo_economico/        │
+├── fuera_de_contexto/      │
 ├── linea_origen_usa/       ├ interactivos, cada uno con su propio index.html
 ├── mercado_valores/        │
 └── oferta_demanda/         ┘

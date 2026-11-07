@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!-- Fuera de contexto: cómo verificar una cita antes de compartirla — José M. Fernández. Licencia CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es) -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuera de contexto</title>
+<meta name="description" content="Actividad para aprender a verificar citas sacadas de contexto, con un caso de estudio de una imagen viral sobre textos religiosos.">
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<style>
+:root{
+  --tinta:#1a1a1a; --papel:#fbfaf7; --suave:#555555; --linea:#d8d4cc;
+  --acento:#0f4c5c; --acento-claro:#e6f0f2; --ambar:#5C3900; --ambar-claro:#fdf3e1;
+  --bien:#1b5e20; --bien-claro:#e8f5e9; --mal:#8b1a1a; --mal-claro:#fdecec;
+  --tam:1.05rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:Georgia,"Times New Roman",serif;font-size:var(--tam);line-height:1.65}
+.envoltura{max-width:880px;margin:0 auto;padding:1rem 16px 3rem}
+header.cabecera{background:var(--acento);color:#fff;padding:1.6rem 16px 1.3rem}
+header.cabecera .envoltura{padding:0 16px}
+header h1{margin:.2rem 0 .4rem;font-size:1.9rem;line-height:1.25}
+header p{margin:0;font-size:1.05rem}
+.etiqueta{display:inline-block;font-family:system-ui,sans-serif;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;background:#ffffff26;padding:.15rem .55rem;border-radius:4px}
+.herramientas{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0;font-family:system-ui,sans-serif;font-size:.92rem}
+button{font-family:system-ui,sans-serif;font-size:.95rem;cursor:pointer;border-radius:6px;border:2px solid var(--acento);background:#fff;color:var(--acento);padding:.4rem .8rem}
+button:hover{background:var(--acento-claro)}
+button:focus-visible,a:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.caja{border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.caja-objetivos{background:var(--acento-claro);border-left:6px solid var(--acento)}
+.caja-objetivos h2{margin-top:0;font-size:1.3rem;color:var(--acento)}
+.caja-aviso{background:var(--ambar-claro);border-left:6px solid var(--ambar)}
+.caja-aviso strong{color:var(--ambar)}
+nav.indice{background:#fff;border:1px solid var(--linea);border-radius:8px;padding:.8rem 1.2rem}
+nav.indice h2{font-size:1.15rem;margin:.2rem 0 .4rem}
+nav.indice ol{margin:0;padding-left:1.4rem}
+nav.indice a{color:var(--acento)}
+details.seccion{background:#fff;border:1px solid var(--linea);border-radius:8px;margin:1rem 0}
+details.seccion>summary{list-style:none;cursor:pointer;padding:1rem 1.2rem;display:flex;gap:.8rem;align-items:center}
+details.seccion>summary::-webkit-details-marker{display:none}
+.num{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--acento);color:#fff;display:flex;align-items:center;justify-content:center;font-family:system-ui,sans-serif;font-weight:700}
+summary h2{margin:0;font-size:1.3rem;line-height:1.3}
+summary .resumen{display:block;font-size:.95rem;color:var(--suave);font-weight:normal}
+.flecha{margin-left:auto;transition:transform .2s;color:var(--acento)}
+details[open]>summary .flecha{transform:rotate(90deg)}
+.cuerpo{padding:0 1.2rem 1.2rem}
+h3{color:var(--acento);font-size:1.15rem;margin:1.4rem 0 .4rem}
+.escuchar{font-size:.85rem;padding:.25rem .6rem;margin-bottom:.5rem}
+blockquote{margin:.8rem 0;padding:.6rem 1rem;border-left:4px solid var(--linea);background:#f4f2ee;font-style:italic}
+.revelar{margin:.6rem 0}
+.oculto{display:none}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.97rem;background:#fff}
+caption{text-align:left;font-weight:700;padding:.4rem 0;color:var(--acento)}
+th,td{border:1px solid var(--linea);padding:.55rem .7rem;vertical-align:top;text-align:left}
+th{background:var(--acento);color:#fff}
+.tarjeta{border:1px solid var(--linea);border-radius:8px;padding:1rem;margin:1rem 0;background:#fff}
+.tarjeta h4{margin:0 0 .4rem;font-size:1.08rem}
+.opciones{display:grid;gap:.45rem;margin-top:.7rem}
+.opciones button{text-align:left;color:var(--tinta);border-color:var(--linea);background:#fff;padding:.55rem .8rem;line-height:1.4}
+.opciones button .letra{font-weight:700;color:var(--acento);margin-right:.35rem}
+.opciones button.correcta{background:var(--bien-claro);border-color:var(--bien)}
+.opciones button.incorrecta{background:var(--mal-claro);border-color:var(--mal)}
+.retro{margin-top:.7rem;padding:.6rem .8rem;border-radius:6px;display:none}
+.retro.bien{display:block;background:var(--bien-claro);color:var(--bien)}
+.retro.mal{display:block;background:var(--mal-claro);color:var(--mal)}
+.retro p{margin:.2rem 0;color:var(--tinta)}
+.marcador{font-family:system-ui,sans-serif;font-weight:700;color:var(--acento);margin:1rem 0}
+ol.lista-cinco>li{margin-bottom:.6rem}
+textarea{width:100%;min-height:9rem;font:inherit;padding:.7rem;border:2px solid var(--linea);border-radius:6px}
+.aviso-pagina{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);background:var(--acento);color:#fff;padding:.6rem 1rem;border-radius:6px;font-family:system-ui,sans-serif;display:none;z-index:10}
+details.guia{border:2px dashed var(--ambar);border-radius:8px;background:var(--ambar-claro);margin:1.5rem 0}
+details.guia>summary{cursor:pointer;padding:.9rem 1.2rem;font-weight:700;color:var(--ambar)}
+footer{border-top:1px solid var(--linea);margin-top:2rem;padding-top:1rem;font-size:.9rem;color:var(--suave)}
+footer a,.cuerpo a{color:var(--acento)}
+@media print{.herramientas,.escuchar,button{display:none!important}details{display:block}}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltura">
+    <span class="etiqueta">Pensamiento crítico · Evaluación de fuentes</span>
+    <h1>Fuera de contexto: cómo verificar una cita antes de compartirla</h1>
+    <p>Una frase recortada puede decir lo contrario de lo que dice el texto completo.</p>
+  </div>
+</header>
+
+<main class="envoltura">
+
+  <div class="herramientas" role="group" aria-label="Herramientas de lectura">
+    <span>Tamaño del texto:</span>
+    <button type="button" id="menos" aria-label="Reducir tamaño del texto">A−</button>
+    <button type="button" id="mas" aria-label="Aumentar tamaño del texto">A+</button>
+    <button type="button" id="abrirTodo">Abrir todo</button>
+    <button type="button" id="cerrarTodo">Cerrar todo</button>
+  </div>
+
+  <section class="caja caja-objetivos" aria-labelledby="t-vistazo">
+    <h2 id="t-vistazo">De un vistazo</h2>
+    <p><strong>Al terminar, usted podrá:</strong></p>
+    <ul>
+      <li>reconocer cinco maneras comunes de sacar una cita de su contexto;</li>
+      <li>comparar un fragmento con el texto completo antes de aceptarlo como prueba;</li>
+      <li>aplicar una lista de cinco preguntas a cualquier imagen o mensaje que circule en las redes.</li>
+    </ul>
+    <p><strong>Tiempo aproximado:</strong> 60 minutos. <strong>Prácticas del GED relacionadas:</strong> analizar el propósito y el punto de vista del autor, y evaluar el razonamiento y la evidencia (Estudios Sociales y Artes del Lenguaje).</p>
+  </section>
+
+  <div class="caja caja-aviso" role="note">
+    <strong>Nota importante:</strong> esta lección usa como ejemplo una imagen que compara textos religiosos. El propósito no es decidir qué religión es verdadera ni mejor, sino aprender a leer con exactitud. El mismo método se aplica, con igual rigor, a textos de cualquier origen.
+  </div>
+
+  <nav class="indice" aria-labelledby="t-indice">
+    <h2 id="t-indice">Contenido</h2>
+    <ol>
+      <li><a href="#para-empezar">Para empezar: una reseña engañosa</a></li>
+      <li><a href="#tecnicas">Cinco maneras de sacar una cita de contexto</a></li>
+      <li><a href="#caso">Caso de estudio: una imagen viral</a></li>
+      <li><a href="#espejo">La prueba del espejo</a></li>
+      <li><a href="#cinco-preguntas">Las cinco preguntas antes de compartir</a></li>
+      <li><a href="#practica">Práctica</a></li>
+      <li><a href="#cierre">Cierre y reflexión escrita</a></li>
+      <li><a href="#fuentes">Fuentes para consultar</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <details class="seccion" id="para-empezar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Para empezar: una reseña engañosa<span class="resumen">Cómo una palabra cambia de sentido al recortarla.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="para-empezar">🔊 Escuchar esta sección</button>
+      <p>El cartel publicitario de una película muestra esta frase de un crítico de cine:</p>
+      <blockquote>«¡Increíble!» — Crítica del periódico local</blockquote>
+      <p>Piense un momento: ¿qué opinión tenía el crítico sobre la película? Después pulse el botón para leer la reseña completa.</p>
+      <button type="button" class="revelar" data-objetivo="resena">Ver la frase completa</button>
+      <div id="resena" class="oculto" aria-live="polite">
+        <blockquote>«Es increíble que alguien haya pagado por filmar algo tan aburrido».</blockquote>
+        <p>La palabra es auténtica: el crítico sí escribió «increíble». Pero el cartel la separó del resto de la oración y le dio el sentido contrario. <strong>Una cita puede ser verdadera palabra por palabra y, aun así, engañar.</strong></p>
+      </div>
+    </div>
+  </details>
+
+  <!-- 2 -->
+  <details class="seccion" id="tecnicas">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Cinco maneras de sacar una cita de contexto<span class="resumen">Las técnicas que usaremos en toda la lección.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="tecnicas">🔊 Escuchar esta sección</button>
+      <p>El <strong>contexto</strong> es todo lo que rodea a una frase: lo que se dijo antes y después, quién habla, a quién se dirige y en qué situación. Quien quiere manipular suele usar una o varias de estas técnicas:</p>
+      <table>
+        <caption>Técnicas para sacar una cita de su contexto</caption>
+        <thead><tr><th scope="col">Técnica</th><th scope="col">En qué consiste</th><th scope="col">Ejemplo breve</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A. Omitir lo de antes o después</strong></td><td>Se corta la frase que limita o explica la cita.</td><td>La reseña de la película.</td></tr>
+          <tr><td><strong>B. Cambiar quién habla</strong></td><td>Se atribuye a una persona lo que dice otra, o un personaje de un relato.</td><td>Citar al villano de una novela como si fuera la opinión del autor.</td></tr>
+          <tr><td><strong>C. Traducir con exageración</strong></td><td>Se elige una palabra más fuerte que la del original.</td><td>Traducir «vencer» como «aniquilar».</td></tr>
+          <tr><td><strong>D. Aplicarlo a otro grupo</strong></td><td>Una regla para un caso concreto se presenta como si valiera para todos.</td><td>Una multa para conductores ebrios presentada como multa para todos los conductores.</td></tr>
+          <tr><td><strong>E. Comparar de forma desigual</strong></td><td>Se escogen solo los fragmentos amables de un lado y solo los duros del otro.</td><td>Comparar la mejor jugada de un equipo con el peor error del otro.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <!-- 3 -->
+  <details class="seccion" id="caso">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Caso de estudio: una imagen viral<span class="resumen">Clasifique cada cita según la técnica usada.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="caso">🔊 Escuchar esta sección</button>
+      <h3>Descripción de la imagen</h3>
+      <p>En las redes sociales circula una imagen dividida en dos columnas. A la izquierda aparece Jesucristo con frases breves tomadas de los Evangelios: «Ámalos», «Bendícelos», «Perdónalos». A la derecha aparece Mahoma con frases breves tomadas del Corán: «Mátalos», «Crucifícalos», «Masácralos», «Aterrorízalos». Cada frase lleva su cita (capítulo y versículo), lo que le da apariencia de exactitud.</p>
+      <p>Los versículos citados existen. La pregunta es: <strong>¿dicen lo que la imagen asegura que dicen?</strong></p>
+
+      <h3>Actividad: ¿qué técnica se usó?</h3>
+      <p>Lea en cada tarjeta lo que dice la imagen y lo que dice el texto completo (en paráfrasis). Elija la técnica que mejor explica la diferencia.</p>
+
+      <div id="clasificador"></div>
+      <p class="marcador" id="marcadorCaso" aria-live="polite"></p>
+
+      <h3>Lo que el contexto no borra</h3>
+      <p>Leer con exactitud también significa no exagerar en la dirección contraria. Algunos de estos pasajes, como el 9:5 y el 5:33, son duros aun leídos completos; reflejan guerras del siglo VII y castigos de esa época. Historiadores y teólogos los discuten, y algunos grupos extremistas los citan fuera de contexto, igual que esta imagen. La gran mayoría de los musulmanes y de los estudiosos los entienden como normas de un conflicto histórico concreto. Además, Mahoma fue líder político y militar, y Jesús no; esa diferencia histórica es real y puede discutirse con seriedad, pero con los textos completos sobre la mesa.</p>
+      <p>Por último, la imagen presenta las frases como si las dijera Mahoma, pero para los musulmanes el Corán es palabra de Dios, no una colección de discursos del profeta. Eso también es un cambio de quién habla.</p>
+    </div>
+  </details>
+
+  <!-- 4 -->
+  <details class="seccion" id="espejo">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La prueba del espejo<span class="resumen">El mismo método aplicado en la dirección contraria.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="espejo">🔊 Escuchar esta sección</button>
+      <p>Una buena manera de detectar una manipulación es preguntarse: <strong>¿podría alguien usar este mismo método para llegar a la conclusión contraria?</strong> Si la respuesta es sí, el método no prueba nada.</p>
+      <table>
+        <caption>Fragmentos sueltos y lo que aclara su contexto</caption>
+        <thead><tr><th scope="col">Fragmento suelto</th><th scope="col">Referencia</th><th scope="col">Lo que aclara el contexto</th></tr></thead>
+        <tbody>
+          <tr><td>«No he venido para meter paz, sino espada».</td><td>Mateo 10:34</td><td>Los versículos 35 y 36 hablan de divisiones dentro de las familias por causa de la fe. La espada es una imagen, no una orden de combate.</td></tr>
+          <tr><td>«Traedlos acá, y degolladlos delante de mí».</td><td>Lucas 19:27</td><td>Lo dice el rey de una parábola que Jesús cuenta. No es una instrucción a sus discípulos.</td></tr>
+          <tr><td>«Ninguna persona dejarás con vida».</td><td>Deuteronomio 20:16</td><td>Es un mandato de guerra limitado a ciudades concretas de Canaán. El versículo 20:10 manda ofrecer primero la paz a las demás ciudades.</td></tr>
+          <tr><td>Quien mata a una persona es como si matara a toda la humanidad (paráfrasis).</td><td>Corán 5:32</td><td>Se dirige a los hijos de Israel, y lo sigue el 5:33, que establece penas severas. Citarlo solo para decir que el Corán no tiene pasajes duros también lo saca de contexto.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Conclusión:</strong> con fragmentos sueltos se puede «demostrar» casi cualquier cosa sobre cualquier libro. Por eso el fragmento nunca basta como prueba; hay que leer el pasaje completo.</p>
+      <p><em>Sugerencia de práctica:</em> si estudia con otras personas, formen parejas. Una persona elige un fragmento de la tabla y lo presenta como «prueba»; la otra busca el pasaje completo en las fuentes de la sección 8 y explica lo que aclara.</p>
+    </div>
+  </details>
+
+  <!-- 5 -->
+  <details class="seccion" id="cinco-preguntas">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Las cinco preguntas antes de compartir<span class="resumen">Una lista breve para cualquier cita o imagen.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="cinco-preguntas">🔊 Escuchar esta sección</button>
+      <ol class="lista-cinco">
+        <li><strong>¿Quién habla?</strong> ¿El autor, un personaje, un narrador, otra persona citada?</li>
+        <li><strong>¿Qué se dice antes y después?</strong> Lea al menos el párrafo completo, o los versículos vecinos.</li>
+        <li><strong>¿Cómo se tradujo?</strong> Compare dos traducciones si el texto original está en otro idioma.</li>
+        <li><strong>¿A quién se dirige y en qué situación?</strong> Una regla para la guerra, para un delito o para una época no es una regla para todos.</li>
+        <li><strong>¿Es justa la comparación?</strong> ¿Se eligieron los fragmentos con el mismo criterio en ambos lados?</li>
+      </ol>
+      <p>Y una pregunta adicional: <strong>¿quién publicó esto y qué quiere que yo sienta o haga?</strong> Una imagen diseñada para provocar enojo suele pedir que se comparta antes de que se piense.</p>
+    </div>
+  </details>
+
+  <!-- 6 -->
+  <details class="seccion" id="practica">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Práctica<span class="resumen">Seis casos de citas famosas y fragmentos sueltos.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="practica">🔊 Escuchar esta sección</button>
+      <p>Elija la mejor respuesta. Puede cambiar su elección después de leer la explicación.</p>
+      <div id="practicaPreguntas"></div>
+      <p class="marcador" id="marcadorPractica" aria-live="polite"></p>
+    </div>
+  </details>
+
+  <!-- 7 -->
+  <details class="seccion" id="cierre">
+    <summary><span class="num" aria-hidden="true">7</span><h2>Cierre y reflexión escrita<span class="resumen">Aplique lo aprendido a una situación real.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <button type="button" class="escuchar" data-leer="cierre">🔊 Escuchar esta sección</button>
+      <p><strong>Situación:</strong> un familiar le envía por mensaje una imagen con citas sueltas que atacan a un grupo de personas. Usted no quiere ofenderlo, pero tampoco quiere que la imagen siga circulando sin verificar.</p>
+      <p><strong>Escriba un párrafo de cinco a siete oraciones</strong> en el que le responda con respeto. Incluya al menos dos de las cinco preguntas y una sugerencia concreta para verificar las citas.</p>
+      <textarea id="reflexion" aria-label="Su respuesta escrita" placeholder="Escriba aquí su párrafo..."></textarea>
+      <div class="herramientas">
+        <button type="button" id="copiar">Copiar mi respuesta</button>
+        <button type="button" class="revelar" data-objetivo="modelo">Ver una respuesta modelo</button>
+      </div>
+      <div id="modelo" class="oculto" aria-live="polite">
+        <blockquote>Gracias por compartir la imagen; veo que el tema te preocupa. Busqué los versículos que cita y encontré que varios están recortados: en algunos se omitió el versículo anterior, que limita el combate a quienes atacan primero, y en otro quien habla es Dios y no se trata de una orden. Antes de compartir algo así, conviene preguntarse qué dice el texto antes y después, y si la comparación es justa. Con el mismo método se podría hacer una imagen igual de injusta sobre la Biblia. Te sugiero leer los pasajes completos en un sitio como Quran.com o en una Biblia, y sacar tus propias conclusiones. Con gusto los revisamos juntos.</blockquote>
+        <p>Observe que la respuesta modelo no insulta ni ridiculiza, reconoce la preocupación de la otra persona, da evidencia concreta y propone una acción.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- 8 -->
+  <details class="seccion" id="fuentes">
+    <summary><span class="num" aria-hidden="true">8</span><h2>Fuentes para consultar<span class="resumen">Los pasajes completos citados en la lección.</span></h2><span class="flecha" aria-hidden="true">▶</span></summary>
+    <div class="cuerpo">
+      <p>Todos los enlaces se abren en una pestaña nueva.</p>
+      <h3>Corán (traducción al español en Quran.com)</h3>
+      <ul>
+        <li><a href="https://quran.com/es/2/190-193" target="_blank" rel="noopener noreferrer">Sura 2:190–193</a></li>
+        <li><a href="https://quran.com/es/3/151" target="_blank" rel="noopener noreferrer">Sura 3:151</a></li>
+        <li><a href="https://quran.com/es/4/88-90" target="_blank" rel="noopener noreferrer">Sura 4:88–90</a></li>
+        <li><a href="https://quran.com/es/5/32-34" target="_blank" rel="noopener noreferrer">Sura 5:32–34</a></li>
+        <li><a href="https://quran.com/es/8/38-39" target="_blank" rel="noopener noreferrer">Sura 8:38–39</a></li>
+        <li><a href="https://quran.com/es/9/4-6" target="_blank" rel="noopener noreferrer">Sura 9:4–6</a></li>
+        <li><a href="https://quran.com/es/47/4" target="_blank" rel="noopener noreferrer">Sura 47:4</a></li>
+      </ul>
+      <h3>Biblia (Reina-Valera en Bible Gateway)</h3>
+      <ul>
+        <li><a href="https://www.biblegateway.com/passage/?search=Mateo+10%3A34-36&amp;version=RVR1960" target="_blank" rel="noopener noreferrer">Mateo 10:34–36</a></li>
+        <li><a href="https://www.biblegateway.com/passage/?search=Lucas+19%3A11-27&amp;version=RVR1960" target="_blank" rel="noopener noreferrer">Lucas 19:11–27</a></li>
+        <li><a href="https://www.biblegateway.com/passage/?search=Deuteronomio+20%3A10-18&amp;version=RVR1960" target="_blank" rel="noopener noreferrer">Deuteronomio 20:10–18</a></li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- Guía docente -->
+  <details class="guia" id="guia-docente">
+    <summary>Guía docente (plegable)</summary>
+    <div class="cuerpo">
+      <h3>Secuencia sugerida (60 minutos)</h3>
+      <table>
+        <caption>Distribución del tiempo de la sesión</caption>
+        <thead><tr><th scope="col">Momento</th><th scope="col">Tiempo</th><th scope="col">Actividad</th></tr></thead>
+        <tbody>
+          <tr><td>Inicio</td><td>5 min</td><td>Sección 1. Leer la cita del cartel y pedir predicciones antes de revelar la reseña completa.</td></tr>
+          <tr><td>Presentación</td><td>10 min</td><td>Sección 2. Explicar las cinco técnicas con ejemplos de la vida diaria del grupo.</td></tr>
+          <tr><td>Caso de estudio</td><td>15 min</td><td>Sección 3. Resolver el clasificador en conjunto, compartiendo pantalla (Zoom).</td></tr>
+          <tr><td>Trabajo en grupos</td><td>10 min</td><td>Sección 4 en salas pequeñas (Breakout rooms), con la sugerencia de práctica en parejas.</td></tr>
+          <tr><td>Práctica</td><td>10 min</td><td>Secciones 5 y 6, de forma individual.</td></tr>
+          <tr><td>Cierre</td><td>10 min</td><td>Sección 7. Redacción del párrafo; quien lo desee lo lee en voz alta.</td></tr>
+        </tbody>
+      </table>
+      <h3>Recomendaciones</h3>
+      <ul>
+        <li><strong>No muestre la imagen original.</strong> Incluye un retrato de Mahoma, y muchos musulmanes consideran ofensiva cualquier representación suya. La descripción de la sección 3 basta para el análisis.</li>
+        <li><strong>Establezca una norma al inicio:</strong> en esta clase no se debate qué religión es verdadera; se analiza cómo se usan las citas. Esto protege a estudiantes de cualquier creencia.</li>
+        <li><strong>Insista en la prueba del espejo.</strong> Es la sección que evita que la clase se perciba como una defensa o un ataque a una religión.</li>
+        <li><strong>Reconozca lo que el contexto no borra.</strong> Si un estudiante señala que algunos pasajes siguen siendo duros, tiene razón; el objetivo es la exactitud, no suavizar los textos.</li>
+        <li>La actividad se conecta con las guías de hechos y opiniones, y de argumentos y falacias, de Estudios Sociales.</li>
+      </ul>
+      <h3>Pauta para evaluar la reflexión escrita</h3>
+      <table>
+        <caption>Criterios de la reflexión escrita</caption>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">Lo esperado</th></tr></thead>
+        <tbody>
+          <tr><td>Tono</td><td>Respetuoso; reconoce la preocupación de la otra persona.</td></tr>
+          <tr><td>Uso de las cinco preguntas</td><td>Aplica al menos dos de forma pertinente.</td></tr>
+          <tr><td>Evidencia</td><td>Menciona un ejemplo concreto de cita recortada.</td></tr>
+          <tr><td>Acción propuesta</td><td>Sugiere una manera concreta de verificar.</td></tr>
+          <tr><td>Redacción</td><td>Cinco a siete oraciones completas, con conectores claros.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <footer>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer license">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.</p>
+  </footer>
+</main>
+
+<div class="aviso-pagina" id="aviso" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  /* ---------- Datos del clasificador ---------- */
+  var tecnicas = [
+    "Omite lo que se dice antes o después",
+    "Cambia a la persona que habla",
+    "Usa una traducción exagerada",
+    "Aplica la norma a un grupo distinto"
+  ];
+  var letras = ["a","b","c","d"];
+  var casos = [
+    { titulo:"La imagen dice: «Dales muerte» (Corán 2:191)",
+      texto:"El versículo anterior (2:190) indica combatir contra quienes atacan primero, sin excederse. El 2:191 sigue hablando de esos mismos atacantes, y los versículos 192 y 193 ordenan detenerse si el enemigo cesa.",
+      correcta:0,
+      explica:"La imagen corta los versículos vecinos, que limitan el combate a quienes atacan y ordenan parar si cesan." },
+    { titulo:"La imagen dice: «Aterrorízalos» (Corán 3:151)",
+      texto:"Quien habla es Dios, que anuncia que infundirá temor en el corazón de los enemigos durante una batalla. No es una orden dirigida a los creyentes.",
+      correcta:1,
+      explica:"La imagen convierte una afirmación de Dios sobre lo que Él hará en una orden que los creyentes deben cumplir." },
+    { titulo:"La imagen dice: «Masácralos» (Corán 47:4)",
+      texto:"Indica que, en pleno combate, se golpee al enemigo hasta vencerlo; después se toman prisioneros y se los libera por gracia o a cambio de un rescate.",
+      correcta:2,
+      explica:"«Masacrar» significa matar a gente indefensa. El versículo habla de combate y luego ordena liberar a los prisioneros." },
+    { titulo:"La imagen dice: «Crucifícalos… Mutílalos» (Corán 5:33)",
+      texto:"Establece penas severas, como ejecución, crucifixión, amputación o destierro, para quienes hacen la guerra y siembran la corrupción mediante el asalto armado. El 5:34 perdona a quien se arrepiente antes de ser capturado.",
+      correcta:3,
+      explica:"La pena es real y dura, pero se dirige a quienes cometen asalto armado, no a quienes profesan otra religión." },
+    { titulo:"La imagen dice: «Mátalos» (Corán 4:89)",
+      texto:"Habla de un grupo que se pasó al bando enemigo en plena guerra. El versículo siguiente (4:90) exceptúa a quienes se retiran, no combaten y ofrecen la paz.",
+      correcta:0,
+      explica:"La imagen omite el 4:90, que excluye precisamente a quienes buscan la paz." }
+  ];
+
+  /* ---------- Datos de la práctica ---------- */
+  var practica = [
+    { titulo:"A. Maquiavelo",
+      texto:"Una publicación afirma que Maquiavelo escribió en El príncipe: «El fin justifica los medios». ¿Qué conviene hacer antes de compartirla?",
+      opciones:[
+        "Compartirla, porque la frase es muy conocida y todos la repiten.",
+        "Buscarla en el libro: no aparece así; es un resumen posterior de su idea.",
+        "Aceptarla, porque Maquiavelo fue un autor político de mucha fama.",
+        "Descartarla, porque toda cita de un libro antiguo es siempre falsa."],
+      correcta:1,
+      explica:"La frase no aparece de forma literal en El príncipe. Resume, de manera simplificada, una idea del capítulo XVIII." },
+    { titulo:"B. María Antonieta",
+      texto:"Se dice que la reina María Antonieta, al saber que el pueblo no tenía pan, respondió: «Que coman pasteles». ¿Qué se sabe de esta cita?",
+      opciones:[
+        "Es cierta, porque así lo cuentan las películas y los libros escolares.",
+        "Es cierta, porque la reina era famosa por su vida llena de lujos.",
+        "Es falsa, porque la reina nunca habló en público durante su reinado.",
+        "Es dudosa: Rousseau ya la contaba de «una gran princesa» cuando ella era niña."],
+      correcta:3,
+      explica:"Rousseau atribuyó la anécdota a «una gran princesa» en sus Confesiones, escritas cuando María Antonieta era una niña que vivía en Austria. No hay prueba de que ella la dijera." },
+    { titulo:"C. Nietzsche",
+      texto:"Alguien cita «Dios ha muerto» como prueba de lo que Nietzsche pensaba. ¿Qué aclara el contexto de La gaya ciencia?",
+      opciones:[
+        "La dice un personaje, «el loco», para describir una pérdida de fe en la cultura.",
+        "Es un informe médico que Nietzsche escribió sobre la salud de un sacerdote.",
+        "Es una frase que Nietzsche nunca escribió y que inventaron sus críticos.",
+        "Es una orden de Nietzsche para que sus lectores cerraran las iglesias."],
+      correcta:0,
+      explica:"La frase aparece en un relato breve en boca de un personaje. Describe cómo la cultura europea dejaba de creer, no es una orden." },
+    { titulo:"D. La imagen viral",
+      texto:"¿Por qué la comparación de la imagen del caso de estudio es desigual?",
+      opciones:[
+        "Porque usa letras de distinto tamaño en cada una de las dos columnas.",
+        "Porque la imagen no indica el capítulo ni el versículo de cada cita.",
+        "Porque elige solo fragmentos amables de un lado y solo duros del otro.",
+        "Porque los libros sagrados no se pueden citar en ningún tipo de debate."],
+      correcta:2,
+      explica:"Ambos libros contienen pasajes amables y pasajes duros. Elegir con criterios distintos en cada lado es una comparación desigual." },
+    { titulo:"E. Un fragmento del Evangelio",
+      texto:"Alguien cita Lucas 19:27 («traedlos acá, y degolladlos delante de mí») para afirmar que Jesús mandó matar. ¿Qué técnica usa?",
+      opciones:[
+        "Omite lo que se dice antes o después",
+        "Cambia a la persona que habla",
+        "Usa una traducción exagerada",
+        "Aplica la norma a un grupo distinto"],
+      correcta:1,
+      explica:"Las palabras son del rey de una parábola que Jesús cuenta. Atribuírselas a Jesús como orden cambia a quien habla." },
+    { titulo:"F. Un fragmento del Corán",
+      texto:"Alguien cita solo el Corán 5:32 («quien mata a una persona es como si matara a toda la humanidad») para afirmar que el Corán no contiene ningún pasaje duro. ¿Qué técnica usa?",
+      opciones:[
+        "Omite lo que se dice antes o después",
+        "Cambia a la persona que habla",
+        "Usa una traducción exagerada",
+        "Aplica la norma a un grupo distinto"],
+      correcta:0,
+      explica:"El versículo siguiente, el 5:33, establece penas severas. También se puede sacar de contexto en la dirección amable." }
+  ];
+
+  function crearTarjeta(dato, opciones, idx, grupo){
+    var t = document.createElement("div");
+    t.className = "tarjeta";
+    var h = document.createElement("h4");
+    h.textContent = dato.titulo;
+    var p = document.createElement("p");
+    p.textContent = dato.texto;
+    var ops = document.createElement("div");
+    ops.className = "opciones";
+    ops.setAttribute("role","group");
+    ops.setAttribute("aria-label","Opciones para " + dato.titulo);
+    var retro = document.createElement("div");
+    retro.className = "retro";
+    retro.setAttribute("aria-live","polite");
+    opciones.forEach(function(texto, i){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = '<span class="letra">' + letras[i] + ')</span>';
+      b.appendChild(document.createTextNode(texto));
+      b.addEventListener("click", function(){
+        Array.prototype.forEach.call(ops.children, function(x){ x.classList.remove("correcta","incorrecta"); x.removeAttribute("aria-pressed"); });
+        b.setAttribute("aria-pressed","true");
+        var acierto = (i === dato.correcta);
+        b.classList.add(acierto ? "correcta" : "incorrecta");
+        retro.className = "retro " + (acierto ? "bien" : "mal");
+        retro.innerHTML = "<strong>" + (acierto ? "Correcto." : "Revise de nuevo.") + "</strong>";
+        var e = document.createElement("p");
+        e.textContent = acierto ? dato.explica : "Vuelva a leer el texto completo y compárelo con la frase de la imagen o la publicación.";
+        retro.appendChild(e);
+        grupo.resultados[idx] = acierto;
+        actualizar(grupo);
+      });
+      ops.appendChild(b);
+    });
+    t.appendChild(h); t.appendChild(p); t.appendChild(ops); t.appendChild(retro);
+    return t;
+  }
+
+  function actualizar(grupo){
+    var hechos = 0, bien = 0;
+    grupo.resultados.forEach(function(r){ if(r !== null){ hechos++; if(r) bien++; } });
+    document.getElementById(grupo.marcador).textContent =
+      "Respondidas: " + hechos + " de " + grupo.resultados.length + " · Correctas: " + bien;
+  }
+
+  var grupoCaso = { resultados: casos.map(function(){return null;}), marcador:"marcadorCaso" };
+  var contC = document.getElementById("clasificador");
+  casos.forEach(function(c, i){ contC.appendChild(crearTarjeta(c, tecnicas, i, grupoCaso)); });
+  actualizar(grupoCaso);
+
+  var grupoPrac = { resultados: practica.map(function(){return null;}), marcador:"marcadorPractica" };
+  var contP = document.getElementById("practicaPreguntas");
+  practica.forEach(function(q, i){ contP.appendChild(crearTarjeta(q, q.opciones, i, grupoPrac)); });
+  actualizar(grupoPrac);
+
+  /* ---------- Revelar ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".revelar"), function(b){
+    b.setAttribute("aria-expanded","false");
+    b.addEventListener("click", function(){
+      var el = document.getElementById(b.getAttribute("data-objetivo"));
+      var abierto = !el.classList.contains("oculto");
+      el.classList.toggle("oculto");
+      b.setAttribute("aria-expanded", abierto ? "false" : "true");
+    });
+  });
+
+  /* ---------- Acordeones ---------- */
+  var secciones = document.querySelectorAll("details.seccion");
+  document.getElementById("abrirTodo").addEventListener("click", function(){ secciones.forEach(function(d){ d.open = true; }); });
+  document.getElementById("cerrarTodo").addEventListener("click", function(){ secciones.forEach(function(d){ d.open = false; }); });
+  function abrirPorAncla(){
+    var id = decodeURIComponent(location.hash.replace("#",""));
+    if(!id) return;
+    var d = document.getElementById(id);
+    if(d && d.tagName === "DETAILS"){ d.open = true; setTimeout(function(){ d.scrollIntoView(); }, 50); }
+  }
+  window.addEventListener("hashchange", abrirPorAncla);
+  abrirPorAncla();
+
+  /* ---------- Tamaño de texto ---------- */
+  var tam = 1.05;
+  function aplicarTam(){ document.documentElement.style.setProperty("--tam", tam.toFixed(2) + "rem"); }
+  document.getElementById("mas").addEventListener("click", function(){ if(tam < 1.6){ tam += 0.1; aplicarTam(); } });
+  document.getElementById("menos").addEventListener("click", function(){ if(tam > 0.9){ tam -= 0.1; aplicarTam(); } });
+
+  /* ---------- Aviso dentro de la página ---------- */
+  var aviso = document.getElementById("aviso"), temp;
+  function avisar(msg){
+    aviso.textContent = msg; aviso.style.display = "block";
+    clearTimeout(temp); temp = setTimeout(function(){ aviso.style.display = "none"; }, 2800);
+  }
+
+  /* ---------- Copiar respuesta ---------- */
+  document.getElementById("copiar").addEventListener("click", function(){
+    var txt = document.getElementById("reflexion").value.trim();
+    if(!txt){ avisar("Primero escriba su párrafo."); return; }
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(txt).then(function(){ avisar("Respuesta copiada."); }, function(){ avisar("No se pudo copiar; selecciónela y cópiela a mano."); });
+    } else { avisar("Seleccione el texto y cópielo a mano."); }
+  });
+
+  /* ---------- Escuchar ---------- */
+  var hablando = null;
+  Array.prototype.forEach.call(document.querySelectorAll(".escuchar"), function(b){
+    b.addEventListener("click", function(){
+      if(!("speechSynthesis" in window)){ avisar("Su navegador no permite la lectura en voz alta."); return; }
+      if(hablando === b){ speechSynthesis.cancel(); hablando = null; b.textContent = "🔊 Escuchar esta sección"; return; }
+      speechSynthesis.cancel();
+      Array.prototype.forEach.call(document.querySelectorAll(".escuchar"), function(x){ x.textContent = "🔊 Escuchar esta sección"; });
+      var sec = document.getElementById(b.getAttribute("data-leer")).querySelector(".cuerpo");
+      var clon = sec.cloneNode(true);
+      Array.prototype.forEach.call(clon.querySelectorAll("button, .oculto"), function(x){ x.remove(); });
+      var u = new SpeechSynthesisUtterance(clon.innerText);
+      u.lang = "es-US"; u.rate = 0.95;
+      var voz = speechSynthesis.getVoices().filter(function(v){ return v.lang && v.lang.indexOf("es") === 0; })[0];
+      if(voz) u.voice = voz;
+      u.onend = function(){ hablando = null; b.textContent = "🔊 Escuchar esta sección"; };
+      hablando = b; b.textContent = "⏹ Detener lectura";
+      speechSynthesis.speak(u);
+    });
+  });
+})();
+</script>
+</body>
+</html>
