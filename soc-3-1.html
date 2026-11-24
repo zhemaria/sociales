@@ -981,6 +981,7 @@
 </style>
 <script id="dos-intentos" data-trato="usted">
 /* ── Dos intentos (GEDparaHispanos · LearnGED) ──
+   Preguntas de dos opciones: la explicación se muestra de inmediato (un segundo intento no enseña nada).
    Filosofía de Lumi: ante el primer error, una pista y otro intento;
    en el segundo intento actúa el programa original de la lección,
    que muestra la respuesta correcta y su explicación. */
@@ -1041,6 +1042,13 @@
     if (op.classList.contains('di-mal')) { frena(ev); return; }
     var est = p.g.getAttribute('data-di');
     if (est === 'fin') return;
+    if (p.g.querySelectorAll('.opcion').length <= 2) {             /* dos opciones: se explica de inmediato */
+      setTimeout(function () {
+        var ex = p.g.getAttribute('data-explica');
+        if (ex && p.fb && p.fb.textContent.indexOf(ex) < 0) p.fb.appendChild(document.createTextNode(' ' + ex));
+      }, 0);
+      return;
+    }
     if (p.ok || est === '1') { p.g.setAttribute('data-di', 'fin'); return; }
     frena(ev);
     p.g.setAttribute('data-di', '1');
@@ -1122,7 +1130,8 @@
       qs.forEach(function (q) {
         var el = M.elegida(q), ok = el ? M.esCorrecta(q, el) : false;
         if (ok === null) desconocido = true;
-        if (ok) bien++; else revisar.push({ q: q, el: el });
+        if (ok) bien++;
+        else if (M.ops(q).length > 2) revisar.push({ q: q, el: el });   /* dos opciones: se explica al corregir */
       });
       if (desconocido || !revisar.length) { ronda = 3; return; }  /* todo bien al primer intento */
       frena(ev);
