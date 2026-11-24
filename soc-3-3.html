@@ -751,7 +751,7 @@
   });
 
   /* ---- Quiz: 4 de clasificar, 3 de dimensiones, 3 de qué haría falta ---- */
-  var preguntasQuiz = [
+  var preguntasQuiz = window.__pq = [
     { enun: '1. Emitir moneda es una competencia…', ops: ['Federal', 'Estatal', 'Concurrente', 'Municipal'],
       correcta: 0, expl: 'Está nombrada en la Constitución y además prohibida a los estados, para que no hubiera trece monedas distintas.' },
     { enun: '2. Expedir licencias de conducir es una competencia…', ops: ['Federal', 'Estatal', 'Concurrente', 'De los tribunales'],
@@ -965,6 +965,182 @@
   construir();
   document.getElementById('btn-reiniciar-comp').addEventListener('click', construir);
 })();
+</script>
+
+<style id="dos-intentos-css">
+  .di-mal{opacity:.8;border-color:#f9a825 !important;background:#fff8e1 !important;color:#5c3900 !important;cursor:not-allowed;}
+  .di-mal::before{content:"\2717  ";font-weight:700;}
+  .di-pista,.fb.di-pista,.respuesta-int.di-pista{display:block !important;background:#fff8e1 !important;color:#5c3900 !important;border-left:5px solid #f9a825;padding:10px 14px;border-radius:8px;}
+  .di-nota{background:#fff8e1;color:#5c3900;border-left:5px solid #f9a825;padding:8px 12px;border-radius:8px;margin:8px 0 0;font-size:.95em;}
+  .di-aviso{background:#fff8e1;color:#5c3900;border:2px solid #f9a825;padding:10px 14px;border-radius:10px;margin:10px 0;font-weight:600;}
+</style>
+<script id="dos-intentos" data-trato="usted">
+/* ── Dos intentos (GEDparaHispanos · LearnGED) ──
+   Filosofía de Lumi: ante el primer error, una pista y otro intento;
+   en el segundo intento actúa el programa original de la lección,
+   que muestra la respuesta correcta y su explicación. */
+(function () {
+  var TU = document.currentScript && document.currentScript.getAttribute('data-trato') === 'tu';
+  var T = TU ? {
+    pista: 'Todavía no. Vuelve a leer la pregunta con calma',
+    repasa: ' y repasa «', fin: '». ', otro: 'Te queda un intento.',
+    qz: 'Todavía no. Lee la pregunta otra vez y elige otra respuesta.',
+    qzNo: 'No respondiste esta pregunta. Elige una respuesta.',
+    aviso1: function (b, n, f) { return b + ' de ' + n + ' correctas al primer intento. Revisa las ' + f + ' preguntas marcadas en amarillo, elige otra respuesta y vuelve a corregir.'; },
+    aviso1u: function (b, n) { return b + ' de ' + n + ' correctas al primer intento. Revisa la pregunta marcada en amarillo, elige otra respuesta y vuelve a corregir.'; }
+  } : {
+    pista: 'Todavía no. Vuelva a leer la pregunta con calma',
+    repasa: ' y repase «', fin: '». ', otro: 'Le queda un intento.',
+    qz: 'Todavía no. Lea la pregunta otra vez y elija otra respuesta.',
+    qzNo: 'No respondió esta pregunta. Elija una respuesta.',
+    aviso1: function (b, n, f) { return b + ' de ' + n + ' correctas al primer intento. Revise las ' + f + ' preguntas marcadas en amarillo, elija otra respuesta y vuelva a corregir.'; },
+    aviso1u: function (b, n) { return b + ' de ' + n + ' correctas al primer intento. Revise la pregunta marcada en amarillo, elija otra respuesta y vuelva a corregir.'; }
+  };
+
+  function seccion(el) {
+    var hs = document.querySelectorAll('h2'), h = null;
+    for (var i = 0; i < hs.length; i++) {
+      if (hs[i].compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) h = hs[i]; else break;
+    }
+    if (!h) { var c = el.closest('details'); h = c && c.querySelector('summary'); }
+    if (!h) return '';
+    return h.textContent.replace(/^[\s\d.·\-–—🎯➡️📘✏️]+/, '').replace(/\s+/g, ' ').trim();
+  }
+  function pista(el) {
+    var s = seccion(el);
+    return T.pista + (s ? T.repasa + s + T.fin : '. ') + T.otro;
+  }
+  function frena(ev) { ev.stopImmediatePropagation(); ev.preventDefault(); }
+
+  /* ---------- Prácticas: dos motores ---------- */
+  function practica(op) {
+    var g, ok, fb;
+    if ((g = op.closest('.opciones[data-quiz]'))) {                 /* motor A */
+      ok = op.getAttribute('data-correcta') === 'si';
+      fb = document.getElementById('r-' + g.getAttribute('data-quiz'));
+      return { g: g, ok: ok, fb: fb, clase: 'respuesta-int di-pista' };
+    }
+    if ((g = op.closest('.pregunta[data-correcta]')) && op.hasAttribute('data-op')) { /* motor B */
+      ok = op.getAttribute('data-op') === g.getAttribute('data-correcta');
+      fb = g.querySelector('.fb');
+      return { g: g, ok: ok, fb: fb, clase: 'fb di-pista' };
+    }
+    return null;
+  }
+
+  document.addEventListener('click', function (ev) {
+    var op = ev.target.closest && ev.target.closest('.opcion');
+    if (!op) return;
+    var p = practica(op);
+    if (!p) return;
+    if (op.classList.contains('di-mal')) { frena(ev); return; }
+    var est = p.g.getAttribute('data-di');
+    if (est === 'fin') return;
+    if (p.ok || est === '1') { p.g.setAttribute('data-di', 'fin'); return; }
+    frena(ev);
+    p.g.setAttribute('data-di', '1');
+    op.classList.add('di-mal'); op.setAttribute('aria-disabled', 'true');
+    if (p.fb) { p.fb.className = p.clase; p.fb.textContent = pista(p.g); p.fb.style.display = 'block'; }
+  }, true);
+
+  /* ---------- Cuestionarios: tres motores ---------- */
+  var Q = [
+    { /* motor 1: Matemáticas 1 */
+      boton: 'btn-calificar', reset: 'btn-reintentar', res: 'puntaje',
+      preguntas: function () { return document.querySelectorAll('#quiz .opciones[data-q]'); },
+      ops: function (q) { return q.querySelectorAll('.opcion'); },
+      elegida: function (q) { return q.querySelector('.opcion.elegida'); },
+      esCorrecta: function (q, o) { return o.getAttribute('data-c') === 'si'; },
+      deselecciona: function (q, o) { o.classList.remove('elegida'); o.setAttribute('aria-pressed', 'false'); o.disabled = true; },
+      repaso: function () { return ''; }
+    },
+    { /* motor 2: Matemáticas 2–4, Ciencias, Estudios Sociales */
+      boton: 'btn-corregir', reset: 'btn-reintentar', res: 'resultado-quiz',
+      preguntas: function () { return document.querySelectorAll('#quiz-cuerpo .pregunta[data-idx]'); },
+      ops: function (q) { return q.querySelectorAll('.opcion'); },
+      elegida: function (q) { var j = q.getAttribute('data-elegida'); return j === null ? null : q.querySelectorAll('.opcion')[+j]; },
+      esCorrecta: function (q, o) {
+        if (!window.__pq) return null;
+        var lista = Array.prototype.slice.call(q.querySelectorAll('.opcion'));
+        return lista.indexOf(o) === window.__pq[+q.getAttribute('data-idx')].correcta;
+      },
+      deselecciona: function (q, o) { o.classList.remove('elegida'); q.removeAttribute('data-elegida'); },
+      repaso: function () { return ''; }
+    },
+    { /* motor 3: Artes del Lenguaje */
+      boton: 'qz-calificar', reset: 'qz-reintentar', res: 'qz-resultado',
+      preguntas: function () { return document.querySelectorAll('#qz-cuerpo .qz-preg'); },
+      ops: function (q) { return q.querySelectorAll('.qz-op'); },
+      elegida: function (q) { return q.querySelector('.qz-op.elegida'); },
+      esCorrecta: function (q, o) {
+        if (!window.__qzP) return null;
+        return +o.getAttribute('data-j') === window.__qzP[+o.getAttribute('data-i')].c;
+      },
+      deselecciona: function (q, o) { o.classList.remove('elegida'); o.setAttribute('aria-pressed', 'false'); o.disabled = true; },
+      repaso: function (q) {
+        var o = q.querySelector('.qz-op'); if (!o || !window.__qzP) return '';
+        var r = window.__qzP[+o.getAttribute('data-i')].r;
+        return r ? ' 📘 Para repasar: ' + r : '';
+      }
+    }
+  ];
+
+  Q.forEach(function (M) {
+    var ronda = 1, primeros = 0, total1 = 0;
+    function limpia() {
+      document.querySelectorAll('.di-nota, .di-aviso').forEach(function (n) { n.remove(); });
+    }
+    document.addEventListener('click', function (ev) {
+      var t = ev.target.closest && ev.target.closest('#' + M.boton + ', #' + M.reset);
+      if (!t) {
+        var o = ev.target.closest && ev.target.closest('.di-mal');
+        if (o) frena(ev);
+        return;
+      }
+      if (t.id === M.reset) {
+        ronda = 1; limpia();
+        document.querySelectorAll('.di-mal').forEach(function (o) { o.classList.remove('di-mal'); o.removeAttribute('aria-disabled'); });
+        return;
+      }
+      var qs = M.preguntas(); if (!qs.length) return;
+      if (ronda === 2) {                                           /* el programa original corrige */
+        ronda = 3; limpia();
+        setTimeout(function () {
+          var r = document.getElementById(M.res);
+          if (r && r.textContent.indexOf('al primer intento') < 0) r.textContent += ' (' + primeros + ' de ' + total1 + ' al primer intento)';
+        }, 0);
+        return;
+      }
+      if (ronda === 3) return;
+      var bien = 0, faltan = 0, total = qs.length, desconocido = false;
+      var revisar = [];
+      qs.forEach(function (q) {
+        var el = M.elegida(q), ok = el ? M.esCorrecta(q, el) : false;
+        if (ok === null) desconocido = true;
+        if (ok) bien++; else revisar.push({ q: q, el: el });
+      });
+      if (desconocido || !revisar.length) { ronda = 3; return; }  /* todo bien al primer intento */
+      frena(ev);
+      ronda = 2; limpia(); primeros = bien; total1 = total;
+      revisar.forEach(function (x) {
+        var nota = document.createElement('p');
+        nota.className = 'di-nota';
+        nota.setAttribute('role', 'status');
+        if (x.el) { x.el.classList.add('di-mal'); x.el.setAttribute('aria-disabled', 'true'); M.deselecciona(x.q, x.el); nota.innerHTML = T.qz + M.repaso(x.q); }
+        else nota.textContent = T.qzNo;
+        x.q.appendChild(nota);
+      });
+      var av = document.createElement('p');
+      av.className = 'di-aviso'; av.setAttribute('role', 'status');
+      av.textContent = revisar.length === 1 ? T.aviso1u(bien, total) : T.aviso1(bien, total, revisar.length);
+      t.parentNode.insertBefore(av, t);
+      var primera = revisar[0].q.querySelector('.opcion:not(.di-mal), .qz-op:not(.di-mal)');
+      revisar[0].q.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (primera) primera.focus({ preventScroll: true });
+    }, true);
+  });
+})();
+
 </script>
 </body>
 </html>
