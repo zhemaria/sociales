@@ -391,6 +391,7 @@
   .g-sec-3 { fill: #26a69a; }
   .g-sec-4 { fill: #80cbc4; }
   .g-sec-5 { fill: #b2dfdb; }
+  .g-sec-6 { fill: #e0f2f1; stroke:#80cbc4; }
 
   /* Clasificador (mismo patrón accesible que la Lección 5.1) */
   .clasificador { background: var(--tema-bg); border: 1px dashed var(--tema); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
@@ -458,10 +459,10 @@
   <h2 class="seccion" id="sec1">1. De su nómina al presupuesto federal</h2>
 
   <div class="bloque">
-    <p>Esta es una nómina quincenal con las retenciones habituales de un trabajador de Illinois. Las cifras están elegidas para que las cuentas salgan redondas.</p>
+    <p>Esta es una nómina quincenal con las retenciones habituales de un trabajador de Illinois. Las tasas son las vigentes en 2026; la retención federal sobre la renta es un ejemplo, porque depende de cada persona.</p>
 
     <table class="reglas">
-      <caption>Nómina quincenal con sus retenciones. Cifras ilustrativas.</caption>
+      <caption>Nómina quincenal con sus retenciones. Tasas de 2026; la retención federal es un ejemplo.</caption>
       <thead>
         <tr><th scope="col">Concepto</th><th scope="col">Tasa</th><th scope="col">Importe</th><th scope="col">Adónde va</th></tr>
       </thead>
@@ -470,7 +471,7 @@
         <tr><td>Seguro Social</td><td>6.20 %</td><td>$124.00</td><td>Pensiones de jubilación e invalidez</td></tr>
         <tr><td>Medicare</td><td>1.45 %</td><td>$29.00</td><td>Seguro médico para mayores de 65</td></tr>
         <tr><td>Retención federal sobre la renta</td><td>variable</td><td>$180.00</td><td>Al fondo general: defensa, intereses, todo lo demás</td></tr>
-        <tr><td>Impuesto de Illinois sobre la renta</td><td>tipo único</td><td>$99.00</td><td>Al presupuesto del estado, no al federal</td></tr>
+        <tr><td>Impuesto de Illinois sobre la renta</td><td>4.95 % (tipo único)</td><td>$99.00</td><td>Al presupuesto del estado, no al federal</td></tr>
         <tr><td><strong>Total retenido</strong></td><td><strong>21.6 %</strong></td><td><strong>$432.00</strong></td><td>—</td></tr>
         <tr><td><strong>Salario neto</strong></td><td>—</td><td><strong>$1 568.00</strong></td><td>—</td></tr>
       </tbody>
@@ -482,10 +483,10 @@
 
     <figure class="grafica">
       <h3>De dónde salen los ingresos federales</h3>
-      <p class="g-fuente"><strong>Datos ilustrativos</strong> con el reparto aproximado real.</p>
+      <p class="g-fuente"><strong>Datos reales del año fiscal 2026</strong> (de octubre de 2025 a septiembre de 2026). Fuente: Oficina de Presupuesto del Congreso (CBO), informe del 9 de noviembre de 2026. Ingresos totales: 5.4 billones de dólares.</p>
       <svg viewBox="0 0 700 290" role="img" aria-labelledby="int ind" xmlns="http://www.w3.org/2000/svg">
-      <title id="int">De dónde salen los ingresos federales</title>
-      <desc id="ind">Cuatro barras. El impuesto sobre la renta de las personas aporta alrededor del 50 por ciento, las retenciones de nómina de Seguro Social y Medicare el 35, el impuesto de sociedades el 9 y otras fuentes el 6. Datos ilustrativos. Las dos primeras juntas, que salen de la nómina de los trabajadores, suponen unos ochenta y cinco de cada cien dólares.</desc>
+      <title id="int">De dónde salen los ingresos federales, año fiscal 2026</title>
+      <desc id="ind">Cinco barras con datos reales del año fiscal 2026 (Oficina de Presupuesto del Congreso). El impuesto sobre la renta de las personas aporta el 52.7 por ciento; las retenciones de nómina de Seguro Social y Medicare, el 33.5; el impuesto de sociedades, el 7.1; las aduanas y los aranceles, el 3.2; y otras fuentes, el 3.5. Las dos primeras juntas, que salen del trabajo de las personas, suponen unos ochenta y seis de cada cien dólares.</desc>
       <line class="g-reja" x1="54" y1="234.0" x2="686" y2="234.0"/>
       <text class="g-rot" x="46" y="238.0" text-anchor="end">0%</text>
       <line class="g-reja" x1="54" y1="190.4" x2="686" y2="190.4"/>
@@ -498,54 +499,62 @@
       <text class="g-rot" x="46" y="63.6" text-anchor="end">48%</text>
       <line class="g-reja" x1="54" y1="16.0" x2="686" y2="16.0"/>
       <text class="g-rot" x="46" y="20.0" text-anchor="end">60%</text>
-      <rect class="g-barra" x="93.5" y="52.3" width="79.0" height="181.7"/>
-      <text class="g-valor" x="133.0" y="47.3" text-anchor="middle">50%</text>
-      <text class="g-rot" x="133.0" y="251" text-anchor="middle">Renta de las</text>
-      <text class="g-rot" x="133.0" y="264" text-anchor="middle">personas</text>
-      <rect class="g-barra" x="251.5" y="106.8" width="79.0" height="127.2"/>
-      <text class="g-valor" x="291.0" y="101.8" text-anchor="middle">35%</text>
-      <text class="g-rot" x="291.0" y="251" text-anchor="middle">Nóminas: Seguro</text>
-      <text class="g-rot" x="291.0" y="264" text-anchor="middle">Social y Medicare</text>
-      <rect class="g-barra" x="409.5" y="201.3" width="79.0" height="32.7"/>
-      <text class="g-valor" x="449.0" y="196.3" text-anchor="middle">9%</text>
-      <text class="g-rot" x="449.0" y="251" text-anchor="middle">Sociedades</text>
-      <rect class="g-barra" x="567.5" y="212.2" width="79.0" height="21.8"/>
-      <text class="g-valor" x="607.0" y="207.2" text-anchor="middle">6%</text>
-      <text class="g-rot" x="607.0" y="251" text-anchor="middle">Otros</text>
+      <rect class="g-barra" x="77.7" y="42.5" width="79.0" height="191.5"/>
+      <text class="g-valor" x="117.2" y="37.5" text-anchor="middle">52.7 %</text>
+      <text class="g-rot" x="117.2" y="251" text-anchor="middle">Renta de las</text>
+      <text class="g-rot" x="117.2" y="264" text-anchor="middle">personas</text>
+      <rect class="g-barra" x="204.1" y="112.3" width="79.0" height="121.7"/>
+      <text class="g-valor" x="243.6" y="107.3" text-anchor="middle">33.5 %</text>
+      <text class="g-rot" x="243.6" y="251" text-anchor="middle">Retenciones</text>
+      <text class="g-rot" x="243.6" y="264" text-anchor="middle">de nómina</text>
+      <rect class="g-barra" x="330.5" y="208.2" width="79.0" height="25.8"/>
+      <text class="g-valor" x="370.0" y="203.2" text-anchor="middle">7.1 %</text>
+      <text class="g-rot" x="370.0" y="251" text-anchor="middle">Sociedades</text>
+      <rect class="g-barra" x="456.9" y="222.4" width="79.0" height="11.6"/>
+      <text class="g-valor" x="496.4" y="217.4" text-anchor="middle">3.2 %</text>
+      <text class="g-rot" x="496.4" y="251" text-anchor="middle">Aduanas</text>
+      <text class="g-rot" x="496.4" y="264" text-anchor="middle">(aranceles)</text>
+      <rect class="g-barra" x="583.3" y="221.3" width="79.0" height="12.7"/>
+      <text class="g-valor" x="622.8" y="216.3" text-anchor="middle">3.5 %</text>
+      <text class="g-rot" x="622.8" y="251" text-anchor="middle">Otros</text>
       <line class="g-eje" x1="54" y1="16" x2="54" y2="234"/>
       <line class="g-eje" x1="54" y1="234" x2="686" y2="234"/>
     </svg>
-      <figcaption>Sume las dos primeras barras: alrededor de <strong>ochenta y cinco de cada cien dólares</strong> que ingresa el gobierno federal salen de la nómina de quien trabaja, por una vía o por la otra. La tabla de arriba no es un ejemplo pequeño: es la fuente principal.</figcaption>
+      <figcaption>Sume las dos primeras barras: unos <strong>ochenta y seis de cada cien dólares</strong> que ingresa el gobierno federal salen de la nómina de quien trabaja, por una vía o por la otra. La tabla de arriba no es un ejemplo pequeño: es la fuente principal.</figcaption>
     </figure>
 
     <figure class="grafica">
       <h3>Adónde va el gasto federal</h3>
-      <p class="g-fuente"><strong>Datos ilustrativos</strong> con el reparto aproximado real.</p>
+      <p class="g-fuente"><strong>Datos reales del año fiscal 2026</strong> (de octubre de 2025 a septiembre de 2026). Fuente: Oficina de Presupuesto del Congreso (CBO), informe del 9 de noviembre de 2026. Gasto total: 7.4 billones de dólares.</p>
       <svg viewBox="0 0 700 310" role="img" aria-labelledby="gat gad" xmlns="http://www.w3.org/2000/svg">
-      <title id="gat">Reparto del gasto federal en cinco categorías</title>
-      <desc id="gad">Salud pública ocupa el 27 por ciento, todo lo demás el 24, Seguridad Social y jubilaciones el 22, defensa el 14 e intereses de la deuda el 13. Datos ilustrativos. Lo notable es que los intereses de la deuda, que no compran ningún servicio, ocupan casi tanto como la defensa.</desc>
-      <path class="g-sec-1" d="M 175 155 L 175.0 31.0 A 124 124 0 0 1 298.0 170.5 Z" stroke="#fff" stroke-width="2"/>
-      <text x="233.6" y="107.3" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">27%</text>
-      <path class="g-sec-2" d="M 175 155 L 298.0 170.5 A 124 124 0 0 1 182.8 278.8 Z" stroke="#fff" stroke-width="2"/>
-      <text x="228.5" y="215.9" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">22%</text>
-      <path class="g-sec-3" d="M 175 155 L 182.8 278.8 A 124 124 0 0 1 52.0 170.5 Z" stroke="#fff" stroke-width="2"/>
-      <text x="125.2" y="219.2" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">24%</text>
-      <path class="g-sec-4" d="M 175 155 L 52.0 170.5 A 124 124 0 0 1 84.6 70.1 Z" stroke="#fff" stroke-width="2"/>
-      <text x="100.7" y="134.9" text-anchor="middle" font-size="14" font-weight="700" fill="#00352c">14%</text>
-      <path class="g-sec-5" d="M 175 155 L 84.6 70.1 A 124 124 0 0 1 175.0 31.0 Z" stroke="#fff" stroke-width="2"/>
-      <text x="144.0" y="87.3" text-anchor="middle" font-size="14" font-weight="700" fill="#00352c">13%</text>
+      <title id="gat">Reparto del gasto federal, año fiscal 2026</title>
+      <desc id="gad">Gráfica circular con datos reales del año fiscal 2026 (Oficina de Presupuesto del Congreso). Seguro Social, 22.4 por ciento; intereses de la deuda, 15.4; Medicare, 14.5; defensa, 12.4; Medicaid, 9.8; y todo lo demás, 25.6. Los intereses de la deuda, que no compran ningún servicio, superaron ya a la defensa.</desc>
+      <path class="g-sec-1" d="M 175 155 L 175.0 31.0 A 124 124 0 0 1 297.3 134.8 Z" stroke="#fff" stroke-width="2"/>
+      <text x="226.4" y="99.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">22.4 %</text>
+      <path class="g-sec-2" d="M 175 155 L 297.3 134.8 A 124 124 0 0 1 261.0 244.3 Z" stroke="#fff" stroke-width="2"/>
+      <text x="250.3" y="185.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">15.4 %</text>
+      <path class="g-sec-3" d="M 175 155 L 261.0 244.3 A 124 124 0 0 1 157.1 277.7 Z" stroke="#fff" stroke-width="2"/>
+      <text x="199.3" y="235.6" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">14.5 %</text>
+      <path class="g-sec-4" d="M 175 155 L 157.1 277.7 A 124 124 0 0 1 76.1 229.8 Z" stroke="#fff" stroke-width="2"/>
+      <text x="134.6" y="228.3" text-anchor="middle" font-size="13" font-weight="700" fill="#00352c">12.4 %</text>
+      <path class="g-sec-5" d="M 175 155 L 76.1 229.8 A 124 124 0 0 1 51.1 158.9 Z" stroke="#fff" stroke-width="2"/>
+      <text x="100.2" y="186.4" text-anchor="middle" font-size="13" font-weight="700" fill="#00352c">9.8 %</text>
+      <path class="g-sec-6" d="M 175 155 L 51.1 158.9 A 124 124 0 0 1 175.8 31.0 Z" stroke="#fff" stroke-width="2"/>
+      <text x="118.2" y="104.6" text-anchor="middle" font-size="13" font-weight="700" fill="#00352c">25.6 %</text>
       <rect class="g-sec-1" x="368" y="40" width="16" height="16" rx="3"/>
-      <text class="g-rot" x="392" y="53">Salud pública</text>
+      <text class="g-rot" x="392" y="53">Seguro Social</text>
       <rect class="g-sec-2" x="368" y="70" width="16" height="16" rx="3"/>
-      <text class="g-rot" x="392" y="83">Seguridad Social y jubilaciones</text>
+      <text class="g-rot" x="392" y="83">Intereses de la deuda</text>
       <rect class="g-sec-3" x="368" y="100" width="16" height="16" rx="3"/>
-      <text class="g-rot" x="392" y="113">Todo lo demás</text>
+      <text class="g-rot" x="392" y="113">Medicare</text>
       <rect class="g-sec-4" x="368" y="130" width="16" height="16" rx="3"/>
       <text class="g-rot" x="392" y="143">Defensa</text>
       <rect class="g-sec-5" x="368" y="160" width="16" height="16" rx="3"/>
-      <text class="g-rot" x="392" y="173">Intereses de la deuda</text>
+      <text class="g-rot" x="392" y="173">Medicaid</text>
+      <rect class="g-sec-6" x="368" y="190" width="16" height="16" rx="3"/>
+      <text class="g-rot" x="392" y="203">Todo lo demás</text>
     </svg>
-      <figcaption>Fíjese en el sector de los intereses de la deuda: ocupa casi tanto como la defensa y <strong>no compra ningún servicio</strong>. Es lo que cuesta el dinero que se pidió prestado en años anteriores. Volveremos a ello en la sección 3.</figcaption>
+      <figcaption>Fíjese en el sector de los intereses de la deuda: en 2026 (15.4 %) ya fue <strong>mayor que la defensa</strong> (12.4 %), y <strong>no compra ningún servicio</strong>. Es lo que cuesta el dinero que se pidió prestado en años anteriores. Volveremos a ello en la sección 3.</figcaption>
     </figure>
   </div>
 
@@ -561,7 +570,7 @@
       </thead>
       <tbody>
         <tr><td>Progresivo</td><td>Sube</td><td>El impuesto federal sobre la renta, con sus tramos</td></tr>
-        <tr><td>Proporcional</td><td>Se mantiene igual</td><td>Un impuesto de tipo único, o el 1.45 % de Medicare</td></tr>
+        <tr><td>Proporcional</td><td>Se mantiene igual</td><td>Un impuesto de tipo único, como el 4.95 % de Illinois</td></tr>
         <tr><td>Regresivo</td><td>Baja</td><td>El impuesto sobre las ventas</td></tr>
       </tbody>
     </table>
@@ -577,7 +586,7 @@
     </div>
 
     <div class="caja-atencion">
-      <strong>El caso sutil: el Seguro Social.</strong> Su tasa es 6.20 % para todos, lo que parece proporcional. Pero solo se cotiza hasta un tope de salario; por encima de esa cifra no se paga más. Compare: quien gana $50 000 paga el 6.20 % de todo su ingreso. Quien gana $500 000 paga la misma cantidad que quien llega al tope, y eso equivale a algo más del <strong>2 %</strong> de su ingreso total. La tasa nominal es idéntica; la tasa efectiva baja. Por eso se clasifica como regresivo, y por eso hay que mirar siempre <strong>la tasa efectiva sobre el ingreso</strong>, no la que está impresa.
+      <strong>El caso sutil: el Seguro Social.</strong> Su tasa es 6.20 % para todos, lo que parece proporcional. Pero solo se cotiza hasta un tope de salario, que en 2026 es de <strong>$184 500</strong>; por encima de esa cifra no se paga más. Compare: quien gana $50 000 paga $3 100, el 6.20 % de todo su ingreso. Quien gana $500 000 paga el máximo de 2026, $11 439, y eso equivale a alrededor del <strong>2.3 %</strong> de su ingreso total. La tasa nominal es idéntica; la tasa efectiva baja. Por eso se clasifica como regresivo, y por eso hay que mirar siempre <strong>la tasa efectiva sobre el ingreso</strong>, no la que está impresa.
     </div>
 
     <div class="clasificador">
@@ -604,6 +613,7 @@
         <tr><td>Periodo</td><td>Un ejercicio</td><td>Toda la historia hasta hoy</td></tr>
         <tr><td>Comparación doméstica</td><td>Lo que se gastó de más este mes</td><td>El saldo que se debe en la tarjeta</td></tr>
         <tr><td>Si baja un año…</td><td>Se gastó menos de más que el año anterior</td><td>Solo baja si hay superávit, no si el déficit se reduce</td></tr>
+        <tr><td>Cifra real (noviembre de 2026)</td><td>2.0 billones de dólares en el año fiscal 2026 (CBO)</td><td>Superó los 40 billones de dólares en agosto de 2026 (Tesoro)</td></tr>
       </tbody>
     </table>
 
@@ -720,7 +730,7 @@
     <div class="practica">
       <h3>Práctica interactiva · Presupuesto, deuda y dirección fiscal</h3>
 
-      <div class="pregunta" data-correcta="c" data-explica="Las dos primeras fuentes, la renta de las personas y las retenciones de nómina, salen del trabajo y suman alrededor del 85 por ciento.">
+      <div class="pregunta" data-correcta="c" data-explica="Las dos primeras fuentes, la renta de las personas y las retenciones de nómina, salen del trabajo y suman alrededor del 86 por ciento (año fiscal 2026).">
         <div class="enun">¿De dónde procede la mayor parte de los ingresos federales?</div>
         <div class="opciones">
           <div class="opcion" data-op="a">Del impuesto de sociedades</div>
@@ -929,7 +939,7 @@
     { enun: '4. La retención del Seguro Social tiene un tope salarial. Eso la hace…', ops: ['Progresiva', 'Proporcional', 'Regresiva', 'Voluntaria'],
       correcta: 2, expl: 'Por encima del tope no se cotiza más, así que la tasa efectiva sobre el ingreso total va bajando. La tasa impresa es igual; la efectiva no.' },
     { enun: '5. La mayor parte de los ingresos federales procede de…', ops: ['El impuesto de sociedades', 'La renta de las personas y las retenciones de nómina', 'Los aranceles', 'La venta de terrenos'],
-      correcta: 1, expl: 'Las dos juntas suponen alrededor de ochenta y cinco de cada cien dólares que ingresa el gobierno federal.' },
+      correcta: 1, expl: 'Las dos juntas suponen unos ochenta y seis de cada cien dólares que ingresa el gobierno federal (año fiscal 2026).' },
     { enun: '6. Los intereses de la deuda, dentro del gasto federal…', ops: ['No aparecen en el presupuesto', 'Ocupan una porción grande y no compran ningún servicio', 'Son la partida más pequeña', 'Los paga cada estado'],
       correcta: 1, expl: 'Es lo que cuesta el dinero que se pidió prestado en años anteriores. Cuanto mayor es la deuda, mayor es esa porción.' },
     { enun: '7. El déficit mide…', ops: ['Lo que se debe en total', 'Cuánto se gastó de más en un año', 'Los intereses pagados', 'El gasto en defensa'],
@@ -1050,7 +1060,7 @@
 (function () {
   /* Clasificador de impuestos. Botones, no arrastrar: accesible con
      teclado y con lector de pantalla, y usable en pantalla táctil. */
-  var IMPUESTOS = [{"t": "El impuesto federal sobre la renta, con sus tramos", "c": "P", "e": "Cuanto mayor es el ingreso, mayor es el porcentaje que se paga. Esa es la definición de progresivo."}, {"t": "El impuesto sobre las ventas", "c": "R", "e": "Aunque la tasa sea igual para todos, quien gana menos gasta una proporción mayor de su ingreso, así que el impuesto le supone un porcentaje mayor de lo que gana."}, {"t": "Un impuesto estatal sobre la renta de tipo único, como el de Illinois", "c": "O", "e": "Todos pagan el mismo porcentaje de su ingreso, gane lo que gane. Eso es proporcional."}, {"t": "El impuesto sobre la gasolina", "c": "R", "e": "Es una cantidad fija por galón. Quien gana poco y necesita el coche para trabajar acaba pagando un porcentaje mayor de su ingreso que quien gana mucho."}, {"t": "La retención de Medicare, del 1.45 % sin tope", "c": "O", "e": "Mismo porcentaje para todos y sin límite superior: es proporcional. Compárelo con el Seguro Social, que sí tiene tope."}, {"t": "La retención del Seguro Social, del 6.20 % con tope salarial", "c": "R", "e": "Aquí está el caso sutil. Solo se cotiza hasta cierto salario, así que por encima del tope la tasa efectiva sobre el ingreso total va bajando. La tasa impresa es igual; la efectiva no."}];
+  var IMPUESTOS = [{"t": "El impuesto federal sobre la renta, con sus tramos", "c": "P", "e": "Cuanto mayor es el ingreso, mayor es el porcentaje que se paga. Esa es la definición de progresivo."}, {"t": "El impuesto sobre las ventas", "c": "R", "e": "Aunque la tasa sea igual para todos, quien gana menos gasta una proporción mayor de su ingreso, así que el impuesto le supone un porcentaje mayor de lo que gana."}, {"t": "Un impuesto estatal sobre la renta de tipo único, como el de Illinois", "c": "O", "e": "Todos pagan el mismo porcentaje de su ingreso, gane lo que gane. Eso es proporcional."}, {"t": "El impuesto sobre la gasolina", "c": "R", "e": "Es una cantidad fija por galón. Quien gana poco y necesita el coche para trabajar acaba pagando un porcentaje mayor de su ingreso que quien gana mucho."}, {"t": "La retención básica de Medicare, del 1.45 % sin tope", "c": "O", "e": "Mismo porcentaje para todos y sin límite superior: es proporcional. Compárelo con el Seguro Social, que sí tiene tope. (Por encima de $200 000 se añade un 0.9 %, que la vuelve algo progresiva en lo más alto; las tasas son las de 2026)."}, {"t": "La retención del Seguro Social, del 6.20 % con tope salarial", "c": "R", "e": "Aquí está el caso sutil. Solo se cotiza hasta cierto salario, así que por encima del tope la tasa efectiva sobre el ingreso total va bajando. La tasa impresa es igual; la efectiva no."}];
   var NOMBRES = { P: 'Progresivo', O: 'Proporcional', R: 'Regresivo' };
 
   var lista = document.getElementById('lista-comp');
